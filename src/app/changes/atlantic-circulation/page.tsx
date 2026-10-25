@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { abs } from "@/lib/site";
+import { abs, asset } from "@/lib/site";
+import StoryBrief from "@/components/StoryBrief";
 import Link from "next/link";
 import { HysteresisChart, ObservedChart, ScenarioRunsChart } from "@/components/AmocCharts";
 import AmocExplorer from "@/components/AmocExplorer";
@@ -76,16 +77,15 @@ export default function AmocPage() {
         </div>
         <div className={styles.heroSide}>
         <p className={styles.standfirst}>
-          The IPCC has medium confidence that the Atlantic Meridional Overturning Circulation (AMOC) will not collapse before 2100,
-          and newer studies disagree on the risk. If it did collapse, the effects would be large and would last for centuries:
-          colder winters in northwest Europe even in a warmer world, and weaker monsoons for hundreds of millions of people in West
-          Africa and South Asia.
+          The Atlantic Meridional Overturning Circulation (AMOC) moves heat around the planet. If it collapsed, the effects would
+          be large and would last for centuries, for Europe and for hundreds of millions of people who depend on tropical monsoons.
         </p>
-        <ul className={styles.brief}>
-          <li><b>Known:</b> the AMOC is very likely to weaken this century.</li>
-          <li><b>Disputed:</b> whether it could collapse, and when.</li>
-          <li><b>What to do:</b> test long-lived investments against a collapse, and favour measures that help either way.</li>
-        </ul>
+        <StoryBrief answers={[
+          ["A system of Atlantic currents that carries warm water north and cold water back south at depth. It keeps northwest Europe mild and holds the tropical rain belts in place.", "#what"],
+          ["Weakening this century is very likely. A collapse is a low-likelihood, high-impact risk: the IPCC has medium confidence it will not happen before 2100, and newer studies disagree.", "#sure"],
+          ["Much colder winters in northwest Europe, weaker monsoons in West Africa and South Asia, and faster sea-level rise on North Atlantic coasts, for centuries.", "#where"],
+          ["Limit both the amount and the speed of warming; test long-lived investments against a collapse and favour measures that help either way.", "#decide"],
+        ]} />
         <p className={styles.chips}>
           <span className="evidence evidence--model">Model experiments</span>
           <span className="evidence evidence--obs">Observations to {s.rapid.end.slice(0, 4)}</span>
@@ -93,6 +93,35 @@ export default function AmocPage() {
         </p>
         </div>
       </header>
+
+      <section className={`wrap ${styles.what}`} aria-labelledby="what">
+        <figure className={styles.whatFig}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={asset("/img/amoc-circulation.png")} width={1200} height={900}
+            alt="Map of the Atlantic: a red arrow carries warm surface water from the South Atlantic past the Caribbean and up the Gulf Stream to the far North Atlantic, where it sinks; a dashed blue arrow carries cold deep water back south along the American side of the ocean." />
+          <figcaption className="small faint">Simplified diagram; the real circulation has many branches and eddies. After Buckley and Marshall (2016), <i>Reviews of Geophysics</i>, <a href="https://doi.org/10.1002/2015RG000493">doi:10.1002/2015RG000493</a>.</figcaption>
+        </figure>
+        <div className="prose">
+          <p className="kicker">What it is</p>
+          <h2 id="what">An ocean conveyor that moves heat north</h2>
+          <p>
+            Warm, salty water flows north near the surface of the Atlantic, through the Gulf Stream and on towards Greenland and
+            Norway. There it gives up its heat to the air, becomes cold and dense, and sinks. It returns south at depth and spreads
+            through the world ocean. Measured at 26.5°N, the circulation moves about {s.rapid.mean} million cubic metres of water a
+            second.
+          </p>
+          <p>
+            The heat it releases keeps northwest Europe milder than other places at the same latitude. It also helps hold the tropical
+            rain belt north of the equator, where the West African and South Asian monsoons depend on it, and it shapes sea level on
+            North Atlantic coasts (Weijer et al., 2019).
+          </p>
+          <p>
+            Two things are often confused. <b>Weakening</b> is gradual, and the IPCC judges it very likely this century under every
+            emissions scenario. <b>Collapse</b> is a tipping point: the circulation falls into a much weaker state and stays there for
+            centuries. The maps below show what a collapse would do; <a href="#sure">how likely it is</a> comes further down.
+          </p>
+        </div>
+      </section>
 
       <section id="explorer" className={`wrap ${styles.explorer}`} aria-label="Scenario explorer">
         <AmocExplorer />
@@ -179,33 +208,7 @@ export default function AmocPage() {
         </div>
       </section>
 
-      <section className="section" aria-labelledby="decide">
-        <div className={`wrap ${styles.split}`}>
-          <div className="prose">
-            <p className="kicker">Why it matters for decisions</p>
-            <h2 id="decide" className={styles.h2}>Planning for a risk that may not happen</h2>
-            <p>
-              On current evidence a collapse this century is a low-likelihood, high-impact risk, and its likelihood is disputed.
-              Planning for it should not displace adaptation that is needed now. Dams, ports, irrigation schemes and crop programmes built today will still be in use when the question is
-              better understood. The direction of many effects is clearer than their size, so the most useful measures are those that
-              help across the range of outcomes. Published estimates of the economic cost of a collapse for developing countries are
-              scarce, and this site does not yet report any.
-            </p>
-          </div>
-          <ol className={styles.steps}>
-            <li><strong>Screen exposure.</strong> Identify the countries and sectors most sensitive to a shift in monsoon rainfall or North Atlantic climate.</li>
-            <li><strong>Stress-test long-lived investments.</strong> Run an AMOC-collapse scenario alongside standard projections.</li>
-            <li><strong>Prefer options that work either way.</strong> Drought-tolerant farming and flexible water storage pay off whether or not the circulation collapses.</li>
-            <li><strong>Link monitoring to decisions.</strong> Tie observations from arrays such as RAPID and OSNAP to thresholds that would trigger action.</li>
-            <li><strong>Count it in global risk.</strong> Reflect AMOC risk in risk assessments and in the case for limiting both the amount and the rate of warming.</li>
-          </ol>
-        </div>
-        <p className={`wrap small muted ${styles.attrib}`}>
-          These steps follow Jongman and Hall (forthcoming). <Link href="/about/">Brenden Jongman</Link> is the curator of this site.
-        </p>
-      </section>
-
-      <section className={`section ${styles.band}`} aria-labelledby="observed">
+      <section className="section" aria-labelledby="observed">
         <div className={`wrap ${styles.split}`}>
           <div className="prose">
             <p className="kicker">What we observe</p>
@@ -225,7 +228,7 @@ export default function AmocPage() {
         </div>
       </section>
 
-      <section className="section" aria-labelledby="tipping">
+      <section className={`section ${styles.band}`} aria-labelledby="tipping">
         <div className="wrap">
           <p className="kicker">What could change</p>
           <h2 id="tipping" className={styles.h2}>Why scientists talk about a tipping point</h2>
@@ -263,7 +266,7 @@ export default function AmocPage() {
         </div>
       </section>
 
-      <section className={`section ${styles.band}`} aria-labelledby="sure">
+      <section className="section" aria-labelledby="sure">
         <div className="wrap">
           <p className="kicker">What we know and don’t know</p>
           <h2 id="sure" className={styles.h2}>How likely is a collapse?</h2>
@@ -315,6 +318,32 @@ export default function AmocPage() {
         </div>
       </section>
 
+
+      <section className={`section ${styles.band}`} aria-labelledby="decide">
+        <div className={`wrap ${styles.split}`}>
+          <div className="prose">
+            <p className="kicker">Why it matters for decisions</p>
+            <h2 id="decide" className={styles.h2}>Planning for a risk that may not happen</h2>
+            <p>
+              On current evidence a collapse this century is a low-likelihood, high-impact risk, and its likelihood is disputed.
+              Planning for it should not displace adaptation that is needed now. Dams, ports, irrigation schemes and crop programmes built today will still be in use when the question is
+              better understood. The direction of many effects is clearer than their size, so the most useful measures are those that
+              help across the range of outcomes. Published estimates of the economic cost of a collapse for developing countries are
+              scarce, and this site does not yet report any.
+            </p>
+          </div>
+          <ol className={styles.steps}>
+            <li><strong>Screen exposure.</strong> Identify the countries and sectors most sensitive to a shift in monsoon rainfall or North Atlantic climate.</li>
+            <li><strong>Stress-test long-lived investments.</strong> Run an AMOC-collapse scenario alongside standard projections.</li>
+            <li><strong>Prefer options that work either way.</strong> Drought-tolerant farming and flexible water storage pay off whether or not the circulation collapses.</li>
+            <li><strong>Link monitoring to decisions.</strong> Tie observations from arrays such as RAPID and OSNAP to thresholds that would trigger action.</li>
+            <li><strong>Count it in global risk.</strong> Reflect AMOC risk in risk assessments and in the case for limiting both the amount and the rate of warming (<Link href="/responses/#warming">how much emissions must fall</Link>).</li>
+          </ol>
+        </div>
+        <p className={`wrap small muted ${styles.attrib}`}>
+          These steps follow Jongman and Hall (forthcoming). <Link href="/about/">Brenden Jongman</Link> is the curator of this site.
+        </p>
+      </section>
 
       <section className="section" aria-labelledby="data">
         <div className="wrap prose">

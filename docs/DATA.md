@@ -101,6 +101,12 @@ only their numbers are used, redrawn.
 - El Niño: weekly traditional and relative Niño-3.4, the ONI and RONI, and the alert status parsed from NOAA's monthly
   diagnostic discussion.
 
+### Topic images (`topic_art.py`)
+- One image per big change, drawn from data where possible: reef heat stress (CRW stations), the Pacific SST anomaly and
+  Antarctic surface currents (snapshots from the day the script runs), and NASA Blue Marble polar views from the GIBS WMS
+  (EPSG:3413 and EPSG:3031). The AMOC and subpolar-gyre images are schematics after Buckley & Marshall (2016); their paths
+  are indicative, not traced from data. `img/amoc-circulation.png` is the labelled AMOC diagram used on the AMOC page.
+
 ### Images (`figures.py`)
 Open Graph previews (1200 × 630) and homepage card images, drawn from the published layers with the same colour scales.
 

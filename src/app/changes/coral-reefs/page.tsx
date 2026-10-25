@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import StoryBrief from "@/components/StoryBrief";
 import Link from "next/link";
 import BleachingEvents from "@/components/BleachingEvents";
 import { ReefFloodSavings, ReefLivelihoods, ReefLongTerm } from "@/components/ReefBenefits";
@@ -28,10 +29,15 @@ export default function CoralPage() {
         </div>
         <div className={styles.heroSide}>
           <p className={styles.standfirst}>
-            Warm-water reefs are bleaching more often than they can recover. The Global Tipping Points Report 2025 assesses that
-            they are crossing their thermal tipping point, estimated at about 1.2°C of global warming; today’s warming is about
-            1.4°C. Close to a billion people live near reefs, and many coasts rely on them to break the waves.
+            Coral reefs are the first large ocean system assessed as passing a tipping point. Close to a billion people live near
+            them, and many coasts rely on them to break the waves.
           </p>
+          <StoryBrief answers={[
+            ["When the sea stays too hot for weeks, corals bleach and many die. Reefs now bleach more often than they can recover.", "#events"],
+            ["It is happening now. Reefs are assessed as crossing their thermal tipping point, and IUCN lists 96% of reef ecosystems as Critically Endangered.", "#threshold"],
+            ["Weaker natural flood defences, and lost fish and income for many of the billion people who live near reefs.", "#coasts"],
+            ["Bring warming back towards 1.2°C and below; protect the reefs most likely to survive; plan for weaker natural defences.", "#responses"],
+          ]} />
           <p className={styles.chips}>
             <span className="evidence evidence--obs">Satellite observations, updated weekly</span>
             <span className="evidence">Reviewed 24 October 2026</span>
@@ -79,6 +85,12 @@ export default function CoralPage() {
                 (<i>very high confidence</i>). IUCN’s first global Red List of Ecosystems assessment, published in October 2026,
                 classifies 122 of 127 shallow reef ecosystems (96%) as Critically Endangered: at very high risk of collapse within 50
                 years under intermediate emissions. IUCN stresses that most reefs still have living coral.
+              </p>
+              <p>
+                These warnings measure different things. The tipping point says warming has passed the level at which reefs as we know
+                them can persist at large scale. The IPCC figures say how much reef is projected to be lost at each level of warming.
+                The Red List rates the risk that each reef ecosystem collapses within 50 years. Together they say that most reefs are
+                still alive, and that most are on course to be lost unless warming is brought back down.
               </p>
               <p>
                 How fast corals can adapt is debated, and some studies suggest more scope than the most-cited models (Klein et al.,
@@ -157,7 +169,7 @@ export default function CoralPage() {
               <p>
                 Temperature is the dominant driver. The Global Tipping Points Report concludes that warming must return below 1.2°C,
                 and eventually towards 1°C, to keep functional reefs at meaningful scale. Every tenth of a degree avoided reduces how
-                often and how badly reefs bleach.
+                often and how badly reefs bleach. <Link href="/responses/#warming">How much emissions must fall</Link>.
               </p>
             </div>
             <div>

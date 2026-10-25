@@ -131,13 +131,8 @@ def bm_crop(lon_c: float, lat_c: float, z: int, w: int, h: int) -> Image.Image:
 
 
 # Region views for topic cards: (centre lon, centre lat, zoom)
+# The six big-change images are drawn in topic_art.py; only the general card stays a Blue Marble view.
 TOPIC_VIEWS = {
-    "amoc": (-35, 35, 3),
-    "subpolar-gyre": (-40, 58, 4),
-    "southern-ocean": (-45, -64, 4),
-    "coral-reefs": (147.5, -18.5, 6),
-    "ice-sheets": (-42, 72, 4),
-    "el-nino": (-130, 0, 3),
     "ocean-today": (-150, 5, 2),
 }
 
@@ -206,6 +201,8 @@ def main() -> None:
     card(ROOT / "img" / "amoc-winter.png", winter, cmocean.cm.balance, 15, fit(0, 30, 75, 8, 5.6), size=(8, 5.6))
     card(ROOT / "img" / "amoc-rain.png", rain, matplotlib.colormaps['BrBG'], 50, fit(30, -5, 35, 8, 3.2), size=(8, 3.2), stipple=agree)
     topic_images()
+    import topic_art
+    topic_art.main()
     print("  wrote og/*.png, img/*.jpg and img/topics/*.jpg")
 
 

@@ -25,3 +25,17 @@
 .risks tbody th { font-weight: 600; width: 26%; }
 .risks td { color: var(--text-2); }
 @media (max-width: 860px) { .change { grid-template-columns: minmax(0, 1fr); } }
+.image { margin: 0; }
+.image figcaption { margin-top: 0.5rem; }
+.context { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem 2rem; margin: 2rem 0 0; }
+.context h3, .termsH { font-size: 1.1rem; margin-bottom: 0.4rem; }
+.context p { margin: 0; color: var(--text-2); }
+.termsH { margin: 2.2rem 0 0.6rem; }
+.terms { width: 100%; border-collapse: collapse; font-size: 0.93rem; }
+.terms th, .terms td { text-align: left; vertical-align: top; padding: 0.7rem 1rem 0.7rem 0; border-top: 1px solid var(--line-2); }
+.terms thead th { font-size: 0.8rem; color: var(--text-2); font-weight: 600; border-top: 0; }
+.terms tbody th { font-weight: 600; width: 24%; }
+.terms td { color: var(--text-2); }
+.terms td:last-child { width: 30%; }
+@media (max-width: 860px) { .context { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 640px) { .terms thead { display: none; } .terms tr { display: grid; gap: 0.25rem; padding: 0.7rem 0; border-top: 1px solid var(--line-2); } .terms th, .terms td { border: 0; padding: 0; width: auto !important; } .terms td:last-child { font-size: 0.85rem; color: var(--text-3); } }

@@ -6,52 +6,58 @@ import styles from "./changes.module.css";
 
 export const metadata: Metadata = {
   title: "Big changes",
-  description: "The large changes under way in the ocean: what is changing, who and what is exposed, and what decision-makers can do.",
+  description: "The large changes under way in the ocean: what each one is, how likely it is, what it would mean, and what can be done.",
   alternates: { canonical: abs("/changes/") },
 };
 
 const CHANGES = [
   {
     slug: "el-nino", title: "El Niño and the tropical Pacific", story: "/changes/el-nino/", storyLabel: "How El Niño is changing",
-    horizon: "Now, every few years; forecastable months ahead",
-    change: "As of October 2026 a strong El Niño is under way. Warming is expected to make El Niño’s rainfall swings larger.",
-    people: "Droughts and floods across the tropics, food shortages, sharp falls in fish catches and coral bleaching, with economic losses that last for years.",
-    decisions: "Act on seasonal forecasts with agreed triggers and pre-arranged finance, and size reserves and insurance for stronger events.",
+    image: "Sea temperature compared with normal across the Pacific in October 2026: the red tongue along the equator is El Niño.",
+    what: "A natural warming of the eastern tropical Pacific every few years that shifts rain and drought around the world. A strong El Niño is under way in 2026.",
+    likely: "El Niño will keep coming. Stronger extremes under warming are expected (medium confidence); a lasting El Niño-like Pacific is plausible but contested. It is not assessed as a tipping system.",
+    means: "Droughts and floods across the tropics, food shortages, disease outbreaks and sharp falls in fish catches, with economic losses that last for years.",
+    done: "Act on seasonal forecasts with agreed triggers and pre-arranged finance; size reserves and insurance for stronger events. Earlier net zero limits the long-term shift.",
   },
   {
     slug: "coral-reefs", title: "Coral reefs", story: "/changes/coral-reefs/", storyLabel: "See heat stress at every reef region",
-    horizon: "Under way",
-    change: "The Global Tipping Points Report 2025 assesses that warm-water reefs are crossing their thermal tipping point, estimated at about 1.2°C of global warming (range 1.0–1.5°C). Today’s warming is about 1.4°C. Reefs tip place by place.",
-    people: "Reefs protect coasts from waves and support fisheries and tourism; about a billion people live within 100 km of one.",
-    decisions: "Protect the reefs most likely to survive, reduce local pressures, and plan for weaker natural coastal protection.",
+    image: "Peak heat stress at reef regions of the Indian Ocean and Pacific in 2023–2025; darker red means coral deaths were likely.",
+    what: "When the sea stays too hot for weeks, corals bleach and many die. Reefs now bleach more often than they can recover.",
+    likely: "Happening now. Reefs are assessed as crossing their thermal tipping point, about 1.2°C of warming (range 1.0–1.5°C), and IUCN lists 96% of reef ecosystems as Critically Endangered.",
+    means: "About a billion people live within 100 km of a reef. Losing reefs weakens natural flood defences and cuts fish and tourism income.",
+    done: "Bring warming back towards 1.2°C and below; protect the reefs most likely to survive and reduce local pressures; plan for weaker natural defences.",
   },
   {
     slug: "ice-sheets", title: "Ice sheets", story: "/changes/ice-sheets/", storyLabel: "Thresholds, commitment and the coast",
-    horizon: "At risk since about 1°C; the rise unfolds over centuries to millennia",
-    change: "The Global Tipping Points Report 2025 has high confidence that Greenland and West Antarctica have tipping points, and parts may already have crossed them. Each degree of peak warming commits metres of eventual sea-level rise.",
-    people: "Low islands, deltas and coastal cities, and every port, power plant and district built to stand beyond 2100.",
-    decisions: "Keep peak warming low, test long-lived coastal assets against a high-end rise, and set triggers to raise defences or move.",
+    image: "The Greenland and Antarctic ice sheets, which together hold enough ice to raise the sea by about 65 metres.",
+    what: "Greenland and Antarctica are losing ice four times faster than in the 1990s. Past a threshold, feedbacks keep an ice sheet shrinking even if warming stops.",
+    likely: "High confidence that both have tipping points, at risk since about 1°C of warming. Whether parts of West Antarctica have already passed one is disputed.",
+    means: "Metres of sea-level rise, locked in over centuries to millennia. How fast it comes is the main uncertainty for coasts, deltas and islands.",
+    done: "Keep peak warming low and bring it back towards 1°C; test ports, defences and new districts against a high-end rise.",
   },
   {
     slug: "amoc", title: "Atlantic circulation", story: "/changes/atlantic-circulation/", storyLabel: "Explore the scenarios",
-    horizon: "Weakening very likely this century; collapse a low-likelihood, high-impact risk",
-    change: "Very likely to weaken this century. The IPCC has medium confidence that it will not collapse before 2100; newer studies disagree on that risk.",
-    people: "Much colder winters in northwest Europe, weaker monsoons in West Africa and South Asia, and faster sea-level rise on North Atlantic coasts.",
-    decisions: "Stress-test long-lived investments against a collapse, and link Atlantic monitoring to decision triggers.",
+    image: "The Atlantic overturning circulation: warm water flows north near the surface (red), sinks in the far north and returns south at depth (blue).",
+    what: "A system of currents that carries warm water north through the Atlantic and cold water back south at depth. It keeps northwest Europe mild and holds the tropical rain belts in place.",
+    likely: "Weakening this century is very likely. A collapse is a low-likelihood, high-impact risk: the IPCC has medium confidence it will not happen before 2100, and newer studies disagree.",
+    means: "Much colder winters in northwest Europe, weaker monsoons in West Africa and South Asia, and faster sea-level rise on North Atlantic coasts, lasting centuries.",
+    done: "Limit both the amount and the speed of warming; stress-test long-lived investments against a collapse and favour measures that help either way.",
   },
   {
     slug: "subpolar-gyre", title: "Subpolar North Atlantic", story: null, storyLabel: "",
-    horizon: "Possible within a decade in a minority of models",
-    change: "In some climate models, winter convection south of Greenland shuts down within a decade, cooling the region abruptly.",
-    people: "Rapid cooling around the North Atlantic, shifts in European weather and changes to fisheries.",
-    decisions: "Include abrupt regional cooling in European climate risk assessments, and keep the observing arrays running.",
+    image: "The subpolar gyre: an anticlockwise loop of currents south of Greenland, with the winter sinking regions in the Labrador and Irminger Seas.",
+    what: "A loop of currents south of Greenland where surface water sinks every winter, one of the engines of the Atlantic circulation.",
+    likely: "Possible this century: in a minority of climate models winter sinking shuts down within a decade. Threshold estimate about 1.8°C, with a wide range (1.1–3.8°C).",
+    means: "Rapid regional cooling around the North Atlantic, shifts in European weather, and changes to fisheries.",
+    done: "Include abrupt regional cooling in European climate risk assessments, and keep the ocean observing arrays running.",
   },
   {
     slug: "southern-ocean", title: "Southern Ocean", story: null, storyLabel: "",
-    horizon: "Slow changes under way, with long-term effects on warming and sea level",
-    change: "Dense water forming around Antarctica is declining in key regions, and Antarctic sea ice has fallen to record lows since 2016.",
-    people: "The Southern Ocean absorbs much of the heat and carbon people add; changes affect global warming, sea level and the krill fishery.",
-    decisions: "Sustain Southern Ocean observations, and avoid assuming the ocean carbon sink will keep pace.",
+    image: "Surface currents around Antarctica in October 2026: the bright band is the Antarctic Circumpolar Current.",
+    what: "The ocean around Antarctica absorbs much of the heat and carbon people add, and forms the dense water that fills the deep ocean.",
+    likely: "Slow changes are under way: dense-water formation is declining in key regions, and Antarctic sea ice has been at record lows since 2016.",
+    means: "Changes feed back on global warming and sea level, and affect the krill fishery at the base of the Antarctic food web.",
+    done: "Sustain Southern Ocean observations, and do not assume the ocean carbon sink will keep pace.",
   },
 ];
 
@@ -61,8 +67,9 @@ export default function Changes() {
       <header className={styles.head}>
         <h1 className={styles.title}>The big changes</h1>
         <p className="lede">
-          Six ocean systems are changing in ways that matter for development, investment and public finance. For each: what is
-          changing, who and what is exposed, and what decision-makers can do now. They are ordered by how soon they demand attention.
+          Six ocean systems are changing in ways that matter for development, investment and public finance. For each, four questions:
+          what it is, how likely the change is, what it would mean for people and economies, and what can be done about it. They are
+          ordered by how soon they demand attention.
         </p>
       </header>
 
@@ -71,17 +78,20 @@ export default function Changes() {
       <ol className={styles.changes}>
         {CHANGES.map((c) => (
           <li key={c.slug} className={styles.change}>
-            <Link href={c.story ?? `/science/${c.slug}/`} className={styles.image} tabIndex={-1} aria-hidden>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={asset(`/img/topics/${c.slug}.jpg`)} alt="" width={1200} height={800} loading="lazy" />
-            </Link>
+            <figure className={styles.image}>
+              <Link href={c.story ?? `/science/${c.slug}/`} tabIndex={-1} aria-hidden>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={asset(`/img/topics/${c.slug}.jpg`)} alt="" width={1200} height={800} loading="lazy" />
+              </Link>
+              <figcaption className="small faint">{c.image}</figcaption>
+            </figure>
             <div className={styles.body}>
               <h2><Link href={c.story ?? `/science/${c.slug}/`}>{c.title}</Link></h2>
-              <p className={styles.horizon}>{c.horizon}</p>
               <dl>
-                <dt>What is changing</dt><dd>{c.change}</dd>
-                <dt>Who and what is exposed</dt><dd>{c.people}</dd>
-                <dt>What decision-makers can do</dt><dd>{c.decisions}</dd>
+                <dt>What is it?</dt><dd>{c.what}</dd>
+                <dt>How likely is it?</dt><dd>{c.likely}</dd>
+                <dt>What would it mean?</dt><dd>{c.means}</dd>
+                <dt>What can be done?</dt><dd>{c.done}</dd>
               </dl>
               <p className={styles.links}>
                 {c.story && <Link className="button" href={c.story}>{c.storyLabel}</Link>}
@@ -91,7 +101,10 @@ export default function Changes() {
           </li>
         ))}
       </ol>
-      <p className={`small faint ${styles.credit}`}>Imagery: NASA Blue Marble.</p>
+      <p className={`small faint ${styles.credit}`}>
+        Images: NOAA Coral Reef Watch (reefs, El Niño); NASA Blue Marble (ice sheets, Southern Ocean) with NOAA CoastWatch currents;
+        circulation diagrams after Buckley and Marshall (2016). <Link href="/responses/">What can be done across all of them</Link>.
+      </p>
 
       <section className={styles.risks} aria-labelledby="risks">
         <h2 id="risks">Where the risks fall</h2>
@@ -112,14 +125,43 @@ export default function Changes() {
       </section>
 
       <section className={styles.thresholds} aria-labelledby="thresholds">
-        <h2 id="thresholds">Where the tipping thresholds lie</h2>
+        <h2 id="thresholds">Tipping points are one part of the picture</h2>
         <p>
           A tipping point is a level of warming beyond which a system keeps changing on its own, even if warming stops. The chart shows
-          scientists’ best estimates of that level for five ocean and ice systems, against today’s warming of about 1.4°C. Passing a
-          threshold commits a system to change at very different speeds: reefs within about a decade, ice sheets over thousands of
-          years. El Niño is not shown because it is not assessed as a tipping system.
+          scientists’ best estimates of that level for five ocean and ice systems, against today’s warming of about 1.4°C. The estimates
+          are wide ranges, based on models, observations and past climates.
         </p>
         <ThresholdChart />
+        <div className={styles.context}>
+          <div>
+            <h3>Change starts before any threshold</h3>
+            <p>
+              Living coral cover has roughly halved since the 1950s, the ice sheets are losing ice ever faster, and the Atlantic circulation
+              is very likely to weaken this century whether or not it tips. These gradual changes already matter for decisions.
+            </p>
+          </div>
+          <div>
+            <h3>Crossing is not the same as collapse</h3>
+            <p>
+              Passing a threshold sets the direction, not the speed: reefs change within about a decade, the Atlantic circulation over
+              decades to centuries, ice sheets over thousands of years. Bringing warming back down quickly can still limit the damage.
+            </p>
+          </div>
+        </div>
+        <h3 className={styles.termsH}>How to read the warnings</h3>
+        <div className={styles.tableWrap}>
+          <table className={styles.terms}>
+            <thead><tr><th scope="col">When you read…</th><th scope="col">It means</th><th scope="col">Example</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">“Crossing a tipping point”</th><td>Warming has passed the level beyond which the system keeps changing on its own. It says nothing about how fast.</td><td>Warm-water coral reefs (Global Tipping Points Report 2025)</td></tr>
+              <tr><th scope="row">“Critically Endangered”</th><td>An ecosystem faces a very high risk of collapse within about 50 years. Much of it can still be alive today.</td><td>122 of 127 shallow coral reef ecosystems (IUCN Red List of Ecosystems, 2026)</td></tr>
+              <tr><th scope="row">“Very likely”, “likely”</th><td>IPCC probability terms: very likely means 90–100%, likely means 66–100%.</td><td>The Atlantic circulation will very likely weaken this century</td></tr>
+              <tr><th scope="row">“Medium confidence”</th><td>How strong and consistent the IPCC judges the evidence to be, separate from probability.</td><td>Medium confidence that the Atlantic circulation will not collapse before 2100</td></tr>
+              <tr><th scope="row">“Cannot be ruled out”, “low likelihood, high impact”</th><td>An outcome too uncertain to give a probability, but serious enough to plan for.</td><td>Sea-level rise approaching 2 m by 2100 (IPCC, 2021)</td></tr>
+              <tr><th scope="row">“A planetary boundary has been crossed”</th><td>Humanity has left the range considered safe for a stable Earth system. Risk rises; it is not a point of sudden change.</td><td>Ocean acidification (Planetary Health Check 2025)</td></tr>
+            </tbody>
+          </table>
+        </div>
       </section>
     </div>
   );

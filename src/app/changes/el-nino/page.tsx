@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import type { Metadata } from "next";
+import StoryBrief from "@/components/StoryBrief";
 import Link from "next/link";
 import { EnsoWeekly, type EnsoData } from "@/components/EnsoCharts";
 import ExtremeElNinoChart from "@/components/ExtremeElNinoChart";
@@ -53,11 +54,15 @@ export default function ElNinoPage() {
         </div>
         <div className={styles.heroSide}>
           <p className={styles.standfirst}>
-            El Niño is a natural swing, and a strong one is under way in 2026. The bigger question is what warming does to it.
-            Most models project more frequent extreme El Niños, and a study published in October 2026 finds that the Pacific can
-            stay in a more El Niño-like state for centuries after emissions reach net zero. Observations so far point the other way,
-            so treat it as a risk to plan for rather than a settled forecast.
+            A strong El Niño is under way in 2026. The bigger question is what warming does to it: new research finds the Pacific
+            can stay in a more El Niño-like state for centuries after net zero, with more frequent extremes.
           </p>
+          <StoryBrief answers={[
+            ["A natural warming of the eastern tropical Pacific every few years that shifts rain and drought around the world.", "#now"],
+            ["El Niño will keep coming. Stronger extremes are expected (medium confidence); a lasting El Niño-like Pacific is plausible but contested.", "#sure"],
+            ["Droughts, floods, food shortages and disease outbreaks, with economic losses that last for years, mostly in tropical countries.", "#stakes"],
+            ["Act on forecasts with pre-arranged finance; size reserves and insurance for stronger events; earlier net zero limits the long-term shift.", "#decide"],
+          ]} />
           <p className={styles.chips}>
             <span className="evidence evidence--obs">Observations, updated daily</span>
             <span className="evidence evidence--model">Model projections</span>
@@ -313,7 +318,7 @@ export default function ElNinoPage() {
               <h3>Earlier net zero limits the shift</h3>
               <p>
                 In the model runs, each delay in reaching net zero made the El Niño-like state stronger and longer-lasting. Emission cuts
-                are the only lever on the long-term change.
+                are the only lever on the long-term change. <Link href="/responses/#warming">How much emissions must fall</Link>.
               </p>
             </div>
           </div>

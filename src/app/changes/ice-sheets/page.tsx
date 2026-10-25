@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import type { Metadata } from "next";
+import StoryBrief from "@/components/StoryBrief";
 import Link from "next/link";
 import CommitmentChart from "@/components/CommitmentChart";
 import IceSheetCities, { type City } from "@/components/IceSheetCities";
@@ -39,11 +40,12 @@ export default function IceSheetsPage() {
             points, and finds them at risk since about 1°C of warming. Parts may already have crossed. Tipping would not flood coasts
             overnight. It would lock in metres of sea-level rise over centuries to millennia, and nobody can yet say how fast.
           </p>
-          <ul className={own.brief}>
-            <li><b>Known:</b> the ice sheets are losing ice ever faster, and sea level will keep rising for centuries (<i>high confidence</i>).</li>
-            <li><b>Disputed:</b> whether parts of West Antarctica have already passed a tipping point, and how fast loss could accelerate.</li>
-            <li><b>What to do:</b> keep peak warming low, and plan long-lived coastal assets for a high-end rise.</li>
-          </ul>
+          <StoryBrief answers={[
+            ["Greenland and Antarctica hold enough ice to raise the sea by about 65 m. Past a threshold, feedbacks keep an ice sheet shrinking even if warming stops.", "#commit"],
+            ["High confidence that both have tipping points, at risk since about 1°C of warming; whether parts of West Antarctica have already passed one is disputed.", "#threshold"],
+            ["Metres of sea-level rise locked in over centuries to millennia. How fast it comes is the big unknown for coastal cities, deltas and islands.", "#coasts"],
+            ["Keep peak warming as low as possible and bring it back towards 1°C; plan ports, defences and new districts for a high-end rise.", "#decide"],
+          ]} />
         </div>
       </header>
 
