@@ -15,8 +15,7 @@
 1. **Seasonal outlook.** NOAA Coral Reef Watch's four-month bleaching heat-stress outlook and a seasonal SST anomaly
    forecast, added to Ocean now and the coral story, clearly labelled as probabilistic forecasts.
 2. **Responses: marine protection.** Where reefs that are coping better with heat (refugia) overlap with effective protection;
-   protection coverage and no-take share by region. Coordinate with existing marine-protection finance work before
-   publishing any original analysis.
+   protection coverage and no-take share by region, from published sources only.
 3. **People exposed to AMOC rainfall change.** Combine the four-model rainfall layer with GHSL population (JRC, CC BY 4.0),
    labelled as exposure, not impact.
 4. **Ice sheets and sea level story.** IMBIE mass balance and IPCC AR6 regional sea-level projections; dynamic sea-level
