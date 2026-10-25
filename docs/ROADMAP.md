@@ -12,8 +12,8 @@
 - Ice sheets, the subpolar gyre and the Southern Ocean have explainers but no dedicated interactive story yet.
 
 ## Next priorities (suggested order)
-1. **Seasonal outlook.** NOAA Coral Reef Watch's four-month bleaching heat-stress outlook and a seasonal SST anomaly
-   forecast, added to Ocean now and the coral story, clearly labelled as probabilistic forecasts.
+1. **Marine heatwave outlook.** NOAA PSL's experimental marine heatwave forecasts (Jacox et al., 2022), labelled separately
+   from Coral Reef Watch products because the definitions differ.
 2. **Responses: marine protection.** Where reefs that are coping better with heat (refugia) overlap with effective protection;
    protection coverage and no-take share by region, from published sources only.
 3. **People exposed to AMOC rainfall change.** Combine the four-model rainfall layer with GHSL population (JRC, CC BY 4.0),

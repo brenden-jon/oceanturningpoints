@@ -1,5 +1,7 @@
 .wrap { display: grid; gap: 1rem; }
 .toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.8rem 1.5rem; }
+.controls { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.badge { position: absolute; z-index: 3; top: 1rem; left: 1rem; background: #6b4bb0; color: #fff; font: 600 0.8125rem/1 var(--font); padding: 0.45rem 0.7rem; border-radius: 999px; }
 .seg { display: inline-grid; grid-auto-flow: column; background: #eceef0; border-radius: 9px; padding: 2px; gap: 2px; }
 .seg button { background: transparent; border: 0; cursor: pointer; padding: 0.5rem 0.9rem; border-radius: 7px; font: 500 0.9rem/1.1 var(--font); color: var(--text); white-space: nowrap; }
 .seg button[aria-pressed="true"] { background: #fff; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.14); font-weight: 600; }

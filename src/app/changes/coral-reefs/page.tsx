@@ -41,7 +41,7 @@ export default function CoralPage() {
       </header>
 
       <section className="wrap" aria-label="Coral heat stress today">
-        <OceanNowGlobe ssta={m.ssta} dhw={m.dhw} currents={m.currents} initialLayer="dhw" initialView="coral" protectedAreas />
+        <OceanNowGlobe ssta={m.ssta} dhw={m.dhw} currents={m.currents} bleachOutlook={m.bleachingOutlook} sstOutlook={m.sstOutlook} initialLayer="dhw" initialView="coral" protectedAreas />
       </section>
 
       <section className="section" aria-labelledby="events">

@@ -34,7 +34,7 @@
   "relative34": 2.4,
   "status": "El Niño Advisory"
  },
- "updated": "2026-10-25T02:45Z",
+ "updated": "2026-10-25T02:56Z",
  "status": {
   "currents": {
    "ok": true
@@ -46,6 +46,12 @@
    "ok": true
   },
   "dhw": {
+   "ok": true
+  },
+  "bleachingOutlook": {
+   "ok": true
+  },
+  "sstOutlook": {
    "ok": true
   },
   "seaIce": {
@@ -125,6 +131,104 @@
    "median8110": 18.114,
    "rankLowest": 2,
    "years": 44
+  }
+ },
+ "bleachingOutlook": {
+  "file": "bleaching_outlook.png",
+  "vmin": 0.0,
+  "vmax": 4.0,
+  "step": 0.01575,
+  "bytes": 8413,
+  "date": "2026-10-18",
+  "validFrom": "2026-11-01",
+  "validTo": "2027-02-28",
+  "grid": {
+   "lat0": -89.75,
+   "lat1": 89.75,
+   "lon0": -179.75,
+   "lon1": 179.75,
+   "res": 0.5,
+   "h": 360,
+   "w": 720,
+   "rowOrder": "north-to-south"
+  },
+  "units": "alert level",
+  "domain": 4,
+  "scale": "heat",
+  "categories": [
+   "No stress",
+   "Watch",
+   "Warning",
+   "Alert level 1",
+   "Alert level 2"
+  ],
+  "source": {
+   "org": "NOAA Coral Reef Watch",
+   "product": "Four-Month Coral Bleaching Heat Stress Outlook v5 (CFSv2), 60% probability",
+   "url": "https://coralreefwatch.noaa.gov/satellite/bleachingoutlook_cfs/outlook_cfs.php",
+   "doi": "10.3389/fmars.2018.00057",
+   "licence": "Use without restriction; credit NOAA Coral Reef Watch"
+  }
+ },
+ "sstOutlook": {
+  "date": "2026-10-08",
+  "layers": [
+   {
+    "file": "sst_outlook_1.png",
+    "vmin": -2.7031,
+    "vmax": 5.8516,
+    "step": 0.03368,
+    "bytes": 19288,
+    "lead": 1,
+    "month": "November 2026"
+   },
+   {
+    "file": "sst_outlook_2.png",
+    "vmin": -2.6145,
+    "vmax": 6.1417,
+    "step": 0.03447,
+    "bytes": 18740,
+    "lead": 2,
+    "month": "December 2026"
+   },
+   {
+    "file": "sst_outlook_3.png",
+    "vmin": -2.6108,
+    "vmax": 5.8264,
+    "step": 0.03322,
+    "bytes": 18596,
+    "lead": 3,
+    "month": "January 2027"
+   },
+   {
+    "file": "sst_outlook_4.png",
+    "vmin": -3.0529,
+    "vmax": 5.2611,
+    "step": 0.03273,
+    "bytes": 18359,
+    "lead": 4,
+    "month": "February 2027"
+   }
+  ],
+  "grid": {
+   "lat0": -90.0,
+   "lat1": 90.0,
+   "lon0": -180.0,
+   "lon1": 179.0,
+   "res": 1.0,
+   "h": 181,
+   "w": 360,
+   "rowOrder": "north-to-south"
+  },
+  "units": "°C",
+  "domain": 4,
+  "scale": "temperature",
+  "source": {
+   "org": "NOAA Climate Prediction Center",
+   "product": "North American Multi-Model Ensemble, ensemble-mean sea-surface temperature anomaly forecast",
+   "url": "https://www.cpc.ncep.noaa.gov/products/NMME/",
+   "doi": "10.1175/BAMS-D-12-00050.1",
+   "licence": "Public domain"
   }
  }
 }

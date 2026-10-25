@@ -16,6 +16,8 @@ All raw downloads are cached in `pipeline/.cache` (not committed). Rebuild every
 | NOAA CoastWatch blended near-real-time surface currents | NOAA CoastWatch ERDDAP (`noaacwBLENDEDNRTcurrentsDaily`) | Public domain | Animated currents (refreshed daily) | `ocean_now.py` |
 | ENSO indices and discussion | NOAA Climate Prediction Center (weekly Niño indices, ONI, RONI) | Public domain | El Niño status and charts (refreshed daily) | `ocean_now.py` |
 | Sea Ice Index v4 (G02135) | NSIDC; Fetterer et al., doi:10.7265/a98x-0f50 | Free with citation | Arctic and Antarctic sea-ice charts (refreshed daily) | `ocean_now.py` |
+| CRW Four-Month Coral Bleaching Heat Stress Outlook v5 (CFSv2), 60% level | NOAA Coral Reef Watch; Liu et al. (2018) Front. Mar. Sci. 5:57 | Use without restriction, with credit | Bleaching outlook (weekly) | `ocean_now.py` |
+| NMME ensemble-mean SST anomaly forecast | NOAA Climate Prediction Center; Kirtman et al. (2014) BAMS 95, 585–601 | Public domain | Temperature outlook, 1–4 months (monthly) | `ocean_now.py` |
 | World Database on Protected Areas | UNEP-WCMC and IUCN, Protected Planet | Non-commercial use with attribution; **displayed via UNEP-WCMC's map service, not downloaded or redistributed** | Marine protected areas on the coral globe | n/a |
 | Natural Earth 1:110m and 1:50m coastlines, land, boundary lines | naturalearthdata.com | Public domain | Map lines; preview images | `basemap_and_scales.py` |
 | Blue Marble Shaded Relief and Bathymetry | NASA Earth Observatory via NASA GIBS (tiles requested by the browser) | Public domain (credit NASA) | Homepage globe, atlas, home preview image | n/a; `figures.py` for the preview |
@@ -79,6 +81,9 @@ All raw downloads are cached in `pipeline/.cache` (not committed). Rebuild every
   35°N only, and values above 60 °C-weeks are treated as invalid.
 - Sea ice: daily extent for both hemispheres; the 1981–2010 median and the record low for each day of the year are computed
   from the full record.
+- Outlooks: the newest Coral Reef Watch outlook file is found from the directory listing (its name embeds the forecast window);
+  the NMME run is looked up for the current month and up to two months back. NMME leads 1–4 are kept and masked to ocean using
+  today's satellite SST grid. Both are labelled "Forecast" wherever they appear.
 - El Niño: weekly traditional and relative Niño-3.4, the ONI and RONI, and the alert status parsed from NOAA's monthly
   diagnostic discussion.
 

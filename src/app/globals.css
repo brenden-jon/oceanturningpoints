@@ -101,6 +101,7 @@ h3, .h3 { font-size: 1.3rem; line-height: 1.25; letter-spacing: -0.015em; font-w
 .evidence--obs { color: #1b7a5a; }
 .evidence--model { color: var(--accent); }
 .evidence--caveat { color: var(--alert); }
+.evidence--forecast { color: #6b4bb0; }
 
 .button {
   display: inline-flex; align-items: center; justify-content: center; gap: 0.4em;

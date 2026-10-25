@@ -31,6 +31,13 @@
     year, last year, the 1981–2010 daily median and the record low for each
     day of the year.
 
+5. Outlooks (forecasts, clearly labelled as such)
+    NOAA Coral Reef Watch Four-Month Coral Bleaching Heat Stress Outlook v5,
+    60% probability level (Liu et al. 2018, doi:10.3389/fmars.2018.00057),
+    weekly. NOAA CPC North American Multi-Model Ensemble (NMME) mean
+    sea-surface temperature anomaly forecast (Kirtman et al. 2014,
+    doi:10.1175/BAMS-D-12-00050.1), monthly; leads 1–4, masked to ocean.
+
 Every fetch is time-limited. If a source fails, the previous output is kept
 and the failure is recorded, so a broken upstream never breaks the site.
 """
@@ -136,6 +143,94 @@ def dhw() -> dict:
                       "source": {"org": "NOAA Coral Reef Watch", "product": "Daily global 5 km Degree Heating Weeks (v3.1)",
                                  "url": "https://coralreefwatch.noaa.gov/product/5km/index_5km_dhw.php", "licence": "Use without restriction; credit NOAA Coral Reef Watch"}},
                      tropics_only=True)
+
+
+# ----------------------------------------------------------------- outlooks
+
+CRW_OUTLOOK = "https://www.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/outlook/v5/nc/v1/outlook"
+
+
+def bleaching_outlook() -> dict:
+    import netCDF4 as nc
+    from common import encode_grid
+    year = dt.date.today().year
+    names = []
+    for y in (year, year - 1):
+        listing = get(f"{CRW_OUTLOOK}/{y}/", 120).decode("latin-1")
+        names = sorted(set(re.findall(r'cfsv2_outlook-060perc_4mon-and-wkly_v5_icwk(\d{8})_for_(\d{8})to(\d{8})\.nc', listing)))
+        if names:
+            break
+    ic, start, end = names[-1]
+    fname = f"cfsv2_outlook-060perc_4mon-and-wkly_v5_icwk{ic}_for_{start}to{end}.nc"
+    d = nc.Dataset("o.nc", memory=get(f"{CRW_OUTLOOK}/{ic[:4]}/{fname}", 180))
+    a = np.ma.filled(np.squeeze(d["CRW_BAA_FourMonth"][:]).astype(float), np.nan)
+    lat = np.asarray(d["lat"][:], dtype=float); lon = np.asarray(d["lon"][:], dtype=float)
+    if lat[0] < lat[-1]:
+        a, lat = a[::-1], lat[::-1]
+    if lon.max() > 180:
+        k = int(np.argmax(lon > 180)); a = np.roll(a, -k, axis=1); lon = np.roll(np.where(lon > 180, lon - 360, lon), -k)
+    a[np.abs(lat) > 35] = np.nan
+    a[(a < 0) | (a > 4)] = np.nan
+    meta = encode_grid(a[::-1], NOW / "bleaching_outlook.png")
+    iso = lambda x: f"{x[:4]}-{x[4:6]}-{x[6:]}"
+    return {**meta, "date": iso(ic), "validFrom": iso(start), "validTo": iso(end),
+            "grid": {"lat0": float(lat.min()), "lat1": float(lat.max()), "lon0": float(lon.min()), "lon1": float(lon.max()),
+                     "res": float(round(abs(lat[0] - lat[1]), 4)), "h": int(lat.size), "w": int(lon.size), "rowOrder": "north-to-south"},
+            "units": "alert level", "domain": 4, "scale": "heat",
+            "categories": ["No stress", "Watch", "Warning", "Alert level 1", "Alert level 2"],
+            "source": {"org": "NOAA Coral Reef Watch", "product": "Four-Month Coral Bleaching Heat Stress Outlook v5 (CFSv2), 60% probability",
+                       "url": "https://coralreefwatch.noaa.gov/satellite/bleachingoutlook_cfs/outlook_cfs.php", "doi": "10.3389/fmars.2018.00057",
+                       "licence": "Use without restriction; credit NOAA Coral Reef Watch"}}
+
+
+NMME = "https://ftp.cpc.ncep.noaa.gov/NMME/realtime_anom/ENSMEAN"
+MONTH_NAMES = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+
+
+def sst_outlook() -> dict:
+    import netCDF4 as nc
+    from common import encode_grid
+    today = dt.date.today()
+    raw, init = None, None
+    for back in range(0, 3):
+        y, m = today.year, today.month - back
+        while m < 1:
+            y, m = y - 1, m + 12
+        try:
+            raw = get(f"{NMME}/{y}{m:02d}0800/NMME.tmpsfc.{y}{m:02d}.ENSMEAN.anom.nc", 180); init = (y, m); break
+        except Exception:
+            continue
+    if raw is None:
+        raise RuntimeError("no NMME run found in the last three months")
+    d = nc.Dataset("n.nc", memory=raw)
+    f = np.ma.filled(d["fcst"][:].astype(float), np.nan)        # (lead, lat, lon), lat 90 -> -90, lon 0..359
+    lat = np.asarray(d["lat"][:], dtype=float); lon = np.asarray(d["lon"][:], dtype=float)
+    if lat[0] < lat[-1]:
+        f, lat = f[:, ::-1], lat[::-1]
+    k = int(np.argmax(lon >= 180)); f = np.roll(f, -k, axis=2); lon = np.roll(np.where(lon >= 180, lon - 360, lon), -k)
+    # Ocean mask from today's satellite SST anomaly (0.25°): a 1° cell counts as ocean if its centre is ocean.
+    ssta = np.asarray(Image.open(NOW / "ssta.png"))             # north to south, 0 = no data
+    sm = json.loads((NOW / "manifest.json").read_text())["ssta"]["grid"]
+    rows = np.clip(np.rint((sm["lat1"] - lat) / sm["res"]).astype(int), 0, sm["h"] - 1)
+    cols = np.clip(np.rint((lon - sm["lon0"]) / sm["res"]).astype(int), 0, sm["w"] - 1)
+    ocean = ssta[np.ix_(rows, cols)] > 0
+    layers = []
+    for lead in range(1, 5):
+        a = f[lead].copy()
+        a[~ocean] = np.nan
+        if not np.isfinite(a).any() or np.nanmax(np.abs(a)) == 0:
+            continue
+        y, m = init[0], init[1] + lead
+        while m > 12:
+            y, m = y + 1, m - 12
+        meta = encode_grid(a[::-1], NOW / f"sst_outlook_{lead}.png")
+        layers.append({**meta, "lead": lead, "month": f"{MONTH_NAMES[m - 1]} {y}"})
+    return {"date": f"{init[0]}-{init[1]:02d}-08", "layers": layers,
+            "grid": {"lat0": float(lat.min()), "lat1": float(lat.max()), "lon0": float(lon.min()), "lon1": float(lon.max()),
+                     "res": 1.0, "h": int(lat.size), "w": int(lon.size), "rowOrder": "north-to-south"},
+            "units": "°C", "domain": 4, "scale": "temperature",
+            "source": {"org": "NOAA Climate Prediction Center", "product": "North American Multi-Model Ensemble, ensemble-mean sea-surface temperature anomaly forecast",
+                       "url": "https://www.cpc.ncep.noaa.gov/products/NMME/", "doi": "10.1175/BAMS-D-12-00050.1", "licence": "Public domain"}}
 
 
 # ------------------------------------------------------------------ sea ice
@@ -295,6 +390,11 @@ def main() -> None:
         if r:
             manifest[key] = r
             print(f"  {key} {r['date']}: {r['bytes']/1e3:.0f} kB, range {r['vmin']}..{r['vmax']}")
+    for key, fn in (("bleachingOutlook", bleaching_outlook), ("sstOutlook", sst_outlook)):
+        r = run(key, fn, status)
+        if r:
+            manifest[key] = r
+            print(f"  {key}: issued {r['date']}" + (f", months {[l['month'] for l in r['layers']]}" if 'layers' in r else f", valid {r['validFrom']} to {r['validTo']}"))
     ice = run("seaIce", sea_ice, status)
     if ice:
         write_json(ice, NOW / "sea_ice.json")

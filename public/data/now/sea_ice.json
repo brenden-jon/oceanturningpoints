@@ -8925,6 +8925,6 @@
   "product": "Sea Ice Index, version 4 (G02135)",
   "doi": "10.7265/a98x-0f50",
   "url": "https://nsidc.org/data/g02135/versions/4",
-  "note": "Extent is the area with at least 15% ice cover. Daily values are a 5-day trailing average? see NSIDC documentation."
+  "note": "Extent is the area of ocean with at least 15% ice concentration."
  }
 }
