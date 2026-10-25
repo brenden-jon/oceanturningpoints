@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 const CHANGES = [
   {
-    slug: "el-nino", title: "El Niño and the tropical Pacific", story: "/ocean-now/", storyLabel: "See today’s El Niño",
+    slug: "el-nino", title: "El Niño and the tropical Pacific", story: "/changes/el-nino/", storyLabel: "How El Niño is changing",
     horizon: "Now, every few years; forecastable months ahead",
     change: "As of October 2026 a strong El Niño is under way. Warming is expected to make El Niño’s rainfall swings larger.",
     people: "Droughts and floods across the tropics, food shortages, sharp falls in fish catches and coral bleaching, with economic losses that last for years.",
@@ -26,7 +26,7 @@ const CHANGES = [
     decisions: "Protect the reefs most likely to survive, reduce local pressures, and plan for weaker natural coastal protection.",
   },
   {
-    slug: "ice-sheets", title: "Ice sheets and sea level", story: "/changes/sea-level/", storyLabel: "See projections for 16 coastal cities",
+    slug: "ice-sheets", title: "Ice sheets", story: "/changes/sea-level/", storyLabel: "Ice-sheet tipping points and the coast",
     horizon: "Certain to continue for centuries; the pace depends on emissions",
     change: "Greenland and Antarctica are losing ice faster. Sea level will keep rising for centuries; how fast depends on emissions and on ice dynamics that are hard to predict.",
     people: "More frequent coastal flooding, salt water in farmland and aquifers, and loss of land in deltas and on low islands.",

@@ -14,7 +14,6 @@ import time
 import amoc_scenarios
 import amoc_series
 import basemap_and_scales
-import coastal_floods
 import figures
 import nahosmip_rain
 import ocean_now
@@ -29,7 +28,6 @@ STEPS = [
     ("The ocean now (daily layers)", ocean_now.main),
     ("Reef heat-stress history (weekly)", reef_stations.main),
     ("Sea level and coastal flooding", sea_level.main),
-    ("Coastal flood depth maps (Aqueduct)", coastal_floods.main),
     ("Preview and card images", figures.main),
 ]
 

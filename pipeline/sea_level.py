@@ -64,6 +64,7 @@ CITIES = [
     ("Malé", "Maldives", 4.18, 73.51, 1753, "Malé (Hulhulé) tide gauge", None),
 ]
 SCENARIOS = [("ssp126", "medium"), ("ssp245", "medium"), ("ssp585", "medium"), ("ssp585", "low")]
+GLOBAL_SCENARIOS = SCENARIOS + [("ssp126", "low")]
 ESL = {(s, y): f"Fig9-32{c}_facts_esl_af_allow_{s}_{y}.nc" for c, s, y in
        [("a", "ssp585", 2050), ("b", "ssp585", 2100), ("c", "ssp245", 2050), ("d", "ssp245", 2100), ("e", "ssp126", 2050), ("f", "ssp126", 2100)]}
 ESL_URL = "https://dap.ceda.ac.uk/badc/ar6_wg1/data/ch_09/ch9_fig32/v20220721/{}?download=1"
@@ -127,6 +128,9 @@ def cities() -> list[dict]:
                 if conf == "medium":
                     out[c[0]]["series"][key] = [[y, r2(v.sel(quantiles=0.17, years=y)), r2(v.sel(quantiles=0.5, years=y)), r2(v.sel(quantiles=0.83, years=y))] for y in years]
                 out[c[0]]["y2100"][key] = {k: r2(v.sel(quantiles=p, years=2100)) for k, p in (("p17", 0.17), ("p50", 0.5), ("p83", 0.83), ("p95", 0.95))}
+                if conf == "low":
+                    out[c[0]]["low"] = {str(yy): {k: r2(v.sel(quantiles=p, years=yy)) for k, p in (("p17", 0.17), ("p50", 0.5), ("p83", 0.83), ("p95", 0.95))}
+                                        for yy in (2100, 2150, 2300) if yy in sl.years.values}
                 out[c[0]]["y2050"] = out[c[0]].get("y2050", {})
                 out[c[0]]["y2050"][key] = {k: r2(v.sel(quantiles=p, years=2050)) for k, p in (("p17", 0.17), ("p50", 0.5), ("p83", 0.83))}
     # flood frequency amplification at the nearest station within 100 km
@@ -151,12 +155,14 @@ def cities() -> list[dict]:
 
 def global_projections() -> dict:
     out = {}
-    for scen, conf in SCENARIOS:
+    for scen, conf in GLOBAL_SCENARIOS:
         f = C / f"global_total_{scen}_{conf}_confidence_values.nc"
         with xr.open_dataset(f) as ds:
             v = ds.sea_level_change.squeeze() / 1000.0
-            yrs = [int(y) for y in v.years.values if y <= (2150 if conf == "medium" else 2150)]
-            out[f"{scen}-{conf}"] = [[y, r2(v.sel(quantiles=0.17, years=y)), r2(v.sel(quantiles=0.5, years=y)), r2(v.sel(quantiles=0.83, years=y))] for y in yrs]
+            yrs = [int(y) for y in v.years.values if y <= (2150 if conf == "medium" else 2300)]
+            # medium: [year, p17, p50, p83]; low confidence also carries p95 (5th element)
+            out[f"{scen}-{conf}"] = [[y, r2(v.sel(quantiles=0.17, years=y)), r2(v.sel(quantiles=0.5, years=y)), r2(v.sel(quantiles=0.83, years=y))]
+                                     + ([r2(v.sel(quantiles=0.95, years=y))] if conf == "low" else []) for y in yrs]
     return out
 
 

@@ -4,13 +4,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { EnsoHistory, EnsoWeekly, type EnsoData } from "@/components/EnsoCharts";
 import OceanNowGlobe from "@/components/OceanNowGlobe";
-import SeaIceChart, { type IceHemi } from "@/components/SeaIceChart";
 import { abs } from "@/lib/site";
 import styles from "./ocean-now.module.css";
 
 export const metadata: Metadata = {
   title: "The ocean now",
-  description: "Today’s sea-surface temperature anomalies, coral heat stress, currents, El Niño and sea ice, updated daily from satellite and ocean observations.",
+  description: "Today’s signals of the big ocean changes: El Niño, marine heatwaves and coral heat stress, with seasonal outlooks, updated daily.",
   alternates: { canonical: abs("/ocean-now/") },
 };
 
@@ -28,8 +27,6 @@ export default function OceanNow() {
     oni: { season: string; year: number; value: number }[];
     roni: { season: string; year: number; value: number }[];
   };
-  const ice = read("sea_ice.json") as { arctic: IceHemi; antarctic: IceHemi };
-  const ordinal = (n: number) => `${n}${n % 10 === 1 && n !== 11 ? "st" : n % 10 === 2 && n !== 12 ? "nd" : n % 10 === 3 && n !== 13 ? "rd" : "th"}`;
   const oniLast = enso.oni[enso.oni.length - 1];
   const roniLast = enso.roni[enso.roni.length - 1];
   const isRecord = enso.latest.nino34 >= enso.weeklyRecord.nino34;
@@ -39,8 +36,8 @@ export default function OceanNow() {
       <header className={`wrap ${styles.head}`}>
         <h1>The ocean now</h1>
         <p className="lede">
-          What the ocean is doing today, and what it means for the months ahead. El Niño and marine heatwaves bring drought, floods
-          and coral bleaching, and seasonal forecasts give months of warning. Updated daily from satellites and ocean buoys.
+          Today’s signals of the big changes. A strong El Niño is reshaping the Pacific, and marine heatwaves are pushing coral reefs
+          past their limits. Seasonal forecasts give months of warning. Updated daily from satellites and ocean buoys.
         </p>
       </header>
 
@@ -84,7 +81,7 @@ export default function OceanNow() {
                 mass coral bleaching. Its effect on global temperature peaks in the following year.
               </p>
               <p className={styles.links}>
-                <Link className="more" href="/science/el-nino/">How a warming climate is changing El Niño</Link>
+                <Link className="more" href="/changes/el-nino/">How a warming climate is changing El Niño</Link>
               </p>
             </div>
             <div className={styles.charts}>
@@ -108,38 +105,6 @@ export default function OceanNow() {
         </div>
       </section>
 
-      <section className="section" aria-labelledby="ice">
-        <div className="wrap">
-          <p className="kicker">Polar oceans</p>
-          <h2 id="ice" className={styles.h2}>Sea ice at the poles</h2>
-          <div className={styles.iceGrid}>
-            {([["antarctic", "Antarctic", [0, 24]], ["arctic", "Arctic", [0, 16]]] as const).map(([k, name, y]) => {
-              const h = ice[k];
-              return (
-                <figure key={k}>
-                  <figcaption>
-                    <strong>{name}</strong>
-                    <span className="tnum"> · {h.extent.toFixed(2)} million km² on {day(h.date)}
-                      {h.rankLowest ? `, the ${ordinal(h.rankLowest)} lowest for the date in ${h.years} years` : ""}</span>
-                  </figcaption>
-                  <SeaIceChart h={h} name={name} y={[y[0], y[1]]} />
-                </figure>
-              );
-            })}
-          </div>
-          <p className={styles.iceText}>
-            Antarctic sea ice grew slowly until 2014 and has been unusually low since 2016, with record lows in 2023. Arctic sea ice
-            has declined in every month of the year since satellite records began in 1979. Less sea ice exposes darker ocean that
-            absorbs more sunlight, and around Antarctica it changes where dense, deep water forms. <Link className="more" href="/science/southern-ocean/">Southern Ocean</Link>
-          </p>
-          <p className={`small faint ${styles.source}`}>
-            <span className="evidence evidence--obs">Observed</span>{" "}
-            NSIDC Sea Ice Index, version 4 (Fetterer et al., <a href="https://doi.org/10.7265/a98x-0f50">doi:10.7265/a98x-0f50</a>).
-            Extent is the area of ocean with at least 15% ice cover. Median and record low for each day are calculated here from the
-            daily record since 1978.
-          </p>
-        </div>
-      </section>
 
       <p className={`wrap small faint ${styles.updated}`}>Data refreshed {day(m.updated)}.</p>
     </div>

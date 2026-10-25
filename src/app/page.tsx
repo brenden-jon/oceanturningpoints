@@ -9,9 +9,9 @@ import { SITE, abs, asset } from "@/lib/site";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: { absolute: `${SITE.name}: how the ocean is changing, and what it means for decisions` },
+  title: { absolute: `${SITE.name}: the big ocean changes and what they mean for decisions` },
   description:
-    "An independent atlas of ocean change: the Atlantic circulation, polar oceans, coral reefs and ice sheets, and what their changes mean for people around the world.",
+    "An independent guide to the big changes in the ocean: coral reefs crossing a tipping point, ice-sheet loss, a possible Atlantic circulation collapse and a Pacific shifting towards El Niño, and what they mean for development decisions.",
   alternates: { canonical: abs("/") },
   openGraph: { images: [abs("/og/home.jpg")] },
 };
@@ -41,11 +41,11 @@ export default function Home() {
     <>
       <section className={styles.hero}>
         <div className={`wrap ${styles.heroText}`}>
-          <h1 className="display">How is the ocean changing, and what does it mean for decisions?</h1>
+          <h1 className="display">Which big ocean changes should the world plan for?</h1>
           <p className={`lede ${styles.heroLede}`}>
-            The ocean has absorbed about 90% of the extra heat from greenhouse gases. This atlas shows what that is doing to currents,
-            reefs, ice and rainfall, who is exposed, and what governments, investors and planners can do. Everything comes from
-            published research and open data.
+            Coral reefs crossing a tipping point. Ice sheets that could commit the world to metres of sea-level rise. An Atlantic
+            circulation that could collapse. A Pacific shifting towards El Niño. Ocean Turning Points sets out the evidence for each,
+            how likely it is, and what it means for development and decisions.
           </p>
           <p className={styles.actions}>
             <Link className="button" href="/changes/">The big changes</Link>
@@ -73,23 +73,23 @@ export default function Home() {
 
       <section className="section" aria-labelledby="plan">
         <div className="wrap">
-          <h2 id="plan" className={styles.h2}>What to plan for, and when</h2>
-          <p className={`lede ${styles.sub}`}>The changes differ in how soon they arrive, how certain they are and what can be done about them.</p>
+          <h2 id="plan" className={styles.h2}>Four big changes, and what to plan for</h2>
+          <p className={`lede ${styles.sub}`}>They differ in how soon they arrive, how likely they are and what can be done about them.</p>
           <ol className={styles.plan}>
             <li>
-              <span className={styles.when}>Now, every few years</span>
-              <h3><Link href="/ocean-now/">El Niño and marine heatwaves</Link></h3>
-              <p>Forecast months ahead. Agree triggers and pre-arranged finance, and size food reserves, insurance and water storage for stronger events than in the past.</p>
-            </li>
-            <li>
               <span className={styles.when}>Under way</span>
-              <h3><Link href="/changes/coral-reefs/">Coral reef loss</Link></h3>
+              <h3><Link href="/changes/coral-reefs/">Coral reefs crossing a tipping point</Link></h3>
               <p>Plan for less coastal protection, fish and tourism income on reef coasts. Protect the reefs coping best with heat and reduce local pressures.</p>
             </li>
             <li>
-              <span className={styles.when}>Certain, for centuries</span>
-              <h3><Link href="/changes/sea-level/">Sea-level rise</Link></h3>
-              <p>Design ports, flood defences and coastal towns for a range of sea levels, with agreed points at which to upgrade or adapt further.</p>
+              <span className={styles.when}>Now, and changing</span>
+              <h3><Link href="/changes/el-nino/">A Pacific shifting towards El Niño</Link></h3>
+              <p>Stronger El Niños are forecast months ahead. Agree triggers and pre-arranged finance, and size reserves and insurance for more extreme events.</p>
+            </li>
+            <li>
+              <span className={styles.when}>Thresholds near today’s warming</span>
+              <h3><Link href="/changes/sea-level/">Ice sheets passing a tipping point</Link></h3>
+              <p>Loss of the Greenland or West Antarctic ice sheet would commit the world to metres of sea-level rise over centuries. Keep long-lived coastal assets adaptable.</p>
             </li>
             <li>
               <span className={styles.when}>Low likelihood, very high impact</span>

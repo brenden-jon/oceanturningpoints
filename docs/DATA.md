@@ -23,7 +23,6 @@ All raw downloads are cached in `pipeline/.cache` (not committed). Rebuild every
 | AR6 WGI Fig. 9.32 flood amplification factors | CEDA, doi:10.5285/6b33327d0d0d4bcca872b431279086db | CC BY 4.0 | How often today's 1-in-100-year flood occurs | `sea_level.py` |
 | IMBIE ice-sheet mass balance | Otosaka et al. (2026) Sci. Data, data doi:10.5285/128c5e33-5224-4197-82f0-19dcc95b80a0 | Open Government Licence v3.0 | Ice-sheet chart | `sea_level.py` |
 | NOAA LSA global mean sea level | NOAA Laboratory for Satellite Altimetry | Public domain | Observed sea level (series currently ends Feb 2025) | `sea_level.py` |
-| WRI Aqueduct Floods v2, coastal inundation (100-year, with subsidence; today and 2050 RCP4.5 median) | Ward et al. (2020), WRI technical note; aqueduct.wridata.org/AqueductFloods20 | CC BY 4.0 | City flood depth maps (display only, no statistics) | `coastal_floods.py` |
 | World Database on Protected Areas | UNEP-WCMC and IUCN, Protected Planet | Non-commercial use with attribution; **displayed via UNEP-WCMC's map service, not downloaded or redistributed** | Marine protected areas on the coral globe | n/a |
 | Natural Earth 1:110m and 1:50m coastlines, land, boundary lines | naturalearthdata.com | Public domain | Map lines; preview images | `basemap_and_scales.py` |
 | Blue Marble Shaded Relief and Bathymetry | NASA Earth Observatory via NASA GIBS (tiles requested by the browser) | Public domain (credit NASA) | Homepage globe, atlas, home preview image | n/a; `figures.py` for the preview |
