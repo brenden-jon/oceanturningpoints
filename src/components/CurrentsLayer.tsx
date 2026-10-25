@@ -96,7 +96,7 @@ export default function CurrentsLayer({ map, meta, visible = true, color = "ligh
 
       // Visible hemisphere on a globe: angular distance from the view centre.
       const facing = (lon: number, lat: number) => {
-        if (map.getProjection()?.type !== "globe") return true;
+        if (map.getProjection?.()?.type !== "globe") return true;
         const c = map.getCenter(), r = Math.PI / 180;
         return Math.sin(c.lat * r) * Math.sin(lat * r) + Math.cos(c.lat * r) * Math.cos(lat * r) * Math.cos((lon - c.lng) * r) > 0.08;
       };
@@ -117,6 +117,7 @@ export default function CurrentsLayer({ map, meta, visible = true, color = "ligh
 
       const rgb = color === "light" ? "235,245,255" : "16,48,84";
       const step = () => {
+        if (!alive || !map.getContainer()?.isConnected) return; // map was removed (page change)
         ctx.globalCompositeOperation = "destination-out";
         ctx.fillStyle = "rgba(0,0,0,0.035)";
         ctx.fillRect(0, 0, W, H);

@@ -1,9 +1,7 @@
-import fs from "node:fs";
-import path from "node:path";
 import type { Metadata } from "next";
 import Link from "next/link";
 import BleachingEvents from "@/components/BleachingEvents";
-import OceanNowGlobe from "@/components/OceanNowGlobe";
+import ReefMap from "@/components/ReefMap";
 import ThresholdChart, { OCEAN_THRESHOLDS } from "@/components/ThresholdChart";
 import { abs } from "@/lib/site";
 import styles from "./coral.module.css";
@@ -19,7 +17,6 @@ export const metadata: Metadata = {
 };
 
 export default function CoralPage() {
-  const m = JSON.parse(fs.readFileSync(path.join(process.cwd(), "public", "data", "now", "manifest.json"), "utf8"));
   return (
     <article>
       <header className={`wrap ${styles.hero}`}>
@@ -34,14 +31,14 @@ export default function CoralPage() {
             them, and many coasts rely on them to break the waves.
           </p>
           <p className={styles.chips}>
-            <span className="evidence evidence--obs">Satellite observations, updated daily</span>
+            <span className="evidence evidence--obs">Satellite observations, updated weekly</span>
             <span className="evidence">Reviewed 24 October 2026</span>
           </p>
         </div>
       </header>
 
-      <section className="wrap" aria-label="Coral heat stress today">
-        <OceanNowGlobe ssta={m.ssta} dhw={m.dhw} currents={m.currents} bleachOutlook={m.bleachingOutlook} sstOutlook={m.sstOutlook} initialLayer="dhw" initialView="coral" protectedAreas />
+      <section className="wrap" aria-label="Heat stress at the world’s reefs">
+        <ReefMap />
       </section>
 
       <section className="section" aria-labelledby="events">
@@ -131,7 +128,7 @@ export default function CoralPage() {
                 Effective marine protected areas, clean water, sustainable fisheries and control of coral-eating starfish help reefs
                 recover between heatwaves. They do little to stop bleaching itself: in 2016 on the Great Barrier Reef, water quality
                 and fishing pressure made little difference to how much coral bleached (Hughes et al., 2017). Protection matters most
-                for reefs that are coping better with heat. Switch on marine protected areas on the globe above to see where they are.
+                for reefs that are coping better with heat. Switch on marine protected areas on the map above to see where they are.
               </p>
             </div>
             <div>

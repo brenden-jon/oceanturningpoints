@@ -139,7 +139,7 @@ export default function EarthMap({
       style: baseStyle(look, projection),
       center: view.center,
       zoom: view.zoom,
-      minZoom: 0.5,
+      minZoom: 0,
       maxZoom: 7,
       interactive,
       scrollZoom: interactive,
@@ -253,9 +253,12 @@ export default function EarthMap({
             paint: { "line-color": o.color, "line-width": o.width ?? 1.6, "line-opacity": o.opacity ?? 1,
               ...(o.dash ? { "line-dasharray": o.dash } : {}) } });
         } else {
+          // Points may carry their own "color" and "r" (radius) properties.
           map.addLayer({ id: sid, type: "circle", source: sid,
-            paint: { "circle-radius": ["interpolate", ["linear"], ["zoom"], 1, 2.6, 5, 5], "circle-color": "#ffffff",
-              "circle-stroke-color": o.color, "circle-stroke-width": 1.6, "circle-opacity": o.opacity ?? 1 } });
+            paint: {
+              "circle-radius": ["interpolate", ["linear"], ["zoom"], 1, ["*", 2.6, ["coalesce", ["get", "r"], 1]], 5, ["*", 5, ["coalesce", ["get", "r"], 1]]],
+              "circle-color": ["coalesce", ["get", "color"], "#ffffff"],
+              "circle-stroke-color": o.color, "circle-stroke-width": o.width ?? 1.6, "circle-opacity": o.opacity ?? 1 } });
         }
       }
     }

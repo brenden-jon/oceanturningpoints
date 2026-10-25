@@ -6,10 +6,6 @@ order: 3
 updated: "2026-10-24"
 reviewed: "2026-10-24"
 status: "Reviewed against literature published to October 2026"
-live:
-  layer: "dhw"
-  view: "coral"
-  caption: "Today: coral bleaching heat stress across the tropics."
 explorer: "/changes/coral-reefs/"
 related: ["el-nino", "ice-sheets", "southern-ocean"]
 keyPoints:

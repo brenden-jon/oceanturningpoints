@@ -44,6 +44,9 @@
 
 .live { margin-bottom: 4rem; }
 .liveCaption { margin: 0 0 0.8rem; font-weight: 600; }
+.visualFig { margin: 1.5rem 0 0; background: var(--bg-alt); border-radius: var(--radius); padding: 1.2rem 1.2rem 0.6rem; }
+.visualFig figcaption { font-size: 0.95rem; margin-bottom: 0.5rem; color: var(--text-2); }
+.visualMore { margin: 1.2rem 0 0; }
 
 /* index */
 .indexHead { padding: clamp(2.5rem, 6vw, 4.5rem) 0 3rem; display: grid; gap: 1.1rem; }

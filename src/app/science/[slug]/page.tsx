@@ -6,6 +6,10 @@ import { allTopics, formatDate, getTopic } from "@/lib/science";
 import fs from "node:fs";
 import path from "node:path";
 import OceanNowGlobe from "@/components/OceanNowGlobe";
+import { ObservedChart } from "@/components/AmocCharts";
+import { EnsoHistory } from "@/components/EnsoCharts";
+import ReefMap from "@/components/ReefMap";
+import SeaIceChart from "@/components/SeaIceChart";
 import { asset } from "@/lib/site";
 import styles from "../science.module.css";
 
@@ -46,15 +50,7 @@ export default async function TopicPage({ params }: { params: Promise<{ slug: st
         </p>
       </header>
 
-      {topic.live && (() => {
-        const m = JSON.parse(fs.readFileSync(path.join(process.cwd(), "public", "data", "now", "manifest.json"), "utf8"));
-        return (
-          <section className={`wrap ${styles.live}`} aria-label="Live data">
-            <p className={styles.liveCaption}>{topic.live.caption}</p>
-            <OceanNowGlobe ssta={m.ssta} dhw={m.dhw} currents={m.currents} initialLayer={topic.live.layer} initialView={topic.live.view} compact />
-          </section>
-        );
-      })()}
+      <TopicVisual slug={topic.slug} live={topic.live} explorer={topic.explorer} />
 
       <div className={`wrap ${styles.summaryGrid}`}>
         <section className={styles.keyPoints} aria-labelledby="kp">
@@ -119,5 +115,47 @@ export default async function TopicPage({ params }: { params: Promise<{ slug: st
         </aside>
       )}
     </article>
+  );
+}
+
+const NOW = path.join(process.cwd(), "public", "data", "now");
+const readNow = (f: string) => JSON.parse(fs.readFileSync(path.join(NOW, f), "utf8"));
+
+/** The data picture that opens each topic, before the text. */
+function TopicVisual({ slug, live, explorer }: { slug: string; live?: { layer: "ssta" | "dhw"; view: string; caption: string }; explorer?: string }) {
+  const m = readNow("manifest.json");
+  const globe = (layer: "ssta" | "dhw", view: string) => (
+    <OceanNowGlobe ssta={m.ssta} dhw={m.dhw} currents={m.currents} initialLayer={layer} initialView={view} compact />
+  );
+  let body: React.ReactNode = null, caption = "";
+  if (slug === "amoc") {
+    caption = "Twenty years of direct measurements of the Atlantic overturning circulation.";
+    body = <ObservedChart />;
+  } else if (slug === "el-nino") {
+    caption = live?.caption ?? "";
+    body = (<>{globe("ssta", "pacific")}<figure className={styles.visualFig}><figcaption><strong>El Niño and La Niña since 1950</strong> · three-month index; red above +0.5°C is El Niño</figcaption><EnsoHistory data={readNow("enso.json")} /></figure></>);
+  } else if (slug === "coral-reefs") {
+    caption = "Heat stress at the world’s coral reef regions, from satellites. Select a region to see its history since 1985.";
+    body = <ReefMap />;
+  } else if (slug === "southern-ocean") {
+    const ice = readNow("sea_ice.json");
+    caption = "Antarctic sea ice this year, against the 1981–2010 median and the lowest on record for each day.";
+    body = (<figure className={styles.visualFig}><SeaIceChart h={ice.antarctic} name="Antarctic" y={[0, 24]} /><figcaption className="small faint">NSIDC Sea Ice Index, version 4. Updated daily.</figcaption></figure>);
+  } else if (slug === "subpolar-gyre") {
+    caption = "Today’s sea-surface temperature compared with normal across the North Atlantic.";
+    body = globe("ssta", "atlantic");
+  } else if (live) {
+    caption = live.caption;
+    body = globe(live.layer, live.view);
+  }
+  if (!body) return null;
+  return (
+    <section className={`wrap ${styles.live}`} aria-label="Data">
+      <p className={styles.liveCaption}>{caption}</p>
+      {body}
+      {explorer && explorer !== "/ocean-now/" && slug !== "coral-reefs" && (
+        <p className={styles.visualMore}><Link className="button" href={explorer}>Explore the data</Link></p>
+      )}
+    </section>
   );
 }

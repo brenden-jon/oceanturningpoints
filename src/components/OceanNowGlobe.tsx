@@ -23,7 +23,7 @@ export interface SstOutlookMeta {
 }
 
 type When = "now" | "outlook";
-type Kind = "temp" | "coral";
+type Kind = "temp" | "coral" | "currents";
 
 const VIEWS = [
   { id: "pacific", label: "Pacific", center: [-140, 2] as [number, number], zoom: 1.55 },
@@ -54,7 +54,6 @@ export default function OceanNowGlobe({ ssta, dhw, currents, bleachOutlook, sstO
   const [when, setWhen] = useState<When>("now");
   const [kind, setKind] = useState<Kind>(initialLayer === "dhw" ? "coral" : "temp");
   const [lead, setLead] = useState(1);
-  const [showCurrents, setShowCurrents] = useState(true);
   const [showMpa, setShowMpa] = useState(false);
   const [luts, setLuts] = useState<Record<string, { lut: Lut }> | null>(null);
   const [field, setField] = useState<Field | null>(null);
@@ -62,7 +61,8 @@ export default function OceanNowGlobe({ ssta, dhw, currents, bleachOutlook, sstO
   const [key, setKey] = useState("");
   const [hover, setHover] = useState<(HoverInfo & { value: number | null }) | null>(null);
   const hasOutlook = Boolean(bleachOutlook && sstOutlook && sstOutlook.layers.length);
-  const isOutlook = when === "outlook" && hasOutlook;
+  const isCurrents = kind === "currents";
+  const isOutlook = when === "outlook" && hasOutlook && !isCurrents;
 
   // The active layer: what to load, how to colour it, and how to describe it.
   const active = useMemo(() => {
@@ -116,7 +116,7 @@ export default function OceanNowGlobe({ ssta, dhw, currents, bleachOutlook, sstO
     <div className={`${styles.wrap} ${compact ? styles.compact : ""}`}>
       <div className={styles.toolbar}>
         <div className={styles.controls}>
-          {hasOutlook && (
+          {hasOutlook && !isCurrents && (
             <div className={styles.seg} role="group" aria-label="Time">
               <button aria-pressed={when === "now"} onClick={() => setWhen("now")}>Now</button>
               <button aria-pressed={when === "outlook"} onClick={() => setWhen("outlook")}>Next months</button>
@@ -125,6 +125,7 @@ export default function OceanNowGlobe({ ssta, dhw, currents, bleachOutlook, sstO
           <div className={styles.seg} role="group" aria-label="Map layer">
             <button aria-pressed={kind === "temp"} onClick={() => setKind("temp")}>Temperature</button>
             <button aria-pressed={kind === "coral"} onClick={() => setKind("coral")}>Coral heat stress</button>
+            {!compact && <button aria-pressed={kind === "currents"} onClick={() => setKind("currents")}>Currents</button>}
           </div>
           {isOutlook && kind === "temp" && (
             <div className={styles.seg} role="group" aria-label="Forecast month">
@@ -141,18 +142,14 @@ export default function OceanNowGlobe({ ssta, dhw, currents, bleachOutlook, sstO
               <span>Marine protected areas</span>
             </label>
           )}
-          <label className={styles.toggle}>
-            <input type="checkbox" checked={showCurrents} onChange={(e) => setShowCurrents(e.target.checked)} />
-            <span>Currents</span>
-          </label>
         </div>
       </div>
 
       <div className={styles.box}>
         <EarthMap look="satellite" projection="globe" space="dark" view={{ center: view.center, zoom: view.zoom }}
-          image={canvas} imageKey={key} imageOpacity={0.9} onReady={setMap} onHover={onHover} onSelect={onHover}
+          image={isCurrents ? null : canvas} imageKey={isCurrents ? "none" : key} imageOpacity={0.9} onReady={setMap} onHover={onHover} onSelect={onHover}
           raster={showMpa ? WDPA : null} className={styles.map} ariaLabel={`Globe: ${title}, centred on the ${view.label}`} />
-        <CurrentsLayer map={map} meta={currents} visible={showCurrents} />
+        <CurrentsLayer map={map} meta={currents} visible={isCurrents} />
         {isOutlook && <span className={styles.badge}>Forecast</span>}
         {hover && hover.value !== null && (
           <div className={styles.readout} style={{ left: hover.x + 14, top: hover.y + 14 }}>
@@ -167,11 +164,11 @@ export default function OceanNowGlobe({ ssta, dhw, currents, bleachOutlook, sstO
         </div>
       </div>
 
-      {lut && (
+      {lut && !isCurrents && (
         <div className={styles.legend}>
           <p className={styles.legendTitle}>{title}</p>
           <div className={styles.bar} style={{ background: lutGradient(lut) }} aria-hidden>
-            {active.id === "dhw" && (<><i style={{ left: `${(4 / dhw.domain) * 100}%` }} /><i style={{ left: `${(8 / dhw.domain) * 100}%` }} /></>)}
+            {!isCurrents && active.id === "dhw" && (<><i style={{ left: `${(4 / dhw.domain) * 100}%` }} /><i style={{ left: `${(8 / dhw.domain) * 100}%` }} /></>)}
           </div>
           <div className={`${styles.ticks} tnum`}>
             {active.id === "dhw" ? (
@@ -187,22 +184,27 @@ export default function OceanNowGlobe({ ssta, dhw, currents, bleachOutlook, sstO
 
       {!compact && (
         <section className={styles.about} aria-label="About this layer">
-          {active.id === "ssta" && (<>
+          {isCurrents && (<>
+            <div><h3>What it shows</h3><p>Today’s ocean surface currents. Each moving line follows the measured flow; brighter lines are faster currents. The motion is greatly speeded up, and the lines are not water or drifting buoys.</p></div>
+            <div><h3>Why it matters</h3><p>Currents carry heat around the planet. The Gulf Stream and North Atlantic Current are the surface part of the Atlantic overturning circulation; along the equatorial Pacific the flow changes during El Niño. <Link href="/changes/atlantic-circulation/">Atlantic circulation</Link></p></div>
+            <div><h3>Source</h3><p><span className="evidence evidence--obs">Observed</span> NOAA CoastWatch blended near-real-time surface currents, {day(currents.date)}, estimated from satellite sea-surface height and winds; 0.5° grid.</p></div>
+          </>)}
+          {!isCurrents && active.id === "ssta" && (<>
             <div><h3>What it shows</h3><p>How much warmer or colder the sea surface is than the 1985–2012 average for the same day, from satellite measurements blended into a daily 5 km product (shown here at 0.25°).</p></div>
             <div><h3>Why it matters</h3><p>The warm band along the equatorial Pacific is El Niño. Large warm patches elsewhere are marine heatwaves, which bleach corals, move fish stocks and fuel heavy rain on nearby coasts. <Link href="/science/el-nino/">El Niño</Link> · <Link href="/changes/coral-reefs/">coral reefs</Link></p></div>
             <div><h3>Source</h3><p><span className="evidence evidence--obs">Observed</span> NOAA Coral Reef Watch, CoralTemp v3.1 SST anomaly. <a href={ssta.source.url}>Product page</a>. Near-coast and sea-ice pixels are less reliable.</p></div>
           </>)}
-          {active.id === "dhw" && (<>
+          {!isCurrents && active.id === "dhw" && (<>
             <div><h3>What it shows</h3><p>Heat built up over the past 12 weeks above the warmest month of a normal year, in °C-weeks. Shown for the tropical belt where warm-water reefs grow; the map covers open ocean too.</p></div>
             <div><h3>Why it matters</h3><p>Above 4 °C-weeks, reef-wide bleaching is likely; above 8, bleaching with significant coral death is likely. Repeated heat stress is why reefs are assessed to be crossing a tipping point. <Link href="/changes/coral-reefs/">Coral reefs</Link></p></div>
             <div><h3>Source</h3><p><span className="evidence evidence--obs">Observed</span> NOAA Coral Reef Watch, Degree Heating Weeks v3.1. <a href={dhw.source.url}>Product page</a>. These are risk levels; how reefs respond varies locally.</p></div>
           </>)}
-          {active.id === "bleach" && (<>
+          {!isCurrents && active.id === "bleach" && (<>
             <div><h3>What it shows</h3><p>The highest bleaching alert level expected over the next four months, at places where at least 60% of forecast runs reach it. Issued {day(bleachOutlook!.date)}, updated weekly.</p></div>
             <div><h3>Why it matters</h3><p>Reef managers use the outlook to prepare monitoring and reduce other pressures before heat arrives. The strong El Niño raises bleaching risk across the tropics into 2027. <Link href="/changes/coral-reefs/">Coral reefs</Link></p></div>
             <div><h3>Source and reliability</h3><p><span className="evidence evidence--forecast">Forecast</span> NOAA Coral Reef Watch Four-Month Outlook v5, from the NOAA CFSv2 climate model (Liu et al., 2018). Skill is higher in the first weeks and lower near the end of the period.</p></div>
           </>)}
-          {active.id.startsWith("sst-") && (<>
+          {!isCurrents && active.id.startsWith("sst-") && (<>
             <div><h3>What it shows</h3><p>The average forecast from several seasonal climate models of how much warmer or colder than normal the sea surface will be in {active.month}. Forecast issued {day(sstOutlook!.date)}, updated monthly.</p></div>
             <div><h3>Why it matters</h3><p>Seasonal forecasts give months of warning of El Niño, marine heatwaves and the droughts and floods they bring. That lead time is what makes early action and pre-arranged finance possible. <Link href="/science/el-nino/">El Niño</Link></p></div>
             <div><h3>Source and reliability</h3><p><span className="evidence evidence--forecast">Forecast</span> NOAA North American Multi-Model Ensemble mean (Kirtman et al., 2014), 1° grid. Averaging smooths extremes; skill falls with lead time and is highest in the tropical Pacific.</p></div>
@@ -214,12 +216,6 @@ export default function OceanNowGlobe({ ssta, dhw, currents, bleachOutlook, sstO
           Marine and coastal protected areas from the World Database on Protected Areas (UNEP-WCMC and IUCN, Protected Planet), drawn by
           UNEP-WCMC’s map service. Designation does not guarantee effective management, and protection does not shield reefs from
           marine heatwaves.
-        </p>
-      )}
-      {showCurrents && (
-        <p className={`small faint ${styles.currentsNote}`}>
-          Currents: NOAA CoastWatch blended surface currents for {day(currents.date)}, from satellite sea-surface height and winds.
-          Particles trace direction and relative speed, greatly speeded up; they are not water or drifting buoys.
         </p>
       )}
     </div>
