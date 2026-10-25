@@ -82,7 +82,7 @@ The size of impacts is also uncertain. Regional rainfall changes differ two- to 
 
 On current evidence, an AMOC collapse is a low-probability, high-impact risk with long lead times. Harbours, water systems, crop research and social protection programmes built now will still be in use when the question may be settled. For most countries, collapse is a scenario to test long-lived decisions against, alongside the central projections. It should not displace immediate adaptation priorities.
 
-The direction of many effects is better known than their size, so the most useful measures help across a range of outcomes. A practical sequence, set out by Brenden Jongman and Jim Hall, is to:
+The direction of many effects is better known than their size, so the most useful measures help across a range of outcomes. A practical sequence, following Jongman and Hall (forthcoming), is to:
 
 1. screen which countries and sectors are most exposed, for example to monsoon change;
 2. stress-test long-lived investments against an AMOC-collapse scenario alongside standard projections;
@@ -105,16 +105,17 @@ Monitoring is itself part of the response. Several of the open questions above d
 9. Hallegatte, S., Vogt-Schilb, A., Bangalore, M. & Rozenberg, J. (2016). *Unbreakable: Building the Resilience of the Poor in the Face of Natural Disasters*. World Bank. [doi:10.1596/978-1-4648-1003-9](https://doi.org/10.1596/978-1-4648-1003-9)
 10. IPCC (2021). Summary for Policymakers. In *Climate Change 2021: The Physical Science Basis*. Contribution of Working Group I to the Sixth Assessment Report. Cambridge University Press. [doi:10.1017/9781009157896.001](https://doi.org/10.1017/9781009157896.001)
 11. Jackson, L. C., Kahana, R., Graham, T., et al. (2015). Global and European climate impacts of a slowdown of the AMOC in a high resolution GCM. *Climate Dynamics*, 45, 3299–3316. [doi:10.1007/s00382-015-2540-2](https://doi.org/10.1007/s00382-015-2540-2)
-12. Lozier, M. S., Li, F., Bacon, S., et al. (2019). A sea change in our view of overturning in the subpolar North Atlantic. *Science*, 363, 516–521. [doi:10.1126/science.aau6592](https://doi.org/10.1126/science.aau6592)
-13. Nian, D., Willeit, M., Wunderling, N., et al. (2026). Collapse of the Atlantic meridional overturning circulation would lead to substantial oceanic carbon release and additional global warming. *Communications Earth & Environment*, 7, 295. [doi:10.1038/s43247-026-03427-w](https://doi.org/10.1038/s43247-026-03427-w)
-14. Portmann, V., Swingedouw, D., Khattab, M., et al. (2026). Observational constraints project a ~50% AMOC weakening by the end of this century. *Science Advances*, 12, eadx4298. [doi:10.1126/sciadv.adx4298](https://doi.org/10.1126/sciadv.adx4298)
-15. Smeed, D. A., Josey, S. A., Beaulieu, C., et al. (2018). The North Atlantic Ocean is in a state of reduced overturning. *Geophysical Research Letters*, 45, 1527–1533. [doi:10.1002/2017GL076350](https://doi.org/10.1002/2017GL076350)
-16. van Westen, R. M. & Baatsen, M. L. J. (2025). European temperature extremes under different AMOC scenarios in the Community Earth System Model. *Geophysical Research Letters*, 52, e2025GL114611. [doi:10.1029/2025GL114611](https://doi.org/10.1029/2025GL114611)
-17. van Westen, R. M., Börner, J. & Dijkstra, H. A. (2026). Failure to track a stable AMOC state under rapid climate change. *Nature Climate Change*, 16, 1195–1206. [doi:10.1038/s41558-026-02730-w](https://doi.org/10.1038/s41558-026-02730-w)
-18. van Westen, R. M., Katsman, C. A. & Le Bars, D. (2026). Dynamic and steric sea-level changes due to a collapsing AMOC in the Community Earth System Model. *Ocean Science*, 22, 1353–1376. [doi:10.5194/os-22-1353-2026](https://doi.org/10.5194/os-22-1353-2026)
-19. van Westen, R. M., Kliphuis, M. & Dijkstra, H. A. (2024). Physics-based early warning signal shows that AMOC is on tipping course. *Science Advances*, 10, eadk1189. [doi:10.1126/sciadv.adk1189](https://doi.org/10.1126/sciadv.adk1189)
-20. Weijer, W., Cheng, W., Drijfhout, S. S., et al. (2019). Stability of the Atlantic Meridional Overturning Circulation: a review and synthesis. *Journal of Geophysical Research: Oceans*, 124, 5336–5375. [doi:10.1029/2019JC015083](https://doi.org/10.1029/2019JC015083)
-21. Worthington, E. L., Moat, B. I., Smeed, D. A., et al. (2021). A 30-year reconstruction of the Atlantic meridional overturning circulation shows no decline. *Ocean Science*, 17, 285–299. [doi:10.5194/os-17-285-2021](https://doi.org/10.5194/os-17-285-2021)
+12. Jongman, B. & Hall, J. (forthcoming).
+13. Lozier, M. S., Li, F., Bacon, S., et al. (2019). A sea change in our view of overturning in the subpolar North Atlantic. *Science*, 363, 516–521. [doi:10.1126/science.aau6592](https://doi.org/10.1126/science.aau6592)
+14. Nian, D., Willeit, M., Wunderling, N., et al. (2026). Collapse of the Atlantic meridional overturning circulation would lead to substantial oceanic carbon release and additional global warming. *Communications Earth & Environment*, 7, 295. [doi:10.1038/s43247-026-03427-w](https://doi.org/10.1038/s43247-026-03427-w)
+15. Portmann, V., Swingedouw, D., Khattab, M., et al. (2026). Observational constraints project a ~50% AMOC weakening by the end of this century. *Science Advances*, 12, eadx4298. [doi:10.1126/sciadv.adx4298](https://doi.org/10.1126/sciadv.adx4298)
+16. Smeed, D. A., Josey, S. A., Beaulieu, C., et al. (2018). The North Atlantic Ocean is in a state of reduced overturning. *Geophysical Research Letters*, 45, 1527–1533. [doi:10.1002/2017GL076350](https://doi.org/10.1002/2017GL076350)
+17. van Westen, R. M. & Baatsen, M. L. J. (2025). European temperature extremes under different AMOC scenarios in the Community Earth System Model. *Geophysical Research Letters*, 52, e2025GL114611. [doi:10.1029/2025GL114611](https://doi.org/10.1029/2025GL114611)
+18. van Westen, R. M., Börner, J. & Dijkstra, H. A. (2026). Failure to track a stable AMOC state under rapid climate change. *Nature Climate Change*, 16, 1195–1206. [doi:10.1038/s41558-026-02730-w](https://doi.org/10.1038/s41558-026-02730-w)
+19. van Westen, R. M., Katsman, C. A. & Le Bars, D. (2026). Dynamic and steric sea-level changes due to a collapsing AMOC in the Community Earth System Model. *Ocean Science*, 22, 1353–1376. [doi:10.5194/os-22-1353-2026](https://doi.org/10.5194/os-22-1353-2026)
+20. van Westen, R. M., Kliphuis, M. & Dijkstra, H. A. (2024). Physics-based early warning signal shows that AMOC is on tipping course. *Science Advances*, 10, eadk1189. [doi:10.1126/sciadv.adk1189](https://doi.org/10.1126/sciadv.adk1189)
+21. Weijer, W., Cheng, W., Drijfhout, S. S., et al. (2019). Stability of the Atlantic Meridional Overturning Circulation: a review and synthesis. *Journal of Geophysical Research: Oceans*, 124, 5336–5375. [doi:10.1029/2019JC015083](https://doi.org/10.1029/2019JC015083)
+22. Worthington, E. L., Moat, B. I., Smeed, D. A., et al. (2021). A 30-year reconstruction of the Atlantic meridional overturning circulation shows no decline. *Ocean Science*, 17, 285–299. [doi:10.5194/os-17-285-2021](https://doi.org/10.5194/os-17-285-2021)
 
 ### Data
 

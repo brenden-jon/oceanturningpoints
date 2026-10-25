@@ -201,8 +201,7 @@ export default function AmocPage() {
           </ol>
         </div>
         <p className={`wrap small muted ${styles.attrib}`}>
-          This framing follows work by <Link href="/about/">Brenden Jongman</Link>, the curator of this site, and Jim Hall on adapting
-          to the risk of Atlantic circulation change.
+          These steps follow Jongman and Hall (forthcoming). <Link href="/about/">Brenden Jongman</Link> is the curator of this site.
         </p>
       </section>
 
