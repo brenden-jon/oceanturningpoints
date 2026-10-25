@@ -195,13 +195,13 @@ export default function OceanNowGlobe({ ssta, dhw, currents, bleachOutlook, sstO
             <div><h3>Source</h3><p><span className="evidence evidence--obs">Observed</span> NOAA Coral Reef Watch, CoralTemp v3.1 SST anomaly. <a href={ssta.source.url}>Product page</a>. Near-coast and sea-ice pixels are less reliable.</p></div>
           </>)}
           {!isCurrents && active.id === "dhw" && (<>
-            <div><h3>What it shows</h3><p>Heat built up over the past 12 weeks above the warmest month of a normal year, in °C-weeks. Shown for the tropical belt where warm-water reefs grow; the map covers open ocean too.</p></div>
-            <div><h3>Why it matters</h3><p>Above 4 °C-weeks, reef-wide bleaching is likely; above 8, bleaching with significant coral death is likely. Repeated heat stress is why reefs are assessed to be crossing a tipping point. <Link href="/changes/coral-reefs/">Coral reefs</Link></p></div>
+            <div><h3>What it shows</h3><p>How much, and for how long, the sea has been at least 1°C warmer than its usual warmest month over the past 12 weeks, in °C-weeks; 4 °C-weeks is roughly one month at 1°C above that level. Shown for the tropical belt where warm-water reefs grow.</p></div>
+            <div><h3>Why it matters</h3><p>Above 4 °C-weeks, reef-wide bleaching is likely; above 8, bleaching with significant coral death is likely. Repeated heat stress is why the Global Tipping Points Report 2025 assesses that reefs are crossing their thermal tipping point. <Link href="/changes/coral-reefs/">Coral reefs</Link></p></div>
             <div><h3>Source</h3><p><span className="evidence evidence--obs">Observed</span> NOAA Coral Reef Watch, Degree Heating Weeks v3.1. <a href={dhw.source.url}>Product page</a>. These are risk levels; how reefs respond varies locally.</p></div>
           </>)}
           {!isCurrents && active.id === "bleach" && (<>
             <div><h3>What it shows</h3><p>The highest bleaching alert level expected over the next four months, at places where at least 60% of forecast runs reach it. Issued {day(bleachOutlook!.date)}, updated weekly.</p></div>
-            <div><h3>Why it matters</h3><p>Reef managers use the outlook to prepare monitoring and reduce other pressures before heat arrives. The strong El Niño raises bleaching risk across the tropics into 2027. <Link href="/changes/coral-reefs/">Coral reefs</Link></p></div>
+            <div><h3>Why it matters</h3><p>Reef managers use the outlook to prepare monitoring and reduce other pressures before heat arrives. A strong El Niño raises bleaching risk across the tropics in the months that follow. <Link href="/changes/coral-reefs/">Coral reefs</Link></p></div>
             <div><h3>Source and reliability</h3><p><span className="evidence evidence--forecast">Forecast</span> NOAA Coral Reef Watch Four-Month Outlook v5, from the NOAA CFSv2 climate model (Liu et al., 2018). Skill is higher in the first weeks and lower near the end of the period.</p></div>
           </>)}
           {!isCurrents && active.id.startsWith("sst-") && (<>

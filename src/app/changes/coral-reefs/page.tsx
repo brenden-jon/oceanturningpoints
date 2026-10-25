@@ -26,9 +26,9 @@ export default function CoralPage() {
         </div>
         <div className={styles.heroSide}>
           <p className={styles.standfirst}>
-            Warm-water reefs are bleaching more often than they can recover. The Global Tipping Points Report 2025 assesses that,
-            at today’s warming of about 1.4°C, reefs are crossing their thermal tipping point. Close to a billion people live near
-            them, and many coasts rely on them to break the waves.
+            Warm-water reefs are bleaching more often than they can recover. The Global Tipping Points Report 2025 assesses that
+            they are crossing their thermal tipping point, estimated at about 1.2°C of global warming; today’s warming is about
+            1.4°C. Close to a billion people live near reefs, and many coasts rely on them to break the waves.
           </p>
           <p className={styles.chips}>
             <span className="evidence evidence--obs">Satellite observations, updated weekly</span>
@@ -48,7 +48,8 @@ export default function CoralPage() {
             <h2 id="events">Bleaching has become a near-annual threat</h2>
             <p>
               When the sea stays too warm for weeks, corals expel the algae that feed them and turn white. If the heat lasts, they die.
-              NOAA has recorded four global bleaching events. Each has reached more of the world’s reefs than the last, and the gap
+              NOAA has recorded four global bleaching events. In each, a larger share of the world’s reef area was exposed to heat
+              strong enough to cause bleaching, and the gap
               between severe events has shrunk from 25–30 years in the early 1980s to about six (Hughes et al., 2018).
             </p>
             <p>
@@ -63,13 +64,13 @@ export default function CoralPage() {
       <section className="section section--alt" aria-labelledby="threshold">
         <div className="wrap">
           <p className="kicker">What could change</p>
-          <h2 id="threshold" className={styles.h2}>The first tipping point assessed as being crossed</h2>
+          <h2 id="threshold" className={styles.h2}>A tipping point being crossed now</h2>
           <div className={styles.split}>
             <div className="prose">
               <p>
                 The Global Tipping Points Report 2025 places the thermal tipping point for warm-water reefs at about 1.2°C of global
-                warming, with a range of 1.0–1.5°C. With warming now about 1.4°C, it assesses that tipping is likely under way. Reefs
-                tip reef by reef and region by region, so some will persist for longer than others.
+                warming, with a range of 1.0–1.5°C, and assesses that reefs are crossing it. Today’s warming is about 1.4°C. Reefs tip
+                place by place, so some will last longer than others.
               </p>
               <p>
                 The IPCC projects a further 70–90% decline in reefs at 1.5°C of warming (<i>high confidence</i>) and more than 99% at 2°C
@@ -158,9 +159,10 @@ export default function CoralPage() {
         <div className="wrap prose">
           <h2 id="data" className={styles.h2}>About these data</h2>
           <p>
-            <b>Heat stress and sea-surface temperature:</b> NOAA Coral Reef Watch daily 5 km products, version 3.1 (Skirving et al.,
-            2020), shown at 0.25°, refreshed daily. Degree Heating Weeks sum the heat above the warmest month of a normal year over the
-            past 12 weeks; 4 and 8 °C-weeks are NOAA’s risk levels for reef-wide bleaching and for bleaching with mortality. Use without
+            <b>Heat stress at reef regions:</b> NOAA Coral Reef Watch regional virtual stations, version 3.1, updated weekly (Skirving et al.,
+            2020). Degree Heating Weeks add up how much, and for how long, the sea has been at least 1°C warmer than its usual warmest
+            month over the past 12 weeks; 4 °C-weeks is roughly one month at 1°C above that level. NOAA treats 4 and 8 °C-weeks as the
+            levels at which reef-wide bleaching, and bleaching with coral deaths, become likely. Use without
             restriction, with credit to NOAA Coral Reef Watch.
           </p>
           <p>

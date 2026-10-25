@@ -1,18 +1,19 @@
 ---
 title: "Southern Ocean"
 question: "Is the deep overturning circulation around Antarctica slowing down?"
-summary: "Dense water sinking around Antarctica ventilates the deep ocean worldwide. Observations show this bottom water thinning and its export slowing in two basins. Antarctic sea ice has fallen to record lows since 2016."
+summary: "Cold, dense water sinking around Antarctica carries oxygen, heat and carbon into the deep ocean worldwide. Observations show this bottom water thinning and its export slowing in two basins, and Antarctic sea ice has fallen to record lows since 2016."
 order: 6
 updated: "2026-10-24"
 reviewed: "2026-10-24"
 status: "Reviewed against literature published to mid-2026"
 related: ["ice-sheets", "amoc"]
+decisions: "Changes here affect how much heat and carbon the ocean absorbs and how fast Antarctic ice is lost. Do not assume the ocean carbon sink will keep pace in carbon budgets, and keep deep-ocean observations funded."
 keyPoints:
-  - "Antarctic Bottom Water export from the Australian Antarctic Basin fell by 4.0 Sv between 1994 and 2009 before partly recovering, a net slowdown of 0.8 ± 0.5 Sv per decade over 1994–2017 (Gunn et al., 2023)."
-  - "The volume of Weddell Sea Bottom Water has fallen by about 30% since 1992, linked to a decline of more than 40% in sea-ice formation on the southern shelf (Zhou et al., 2023)."
-  - "Antarctic sea ice rose slowly to a record high in 2014, then fell sharply, setting a record low in February 2023 (Parkinson, 2019; Purich and Doddridge, 2023)."
   - "The ocean south of 30°S took up 35–43% of the heat gained by the global upper ocean (0–2,000 m) in 1970–2017 (high confidence) (Meredith et al., 2019)."
   - "The IPCC assesses with medium confidence that bottom-water formation and export will continue to decrease. Models attribute the decline mainly to Antarctic meltwater (Fox-Kemper et al., 2021; Li et al., 2023)."
+  - "Antarctic sea ice rose slowly to a record high in 2014, then fell sharply, setting a record low in February 2023 (Parkinson, 2019; Purich and Doddridge, 2023)."
+  - "The volume of Weddell Sea Bottom Water has fallen by about 30% since 1992, linked to a decline of more than 40% in sea-ice formation on the southern shelf (Zhou et al., 2023)."
+  - "Antarctic Bottom Water export from the Australian Antarctic Basin fell by 4.0 Sv between 1994 and 2009 before partly recovering, a net slowdown of 0.8 ± 0.5 Sv per decade over 1994–2017 (Gunn et al., 2023)."
 confidence:
   - claim: "Antarctic Bottom Water has warmed, freshened and contracted since the 1980s"
     level: "high"

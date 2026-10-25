@@ -14,6 +14,15 @@
 .nowInner strong { color: var(--text); font-weight: 600; }
 .nowDot { width: 9px; height: 9px; border-radius: 50%; background: var(--alert); flex: none; box-shadow: 0 0 0 4px rgba(178, 74, 42, 0.15); }
 @media (max-width: 640px) { .nowInner { flex-wrap: wrap; } }
+.plan { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+.plan li { background: var(--bg-alt); border-radius: var(--radius); padding: 1.3rem 1.3rem 1.4rem; display: grid; gap: 0.45rem; align-content: start; }
+.plan h3 { font-size: 1.15rem; }
+.plan h3 a { color: var(--text); }
+.plan h3 a:hover { color: var(--accent); }
+.plan p { margin: 0; color: var(--text-2); font-size: 0.95rem; }
+.when { font-size: 0.8125rem; font-weight: 600; color: var(--accent); }
+@media (max-width: 1000px) { .plan { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .plan { grid-template-columns: 1fr; } }
 .featured { position: relative; }
 .featureGrid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: clamp(2.5rem, 6vw, 5rem); align-items: center; }
 .featureText { display: grid; gap: 1rem; justify-items: start; }

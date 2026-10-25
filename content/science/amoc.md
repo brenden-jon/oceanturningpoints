@@ -8,11 +8,12 @@ reviewed: "2026-10-24"
 status: "Reviewed against literature published to mid-2026"
 related: ["subpolar-gyre", "southern-ocean", "ice-sheets"]
 explorer: "/changes/atlantic-circulation/"
+decisions: "A collapse this century is a low-likelihood, high-impact risk whose likelihood is disputed. Test long-lived investments in the Sahel, South Asia and around the North Atlantic against a collapse scenario, and prefer measures that pay off either way."
 keyPoints:
-  - "Direct measurements at 26.5°N since 2004 average about 17 million cubic metres of water per second, with a weaker state since 2008 (Smeed et al., 2018)."
+  - "In model experiments, a collapse cools northwest Europe sharply in winter and moves tropical rain belts south, weakening the West African and Indian monsoons (Ben-Yami et al., 2024)."
   - "The IPCC finds the AMOC very likely to weaken this century, with medium confidence that it will not collapse abruptly before 2100 (IPCC, 2021)."
   - "Studies since then disagree on the risk of collapse. Some find signs of lost stability; others find mechanisms that keep a weakened circulation going."
-  - "In model experiments, a collapse cools northwest Europe sharply in winter and moves tropical rain belts south, weakening the West African and Indian monsoons (Ben-Yami et al., 2024)."
+  - "Direct measurements since 2004 show a weaker circulation since 2008, but the record is still too short to separate a long-term trend from natural swings (Smeed et al., 2018)."
 confidence:
   - claim: "The AMOC will weaken over the 21st century"
     level: "high"

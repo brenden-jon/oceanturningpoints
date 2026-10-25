@@ -39,7 +39,8 @@ export default function OceanNow() {
       <header className={`wrap ${styles.head}`}>
         <h1>The ocean now</h1>
         <p className="lede">
-          Sea temperatures, coral heat stress, currents, El Niño and sea ice, from satellites and ocean buoys. Updated daily.
+          What the ocean is doing today, and what it means for the months ahead. El Niño and marine heatwaves bring drought, floods
+          and coral bleaching, and seasonal forecasts give months of warning. Updated daily from satellites and ocean buoys.
         </p>
       </header>
 
@@ -50,7 +51,7 @@ export default function OceanNow() {
       <section className={`section section--alt ${styles.enso}`} aria-labelledby="enso">
         <div className="wrap">
           <p className="kicker">Tropical Pacific</p>
-          <h2 id="enso" className={styles.h2}>A strong El Niño is under way</h2>
+          <h2 id="enso" className={styles.h2}>{enso.discussion.status?.includes("El Niño") ? (enso.latest.relative34 >= 1.5 ? "A strong El Niño is under way" : "El Niño is under way") : enso.discussion.status?.includes("La Niña") ? "La Niña is under way" : "El Niño and La Niña"}</h2>
           <div className={styles.ensoGrid}>
             <div className={styles.ensoText}>
               <dl className={styles.stats}>
@@ -59,15 +60,15 @@ export default function OceanNow() {
                   <dd className={styles.status}>{enso.discussion.status ?? "Not available"}</dd>
                 </div>
                 <div>
-                  <dt>Niño-3.4, week of {day(enso.latest.week)}</dt>
+                  <dt>Central Pacific sea temperature compared with normal (Niño-3.4), week of {day(enso.latest.week)}</dt>
                   <dd className="tnum">{signed(enso.latest.nino34)}°C</dd>
                 </div>
                 <div>
-                  <dt>Relative index, same week</dt>
+                  <dt>The same, minus the warming of the whole tropics (relative index)</dt>
                   <dd className="tnum">{signed(enso.latest.relative34)}°C</dd>
                 </div>
                 <div>
-                  <dt>3-month relative index ({roniLast.season} {roniLast.year})</dt>
+                  <dt>Three-month relative index, used by NOAA to judge strength ({roniLast.season} {roniLast.year})</dt>
                   <dd className="tnum">{signed(roniLast.value, 2)}°C</dd>
                 </div>
               </dl>
@@ -100,7 +101,8 @@ export default function OceanNow() {
           <p className={`small faint ${styles.source}`}>
             <span className="evidence evidence--obs">Observed</span>{" "}
             NOAA Climate Prediction Center: weekly Niño indices (OISST v2.1, 1991–2020 base), Oceanic Niño Index and Relative
-            Oceanic Niño Index (ERSSTv6). Status from the ENSO diagnostic discussion{enso.discussion.issued ? ` of ${enso.discussion.issued}` : ""}.{" "}
+            Oceanic Niño Index (ERSSTv6). The indices use a 1991–2020 normal; the globe above uses Coral Reef Watch’s 1985–2012 normal,
+            so values differ slightly. Status from the ENSO diagnostic discussion{enso.discussion.issued ? ` of ${enso.discussion.issued}` : ""}.{" "}
             <a href={enso.discussion.url}>NOAA discussion</a>
           </p>
         </div>

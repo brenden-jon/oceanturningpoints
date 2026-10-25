@@ -14,6 +14,8 @@ export default function SiteFooter() {
         <p>
           <Link href="/science/methods/">Methods and data</Link>
           <span aria-hidden> · </span>
+          <Link href="/science/glossary/">Glossary</Link>
+          <span aria-hidden> · </span>
           <Link href="/about/">About</Link>
         </p>
       </div>

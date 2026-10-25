@@ -7,12 +7,13 @@ updated: "2026-10-24"
 reviewed: "2026-10-24"
 status: "Reviewed against literature published to mid-2026"
 related: ["southern-ocean", "amoc", "coral-reefs"]
+decisions: "Sea level will keep rising for centuries under every scenario. Design long-lived coastal assets for the IPCC likely range, test them against about 2 m by 2100, and agree in advance the points at which to upgrade."
 keyPoints:
-  - "Between 1992 and 2020 the two ice sheets added 21.0 ± 1.9 mm to global mean sea level, and their combined rate of mass loss rose from 105 to 372 billion tonnes a year (Otosaka et al., 2023)."
-  - "Global mean sea level rose by 0.20 m between 1901 and 2018, at 3.7 mm per year over 2006–2018 (high confidence) (IPCC, 2021)."
-  - "The IPCC's likely range for rise by 2100, relative to 1995–2014, is 0.28–0.55 m under very low emissions and 0.63–1.01 m under very high emissions. Rise approaching 2 m cannot be ruled out under very high emissions (IPCC, 2021)."
+  - "Sea level will keep rising for centuries under every scenario. By 2100 the IPCC likely range, relative to 1995–2014, is 0.28–0.55 m under very low emissions and 0.63–1.01 m under very high emissions; rise approaching 2 m cannot be ruled out under very high emissions (IPCC, 2021)."
   - "Sea level is committed to rise for centuries to millennia, by about 2–3 m over 2000 years if warming is limited to 1.5 °C and 2–6 m at 2 °C (low confidence) (IPCC, 2021)."
   - "Coastal exposure depends on local relative sea level, which can rise several times faster than the global mean where land is subsiding (Nicholls et al., 2021)."
+  - "Between 1992 and 2020 the two ice sheets added 21.0 ± 1.9 mm to global mean sea level, and their combined rate of mass loss rose from 105 to 372 billion tonnes a year (Otosaka et al., 2023)."
+  - "Global mean sea level rose by 0.20 m between 1901 and 2018, at 3.7 mm per year over 2006–2018 (high confidence) (IPCC, 2021)."
 confidence:
   - claim: "Both ice sheets are losing mass, and the loss has accelerated since the 1990s"
     level: "high"

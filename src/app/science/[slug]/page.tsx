@@ -52,6 +52,13 @@ export default async function TopicPage({ params }: { params: Promise<{ slug: st
 
       <TopicVisual slug={topic.slug} live={topic.live} explorer={topic.explorer} />
 
+      {topic.decisions && (
+        <section className={`wrap ${styles.decisions}`} aria-labelledby="dec">
+          <h2 id="dec">What it means for decisions</h2>
+          <p>{topic.decisions}</p>
+        </section>
+      )}
+
       <div className={`wrap ${styles.summaryGrid}`}>
         <section className={styles.keyPoints} aria-labelledby="kp">
           <h2 id="kp">In brief</h2>
@@ -64,7 +71,7 @@ export default async function TopicPage({ params }: { params: Promise<{ slug: st
           <section className={styles.confidence} aria-labelledby="conf">
             <h2 id="conf">How sure are we?</h2>
             <table>
-              <thead><tr><th scope="col">Claim</th><th scope="col">Confidence</th></tr></thead>
+              <thead><tr><th scope="col">Statement</th><th scope="col">How sure</th></tr></thead>
               <tbody>
                 {topic.confidence.map((c) => (
                   <tr key={c.claim}>
@@ -75,7 +82,8 @@ export default async function TopicPage({ params }: { params: Promise<{ slug: st
               </tbody>
             </table>
             <p className="small muted">
-              IPCC confidence language where the IPCC has assessed the claim; otherwise our reading of the published evidence, with its basis.
+              Where the IPCC gives a likelihood (likely, very likely) or a confidence level, it is stated in the basis. Otherwise this is
+              our reading of the published evidence.
             </p>
           </section>
         )}

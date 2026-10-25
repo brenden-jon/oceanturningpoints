@@ -50,6 +50,7 @@ export default function Methods() {
           <ul>
             <li><span className="evidence evidence--obs">Observed</span> Direct measurements, such as the RAPID array. They tell us what has happened, over the period measured.</li>
             <li><span className="evidence evidence--model">Model experiment</span> Idealised simulations designed to isolate a process, such as adding fresh water until the AMOC collapses. They show the effect of a change. They do not say when, or whether, it will happen.</li>
+            <li><span className="evidence evidence--forecast">Forecast</span> Seasonal outlooks issued by forecasting centres such as NOAA. Their skill is measured and falls with lead time.</li>
             <li><span className="evidence">Projection</span> Simulations driven by a scenario of future emissions. They are conditional on that scenario and are not forecasts.</li>
           </ul>
           <p>
@@ -73,7 +74,7 @@ export default function Methods() {
           <p>
             All processing is done by a documented, open pipeline that downloads the original files, records their sources and
             checks results against the published papers. Model fields are placed on a common 0.5° latitude-longitude grid, finer than
-            any model used, so no detail is invented. The site decodes the same values for colouring and for the numbers shown when
+            any model used, so no model detail is lost; the finer grid adds no real detail. The site decodes the same values for colouring and for the numbers shown when
             you hover, so what you see and what you can read are always identical.
           </p>
           <p>

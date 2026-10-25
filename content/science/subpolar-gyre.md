@@ -1,18 +1,19 @@
 ---
-title: "Subpolar gyre"
-question: "Could the North Atlantic’s subpolar gyre stop convecting?"
-summary: "Winter convection south of Greenland helps set North Atlantic climate. A minority of climate models show it shutting down within about a decade this century. Observations cannot yet tell whether the real ocean is near that point."
+title: "Subpolar North Atlantic"
+question: "Could the North Atlantic south of Greenland cool abruptly?"
+summary: "Each winter, surface water south of Greenland cools, becomes dense and sinks. In a minority of climate models this stops within about a decade this century, cooling the region abruptly. Observations cannot yet tell whether the real ocean is near that point."
 order: 5
 updated: "2026-10-24"
 reviewed: "2026-10-24"
 status: "Reviewed against literature published to mid-2026"
 related: ["amoc", "ice-sheets"]
+decisions: "Rapid regional cooling within about a decade is a minority model outcome, but one with large effects. Include it in North Atlantic and European climate risk assessments, and keep the ocean observing arrays running."
 keyPoints:
-  - "Most of the overturning in the subpolar North Atlantic happens east of Greenland, in the Irminger and Iceland basins; the Labrador Sea contributes little (Lozier et al., 2019; Petit et al., 2020)."
   - "Convection in the subpolar gyre collapses this century in 7 of 40 CMIP5 models and 4 of 35 CMIP6 models, causing rapid regional cooling (Sgubin et al., 2017; Swingedouw et al., 2021)."
   - "Collapse is more common among the models that best reproduce observed upper-ocean stratification, occurring in up to 36–46% of that subset (Sgubin et al., 2017; Swingedouw et al., 2021)."
-  - "Labrador Sea convection was deepest of the 1996–2023 record in 2018, then shut down in the winters of 2021 and 2023 for different reasons (Yashayaev, 2024)."
   - "The IPCC assesses with high confidence that the subpolar North Atlantic will keep warming more slowly than the global average (Fox-Kemper et al., 2021)."
+  - "Labrador Sea convection was deepest of the 1996–2023 record in 2018, then shut down in the winters of 2021 and 2023 for different reasons (Yashayaev, 2024)."
+  - "Most of the overturning in the subpolar North Atlantic happens east of Greenland, in the Irminger and Iceland basins; the Labrador Sea contributes little (Lozier et al., 2019; Petit et al., 2020)."
 confidence:
   - claim: "Overturning in the subpolar North Atlantic is dominated by water transformed east of Greenland"
     level: "high"

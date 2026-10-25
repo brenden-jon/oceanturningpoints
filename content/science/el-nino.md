@@ -12,6 +12,7 @@ live:
   caption: "Today: sea-surface temperature compared with normal. The warm band along the equator is El Niño."
 related: ["coral-reefs", "amoc", "southern-ocean"]
 explorer: "/ocean-now/"
+decisions: "El Niño can be forecast months ahead, so it is the ocean change countries can best prepare for. Agree triggers and pre-arranged finance, and size food reserves, insurance and water storage for stronger events than in the past."
 keyPoints:
   - "A strong El Niño developed in 2026. In mid-October the weekly Niño-3.4 temperature anomaly reached +3.3 °C, the highest in NOAA’s weekly record since 1981 (NOAA CPC)."
   - "The 1982–83 and 1997–98 El Niños have been linked to global income losses of US$4.1 trillion and US$5.7 trillion, with growth held back for years afterwards (Callahan & Mankin, 2023)."
@@ -31,7 +32,7 @@ confidence:
   - claim: "The Pacific will shift to a more El Niño-like mean state"
     level: "medium"
     basis: "Expected by most models and theory; observed trends since the 1950s point the other way"
-  - claim: "El Niño is a tipping system"
+  - claim: "El Niño could shift abruptly into a new state of its own"
     level: "low"
     basis: "Assessed as not a tipping system, with medium confidence (Global Tipping Points Report 2025)"
 ---
@@ -70,7 +71,7 @@ El Niño also drives marine heatwaves. Peru cancelled its second anchovy fishing
 
 ## What we know and don't know
 
-El Niño will keep happening, and its effects on rainfall are expected to become larger. That conclusion is robust.
+El Niño will keep happening, and its effects on rainfall are expected to become larger. Models and theory agree on this.
 
 Less certain is how El Niño’s own strength will change, and whether the Pacific’s average state will turn more El Niño-like. Coral records and recent observations point to stronger El Niños; the observed trend in the Pacific’s background state points towards La Niña. Climate models favour an El Niño-like future, but they also fail to reproduce the observed trend, which limits confidence in them. Resolving this matters for the rainfall projections of billions of people around the Pacific and Indian oceans.
 

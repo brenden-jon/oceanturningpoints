@@ -43,7 +43,7 @@ export default function AmocPage() {
   const regions = [
     {
       id: "europe", region: "Northwest Europe", figure: `${num(london.off, 1)} °C`,
-      lead: `Average winter temperature in London in a world about 2 °C warmer, with the AMOC collapsed, against ${num(london.pi, 1)} °C before industrialisation.`,
+      lead: `Average winter temperature in London in a world about 2 °C warmer, with the AMOC collapsed, against ${num(london.pi, 1)} °C in the model’s pre-industrial climate.`,
       detail: `Once-a-decade cold days fall to about ${num(londonCold.off)} °C in London and ${num(edinCold)} °C in Edinburgh, and winter sea ice spreads far further south. One model (CESM).`,
       query: "show=temperature&var=winter&compare=total-2c-collapse&ice=1&region=europe&view=globe",
     },
@@ -54,9 +54,9 @@ export default function AmocPage() {
       query: "show=rainfall&season=jja&region=westafrica&view=globe",
     },
     {
-      id: "southasia", region: "South Asia", figure: `${num(mumbai.mean)}%`,
-      lead: `Change in June–August monsoon rainfall at Mumbai, four-model average. Delhi: ${num(delhi.mean)}%.`,
-      detail: `Models range from ${num(mumbai.max)}% to ${num(mumbai.min)}% at Mumbai. Across the whole Indian monsoon region, the published four-model estimate is a fall of about 19% (Ben-Yami et al., 2024).`,
+      id: "southasia", region: "South Asia", figure: `${num(r.validation["Indian summer monsoon"].published)}%`,
+      lead: `Change in Indian summer monsoon rainfall, four-model average published by Ben-Yami et al. (2024).`,
+      detail: `Locally the change is larger in places: about ${num(mumbai.mean)}% at Mumbai and ${num(delhi.mean)}% at Delhi in June–August, with models ranging from ${num(mumbai.max)}% to ${num(mumbai.min)}% at Mumbai.`,
       query: "show=rainfall&season=jja&region=southasia&view=globe",
     },
     {
@@ -71,15 +71,21 @@ export default function AmocPage() {
     <article>
       <header className={`wrap ${styles.hero}`}>
         <div>
-          <p className="label"><Link href="/changes/">Questions</Link> · Atlantic circulation</p>
+          <p className="label"><Link href="/changes/">Big changes</Link> · Atlantic circulation</p>
           <h1 className={styles.title}>{TITLE}</h1>
         </div>
         <div className={styles.heroSide}>
         <p className={styles.standfirst}>
-          A collapse of the Atlantic Meridional Overturning Circulation (AMOC) is considered unlikely this century, but its effects
-          would be large. Climate-model experiments show colder winters in northwest Europe even in a warmer world, and weaker
-          monsoons for hundreds of millions of people in West Africa and South Asia.
+          The IPCC has medium confidence that the Atlantic Meridional Overturning Circulation (AMOC) will not collapse before 2100,
+          and newer studies disagree on the risk. If it did collapse, the effects would be large and would last for centuries:
+          colder winters in northwest Europe even in a warmer world, and weaker monsoons for hundreds of millions of people in West
+          Africa and South Asia.
         </p>
+        <ul className={styles.brief}>
+          <li><b>Known:</b> the AMOC is very likely to weaken this century.</li>
+          <li><b>Disputed:</b> whether it could collapse, and when.</li>
+          <li><b>What to do:</b> test long-lived investments against a collapse, and favour measures that help either way.</li>
+        </ul>
         <p className={styles.chips}>
           <span className="evidence evidence--model">Model experiments</span>
           <span className="evidence evidence--obs">Observations to {s.rapid.end.slice(0, 4)}</span>
@@ -98,7 +104,8 @@ export default function AmocPage() {
           <div>
             <h3>These are experiments</h3>
             <p>
-              The maps show the climate a model settles into once its AMOC has collapsed. Modellers trigger the collapse by adding
+              The maps show the climate a model settles into once its AMOC has collapsed. The temperature maps show the years
+              2400–2499, in runs where greenhouse gases stop rising in 2100. Modellers trigger the collapse by adding
               fresh water to the North Atlantic. The results show what a collapse would do. They say nothing about when, or whether,
               one will happen.
             </p>
@@ -172,7 +179,34 @@ export default function AmocPage() {
         </div>
       </section>
 
-      <section className="section" aria-labelledby="observed">
+      <section className="section" aria-labelledby="decide">
+        <div className={`wrap ${styles.split}`}>
+          <div className="prose">
+            <p className="kicker">Why it matters for decisions</p>
+            <h2 id="decide" className={styles.h2}>Planning for a risk that may not happen</h2>
+            <p>
+              On current evidence a collapse this century is a low-likelihood, high-impact risk, and its likelihood is disputed.
+              Planning for it should not displace adaptation that is needed now. Dams, ports, irrigation schemes and crop programmes built today will still be in use when the question is
+              better understood. The direction of many effects is clearer than their size, so the most useful measures are those that
+              help across the range of outcomes. Published estimates of the economic cost of a collapse for developing countries are
+              scarce, and this site does not yet report any.
+            </p>
+          </div>
+          <ol className={styles.steps}>
+            <li><strong>Screen exposure.</strong> Identify the countries and sectors most sensitive to a shift in monsoon rainfall or North Atlantic climate.</li>
+            <li><strong>Stress-test long-lived investments.</strong> Run an AMOC-collapse scenario alongside standard projections.</li>
+            <li><strong>Prefer options that work either way.</strong> Drought-tolerant farming and flexible water storage pay off whether or not the circulation collapses.</li>
+            <li><strong>Link monitoring to decisions.</strong> Tie observations from arrays such as RAPID and OSNAP to thresholds that would trigger action.</li>
+            <li><strong>Count it in global risk.</strong> Reflect AMOC risk in risk assessments and in the case for limiting both the amount and the rate of warming.</li>
+          </ol>
+        </div>
+        <p className={`wrap small muted ${styles.attrib}`}>
+          This framing follows work by <Link href="/about/">Brenden Jongman</Link>, the curator of this site, and Jim Hall on adapting
+          to the risk of Atlantic circulation change.
+        </p>
+      </section>
+
+      <section className={`section ${styles.band}`} aria-labelledby="observed">
         <div className={`wrap ${styles.split}`}>
           <div className="prose">
             <p className="kicker">What we observe</p>
@@ -192,16 +226,17 @@ export default function AmocPage() {
         </div>
       </section>
 
-      <section className={`section ${styles.band}`} aria-labelledby="tipping">
+      <section className="section" aria-labelledby="tipping">
         <div className="wrap">
           <p className="kicker">What could change</p>
           <h2 id="tipping" className={styles.h2}>Why scientists talk about a tipping point</h2>
           <div className={styles.split}>
             <div className="prose">
               <p>
-                Dense, salty water sinking in the far north drives the circulation, and the circulation brings salt north. Fresh water
-                or warming weakens the sinking, which brings less salt, which weakens it further. Beyond a threshold, this feedback can
-                carry the AMOC into a much weaker state that persists even if the push is removed.
+                Dense, salty water sinking in the far north is one of the engines of the circulation, and the circulation brings salt
+                north. Fresh water or warming weakens the sinking, so less salt arrives, which weakens it further. Beyond a threshold
+                this feedback can carry the AMOC into a much weaker state. In many models that state persists even after the extra
+                fresh water is removed (Weijer et al., 2019). The chart below shows only the slow push towards collapse.
               </p>
               <p>
                 In this experiment, fresh water is added to the North Atlantic of a climate model very slowly, over 2,200 model
@@ -229,7 +264,7 @@ export default function AmocPage() {
         </div>
       </section>
 
-      <section className="section" aria-labelledby="sure">
+      <section className={`section ${styles.band}`} aria-labelledby="sure">
         <div className="wrap">
           <p className="kicker">What we know and don’t know</p>
           <h2 id="sure" className={styles.h2}>How likely is a collapse?</h2>
@@ -245,15 +280,15 @@ export default function AmocPage() {
                   <ul>
                     <li>Early-warning statistics in the fingerprint record suggest lost stability (Boers, 2021; Ditlevsen &amp; Ditlevsen, 2023).</li>
                     <li>A physics-based indicator places today’s AMOC on a course towards tipping (van Westen et al., 2024).</li>
-                    <li>Observation-constrained projections give a ~50% weakening by 2100 (Portmann et al., 2026).</li>
-                    <li>CMIP6 runs extended past 2100 shut down in all high-emission cases (Drijfhout et al., 2025).</li>
+                    <li>Observation-constrained projections give about 50% weakening by 2100, more than the CMIP6 central estimate (Portmann et al., 2026).</li>
+                    <li>In every CMIP6 model run beyond 2100 under high emissions, the northern overturning falls to an extremely weak, shallow state (Drijfhout et al., 2025).</li>
                     <li>Fast warming can tip the AMOC at lower temperatures than slow warming (van Westen, Börner &amp; Dijkstra, 2026).</li>
                   </ul>
                 </div>
                 <div>
                   <h3>Pointing to lower risk</h3>
                   <ul>
-                    <li>The IPCC assessed a collapse before 2100 as unlikely, with medium confidence (IPCC, 2021).</li>
+                    <li>The IPCC has medium confidence that the AMOC will not collapse abruptly before 2100 (IPCC, 2021).</li>
                     <li>Southern Ocean winds sustain a weakened AMOC in 34 models, even under extreme forcing (Baker et al., 2025).</li>
                     <li>A 30-year reconstruction at 26°N shows no overall decline (Worthington et al., 2021).</li>
                     <li>Statistical early warnings depend on proxies whose link to the AMOC is debated.</li>
@@ -281,31 +316,6 @@ export default function AmocPage() {
         </div>
       </section>
 
-      <section className={`section ${styles.band}`} aria-labelledby="decide">
-        <div className={`wrap ${styles.split}`}>
-          <div className="prose">
-            <p className="kicker">Why it matters for decisions</p>
-            <h2 id="decide" className={styles.h2}>Planning for a risk that may not happen</h2>
-            <p>
-              On current evidence a collapse is unlikely this century, and planning for it should not displace adaptation that is
-              needed now. Dams, ports, irrigation schemes and crop programmes built today will still be in use when the question is
-              better understood. The direction of many effects is clearer than their size, so the most useful measures are those that
-              help across the range of outcomes.
-            </p>
-          </div>
-          <ol className={styles.steps}>
-            <li><strong>Screen exposure.</strong> Identify the countries and sectors most sensitive to a shift in monsoon rainfall or North Atlantic climate.</li>
-            <li><strong>Stress-test long-lived investments.</strong> Run an AMOC-collapse scenario alongside standard projections.</li>
-            <li><strong>Prefer options that work either way.</strong> Drought-tolerant farming and flexible water storage pay off whether or not the circulation collapses.</li>
-            <li><strong>Link monitoring to decisions.</strong> Tie observations from arrays such as RAPID and OSNAP to thresholds that would trigger action.</li>
-            <li><strong>Count it in global risk.</strong> Reflect AMOC risk in risk assessments and in the case for limiting both the amount and the rate of warming.</li>
-          </ol>
-        </div>
-        <p className={`wrap small muted ${styles.attrib}`}>
-          This framing follows work by <Link href="/about/">Brenden Jongman</Link>, the curator of this site, and Jim Hall on adapting
-          to the risk of Atlantic circulation change.
-        </p>
-      </section>
 
       <section className="section" aria-labelledby="data">
         <div className="wrap prose">
@@ -316,7 +326,7 @@ export default function AmocPage() {
             pipeline. Values are not smoothed or re-scaled beyond what is described here. <Link href="/science/methods/">Methods for the whole site</Link>.
           </p>
 
-          <details className="disclosure" open>
+          <details className="disclosure">
             <summary>Temperature: one model, five climate states</summary>
             <div className={styles.disclosureBody}>
               <p>
@@ -374,8 +384,9 @@ export default function AmocPage() {
                 ))}
               </ul>
               <p>
-                The West African figure matches closely. Our Indian and southern Amazon boxes are approximations of the paper’s regions,
-                so these figures differ in size but agree in direction.
+                The West African figure matches closely. Our Indian and southern Amazon boxes only approximate the paper’s regions: for
+                the southern Amazon our box gives a much smaller wetting than the paper reports, so treat the size there as uncertain.
+                Where this page quotes regional monsoon changes, it uses the published figures.
               </p>
             </div>
           </details>

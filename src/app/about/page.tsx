@@ -25,9 +25,10 @@ export default function About() {
             consequences for developing countries.
           </p>
           <p>
-            The site covers ocean systems that are changing now or could change abruptly: the Atlantic overturning circulation, the
-            subpolar North Atlantic, the Southern Ocean, coral reefs and the ice sheets. It does not make forecasts, run campaigns or
-            publish new research. Every map and claim traces to peer-reviewed work or an official dataset, and each topic shows the
+            The site covers ocean systems that are changing now or could change abruptly: El Niño, the Atlantic overturning
+            circulation, the subpolar North Atlantic, the Southern Ocean, coral reefs and the ice sheets. It is written for people who
+            make or advise on decisions, in finance and planning ministries, development banks, insurers and adaptation agencies. It
+            does not make its own forecasts, run campaigns or publish new research. Every map and claim traces to peer-reviewed work or an official dataset, and each topic shows the
             date it was last reviewed.
           </p>
 

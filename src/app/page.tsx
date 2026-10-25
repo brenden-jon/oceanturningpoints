@@ -9,7 +9,7 @@ import { SITE, abs, asset } from "@/lib/site";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: { absolute: `${SITE.name}: how the ocean is changing, and what it means for people` },
+  title: { absolute: `${SITE.name}: how the ocean is changing, and what it means for decisions` },
   description:
     "An independent atlas of ocean change: the Atlantic circulation, polar oceans, coral reefs and ice sheets, and what their changes mean for people around the world.",
   alternates: { canonical: abs("/") },
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 const CHANNELS = [
   { title: "Rain and harvests", text: "Changes in ocean circulation move the tropical rain belts that monsoon farming depends on, from the Sahel to South Asia.", topic: "amoc" },
-  { title: "Coastal flooding", text: "Melting ice sheets raise sea level everywhere. Reefs, currents and the shape of the coast decide how much reaches each shoreline.", topic: "ice-sheets" },
+  { title: "Coastal flooding", text: "Melting ice sheets raise global sea level. Sinking land, currents, reefs and the shape of the coast decide how much reaches each shoreline.", topic: "ice-sheets" },
   { title: "Winters and heat", text: "The North Atlantic sets much of Europe’s weather. A sharp change in its circulation would bring colder winters, even as the planet warms.", topic: "subpolar-gyre" },
   { title: "Fish and livelihoods", text: "Heat, acidification and reef loss change what coastal fisheries can catch, with the largest effects in the tropics.", topic: "coral-reefs" },
   { title: "Global warming itself", text: "The Southern Ocean absorbs a large share of the heat and carbon dioxide that people add. Changes there feed back on how fast the world warms.", topic: "southern-ocean" },
@@ -33,16 +33,19 @@ export default function Home() {
   const now = readNow("manifest.json");
   const london = { pi: tempAt("London", "winter", "pi_on"), off: tempAt("London", "winter", "rcp45_off") };
   const niamey = rainAt("Niamey", "jja");
-  const mumbai = rainAt("Mumbai", "jja");
+  const enso = readNow("enso.json");
+  const isRecord = enso.latest.nino34 >= enso.weeklyRecord.nino34;
+  const rainCheck = JSON.parse(fs.readFileSync(path.join(process.cwd(), "public", "data", "amoc", "rainfall", "manifest.json"), "utf8")).validation;
 
   return (
     <>
       <section className={styles.hero}>
         <div className={`wrap ${styles.heroText}`}>
-          <h1 className="display">How is the ocean changing, and what does it mean for people?</h1>
+          <h1 className="display">How is the ocean changing, and what does it mean for decisions?</h1>
           <p className={`lede ${styles.heroLede}`}>
-            The ocean has taken up most of the heat added by greenhouse gases. This atlas shows what that is doing to currents,
-            reefs, ice and rainfall, using published research and open data.
+            The ocean has absorbed about 90% of the extra heat from greenhouse gases. This atlas shows what that is doing to currents,
+            reefs, ice and rainfall, who is exposed, and what governments, investors and planners can do. Everything comes from
+            published research and open data.
           </p>
           <p className={styles.actions}>
             <Link className="button" href="/changes/">The big changes</Link>
@@ -60,10 +63,40 @@ export default function Home() {
           <span className={styles.nowDot} aria-hidden />
           <p>
             <strong>{now.enso.status ?? "El Niño update"}.</strong> Niño-3.4 sea temperatures are{" "}
-            {now.enso.nino34 > 0 ? "+" : ""}{now.enso.nino34.toFixed(1)}°C above normal (week of {day(now.enso.week)}), the
-            highest weekly value in NOAA’s record.
+            {now.enso.nino34 > 0 ? "+" : ""}{now.enso.nino34.toFixed(1)}°C above normal (week of {day(now.enso.week)})
+            {isRecord ? ", the highest weekly value in NOAA’s record since 1981" : ""}. Seasonal forecasts give months of warning of the
+            droughts, floods and coral bleaching that El Niño brings.
           </p>
           <Link className="more" href="/ocean-now/">The ocean now</Link>
+        </div>
+      </section>
+
+      <section className="section" aria-labelledby="plan">
+        <div className="wrap">
+          <h2 id="plan" className={styles.h2}>What to plan for, and when</h2>
+          <p className={`lede ${styles.sub}`}>The changes differ in how soon they arrive, how certain they are and what can be done about them.</p>
+          <ol className={styles.plan}>
+            <li>
+              <span className={styles.when}>Now, every few years</span>
+              <h3><Link href="/ocean-now/">El Niño and marine heatwaves</Link></h3>
+              <p>Forecast months ahead. Agree triggers and pre-arranged finance, and size food reserves, insurance and water storage for stronger events than in the past.</p>
+            </li>
+            <li>
+              <span className={styles.when}>Under way</span>
+              <h3><Link href="/changes/coral-reefs/">Coral reef loss</Link></h3>
+              <p>Plan for less coastal protection, fish and tourism income on reef coasts. Protect the reefs coping best with heat and reduce local pressures.</p>
+            </li>
+            <li>
+              <span className={styles.when}>Certain, for centuries</span>
+              <h3><Link href="/science/ice-sheets/">Sea-level rise</Link></h3>
+              <p>Design ports, flood defences and coastal towns for a range of sea levels, with agreed points at which to upgrade or adapt further.</p>
+            </li>
+            <li>
+              <span className={styles.when}>Low likelihood, very high impact</span>
+              <h3><Link href="/changes/atlantic-circulation/">Atlantic circulation collapse</Link></h3>
+              <p>Test long-lived investments in the Sahel, South Asia and around the North Atlantic against a collapse, and favour measures that pay off either way.</p>
+            </li>
+          </ol>
         </div>
       </section>
 
@@ -73,9 +106,9 @@ export default function Home() {
             <p className="kicker">Atlantic circulation</p>
             <h2 id="featured">What would happen if the Atlantic circulation collapsed?</h2>
             <p className={styles.featureLead}>
-              Climate models agree that the Atlantic Meridional Overturning Circulation will weaken this century. Whether it could
-              collapse is disputed. Model experiments show what a collapse would do: much colder winters in northwest Europe and
-              much less rain across the Sahel and South Asia.
+              The Atlantic Meridional Overturning Circulation is very likely to weaken this century. Whether it could collapse is
+              disputed. Model experiments show what a collapse would do: much colder winters in northwest Europe and much less rain
+              across the Sahel and South Asia.
             </p>
             <dl className={styles.facts}>
               <div>
@@ -83,14 +116,18 @@ export default function Home() {
                 <dd>Average winter temperature in London in a world 2°C warmer with a collapsed circulation. Before industrialisation it was {num(london.pi, 1)}°C.</dd>
               </div>
               <div>
-                <dt className="tnum">{num(niamey.mean)}%</dt>
-                <dd>Change in June–August rainfall at Niamey, Niger, averaged over four climate models.</dd>
+                <dt className="tnum">{num(rainCheck["West African monsoon"].published)}%</dt>
+                <dd>Change in West African monsoon rainfall, average of four climate models (Ben-Yami et al., 2024). At Niamey, Niger, June–August rainfall falls by about {num(-niamey.mean)}%.</dd>
               </div>
               <div>
-                <dt className="tnum">{num(mumbai.mean)}%</dt>
-                <dd>Change in monsoon rainfall at Mumbai in the same experiments. All four models show drying; they differ on how much.</dd>
+                <dt className="tnum">{num(rainCheck["Indian summer monsoon"].published)}%</dt>
+                <dd>Change in Indian summer monsoon rainfall in the same four models. All four show drying; they differ on how much.</dd>
               </div>
             </dl>
+            <p className="small faint">
+              Temperature: one model (CESM), a world about 2°C warmer, several centuries after greenhouse gases stop rising. Rainfall: four
+              models, the collapse alone with no added warming. Neither is a forecast.
+            </p>
             <p><Link className="button" href="/changes/atlantic-circulation/">Explore the scenarios</Link></p>
           </div>
           <Link href="/changes/atlantic-circulation/" className={styles.featureImages} aria-label="Open the Atlantic circulation scenarios">
@@ -106,7 +143,10 @@ export default function Home() {
       <section className="section" aria-labelledby="systems">
         <div className="wrap">
           <h2 id="systems" className={styles.h2}>The systems we follow</h2>
-          <p className={`lede ${styles.sub}`}>Each is changing now, and each could change faster if warming passes certain thresholds.</p>
+          <p className={`lede ${styles.sub}`}>
+            Each is changing now. Five could pass a tipping point as warming rises. El Niño is not assessed as a tipping system, but its
+            rainfall swings are expected to grow.
+          </p>
           <ul className={styles.tiles}>
             {topics.map((t) => (
               <li key={t.slug}>
@@ -126,10 +166,10 @@ export default function Home() {
       <section className="section section--alt" aria-labelledby="people">
         <div className={`wrap ${styles.peopleGrid}`}>
           <div>
-            <h2 id="people" className={styles.h2}>How ocean change reaches people</h2>
+            <h2 id="people" className={styles.h2}>Why it matters for development and decisions</h2>
             <p className="lede">
-              The countries with most at stake are often far from the ocean systems that are changing, and many have the least
-              room to absorb a shock.
+              Ocean change reaches economies through rainfall, coasts, extreme weather and food. The countries with most at stake are
+              often far from the ocean systems that are changing, and many have the least room to absorb a shock.
             </p>
           </div>
           <ul className={styles.channels}>

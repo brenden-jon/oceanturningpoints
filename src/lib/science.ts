@@ -36,6 +36,7 @@ export interface TopicMeta {
   related: string[];
   explorer?: string;
   live?: { layer: "ssta" | "dhw"; view: string; caption: string };
+  decisions?: string;
   keyPoints: string[];
   confidence: Confidence[];
 }
@@ -75,6 +76,7 @@ function parse(file: string): Topic {
     related: data.related ?? [],
     explorer: data.explorer,
     live: data.live,
+    decisions: data.decisions,
     keyPoints: data.keyPoints ?? [],
     confidence: data.confidence ?? [],
     sections,

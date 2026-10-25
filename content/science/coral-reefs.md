@@ -8,6 +8,7 @@ reviewed: "2026-10-24"
 status: "Reviewed against literature published to October 2026"
 explorer: "/changes/coral-reefs/"
 related: ["el-nino", "ice-sheets", "southern-ocean"]
+decisions: "Plan on reefs giving less coastal protection, food and tourism income. Protect the reefs coping best with heat, reduce local pressures, and test coastal defences against degraded reefs."
 keyPoints:
   - "Between 2023 and 2025, 84% of the world’s coral reef area was exposed to bleaching-level heat stress, the largest of four global bleaching events since 1998 (NOAA, 2026)."
   - "The Global Tipping Points Report 2025 places the thermal tipping point for warm-water reefs at about 1.2°C of global warming (range 1.0–1.5°C) and assesses that, at today’s warming of about 1.4°C, tipping is likely under way."
@@ -18,12 +19,12 @@ confidence:
   - claim: "Human-caused warming is driving mass bleaching and coral death"
     level: "high"
     basis: "IPCC AR6 WGII: high confidence in attribution"
-  - claim: "Warm-water reefs have a thermal tipping point near today’s warming"
+  - claim: "Warm-water reefs can tip at local to regional scale"
     level: "high"
-    basis: "Global Tipping Points Report 2025: high confidence that reefs can tip, at local to regional scale"
-  - claim: "The threshold is about 1.2°C of global warming"
+    basis: "Global Tipping Points Report 2025"
+  - claim: "Today’s warming is within the estimated threshold range"
     level: "medium"
-    basis: "Central estimate with a range of 1.0–1.5°C; some studies suggest wider scope for adaptation"
+    basis: "Central estimate 1.2°C (range 1.0–1.5°C) against about 1.4°C of warming; some studies suggest wider scope for adaptation"
   - claim: "Local management can protect reefs from extreme heat"
     level: "low"
     basis: "Protection aids recovery after bleaching but gives little resistance to heat stress"
@@ -33,7 +34,7 @@ confidence:
 
 Warm-water coral reefs are built by animals that live in partnership with microscopic algae inside their tissues. The algae supply most of the coral’s energy. When the water stays too warm for too long, the partnership breaks down and the coral expels the algae, turning white. This is bleaching. A bleached coral is still alive and can recover if temperatures fall soon enough; if the heat persists, it starves and dies.
 
-Satellites track the risk with a measure called Degree Heating Weeks: the heat accumulated over 12 weeks above the warmest month of a normal year. NOAA’s Coral Reef Watch uses 4 °C-weeks as the level at which reef-wide bleaching becomes likely, and 8 °C-weeks as the level at which bleaching with significant mortality becomes likely (Skirving et al., 2020). These are risk levels. On the Great Barrier Reef in 2016, corals began to die at 3–4 °C-weeks (Hughes, Kerry et al., 2018).
+Satellites track the risk with a measure called Degree Heating Weeks. It adds up how much, and for how long, the sea has been at least 1 °C warmer than its usual warmest month over the past 12 weeks; 4 °C-weeks is roughly one month at 1 °C above that level. NOAA’s Coral Reef Watch uses 4 °C-weeks as the level at which reef-wide bleaching becomes likely, and 8 °C-weeks as the level at which bleaching with significant mortality becomes likely (Skirving et al., 2020). These are risk levels. On the Great Barrier Reef in 2016, corals began to die at 3–4 °C-weeks (Hughes, Kerry et al., 2018).
 
 Over centuries, coral skeletons build reef structures that break waves, shelter fish and attract visitors. A reef keeps working only while its corals add more limestone than waves, animals and chemistry remove. In the Caribbean, live coral cover of about 10% appears to be the level below which reefs stop growing (Perry et al., 2013).
 

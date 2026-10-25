@@ -15,7 +15,7 @@ export const OCEAN_THRESHOLDS: Threshold[] = [
   { id: "greenland", label: "Greenland ice sheet", central: 1.5, low: 0.8, high: 3.4, timescale: "thousands of years", href: "/science/ice-sheets/" },
   { id: "wais", label: "West Antarctic ice sheet", central: 1.5, low: 1.0, high: 3.0, timescale: "about 2,000 years", href: "/science/ice-sheets/" },
   { id: "spg", label: "Subpolar gyre convection", central: 1.8, low: 1.1, high: 3.8, timescale: "about 10 years", href: "/science/subpolar-gyre/" },
-  { id: "amoc", label: "Atlantic overturning circulation", central: 4.0, low: 1.4, high: 8.0, timescale: "about 50 years", note: "assessed as at risk below 2°C", href: "/changes/atlantic-circulation/" },
+  { id: "amoc", label: "Atlantic overturning circulation", central: 4.0, low: 1.4, high: 8.0, timescale: "about 50 years", note: "collapse cannot be ruled out below 2°C", href: "/changes/atlantic-circulation/" },
 ];
 
 const X0 = 0.5, X1 = 5;
@@ -42,7 +42,7 @@ export default function ThresholdChart({ items = OCEAN_THRESHOLDS, now = [1.34, 
           return (
             <g key={d.id}>
               <text x={left - 14} y={y - 3} textAnchor="end" fontSize="13.5" fontWeight="600" fill="#16191d">{d.label}</text>
-              <text x={left - 14} y={y + 13} textAnchor="end" fontSize="11.5" fill="#7d8792">{d.note ?? `tips over ${d.timescale}`}</text>
+              <text x={left - 14} y={y + 13} textAnchor="end" fontSize="11.5" fill="#7d8792">{d.note ?? `change unfolds over ${d.timescale}`}</text>
               <line x1={sx(d.low)} x2={sx(d.high)} y1={y} y2={y} stroke="#0a62b8" strokeWidth="6" strokeLinecap="round" opacity="0.28" />
               {d.high > X1 && <text x={sx(X1) + 6} y={y + 4} fontSize="11" fill="#0a62b8">to {d.high}°C</text>}
               <circle cx={sx(d.central)} cy={y} r="6.5" fill="#0a62b8" stroke="#fff" strokeWidth="2" />
@@ -55,7 +55,7 @@ export default function ThresholdChart({ items = OCEAN_THRESHOLDS, now = [1.34, 
         Dashed lines: the Paris Agreement goals of 1.5°C and 2°C. Dot: central estimate of the global warming at which each system is assessed as likely to tip; bar: range. Armstrong McKay
         et al. (2022) as updated by the Global Tipping Points Report 2025 (coral reefs and Greenland ranges). The report notes that
         AMOC collapse cannot be ruled out below 2°C, and that how fast warming happens also matters. Today’s warming: WMO
-        estimate for 2025, 1.34–1.41°C.
+        best estimates of current long-term warming, 1.34–1.41°C.
       </figcaption>
     </figure>
   );

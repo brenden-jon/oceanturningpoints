@@ -40,7 +40,7 @@ export default function SciencePage() {
         ))}
       </ol>
       <p className={`small muted ${styles.indexFoot}`}>
-        How sources are chosen, how data are processed and how uncertainty is shown: <Link href="/science/methods/">methods and data</Link>.
+        How sources are chosen, how data are processed and how uncertainty is shown: <Link href="/science/methods/">methods and data</Link>. Terms are explained in the <Link href="/science/glossary/">glossary</Link>.
       </p>
     </div>
   );
