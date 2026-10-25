@@ -10,12 +10,13 @@ It has no server, database, accounts or tracking.
 
 | Route | What it is |
 |---|---|
-| `/` | Homepage: a turning Blue Marble globe, the featured AMOC question, the ocean systems covered, how change reaches people, and the evidence principles |
-| `/questions/amoc-collapse/` | Flagship explorer. CESM temperature scenarios and four-model rainfall maps on a globe or flat map, RAPID observations, the hysteresis experiment, scenario runs, regional consequences, a confidence table, decision steps and a full data disclosure |
-| `/questions/` | Index of questions: the interactive one, plus the knowledge-base questions |
-| `/science/` and `/science/<topic>/` | Knowledge base: AMOC, subpolar gyre, Southern Ocean, coral reefs and ice sheets, each in seven fixed sections with dated reviews and verified references |
-| `/science/methods/` | Sources, kinds of evidence, uncertainty language, processing, limitations and the dataset list |
-| `/atlas/` | Navigable globe with NASA Blue Marble (day) and Black Marble 2016 (night lights), plus cautions |
+| `/` | Homepage: today's ocean currents on a Blue Marble globe, live El Niño status, the featured AMOC question, the systems followed, how ocean change reaches people |
+| `/ocean-now/` | Live globe (sea-temperature anomaly, coral heat stress, currents), El Niño status and indices, Arctic and Antarctic sea ice; refreshed daily |
+| `/changes/` | The big changes: tipping thresholds against today's warming, and each system as change → people → decisions |
+| `/changes/atlantic-circulation/` | AMOC scenario explorer with observations, model experiments, consequences, confidence and decisions |
+| `/changes/coral-reefs/` | Coral story: live heat stress with marine protected areas, bleaching events, the reef tipping threshold, people, responses |
+| `/science/` and `/science/<topic>/` | Evidence base: AMOC, El Niño, coral reefs, ice sheets, subpolar gyre, Southern Ocean; seven fixed sections, dated reviews, verified references |
+| `/science/methods/` | Sources, kinds of evidence, uncertainty language, processing, limitations and datasets |
 | `/about/` | Purpose, curator, independence statement, verified publications |
 
 ## Running it
@@ -35,12 +36,15 @@ To rebuild the data from the original sources (needs [uv](https://docs.astral.sh
 npm run data
 ```
 
+Old addresses (`/questions/…`, `/atlas/`) redirect to their new pages, keeping any shared map settings.
+
 ## Documentation
 
 - [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md): how the site and its components fit together
 - [docs/DATA.md](docs/DATA.md): every dataset, its licence and citation, how it is processed, validation results and how to update it
 - [docs/CONTENT.md](docs/CONTENT.md): editorial rules, how to add or review a topic, the publications policy
 - [docs/ROADMAP.md](docs/ROADMAP.md): known limitations and next priorities
+- [docs/STYLE.md](docs/STYLE.md): design and writing rules
 
 ## Deployment
 

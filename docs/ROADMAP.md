@@ -1,24 +1,27 @@
 # Limitations and next priorities
 
-## Known limitations of the first release
+## Known limitations
 - AMOC temperature maps come from one model (CESM 1.0.5). Other models agree on the pattern, not the size.
-- The AMOC experiments use artificial freshwater forcing; ice sheets are fixed and greenhouse forcing is held after 2100.
-- Rainfall uses four models; percentages are relative to each model's pre-industrial climate, not to observed rainfall today.
-- Two of our three rainfall validation boxes only approximate the published regions (see docs/DATA.md).
+- AMOC experiments use artificial freshwater forcing; ice sheets are fixed and greenhouse forcing is held after 2100.
+- Rainfall uses four models; percentages are relative to each model's pre-industrial climate.
+- Two of the three rainfall validation boxes only approximate the published regions (see docs/DATA.md).
 - Place values are single model grid cells (100–250 km); they are regional, not local.
-- Night lights show electrification, not population; poor rural areas are under-represented.
-- Subpolar gyre, Southern Ocean, coral reefs and ice sheets are explained but not yet mapped.
-- The homepage globe depends on NASA GIBS tiles; if GIBS is slow the globe appears after a delay.
+- Daily satellite layers are shown at 0.25–0.5°, coarser than the source products, and are less reliable near coasts and ice.
+- Coral heat stress (Degree Heating Weeks) indicates bleaching risk, not observed bleaching or mortality.
+- Marine protected areas show designation, not management effectiveness or no-take status.
+- Ice sheets, the subpolar gyre and the Southern Ocean have explainers but no dedicated interactive story yet.
 
 ## Next priorities (suggested order)
-1. **Population exposure to AMOC rainfall change.** Combine the four-model rainfall layer with GHSL population (JRC, CC BY 4.0)
-   to show how many people live where models agree on large drying. Label clearly as exposure, not impact.
-2. **Sea level.** Map dynamic sea-level change from a collapse (van Westen, Katsman & Le Bars, 2026, Ocean Science) alongside
-   IPCC AR6 regional projections (NASA sea-level projection tool data).
-3. **Coral reefs and coastal flood protection.** Map reef locations and published flood-protection values, separating the
-   "no reef" counterfactual from realistic degradation. Check data licences before use.
-4. **Ice sheets.** IMBIE mass-balance time series and AR6 sea-level projections by scenario.
-5. **Southern Ocean and subpolar gyre.** Sea-ice extent (NSIDC) and OSNAP observations as charts.
-6. **Animated surface currents** (data-driven only), for example from OSCAR or Copernicus Marine, if licences allow.
-7. **Responses and decisions**, then marine protection, as separate sections once the evidence base is in place.
-8. Choose a code licence; add a corrections log; add a simple privacy-respecting analytics option if wanted.
+1. **Seasonal outlook.** NOAA Coral Reef Watch's four-month bleaching heat-stress outlook and a seasonal SST anomaly
+   forecast, added to Ocean now and the coral story, clearly labelled as probabilistic forecasts.
+2. **Responses: marine protection.** Where reefs that are coping better with heat (refugia) overlap with effective protection;
+   protection coverage and no-take share by region. Coordinate with existing marine-protection finance work before
+   publishing any original analysis.
+3. **People exposed to AMOC rainfall change.** Combine the four-model rainfall layer with GHSL population (JRC, CC BY 4.0),
+   labelled as exposure, not impact.
+4. **Ice sheets and sea level story.** IMBIE mass balance and IPCC AR6 regional sea-level projections; dynamic sea-level
+   change from an AMOC collapse (van Westen, Katsman & Le Bars, 2026).
+5. **El Niño story page.** Today's anomaly, historical strong events and their impacts by region, the October 2026 research on
+   a more El Niño-like Pacific, and anticipatory finance.
+6. **Southern Ocean and subpolar North Atlantic.** OSNAP observations; Antarctic sea ice and bottom-water change.
+7. Choose a code licence; add a corrections log; consider privacy-respecting analytics.

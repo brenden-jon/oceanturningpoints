@@ -12,6 +12,11 @@ All raw downloads are cached in `pipeline/.cache` (not committed). Rebuild every
 | AMOC for the PI control and PI quasi-equilibrium hosing simulations | van Westen & Baatsen (2026), Zenodo, [doi:10.5281/zenodo.18785979](https://doi.org/10.5281/zenodo.18785979). Experiment: van Westen, Kliphuis & Dijkstra (2024) Sci. Adv. 10, eadk1189 | CC BY 4.0 | Hysteresis (tipping) chart | `amoc_series.py` |
 | NAHosMIP monthly surface air temperature and precipitation v3 | Jackson, Bellomo et al. (2025), Zenodo, [doi:10.5281/zenodo.14884357](https://doi.org/10.5281/zenodo.14884357). Protocol: Jackson et al. (2023) GMD 16, 1975–1995. Method: Ben-Yami et al. (2024) Earth's Future 12, e2023EF003959 | CC BY 4.0 | Four-model rainfall maps, agreement, place values | `nahosmip_rain.py` |
 | RAPID-MOCHA-WBTS AMOC time series v2024.1a | Moat et al., National Oceanography Centre, [doi:10.5285/48d0bf43-0598-ceb2-e063-7086abc062f1](https://doi.org/10.5285/48d0bf43-0598-ceb2-e063-7086abc062f1) | Open Government Licence; acknowledge RAPID (NERC, NSF, NOAA) | Observed AMOC chart | `amoc_series.py` |
+| NOAA Coral Reef Watch SST anomaly and Degree Heating Weeks, v3.1 (daily, 5 km) | NOAA CRW via CoastWatch ERDDAP; Skirving et al. (2020) Remote Sensing 12, 3856 | Use without restriction, with credit | Ocean now; coral story; El Niño article (refreshed daily) | `ocean_now.py` |
+| NOAA CoastWatch blended near-real-time surface currents | NOAA CoastWatch ERDDAP (`noaacwBLENDEDNRTcurrentsDaily`) | Public domain | Animated currents (refreshed daily) | `ocean_now.py` |
+| ENSO indices and discussion | NOAA Climate Prediction Center (weekly Niño indices, ONI, RONI) | Public domain | El Niño status and charts (refreshed daily) | `ocean_now.py` |
+| Sea Ice Index v4 (G02135) | NSIDC; Fetterer et al., doi:10.7265/a98x-0f50 | Free with citation | Arctic and Antarctic sea-ice charts (refreshed daily) | `ocean_now.py` |
+| World Database on Protected Areas | UNEP-WCMC and IUCN, Protected Planet | Non-commercial use with attribution; **displayed via UNEP-WCMC's map service, not downloaded or redistributed** | Marine protected areas on the coral globe | n/a |
 | Natural Earth 1:110m and 1:50m coastlines, land, boundary lines | naturalearthdata.com | Public domain | Map lines; preview images | `basemap_and_scales.py` |
 | Blue Marble Shaded Relief and Bathymetry | NASA Earth Observatory via NASA GIBS (tiles requested by the browser) | Public domain (credit NASA) | Homepage globe, atlas, home preview image | n/a; `figures.py` for the preview |
 | Black Marble 2016 (VIIRS) | NASA via GIBS; Román et al. (2018) RSE 210, 113–143 | Public domain (credit NASA) | Atlas night lights | n/a |
@@ -64,6 +69,18 @@ All raw downloads are cached in `pipeline/.cache` (not committed). Rebuild every
   series first falls below 5 Sv at a forcing of about 0.54 Sv.
 - Scenario runs: AMOC 0–1,000 m at 26°N; means for 2400–2499 are 15.5 (0600 RCP4.5), 3.3 (0600 RCP8.5), 1.2 (1500 RCP4.5)
   and 1.2 Sv (1500 RCP8.5).
+
+### The ocean now (`ocean_now.py`, daily)
+- Runs inside the deploy workflow every morning (06:40 UTC) before the site is built, and on every push. Each source is fetched
+  independently with a timeout; if one fails, the last good file (committed in `public/data/now`) is used and the failure is
+  recorded in `manifest.json` under `status`.
+- Currents: every second 0.25° cell (0.5° grid), u and v stored in the red and green channels of a PNG, clipped at ±2 m/s.
+- SST anomaly and Degree Heating Weeks: every fifth 0.05° pixel (0.25° grid). Degree Heating Weeks are shown between 35°S and
+  35°N only, and values above 60 °C-weeks are treated as invalid.
+- Sea ice: daily extent for both hemispheres; the 1981–2010 median and the record low for each day of the year are computed
+  from the full record.
+- El Niño: weekly traditional and relative Niño-3.4, the ONI and RONI, and the alert status parsed from NOAA's monthly
+  diagnostic discussion.
 
 ### Images (`figures.py`)
 Open Graph previews (1200 × 630) and homepage card images, drawn from the published layers with the same colour scales.

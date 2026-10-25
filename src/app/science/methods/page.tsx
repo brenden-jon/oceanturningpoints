@@ -16,8 +16,12 @@ const DATA = [
   { name: "AMOC in the PI quasi-equilibrium hosing simulation", who: "van Westen & Baatsen", use: "Tipping-point chart", licence: "CC BY 4.0", doi: "10.5281/zenodo.18785979" },
   { name: "NAHosMIP monthly temperature and precipitation v3", who: "Jackson, Bellomo et al.", use: "Four-model rainfall maps", licence: "CC BY 4.0", doi: "10.5281/zenodo.14884357" },
   { name: "RAPID-MOCHA-WBTS AMOC time series v2024.1a", who: "National Oceanography Centre and partners", use: "Observed AMOC chart", licence: "Open Government Licence; acknowledgement required", doi: "10.5285/48d0bf43-0598-ceb2-e063-7086abc062f1" },
+  { name: "Coral Reef Watch SST anomaly and Degree Heating Weeks v3.1", who: "NOAA Coral Reef Watch", use: "Ocean now, coral reefs, El Niño (daily)", licence: "Use without restriction, with credit", doi: "10.3390/rs12233856" },
+  { name: "Blended near-real-time surface currents", who: "NOAA CoastWatch", use: "Animated currents (daily)", licence: "Public domain", url: "https://coastwatch.noaa.gov/erddap/griddap/noaacwBLENDEDNRTcurrentsDaily.html" },
+  { name: "ENSO indices and diagnostic discussion", who: "NOAA Climate Prediction Center", use: "El Niño status and charts (daily)", licence: "Public domain", url: "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/ensodisc.shtml" },
+  { name: "Sea Ice Index, version 4", who: "National Snow and Ice Data Center", use: "Sea-ice charts (daily)", licence: "Free with citation", doi: "10.7265/a98x-0f50" },
+  { name: "World Database on Protected Areas", who: "UNEP-WCMC and IUCN, Protected Planet", use: "Marine protected areas, shown via UNEP-WCMC’s map service", licence: "Non-commercial use with attribution", url: "https://www.protectedplanet.net/" },
   { name: "Blue Marble: Shaded Relief and Bathymetry", who: "NASA Earth Observatory, via NASA GIBS", use: "Earth imagery", licence: "Public domain (NASA)", url: "https://earthobservatory.nasa.gov/features/BlueMarble" },
-  { name: "Black Marble 2016 night lights", who: "NASA, via NASA GIBS", use: "Atlas night-lights layer", licence: "Public domain (NASA)", doi: "10.1016/j.rse.2018.03.017" },
   { name: "Natural Earth coastlines, land and borders", who: "Natural Earth", use: "Base map lines", licence: "Public domain", url: "https://www.naturalearthdata.com/" },
 ];
 
@@ -89,7 +93,7 @@ export default function Methods() {
             <li>AMOC experiments use artificial freshwater forcing to produce a collapse. Ice sheets are fixed, and greenhouse forcing is held constant after 2100.</li>
             <li>Four models is a small ensemble. The average shows where models agree; it is not the single most likely outcome.</li>
             <li>Rainfall changes are percentages relative to each model’s pre-industrial climate; they are not added to today’s observed rainfall.</li>
-            <li>Night lights follow electrification and economic activity more closely than population. Many poor rural communities are dark at night.</li>
+            <li>Daily satellite products are less reliable near coasts and sea ice. Coral heat stress indicates bleaching risk; how reefs respond varies locally.</li>
           </ul>
 
           <h2>Review and corrections</h2>
