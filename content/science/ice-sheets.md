@@ -6,6 +6,7 @@ order: 4
 updated: "2026-10-24"
 reviewed: "2026-10-24"
 status: "Reviewed against literature published to mid-2026"
+explorer: "/changes/sea-level/"
 related: ["southern-ocean", "amoc", "coral-reefs"]
 decisions: "Sea level will keep rising for centuries under every scenario. Design long-lived coastal assets for the IPCC likely range, test them against about 2 m by 2100, and agree in advance the points at which to upgrade."
 keyPoints:

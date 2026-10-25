@@ -26,7 +26,7 @@ const CHANGES = [
     decisions: "Protect the reefs most likely to survive, reduce local pressures, and plan for weaker natural coastal protection.",
   },
   {
-    slug: "ice-sheets", title: "Ice sheets and sea level", story: null, storyLabel: "",
+    slug: "ice-sheets", title: "Ice sheets and sea level", story: "/changes/sea-level/", storyLabel: "See projections for 16 coastal cities",
     horizon: "Certain to continue for centuries; the pace depends on emissions",
     change: "Greenland and Antarctica are losing ice faster. Sea level will keep rising for centuries; how fast depends on emissions and on ice dynamics that are hard to predict.",
     people: "More frequent coastal flooding, salt water in farmland and aquifers, and loss of land in deltas and on low islands.",
@@ -102,7 +102,7 @@ export default function Changes() {
             <tbody>
               <tr><th scope="row">Sahel and West Africa</th><td>Monsoon drying after an <Link href="/changes/atlantic-circulation/">Atlantic circulation</Link> collapse; El Niño</td><td>Rain-fed farming, water</td></tr>
               <tr><th scope="row">South Asia</th><td>Monsoon drying after an Atlantic circulation collapse; sea-level rise in deltas</td><td>Farming, coastal cities</td></tr>
-              <tr><th scope="row">Small island states</th><td><Link href="/changes/coral-reefs/">Reef loss</Link> (94% of people live within 100 km of a reef); <Link href="/science/ice-sheets/">sea-level rise</Link></td><td>Coastal protection, fisheries, tourism</td></tr>
+              <tr><th scope="row">Small island states</th><td><Link href="/changes/coral-reefs/">Reef loss</Link> (94% of people live within 100 km of a reef); <Link href="/changes/sea-level/">sea-level rise</Link></td><td>Coastal protection, fisheries, tourism</td></tr>
               <tr><th scope="row">Southeast Asia</th><td>Reef loss (half of the world’s reef fishers); sea-level rise</td><td>Fisheries, coastal assets</td></tr>
               <tr><th scope="row">Southern Africa, Central America, Indonesia</th><td><Link href="/science/el-nino/">El Niño</Link> droughts</td><td>Food, water, hydropower</td></tr>
               <tr><th scope="row">Pacific coast of South America</th><td>El Niño marine heatwaves and coastal rains</td><td>Anchovy fishery, floods</td></tr>

@@ -10,6 +10,7 @@ import { ObservedChart } from "@/components/AmocCharts";
 import { EnsoHistory } from "@/components/EnsoCharts";
 import ReefMap from "@/components/ReefMap";
 import SeaIceChart from "@/components/SeaIceChart";
+import { GlobalProjectionChart, IceSheetChart } from "@/components/SeaLevelCharts";
 import { asset } from "@/lib/site";
 import styles from "../science.module.css";
 
@@ -149,6 +150,10 @@ function TopicVisual({ slug, live, explorer }: { slug: string; live?: { layer: "
     const ice = readNow("sea_ice.json");
     caption = "Antarctic sea ice this year, against the 1981–2010 median and the lowest on record for each day.";
     body = (<figure className={styles.visualFig}><SeaIceChart h={ice.antarctic} name="Antarctic" y={[0, 24]} /><figcaption className="small faint">NSIDC Sea Ice Index, version 4. Updated daily.</figcaption></figure>);
+  } else if (slug === "ice-sheets") {
+    const sl = JSON.parse(fs.readFileSync(path.join(process.cwd(), "public", "data", "sealevel", "sealevel.json"), "utf8"));
+    caption = "Ice lost from Greenland and Antarctica so far, and how far the sea could rise by 2150.";
+    body = (<div className={styles.visualPair}><div className={styles.visualFig}><IceSheetChart d={sl} /></div><div className={styles.visualFig}><GlobalProjectionChart d={sl} /></div></div>);
   } else if (slug === "subpolar-gyre") {
     caption = "Today’s sea-surface temperature compared with normal across the North Atlantic.";
     body = globe("ssta", "atlantic");
@@ -162,7 +167,7 @@ function TopicVisual({ slug, live, explorer }: { slug: string; live?: { layer: "
       <p className={styles.liveCaption}>{caption}</p>
       {body}
       {explorer && explorer !== "/ocean-now/" && slug !== "coral-reefs" && (
-        <p className={styles.visualMore}><Link className="button" href={explorer}>Explore the data</Link></p>
+        <p className={styles.visualMore}><Link className="button" href={explorer}>{slug === "ice-sheets" ? "See projections for 16 coastal cities" : "Explore the data"}</Link></p>
       )}
     </section>
   );

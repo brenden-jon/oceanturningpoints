@@ -88,7 +88,7 @@ export default function Home() {
             </li>
             <li>
               <span className={styles.when}>Certain, for centuries</span>
-              <h3><Link href="/science/ice-sheets/">Sea-level rise</Link></h3>
+              <h3><Link href="/changes/sea-level/">Sea-level rise</Link></h3>
               <p>Design ports, flood defences and coastal towns for a range of sea levels, with agreed points at which to upgrade or adapt further.</p>
             </li>
             <li>
@@ -150,7 +150,7 @@ export default function Home() {
           <ul className={styles.tiles}>
             {topics.map((t) => (
               <li key={t.slug}>
-                <Link href={t.slug === "amoc" ? "/changes/atlantic-circulation/" : t.slug === "coral-reefs" ? "/changes/coral-reefs/" : `/science/${t.slug}/`} className={styles.tile}>
+                <Link href={t.slug === "amoc" ? "/changes/atlantic-circulation/" : t.slug === "coral-reefs" ? "/changes/coral-reefs/" : t.slug === "ice-sheets" ? "/changes/sea-level/" : `/science/${t.slug}/`} className={styles.tile}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={asset(`/img/topics/${t.slug}.jpg`)} alt="" width={1200} height={800} loading="lazy" />
                   <span className={styles.tileTitle}>{t.title}</span>

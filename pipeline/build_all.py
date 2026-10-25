@@ -16,12 +16,18 @@ import amoc_series
 import basemap_and_scales
 import figures
 import nahosmip_rain
+import ocean_now
+import reef_stations
+import sea_level
 
 STEPS = [
     ("Base map and colour scales", lambda: (basemap_and_scales.geography(), basemap_and_scales.scales())),
     ("AMOC temperature scenarios (CESM)", amoc_scenarios.main),
     ("AMOC rainfall, four models (NAHosMIP)", nahosmip_rain.main),
     ("AMOC observations and model time series", amoc_series.main),
+    ("The ocean now (daily layers)", ocean_now.main),
+    ("Reef heat-stress history (weekly)", reef_stations.main),
+    ("Sea level and coastal flooding", sea_level.main),
     ("Preview and card images", figures.main),
 ]
 

@@ -76,3 +76,6 @@
 .glossary dt { font-weight: 650; }
 .glossary dd { margin: 0; color: var(--text-2); }
 @media (max-width: 700px) { .glossary > div { grid-template-columns: 1fr; gap: 0.3rem; } }
+.visualPair { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.visualPair .visualFig { margin: 0; }
+@media (max-width: 900px) { .visualPair { grid-template-columns: 1fr; } }

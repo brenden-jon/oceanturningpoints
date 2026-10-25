@@ -18,6 +18,11 @@ All raw downloads are cached in `pipeline/.cache` (not committed). Rebuild every
 | Sea Ice Index v4 (G02135) | NSIDC; Fetterer et al., doi:10.7265/a98x-0f50 | Free with citation | Arctic and Antarctic sea-ice charts (refreshed daily) | `ocean_now.py` |
 | CRW Four-Month Coral Bleaching Heat Stress Outlook v5 (CFSv2), 60% level | NOAA Coral Reef Watch; Liu et al. (2018) Front. Mar. Sci. 5:57 | Use without restriction, with credit | Bleaching outlook (weekly) | `ocean_now.py` |
 | NMME ensemble-mean SST anomaly forecast | NOAA Climate Prediction Center; Kirtman et al. (2014) BAMS 95, 585–601 | Public domain | Temperature outlook, 1–4 months (monthly) | `ocean_now.py` |
+| NOAA Coral Reef Watch regional virtual stations v3.1 | NOAA CRW (214 reef regions, daily since 1985) | Use without restriction, with credit | Reef regions map and histories (weekly) | `reef_stations.py` |
+| IPCC AR6 sea-level projections | Garner et al. (2021), doi:10.5281/zenodo.6382554; Kopp et al. (2023) GMD | CC BY 4.0 | City projections, global projections | `sea_level.py` |
+| AR6 WGI Fig. 9.32 flood amplification factors | CEDA, doi:10.5285/6b33327d0d0d4bcca872b431279086db | CC BY 4.0 | How often today's 1-in-100-year flood occurs | `sea_level.py` |
+| IMBIE ice-sheet mass balance | Otosaka et al. (2026) Sci. Data, data doi:10.5285/128c5e33-5224-4197-82f0-19dcc95b80a0 | Open Government Licence v3.0 | Ice-sheet chart | `sea_level.py` |
+| NOAA LSA global mean sea level | NOAA Laboratory for Satellite Altimetry | Public domain | Observed sea level (series currently ends Feb 2025) | `sea_level.py` |
 | World Database on Protected Areas | UNEP-WCMC and IUCN, Protected Planet | Non-commercial use with attribution; **displayed via UNEP-WCMC's map service, not downloaded or redistributed** | Marine protected areas on the coral globe | n/a |
 | Natural Earth 1:110m and 1:50m coastlines, land, boundary lines | naturalearthdata.com | Public domain | Map lines; preview images | `basemap_and_scales.py` |
 | Blue Marble Shaded Relief and Bathymetry | NASA Earth Observatory via NASA GIBS (tiles requested by the browser) | Public domain (credit NASA) | Homepage globe, atlas, home preview image | n/a; `figures.py` for the preview |

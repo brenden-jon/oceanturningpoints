@@ -1,7 +1,7 @@
 "use client";
 
 import { scaleLinear } from "d3-scale";
-import { line } from "d3-shape";
+import { area, line } from "d3-shape";
 import { useEffect, useRef, useState } from "react";
 import styles from "./LineChart.module.css";
 
@@ -19,6 +19,7 @@ export interface Series {
   dash?: string;
   label?: string;          // drawn at the series' last point
   labelDy?: number;
+  band?: [number, number, number][]; // optional shaded range: [x, low, high]
 }
 
 export interface Band { x0: number; x1: number; label?: string; fill?: string }
@@ -103,6 +104,10 @@ export default function LineChart({
             <line x1={sx(r.x!)} x2={sx(r.x!)} y1={m.t} y2={height - m.b} stroke={r.color ?? "var(--text)"} strokeDasharray={r.dash ?? "4 4"} strokeWidth={1} />
             {r.label && <text x={sx(r.x!) + (r.align === "end" ? -6 : 6)} y={m.t + 12} textAnchor={r.align === "end" ? "end" : "start"} className={styles.ruleLabel}>{r.label}</text>}
           </g>
+        ))}
+        {series.filter((s) => s.band).map((s) => (
+          <path key={`b${s.id}`} fill={s.color} fillOpacity={0.14} stroke="none"
+            d={area<[number, number, number]>().x((d) => sx(d[0])).y0((d) => sy(d[1])).y1((d) => sy(d[2]))(s.band!) ?? ""} />
         ))}
         {series.map((s) => (
           <path key={s.id} d={path(s.points) ?? ""} fill="none" stroke={s.color} strokeWidth={s.width ?? 1.6}

@@ -1,0 +1,8 @@
+.picker { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+.picker button { border: 0; background: var(--bg-alt); border-radius: 999px; padding: 0.35rem 0.75rem; font: 500 0.82rem/1.2 var(--font); color: var(--text); cursor: pointer; }
+.picker button[aria-pressed="true"] { background: var(--text); color: #fff; }
+.key { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.3rem 0.9rem; font-size: 0.78rem; color: var(--text-2); }
+.key li { display: flex; align-items: center; gap: 0.4rem; }
+.key i { width: 14px; height: 3px; border-radius: 2px; }
+.flood { margin: 0; font-size: 0.95rem; line-height: 1.45; background: var(--bg); border-radius: 10px; padding: 0.7rem 0.85rem; }
+.caveat { margin: 0; font-size: 0.85rem; line-height: 1.45; color: #6e3420; background: var(--alert-soft); border-radius: 10px; padding: 0.6rem 0.8rem; }
