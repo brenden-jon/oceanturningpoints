@@ -2,10 +2,14 @@
 title: "Coral reefs"
 question: "How much do coral reefs protect coasts, and what is lost as they decline?"
 summary: "Repeated marine heatwaves are bleaching warm-water reefs faster than they can recover. Reefs that lose height and structure protect coasts less, with the largest losses concentrated in a few countries."
-order: 4
+order: 3
 updated: "2026-10-24"
 reviewed: "2026-10-24"
 status: "Reviewed against literature published to mid-2026"
+live:
+  layer: "dhw"
+  view: "coral"
+  caption: "Today: coral bleaching heat stress across the tropics."
 related: ["ice-sheets"]
 keyPoints:
   - "Between January 2023 and September 2025, bleaching-level heat stress reached about 84% of the world's coral reef area, the largest extent in NOAA's record (NOAA Coral Reef Watch, 2025)."

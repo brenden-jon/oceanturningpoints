@@ -1,0 +1,24 @@
+.page { padding-bottom: 2rem; }
+.head { padding: clamp(2.5rem, 6vw, 4rem) var(--gutter) 2rem; display: grid; gap: 0.9rem; }
+.source { margin: 0.9rem 0 0; max-width: 90ch; line-height: 1.5; }
+.source a { color: var(--text-3); text-decoration: underline; }
+.enso { margin-top: 4rem; }
+.h2 { margin: 0.4rem 0 2.5rem; max-width: 24ch; }
+.ensoGrid { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: start; }
+.ensoText p { color: var(--text-2); margin: 0 0 1rem; }
+.stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem 1.5rem; margin: 0 0 2rem; }
+.stats dt { font-size: 0.8125rem; color: var(--text-2); margin-bottom: 0.25rem; }
+.stats dd { margin: 0; font-size: 2rem; font-weight: 700; letter-spacing: -0.03em; line-height: 1.05; }
+.stats .status { font-size: 1.35rem; color: var(--alert); letter-spacing: -0.02em; }
+.links { margin-top: 1.5rem !important; }
+.charts { display: grid; gap: 2rem; }
+.charts figure { margin: 0; background: var(--bg); border-radius: var(--radius); padding: 1.2rem 1.2rem 0.6rem; }
+.charts figcaption { margin-bottom: 0.4rem; font-size: 0.95rem; }
+.updated { padding-top: 1.5rem; }
+@media (max-width: 900px) { .ensoGrid { grid-template-columns: 1fr; } }
+.iceGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.iceGrid figure { margin: 0; background: var(--bg-alt); border-radius: var(--radius); padding: 1.2rem 1.2rem 0.6rem; }
+.iceGrid figcaption { margin-bottom: 0.4rem; font-size: 0.95rem; color: var(--text-2); }
+.iceGrid figcaption strong { color: var(--text); }
+.iceText { color: var(--text-2); max-width: 75ch; margin: 1.5rem 0 0; }
+@media (max-width: 900px) { .iceGrid { grid-template-columns: 1fr; } }

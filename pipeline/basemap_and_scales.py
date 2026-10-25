@@ -56,6 +56,7 @@ def scales() -> None:
         # Brown-to-blue-green, the convention IPCC AR6 uses for precipitation
         # change. Low (negative) values are brown, so drying reads as brown.
         "rainfall": {"cmap": "ColorBrewer BrBG", "lut": lut(matplotlib.colormaps["BrBG"]), "note": "Diverging: drier is brown, wetter is blue-green, no change is white."},
+        "heat": {"cmap": "cmocean.amp", "lut": lut(cmocean.cm.amp), "note": "Sequential: no heat stress is white, severe heat stress is dark red."},
         "sealevel": {"cmap": "cmocean.balance", "lut": lut(cmocean.cm.balance), "note": "Diverging: lower is blue, higher is red."},
     }, OUT / "scales.json")
     print("  scales.json written")

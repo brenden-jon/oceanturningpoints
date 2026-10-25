@@ -16,8 +16,8 @@ export const abs = (p: string) => `${SITE.url}${p.startsWith("/") ? p : `/${p}`}
 export const asset = (p: string) => `${BASE}${p.startsWith("/") ? p : `/${p}`}`;
 
 export const NAV = [
-  { href: "/questions/", label: "Questions" },
-  { href: "/atlas/", label: "Atlas" },
+  { href: "/ocean-now/", label: "Ocean now" },
+  { href: "/changes/", label: "Big changes" },
   { href: "/science/", label: "Science" },
   { href: "/about/", label: "About" },
 ];

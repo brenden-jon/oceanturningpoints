@@ -1,8 +1,8 @@
 ---
 title: "Ice sheets"
 question: "How fast are the ice sheets raising sea level, and how much more rise is locked in?"
-summary: "Greenland and Antarctica are losing ice at an accelerating rate. How far the sea rises by 2100 depends on emissions and on deep uncertainty about West Antarctica; much more rise is committed over the centuries after."
-order: 5
+summary: "Greenland and Antarctica are losing ice at an accelerating rate. How far the sea rises by 2100 depends on emissions and on deep uncertainty about West Antarctica. Much more rise is committed over the following centuries."
+order: 4
 updated: "2026-10-24"
 reviewed: "2026-10-24"
 status: "Reviewed against literature published to mid-2026"
@@ -10,8 +10,8 @@ related: ["southern-ocean", "amoc", "coral-reefs"]
 keyPoints:
   - "Between 1992 and 2020 the two ice sheets added 21.0 ± 1.9 mm to global mean sea level, and their combined rate of mass loss rose from 105 to 372 billion tonnes a year (Otosaka et al., 2023)."
   - "Global mean sea level rose by 0.20 m between 1901 and 2018, at 3.7 mm per year over 2006–2018 (high confidence) (IPCC, 2021)."
-  - "The IPCC's likely range for rise by 2100, relative to 1995–2014, is 0.28–0.55 m under very low emissions and 0.63–1.01 m under very high emissions; rise approaching 2 m cannot be ruled out under very high emissions (IPCC, 2021)."
-  - "Sea level is committed to rise for centuries to millennia: by about 2–3 m over 2000 years if warming is limited to 1.5 °C, and 2–6 m at 2 °C (low confidence) (IPCC, 2021)."
+  - "The IPCC's likely range for rise by 2100, relative to 1995–2014, is 0.28–0.55 m under very low emissions and 0.63–1.01 m under very high emissions. Rise approaching 2 m cannot be ruled out under very high emissions (IPCC, 2021)."
+  - "Sea level is committed to rise for centuries to millennia, by about 2–3 m over 2000 years if warming is limited to 1.5 °C and 2–6 m at 2 °C (low confidence) (IPCC, 2021)."
   - "Coastal exposure depends on local relative sea level, which can rise several times faster than the global mean where land is subsiding (Nicholls et al., 2021)."
 confidence:
   - claim: "Both ice sheets are losing mass, and the loss has accelerated since the 1990s"
@@ -35,61 +35,61 @@ confidence:
 
 An ice sheet gains mass from snowfall and loses it through meltwater run-off and through glaciers that discharge ice into the ocean. When losses exceed gains, sea level rises. Complete loss of the Greenland ice sheet would raise global sea level by about 7 m (Fox-Kemper et al., 2021). Antarctica holds more than half of Earth's fresh water (Garbe et al., 2020).
 
-Greenland loses ice through both surface melt and discharge. In Antarctica, the main driver is the ocean melting the floating ice shelves that hold back glaciers; in the Amundsen Sea this is currently the dominant process controlling Antarctica's contribution (Naughten et al., 2023).
+Greenland loses ice through both surface melt and discharge. In Antarctica, the main driver is the ocean melting the floating ice shelves that hold back glaciers. In the Amundsen Sea this is currently the dominant process controlling Antarctica's contribution (Naughten et al., 2023). West Antarctica rests on bedrock far below sea level that deepens inland, a geometry long considered prone to self-sustaining retreat, known as marine ice-sheet instability (Joughin et al., 2014).
 
-West Antarctica rests on bedrock far below sea level that deepens inland, a geometry long considered prone to self-sustaining retreat, known as marine ice-sheet instability (Joughin et al., 2014). Ice sheets are not the only source of rise: over 1901–2018, ocean thermal expansion contributed 38% and glaciers 41% of the total (Fox-Kemper et al., 2021).
+Ice sheets are one of several sources of sea-level rise. Over 1901–2018, ocean thermal expansion contributed 38% of the total and glaciers 41% (Fox-Kemper et al., 2021).
 
 ## What we observe
 
-Global mean sea level rose by 0.20 [0.15 to 0.25] m between 1901 and 2018. The rate increased from 1.3 mm per year over 1901–1971 to 3.7 [3.2 to 4.2] mm per year over 2006–2018 (high confidence), and human influence was very likely the main driver since at least 1971 (IPCC, 2021). Satellite altimetry shows the annual rate rising from about 2.1 mm in 1993 to about 4.5 mm in 2023 (Hamlington et al., 2024).
+Global mean sea level rose by 0.20 [0.15 to 0.25] m between 1901 and 2018. The rate increased from 1.3 mm per year over 1901–1971 to 3.7 [3.2 to 4.2] mm per year over 2006–2018 (high confidence). Human influence was very likely the main driver since at least 1971 (IPCC, 2021). Satellite altimetry shows the annual rate rising from about 2.1 mm in 1993 to about 4.5 mm in 2023 (Hamlington et al., 2024).
 
-IMBIE combines 50 satellite estimates of ice flow, ice volume and gravity. Between 1992 and 2020 the ice sheets contributed 21.0 ± 1.9 mm to global mean sea level, and their combined loss rose from 105 to 372 billion tonnes a year between 1992–1996 and 2016–2020 (Otosaka et al., 2023).
+IMBIE combines 50 satellite estimates of ice flow, ice volume and gravity. Between 1992 and 2020 the ice sheets contributed 21.0 ± 1.9 mm to global mean sea level. Their combined loss rose from 105 to 372 billion tonnes a year between 1992–1996 and 2016–2020 (Otosaka et al., 2023).
 
-Greenland lost 169 ± 9 billion tonnes a year on average, with large year-to-year swings driven by surface melt. Antarctic losses are dominated by West Antarctica (82 ± 9 billion tonnes a year), while East Antarctica is close to balance but the most uncertain component (Otosaka et al., 2023). Between 1992 and 2011, grounding lines of major Amundsen Sea glaciers retreated by up to 35 km, with no major bed obstacle to further retreat (Rignot et al., 2014).
+Greenland lost 169 ± 9 billion tonnes a year on average, with large year-to-year swings driven by surface melt. West Antarctica dominates Antarctic losses (82 ± 9 billion tonnes a year), while East Antarctica is close to balance but is the most uncertain component (Otosaka et al., 2023). Between 1992 and 2011, grounding lines of major Amundsen Sea glaciers retreated by up to 35 km, with no major bed obstacle to further retreat (Rignot et al., 2014).
 
-Human influence very likely contributed to Greenland's surface melting over the past two decades; there is only limited evidence, with medium agreement, of human influence on Antarctic mass loss (IPCC, 2021).
+Human influence very likely contributed to Greenland's surface melting over the past two decades. For Antarctic mass loss there is only limited evidence, with medium agreement, of human influence (IPCC, 2021).
 
 ## What could change
 
-It is virtually certain that global mean sea level will keep rising this century. Relative to 1995–2014, the IPCC's likely range for 2100 is 0.28–0.55 m under very low emissions (SSP1-1.9), 0.32–0.62 m (SSP1-2.6), 0.44–0.76 m (SSP2-4.5) and 0.63–1.01 m under very high emissions (SSP5-8.5) (IPCC, 2021). These are scenario-based projections, not forecasts. The likely Antarctic contribution differs little between scenarios (0.03–0.27 m to 0.03–0.34 m), whereas Greenland's grows with emissions (0.01–0.10 m to 0.09–0.18 m) (Fox-Kemper et al., 2021).
+It is virtually certain that global mean sea level will keep rising this century. Relative to 1995–2014, the IPCC's likely range for 2100 is 0.28–0.55 m under very low emissions (SSP1-1.9), 0.32–0.62 m (SSP1-2.6), 0.44–0.76 m (SSP2-4.5) and 0.63–1.01 m under very high emissions (SSP5-8.5) (IPCC, 2021). Each range is conditional on its emissions scenario. The likely Antarctic contribution differs little between scenarios (0.03–0.27 m to 0.03–0.34 m), whereas Greenland's grows with emissions (0.01–0.10 m to 0.09–0.18 m) (Fox-Kemper et al., 2021).
 
-The likely ranges exclude processes characterised by deep uncertainty, notably marine ice-sheet and marine ice-cliff instability, which could strongly increase Antarctic losses over centuries (Fox-Kemper et al., 2021). Hence rise approaching 2 m by 2100 and 5 m by 2150 under very high emissions cannot be ruled out (low confidence) (IPCC, 2021). This is a low-likelihood, high-impact storyline, not a central estimate.
+The likely ranges exclude processes characterised by deep uncertainty, notably marine ice-sheet and marine ice-cliff instability, which could strongly increase Antarctic losses over centuries (Fox-Kemper et al., 2021). For that reason, rise approaching 2 m by 2100 and 5 m by 2150 under very high emissions cannot be ruled out (low confidence) (IPCC, 2021). This is a low-likelihood, high-impact storyline.
 
-Ice-cliff instability is the hypothesis that tall ice cliffs, exposed when ice shelves break up, collapse under their own weight. One model including it projected more than 1 m from Antarctica by 2100 under unabated emissions (DeConto & Pollard, 2016). A reanalysis of that model found a most likely value of 45 cm under very high emissions and showed the process is not needed to reproduce past sea levels; it has not been observed in the modern era (Edwards et al., 2019).
+Ice-cliff instability is the hypothesis that tall ice cliffs, exposed when ice shelves break up, collapse under their own weight. One model including it projected more than 1 m from Antarctica by 2100 under unabated emissions (DeConto & Pollard, 2016). A reanalysis of that model found a most likely value of 45 cm under very high emissions, and showed that past sea levels can be reproduced without the process. The process has not been observed in the modern era (Edwards et al., 2019).
 
-Sea level is committed to rise for centuries to millennia (high confidence): over 2000 years by about 2–3 m if warming is limited to 1.5 °C, 2–6 m at 2 °C and 19–22 m at 5 °C (low confidence) (IPCC, 2021). Greenland's imbalance with the 2000–2019 climate alone commits at least 274 ± 68 mm of global rise (Box et al., 2022).
+Sea level is committed to rise for centuries to millennia (high confidence). Over 2000 years the rise would be about 2–3 m if warming is limited to 1.5 °C, 2–6 m at 2 °C and 19–22 m at 5 °C (low confidence) (IPCC, 2021). Greenland's imbalance with the 2000–2019 climate alone commits at least 274 ± 68 mm of global rise (Box et al., 2022).
 
 ### Thresholds
 
-The IPCC has high confidence that Greenland shows threshold behaviour but low agreement on where the threshold lies, assessing complete loss over a millennium or more for sustained warming between about 1 °C (low confidence) and 4 °C (medium confidence) (Fox-Kemper et al., 2021). One modelling study gives 0.8–3.2 °C, best estimate 1.6 °C (Robinson et al., 2012). Complete loss would take millennia, about 8000 years at 5.5 °C in one set of simulations (Clark et al., 2016, as assessed in Fox-Kemper et al., 2021).
+The IPCC has high confidence that Greenland shows threshold behaviour, with low agreement on where the threshold lies. It assesses complete loss over a millennium or more for sustained warming between about 1 °C (low confidence) and 4 °C (medium confidence) (Fox-Kemper et al., 2021). One modelling study gives 0.8–3.2 °C, best estimate 1.6 °C (Robinson et al., 2012). Complete loss would take millennia, about 8000 years at 5.5 °C in one set of simulations (Clark et al., 2016, as assessed in Fox-Kemper et al., 2021).
 
-For West Antarctica, simulations suggest Thwaites Glacier may already be in early-stage collapse, with rapid collapse starting in 200–900 years (Joughin et al., 2014), and ocean models project continued Amundsen Sea warming this century even under ambitious emission cuts (Naughten et al., 2023). The IPCC assesses complete, irreversible loss over multiple millennia at sustained warming of 3–5 °C (medium confidence), with limited evidence for near-complete loss at lower warming (Fox-Kemper et al., 2021).
+For West Antarctica, simulations suggest Thwaites Glacier may already be in early-stage collapse, with rapid collapse starting in 200–900 years (Joughin et al., 2014). Ocean models project continued Amundsen Sea warming this century even under ambitious emission cuts (Naughten et al., 2023). The IPCC assesses complete, irreversible loss over multiple millennia at sustained warming of 3–5 °C (medium confidence), with limited evidence for near-complete loss at lower warming (Fox-Kemper et al., 2021).
 
 ## Consequences
 
 People experience relative sea level, which differs from the global mean because of ocean circulation, the gravitational effects of ice loss and vertical land motion (Fox-Kemper et al., 2021). About two-thirds of the world's coastline is projected to see rise within ±20% of the global mean (medium confidence). By 2100, extreme sea levels that occurred once a century are projected to occur at least annually at more than half of tide-gauge locations (high confidence) (IPCC, 2021).
 
-Subsidence matters greatly. Global mean relative sea-level rise was 2.6 mm per year over the past two decades, but the average coastal resident, often living on sinking land, experienced 7.8–9.9 mm per year (Nicholls et al., 2021). Many river deltas are sinking because of groundwater and hydrocarbon extraction, dams that trap sediment, and floodplain engineering (Syvitski et al., 2009).
+Over the past two decades, global mean relative sea-level rise was 2.6 mm per year, while the average coastal resident, often living on sinking land, experienced 7.8–9.9 mm per year (Nicholls et al., 2021). Many river deltas are sinking because of groundwater and hydrocarbon extraction, dams that trap sediment, and floodplain engineering (Syvitski et al., 2009).
 
-Exposure is not damage. About 267 million people lived on land less than 2 m above sea level in 2020; with 1 m of relative rise and population held fixed, this would reach at least 410 million, 59% of them in tropical Asia (Hooijer & Vernimmen, 2021). Another estimate puts 190 million people (150–250 million) below projected 2100 high-tide lines under low emissions, but excludes coastal defences and is described by its authors as a threat indicator rather than projected impacts (Kulp & Strauss, 2019).
+Exposure is not damage. About 267 million people lived on land less than 2 m above sea level in 2020. With 1 m of relative rise and population held fixed, this would reach at least 410 million, 59% of them in tropical Asia (Hooijer & Vernimmen, 2021). Another estimate, which excludes coastal defences and which its authors describe as a threat indicator, puts 190 million people (150–250 million) below projected 2100 high-tide lines under low emissions (Kulp & Strauss, 2019).
 
-The population exposed to a 100-year coastal flood is projected to roughly double with 0.75 m of rise, without population change or further adaptation (medium confidence), and sea-level rise is an existential threat for some small islands and low-lying coasts (medium confidence) (IPCC, 2022). One modelling study concluded that, at current emission rates, many atoll islands could become uninhabitable by mid-century through wave-driven flooding of infrastructure and freshwater (Storlazzi et al., 2018); timing depends on local conditions.
+With 0.75 m of rise, and without population change or further adaptation, the population exposed to a 100-year coastal flood is projected to roughly double (medium confidence). Sea-level rise is an existential threat for some small islands and low-lying coasts (medium confidence) (IPCC, 2022). One modelling study concluded that, at current emission rates, many atoll islands could become uninhabitable by mid-century through wave-driven flooding of infrastructure and freshwater (Storlazzi et al., 2018). The timing depends on local conditions.
 
-Regionally, model projections show weakening of the Atlantic Meridional Overturning Circulation adding sea-level rise on the US north-east coast beyond the global mean (Yin et al., 2009); see the AMOC article. Evidence is thinnest for developing countries: global data on coastal defences are lacking, and people in unprotected, frequently flooded areas, as in Bangladesh, are likely most common there (Kulp & Strauss, 2019).
+Model projections show a weakening Atlantic Meridional Overturning Circulation adding to sea-level rise on the US north-east coast, beyond the global mean (Yin et al., 2009); see the AMOC article. Evidence is thinnest for developing countries. Global data on coastal defences are lacking, and people in unprotected, frequently flooded areas, as in Bangladesh, are likely most common there (Kulp & Strauss, 2019).
 
 ## What we know and don't know
 
-Observed ice loss and sea-level rise are robust across independent methods (Otosaka et al., 2023). It is also well established that sea level will keep rising for centuries and that Greenland's total loss increases with cumulative emissions (high confidence) (IPCC, 2021).
+Independent methods agree on the observed ice loss and sea-level rise (Otosaka et al., 2023). It is also well established that sea level will keep rising for centuries and that Greenland's total loss increases with cumulative emissions (high confidence) (IPCC, 2021).
 
-The largest uncertainty is the pace of Antarctic loss later this century and beyond, which hinges on poorly constrained ice-shelf and ice-cliff processes. Greenland's threshold is uncertain. Locally, subsidence and the condition of flood defences are often the least well known terms in coastal risk.
+The largest uncertainty is the pace of Antarctic loss later this century and beyond. It depends on ice-shelf and ice-cliff processes that are poorly constrained. Greenland's threshold is uncertain. Locally, subsidence and the condition of flood defences are often the least well known terms in coastal risk.
 
 ## Why it matters for decisions
 
-Ports, flood barriers and power stations often have design lives beyond 2100. A practical approach is to plan for the IPCC likely range while stress-testing long-lived assets against the high-end storyline, using adaptation pathways with monitored trigger points for upgrades.
+Ports, flood barriers and power stations often have design lives beyond 2100. One practical approach is to plan for the IPCC likely range and stress-test long-lived assets against the high-end storyline. Adaptation pathways can then set monitored trigger points for upgrades.
 
-Monitoring works at two scales: satellite gravity, altimetry and IMBIE track the global signal, while tide gauges and GNSS measurements of land motion show what a particular coast experiences.
+Monitoring works at two scales. Satellite gravity, altimetry and IMBIE track the global signal. Tide gauges and GNSS measurements of land motion show what a particular coast experiences.
 
-For insurers, lenders and planners, changing flood frequency is often more decision-relevant than mean rise: once-a-century events becoming annual at many sites (IPCC, 2021) shifts return periods and design standards long before mean sea level rises by a metre. Because rise is committed for centuries, adaptation is needed under every scenario; emissions mainly set its pace and eventual height.
+For insurers, lenders and planners, changes in flood frequency often matter more to decisions than mean rise. The projected shift from once-a-century to annual extremes at many sites (IPCC, 2021) changes return periods and design standards long before mean sea level rises by a metre. Rise is committed for centuries, so adaptation is needed under every scenario. Emissions mainly set the pace of the rise and its eventual height.
 
 ## References and data
 

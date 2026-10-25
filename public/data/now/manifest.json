@@ -1,0 +1,130 @@
+{
+ "currents": {
+  "file": "currents.png",
+  "date": "2026-10-23",
+  "grid": {
+   "lat0": 89.625,
+   "lon0": -179.875,
+   "res": 0.5,
+   "h": 360,
+   "w": 720,
+   "rowOrder": "north-to-south"
+  },
+  "encoding": {
+   "clip": 2.0,
+   "note": "R = u, G = v, value = -clip + byte/255 * 2 * clip (m/s); alpha 0 = no data"
+  },
+  "stats": {
+   "p50": 0.127,
+   "p99": 0.963
+  },
+  "source": {
+   "org": "NOAA CoastWatch",
+   "product": "Blended near-real-time sea surface currents (altimetry geostrophic plus Ekman)",
+   "datasetId": "noaacwBLENDEDNRTcurrentsDaily",
+   "url": "https://coastwatch.noaa.gov/erddap/griddap/noaacwBLENDEDNRTcurrentsDaily.html",
+   "licence": "US Government work, public domain"
+  },
+  "bytes": 235699
+ },
+ "enso": {
+  "file": "enso.json",
+  "week": "2026-10-14",
+  "nino34": 3.3,
+  "relative34": 2.4,
+  "status": "El Niño Advisory"
+ },
+ "updated": "2026-10-25T02:45Z",
+ "status": {
+  "currents": {
+   "ok": true
+  },
+  "enso": {
+   "ok": true
+  },
+  "ssta": {
+   "ok": true
+  },
+  "dhw": {
+   "ok": true
+  },
+  "seaIce": {
+   "ok": true
+  }
+ },
+ "ssta": {
+  "file": "ssta.png",
+  "vmin": -5.84,
+  "vmax": 9.38,
+  "step": 0.05992,
+  "bytes": 261960,
+  "date": "2026-10-23",
+  "grid": {
+   "lat0": -89.7750015258789,
+   "lat1": 89.9749984741211,
+   "lon0": -179.97500610351562,
+   "lon1": 179.77499389648438,
+   "res": 0.25,
+   "h": 720,
+   "w": 1440,
+   "rowOrder": "north-to-south"
+  },
+  "units": "°C",
+  "domain": 4,
+  "scale": "temperature",
+  "source": {
+   "org": "NOAA Coral Reef Watch",
+   "product": "Daily global 5 km SST anomaly (CoralTemp v3.1), relative to 1985–2012",
+   "url": "https://coralreefwatch.noaa.gov/product/5km/index_5km_ssta.php",
+   "licence": "Use without restriction; credit NOAA Coral Reef Watch"
+  }
+ },
+ "dhw": {
+  "file": "dhw.png",
+  "vmin": 0.0,
+  "vmax": 58.43,
+  "step": 0.23004,
+  "bytes": 64379,
+  "date": "2026-10-15",
+  "grid": {
+   "lat0": -89.7750015258789,
+   "lat1": 89.9749984741211,
+   "lon0": -179.97500610351562,
+   "lon1": 179.77499389648438,
+   "res": 0.25,
+   "h": 720,
+   "w": 1440,
+   "rowOrder": "north-to-south"
+  },
+  "units": "°C-weeks",
+  "domain": 16,
+  "scale": "heat",
+  "thresholds": {
+   "bleaching": 4,
+   "severe": 8
+  },
+  "source": {
+   "org": "NOAA Coral Reef Watch",
+   "product": "Daily global 5 km Degree Heating Weeks (v3.1)",
+   "url": "https://coralreefwatch.noaa.gov/product/5km/index_5km_dhw.php",
+   "licence": "Use without restriction; credit NOAA Coral Reef Watch"
+  }
+ },
+ "seaIce": {
+  "file": "sea_ice.json",
+  "arctic": {
+   "date": "2026-10-17",
+   "extent": 6.717,
+   "median8110": 8.499,
+   "rankLowest": 11,
+   "years": 44
+  },
+  "antarctic": {
+   "date": "2026-10-17",
+   "extent": 16.204,
+   "median8110": 18.114,
+   "rankLowest": 2,
+   "years": 44
+  }
+ }
+}

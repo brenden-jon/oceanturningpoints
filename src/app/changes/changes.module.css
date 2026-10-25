@@ -1,0 +1,14 @@
+.head { padding: clamp(2.5rem, 6vw, 4.5rem) 0 3.5rem; display: grid; gap: 1.1rem; }
+.title { max-width: 18ch; }
+.changes { list-style: none; margin: 0; padding: 0; display: grid; gap: clamp(3rem, 7vw, 5.5rem); }
+.change { display: grid; grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; }
+.image img { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: var(--radius); }
+.body h2 { font-size: clamp(1.6rem, 2.8vw, 2.2rem); margin-bottom: 1.2rem; }
+.body h2 a { color: var(--text); }
+.body h2 a:hover { color: var(--accent); text-decoration: none; }
+.body dl { margin: 0; display: grid; gap: 0.9rem; }
+.body dt { font-size: 0.8125rem; font-weight: 600; color: var(--accent); }
+.body dd { margin: 0.15rem 0 0; color: var(--text-2); line-height: 1.5; }
+.links { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.5rem; margin: 1.6rem 0 0; }
+.credit { margin: 3rem 0 6rem; }
+@media (max-width: 860px) { .change { grid-template-columns: 1fr; } }

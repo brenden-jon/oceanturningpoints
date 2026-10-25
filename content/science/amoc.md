@@ -1,17 +1,17 @@
 ---
 title: "Atlantic overturning circulation"
 question: "Is the Atlantic overturning circulation weakening, and what would its collapse mean?"
-summary: "The AMOC carries heat north through the Atlantic. Models agree it will weaken this century; whether it could collapse, and when, is contested. A collapse would cool northwest Europe and shift tropical rainfall."
+summary: "The AMOC carries heat north through the Atlantic. Models agree it will weaken this century. Whether it could collapse, and when, is contested. A collapse would cool northwest Europe and shift tropical rainfall."
 order: 1
 updated: "2026-10-24"
 reviewed: "2026-10-24"
 status: "Reviewed against literature published to mid-2026"
 related: ["subpolar-gyre", "southern-ocean", "ice-sheets"]
-explorer: "/questions/amoc-collapse/"
+explorer: "/changes/atlantic-circulation/"
 keyPoints:
   - "Direct measurements at 26.5°N since 2004 average about 17 million cubic metres of water per second, with a weaker state since 2008 (Smeed et al., 2018)."
   - "The IPCC finds the AMOC very likely to weaken this century, with medium confidence that it will not collapse abruptly before 2100 (IPCC, 2021)."
-  - "Studies since then disagree on the risk of collapse: some find signs of lost stability, others find mechanisms that keep a weakened circulation going."
+  - "Studies since then disagree on the risk of collapse. Some find signs of lost stability; others find mechanisms that keep a weakened circulation going."
   - "In model experiments, a collapse cools northwest Europe sharply in winter and moves tropical rain belts south, weakening the West African and Indian monsoons (Ben-Yami et al., 2024)."
 confidence:
   - claim: "The AMOC will weaken over the 21st century"
@@ -33,61 +33,63 @@ confidence:
 
 ## The system
 
-The Atlantic Meridional Overturning Circulation, or AMOC, is a large-scale loop of ocean currents. Warm, salty water flows north near the surface, including in the Gulf Stream. In the Nordic and Labrador seas it cools, becomes dense enough to sink, and returns south at depth. The loop is completed by upwelling of deep water elsewhere, much of it in the Southern Ocean.
+The Atlantic Meridional Overturning Circulation, or AMOC, is a large-scale loop of ocean currents. Warm, salty water flows north near the surface, including in the Gulf Stream. In the Nordic and Labrador seas it cools, becomes dense enough to sink, and returns south at depth. Deep water rises back to the surface elsewhere, much of it in the Southern Ocean, and closes the loop.
 
-The northward flow carries a large amount of heat. It is one reason northwest Europe is mild for its latitude, and it helps set where the tropical rain belt sits each year. The circulation is measured in sverdrups (Sv): one sverdrup is a million cubic metres of water per second. At 26.5°N, the AMOC has averaged about 17 Sv since measurements began in 2004.
+The northward flow carries a large amount of heat. It is one reason northwest Europe is mild for its latitude, and it helps set where the tropical rain belt sits each year. The circulation is measured in sverdrups (Sv); one sverdrup is a million cubic metres of water per second. At 26.5°N the AMOC has averaged about 17 Sv since measurements began in 2004.
 
-The AMOC can change because it depends on the density of surface water in the far north. Warming makes that water lighter, and so does extra fresh water from rain, rivers and melting ice. Weaker sinking means less salty water arrives from the south, which can make the surface lighter still. This salt-advection feedback is why theory and many models allow two stable states, one with a strong overturning and one with a very weak one (Weijer et al., 2019).
+The AMOC is sensitive to the density of surface water in the far north. Warming makes that water lighter, and so does extra fresh water from rain, rivers and melting ice. Weaker sinking means less salty water arrives from the south, which can make the surface lighter still. Because of this salt-advection feedback, theory and many models allow two stable states, one with a strong overturning and one with a very weak one (Weijer et al., 2019).
 
 ## What we observe
 
-The RAPID array has measured the AMOC continuously across the Atlantic at 26.5°N since April 2004. The record shows large variability from month to month and year to year. It also shows a shift: the circulation has been in a state of reduced overturning since about 2008 compared with 2004–2008 (Smeed et al., 2018). Twenty years is short, though, and the record alone cannot separate a long-term trend from natural decadal variation.
+The RAPID array has measured the AMOC continuously across the Atlantic at 26.5°N since April 2004. The record shows large variability from month to month and year to year. Since about 2008 the circulation has been in a state of reduced overturning compared with 2004–2008 (Smeed et al., 2018). Twenty years is short, though, and the record alone cannot separate a long-term trend from natural decadal variation.
 
 Longer views rely on indirect evidence, and they disagree. A sea-surface temperature "fingerprint", the cold patch south of Greenland relative to the rest of the ocean, suggests a weakening of about 15% since the mid-twentieth century (Caesar et al., 2018). A reconstruction built from historical ship-based measurements at 26°N shows no overall decline from 1981 to 2016 (Worthington et al., 2021).
 
-Further north, the OSNAP array, operating since 2014, found that most of the sinking happens east of Greenland rather than in the Labrador Sea, as had long been assumed (Lozier et al., 2019). This matters for which processes, and which models, deserve most trust.
+Further north, the OSNAP array has operated since 2014. It found that most of the sinking happens east of Greenland (Lozier et al., 2019). Oceanographers had long assumed the Labrador Sea was the main site. The finding bears on which processes, and which models, deserve most trust.
 
 ## What could change
 
-Climate models agree that the AMOC weakens as the planet warms. The IPCC assessed it as very likely to weaken over the 21st century under all emission scenarios, with medium confidence that it will not collapse abruptly before 2100 (IPCC, 2021). The CMIP6 models used by the IPCC give a wide range: a 32 ± 37% reduction by 2100 under an intermediate scenario. Constraining the models with observations, one recent study narrows this to a 51 ± 8% weakening (Portmann et al., 2026).
+Climate models agree that the AMOC weakens as the planet warms. The IPCC assessed it as very likely to weaken over the 21st century under all emission scenarios, with medium confidence that it will not collapse abruptly before 2100 (IPCC, 2021). The CMIP6 models used by the IPCC spread widely, with a 32 ± 37% reduction by 2100 under an intermediate scenario. One recent study constrains the models with observations and narrows this to a 51 ± 8% weakening (Portmann et al., 2026).
 
-Whether a collapse could follow is the most contested question in this field. Statistical analyses of the fingerprint record report rising variability and memory, classic signs of a system losing stability (Boers, 2021), and one study projected a collapse between 2025 and 2095 (Ditlevsen & Ditlevsen, 2023). These methods depend on the fingerprint being a faithful stand-in for the AMOC, which is debated. A physics-based indicator, the freshwater carried by the AMOC across 34°S, suggests the present-day circulation is on course towards a tipping point (van Westen et al., 2024).
+Scientists disagree on whether a collapse could follow. Statistical analyses of the fingerprint record report rising variability and memory, signs that a system is losing stability (Boers, 2021), and one study projected a collapse between 2025 and 2095 (Ditlevsen & Ditlevsen, 2023). These methods depend on the fingerprint being a faithful stand-in for the AMOC, which is debated. A physics-based indicator, the freshwater carried by the AMOC across 34°S, suggests the present-day circulation is on course towards a tipping point (van Westen et al., 2024).
 
-Other work points the other way. Across 34 climate models, winds over the Southern Ocean keep pulling deep water to the surface, sustaining a weakened AMOC even under extreme forcing; this suggests a full collapse is unlikely this century (Baker et al., 2025). Yet in CMIP6 runs extended beyond 2100, the circulation falls to an extremely weak, shallow state in every model under high emissions, and in some under intermediate and low emissions, preceded by a mid-century collapse of deep mixing in the Labrador, Irminger and Nordic seas (Drijfhout et al., 2025).
+Other studies find the circulation more resilient. Across 34 climate models, winds over the Southern Ocean keep pulling deep water to the surface and sustain a weakened AMOC even under extreme forcing, which suggests a full collapse is unlikely this century (Baker et al., 2025). In CMIP6 runs extended beyond 2100, though, the circulation falls to an extremely weak, shallow state in every model under high emissions, and in some under intermediate and low emissions. A mid-century collapse of deep mixing in the Labrador, Irminger and Nordic seas comes first (Drijfhout et al., 2025).
 
-The pace of warming may matter as much as its amount. In one climate model, the AMOC stayed stable up to 5.5 °C of warming when carbon dioxide rose slowly, but collapsed at about 2 °C under faster increases (van Westen, Börner & Dijkstra, 2026). A single warming threshold, often quoted as around 4 °C with a range of 1.4–8 °C (Armstrong McKay et al., 2022), may therefore be less meaningful than it appears.
+The rate of warming also affects the outcome. In one climate model, the AMOC stayed stable up to 5.5 °C of warming when carbon dioxide rose slowly, but collapsed at about 2 °C under faster increases (van Westen, Börner & Dijkstra, 2026). A single warming threshold, often quoted as around 4 °C with a range of 1.4–8 °C (Armstrong McKay et al., 2022), may therefore mean less than it seems.
 
 ## Consequences
 
-The most robust effect of a collapse is cooling around the North Atlantic. In one set of experiments with the CESM model, a collapse in a world 2 °C warmer than pre-industrial makes winters in northwest Europe colder than they were before industrialisation, with once-a-decade cold extremes approaching −20 °C in London and −30 °C in Edinburgh, and sea ice reaching much further south (van Westen & Baatsen, 2025). Other models show the same pattern, with cooling that differs in size (Jackson et al., 2015).
+The best-established effect of a collapse is cooling around the North Atlantic. In one set of experiments with the CESM model, a collapse in a world 2 °C warmer than pre-industrial makes winters in northwest Europe colder than they were before industrialisation. Once-a-decade cold extremes approach −20 °C in London and −30 °C in Edinburgh, and sea ice reaches much further south (van Westen & Baatsen, 2025). Other models show the same pattern, with cooling of different sizes (Jackson et al., 2015).
 
-For more people, the larger effect is on rain. With less heat reaching the north, the tropical rain belt shifts south. Across four models with a stable collapsed state, rainfall falls by about 29% in the West African monsoon and 19% in the Indian summer monsoon, while the southern Amazon gets wetter (Ben-Yami et al., 2024). The direction is consistent across models; the amount varies a lot between them. Evidence from past climates and models also links a slower circulation to higher drought risk in parts of the tropics (DiNezio et al., 2025).
+For more people, the larger effect is on rain, because the tropical rain belt shifts south when less heat reaches the north. Across four models with a stable collapsed state, rainfall falls by about 29% in the West African monsoon and 19% in the Indian summer monsoon, while the southern Amazon gets wetter (Ben-Yami et al., 2024). The direction is consistent across models, and the amount varies widely between them. Evidence from past climates and models also links a slower circulation to higher drought risk in parts of the tropics (DiNezio et al., 2025).
 
-These monsoon regions are home to hundreds of millions of people who depend on rain-fed farming, many of them in low- and lower-middle-income countries. Weather shocks already push people into poverty: natural disasters alone were estimated to push 26 million people into extreme poverty each year (Hallegatte et al., 2016). A lasting shift in rainfall would act on top of that.
+These monsoon regions are home to hundreds of millions of people who depend on rain-fed farming, many of them in low- and lower-middle-income countries. Weather shocks already push people into poverty. Natural disasters alone were estimated to push 26 million people into extreme poverty each year (Hallegatte et al., 2016). A lasting shift in rainfall would add to these shocks.
 
-Other channels are less certain. The Southern Hemisphere would warm as the north cools. Sea level would rise faster along North Atlantic coasts as ocean currents redistribute water: in CESM experiments, by up to about 4 mm per year near densely populated coasts during a collapse, comparable to today's global average rate (van Westen, Katsman & Le Bars, 2026). One model study finds a collapse would release carbon from the ocean, adding around 0.2 °C to global warming at higher background levels (Nian et al., 2026). Effects on marine ecosystems and fisheries are much less studied.
+Other effects are less certain. The Southern Hemisphere would warm as the north cools. Sea level would rise faster along North Atlantic coasts as ocean currents redistribute water. In CESM experiments the extra rise reaches up to about 4 mm per year near densely populated coasts during a collapse, comparable to today's global average rate (van Westen, Katsman & Le Bars, 2026).
+
+One model study finds a collapse would release carbon from the ocean, adding around 0.2 °C to global warming at higher background levels (Nian et al., 2026). Effects on marine ecosystems and fisheries have been studied much less.
 
 ## What we know and don't know
 
-Scientists agree on the physics that makes the AMOC sensitive to warming and fresh water, and on the broad pattern of what a collapse would do: cooling around the North Atlantic, a southward shift of tropical rain, and faster sea-level rise on North Atlantic coasts.
+Scientists agree on the physics that makes the AMOC sensitive to warming and fresh water. They also agree on the broad pattern of a collapse. The North Atlantic would cool, tropical rain would shift south, and sea level would rise faster on North Atlantic coasts.
 
-They do not agree on how close the system is to a threshold, or even on whether today's climate models are too stable or not stable enough. Models with an AMOC that is easy to switch off and models that resist collapse can both be defended. Direct observations are too short to settle the question, and indirect records rely on assumptions.
+They disagree on how close the system is to a threshold, and on whether today's climate models are too stable or not stable enough. Models with an AMOC that is easy to switch off and models that resist collapse can both be defended. Direct observations are too short to settle the question, and indirect records rely on assumptions.
 
-The size of impacts is also uncertain. Regional rainfall changes differ two- to fivefold between models. Most experiments use artificial freshwater forcing to produce a collapse, and many hold other aspects of climate at pre-industrial levels. That makes them useful for understanding what a collapse does, but they are not forecasts of when it will happen.
+The size of impacts is also uncertain. Regional rainfall changes differ two- to fivefold between models. Most experiments use artificial freshwater forcing to produce a collapse, and many hold other aspects of climate at pre-industrial levels. Such experiments show the effects of a collapse, and its timing has to come from other evidence.
 
 ## Why it matters for decisions
 
-An AMOC collapse is a low-probability but high-impact risk on current evidence, and one with long lead times: harbours, water systems, crop research and social protection programmes built now will still be in use when the question may be settled. For most countries, the useful response is not to plan around collapse as the central case, and not to displace immediate adaptation priorities, but to make sure that long-lived decisions hold up if it happens.
+On current evidence, an AMOC collapse is a low-probability, high-impact risk with long lead times. Harbours, water systems, crop research and social protection programmes built now will still be in use when the question may be settled. For most countries, collapse is a scenario to test long-lived decisions against, alongside the central projections. It should not displace immediate adaptation priorities.
 
-Because the direction of many effects is better known than their size, the most useful measures are those that help across a range of outcomes. A practical sequence, set out by Brenden Jongman and Jim Hall, is to:
+The direction of many effects is better known than their size, so the most useful measures help across a range of outcomes. A practical sequence, set out by Brenden Jongman and Jim Hall, is to:
 
 1. screen which countries and sectors are most exposed, for example to monsoon change;
 2. stress-test long-lived investments against an AMOC-collapse scenario alongside standard projections;
-3. favour adaptation strategies that are robust in direction, such as drought-tolerant farming systems and flexible water storage;
+3. favour adaptation that helps whatever the size of the change, such as drought-tolerant farming systems and flexible water storage;
 4. connect ocean monitoring, such as RAPID and OSNAP, to decision thresholds, so that new evidence can trigger action;
 5. reflect AMOC risk in global risk assessments and in the case for limiting both the amount and the rate of warming.
 
-Monitoring is itself a decision lever. Several of the open questions above are questions about observations: continuing and extending the arrays in the Atlantic, and the measurements of salinity and freshwater transport that physics-based indicators depend on, is how the risk estimate will improve.
+Monitoring is itself part of the response. Several of the open questions above depend on observations. The risk estimate will improve as the Atlantic arrays continue and expand, together with the measurements of salinity and freshwater transport on which physics-based indicators depend.
 
 ## References and data
 
@@ -119,4 +121,4 @@ Monitoring is itself a decision lever. Several of the open questions above are q
 - **CESM AMOC scenario fields**, van Westen & Baatsen, Zenodo, CC BY 4.0. [doi:10.5281/zenodo.15490235](https://doi.org/10.5281/zenodo.15490235); time series [doi:10.5281/zenodo.14586440](https://doi.org/10.5281/zenodo.14586440); hysteresis experiment [doi:10.5281/zenodo.18785979](https://doi.org/10.5281/zenodo.18785979)
 - **NAHosMIP** monthly temperature and precipitation v3, Jackson, Bellomo et al., Zenodo, CC BY 4.0. [doi:10.5281/zenodo.14884357](https://doi.org/10.5281/zenodo.14884357)
 - **OSNAP**, overturning in the subpolar North Atlantic since 2014. [o-snap.org](https://www.o-snap.org/)
-- Explore these data on the [AMOC question page](/questions/amoc-collapse/). The scenario maps also appear, for Europe, on [amocscenarios.org](https://amocscenarios.org), built by the authors of the CESM experiments.
+- Explore these data on the [Atlantic circulation scenarios](/changes/atlantic-circulation/). The scenario maps also appear, for Europe, on [amocscenarios.org](https://amocscenarios.org), built by the authors of the CESM experiments.

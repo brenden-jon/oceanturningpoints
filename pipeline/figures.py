@@ -137,7 +137,7 @@ TOPIC_VIEWS = {
     "southern-ocean": (-45, -64, 4),
     "coral-reefs": (147.5, -18.5, 6),
     "ice-sheets": (-42, 72, 4),
-    "enso": (-130, 0, 3),
+    "el-nino": (-130, 0, 3),
     "ocean-today": (-150, 5, 2),
 }
 

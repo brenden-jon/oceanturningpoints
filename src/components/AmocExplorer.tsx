@@ -334,7 +334,9 @@ export default function AmocExplorer() {
             {hover && hover.value !== null && (
               <div className={styles.readout} style={{ left: Math.min(hover.x + 14, 9999), top: hover.y + 14 }} aria-live="polite">
                 <strong className="tnum">{formatValue(hover.value, units)}</strong>
-                {hover.agree !== null && <span>{Math.round(hover.agree)} of 4 models agree</span>}
+                {hover.agree !== null
+                  ? <span>{Math.round(hover.agree)} of 4 models agree on the direction</span>
+                  : <span>One model (CESM), 100-year average</span>}
                 <span className="tnum">{Math.abs(hover.lat).toFixed(1)}°{hover.lat >= 0 ? "N" : "S"}, {Math.abs(hover.lon).toFixed(1)}°{hover.lon >= 0 ? "E" : "W"}</span>
               </div>
             )}
@@ -363,6 +365,8 @@ export default function AmocExplorer() {
             </figcaption>
           )}
 
+          <SourcePanel family={state.family} variable={variable} comparison={comparison} temp={temp} rain={rain} />
+
           <ShareLink />
 
           {state.family === "temperature" && comparison && !comparison.clean && comparison.caveat && (
@@ -375,6 +379,82 @@ export default function AmocExplorer() {
       <Places state={state} temp={temp} rain={rain} variable={variable} comparison={comparison} />
     </div>
   );
+}
+
+/* --------------------------------------------------------- source panel */
+
+const EXTREMES = new Set(["cold-extreme", "hot-extreme", "frost-days"]);
+
+function SourcePanel({ family, variable, comparison, temp, rain }: {
+  family: Family; variable?: Variable; comparison?: Comparison; temp: TempManifest | null; rain: RainManifest | null;
+}) {
+  if (family === "temperature" && temp && variable && comparison) {
+    const a = temp.scenarios[comparison.a], b = temp.scenarios[comparison.b];
+    return (
+      <section className={styles.source} aria-label="Where this map comes from">
+        <div>
+          <h3>What the map shows</h3>
+          <p>
+            {variable.label} in “{a.label}” minus “{b.label}”. Each state is a 100-year average from one climate model,
+            CESM 1.0.5, in which the circulation was made to collapse by adding fresh water to the North Atlantic.
+            {EXTREMES.has(variable.id) && " Extremes are once-in-ten-year values estimated by the authors from extreme-value fits."}
+          </p>
+        </div>
+        <div>
+          <h3>How reliable it is</h3>
+          <dl className={styles.reliability}>
+            <dt>Direction of change</dt>
+            <dd><b className={styles.high}>High confidence.</b> Climate models consistently show cooling around the North Atlantic after a collapse, strongest in winter.</dd>
+            <dt>Size of change</dt>
+            <dd><b className={styles.medium}>Model-dependent.</b> Other models cool Europe by different amounts; much depends on how far winter sea ice spreads.{EXTREMES.has(variable.id) && " Extremes are less certain than averages."}</dd>
+            <dt>Timing</dt>
+            <dd><b className={styles.low}>Not addressed.</b> This is an experiment, not a forecast of when, or whether, a collapse will occur.</dd>
+          </dl>
+        </div>
+        <div>
+          <h3>Source</h3>
+          <p>
+            van Westen &amp; Baatsen (2025), <a href="https://doi.org/10.1029/2025GL114611"><i>Geophysical Research Letters</i></a>.
+            Data: <a href="https://doi.org/10.5281/zenodo.15490235">Zenodo</a>, CC BY 4.0. <a href="#data">Full method</a>
+          </p>
+        </div>
+      </section>
+    );
+  }
+  if (family === "rainfall" && rain) {
+    const models = (rain.source.models as string[]) ?? [];
+    return (
+      <section className={styles.source} aria-label="Where this map comes from">
+        <div>
+          <h3>What the map shows</h3>
+          <p>
+            Percentage change in rainfall after the circulation has collapsed, compared with each model’s own pre-industrial
+            climate, averaged over {models.length} independent climate models ({models.join(", ")}). The models have no
+            greenhouse warming added, so the map isolates the effect of the collapse.
+          </p>
+        </div>
+        <div>
+          <h3>How reliable it is</h3>
+          <dl className={styles.reliability}>
+            <dt>Direction of change</dt>
+            <dd><b className={styles.high}>Strong where dotted.</b> Dots mark places where all {models.length} models agree on wetter or drier, including the West African and Indian monsoon regions.</dd>
+            <dt>Size of change</dt>
+            <dd><b className={styles.low}>Uncertain.</b> Models differ two- to fivefold in how much rainfall changes; the table below gives each one.</dd>
+            <dt>Timing</dt>
+            <dd><b className={styles.low}>Not addressed.</b> These are idealised experiments, not forecasts.</dd>
+          </dl>
+        </div>
+        <div>
+          <h3>Source</h3>
+          <p>
+            Method: Ben-Yami et al. (2024), <a href="https://doi.org/10.1029/2023EF003959"><i>Earth’s Future</i></a>. Data: NAHosMIP,{" "}
+            <a href="https://doi.org/10.5281/zenodo.14884357">Zenodo</a>, CC BY 4.0. <a href="#data">Full method and checks</a>
+          </p>
+        </div>
+      </section>
+    );
+  }
+  return null;
 }
 
 /* ----------------------------------------------------------- share link */

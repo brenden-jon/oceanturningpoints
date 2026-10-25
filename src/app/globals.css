@@ -140,3 +140,5 @@ details.disclosure[open] > summary::after { content: "−"; }
 
 .skip { position: absolute; left: -999px; top: 0.5rem; z-index: 100; background: var(--text); color: #fff; padding: 0.6rem 0.9rem; border-radius: 8px; }
 .skip:focus { left: 0.75rem; color: #fff; }
+
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }

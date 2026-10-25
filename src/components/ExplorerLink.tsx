@@ -8,7 +8,7 @@ import { asset } from "@/lib/site";
  * the explorer to that view and scrolls to it.
  */
 export default function ExplorerLink({ query, children, className }: { query: string; children: React.ReactNode; className?: string }) {
-  const href = asset(`/questions/amoc-collapse/?${query}#explorer`);
+  const href = asset(`/changes/atlantic-circulation/?${query}#explorer`);
   return (
     <a
       href={href}

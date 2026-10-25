@@ -1,8 +1,8 @@
 ---
 title: "Southern Ocean"
 question: "Is the deep overturning circulation around Antarctica slowing down?"
-summary: "Dense water sinking around Antarctica ventilates the deep ocean worldwide. Observations show this bottom water thinning and its export slowing in two key basins, while Antarctic sea ice has fallen to record lows since 2016."
-order: 3
+summary: "Dense water sinking around Antarctica ventilates the deep ocean worldwide. Observations show this bottom water thinning and its export slowing in two basins. Antarctic sea ice has fallen to record lows since 2016."
+order: 6
 updated: "2026-10-24"
 reviewed: "2026-10-24"
 status: "Reviewed against literature published to mid-2026"
@@ -12,7 +12,7 @@ keyPoints:
   - "The volume of Weddell Sea Bottom Water has fallen by about 30% since 1992, linked to a decline of more than 40% in sea-ice formation on the southern shelf (Zhou et al., 2023)."
   - "Antarctic sea ice rose slowly to a record high in 2014, then fell sharply, setting a record low in February 2023 (Parkinson, 2019; Purich and Doddridge, 2023)."
   - "The ocean south of 30°S took up 35–43% of the heat gained by the global upper ocean (0–2,000 m) in 1970–2017 (high confidence) (Meredith et al., 2019)."
-  - "The IPCC assesses with medium confidence that bottom-water formation and export will continue to decrease; models attribute the decline mainly to Antarctic meltwater (Fox-Kemper et al., 2021; Li et al., 2023)."
+  - "The IPCC assesses with medium confidence that bottom-water formation and export will continue to decrease. Models attribute the decline mainly to Antarctic meltwater (Fox-Kemper et al., 2021; Li et al., 2023)."
 confidence:
   - claim: "Antarctic Bottom Water has warmed, freshened and contracted since the 1980s"
     level: "high"
@@ -33,51 +33,61 @@ confidence:
 
 ## The system
 
-The Southern Ocean circles Antarctica and connects the Atlantic, Indian and Pacific oceans. Its overturning has two cells. In the upper cell, deep water rises to the surface, is warmed and freshened, and moves north to sink as intermediate and mode waters. In the lower cell, water on the Antarctic continental shelf is cooled and made saltier as sea ice forms, becomes the densest water in the ocean, and sinks to the abyss as Antarctic Bottom Water.
+The Southern Ocean circles Antarctica and connects the Atlantic, Indian and Pacific oceans. Its overturning has two cells. In the upper cell, deep water rises to the surface, is warmed and freshened, and moves north to sink as intermediate and mode waters. In the lower cell, shelf water around Antarctica is cooled and made saltier as sea ice forms, becomes the densest water in the ocean, and sinks to the abyss as Antarctic Bottom Water.
 
-Much of it forms in coastal polynyas, areas of open water kept clear by offshore winds, where intense freezing releases salt. The Weddell Sea supplies nearly half of global bottom water (Zhou et al., 2023), the Ross Sea is the second largest source (Castagno et al., 2019), and a polynya off Cape Darnley in East Antarctica is another (Ohshima et al., 2013). Rarely, a large polynya opens far from the coast, as over Maud Rise in the Weddell Sea in 1974–76 and again in 2016 and 2017, kept open by deep convection that releases heat from below (de Lavergne et al., 2014; Campbell et al., 2019).
+Much of this water forms in coastal polynyas, areas of open water kept clear by offshore winds, where intense freezing releases salt. The Weddell Sea supplies nearly half of global bottom water (Zhou et al., 2023). The Ross Sea is the second largest source (Castagno et al., 2019), and a polynya off Cape Darnley in East Antarctica is another (Ohshima et al., 2013). Rarely, a large polynya opens far from the coast, as over Maud Rise in the Weddell Sea in 1974–76 and again in 2016 and 2017, kept open by deep convection that releases heat from below (de Lavergne et al., 2014; Campbell et al., 2019).
 
-The lower cell sets the density structure of the deep ocean, regulates its storage of heat and carbon, and supplies oxygen to the deep sea (Rintoul et al., 2025). Water returning north in the upper cell is the main nutrient source for the thermocline across the Southern Hemisphere and the North Atlantic (Sarmiento et al., 2004).
+The lower cell sets the density structure of the deep ocean and supplies the deep sea with oxygen. It also regulates how much heat and carbon the deep ocean stores (Rintoul et al., 2025). Water returning north in the upper cell is the main nutrient source for the thermocline across the Southern Hemisphere and the North Atlantic (Sarmiento et al., 2004).
 
 ## What we observe
 
-Repeat ship measurements show that between the 1980s and 2000s bottom water freshened in the Indian and Pacific sectors and the volume of the coldest, deepest water decreased around the whole Southern Ocean (Purkey and Johnson, 2013). Since the mid-1980s, heat content below about 4,000 m has risen at 12.9 ± 1.8 trillion watts, and the bottom-water layer has thinned by more than 50 dbar (roughly 50 m) per decade, faster near its sources (Rintoul et al., 2025).
+Repeat ship measurements show that between the 1980s and 2000s bottom water freshened in the Indian and Pacific sectors, and the volume of the coldest, deepest water decreased around the whole Southern Ocean (Purkey and Johnson, 2013). Since the mid-1980s, heat content below about 4,000 m has risen at 12.9 ± 1.8 trillion watts. Over the same period the bottom-water layer has thinned by more than 50 dbar (roughly 50 m) per decade, faster near its sources (Rintoul et al., 2025).
 
-Two basins now show a slowdown directly. In the Australian Antarctic Basin, bottom-water transport fell by 4.0 Sv (millions of cubic metres per second) between 1994 and 2009 as shelf waters freshened, then recovered by 2.2 Sv as shelf salinity rose, and the deep ocean lost oxygen as a result (Gunn et al., 2023). In the Weddell Sea, the volume of the densest bottom water has fallen by about 30% since 1992, probably because winds linked to Pacific climate variability reduced sea-ice formation on the shelf (Zhou et al., 2023). Glacial meltwater can also stop dense water forming even where polynyas are active (Silvano et al., 2018).
+Two basins now show a slowdown directly. In the Australian Antarctic Basin, bottom-water transport fell by 4.0 Sv (millions of cubic metres per second) between 1994 and 2009 as shelf waters freshened, then recovered by 2.2 Sv as shelf salinity rose. The slowdown left the deep ocean with less oxygen (Gunn et al., 2023).
+
+In the Weddell Sea, the volume of the densest bottom water has fallen by about 30% since 1992, probably because winds linked to Pacific climate variability reduced sea-ice formation on the shelf (Zhou et al., 2023). Glacial meltwater can also stop dense water forming even where polynyas are active (Silvano et al., 2018).
 
 Antarctic sea ice increased slowly to a record high in 2014, then fell sharply (Parkinson, 2019). The IPCC found no significant trend in Antarctic sea-ice area from 1979 to 2020, because of regionally opposing trends and large internal variability (IPCC, 2021). February 2023 then set a record low, and ice stayed exceptionally low through that winter (Purich and Doddridge, 2023). In the NSIDC Sea Ice Index, February 2023 averaged 1.98 million km² (1981–2010 February mean 3.07) and September 2023 16.89 million km² (mean 18.49) (Fetterer et al., 2025).
 
-Summer variability in sea ice has roughly doubled since 2007 (Hobbs et al., 2024). Satellites show surface salinity rising across the Southern Ocean since 2015, weakening the layering that kept deep heat away from the ice, and coinciding with the return of the Maud Rise polynya (Silvano et al., 2025).
+Summer variability in sea ice has roughly doubled since 2007 (Hobbs et al., 2024). Since 2015 satellites have recorded rising surface salinity across the Southern Ocean. This has weakened the layering that kept deep heat away from the ice, and it coincided with the return of the Maud Rise polynya (Silvano et al., 2025).
 
-The Southern Ocean also absorbs a disproportionate share of heat and carbon. South of 30°S it accounted for 35–43% of the heat gained by the global upper 2,000 m in 1970–2017, and 45–62% in 2005–2017 (high confidence) (Meredith et al., 2019). In models, it took up 43 ± 3% of the ocean's anthropogenic carbon over 1861–2005 (Frölicher et al., 2015). Its carbon sink weakened in the 1990s and recovered after 2000, variations that current models reproduce poorly (Gruber et al., 2019).
+The Southern Ocean also takes up a disproportionate share of heat and carbon. South of 30°S it accounted for 35–43% of the heat gained by the global upper 2,000 m in 1970–2017, and 45–62% in 2005–2017 (high confidence) (Meredith et al., 2019). In models, it took up 43 ± 3% of the ocean's anthropogenic carbon over 1861–2005 (Frölicher et al., 2015). Its carbon sink weakened in the 1990s and recovered after 2000, and current models reproduce these variations poorly (Gruber et al., 2019).
 
 ## What could change
 
-The main projected driver of further decline is meltwater from Antarctic ice shelves, which freshens shelf waters. In a high-resolution ocean–sea-ice model under a high-emissions scenario, meltwater caused bottom water to contract and abyssal warming to accelerate over the next 30 years, while projected changes in wind and surface heat had little effect (Li et al., 2023). The contraction also gave warm deep water easier access to the continental shelf, a possible feedback on ice-shelf melt (Li et al., 2023).
+Meltwater from Antarctic ice shelves, which freshens shelf waters, is the main projected driver of further decline. In a high-resolution ocean–sea-ice model under a high-emissions scenario, meltwater caused bottom water to contract and abyssal warming to accelerate over the next 30 years. Projected changes in wind and surface heat had little effect (Li et al., 2023). The contraction also gave warm deep water easier access to the continental shelf, a possible feedback on ice-shelf melt (Li et al., 2023).
 
-The IPCC assessed with medium confidence that bottom-water formation and export will continue to decrease (Fox-Kemper et al., 2021). It also noted that most climate models form bottom water by unrealistic open-ocean convection rather than by overflows from the shelf, which limits confidence in Southern Ocean projections (Fox-Kemper et al., 2021). Projections of Antarctic sea ice carry low confidence (IPCC, 2021). The recent sea-ice changes are consistent with statistical signs of a critical transition, but the mechanism is not established (Hobbs et al., 2024).
+The IPCC assessed with medium confidence that bottom-water formation and export will continue to decrease (Fox-Kemper et al., 2021). It also found that most climate models form bottom water by unrealistic open-ocean convection, where the real ocean relies on overflows from the shelf. This limits confidence in Southern Ocean projections (Fox-Kemper et al., 2021).
+
+Projections of Antarctic sea ice carry low confidence (IPCC, 2021). The recent sea-ice changes are consistent with statistical signs of a critical transition, but the mechanism is not established (Hobbs et al., 2024).
 
 ## Consequences
 
-Sea level is the most direct link to people. Antarctica lost 2,670 (1,800–3,540) Gt of ice over 1992–2020, equivalent to 7.4 mm of global sea-level rise, and West Antarctic losses were mainly induced by ice-shelf melting from below (high confidence) (Fox-Kemper et al., 2021). Basal melting is the largest single way Antarctic ice shelves lose mass (Rignot et al., 2013). The IPCC's likely range for global sea-level rise by 2100, relative to 1995–2014, is 0.28–0.55 m under very low emissions and 0.63–1.01 m under very high emissions; a rise approaching 2 m under very high emissions cannot be ruled out because of deep uncertainty in ice-sheet processes (low confidence) (IPCC, 2021).
+Sea level is the most direct link to people. Antarctica lost 2,670 (1,800–3,540) Gt of ice over 1992–2020, equivalent to 7.4 mm of global sea-level rise, and West Antarctic losses were mainly induced by ice-shelf melting from below (high confidence) (Fox-Kemper et al., 2021). Basal melting is the largest single way Antarctic ice shelves lose mass (Rignot et al., 2013).
 
-The rise is uneven: because of gravitational effects, ice lost from West Antarctica raises sea level by more than the global average far from Antarctica, including along United States coasts (Mitrovica et al., 2009). More than a billion people are projected to live in low-elevation coastal zones by 2050 under all socio-economic pathways assessed (Oppenheimer et al., 2019). That is exposure, not damage: losses depend on protection and adaptation.
+The IPCC's likely range for global sea-level rise by 2100, relative to 1995–2014, is 0.28–0.55 m under very low emissions and 0.63–1.01 m under very high emissions. Under very high emissions, a rise approaching 2 m cannot be ruled out because of deep uncertainty in ice-sheet processes (low confidence) (IPCC, 2021). The rise is uneven. Because of gravitational effects, ice lost from West Antarctica raises sea level by more than the global average far from Antarctica, including along United States coasts (Mitrovica et al., 2009).
 
-The Antarctic krill fishery is concentrated in the South Atlantic sector, where krill distribution has shifted south (medium confidence) (Meredith et al., 2019; Atkinson et al., 2019). Whether overall krill density has declined is disputed (Atkinson et al., 2004; Cox et al., 2018). The fishery is modest in value, about USD 70 million a year wholesale in 2011–2015, but krill underpin penguin, seal and whale populations (Meredith et al., 2019).
+More than a billion people are projected to live in low-elevation coastal zones by 2050 under all socio-economic pathways assessed (Oppenheimer et al., 2019). That is exposure, not damage. Losses depend on protection and adaptation.
+
+The Antarctic krill fishery is concentrated in the South Atlantic sector, where krill distribution has shifted south (medium confidence) (Meredith et al., 2019; Atkinson et al., 2019). Whether overall krill density has declined is disputed (Atkinson et al., 2004; Cox et al., 2018). The fishery is modest in value, about USD 70 million a year wholesale in 2011–2015. Penguin, seal and whale populations depend on krill (Meredith et al., 2019).
 
 Effects further afield are mostly model-based. In one model run to 2300 under sustained high emissions, nutrients became trapped in the Southern Ocean and potential fishery yields fell by more than 20% globally (Moore et al., 2018), a pathway that would reach tropical fisheries in developing countries. Another model study found that meltwater enhances Southern Hemisphere drying and delays the crossing of 1.5 °C and 2 °C by more than a decade (Bronselaer et al., 2018). Evidence for specific developing regions is thin.
 
 ## What we know and don't know
 
-We know that bottom water has warmed, freshened and thinned for decades, and that its export has slowed in the two basins where it has been measured directly (Gunn et al., 2023; Zhou et al., 2023). We know that the Southern Ocean takes up much of the ocean's added heat and that ice-shelf melting drives West Antarctic ice loss (Meredith et al., 2019; Fox-Kemper et al., 2021).
+We know that bottom water has warmed, freshened and thinned for decades, and that its export has slowed in the two basins where it has been measured directly (Gunn et al., 2023; Zhou et al., 2023). The Southern Ocean takes up much of the ocean's added heat, and ice-shelf melting drives West Antarctic ice loss (Meredith et al., 2019; Fox-Kemper et al., 2021).
 
-We do not know how much of the slowdown is a long-term trend and how much is decadal variability. Ross Sea shelf salinity rebounded sharply after 2014 (Castagno et al., 2019), and Australian Antarctic Basin export partly recovered (Gunn et al., 2023). It is unclear whether sea ice has entered a new regime, how the carbon sink will evolve, and how fast meltwater input will grow. The deep ocean is sparsely observed: standard Argo floats sample only the upper 2,000 m.
+We do not know how much of the slowdown is a long-term trend and how much is decadal variability. Ross Sea shelf salinity rebounded sharply after 2014 (Castagno et al., 2019), and Australian Antarctic Basin export partly recovered (Gunn et al., 2023).
+
+It is also unclear whether sea ice has entered a new regime, how the carbon sink will evolve and how fast meltwater input will grow. The deep ocean is sparsely observed. Standard Argo floats sample only the upper 2,000 m.
 
 ## Why it matters for decisions
 
-Coastal planning is the main practical use. Long-lived infrastructure such as ports and flood defences can be tested against the IPCC's likely ranges and against higher outcomes that cannot be ruled out because of deep uncertainty in ice-sheet processes (IPCC, 2021). Plans that can be adjusted as observations accumulate suit this better than fixed design levels.
+Coastal planning is the main practical use of this evidence. Long-lived infrastructure such as ports and flood defences can be tested against the IPCC's likely ranges and against higher outcomes that cannot be ruled out because of deep uncertainty in ice-sheet processes (IPCC, 2021). Plans that can be adjusted as observations accumulate suit this better than fixed design levels.
 
-Monitoring is the other priority. Sustained observations of the deep ocean and continental shelf are identified as a research priority (Rintoul et al., 2025), and satellites can now track Southern Ocean surface salinity in near real time (Silvano et al., 2025). For fisheries, the IPCC assesses that future impacts on linked human systems depend on how responsive precautionary management is (medium confidence) (Meredith et al., 2019). Carbon budgets also depend on how the Southern Ocean sink is represented.
+Monitoring is the other main need. A recent review identifies sustained observations of the deep ocean and continental shelf as a research priority (Rintoul et al., 2025). Satellites can now track Southern Ocean surface salinity in near real time (Silvano et al., 2025).
+
+For fisheries, the IPCC assesses that future impacts on linked human systems depend on how responsive precautionary management is (medium confidence) (Meredith et al., 2019). Carbon budgets also depend on how the Southern Ocean sink is represented.
 
 ## References and data
 

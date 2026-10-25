@@ -1,3 +1,5 @@
+import fs from "node:fs";
+import path from "node:path";
 import type { Metadata } from "next";
 import Link from "next/link";
 import HeroGlobe from "@/components/HeroGlobe";
@@ -22,8 +24,13 @@ const CHANNELS = [
   { title: "Global warming itself", text: "The Southern Ocean absorbs a large share of the heat and carbon dioxide that people add. Changes there feed back on how fast the world warms.", topic: "southern-ocean" },
 ];
 
+const NOW = path.join(process.cwd(), "public", "data", "now");
+const readNow = (f: string) => JSON.parse(fs.readFileSync(path.join(NOW, f), "utf8"));
+const day = (iso: string) => new Date(iso.slice(0, 10) + "T12:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "long", timeZone: "UTC" });
+
 export default function Home() {
   const topics = allTopics();
+  const now = readNow("manifest.json");
   const london = { pi: tempAt("London", "winter", "pi_on"), off: tempAt("London", "winter", "rcp45_off") };
   const niamey = rainAt("Niamey", "jja");
   const mumbai = rainAt("Mumbai", "jja");
@@ -38,11 +45,26 @@ export default function Home() {
             reefs, ice and rainfall, using published research and open data.
           </p>
           <p className={styles.actions}>
-            <Link className="button" href="/questions/amoc-collapse/">Explore the Atlantic scenarios</Link>
-            <Link className="more" href="/science/">Read the science</Link>
+            <Link className="button" href="/changes/">The big changes</Link>
+            <Link className="more" href="/ocean-now/">See the ocean now</Link>
           </p>
         </div>
-        <HeroGlobe className={styles.globeBox} />
+        <HeroGlobe className={styles.globeBox} currents={now.currents} />
+        <p className={`small faint ${styles.globeNote}`}>
+          Ocean surface currents on {day(now.currents.date)}, from NOAA satellite data. Imagery: NASA Blue Marble.
+        </p>
+      </section>
+
+      <section className={styles.nowStrip} aria-label="The ocean now">
+        <div className={`wrap ${styles.nowInner}`}>
+          <span className={styles.nowDot} aria-hidden />
+          <p>
+            <strong>{now.enso.status ?? "El Niño update"}.</strong> Niño-3.4 sea temperatures are{" "}
+            {now.enso.nino34 > 0 ? "+" : ""}{now.enso.nino34.toFixed(1)}°C above normal (week of {day(now.enso.week)}), the
+            highest weekly value in NOAA’s record.
+          </p>
+          <Link className="more" href="/ocean-now/">The ocean now</Link>
+        </div>
       </section>
 
       <section className={`section section--alt ${styles.featured}`} aria-labelledby="featured">
@@ -69,9 +91,9 @@ export default function Home() {
                 <dd>Change in monsoon rainfall at Mumbai in the same experiments. All four models show drying; they differ on how much.</dd>
               </div>
             </dl>
-            <p><Link className="button" href="/questions/amoc-collapse/">Explore the scenarios</Link></p>
+            <p><Link className="button" href="/changes/atlantic-circulation/">Explore the scenarios</Link></p>
           </div>
-          <Link href="/questions/amoc-collapse/" className={styles.featureImages} aria-label="Open the Atlantic circulation scenarios">
+          <Link href="/changes/atlantic-circulation/" className={styles.featureImages} aria-label="Open the Atlantic circulation scenarios">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={asset("/img/amoc-winter.jpg")} alt="Map of winter temperature change around the North Atlantic after a collapse in a world 2°C warmer: strong cooling over the North Atlantic, Scandinavia and the British Isles." width={960} height={672} />
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -88,7 +110,7 @@ export default function Home() {
           <ul className={styles.tiles}>
             {topics.map((t) => (
               <li key={t.slug}>
-                <Link href={`/science/${t.slug}/`} className={styles.tile}>
+                <Link href={t.slug === "amoc" ? "/changes/atlantic-circulation/" : `/science/${t.slug}/`} className={styles.tile}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={asset(`/img/topics/${t.slug}.jpg`)} alt="" width={1200} height={800} loading="lazy" />
                   <span className={styles.tileTitle}>{t.title}</span>

@@ -1,11 +1,15 @@
 # Builds the static site and publishes it to GitHub Pages on every push to
-# main (or by hand: Actions -> Deploy -> Run workflow).
+# main, every morning (to refresh "The ocean now"), or by hand
+# (Actions -> Deploy -> Run workflow).
 # Requires Settings -> Pages -> Source: "GitHub Actions".
 name: Deploy
 
 on:
   push:
     branches: [main]
+  schedule:
+    # 06:40 UTC: after NOAA's overnight updates of currents, SST and sea ice.
+    - cron: "40 6 * * *"
   workflow_dispatch:
 
 permissions:
@@ -29,6 +33,13 @@ jobs:
       - id: pages
         uses: actions/configure-pages@v5
       - run: npm ci
+      - uses: astral-sh/setup-uv@v6
+      - name: Refresh "The ocean now" data
+        # Currents, SST anomaly, coral heat stress, sea ice and El Niño indices.
+        # If a source is down the committed snapshot is used instead.
+        working-directory: pipeline
+        run: uv run python ocean_now.py
+        continue-on-error: true
       - run: npm run build
         env:
           # Empty for a custom domain; "/<repo>" for a project page

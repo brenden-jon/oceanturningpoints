@@ -41,11 +41,13 @@ interface Props {
   spin?: boolean;
   onHover?: (h: HoverInfo | null) => void;
   onSelect?: (h: HoverInfo) => void;
+  onReady?: (map: MLMap) => void;   // gives overlays (e.g. currents) access to the map
+  space?: "light" | "dark";          // colour around the globe: page white, or night sky
   className?: string;
   ariaLabel: string;
 }
 
-const PAPER = "#f5f7f6";
+const PAPER = "#ffffff";
 const IMAGE_COORDS: [[number, number], [number, number], [number, number], [number, number]] = [
   [-180, MERCATOR_MAX_LAT], [180, MERCATOR_MAX_LAT], [180, -MERCATOR_MAX_LAT], [-180, -MERCATOR_MAX_LAT],
 ];
@@ -59,7 +61,9 @@ function baseStyle(look: Props["look"], projection: "globe" | "mercator"): Style
       coast50: { type: "geojson", data: asset("/data/geo/coastline_50m.geojson") },
       borders: { type: "geojson", data: asset("/data/geo/borders_50m.geojson") },
     },
-    layers: [{ id: "space", type: "background", paint: { "background-color": PAPER } }],
+    // On the globe the background paints the planet's surface, so the satellite
+    // look starts as a deep-ocean sphere while imagery tiles load.
+    layers: [{ id: "space", type: "background", paint: { "background-color": look === "data" ? PAPER : look === "night" ? "#05080d" : "#0f2c4f" } }],
   };
 
   if (look === "satellite") {
@@ -97,13 +101,18 @@ function addLines(map: MLMap, look: Props["look"]) {
     paint: { "line-color": ink, "line-width": 0.8, "line-opacity": look === "data" ? 0.75 : 0 } });
 }
 
-function applySky(map: MLMap, projection: "globe" | "mercator") {
+function applySky(map: MLMap, projection: "globe" | "mercator", space: "light" | "dark" = "light") {
   if (projection !== "globe") return;
+  if (space === "dark") {
+    map.setSky({ "sky-color": "#060b12", "horizon-color": "#1d3a5c", "fog-color": "#060b12", "sky-horizon-blend": 0.5,
+      "horizon-fog-blend": 0.6, "fog-ground-blend": 0, "atmosphere-blend": ["interpolate", ["linear"], ["zoom"], 0, 1, 3, 0.5, 6, 0] });
+    return;
+  }
   // A thin, pale-blue limb. fog-ground-blend stays at zero: higher values
   // wash the fog colour over the planet's surface instead of only its edge.
   map.setSky({
     "sky-color": PAPER,
-    "horizon-color": "#cfe2e8",
+    "horizon-color": "#d6e6f2",
     "fog-color": PAPER,
     "sky-horizon-blend": 0.6,
     "horizon-fog-blend": 0.5,
@@ -114,7 +123,7 @@ function applySky(map: MLMap, projection: "globe" | "mercator") {
 
 export default function EarthMap({
   look, projection = "globe", view, image, imageKey, imageOpacity = 0.92, overlays = [],
-  interactive = true, spin = false, onHover, onSelect, className, ariaLabel,
+  interactive = true, spin = false, onHover, onSelect, onReady, space = "light", className, ariaLabel,
 }: Props) {
   const el = useRef<HTMLDivElement>(null);
   const mapRef = useRef<MLMap | null>(null);
@@ -152,9 +161,10 @@ export default function EarthMap({
       if (done) return;
       done = true;
       addLines(map, look);
-      applySky(map, projection);
+      applySky(map, projection, space);
       mapRef.current = map;
       setReady(true);
+      onReady?.(map);
     };
     map.on("load", markReady);
     const poll = (n = 0) => { if (done) return; if (map.isStyleLoaded()) markReady(); else setTimeout(() => poll(n + 1), Math.min(1000, 120 + n * 60)); };
@@ -169,7 +179,7 @@ export default function EarthMap({
     const map = mapRef.current;
     if (!map || !ready) return;
     map.setProjection({ type: projection });
-    applySky(map, projection);
+    applySky(map, projection, space);
   }, [projection, ready]);
 
   // ---- camera

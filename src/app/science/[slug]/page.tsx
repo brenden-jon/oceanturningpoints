@@ -3,6 +3,9 @@ import { abs } from "@/lib/site";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { allTopics, formatDate, getTopic } from "@/lib/science";
+import fs from "node:fs";
+import path from "node:path";
+import OceanNowGlobe from "@/components/OceanNowGlobe";
 import { asset } from "@/lib/site";
 import styles from "../science.module.css";
 
@@ -42,6 +45,16 @@ export default async function TopicPage({ params }: { params: Promise<{ slug: st
           Last reviewed {formatDate(topic.reviewed)}. {topic.status}.
         </p>
       </header>
+
+      {topic.live && (() => {
+        const m = JSON.parse(fs.readFileSync(path.join(process.cwd(), "public", "data", "now", "manifest.json"), "utf8"));
+        return (
+          <section className={`wrap ${styles.live}`} aria-label="Live data">
+            <p className={styles.liveCaption}>{topic.live.caption}</p>
+            <OceanNowGlobe ssta={m.ssta} dhw={m.dhw} currents={m.currents} initialLayer={topic.live.layer} initialView={topic.live.view} compact />
+          </section>
+        );
+      })()}
 
       <div className={`wrap ${styles.summaryGrid}`}>
         <section className={styles.keyPoints} aria-labelledby="kp">

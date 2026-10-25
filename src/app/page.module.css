@@ -3,10 +3,17 @@
 .heroText h1 { max-width: 17ch; }
 .heroLede { max-width: 40ch; }
 .actions { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 0.75rem 1.75rem; margin: 0.4rem 0 0; }
-.globeBox { position: relative; aspect-ratio: 1 / 1; width: min(92vw, 720px); margin: clamp(1rem, 3vw, 2.5rem) auto -2rem; }
+.globeBox { position: relative; aspect-ratio: 1 / 1; width: min(92vw, 720px); margin: clamp(1rem, 3vw, 2.5rem) auto clamp(1.5rem, 4vw, 3rem); }
 .globeBox > :global(.hero-globe-map) { position: absolute !important; inset: 0; }
 .globeBox :global(.maplibregl-ctrl-attrib) { background: transparent !important; }
 
+.globeNote { margin: 0 auto 2rem; max-width: 60ch; padding: 0 var(--gutter); }
+.nowStrip { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.nowInner { display: flex; align-items: center; gap: 0.9rem; padding-top: 1rem; padding-bottom: 1rem; font-size: 0.975rem; }
+.nowInner p { margin: 0; flex: 1; color: var(--text-2); }
+.nowInner strong { color: var(--text); font-weight: 600; }
+.nowDot { width: 9px; height: 9px; border-radius: 50%; background: var(--alert); flex: none; box-shadow: 0 0 0 4px rgba(178, 74, 42, 0.15); }
+@media (max-width: 640px) { .nowInner { flex-wrap: wrap; } }
 .featured { position: relative; }
 .featureGrid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: clamp(2.5rem, 6vw, 5rem); align-items: center; }
 .featureText { display: grid; gap: 1rem; justify-items: start; }

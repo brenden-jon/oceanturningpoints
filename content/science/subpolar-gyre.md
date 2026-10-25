@@ -1,16 +1,16 @@
 ---
 title: "Subpolar gyre"
 question: "Could the North Atlantic’s subpolar gyre stop convecting?"
-summary: "Winter convection south of Greenland helps set North Atlantic climate. A minority of climate models show it shutting down within about a decade this century; observations cannot yet tell whether the real ocean is near that point."
-order: 2
+summary: "Winter convection south of Greenland helps set North Atlantic climate. A minority of climate models show it shutting down within about a decade this century. Observations cannot yet tell whether the real ocean is near that point."
+order: 5
 updated: "2026-10-24"
 reviewed: "2026-10-24"
 status: "Reviewed against literature published to mid-2026"
 related: ["amoc", "ice-sheets"]
 keyPoints:
-  - "Most of the overturning in the subpolar North Atlantic happens east of Greenland, in the Irminger and Iceland basins, rather than in the Labrador Sea (Lozier et al., 2019; Petit et al., 2020)."
+  - "Most of the overturning in the subpolar North Atlantic happens east of Greenland, in the Irminger and Iceland basins; the Labrador Sea contributes little (Lozier et al., 2019; Petit et al., 2020)."
   - "Convection in the subpolar gyre collapses this century in 7 of 40 CMIP5 models and 4 of 35 CMIP6 models, causing rapid regional cooling (Sgubin et al., 2017; Swingedouw et al., 2021)."
-  - "Among the models that best reproduce observed upper-ocean stratification, collapse occurs more often: in up to 36–46% of that subset (Sgubin et al., 2017; Swingedouw et al., 2021)."
+  - "Collapse is more common among the models that best reproduce observed upper-ocean stratification, occurring in up to 36–46% of that subset (Sgubin et al., 2017; Swingedouw et al., 2021)."
   - "Labrador Sea convection was deepest of the 1996–2023 record in 2018, then shut down in the winters of 2021 and 2023 for different reasons (Yashayaev, 2024)."
   - "The IPCC assesses with high confidence that the subpolar North Atlantic will keep warming more slowly than the global average (Fox-Kemper et al., 2021)."
 confidence:
@@ -33,17 +33,17 @@ confidence:
 
 ## The system
 
-The North Atlantic subpolar gyre is a large anticlockwise circulation south of Greenland and Iceland, spanning the Labrador Sea, the Irminger Sea and the Iceland Basin. Warm, salty water carried north by the North Atlantic Current enters it from the south, loses heat to cold winter air, and becomes dense enough to sink.
+The North Atlantic subpolar gyre is a large anticlockwise circulation south of Greenland and Iceland, spanning the Labrador Sea, the Irminger Sea and the Iceland Basin. Warm, salty water carried north by the North Atlantic Current enters it from the south. There it loses heat to cold winter air and becomes dense enough to sink.
 
-In the Labrador and Irminger seas this winter cooling drives deep convection: the surface layer mixes downwards, in some winters to more than 2,000 m (Yashayaev and Loder, 2017). Dense water formed here and in the Nordic Seas feeds the deep, southward branch of the Atlantic Meridional Overturning Circulation (AMOC).
+In the Labrador and Irminger seas this winter cooling drives deep convection. The surface layer mixes downwards, in some winters to more than 2,000 m (Yashayaev and Loder, 2017). Dense water formed here and in the Nordic Seas feeds the deep, southward branch of the Atlantic Meridional Overturning Circulation (AMOC).
 
-The gyre is linked to the AMOC but behaves differently. Its strength controls how much salty subtropical water reaches the Nordic Seas (Hátún et al., 2005). Convection depends on surface water being cold and salty enough to sink, and a simple model shows this can support two stable states, with and without convection, and a hysteresis between them (Born and Stocker, 2014).
+The gyre is linked to the AMOC but has its own dynamics. Its strength controls how much salty subtropical water reaches the Nordic Seas (Hátún et al., 2005). Convection needs surface water that is cold and salty enough to sink. A simple model shows that this allows two stable states, with and without convection, and a hysteresis between them (Born and Stocker, 2014).
 
 ## What we observe
 
-Since 2014 the OSNAP mooring array has measured overturning directly across the subpolar North Atlantic. Its first 21 months showed that most of the overturning happens east of Greenland, with only a small contribution from the Labrador Sea (Lozier et al., 2019). Later work found that the dense waters exported by the AMOC form mainly in the Nordic Seas and the Irminger and Iceland basins (Petit et al., 2020), and that winter convection in 2014–2018 had little detectable effect on overturning over that period (Li et al., 2021).
+Since 2014 the OSNAP mooring array has measured overturning directly across the subpolar North Atlantic. Its first 21 months showed that most of the overturning happens east of Greenland, with only a small contribution from the Labrador Sea (Lozier et al., 2019). Later work found that the dense waters exported by the AMOC form mainly in the Nordic Seas and the Irminger and Iceland basins (Petit et al., 2020). Winter convection in 2014–2018 had little detectable effect on overturning over that period (Li et al., 2021).
 
-Labrador Sea convection varies strongly from year to year. It deepened through 2012–2018, producing the largest and densest class of Labrador Sea Water since 1995, then shoaled by about 800 m per year in the winters of 2021 and 2023 (Yashayaev, 2024). The 2021 shutdown followed unusual atmospheric conditions; the 2023 shutdown was caused by upper-ocean freshening traced to extreme Arctic sea-ice melt (Yashayaev, 2024). Between 2017 and 2025 sea level in the central Labrador Sea rose to a record high, with the end of deep convection one of six contributing factors (Yashayaev and Zhang, 2025).
+Labrador Sea convection varies widely from year to year. It deepened through 2012–2018, producing the largest and densest class of Labrador Sea Water since 1995, then shoaled by about 800 m per year in the winters of 2021 and 2023 (Yashayaev, 2024). The 2021 shutdown followed unusual atmospheric conditions; the 2023 shutdown was caused by upper-ocean freshening traced to extreme Arctic sea-ice melt (Yashayaev, 2024). Between 2017 and 2025 sea level in the central Labrador Sea rose to a record high, and the end of deep convection was one of six contributing factors (Yashayaev and Zhang, 2025).
 
 At the surface, the subpolar North Atlantic showed no long-term warming over the twentieth century (Sgubin et al., 2017). This "warming hole" has been interpreted as a fingerprint of AMOC weakening (Rahmstorf et al., 2015; Caesar et al., 2018). A model study found that increased ocean heat transport out of the region, towards higher latitudes, and a cloud feedback also shape it (Keil et al., 2020). The IPCC assessed low confidence in reconstructed and modelled twentieth-century AMOC changes (Fox-Kemper et al., 2021).
 
@@ -51,35 +51,37 @@ Shorter events are better documented. Since 2005 a large volume of the upper Nor
 
 ## What could change
 
-The concern is that warming and added fresh water make the surface layer too light to sink, so that convection stops and does not restart. In 7 of 40 CMIP5 climate models the subpolar gyre cooled rapidly this century, consistent with a collapse of deep convection (Sgubin et al., 2017). The same happened in 4 of 35 CMIP6 models (Swingedouw et al., 2021).
+Warming and added fresh water could make the surface layer too light to sink, so that convection stops and does not restart. In 7 of 40 CMIP5 climate models the subpolar gyre cooled rapidly this century, consistent with a collapse of deep convection (Sgubin et al., 2017). The same happened in 4 of 35 CMIP6 models (Swingedouw et al., 2021).
 
-Both studies found collapse more often in models that best match observed stratification: 45.5% of the 11 best CMIP5 models and up to 36.4% of the 11 best CMIP6 models (Sgubin et al., 2017; Swingedouw et al., 2021). This suggests the full ensembles may understate the risk, although the estimate rests on small samples and a single observational yardstick.
+Both studies found collapse more often in the models that best match observed stratification. It occurred in 45.5% of the 11 best CMIP5 models and in up to 36.4% of the 11 best CMIP6 models (Sgubin et al., 2017; Swingedouw et al., 2021). The full ensembles may therefore understate the risk, although the estimate rests on small samples and a single observational yardstick.
 
-A synthesis of tipping-point studies placed the threshold for subpolar gyre convection collapse at about 1.8 °C of global warming (range 1.1–3.8 °C), with a transition time of about 10 years (5–50 years) (Armstrong McKay et al., 2022). These figures summarise model results, not observations.
+A synthesis of tipping-point studies placed the threshold for collapse of subpolar gyre convection at about 1.8 °C of global warming (range 1.1–3.8 °C), with a transition time of about 10 years (5–50 years) (Armstrong McKay et al., 2022). These figures summarise model studies.
 
-The IPCC assesses that the AMOC will very likely weaken over the 21st century, with medium confidence that it will not collapse abruptly before 2100 (IPCC, 2021). A gyre convection collapse is a separate, faster and more regional event than an AMOC collapse, although in some models one affects the other (Armstrong McKay et al., 2022).
+The IPCC assesses that the AMOC will very likely weaken over the 21st century, with medium confidence that it will not collapse abruptly before 2100 (IPCC, 2021). A collapse of gyre convection is a separate event. It would be faster and more regional than an AMOC collapse, although in some models one affects the other (Armstrong McKay et al., 2022).
 
 ## Consequences
 
-In the models that show it, a collapse cools the North Atlantic region by about 2–3 °C and shifts the jet stream, with effects on European weather (Armstrong McKay et al., 2022). The CMIP6 events had large decadal effects on European surface temperature and on tropical rainfall, notably in the Sahel and the Amazon (Swingedouw et al., 2021). These are model outcomes for an event that may not happen; they are not forecasts.
+In the models that show it, a collapse cools the North Atlantic region by about 2–3 °C and shifts the jet stream, with effects on European weather (Armstrong McKay et al., 2022). The CMIP6 events had large decadal effects on European surface temperature and on tropical rainfall, notably in the Sahel and the Amazon (Swingedouw et al., 2021). These results are conditional on a collapse, which may not happen.
 
-Present-day variability shows how the links work. The 2015 cold anomaly was associated with a jet-stream position that favoured that summer's central European heat wave, and similar anomalies preceded the most extreme European heat waves since the 1980s (Duchez et al., 2016). This is an association, not a rule that a colder gyre means hotter European summers.
+Recent variability shows one link to European weather. The 2015 cold anomaly was associated with a jet-stream position that favoured that summer's central European heat wave, and similar anomalies preceded the most extreme European heat waves since the 1980s (Duchez et al., 2016). This is a statistical association, and a colder gyre is no guarantee of a hotter European summer.
 
 Fisheries respond to the gyre's state. Shifts in plankton, blue whiting and pilot whales from the English Channel to the Barents Sea in the late 1920s, late 1960s and late 1990s have been linked to subpolar gyre fluctuations (Hátún et al., 2009). Evidence on how a convection collapse would affect catches, prices or livelihoods is thin.
 
-For sea level, models link AMOC weakening to faster sea-level rise along the north-east coast of North America (Yin et al., 2009); evidence specific to a gyre collapse is limited. For developing regions, the main pathway in the literature is tropical rainfall, including the Sahel (Swingedouw et al., 2021), but the human and economic consequences of this specific event have not been quantified.
+Models link AMOC weakening to faster sea-level rise along the north-east coast of North America (Yin et al., 2009). Evidence specific to a gyre collapse is limited. For developing regions, the literature points mainly to tropical rainfall, including in the Sahel (Swingedouw et al., 2021). The human and economic consequences of this specific event have not been quantified.
 
 ## What we know and don't know
 
-We know where most deep water forms and that subpolar overturning is highly variable from month to month (Lozier et al., 2019). We know Labrador Sea convection swings between deep and shallow phases over a few years (Yashayaev, 2024). We know that a minority of current models produce abrupt collapse, and that model biases in stratification affect that result (Sgubin et al., 2017; Swingedouw et al., 2021).
+Observations show where most deep water forms and that subpolar overturning is highly variable from month to month (Lozier et al., 2019). Labrador Sea convection swings between deep and shallow phases over a few years (Yashayaev, 2024). A minority of current models produce abrupt collapse, and model biases in stratification affect that result (Sgubin et al., 2017; Swingedouw et al., 2021).
 
-We do not know whether the real ocean is close to a threshold. Direct overturning measurements began in 2014, too short a record to separate trend from variability. Models also disagree on where convection happens: in CMIP6 some convect only in the Labrador Sea and some only in the Irminger Sea, and the convective area has expanded unrealistically compared with CMIP5 (Fox-Kemper et al., 2021). The warming level for a collapse spans more than 2 °C across studies (Armstrong McKay et al., 2022).
+We do not know whether the real ocean is close to a threshold. Direct overturning measurements began in 2014, too recently to separate trend from variability. The warming level for a collapse spans more than 2 °C across studies (Armstrong McKay et al., 2022).
+
+Models also disagree on where convection happens. In CMIP6 some convect only in the Labrador Sea and some only in the Irminger Sea, and the convective area has expanded unrealistically compared with CMIP5 (Fox-Kemper et al., 2021).
 
 ## Why it matters for decisions
 
-The subpolar gyre is one of the more predictable parts of the climate system on timescales of several years, and much of the skill of decadal forecasts over the North Atlantic comes from it (Lee et al., 2021; Yeager and Robson, 2017). Sustained observations from OSNAP moorings, Argo floats and repeat ship sections are what allow forecasters to start those predictions from the real ocean state, and to detect a shift if one begins.
+On timescales of several years, the subpolar gyre is one of the more predictable parts of the climate system. Much of the skill of decadal forecasts over the North Atlantic comes from it (Lee et al., 2021; Yeager and Robson, 2017). Sustained observations from OSNAP moorings, Argo floats and repeat ship sections let forecasters start those predictions from the real ocean state. The same observations would show a shift if one began.
 
-For planning, the relevant features are that a collapse is a minority outcome in the model ensembles, could unfold within about a decade, and would act against the background warming trend rather than reverse it globally. Sectors that depend on European temperature and rainfall, North Atlantic fisheries management, and agriculture in rainfall-sensitive regions such as the Sahel are the most exposed. Testing plans against a rapid regional cooling scenario, alongside central warming projections, is one way to handle this uncertainty.
+For planning, a collapse is a minority outcome in the model ensembles that could unfold within about a decade. It would work against the warming trend in the region while the world as a whole kept warming. The most exposed sectors are those that depend on European temperature and rainfall, North Atlantic fisheries management, and agriculture in rainfall-sensitive regions such as the Sahel. One way to handle the uncertainty is to test plans against a rapid regional cooling scenario as well as central warming projections.
 
 ## References and data
 
