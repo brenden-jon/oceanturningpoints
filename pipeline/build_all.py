@@ -15,10 +15,12 @@ import amoc_scenarios
 import amoc_series
 import basemap_and_scales
 import figures
+import fish
 import nahosmip_rain
 import ocean_now
 import reef_stations
 import sea_level
+import southern_ocean
 
 STEPS = [
     ("Base map and colour scales", lambda: (basemap_and_scales.geography(), basemap_and_scales.scales())),
@@ -27,7 +29,9 @@ STEPS = [
     ("AMOC observations and model time series", amoc_series.main),
     ("The ocean now (daily layers)", ocean_now.main),
     ("Reef heat-stress history (weekly)", reef_stations.main),
-    ("Sea level and coastal flooding", sea_level.main),
+    ("Sea level and the ice sheets", sea_level.main),
+    ("Fish biomass projections by country (FishMIP)", fish.main),
+    ("Southern Ocean carbon uptake (SOM-FFN, 1.3 GB download)", southern_ocean.main),
     ("Preview and card images", figures.main),
 ]
 

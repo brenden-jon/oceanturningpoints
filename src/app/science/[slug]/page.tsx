@@ -167,7 +167,7 @@ function TopicVisual({ slug, live, explorer }: { slug: string; live?: { layer: "
       <p className={styles.liveCaption}>{caption}</p>
       {body}
       {explorer && explorer !== "/ocean-now/" && slug !== "coral-reefs" && (
-        <p className={styles.visualMore}><Link className="button" href={explorer}>{slug === "ice-sheets" ? "See projections for 16 coastal cities" : "Explore the data"}</Link></p>
+        <p className={styles.visualMore}><Link className="button" href={explorer}>{explorer.startsWith("/changes/") ? "See the story, maps and data" : "Explore the data"}</Link></p>
       )}
     </section>
   );

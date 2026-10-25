@@ -150,7 +150,7 @@ export default function Home() {
           <ul className={styles.tiles}>
             {topics.map((t) => (
               <li key={t.slug}>
-                <Link href={t.slug === "amoc" ? "/changes/atlantic-circulation/" : t.slug === "coral-reefs" ? "/changes/coral-reefs/" : t.slug === "ice-sheets" ? "/changes/ice-sheets/" : `/science/${t.slug}/`} className={styles.tile}>
+                <Link href={t.slug === "amoc" ? "/changes/atlantic-circulation/" : `/changes/${t.slug}/`} className={styles.tile}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={asset(`/img/topics/${t.slug}.jpg`)} alt="" width={1200} height={800} loading="lazy" />
                   <span className={styles.tileTitle}>{t.title}</span>
@@ -159,7 +159,7 @@ export default function Home() {
               </li>
             ))}
           </ul>
-          <p className={`small faint ${styles.credit}`}>Imagery: NASA Blue Marble.</p>
+          <p className={`small faint ${styles.credit}`}>Images: NOAA Coral Reef Watch, NOAA CoastWatch and NASA Blue Marble; circulation diagrams after Buckley and Marshall (2016).</p>
         </div>
       </section>
 
@@ -190,6 +190,7 @@ export default function Home() {
             <li><h3><Link href="/responses/#warming">Limit warming</Link></h3><p>Today’s policies lead to about 2.8°C, past the thresholds for reefs and the ice sheets. See how far emissions must fall, and how fast.</p></li>
             <li><h3><Link href="/responses/#protect">Protect the ocean</Link></h3><p>About 10% of the ocean is protected, against a 30% goal for 2030. Every protected area on one map, and what protection can and cannot do.</p></li>
             <li><h3><Link href="/responses/#finance">Pay for protection</Link></h3><p>Ocean protection gets about a tenth of the money it needs. Costs, returns and the instruments countries are using.</p></li>
+            <li><h3><Link href="/monitoring/">Keep watching</Link></h3><p>Every platform observing the ocean on one map, who runs them, and why long, unbroken records matter for decisions.</p></li>
           </ul>
         </div>
       </section>

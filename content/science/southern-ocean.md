@@ -6,6 +6,7 @@ order: 6
 updated: "2026-10-24"
 reviewed: "2026-10-24"
 status: "Reviewed against literature published to mid-2026"
+explorer: "/changes/southern-ocean/"
 related: ["ice-sheets", "amoc"]
 decisions: "Changes here affect how much heat and carbon the ocean absorbs and how fast Antarctic ice is lost. Do not assume the ocean carbon sink will keep pace in carbon budgets, and keep deep-ocean observations funded."
 keyPoints:

@@ -6,6 +6,7 @@ order: 5
 updated: "2026-10-24"
 reviewed: "2026-10-24"
 status: "Reviewed against literature published to mid-2026"
+explorer: "/changes/subpolar-gyre/"
 related: ["amoc", "ice-sheets"]
 decisions: "Rapid regional cooling within about a decade is a minority model outcome, but one with large effects. Include it in North Atlantic and European climate risk assessments, and keep the ocean observing arrays running."
 keyPoints:

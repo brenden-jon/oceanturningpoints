@@ -34,6 +34,7 @@ export default function ResponsesPage() {
           <p className={styles.chips}>
             <a className="more" href="#warming">Limit warming</a>
             <a className="more" href="#protect">Protect the ocean</a>
+            <a className="more" href="#recover">The ocean can recover</a>
             <a className="more" href="#finance">Pay for protection</a>
           </p>
         </div>
@@ -150,7 +151,35 @@ export default function ResponsesPage() {
         </div>
       </section>
 
-      <section className="section" aria-labelledby="finance">
+      <section className="section" aria-labelledby="recover">
+        <div className="wrap">
+          <p className="kicker">The ocean can recover</p>
+          <h2 id="recover" className={styles.h2}>Where pressure is lifted, marine life comes back</h2>
+          <div className={`prose ${own.lead}`}>
+            <p>
+              The changes on this site are serious, but they are not the whole story. Marine life recovers, often faster than expected,
+              when fishing, hunting and habitat loss are brought under control. A review of decades of evidence concluded that substantial
+              recovery of marine life is achievable by 2050, if the major pressures, including climate change, are reduced (Duarte et al.,
+              2020).
+            </p>
+          </div>
+          <ul className={own.recover}>
+            <li><b>+463%</b><span><strong>Cabo Pulmo, Mexico.</strong> Fish biomass rose more than fivefold between 1999 and 2009, after the local community backed closing its reef to fishing (Aburto-Oropeza et al., 2011).</span></li>
+            <li><b>93%</b><span><strong>Humpback whales.</strong> The western South Atlantic population, hunted down to about 450 animals in the 1950s, is back to 93% of its size before whaling (Zerbini et al., 2019).</span></li>
+            <li><b>+28%</b><span><strong>Green turtles.</strong> Numbers have risen since the 1970s with beach protection and curbs on harvest and trade; IUCN moved the species from Endangered to Least Concern in 2025.</span></li>
+            <li><b>Rising</b><span><strong>Managed fish stocks.</strong> Where stocks are assessed and managed, about half of the world’s catch, they are on average increasing (Hilborn et al., 2020).</span></li>
+            <li><b>+37%</b><span><strong>Sea otters and kelp.</strong> Where sea otters have returned on Canada’s Pacific coast, kelp forests recover and the ecosystem holds 37% more life (Gregr et al., 2020).</span></li>
+            <li><b>−23%</b><span><strong>Mangrove loss.</strong> The rate of global mangrove loss fell by 23% between 2000–2010 and 2010–2020 (FAO, 2023).</span></li>
+          </ul>
+          <p className={`small faint ${own.note}`}>
+            Recovery depends on removing local pressures and on limiting warming: protection cannot shield reefs from heat (see above), and
+            fish stocks rebuild best under low emissions. As the 2025 film <i>Ocean with David Attenborough</i> puts it, “the ocean can recover
+            faster than we had ever imagined”.
+          </p>
+        </div>
+      </section>
+
+      <section className="section section--alt" aria-labelledby="finance">
         <div className="wrap">
           <p className="kicker">3 · Pay for protection</p>
           <h2 id="finance" className={styles.h2}>Protection is funded at about a tenth of what it needs</h2>
@@ -202,20 +231,24 @@ export default function ResponsesPage() {
         </div>
       </section>
 
-      <section className="section section--alt" aria-labelledby="plan">
+      <section className="section" aria-labelledby="plan">
         <div className="wrap">
           <p className="kicker">Plan for what cannot be avoided</p>
           <h2 id="plan" className={styles.h2}>Every big change has its own decisions</h2>
-          <div className={styles.responses}>
+          <div className={`${styles.responses} ${own.planCards}`}>
             <div><h3><Link href="/changes/el-nino/#decide">El Niño</Link></h3><p>Act on forecasts with agreed triggers and pre-arranged finance; size reserves and insurance for stronger events.</p></div>
             <div><h3><Link href="/changes/coral-reefs/#responses">Coral reefs</Link></h3><p>Protect the reefs most likely to survive, support reef fishers through change, and plan for weaker natural coastal defences.</p></div>
+            <div><h3><Link href="/changes/fish-on-the-move/#decide">Fish on the move</Link></h3><p>End overfishing and adapt quotas and agreements as stocks shift across borders.</p></div>
             <div><h3><Link href="/changes/ice-sheets/#decide">Ice sheets</Link></h3><p>Test long-lived coastal assets against a high-end rise and keep options open to raise defences or move.</p></div>
             <div><h3><Link href="/changes/atlantic-circulation/#decide">Atlantic circulation</Link></h3><p>Stress-test long-lived investments against a collapse and favour measures that pay off either way.</p></div>
+            <div><h3><Link href="/changes/subpolar-gyre/#decide">Subpolar North Atlantic</Link></h3><p>Include abrupt regional cooling in risk assessments and link observations to decision points.</p></div>
+            <div><h3><Link href="/changes/southern-ocean/#decide">Southern Ocean</Link></h3><p>Protect Antarctic waters, manage krill for a changing ocean and avoid assuming the carbon sink will keep pace.</p></div>
+            <div><h3><Link href="/monitoring/">Keep watching</Link></h3><p>Long, unbroken ocean records underpin every one of these decisions. See who monitors the ocean, and where the gaps are.</p></div>
           </div>
         </div>
       </section>
 
-      <section className="section" aria-labelledby="data">
+      <section className="section section--alt" aria-labelledby="data">
         <div className="wrap prose">
           <h2 id="data" className={styles.h2}>Sources</h2>
           <p>
@@ -235,6 +268,11 @@ export default function ResponsesPage() {
             Medoff et al. (2022), <i>Science</i> 378; Hughes et al. (2017), <i>Nature</i> 543; Graham et al. (2015), <i>Nature</i> 518; Bruno et al.
             (2018), <i>Nature Climate Change</i> 8; Beyer et al. (2018), <i>Conservation Letters</i> 11; Menéndez et al. (2020),{" "}
             <i>Scientific Reports</i> 10.
+          </p>
+          <p>
+            <b>Recovery:</b> Duarte et al. (2020), <i>Nature</i> 580; Aburto-Oropeza et al. (2011), <i>PLoS ONE</i> 6; Zerbini et al. (2019),{" "}
+            <i>Royal Society Open Science</i> 6; IUCN Red List update, October 2025; Hilborn et al. (2020), <i>PNAS</i> 117; Gregr et al. (2020),{" "}
+            <i>Science</i> 368; FAO (2023), <i>The world’s mangroves 2000–2020</i>.
           </p>
           <p>
             <b>Finance:</b> Systemiq (2026), <i>Ocean Protection Gap Report 2026</i>; Brander et al. (2020), <i>Marine Policy</i> 116; Sumaila et

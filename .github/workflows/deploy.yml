@@ -40,12 +40,13 @@ jobs:
         working-directory: pipeline
         run: uv run python ocean_now.py
         continue-on-error: true
-      - name: Refresh reef heat-stress history (Mondays)
+      - name: Refresh reef heat-stress history and observing platforms (Mondays)
         # About 280 MB from NOAA Coral Reef Watch, so weekly rather than daily.
         if: github.event_name == 'schedule' && github.event.schedule == '40 6 * * *'
         working-directory: pipeline
         run: |
           if [ "$(date -u +%u)" = "1" ]; then uv run python reef_stations.py; fi
+          if [ "$(date -u +%u)" = "1" ]; then uv run python monitoring.py || echo "OceanOPS harvest failed; keeping last week's platforms"; fi
         continue-on-error: true
       - run: npm run build
         env:

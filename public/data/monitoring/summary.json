@@ -1,0 +1,140 @@
+{
+ "source": "OceanOPS (WMO-IOC), https://www.ocean-ops.org",
+ "harvested": "2026-10-25",
+ "total": 8207,
+ "types": {
+  "argo": {
+   "label": "Argo floats",
+   "n": 3306
+  },
+  "argo-bgc": {
+   "label": "Biogeochemical Argo floats",
+   "n": 938
+  },
+  "argo-deep": {
+   "label": "Deep Argo floats",
+   "n": 198
+  },
+  "drifter": {
+   "label": "Drifting buoys",
+   "n": 1393
+  },
+  "mooring": {
+   "label": "Moored buoys and observatories",
+   "n": 539
+  },
+  "tide": {
+   "label": "Tide gauges",
+   "n": 233
+  },
+  "ship": {
+   "label": "Ships reporting observations",
+   "n": 1600
+  },
+  "radar": {
+   "label": "Coastal radars",
+   "n": 0
+  },
+  "other": {
+   "label": "Gliders and tagged animals",
+   "n": 0
+  }
+ },
+ "countries": [
+  [
+   "United States",
+   4470
+  ],
+  [
+   "Germany",
+   657
+  ],
+  [
+   "Australia",
+   445
+  ],
+  [
+   "United Kingdom",
+   406
+  ],
+  [
+   "France",
+   392
+  ],
+  [
+   "Japan",
+   314
+  ],
+  [
+   "Canada",
+   310
+  ],
+  [
+   "India",
+   174
+  ],
+  [
+   "European Union",
+   169
+  ],
+  [
+   "China",
+   141
+  ],
+  [
+   "Italy",
+   120
+  ],
+  [
+   "Korea (Republic Of)",
+   84
+  ],
+  [
+   "Spain",
+   54
+  ],
+  [
+   "Netherlands",
+   40
+  ],
+  [
+   "Norway",
+   38
+  ]
+ ],
+ "countriesTotal": 38,
+ "arrays": [
+  {
+   "name": "RAPID-MOCHA-WBTS, 26.5\u00b0N",
+   "since": 2004
+  },
+  {
+   "name": "OSNAP West",
+   "since": 2014
+  },
+  {
+   "name": "OSNAP East",
+   "since": 2014
+  },
+  {
+   "name": "NOAC, 47\u00b0N",
+   "since": 2006
+  },
+  {
+   "name": "MOVE, 16\u00b0N",
+   "since": 2000
+  },
+  {
+   "name": "TRACOS, 11\u00b0S (Brazil)",
+   "since": 2000
+  },
+  {
+   "name": "TRACOS, 11\u00b0S (Angola)",
+   "since": 2013
+  },
+  {
+   "name": "SAMBA, 34.5\u00b0S",
+   "since": 2009
+  }
+ ]
+}

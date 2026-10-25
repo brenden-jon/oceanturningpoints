@@ -11,7 +11,7 @@ live:
   view: "pacific"
   caption: "Today: sea-surface temperature compared with normal. The warm band along the equator is El Niño."
 related: ["coral-reefs", "amoc", "southern-ocean"]
-explorer: "/ocean-now/"
+explorer: "/changes/el-nino/"
 decisions: "El Niño can be forecast months ahead, so it is the ocean change countries can best prepare for. Agree triggers and pre-arranged finance, and size food reserves, insurance and water storage for stronger events than in the past."
 keyPoints:
   - "A strong El Niño developed in 2026. In mid-October the weekly Niño-3.4 temperature anomaly reached +3.3 °C, the highest in NOAA’s weekly record since 1981 (NOAA CPC)."

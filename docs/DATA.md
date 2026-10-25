@@ -23,6 +23,11 @@ All raw downloads are cached in `pipeline/.cache` (not committed). Rebuild every
 | IMBIE ice-sheet mass balance | Otosaka et al. (2026) Sci. Data, data doi:10.5285/128c5e33-5224-4197-82f0-19dcc95b80a0 | Open Government Licence v3.0 | Ice-sheet chart | `sea_level.py` |
 | NOAA LSA global mean sea level | NOAA Laboratory for Satellite Altimetry | Public domain | Observed sea level (series currently ends Feb 2025) | `sea_level.py` |
 | Protected Planet: World Database on Protected and Conserved Areas (WDPCA) | UNEP-WCMC and IUCN (2026), October 2026 release. Citation and release month live in `src/lib/wdpa.ts` | Non-commercial; **displayed via UNEP-WCMC's map service, never downloaded or redistributed**; citation with release month and a link to protectedplanet.net must be visible | Protected areas on the globe, reef map and the global map on /responses/; coverage time series (published statistics, transcribed) | n/a |
+| FishMIP projections of fish biomass by country | Blanchard & Novaglio (eds) 2024, FAO Fisheries and Aquaculture Technical Paper 707, doi:10.4060/cd1379en; data doi:10.5281/zenodo.13988998 | Apache-2.0 | Fish on the move map and continent chart | `fish.py` |
+| Natural Earth 1:50m admin-0 countries | naturalearthdata.com | Public domain | Country shapes for the fish map | `fish.py` |
+| MPI-SOM-FFN v2025 air–sea CO₂ flux | Jersild, Landschützer, Gruber & Bakker, NOAA NCEI 0160558, doi:10.7289/v5z899n6 | Free to use with citation | Southern Ocean carbon uptake chart (anomaly from 1985–2018 mean, south of 35°S) | `southern_ocean.py` |
+| OceanOPS platform metadata | OceanOPS (WMO-IOC), ocean-ops.org public API | Free for educational and non-commercial use with acknowledgement | Monitoring map (last positions, type, country; refreshed weekly) | `monitoring.py` |
+| GLOSS Core Network | PSMSL (Holgate et al. 2013), glossCoreNetwork.xml | Citation requested | Active tide gauges on the monitoring map | `monitoring.py` |
 | MPAtlas level-of-protection summary | Marine Conservation Institute, analysis of 20 Oct 2026 | Non-commercial | Fully/highly protected share on /responses/ (transcribed) | n/a |
 | Natural Earth 1:110m and 1:50m coastlines, land, boundary lines | naturalearthdata.com | Public domain | Map lines; preview images | `basemap_and_scales.py` |
 | Blue Marble Shaded Relief and Bathymetry | NASA Earth Observatory via NASA GIBS (tiles requested by the browser) | Public domain (credit NASA) | Homepage globe, atlas, home preview image | n/a; `figures.py` for the preview |
@@ -37,7 +42,8 @@ Some charts are drawn from numbers in published papers and reports rather than f
 components with their source next to them: `ExtremeElNinoChart.tsx` (Sengupta et al. 2026), `CommitmentChart.tsx` (AR6 WGI
 Table 9.10), `ReefBenefits.tsx` (Beck et al. 2018; Perry et al. 2025; Teh et al. 2013; Spalding et al. 2017), `PathwaysChart.tsx`
 (UNEP Emissions Gap Report 2026; GTPR 2025), `ProtectionCharts.tsx` (Protected Planet, MPAtlas, Systemiq 2026, Sumaila et al. 2019)
-and the drought chart on the El Niño page (Delage & Power 2020). Figures from papers under NC-ND licences are never reproduced;
+the drought chart on the El Niño page (Delage & Power 2020), `ObservingRecords.tsx` (redrawn from Jongman, forthcoming, with
+the author's permission) and the model-share chart on the subpolar gyre page (Sgubin et al. 2017; Swingedouw et al. 2021). Figures from papers under NC-ND licences are never reproduced;
 only their numbers are used, redrawn.
 
 ## Processing notes

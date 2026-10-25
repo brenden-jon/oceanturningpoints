@@ -8,8 +8,8 @@ export default function HBars({ rows, max, color = "#0a62b8", labelWidth = "9rem
   return (
     <div style={{ display: "grid", gap: "0.45rem", position: "relative" }}>
       {rows.map((r) => (
-        <div key={r.label} style={{ display: "grid", gridTemplateColumns: `minmax(6rem, ${labelWidth}) 1fr`, gap: "0.8rem", alignItems: "center", fontSize: "0.9rem" }}>
-          <span style={{ color: "var(--text-2)", lineHeight: 1.25 }}>{r.label}</span>
+        <div key={r.label} style={{ display: "grid", gridTemplateColumns: labelWidth === "none" ? "1fr" : `minmax(6rem, ${labelWidth}) 1fr`, gap: "0.8rem", alignItems: "center", fontSize: "0.9rem" }}>
+          {labelWidth !== "none" && <span style={{ color: "var(--text-2)", lineHeight: 1.25 }}>{r.label}</span>}
           <span style={{ position: "relative", height: 18, display: "block", marginRight: "5.2rem" }}>
             {rule && <i aria-hidden style={{ position: "absolute", left: pct(rule.at), top: -4, bottom: -4, borderLeft: "1.5px dashed #b24a2a" }} />}
             <i style={{ position: "absolute", top: 1, height: 16, borderRadius: 4, background: r.muted ? "#9aa5b1" : color,

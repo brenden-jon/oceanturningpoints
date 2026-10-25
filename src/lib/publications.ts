@@ -4,7 +4,8 @@
  * Rules (from the editorial brief): list only work that has been published
  * and publicly released; verify each entry against Crossref before adding it;
  * never list drafts, submissions or work under review, and never name the
- * journal a manuscript is intended for. Last verified 24 October 2026.
+ * journal a manuscript is intended for. FORTHCOMING holds accepted work the curator has
+ * explicitly approved for listing, without a journal name. Last verified 25 October 2026.
  */
 export interface Publication {
   authors: string;
@@ -22,6 +23,9 @@ export const PUBLICATIONS: Publication[] = [
     venue: "Frontiers in Environmental Science", details: "13, 1459034", doi: "10.3389/fenvs.2025.1459034" },
   { authors: "Jongman, B.", year: 2021, title: "The fraction of the global population at risk of floods is growing",
     venue: "Nature", details: "596, 37–38 (News & Views)", doi: "10.1038/d41586-021-01974-0", type: "comment" },
+  { authors: "Coughlan de Perez, E., van den Hurk, B., van Aalst, M. K., Jongman, B., Klose, T. & Suarez, P.", year: 2015,
+    title: "Forecast-based financing: an approach for catalyzing humanitarian action based on extreme weather and climate forecasts",
+    venue: "Natural Hazards and Earth System Sciences", details: "15, 895–904", doi: "10.5194/nhess-15-895-2015" },
   { authors: "Jongman, B.", year: 2018, title: "Effective adaptation to rising flood risk",
     venue: "Nature Communications", details: "9, 1986", doi: "10.1038/s41467-018-04396-1" },
   { authors: "Winsemius, H. C., Aerts, J. C. J. H., van Beek, L. P. H., et al. (incl. Jongman, B.)", year: 2016,
@@ -36,8 +40,13 @@ export const PUBLICATIONS: Publication[] = [
     details: "22, 823–835", doi: "10.1016/j.gloenvcha.2012.07.004" },
 ];
 
+export const FORTHCOMING = [
+  { authors: "Jongman, B. & Hall, J. W.", title: "Adapting to the risk of Atlantic circulation change" },
+];
+
 export const PROFILES = {
-  orcid: "https://orcid.org/0000-0002-3361-2498",
+  website: "https://brendenjongman.com/",
+  scholar: "https://scholar.google.com/citations?user=ww2AjtrbmvQC&hl=en",
   linkedin: "https://www.linkedin.com/in/brendenjongman/",
-  website: null as string | null, // personal website: add once confirmed
+  substack: null as string | null, // add once the curator confirms the address
 };

@@ -9,7 +9,8 @@
 - Daily satellite layers are shown at 0.25–0.5°, coarser than the source products, and are less reliable near coasts and ice.
 - Coral heat stress (Degree Heating Weeks) indicates bleaching risk, not observed bleaching or mortality.
 - Marine protected areas show designation, not management effectiveness or no-take status.
-- The subpolar gyre and the Southern Ocean have explainers but no dedicated story page yet.
+- The OSNAP overturning series is not charted: its licence requires the investigators' permission.
+- The fish map colours each country's land for readability; the values refer to its marine waters (EEZ shapes would be better).
 - City sea-level values include tide-gauge land motion but not present-day subsidence that no gauge records.
 - Protected-area coverage is shown from published statistics; there is no country-level breakdown yet.
 
@@ -22,5 +23,5 @@
    protection is published.
 4. **People exposed to AMOC rainfall change.** Combine the four-model rainfall layer with GHSL population (JRC, CC BY 4.0),
    labelled as exposure, not impact.
-5. **Southern Ocean and subpolar North Atlantic.** OSNAP observations; Antarctic sea ice and bottom-water change.
+5. **OSNAP chart** once the investigators agree; EEZ shapes for the fish map (Marine Regions, CC BY 4.0).
 6. Choose a code licence; add a corrections log; consider privacy-respecting analytics.

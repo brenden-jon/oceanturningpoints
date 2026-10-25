@@ -1,0 +1,23 @@
+.two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.card { background: var(--bg); border-radius: var(--radius); padding: 1.4rem 1.5rem; min-width: 0; }
+.card h3 { font-size: 1.15rem; margin-bottom: 0.4rem; }
+.card p { color: var(--text-2); margin: 0 0 0.8rem; }
+.card ul { margin: 0; padding-left: 1.1rem; display: grid; gap: 0.45rem; color: var(--text-2); font-size: 0.97rem; }
+.card b { color: var(--text); font-weight: 600; }
+.stats { list-style: none; margin: 2rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2rem 1.6rem; }
+.stats li { display: grid; gap: 0.35rem; align-content: start; }
+.stats b { font-size: clamp(1.7rem, 3vw, 2.4rem); font-weight: 700; letter-spacing: -0.035em; line-height: 1; }
+.stats span { color: var(--text-2); font-size: 0.93rem; }
+.lead { max-width: 75ch; }
+@media (max-width: 960px) { .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 860px) { .two { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 520px) { .stats { grid-template-columns: minmax(0, 1fr); } }
+.timeline { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+.timeline li { border-top: 3px solid var(--accent); padding-top: 0.8rem; }
+.timeline time { font-weight: 700; font-size: 1.05rem; }
+.timeline p { margin: 0.4rem 0 0; color: var(--text-2); font-size: 0.95rem; }
+.oceaneye { margin-top: 2.5rem; background: var(--bg); border-radius: var(--radius); padding: 1.5rem 1.6rem; max-width: 80ch; }
+.oceaneye h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+.oceaneye p { color: var(--text-2); margin: 0 0 0.8rem; }
+@media (max-width: 960px) { .timeline { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .timeline { grid-template-columns: minmax(0, 1fr); } }

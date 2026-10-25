@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { abs } from "@/lib/site";
 import Link from "next/link";
-import { PROFILES, PUBLICATIONS } from "@/lib/publications";
+import { FORTHCOMING, PROFILES, PUBLICATIONS } from "@/lib/publications";
 import styles from "./about.module.css";
 
 export const metadata: Metadata = {
@@ -40,9 +40,10 @@ export default function About() {
             Oxford.
           </p>
           <p className={styles.links}>
-            <a href={PROFILES.orcid}>ORCID profile</a>
+            <a href={PROFILES.website}>Personal website</a>
+            <a href={PROFILES.scholar}>Google Scholar</a>
+            {PROFILES.substack && <a href={PROFILES.substack}>Substack</a>}
             <a href={PROFILES.linkedin}>LinkedIn</a>
-            {PROFILES.website && <a href={PROFILES.website}>Personal website</a>}
           </p>
 
           <h2 id="independence">Independence</h2>
@@ -61,8 +62,14 @@ export default function About() {
         </div>
 
         <aside className={styles.pubs} aria-labelledby="pubs">
-          <h2 id="pubs">Selected published research by Brenden Jongman</h2>
+          <h2 id="pubs">Selected research by Brenden Jongman</h2>
           <ol>
+            {FORTHCOMING.map((p) => (
+              <li key={p.title}>
+                <span className={styles.pubTitle}>{p.title}</span>
+                <span className={styles.pubMeta}>{p.authors} (forthcoming).</span>
+              </li>
+            ))}
             {PUBLICATIONS.map((p) => (
               <li key={p.doi}>
                 <span className={styles.pubTitle}>
@@ -74,7 +81,7 @@ export default function About() {
               </li>
             ))}
           </ol>
-          <p className="small muted">Published, peer-reviewed work only. A fuller list is on the ORCID profile.</p>
+          <p className="small muted">Peer-reviewed work. A fuller list is on <a href={PROFILES.scholar}>Google Scholar</a>.</p>
         </aside>
       </div>
     </div>

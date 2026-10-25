@@ -19,7 +19,7 @@ import { asset } from "@/lib/site";
 export interface Overlay {
   id: string;
   data: GeoJSON.FeatureCollection;
-  kind: "line" | "point";
+  kind: "line" | "point" | "fill";
   color: string;
   width?: number;
   dash?: number[];
@@ -27,7 +27,7 @@ export interface Overlay {
   label?: string;
 }
 
-export interface HoverInfo { lon: number; lat: number; x: number; y: number }
+export interface HoverInfo { lon: number; lat: number; x: number; y: number; props?: Record<string, unknown> }
 
 interface Props {
   look: "satellite" | "night" | "data";
@@ -252,7 +252,13 @@ export default function EarthMap({
       if (existing) existing.setData(o.data);
       else map.addSource(sid, { type: "geojson", data: o.data });
       if (!map.getLayer(sid)) {
-        if (o.kind === "line") {
+        if (o.kind === "fill") {
+          // Polygons carry their own "color" property; drawn under coastlines and borders.
+          const before = map.getLayer("borders") ? "borders" : undefined;
+          map.addLayer({ id: sid, type: "fill", source: sid,
+            paint: { "fill-color": ["coalesce", ["get", "color"], "#dddddd"], "fill-opacity": o.opacity ?? 0.9,
+              "fill-outline-color": o.color } }, before);
+        } else if (o.kind === "line") {
           map.addLayer({ id: sid, type: "line", source: sid,
             paint: { "line-color": o.color, "line-width": o.width ?? 1.6, "line-opacity": o.opacity ?? 1,
               ...(o.dash ? { "line-dasharray": o.dash } : {}) } });
@@ -272,9 +278,15 @@ export default function EarthMap({
   useEffect(() => {
     const map = mapRef.current;
     if (!map || !ready) return;
-    const move = (e: maplibregl.MapMouseEvent) => onHover?.({ lon: e.lngLat.lng, lat: e.lngLat.lat, x: e.point.x, y: e.point.y });
+    const props = (e: maplibregl.MapMouseEvent) => {
+      const layers = (map.getStyle().layers ?? []).filter((l) => l.id.startsWith("ov-")).map((l) => l.id);
+      if (!layers.length) return undefined;
+      const f = map.queryRenderedFeatures(e.point, { layers });
+      return f.length ? (f[0].properties as Record<string, unknown>) : undefined;
+    };
+    const move = (e: maplibregl.MapMouseEvent) => onHover?.({ lon: e.lngLat.lng, lat: e.lngLat.lat, x: e.point.x, y: e.point.y, props: props(e) });
     const leave = () => onHover?.(null);
-    const click = (e: maplibregl.MapMouseEvent) => onSelect?.({ lon: e.lngLat.lng, lat: e.lngLat.lat, x: e.point.x, y: e.point.y });
+    const click = (e: maplibregl.MapMouseEvent) => onSelect?.({ lon: e.lngLat.lng, lat: e.lngLat.lat, x: e.point.x, y: e.point.y, props: props(e) });
     map.on("mousemove", move);
     map.on("mouseout", leave);
     map.on("click", click);

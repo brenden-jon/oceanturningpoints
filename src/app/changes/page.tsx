@@ -28,6 +28,14 @@ const CHANGES = [
     done: "Bring warming back towards 1.2°C and below; protect the reefs most likely to survive and reduce local pressures; plan for weaker natural defences.",
   },
   {
+    slug: "fish-on-the-move", title: "Fish on the move", story: "/changes/fish-on-the-move/", storyLabel: "Projections for every coastal country", science: false,
+    image: "Projected change in the fish each country’s waters can hold by the 2090s under very high emissions: darker red means larger losses.",
+    what: "Warming shrinks the amount of fish the ocean can support and moves stocks towards the poles and across borders. Marine heatwaves can wipe out whole stocks within a year or two.",
+    likely: "Already under way: warming cut sustainable yields by 4% over 1930–2010. Models project about 5% less fish per degree of warming (medium confidence); cod fisheries and kelp forests can tip locally.",
+    means: "Less food and income for coastal communities, lost licence revenue for small island states, and disputes over stocks that cross borders.",
+    done: "Limit warming, end overfishing, and adapt quotas and agreements as stocks move; protected and rebuilt stocks cope better.",
+  },
+  {
     slug: "ice-sheets", title: "Ice sheets", story: "/changes/ice-sheets/", storyLabel: "Thresholds, commitment and the coast",
     image: "The Greenland and Antarctic ice sheets, which together hold enough ice to raise the sea by about 65 metres.",
     what: "Greenland and Antarctica are losing ice four times faster than in the 1990s. Past a threshold, feedbacks keep an ice sheet shrinking even if warming stops.",
@@ -44,7 +52,7 @@ const CHANGES = [
     done: "Limit both the amount and the speed of warming; stress-test long-lived investments against a collapse and favour measures that help either way.",
   },
   {
-    slug: "subpolar-gyre", title: "Subpolar North Atlantic", story: null, storyLabel: "",
+    slug: "subpolar-gyre", title: "Subpolar North Atlantic", story: "/changes/subpolar-gyre/", storyLabel: "Could it cool abruptly?",
     image: "The subpolar gyre: an anticlockwise loop of currents south of Greenland, with the winter sinking regions in the Labrador and Irminger Seas.",
     what: "A loop of currents south of Greenland where surface water sinks every winter, one of the engines of the Atlantic circulation.",
     likely: "Possible this century: in a minority of climate models winter sinking shuts down within a decade. Threshold estimate about 1.8°C, with a wide range (1.1–3.8°C).",
@@ -52,7 +60,7 @@ const CHANGES = [
     done: "Include abrupt regional cooling in European climate risk assessments, and keep the ocean observing arrays running.",
   },
   {
-    slug: "southern-ocean", title: "Southern Ocean", story: null, storyLabel: "",
+    slug: "southern-ocean", title: "Southern Ocean", story: "/changes/southern-ocean/", storyLabel: "Heat, carbon and sea ice",
     image: "Surface currents around Antarctica in October 2026: the bright band is the Antarctic Circumpolar Current.",
     what: "The ocean around Antarctica absorbs much of the heat and carbon people add, and forms the dense water that fills the deep ocean.",
     likely: "Slow changes are under way: dense-water formation is declining in key regions, and Antarctic sea ice has been at record lows since 2016.",
@@ -67,7 +75,7 @@ export default function Changes() {
       <header className={styles.head}>
         <h1 className={styles.title}>The big changes</h1>
         <p className="lede">
-          Six ocean systems are changing in ways that matter for development, investment and public finance. For each, four questions:
+          Seven big ocean changes matter for development, investment and public finance. For each, four questions:
           what it is, how likely the change is, what it would mean for people and economies, and what can be done about it. They are
           ordered by how soon they demand attention.
         </p>
@@ -95,7 +103,7 @@ export default function Changes() {
               </dl>
               <p className={styles.links}>
                 {c.story && <Link className="button" href={c.story}>{c.storyLabel}</Link>}
-                <Link className="more" href={`/science/${c.slug}/`}>Evidence and references</Link>
+                {c.science !== false && <Link className="more" href={`/science/${c.slug}/`}>Evidence and references</Link>}
               </p>
             </div>
           </li>

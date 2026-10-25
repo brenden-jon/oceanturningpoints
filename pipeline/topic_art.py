@@ -249,6 +249,29 @@ def southern_ocean() -> None:
     save(Image.fromarray((np.clip(out, 0, 1) * 255).astype(np.uint8)), "southern-ocean")
 
 
+def fish() -> None:
+    """Projected change in fish biomass by country, 2090s, very high emissions (FishMIP; see fish.py)."""
+    gj = json.loads((OUT / "fish" / "countries.geojson").read_text())
+    bins = [(-30, "#8c1d18"), (-20, "#c8452c"), (-10, "#ec8a5e"), (-3, "#f7c8a8"), (3, "#eeeeee"), (999, "#5a9bd0")]
+    fig = plt.figure(figsize=(W / 100, H / 100), dpi=100, facecolor=SEA)
+    ax = fig.add_axes((0, 0, 1, 1))
+    land(ax, (-170, 190, -58, 78))
+    for f in gj["features"]:
+        v = f["properties"]["ssp585_2100"]
+        c = next(col for mx, col in bins if v is not None and v < mx) if v is not None else LAND
+        g = f["geometry"]
+        for p in (g["coordinates"] if g["type"] == "MultiPolygon" else [g["coordinates"]]):
+            a = np.asarray(p[0])
+            if len(a) > 2:
+                ax.fill(a[:, 0], a[:, 1], color=c, ec="white", lw=0.4, zorder=2)
+                ax.fill(a[:, 0] + 360, a[:, 1], color=c, ec="white", lw=0.4, zorder=2)
+    tmp = TOPICS / "fish.tmp.png"
+    fig.savefig(tmp, dpi=100, facecolor=SEA)
+    plt.close(fig)
+    save(Image.open(tmp), "fish-on-the-move")
+    tmp.unlink()
+
+
 def main() -> None:
     f = fonts()
     coral()
@@ -257,6 +280,7 @@ def main() -> None:
     subpolar()
     ice_sheets()
     southern_ocean()
+    fish()
     print("  wrote img/topics/*.jpg and img/amoc-circulation.png")
 
 
