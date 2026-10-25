@@ -113,6 +113,43 @@ def blue_marble(z: int = 3) -> Image.Image:
     return out
 
 
+def bm_crop(lon_c: float, lat_c: float, z: int, w: int, h: int) -> Image.Image:
+    """A w x h pixel window of Blue Marble (Web Mercator, zoom z) centred on a point."""
+    n, size = 2 ** z, 256
+    x = (lon_c + 180) / 360 * n * size
+    y = (1 - np.log(np.tan(np.radians(lat_c)) + 1 / np.cos(np.radians(lat_c))) / np.pi) / 2 * n * size
+    x0, y0 = int(x - w / 2), int(y - h / 2)
+    out = Image.new("RGB", (w, h))
+    for ty in range(max(0, y0 // size), min(n, (y0 + h) // size + 1)):
+        for tx in range((x0 // size), (x0 + w) // size + 1):
+            txw = tx % n
+            url = (f"https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/BlueMarble_ShadedRelief_Bathymetry/default/"
+                   f"GoogleMapsCompatible_Level8/{z}/{ty}/{txw}.jpg")
+            tile = Image.open(fetch(url, CACHE / "bluemarble" / f"{z}_{ty}_{txw}.jpg"))
+            out.paste(tile, (tx * size - x0, ty * size - y0))
+    return out
+
+
+# Region views for topic cards: (centre lon, centre lat, zoom)
+TOPIC_VIEWS = {
+    "amoc": (-35, 35, 3),
+    "subpolar-gyre": (-40, 58, 4),
+    "southern-ocean": (-45, -64, 4),
+    "coral-reefs": (147.5, -18.5, 6),
+    "ice-sheets": (-42, 72, 4),
+    "enso": (-130, 0, 3),
+    "ocean-today": (-150, 5, 2),
+}
+
+
+def topic_images() -> None:
+    for slug, (lon, lat, z) in TOPIC_VIEWS.items():
+        img = bm_crop(lon, lat, z, 1200, 800)
+        dest = ROOT / "img" / "topics" / f"{slug}.jpg"
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        img.save(dest, quality=82, optimize=True, progressive=True)
+
+
 def og_home(path, f):
     img = blue_marble()
     # Atlantic-centred crop (Web Mercator pixels at zoom 3): Americas, Europe, Africa
@@ -168,7 +205,8 @@ def main() -> None:
        "Science", ("≤ −10 °C", "≥ +10 °C"), f)
     card(ROOT / "img" / "amoc-winter.png", winter, cmocean.cm.balance, 15, fit(0, 30, 75, 8, 5.6), size=(8, 5.6))
     card(ROOT / "img" / "amoc-rain.png", rain, matplotlib.colormaps['BrBG'], 50, fit(30, -5, 35, 8, 3.2), size=(8, 3.2), stipple=agree)
-    print("  wrote og/*.png and img/*.jpg")
+    topic_images()
+    print("  wrote og/*.png, img/*.jpg and img/topics/*.jpg")
 
 
 if __name__ == "__main__":

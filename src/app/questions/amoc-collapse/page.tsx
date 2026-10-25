@@ -71,19 +71,19 @@ export default function AmocPage() {
     <article>
       <header className={`wrap ${styles.hero}`}>
         <div>
-          <p className="eyebrow"><Link href="/questions/">Questions</Link> · Atlantic circulation</p>
+          <p className="label"><Link href="/questions/">Questions</Link> · Atlantic circulation</p>
           <h1 className={styles.title}>{TITLE}</h1>
         </div>
         <div className={styles.heroSide}>
         <p className={styles.standfirst}>
-          A collapse of the Atlantic Meridional Overturning Circulation, the AMOC, is a low-likelihood, high-impact risk. Published
-          climate-model experiments show what it would do: colder winters in northwest Europe even as the world warms, and weaker
+          A collapse of the Atlantic Meridional Overturning Circulation (AMOC) is considered unlikely this century, but its effects
+          would be large. Climate-model experiments show colder winters in northwest Europe even in a warmer world, and weaker
           monsoons for hundreds of millions of people in West Africa and South Asia.
         </p>
         <p className={styles.chips}>
-          <span className="chip chip--model">Model experiments, not forecasts</span>
-          <span className="chip chip--obs">Observations to {s.rapid.end.slice(0, 4)}</span>
-          <span className="chip">Reviewed {formatDate(topic.reviewed)}</span>
+          <span className="evidence evidence--model">Model experiments</span>
+          <span className="evidence evidence--obs">Observations to {s.rapid.end.slice(0, 4)}</span>
+          <span className="evidence">Reviewed {formatDate(topic.reviewed)}</span>
         </p>
         </div>
       </header>
@@ -93,28 +93,29 @@ export default function AmocPage() {
       </section>
 
       <section className={`wrap ${styles.reading}`} aria-labelledby="reading">
-        <h2 id="reading" className="eyebrow">Reading these maps</h2>
+        <h2 id="reading" className={styles.readingH}>Reading these maps</h2>
         <div className={styles.readingGrid}>
           <div>
-            <h3>Experiments, not forecasts</h3>
+            <h3>These are experiments</h3>
             <p>
-              The maps show climates that models settle into once the AMOC has collapsed. To get there, modellers add fresh water to
-              the North Atlantic. They show what a collapse would do, not when or whether it will happen.
+              The maps show the climate a model settles into once its AMOC has collapsed. Modellers trigger the collapse by adding
+              fresh water to the North Atlantic. The results show what a collapse would do. They say nothing about when, or whether,
+              one will happen.
             </p>
           </div>
           <div>
             <h3>Collapse alone, or collapse plus warming</h3>
             <p>
-              Temperature comes from one model in five states. Some comparisons isolate the collapse; others show the total change
-              from pre-industrial, so you can see cooling and greenhouse warming together. Comparisons marked “note” mix
-              different background settings, explained under the map.
+              Temperature comes from one model, run in five different states. Some comparisons isolate the collapse. Others show the
+              total change since pre-industrial times, combining the cooling with greenhouse warming. Comparisons marked “note” mix
+              two model set-ups; the note under the map explains how.
             </p>
           </div>
           <div>
             <h3>Where models agree</h3>
             <p>
-              Rainfall averages {models} independent models. Dots mark where all of them agree on the direction. The table under
-              the map gives each model’s value, because the spread is part of the answer.
+              Rainfall is the average of {models} independent models. Dots mark places where all of them agree on whether it gets
+              wetter or drier. The table under the map lists each model’s value, so the range is visible.
             </p>
           </div>
         </div>
@@ -122,20 +123,20 @@ export default function AmocPage() {
 
       <section className={`section ${styles.band}`} aria-labelledby="where">
         <div className="wrap">
-          <p className="eyebrow">Consequences</p>
+          <p className="kicker">Consequences</p>
           <h2 id="where" className={styles.h2}>What would a collapse mean where people live?</h2>
-          <p className={`standfirst ${styles.sub}`}>
-            The cooling of Europe is the familiar story. For far more people, the larger effect is on rain: a southward shift of the
-            tropical rain belt that weakens the monsoons of the Northern Hemisphere.
+          <p className={`lede ${styles.sub}`}>
+            Europe’s cooling gets most of the attention. Many more people would be affected by changes in rainfall, as the tropical
+            rain belt shifts south and the monsoons of the Northern Hemisphere weaken.
           </p>
           <ul className={styles.regions}>
             {regions.map((x) => (
               <li key={x.id} className={styles.regionCard}>
-                <p className="eyebrow">{x.region}</p>
+                <p className="kicker">{x.region}</p>
                 <p className={`tnum ${styles.figure}`}>{x.figure}</p>
                 <p className={styles.lead}>{x.lead}</p>
                 <p className="small muted">{x.detail}</p>
-                <ExplorerLink query={x.query} className="textlink">Show on the map</ExplorerLink>
+                <ExplorerLink query={x.query} className="more">Show on the map</ExplorerLink>
               </li>
             ))}
           </ul>
@@ -165,7 +166,7 @@ export default function AmocPage() {
           </div>
           <p className={`small muted ${styles.cardFoot}`}>
             Figures for named places are single model grid cells, about 100–250 km across, from idealised experiments. They indicate
-            the direction and rough size of change in a region, not a local forecast. The four-model average for the West African
+            the direction and rough size of change across a region and should not be read as local forecasts. The four-model average for the West African
             monsoon in our processing is {num(wam.ensembleMeanOfPercent, 1)}%, against {num(wam.published, 1)}% published by Ben-Yami et al. (2024).
           </p>
         </div>
@@ -174,7 +175,7 @@ export default function AmocPage() {
       <section className="section" aria-labelledby="observed">
         <div className={`wrap ${styles.split}`}>
           <div className="prose">
-            <p className="eyebrow">What we observe</p>
+            <p className="kicker">What we observe</p>
             <h2 id="observed" className={styles.h2}>Is it already weakening?</h2>
             <p>
               Since 2004, instruments moored across the Atlantic at 26.5°N have measured the circulation directly. It averages
@@ -193,7 +194,7 @@ export default function AmocPage() {
 
       <section className={`section ${styles.band}`} aria-labelledby="tipping">
         <div className="wrap">
-          <p className="eyebrow">What could change</p>
+          <p className="kicker">What could change</p>
           <h2 id="tipping" className={styles.h2}>Why scientists talk about a tipping point</h2>
           <div className={styles.split}>
             <div className="prose">
@@ -219,8 +220,8 @@ export default function AmocPage() {
                 still brings it down to {num(runs.CESM_0600_RCP85.mean2400to2499, 1)} Sv.
               </p>
               <p>
-                No one knows where on such a curve the real ocean sits. That is the heart of the scientific debate, and why the
-                same model can give very different futures.
+                Nobody knows where the real ocean sits on a curve like this. That uncertainty is what the scientific debate is about,
+                and it is why the same model can produce very different futures.
               </p>
             </div>
             <ScenarioRunsChart />
@@ -230,7 +231,7 @@ export default function AmocPage() {
 
       <section className="section" aria-labelledby="sure">
         <div className="wrap">
-          <p className="eyebrow">What we know and don’t know</p>
+          <p className="kicker">What we know and don’t know</p>
           <h2 id="sure" className={styles.h2}>How likely is a collapse?</h2>
           <div className={styles.split}>
             <div className="prose">
@@ -262,7 +263,7 @@ export default function AmocPage() {
             </div>
             <div className={styles.confidence}>
               <table>
-                <caption className="eyebrow">How sure are we?</caption>
+                <caption>How sure are we?</caption>
                 <tbody>
                   {topic.confidence.map((c) => (
                     <tr key={c.claim}>
@@ -283,19 +284,19 @@ export default function AmocPage() {
       <section className={`section ${styles.band}`} aria-labelledby="decide">
         <div className={`wrap ${styles.split}`}>
           <div className="prose">
-            <p className="eyebrow">Why it matters for decisions</p>
+            <p className="kicker">Why it matters for decisions</p>
             <h2 id="decide" className={styles.h2}>Planning for a risk that may not happen</h2>
             <p>
-              On current evidence, a collapse is not the central case for this century, and it should not displace immediate
-              adaptation priorities. But dams, ports, irrigation schemes and crop programmes built now will still be in use when the
-              question may be settled. Because the direction of many effects is better known than their size, the most useful
-              measures are those that help whichever way the numbers fall.
+              On current evidence a collapse is unlikely this century, and planning for it should not displace adaptation that is
+              needed now. Dams, ports, irrigation schemes and crop programmes built today will still be in use when the question is
+              better understood. The direction of many effects is clearer than their size, so the most useful measures are those that
+              help across the range of outcomes.
             </p>
           </div>
           <ol className={styles.steps}>
             <li><strong>Screen exposure.</strong> Identify the countries and sectors most sensitive to a shift in monsoon rainfall or North Atlantic climate.</li>
             <li><strong>Stress-test long-lived investments.</strong> Run an AMOC-collapse scenario alongside standard projections.</li>
-            <li><strong>Prefer directionally robust options.</strong> Drought-tolerant farming and flexible water storage pay off across outcomes.</li>
+            <li><strong>Prefer options that work either way.</strong> Drought-tolerant farming and flexible water storage pay off whether or not the circulation collapses.</li>
             <li><strong>Link monitoring to decisions.</strong> Tie observations from arrays such as RAPID and OSNAP to thresholds that would trigger action.</li>
             <li><strong>Count it in global risk.</strong> Reflect AMOC risk in risk assessments and in the case for limiting both the amount and the rate of warming.</li>
           </ol>
@@ -308,7 +309,7 @@ export default function AmocPage() {
 
       <section className="section" aria-labelledby="data">
         <div className="wrap prose">
-          <p className="eyebrow">References and data</p>
+          <p className="kicker">References and data</p>
           <h2 id="data" className={styles.h2}>About these data</h2>
           <p>
             All data are published, openly licensed model output and observations, processed with a documented, reproducible
@@ -358,8 +359,8 @@ export default function AmocPage() {
                 protocol <a href="https://doi.org/10.5194/gmd-16-1975-2023">Jackson et al. (2023)</a>. Models: {(r.source.models as string[]).join(", ")}.
               </p>
               <p>
-                Each model’s rainfall after its AMOC has collapsed and the added fresh water has been switched off is compared with its own
-                pre-industrial control, so the effect is the collapse itself rather than the added water. Percentage changes are computed per
+                For each model, rainfall after its AMOC has collapsed, and after the added fresh water has been switched off, is compared
+                with the same model’s pre-industrial climate. The difference therefore reflects the collapse itself. Percentage changes are computed per
                 model, interpolated to a common 0.5° grid, then averaged. Areas where any model’s control climate gets less than 0.3 mm a day
                 are left blank. As the original authors caution, with four models the average shows the pattern where models agree; it is not
                 the most accurate prediction.

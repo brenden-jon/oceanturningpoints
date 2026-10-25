@@ -3,6 +3,7 @@ import { abs } from "@/lib/site";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { allTopics, formatDate, getTopic } from "@/lib/science";
+import { asset } from "@/lib/site";
 import styles from "../science.module.css";
 
 export function generateStaticParams() {
@@ -34,17 +35,17 @@ export default async function TopicPage({ params }: { params: Promise<{ slug: st
   return (
     <article className={styles.article}>
       <header className={`wrap ${styles.head}`}>
-        <p className="eyebrow"><Link href="/science/">Science</Link> · {topic.title}</p>
+        <p className="label"><Link href="/science/">Science</Link> · {topic.title}</p>
         <h1 className={styles.title}>{topic.question}</h1>
-        <p className="standfirst">{topic.summary}</p>
-        <p className={`small muted ${styles.meta}`}>
-          Reviewed {formatDate(topic.reviewed)} · {topic.status}
+        <p className="lede">{topic.summary}</p>
+        <p className={`small faint ${styles.meta}`}>
+          Last reviewed {formatDate(topic.reviewed)}. {topic.status}.
         </p>
       </header>
 
       <div className={`wrap ${styles.summaryGrid}`}>
         <section className={styles.keyPoints} aria-labelledby="kp">
-          <h2 id="kp" className="eyebrow">In brief</h2>
+          <h2 id="kp">In brief</h2>
           <ul>{topic.keyPoints.map((k) => <li key={k}>{k}</li>)}</ul>
           {topic.explorer && (
             <p><Link className="button" href={topic.explorer}>Explore the data</Link></p>
@@ -52,7 +53,7 @@ export default async function TopicPage({ params }: { params: Promise<{ slug: st
         </section>
         {topic.confidence.length > 0 && (
           <section className={styles.confidence} aria-labelledby="conf">
-            <h2 id="conf" className="eyebrow">How sure are we?</h2>
+            <h2 id="conf">How sure are we?</h2>
             <table>
               <thead><tr><th scope="col">Claim</th><th scope="col">Confidence</th></tr></thead>
               <tbody>
@@ -65,7 +66,7 @@ export default async function TopicPage({ params }: { params: Promise<{ slug: st
               </tbody>
             </table>
             <p className="small muted">
-              Our summary of the evidence, using IPCC confidence language where the IPCC has assessed the claim.
+              IPCC confidence language where the IPCC has assessed the claim; otherwise our reading of the published evidence, with its basis.
             </p>
           </section>
         )}
@@ -89,12 +90,14 @@ export default async function TopicPage({ params }: { params: Promise<{ slug: st
 
       {related.length > 0 && (
         <aside className={`wrap ${styles.related}`} aria-labelledby="rel">
-          <h2 id="rel" className="eyebrow">Related topics</h2>
+          <h2 id="rel">Related topics</h2>
           <ul className={styles.cards}>
             {related.map((t) => t && (
               <li key={t.slug}>
                 <Link href={`/science/${t.slug}/`} className={styles.card}>
-                  <span className="eyebrow">{t.title}</span>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={asset(`/img/topics/${t.slug}.jpg`)} alt="" width={1200} height={800} loading="lazy" />
+                  <span className={styles.cardT}>{t.title}</span>
                   <span className={styles.cardQ}>{t.question}</span>
                 </Link>
               </li>

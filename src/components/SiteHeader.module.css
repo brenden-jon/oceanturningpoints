@@ -1,27 +1,18 @@
 .header {
   position: sticky; top: 0; z-index: 50;
-  background: rgba(245, 247, 246, 0.9);
-  backdrop-filter: saturate(1.4) blur(10px);
-  -webkit-backdrop-filter: saturate(1.4) blur(10px);
-  border-bottom: 1px solid var(--rule);
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: saturate(1.8) blur(20px);
+  -webkit-backdrop-filter: saturate(1.8) blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
-.inner { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; height: 64px; }
-.mark {
-  display: inline-flex; align-items: center; gap: 0.6rem;
-  font-family: var(--serif); font-weight: 500; font-size: 1.18rem; letter-spacing: -0.005em;
-  color: var(--ink); text-decoration: none; white-space: nowrap;
-}
-.mark:hover { color: var(--ink); }
-.glyph { width: 26px; height: 26px; color: var(--ink); flex: none; }
-.nav { list-style: none; display: flex; gap: clamp(0.9rem, 2.4vw, 2rem); margin: 0; padding: 0; }
-.nav a {
-  font-size: 0.9375rem; font-weight: 500; color: var(--text); text-decoration: none;
-  padding: 0.3rem 0; border-bottom: 1.5px solid transparent;
-}
-.nav a:hover { color: var(--atlantic-deep); }
-.active { color: var(--ink) !important; border-bottom-color: var(--atlantic) !important; }
-@media (max-width: 620px) {
-  .mark span { display: none; }
-  .nav { gap: 1rem; }
-  .nav a { font-size: 0.875rem; }
+.inner { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; height: 52px; }
+.mark { font-weight: 650; font-size: 1.0625rem; letter-spacing: -0.02em; color: var(--text); text-decoration: none; white-space: nowrap; }
+.mark:hover { color: var(--text); text-decoration: none; }
+.nav { list-style: none; display: flex; gap: clamp(1rem, 2.6vw, 2.1rem); margin: 0; padding: 0; }
+.nav a { font-size: 0.875rem; color: var(--text-2); text-decoration: none; }
+.nav a:hover { color: var(--text); text-decoration: none; }
+.active { color: var(--text) !important; font-weight: 600; }
+@media (max-width: 640px) {
+  .inner { height: auto; padding-top: 0.6rem; padding-bottom: 0.6rem; flex-wrap: wrap; row-gap: 0.35rem; }
+  .nav { gap: 1.05rem; flex-wrap: wrap; }
 }

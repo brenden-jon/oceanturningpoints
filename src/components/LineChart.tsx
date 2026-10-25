@@ -95,12 +95,12 @@ export default function LineChart({
         {xLabel && <text x={(m.l + w - m.r) / 2} y={height - 6} textAnchor="middle" className={styles.axisLabel}>{xLabel}</text>}
         {rules.map((r, i) => r.y !== undefined ? (
           <g key={`r${i}`}>
-            <line x1={m.l} x2={w - m.r} y1={sy(r.y)} y2={sy(r.y)} stroke={r.color ?? "var(--ink)"} strokeDasharray={r.dash ?? "4 4"} strokeWidth={1} />
+            <line x1={m.l} x2={w - m.r} y1={sy(r.y)} y2={sy(r.y)} stroke={r.color ?? "var(--text)"} strokeDasharray={r.dash ?? "4 4"} strokeWidth={1} />
             {r.label && <text x={w - m.r - 4} y={sy(r.y) - 6} textAnchor="end" className={styles.ruleLabel}>{r.label}</text>}
           </g>
         ) : (
           <g key={`r${i}`}>
-            <line x1={sx(r.x!)} x2={sx(r.x!)} y1={m.t} y2={height - m.b} stroke={r.color ?? "var(--ink)"} strokeDasharray={r.dash ?? "4 4"} strokeWidth={1} />
+            <line x1={sx(r.x!)} x2={sx(r.x!)} y1={m.t} y2={height - m.b} stroke={r.color ?? "var(--text)"} strokeDasharray={r.dash ?? "4 4"} strokeWidth={1} />
             {r.label && <text x={sx(r.x!) + (r.align === "end" ? -6 : 6)} y={m.t + 12} textAnchor={r.align === "end" ? "end" : "start"} className={styles.ruleLabel}>{r.label}</text>}
           </g>
         ))}

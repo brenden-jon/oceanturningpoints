@@ -36,7 +36,7 @@ export function ObservedChart() {
   return (
     <figure className={styles.figure}>
       <figcaption className={styles.caption}>
-        <span className="chip chip--obs">Observed</span>
+        <span className="evidence evidence--obs">Observed</span>
         <strong>The AMOC at 26.5°N, measured by the RAPID array</strong>
         <span className="small muted">Monthly means (thin) and calendar-year means (thick), {d.rapid.start.slice(0, 4)}–{d.rapid.end.slice(0, 4)}.</span>
       </figcaption>
@@ -45,10 +45,10 @@ export function ObservedChart() {
         x={[2004, 2024.5]} y={[0, 30]} xTicks={[2005, 2010, 2015, 2020]} yTicks={[0, 10, 20, 30]}
         yLabel="Sv" yFormat={(v) => String(v)}
         series={[
-          { id: "m", points: monthly, color: "var(--seaglass)", width: 1.1 },
-          { id: "a", points: annual, color: "var(--atlantic-deep)", width: 2.4 },
+          { id: "m", points: monthly, color: "var(--data-light)", width: 1.1 },
+          { id: "a", points: annual, color: "var(--accent-hover)", width: 2.4 },
         ]}
-        rules={[{ y: d.rapid.mean, label: `Average ${d.rapid.mean} Sv`, dash: "3 4", color: "var(--muted)" }]}
+        rules={[{ y: d.rapid.mean, label: `Average ${d.rapid.mean} Sv`, dash: "3 4", color: "var(--text-2)" }]}
         onHoverX={setHx} hoverX={hx}
         hoverText={near ? `${MONTHS[near[1] - 1]} ${near[0]}: ${sv(near[2])}` : "Hover or tap the chart to read monthly values."}
       />
@@ -72,7 +72,7 @@ export function HysteresisChart() {
   return (
     <figure className={styles.figure}>
       <figcaption className={styles.caption}>
-        <span className="chip chip--model">Model experiment</span>
+        <span className="evidence evidence--model">Model experiment</span>
         <strong>Slowly adding fresh water until the circulation tips</strong>
         <span className="small muted">
           CESM model, pre-industrial climate. Fresh water added to the North Atlantic rises by 0.0003 Sv each model year,
@@ -84,13 +84,13 @@ export function HysteresisChart() {
         x={[0, 0.66]} y={[-3, 21]} xTicks={[0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6]} yTicks={[0, 5, 10, 15, 20]}
         xFormat={(v) => v.toFixed(1)} yLabel="AMOC, Sv" xLabel="Freshwater forcing, Sv"
         series={[
-          { id: "raw", points: raw, color: "var(--seaglass)", width: 1 },
-          { id: "smooth", points: smooth, color: "var(--atlantic-deep)", width: 2.4 },
+          { id: "raw", points: raw, color: "var(--data-light)", width: 1 },
+          { id: "smooth", points: smooth, color: "var(--accent-hover)", width: 2.4 },
         ]}
         rules={[
-          { x: 0.18, label: "0.18", dash: "2 4", color: "var(--muted)" },
-          { x: 0.45, label: "0.45", dash: "2 4", color: "var(--muted)" },
-          ...(d.hysteresis.freshwaterAtThatYear ? [{ x: d.hysteresis.freshwaterAtThatYear, label: "Collapse", dash: "4 3", color: "var(--coral-ink)" }] : []),
+          { x: 0.18, label: "0.18", dash: "2 4", color: "var(--text-2)" },
+          { x: 0.45, label: "0.45", dash: "2 4", color: "var(--text-2)" },
+          ...(d.hysteresis.freshwaterAtThatYear ? [{ x: d.hysteresis.freshwaterAtThatYear, label: "Collapse", dash: "4 3", color: "var(--alert)" }] : []),
         ]}
         onHoverX={setHx} hoverX={hx}
         hoverText={near ? `Forcing ${near[0].toFixed(3)} Sv (model year ${Math.round(near[0] / 3e-4)}): AMOC ${sv(near[1])}` : "Dotted lines mark the forcing levels at which the scenario runs below begin."}
@@ -139,7 +139,7 @@ export function ScenarioRunsChart() {
   return (
     <figure className={styles.figure}>
       <figcaption className={styles.caption}>
-        <span className="chip chip--model">Model experiment</span>
+        <span className="evidence evidence--model">Model experiment</span>
         <strong>The scenario runs: warming tips the circulation in three of four</strong>
         <span className="small muted">
           Greenhouse gases follow RCP4.5 or RCP8.5 to 2100 and are then held at 2100 levels. Runs start from the experiment above

@@ -224,12 +224,12 @@ export default function AmocExplorer() {
   const view = useMemo(() => ({ center: region.center, zoom: region.zoom - (narrow ? 0.7 : 0) }), [region, narrow]);
   const activeMoment = MOMENTS.find((m) => Object.entries(m.state).every(([k, v]) => (state as unknown as Record<string, unknown>)[k] === v));
 
-  if (error) return <p className="note note--caveat">{error}</p>;
+  if (error) return <p className="aside-note aside-note--caveat">{error}</p>;
 
   const units = state.family === "rainfall" ? "%" : variable?.units ?? "";
   const legendLabel = state.family === "rainfall"
     ? `${rain?.seasons[state.season] ?? ""} rainfall, change in the collapsed state (4-model mean)`
-    : `${variable?.label ?? ""} — ${comparison?.title ?? ""}`;
+    : `${variable?.label ?? ""}: ${comparison?.title ?? ""}`;
 
   return (
     <div className={styles.explorer}>
@@ -249,7 +249,7 @@ export default function AmocExplorer() {
         {/* controls */}
         <aside className={styles.controls} aria-label="Map controls">
           <fieldset className={styles.group}>
-            <legend className="eyebrow">Show</legend>
+            <legend className="label">Show</legend>
             <div className={styles.seg}>
               {(["temperature", "rainfall"] as Family[]).map((f) => (
                 <button key={f} aria-pressed={state.family === f} onClick={() => set({ family: f })}>
@@ -262,7 +262,7 @@ export default function AmocExplorer() {
           {state.family === "temperature" && temp && (
             <>
               <fieldset className={styles.group}>
-                <legend className="eyebrow">Measure</legend>
+                <legend className="label">Measure</legend>
                 <div className={styles.list}>
                   {temp.variables.map((v) => (
                     <button key={v.id} aria-pressed={state.variable === v.id} onClick={() => set({ variable: v.id })}>{v.label}</button>
@@ -270,7 +270,7 @@ export default function AmocExplorer() {
                 </div>
               </fieldset>
               <fieldset className={styles.group}>
-                <legend className="eyebrow">Compare</legend>
+                <legend className="label">Compare</legend>
                 <div className={styles.list}>
                   {temp.comparisons.map((c) => (
                     <button key={c.id} aria-pressed={state.comparison === c.id} onClick={() => set({ comparison: c.id })}>
@@ -289,7 +289,7 @@ export default function AmocExplorer() {
 
           {state.family === "rainfall" && rain && (
             <fieldset className={styles.group}>
-              <legend className="eyebrow">Season</legend>
+              <legend className="label">Season</legend>
               <div className={styles.list}>
                 {Object.entries(rain.seasons).map(([k, label]) => (
                   <button key={k} aria-pressed={state.season === k} onClick={() => set({ season: k })}>{label}</button>
@@ -299,7 +299,7 @@ export default function AmocExplorer() {
           )}
 
           <fieldset className={styles.group}>
-            <legend className="eyebrow">Region</legend>
+            <legend className="label">Region</legend>
             <div className={styles.list}>
               {Object.entries(REGIONS).map(([k, r]) => (
                 <button key={k} aria-pressed={state.region === k} onClick={() => set({ region: k })}>{r.label}</button>
@@ -308,7 +308,7 @@ export default function AmocExplorer() {
           </fieldset>
 
           <fieldset className={styles.group}>
-            <legend className="eyebrow">View</legend>
+            <legend className="label">View</legend>
             <div className={styles.seg}>
               <button aria-pressed={state.projection === "globe"} onClick={() => set({ projection: "globe" })}>Globe</button>
               <button aria-pressed={state.projection === "mercator"} onClick={() => set({ projection: "mercator" })}>Flat map</button>
@@ -366,7 +366,7 @@ export default function AmocExplorer() {
           <ShareLink />
 
           {state.family === "temperature" && comparison && !comparison.clean && comparison.caveat && (
-            <p className="note note--caveat">{comparison.caveat}</p>
+            <p className="aside-note aside-note--caveat">{comparison.caveat}</p>
           )}
         </figure>
       </div>
@@ -405,7 +405,7 @@ function Places({ state, temp, rain, variable, comparison }: {
     return (
       <section className={styles.places} aria-labelledby="places-h">
         <h3 id="places-h" className={styles.placesH}>{variable.label} at named places</h3>
-        <p className="small muted">{variable.detail}. Each value is the model grid cell containing the place, about 200 km across — a regional figure, not a local forecast.</p>
+        <p className="small muted">{variable.detail}. Each value comes from the model grid cell containing the place, about 200 km across, so it describes the region around it.</p>
         <div className={styles.tableWrap}>
           <table className={`${styles.table} tnum`}>
             <thead><tr><th>Place</th><th>{b.label}</th><th>{a.label}</th><th>Change</th></tr></thead>
@@ -434,7 +434,7 @@ function Places({ state, temp, rain, variable, comparison }: {
     return (
       <section className={styles.places} aria-labelledby="places-h">
         <h3 id="places-h" className={styles.placesH}>{rain.seasons[state.season]} rainfall at named places</h3>
-        <p className="small muted">Change in the collapsed-AMOC state relative to each model’s pre-industrial control. The spread across models is shown because it is part of the answer. “n/a”: at least one model is too dry here for a percentage change to be meaningful.</p>
+        <p className="small muted">Change in the collapsed-AMOC state relative to each model’s pre-industrial control. Each model’s value is shown so the range is visible. “n/a”: at least one model is too dry here for a percentage change to be meaningful.</p>
         <div className={styles.tableWrap}>
           <table className={`${styles.table} tnum`}>
             <thead><tr><th>Place</th><th>4-model mean</th>{models.map((m) => <th key={m}>{m.replace("-GC31-MM", "").replace("-CM6A-LR", "")}</th>)}</tr></thead>

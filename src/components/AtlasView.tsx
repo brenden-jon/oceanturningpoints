@@ -12,14 +12,14 @@ const LAYERS: Record<Look, { label: string; title: string; text: string; caution
     label: "Day",
     title: "The Earth by day",
     text: "A cloud-free composite of the land surface and the shape of the sea floor. Shallow shelves and reefs show as pale blue; the deep ocean basins as dark blue.",
-    caution: "A composite image, not a single moment in time; sea-floor shading comes from bathymetry data, not from photographs.",
+    caution: "A composite of many cloud-free images collected over months. The sea-floor shading is drawn from depth measurements.",
     source: <>NASA Earth Observatory, <a href="https://earthobservatory.nasa.gov/features/BlueMarble">Blue Marble</a>, via NASA GIBS. Public domain.</>,
   },
   night: {
     label: "Night",
     title: "Lights at night, 2016",
     text: "Light seen from space at night, composited from a year of satellite observations. Coastal cities and river deltas stand out, showing how much of human settlement crowds the shore.",
-    caution: "Light marks electrification and economic activity, not people. Many poor and rural communities are dark at night, so this map understates exposure in much of Africa and Asia.",
+    caution: "Light follows electrification and economic activity more closely than population. Many poor and rural communities are dark at night, so this map understates how many people live along much of the coast of Africa and Asia.",
     source: <>NASA Black Marble 2016 (Román et al., 2018, <a href="https://doi.org/10.1016/j.rse.2018.03.017">doi:10.1016/j.rse.2018.03.017</a>), via NASA GIBS. Public domain.</>,
   },
 };
@@ -46,7 +46,7 @@ export default function AtlasView() {
       </div>
       <aside className={styles.panel}>
         <fieldset className={styles.group}>
-          <legend className="eyebrow">Layer</legend>
+          <legend className="label">Layer</legend>
           <div className={styles.seg}>
             {(Object.keys(LAYERS) as Look[]).map((k) => (
               <button key={k} aria-pressed={look === k} onClick={() => setLook(k)}>{LAYERS[k].label}</button>
@@ -56,11 +56,11 @@ export default function AtlasView() {
         <div className={styles.about}>
           <h2 className={styles.h}>{L.title}</h2>
           <p>{L.text}</p>
-          <p className="note">{L.caution}</p>
+          <p className="aside-note">{L.caution}</p>
           <p className={styles.source}>{L.source}</p>
         </div>
         <fieldset className={styles.group}>
-          <legend className="eyebrow">Go to</legend>
+          <legend className="label">Go to</legend>
           <div className={styles.list}>
             {PLACES.map((p) => (
               <button key={p.id} aria-pressed={place.id === p.id} onClick={() => setPlace(p)}>{p.label}</button>
@@ -68,7 +68,7 @@ export default function AtlasView() {
           </div>
         </fieldset>
         <div className={styles.more}>
-          <p className="eyebrow">Data layers</p>
+          <p className="label">Data layers</p>
           <p className="small">
             Temperature and rainfall after an Atlantic circulation collapse are mapped in the{" "}
             <Link href="/questions/amoc-collapse/">AMOC explorer</Link>.

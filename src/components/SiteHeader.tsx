@@ -11,11 +11,6 @@ export default function SiteHeader() {
     <header className={styles.header}>
       <div className={`wrap ${styles.inner}`}>
         <Link href="/" className={styles.mark} aria-label={`${SITE.name}, home`}>
-          <svg className={styles.glyph} viewBox="0 0 32 32" aria-hidden>
-            <circle cx="16" cy="16" r="14.5" fill="none" stroke="currentColor" strokeWidth="1.4" />
-            <path d="M5 19c3.5-4 7.5-4 11 0s7.5 4 11 0" fill="none" stroke="var(--atlantic)" strokeWidth="1.8" strokeLinecap="round" />
-            <path d="M6.5 12.5c3-3 6.5-3 9.5 0" fill="none" stroke="var(--seaglass)" strokeWidth="1.6" strokeLinecap="round" />
-          </svg>
           <span>{SITE.name}</span>
         </Link>
         <nav aria-label="Main">

@@ -25,9 +25,9 @@ export default function Methods() {
   return (
     <article className={styles.article}>
       <header className={`wrap ${styles.head}`}>
-        <p className="eyebrow"><Link href="/science/">Science</Link> · Methods</p>
+        <p className="label"><Link href="/science/">Science</Link> · Methods</p>
         <h1 className={styles.title}>How this site handles evidence</h1>
-        <p className="standfirst">
+        <p className="lede">
           The aim is that anyone can see where a number comes from, what kind of evidence it is, and how much weight it can bear.
         </p>
       </header>
@@ -44,9 +44,9 @@ export default function Methods() {
           <h2>Kinds of evidence</h2>
           <p>Every map and chart is labelled with the kind of evidence it shows, because they answer different questions.</p>
           <ul>
-            <li><span className="chip chip--obs">Observed</span> Direct measurements, such as the RAPID array. They tell us what has happened, over the period measured.</li>
-            <li><span className="chip chip--model">Model experiment</span> Idealised simulations designed to isolate a process, such as adding fresh water until the AMOC collapses. They show what a change would do, not when or whether it will happen.</li>
-            <li><span className="chip">Projection</span> Simulations driven by a scenario of future emissions. They are conditional on that scenario and are not forecasts.</li>
+            <li><span className="evidence evidence--obs">Observed</span> Direct measurements, such as the RAPID array. They tell us what has happened, over the period measured.</li>
+            <li><span className="evidence evidence--model">Model experiment</span> Idealised simulations designed to isolate a process, such as adding fresh water until the AMOC collapses. They show the effect of a change. They do not say when, or whether, it will happen.</li>
+            <li><span className="evidence">Projection</span> Simulations driven by a scenario of future emissions. They are conditional on that scenario and are not forecasts.</li>
           </ul>
           <p>
             We also keep apart historical and future periods; a scenario and a prediction; exposure (who or what is in harm’s way)
@@ -61,7 +61,7 @@ export default function Methods() {
             are we?” tables give our own reading of the published evidence, with the basis stated.
           </p>
           <p>
-            When several models are available we show their spread, not just the average. Rainfall maps mark where all models agree
+            When several models are available we show the range across them as well as the average. Rainfall maps mark where all models agree
             on the direction of change, and tables list each model’s value.
           </p>
 
@@ -80,7 +80,7 @@ export default function Methods() {
           </p>
           <p>
             Values for named places are taken from the model grid cell containing the place. Climate-model cells are typically 100 to
-            250 km across, so these are regional figures, not local forecasts.
+            250 km across, so these figures describe the surrounding region.
           </p>
 
           <h2>Limitations</h2>
@@ -89,7 +89,7 @@ export default function Methods() {
             <li>AMOC experiments use artificial freshwater forcing to produce a collapse. Ice sheets are fixed, and greenhouse forcing is held constant after 2100.</li>
             <li>Four models is a small ensemble. The average shows where models agree; it is not the single most likely outcome.</li>
             <li>Rainfall changes are percentages relative to each model’s pre-industrial climate; they are not added to today’s observed rainfall.</li>
-            <li>Night lights indicate electrification and economic activity, not population. Many poor rural communities are dark at night.</li>
+            <li>Night lights follow electrification and economic activity more closely than population. Many poor rural communities are dark at night.</li>
           </ul>
 
           <h2>Review and corrections</h2>
@@ -109,7 +109,7 @@ export default function Methods() {
         </div>
 
         <aside className={m.data} aria-labelledby="datasets">
-          <h2 id="datasets" className="eyebrow">Datasets used on this site</h2>
+          <h2 id="datasets">Datasets used on this site</h2>
           <ul>
             {DATA.map((d) => (
               <li key={d.name}>

@@ -1,11 +1,11 @@
 .wrap { width: 100%; position: relative; }
-.svg { display: block; overflow: visible; font-family: var(--sans); }
-.grid { stroke: var(--rule); stroke-width: 1; }
-.zero { stroke: var(--rule-strong); stroke-width: 1; }
-.tick { font-size: 11.5px; fill: var(--muted); font-variant-numeric: tabular-nums; }
-.axisLabel { font-size: 11.5px; fill: var(--muted); font-weight: 600; }
-.bandLabel { font-size: 11px; fill: var(--muted); }
-.ruleLabel { font-size: 11px; fill: var(--ink); }
+.svg { display: block; overflow: visible; font-family: var(--font); }
+.grid { stroke: var(--line); stroke-width: 1; }
+.zero { stroke: var(--line-2); stroke-width: 1; }
+.tick { font-size: 11.5px; fill: var(--text-2); font-variant-numeric: tabular-nums; }
+.axisLabel { font-size: 11.5px; fill: var(--text-2); font-weight: 600; }
+.bandLabel { font-size: 11px; fill: var(--text-2); }
+.ruleLabel { font-size: 11px; fill: var(--text); }
 .seriesLabel { font-size: 12px; font-weight: 600; }
-.cursor { stroke: var(--ink); stroke-width: 1; opacity: 0.35; }
+.cursor { stroke: var(--text); stroke-width: 1; opacity: 0.35; }
 .hover { margin: 0.35rem 0 0; font-size: 0.85rem; color: var(--text); min-height: 1.4em; font-variant-numeric: tabular-nums; }

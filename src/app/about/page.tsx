@@ -14,7 +14,6 @@ export default function About() {
   return (
     <div className={`wrap ${styles.page}`}>
       <header className={styles.head}>
-        <p className="eyebrow">About</p>
         <h1>An independent atlas of ocean change</h1>
       </header>
 
@@ -61,7 +60,7 @@ export default function About() {
         </div>
 
         <aside className={styles.pubs} aria-labelledby="pubs">
-          <h2 id="pubs" className="eyebrow">Selected published research by Brenden Jongman</h2>
+          <h2 id="pubs">Selected published research by Brenden Jongman</h2>
           <ol>
             {PUBLICATIONS.map((p) => (
               <li key={p.doi}>
