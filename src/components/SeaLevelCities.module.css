@@ -6,3 +6,7 @@
 .key i { width: 14px; height: 3px; border-radius: 2px; }
 .flood { margin: 0; font-size: 0.95rem; line-height: 1.45; background: var(--bg); border-radius: 10px; padding: 0.7rem 0.85rem; }
 .caveat { margin: 0; font-size: 0.85rem; line-height: 1.45; color: #6e3420; background: var(--alert-soft); border-radius: 10px; padding: 0.6rem 0.8rem; }
+.floodSwitch { display: flex; align-items: center; justify-content: space-between; gap: 0.8rem; font-size: 0.85rem; font-weight: 600; color: var(--text-2); }
+.floodSwitch div { display: inline-grid; grid-auto-flow: column; background: #e3e6e9; border-radius: 9px; padding: 2px; gap: 2px; }
+.floodSwitch button { border: 0; background: transparent; border-radius: 7px; padding: 0.35rem 0.75rem; font: 500 0.85rem/1 var(--font); color: var(--text); cursor: pointer; }
+.floodSwitch button[aria-pressed="true"] { background: #fff; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.14); font-weight: 600; }

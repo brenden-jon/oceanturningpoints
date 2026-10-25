@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import type { Metadata } from "next";
 import Link from "next/link";
-import SeaLevelCities, { type City } from "@/components/SeaLevelCities";
+import SeaLevelCities, { type City, type FloodIndex } from "@/components/SeaLevelCities";
 import { GlobalProjectionChart, IceSheetChart, ObservedSeaLevelChart, type SeaLevelData } from "@/components/SeaLevelCharts";
 import { abs } from "@/lib/site";
 import styles from "../coral-reefs/coral.module.css";
@@ -28,6 +28,7 @@ const every = (af: number | string | undefined) => {
 export default function SeaLevelPage() {
   const d = JSON.parse(fs.readFileSync(path.join(process.cwd(), "public", "data", "sealevel", "sealevel.json"), "utf8")) as SeaLevelData & { cities: City[] };
   const flooded = d.cities.filter((c) => c.floods);
+  const floodIndex = JSON.parse(fs.readFileSync(path.join(process.cwd(), "public", "data", "sealevel", "floods", "index.json"), "utf8")) as FloodIndex;
   const g2100 = (id: string) => d.global[id].find((p) => p[0] === 2100)!;
   return (
     <article>
@@ -51,7 +52,7 @@ export default function SeaLevelPage() {
       </header>
 
       <section className="wrap" aria-label="Sea-level rise at coastal cities">
-        <SeaLevelCities cities={d.cities} />
+        <SeaLevelCities cities={d.cities} floods={floodIndex} />
       </section>
 
       <section className="section" aria-labelledby="floods">

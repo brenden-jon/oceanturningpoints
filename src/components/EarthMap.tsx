@@ -36,6 +36,7 @@ interface Props {
   image?: HTMLCanvasElement | null;   // a rendered field, Mercator-spaced
   imageKey?: string;                   // changes whenever the image content changes
   imageOpacity?: number;
+  imageBounds?: [number, number, number, number];   // [west, south, east, north]; default: the whole Mercator world
   overlays?: Overlay[];
   interactive?: boolean;
   spin?: boolean;
@@ -123,7 +124,7 @@ function applySky(map: MLMap, projection: "globe" | "mercator", space: "light" |
 }
 
 export default function EarthMap({
-  look, projection = "globe", view, image, imageKey, imageOpacity = 0.92, overlays = [],
+  look, projection = "globe", view, image, imageKey, imageOpacity = 0.92, imageBounds, overlays = [],
   interactive = true, spin = false, onHover, onSelect, onReady, space = "light", raster = null, className, ariaLabel,
 }: Props) {
   const el = useRef<HTMLDivElement>(null);
@@ -203,10 +204,13 @@ export default function EarthMap({
       return;
     }
     const url = image.toDataURL("image/png");
+    const coords: typeof IMAGE_COORDS = imageBounds
+      ? [[imageBounds[0], imageBounds[3]], [imageBounds[2], imageBounds[3]], [imageBounds[2], imageBounds[1]], [imageBounds[0], imageBounds[1]]]
+      : IMAGE_COORDS;
     if (src) {
-      src.updateImage({ url, coordinates: IMAGE_COORDS });
+      src.updateImage({ url, coordinates: coords });
     } else {
-      map.addSource("field", { type: "image", url, coordinates: IMAGE_COORDS });
+      map.addSource("field", { type: "image", url, coordinates: coords });
       map.addLayer({ id: "field", type: "raster", source: "field",
         paint: { "raster-opacity": imageOpacity, "raster-fade-duration": 0, "raster-resampling": "linear" } },
         "borders");

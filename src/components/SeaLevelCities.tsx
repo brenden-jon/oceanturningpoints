@@ -37,8 +37,30 @@ function every(af: number | "capped" | string | undefined) {
   return yrs >= 2 ? `about every ${Math.round(yrs)} years` : "about every year or two";
 }
 
-export default function SeaLevelCities({ cities }: { cities: City[] }) {
+export interface FloodIndex {
+  cities: Record<string, { slug: string; bounds: [number, number, number, number] }>;
+  bands: { from: number; to: number | null; color: string }[];
+}
+
+export default function SeaLevelCities({ cities, floods }: { cities: City[]; floods?: FloodIndex }) {
   const [sel, setSel] = useState<City>(cities.find((c) => c.name === "Lagos") ?? cities[0]);
+  const [flood, setFlood] = useState<"off" | "today" | "2050">("off");
+  const [floodImg, setFloodImg] = useState<HTMLCanvasElement | null>(null);
+  const fc = floods?.cities[sel.name];
+  useEffect(() => {
+    if (flood === "off" || !fc) { setFloodImg(null); return; }
+    let off = false;
+    const img = new Image();
+    img.onload = () => {
+      if (off) return;
+      const c = document.createElement("canvas");
+      c.width = img.naturalWidth; c.height = img.naturalHeight;
+      c.getContext("2d")!.drawImage(img, 0, 0);
+      setFloodImg(c);
+    };
+    img.src = `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/data/sealevel/floods/${fc.slug}_${flood}.png`;
+    return () => { off = true; };
+  }, [flood, fc]);
   const [hx, setHx] = useState<number | null>(null);
   const boxRef = useRef<HTMLDivElement>(null);
   const [zoom, setZoom] = useState(0.8);
@@ -76,12 +98,23 @@ export default function SeaLevelCities({ cities }: { cities: City[] }) {
       <div className={styles.layout}>
         <div className={styles.mapCol}>
           <div className={styles.mapBox} ref={boxRef}>
-            <EarthMap look="data" projection="mercator" view={{ center: [40, 8], zoom }} overlays={overlays} onSelect={onSelect}
+            <EarthMap look="data" projection="mercator"
+              view={flood !== "off" && fc ? { center: [(fc.bounds[0] + fc.bounds[2]) / 2, (fc.bounds[1] + fc.bounds[3]) / 2], zoom: Math.min(9, zoom + Math.log2(360 / (fc.bounds[2] - fc.bounds[0])) - 0.15) } : { center: [40, 8], zoom }}
+              image={flood !== "off" ? floodImg : null} imageKey={`${sel.name}-${flood}-${floodImg ? 1 : 0}`} imageOpacity={0.9}
+              imageBounds={fc?.bounds} onSelect={onSelect}
+              overlays={flood !== "off" ? [{ id: "here", kind: "point", color: "#b24a2a", width: 2.5, data: { type: "FeatureCollection", features: [{ type: "Feature", properties: { color: "#ffffff", r: 1.6 }, geometry: { type: "Point", coordinates: [sel.lon, sel.lat] } }] } }] : overlays}
               className={styles.map} ariaLabel="Map of coastal cities coloured by projected sea-level rise by 2100. Select a city for details." />
           </div>
-          <ul className={styles.legend}>
-            {BINS.map((b) => <li key={b.label}><i style={{ background: b.color }} />{b.label} by 2100 (intermediate emissions)</li>)}
-          </ul>
+          {flood === "off" ? (
+            <ul className={styles.legend}>
+              {BINS.map((b) => <li key={b.label}><i style={{ background: b.color }} />{b.label} by 2100 (intermediate emissions)</li>)}
+            </ul>
+          ) : (
+            <ul className={styles.legend}>
+              <li><b>Flood depth, 1-in-100-year coastal flood{flood === "2050" ? " in 2050" : " today"}:</b></li>
+              {floods!.bands.map((b) => <li key={b.from}><i style={{ background: b.color, borderRadius: 2 }} />{b.to ? `${b.from}–${b.to} m` : `over ${b.from} m`}</li>)}
+            </ul>
+          )}
           <div className={own.picker} role="group" aria-label="Choose a city">
             {cities.map((c) => <button key={c.name} aria-pressed={c.name === sel.name} onClick={() => setSel(c)}>{c.name}</button>)}
           </div>
@@ -89,6 +122,16 @@ export default function SeaLevelCities({ cities }: { cities: City[] }) {
 
         <aside className={styles.panel} aria-live="polite">
           <p className={styles.place}>{sel.name}, {sel.country}</p>
+          {fc && (
+            <div className={own.floodSwitch}>
+              <span>Flood map</span>
+              <div role="group" aria-label="Flood map">
+                <button aria-pressed={flood === "off"} onClick={() => setFlood("off")}>Off</button>
+                <button aria-pressed={flood === "today"} onClick={() => setFlood("today")}>Today</button>
+                <button aria-pressed={flood === "2050"} onClick={() => setFlood("2050")}>2050</button>
+              </div>
+            </div>
+          )}
           <dl className={styles.stats}>
             <div><dt>2100, intermediate</dt><dd className="tnum">{y["ssp245-medium"].p50.toFixed(2)} m</dd></div>
             <div><dt>2100, very high</dt><dd className="tnum">{y["ssp585-medium"].p50.toFixed(2)} m</dd></div>
@@ -115,6 +158,14 @@ export default function SeaLevelCities({ cities }: { cities: City[] }) {
             <p className="small faint">No tide gauge within 100 km has flood-frequency estimates in the IPCC data set.</p>
           )}
           <p className="small faint">Location used: {sel.location}.</p>
+          {flood !== "off" && (
+            <p className="small faint">
+              Flood map: WRI Aqueduct Floods (Ward et al., 2020), CC BY 4.0, about 1 km resolution. Land connected to the sea and lower
+              than the flood level is shown as flooded, assuming no flood defences and including land subsidence. 2050: intermediate
+              emissions (RCP4.5), median sea-level rise. Elevation errors in satellite data mean the extent is approximate and is
+              probably underestimated in cities.
+            </p>
+          )}
           {sel.caveat === "subsidence" && <p className={own.caveat}>Land here is also sinking because of groundwater pumping and sediment compaction, which these IPCC values do not fully capture. Local relative sea-level rise is likely to be considerably higher.</p>}
           {sel.caveat === "gauge-subsidence" && <p className={own.caveat}>The tide gauge here recorded rapid subsidence in the 20th century, which the projection carries forward. How fast the land sinks in future depends on how groundwater is managed.</p>}
         </aside>
