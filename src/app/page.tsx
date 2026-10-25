@@ -110,7 +110,7 @@ export default function Home() {
           <ul className={styles.tiles}>
             {topics.map((t) => (
               <li key={t.slug}>
-                <Link href={t.slug === "amoc" ? "/changes/atlantic-circulation/" : `/science/${t.slug}/`} className={styles.tile}>
+                <Link href={t.slug === "amoc" ? "/changes/atlantic-circulation/" : t.slug === "coral-reefs" ? "/changes/coral-reefs/" : `/science/${t.slug}/`} className={styles.tile}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={asset(`/img/topics/${t.slug}.jpg`)} alt="" width={1200} height={800} loading="lazy" />
                   <span className={styles.tileTitle}>{t.title}</span>

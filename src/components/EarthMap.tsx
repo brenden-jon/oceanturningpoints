@@ -43,6 +43,7 @@ interface Props {
   onSelect?: (h: HoverInfo) => void;
   onReady?: (map: MLMap) => void;   // gives overlays (e.g. currents) access to the map
   space?: "light" | "dark";          // colour around the globe: page white, or night sky
+  raster?: { id: string; tiles: string[]; attribution: string; opacity?: number } | null; // e.g. a map service drawn above the field
   className?: string;
   ariaLabel: string;
 }
@@ -123,7 +124,7 @@ function applySky(map: MLMap, projection: "globe" | "mercator", space: "light" |
 
 export default function EarthMap({
   look, projection = "globe", view, image, imageKey, imageOpacity = 0.92, overlays = [],
-  interactive = true, spin = false, onHover, onSelect, onReady, space = "light", className, ariaLabel,
+  interactive = true, spin = false, onHover, onSelect, onReady, space = "light", raster = null, className, ariaLabel,
 }: Props) {
   const el = useRef<HTMLDivElement>(null);
   const mapRef = useRef<MLMap | null>(null);
@@ -217,6 +218,18 @@ export default function EarthMap({
     const map = mapRef.current;
     if (map && ready && map.getLayer("field")) map.setPaintProperty("field", "raster-opacity", imageOpacity);
   }, [imageOpacity, ready]);
+
+  // ---- an external raster service (e.g. protected areas), above the field
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !ready) return;
+    for (const l of map.getStyle().layers ?? []) if (l.id.startsWith("rs-") && l.id !== `rs-${raster?.id}`) map.removeLayer(l.id);
+    for (const id of Object.keys(map.getStyle().sources ?? {})) if (id.startsWith("rs-") && id !== `rs-${raster?.id}`) map.removeSource(id);
+    if (raster && !map.getSource(`rs-${raster.id}`)) {
+      map.addSource(`rs-${raster.id}`, { type: "raster", tiles: raster.tiles, tileSize: 256, attribution: raster.attribution });
+      map.addLayer({ id: `rs-${raster.id}`, type: "raster", source: `rs-${raster.id}`, paint: { "raster-opacity": raster.opacity ?? 0.85 } }, "borders");
+    }
+  }, [raster?.id, ready]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // ---- overlays (sea-ice edges, places, arrays)
   useEffect(() => {

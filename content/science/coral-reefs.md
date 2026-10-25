@@ -1,125 +1,120 @@
 ---
 title: "Coral reefs"
-question: "How much do coral reefs protect coasts, and what is lost as they decline?"
-summary: "Repeated marine heatwaves are bleaching warm-water reefs faster than they can recover. Reefs that lose height and structure protect coasts less, with the largest losses concentrated in a few countries."
+question: "Are warm-water coral reefs passing a tipping point?"
+summary: "Repeated marine heatwaves are bleaching reefs faster than they can recover. The Global Tipping Points Report 2025 assesses that warm-water reefs are crossing their thermal tipping point, and IUCN now lists 96% of shallow reef ecosystems as Critically Endangered."
 order: 3
 updated: "2026-10-24"
 reviewed: "2026-10-24"
-status: "Reviewed against literature published to mid-2026"
+status: "Reviewed against literature published to October 2026"
 live:
   layer: "dhw"
   view: "coral"
   caption: "Today: coral bleaching heat stress across the tropics."
-related: ["ice-sheets"]
+explorer: "/changes/coral-reefs/"
+related: ["el-nino", "ice-sheets", "southern-ocean"]
 keyPoints:
-  - "Between January 2023 and September 2025, bleaching-level heat stress reached about 84% of the world's coral reef area, the largest extent in NOAA's record (NOAA Coral Reef Watch, 2025)."
-  - "By 2016 the median interval between severe bleaching events at 100 reef sites had fallen to about six years, shorter than the 10–15 years the fastest-growing corals typically need to recover (Hughes et al., 2018)."
-  - "The IPCC projects a further 70–90% decline in warm-water coral reefs at 1.5 °C of global warming (high confidence) and more than 99% at 2 °C (very high confidence) (IPCC, 2018)."
-  - "In a global model, losing only the top metre of reef height and roughness more than doubles annual expected flood damages on reef coastlines, with the largest absolute benefits in five countries: Indonesia, the Philippines, Malaysia, Mexico and Cuba (Beck et al., 2018)."
+  - "Between 2023 and 2025, 84% of the world’s coral reef area was exposed to bleaching-level heat stress, the largest of four global bleaching events since 1998 (NOAA, 2026)."
+  - "The Global Tipping Points Report 2025 places the thermal tipping point for warm-water reefs at about 1.2°C of global warming (range 1.0–1.5°C) and assesses that, at today’s warming of about 1.4°C, tipping is likely under way."
+  - "IUCN’s first global Red List of Ecosystems assessment of coral reefs, in October 2026, classifies 122 of 127 shallow reef ecosystems (96%) as Critically Endangered, a very high risk of collapse within 50 years under intermediate emissions."
+  - "The IPCC projects a further 70–90% decline in reefs at 1.5°C of warming (high confidence) and more than 99% at 2°C (very high confidence)."
+  - "Close to a billion people live within 100 km of a coral reef. Without reefs, expected annual flood damage on reef coasts would roughly double (Beck et al., 2018)."
 confidence:
-  - claim: "Marine heatwaves now bleach reefs more often than mature coral communities can recover"
+  - claim: "Human-caused warming is driving mass bleaching and coral death"
     level: "high"
-    basis: "Multi-decade bleaching records and satellite heat-stress data (Hughes et al., 2018; NOAA Coral Reef Watch)"
-  - claim: "Most warm-water reefs will be lost or severely degraded at 1.5–2 °C of warming"
+    basis: "IPCC AR6 WGII: high confidence in attribution"
+  - claim: "Warm-water reefs have a thermal tipping point near today’s warming"
     level: "high"
-    basis: "IPCC SR1.5 and AR6 WGII assessments"
-  - claim: "Intact reefs remove most incoming wave energy before it reaches the shore"
-    level: "high"
-    basis: "Meta-analysis of field studies (Ferrario et al., 2014)"
-  - claim: "Monetary estimates of global and national reef flood-protection value"
+    basis: "Global Tipping Points Report 2025: high confidence that reefs can tip, at local to regional scale"
+  - claim: "The threshold is about 1.2°C of global warming"
     level: "medium"
-    basis: "Process-based models; sensitive to elevation, asset and reef-loss assumptions"
-  - claim: "How reef decline will change fish catches and incomes in specific countries"
+    basis: "Central estimate with a range of 1.0–1.5°C; some studies suggest wider scope for adaptation"
+  - claim: "Local management can protect reefs from extreme heat"
     level: "low"
-    basis: "Sparse catch and livelihood data, especially for small-scale fisheries"
+    basis: "Protection aids recovery after bleaching but gives little resistance to heat stress"
 ---
 
 ## The system
 
-Reef-building corals live in partnership with microscopic algae that supply most of their energy. When water stays unusually warm for weeks, the partnership breaks down and the coral expels the algae, turning white. This is bleaching. Corals can recover if the heat eases in time, but prolonged or intense heat stress kills them.
+Warm-water coral reefs are built by animals that live in partnership with microscopic algae inside their tissues. The algae supply most of the coral’s energy. When the water stays too warm for too long, the partnership breaks down and the coral expels the algae, turning white. This is bleaching. A bleached coral is still alive and can recover if temperatures fall soon enough; if the heat persists, it starves and dies.
 
-NOAA Coral Reef Watch tracks accumulated heat stress from satellite data, as Degree Heating Weeks, and issues bleaching alerts worldwide (NOAA Coral Reef Watch, 2025).
+Satellites track the risk with a measure called Degree Heating Weeks: the heat accumulated over 12 weeks above the warmest month of a normal year. NOAA’s Coral Reef Watch uses 4 °C-weeks as the level at which reef-wide bleaching becomes likely, and 8 °C-weeks as the level at which bleaching with significant mortality becomes likely (Skirving et al., 2020). These are risk levels. On the Great Barrier Reef in 2016, corals began to die at 3–4 °C-weeks (Hughes, Kerry et al., 2018).
 
-Over centuries, coral skeletons build a rough limestone framework that shelters fish, supplies sand to beaches and breaks waves offshore. Reefs also face local pressures, including overfishing, pollution and habitat destruction, which add to the effects of climate change (Eddy et al., 2021).
-
-A second, slower pressure is ocean acidification. As the ocean absorbs carbon dioxide, its carbonate chemistry shifts in ways that make it harder for corals to build skeletons and easier for reef carbonate to dissolve (Hoegh-Guldberg et al., 2007). Human carbon dioxide emissions are virtually certainly the main driver of current acidification of the surface open ocean (IPCC, 2021).
+Over centuries, coral skeletons build reef structures that break waves, shelter fish and attract visitors. A reef keeps working only while its corals add more limestone than waves, animals and chemistry remove. In the Caribbean, live coral cover of about 10% appears to be the level below which reefs stop growing (Perry et al., 2013).
 
 ## What we observe
 
-A global synthesis estimates that coverage of living coral has halved since the 1950s (Eddy et al., 2021). Marine heatwaves have approximately doubled in frequency since the 1980s (high confidence), and human influence very likely contributed to most of them since at least 2006 (IPCC, 2021).
+Mass bleaching has become a recurring global event. NOAA has recorded four global bleaching events. The share of the world’s reef area exposed to bleaching-level heat stress rose from 21% in 1998 to 37% in 2010, 68% in 2014–2017 and 84% in 2023–2025, across at least 83 countries and territories (NOAA, 2026). The 84% figure measures heat stress from satellites. How much coral died in the latest event is still being assessed.
 
-Bleaching has become more frequent. Across 100 reef locations between 1980 and 2016, the median time between severe bleaching events fell steadily to about six years (Hughes et al., 2018). Mature coral assemblages generally take 10–15 years to recover even for the fastest-growing species, and much longer for slower-growing ones (Hughes et al., 2018).
+The gaps between events have shrunk. Across 100 reef locations, the typical interval between severe bleaching events fell from 25–30 years in the early 1980s to about six years by 2016 (Hughes, Anderson et al., 2018). The fastest-growing corals need 10–15 years to recover, and mature reef communities take longer. Recovery does happen when reefs are given time: at Scott Reef off north-western Australia, coral cover rose from 9% to 44% within 12 years of severe bleaching (Gilmour et al., 2013).
 
-On 15 April 2024, NOAA and the International Coral Reef Initiative confirmed a fourth global bleaching event, after earlier events in 1998, 2010 and 2014–2017. From 1 January 2023 to 30 September 2025, bleaching-level heat stress affected about 84.4% of the world's reef area, and mass bleaching was documented in at least 83 countries and territories (NOAA Coral Reef Watch, 2025). The previous record, in 2014–2017, was 68.2%. In 2026 NOAA reported that the event had likely ended in mid-2025 (NOAA NESDIS, 2026).
+The long-term trend is downward. Living coral cover worldwide has roughly halved since the 1950s, and catch per unit of fishing effort on reefs has fallen by 60% (Eddy et al., 2021). In October 2026, IUCN published its first global Red List of Ecosystems assessment for coral reefs. On observed change over the past 50 years alone, 24% of shallow reef ecosystems qualify as Critically Endangered. One, the reefs of the western Galápagos, is classed as collapsed since the 1982–83 El Niño (IUCN, 2026).
 
-These figures describe heat stress, not mortality. How much coral died is still being assessed.
-
-Recovery is possible given enough time. At Scott Reef, an isolated system off north-western Australia, coral cover rose from 9% to 44% within 12 years of a severe bleaching event, despite much reduced larval supply (Gilmour et al., 2013). Acidification effects are also already measurable: some reefs now show net dissolution of their carbonate sediments (Eyre et al., 2018).
+Ocean acidification adds a slower pressure. As the ocean absorbs carbon dioxide, it becomes harder for corals to build skeletons. The Planetary Health Check 2025 assessed that the planetary boundary for ocean acidification has been crossed, after a revised estimate of pre-industrial conditions (Sakschewski, Caesar et al., 2025). Tropical surface waters remain alkaline; the concern is the loss of the chemical conditions in which reefs grow well.
 
 ## What could change
 
-The IPCC's Special Report on 1.5 °C projects that coral reefs will decline by a further 70–90% at 1.5 °C of global warming (high confidence), with losses of more than 99% at 2 °C (very high confidence) (IPCC, 2018). The Sixth Assessment Report judged near-term risks of biodiversity loss in warm-water coral reefs to be high to very high (very high confidence) (IPCC, 2022). For context, global surface temperature in 2011–2020 was 1.09 °C above 1850–1900 (IPCC, 2021).
+The Global Tipping Points Report 2025 places the thermal tipping point for warm-water coral reefs at about 1.2 °C of global warming above pre-industrial, with a range of 1.0–1.5 °C (Global Tipping Points Report, 2025; Pearce-Kelly et al., 2025). With global warming now about 1.35–1.4 °C, it assesses that tipping is likely under way, the first Earth system tipping point assessed as being crossed. Reefs tip locally and regionally, so the outcome will be patchy: some reefs and refuges will persist for longer than others.
 
-These are projections of aggregate decline, not forecasts that every reef will vanish. A separate synthesis of tipping elements places the threshold for widespread die-off of low-latitude reefs at a best estimate of 1.5 °C, within a range of 1–2 °C (Armstrong McKay et al., 2022).
+Projections agree on the direction. The IPCC projects that reefs will decline by a further 70–90% at 1.5 °C of warming (high confidence) and by more than 99% at 2 °C (very high confidence) (IPCC, 2018). Downscaled projections find that places where reefs are sheltered from damaging heat fall from 84% of reef locations today to 0.2% at 1.5 °C (Dixon et al., 2022). IUCN’s assessment, which adds projected heat stress over the next 50 years under an intermediate emissions scenario, classifies 122 of 127 shallow reef ecosystems (96%), covering 99.8% of the assessed reef area, as Critically Endangered (IUCN, 2026). IUCN stresses that Critically Endangered does not mean collapsed; most reefs still have living coral.
 
-Acidification adds a slower, chemical trend. Based on measurements at five reef sites, reef sediments globally are projected to switch from net accumulation to net dissolution when seawater aragonite saturation falls to about 2.9, expected around 2050 (Eyre et al., 2018).
-
-Reefs must also grow upwards to keep pace with sea-level rise. Of more than 200 Atlantic and Indian Ocean reefs studied, few could do so under RCP4.5 without sustained ecological recovery, and under RCP8.5 most would see water depths increase by more than 0.5 m by 2100 (Perry et al., 2018). Deeper water lets larger waves reach the shore.
+There is scientific debate about how fast corals can adapt. A systematic review found that the most pessimistic modelling approaches are cited far more often than others (Klein et al., 2024), and laboratory studies suggest some scope for corals to adapt if warming stays within the Paris Agreement range. Whether that adaptation happens fast enough on real reefs is untested. The Global Tipping Points Report concludes that warming would need to return below 1.2 °C, and eventually towards 1 °C, to retain functional reefs at meaningful scale.
 
 ## Consequences
 
-**Fisheries.** About 6 million people fish on coral reefs in 99 countries and territories, at least a quarter of them gleaners collecting by hand, and half of all reef fishers are in Southeast Asia (Teh et al., 2013). Catches of reef-associated fish peaked in 2002 and have declined despite rising fishing effort, while catch per unit effort has fallen by 60% since 1950 (Eddy et al., 2021). How much of that decline is due to bleaching, as opposed to overfishing and other local pressures, is not well resolved.
+Close to a billion people live within 100 km of a coral reef, in 117 countries; in small island developing states, 94% of people do (Sing Wong et al., 2022). Living near a reef is a proxy for dependence, which varies widely.
 
-**Tourism.** About 30% of the world's reefs have tourism value, together worth nearly US$36 billion a year, or over 9% of coastal tourism value in reef countries (Spalding et al., 2017). This is an estimate of visitor spending, not of net national income.
+**Coastal protection.** Reefs remove about 97% of the energy of incoming waves (Ferrario et al., 2014). Losing the top metre of reef structure would roughly double expected annual flood damage on reef coasts and triple the damage from frequent storms; damage from a 100-year storm would rise by 91%, to US$272 billion. The largest savings from reefs accrue to Indonesia, the Philippines, Malaysia, Mexico and Cuba (Beck et al., 2018). These estimates compare today’s reefs with reefs that have lost their top metre, a plausible consequence of degradation. They are model estimates of avoided damage.
 
-**Flood protection.** A meta-analysis of field studies found that reefs reduce wave energy by an average of 97%, with the reef crest alone dissipating 86% (Ferrario et al., 2014). It estimated that 100 million or more people may benefit, and that reefs attenuate waves comparably to artificial breakwaters. This compares a reef with no reef, so it describes what reefs do, not the effect of realistic decline.
+**Rising seas.** Reefs must grow upwards to keep protecting coasts. Of more than 200 reefs studied in the Atlantic and Indian Oceans, few can keep pace with sea-level rise under intermediate emissions without sustained recovery (Perry et al., 2018). Deeper water over a reef lets larger waves reach the shore.
 
-Beck et al. (2018) modelled something closer to realistic degradation. Their "without reefs" scenario does not remove reefs; it lowers the reef by 1 m and reduces its roughness, the kind of flattening seen after bleaching and erosion. Under that scenario, annual expected flood damages on 71,000 km of reef coastline more than double, and damages from a 100-year storm rise by 91% to US$272 billion. The benefits are concentrated: Indonesia, the Philippines, Malaysia, Mexico and Cuba each gain more than US$400 million a year. Relative to GDP, many small island states in the Caribbean and South Pacific depend on reefs the most (Beck et al., 2018).
-
-The same top-metre approach applied to the United States puts annual flood-risk reduction from US reefs above US$1.8 billion (Reguero et al., 2021). Wave modelling indicates that in the near term, loss of reef structural complexity matters more than sea-level rise for wave heights behind the reef (Harris et al., 2018). The two effects combine: by 2100 under RCP8.5, Beck et al. (2018) estimate that land flooded in a 100-year event rises by 64% with sea-level rise alone, and by 116% with sea-level rise plus 1 m of reef loss.
-
-These are modelled avoided damages to buildings and infrastructure, not observed losses. Global models rest on coarse elevation and asset data, and records of small-scale fishing and household income are sparse in many of the most reef-dependent countries.
+**Food and income.** About 6 million people fish on coral reefs, half of them in Southeast Asia, many collecting by hand for food (Teh et al., 2013). Reef tourism is worth about US$36 billion a year (Spalding et al., 2017). The people most exposed to reef loss are in poorer coastal communities with few alternative sources of protein or income.
 
 ## What we know and don't know
 
-The link between heat stress and bleaching is well established, as is the trend towards more frequent events with less time to recover in between (Hughes et al., 2018). Successive IPCC assessments place warm-water reefs among the ecosystems at highest risk at 1.5–2 °C.
+The direction is clear. Warming is the dominant cause of mass bleaching, events are becoming more frequent than reefs can recover from, and the reef systems that exist today cannot persist at 2 °C of warming. The IPCC already counts some warm-water reefs among ecosystems at hard adaptation limits (IPCC, 2022).
 
-Less is known about how far corals can adapt to heat, which reefs may act as refuges, and how fast dead reef framework erodes. Erosion largely determines when flood-protection benefits are lost. Mortality from the 2023–2025 event has not yet been quantified globally. Economic estimates of reef value depend strongly on the chosen degradation scenario and on coarse elevation and asset data.
+Less certain is how reefs will change between now and the end of the century. Responses differ greatly between places and species. Some reefs may persist in cooler or more variable locations, and some corals may adapt or be helped to adapt. The amount of coral that died in 2023–2025 is still being measured. Acidification and local pressures such as pollution and overfishing interact with heat in ways that are hard to predict.
 
 ## Why it matters for decisions
 
-Heat-stress forecasts from NOAA Coral Reef Watch give reef managers, fisheries agencies and tourism operators advance warning of bleaching, so that other stresses, such as fishing or diving pressure, can be reduced during an event.
+The single largest lever for reefs is the global temperature. The Global Tipping Points Report concludes that warming needs to peak as low as possible, return below 1.2 °C and eventually towards 1 °C for reefs to remain functional at meaningful scale.
 
-For coastal planning, reef condition can be treated as part of a coastline's flood defence. Where model results show large benefits (Beck et al., 2018; Reguero et al., 2021), flood-risk assessments and infrastructure design can test a degraded-reef scenario alongside present conditions, rather than assuming today's reef will persist.
+Local protection helps reefs recover between heatwaves. It does little to stop bleaching itself: during the 2016 event on the Great Barrier Reef, water quality and fishing pressure made little difference to how much bleaching occurred (Hughes et al., 2017). Effective marine protected areas, clean water, sustainable fisheries and control of coral-eating starfish therefore matter most where reefs have a chance to recover. Protecting reefs that are coping better with heat, such as those IUCN highlights in the northern Red Sea, Papua New Guinea, western Kiribati and Bermuda, keeps options open.
 
-Reef protection values can be included in national accounts, disaster-recovery plans and insurance products (Beck et al., 2018). Restoration can enhance wave protection cost-effectively (Ferrario et al., 2014), but it works site by site, while heat stress affects whole ocean basins.
+Restoration works at small scale. The median restoration project covers about 100 square metres (Boström-Einarsson et al., 2020), and restoration cannot be scaled up to replace the loss of reefs globally (Mulà et al., 2025). Selective breeding of heat-tolerant corals shows promise in trials (Humanes et al., 2024), but remains experimental.
 
-The sectors most exposed are small-scale fisheries, reef tourism and coastal infrastructure, particularly in Southeast Asia and small island states. For them, the gap between the IPCC's 1.5 °C and 2 °C outcomes is itself a planning variable.
+For coastal planning, the prudent assumption is that natural protection from reefs will weaken. Flood defences, building codes and land-use plans on reef coasts should be tested against degraded reefs and higher seas. Countries and communities that depend on reef fisheries and tourism face transitions that are easier to manage if planned early.
 
 ## References and data
 
-1. Armstrong McKay, D. I., Staal, A., Abrams, J. F., et al. (2022). Exceeding 1.5°C global warming could trigger multiple climate tipping points. *Science*, 377, eabn7950. [doi:10.1126/science.abn7950](https://doi.org/10.1126/science.abn7950)
-2. Beck, M. W., Losada, I. J., Menéndez, P., et al. (2018). The global flood protection savings provided by coral reefs. *Nature Communications*, 9, 2186. [doi:10.1038/s41467-018-04568-z](https://doi.org/10.1038/s41467-018-04568-z)
-3. Eddy, T. D., Lam, V. W., Reygondeau, G., et al. (2021). Global decline in capacity of coral reefs to provide ecosystem services. *One Earth*, 4, 1278–1285. [doi:10.1016/j.oneear.2021.08.016](https://doi.org/10.1016/j.oneear.2021.08.016)
-4. Eyre, B. D., Cyronak, T., Drupp, P., et al. (2018). Coral reefs will transition to net dissolving before end of century. *Science*, 359, 908–911. [doi:10.1126/science.aao1118](https://doi.org/10.1126/science.aao1118)
+1. Beck, M. W., Losada, I. J., Menéndez, P., et al. (2018). The global flood protection savings provided by coral reefs. *Nature Communications*, 9, 2186. [doi:10.1038/s41467-018-04568-z](https://doi.org/10.1038/s41467-018-04568-z)
+2. Boström-Einarsson, L., Babcock, R. C., Bayraktarov, E., et al. (2020). Coral restoration: a systematic review of current methods, successes, failures and future directions. *PLOS ONE*, 15, e0226631. [doi:10.1371/journal.pone.0226631](https://doi.org/10.1371/journal.pone.0226631)
+3. Dixon, A. M., Forster, P. M., Heron, S. F., et al. (2022). Future loss of local-scale thermal refugia in coral reef ecosystems. *PLOS Climate*, 1, e0000004. [doi:10.1371/journal.pclm.0000004](https://doi.org/10.1371/journal.pclm.0000004)
+4. Eddy, T. D., Lam, V. W. Y., Reygondeau, G., et al. (2021). Global decline in capacity of coral reefs to provide ecosystem services. *One Earth*, 4, 1278–1285. [doi:10.1016/j.oneear.2021.08.016](https://doi.org/10.1016/j.oneear.2021.08.016)
 5. Ferrario, F., Beck, M. W., Storlazzi, C. D., et al. (2014). The effectiveness of coral reefs for coastal hazard risk reduction and adaptation. *Nature Communications*, 5, 3794. [doi:10.1038/ncomms4794](https://doi.org/10.1038/ncomms4794)
 6. Gilmour, J. P., Smith, L. D., Heyward, A. J., et al. (2013). Recovery of an isolated coral reef system following severe disturbance. *Science*, 340, 69–71. [doi:10.1126/science.1232310](https://doi.org/10.1126/science.1232310)
-7. Harris, D. L., Rovere, A., Casella, E., et al. (2018). Coral reef structural complexity provides important coastal protection from waves under rising sea levels. *Science Advances*, 4, eaao4350. [doi:10.1126/sciadv.aao4350](https://doi.org/10.1126/sciadv.aao4350)
-8. Hoegh-Guldberg, O., Mumby, P. J., Hooten, A. J., et al. (2007). Coral reefs under rapid climate change and ocean acidification. *Science*, 318, 1737–1742. [doi:10.1126/science.1152509](https://doi.org/10.1126/science.1152509)
-9. Hughes, T. P., Anderson, K. D., Connolly, S. R., et al. (2018). Spatial and temporal patterns of mass bleaching of corals in the Anthropocene. *Science*, 359, 80–83. [doi:10.1126/science.aan8048](https://doi.org/10.1126/science.aan8048)
-10. IPCC (2018). Summary for Policymakers. In *Global Warming of 1.5°C. An IPCC Special Report*. Cambridge University Press (2022 edition), 1–24. [doi:10.1017/9781009157940.001](https://doi.org/10.1017/9781009157940.001)
-11. IPCC (2021). Summary for Policymakers. In *Climate Change 2021: The Physical Science Basis. Contribution of Working Group I to the Sixth Assessment Report*. Cambridge University Press (2023 edition), 3–32. [doi:10.1017/9781009157896.001](https://doi.org/10.1017/9781009157896.001)
-12. IPCC (2022). Summary for Policymakers. In *Climate Change 2022: Impacts, Adaptation and Vulnerability. Contribution of Working Group II to the Sixth Assessment Report*. Cambridge University Press (2023 edition), 3–34. [doi:10.1017/9781009325844.001](https://doi.org/10.1017/9781009325844.001)
-13. NOAA Coral Reef Watch (2025). Current global bleaching: status update and data submission. US National Oceanic and Atmospheric Administration. [coralreefwatch.noaa.gov](https://coralreefwatch.noaa.gov/satellite/research/coral_bleaching_report.php)
-14. NOAA NESDIS (2026). World's fourth mass coral bleaching event likely ended in 2025. US National Oceanic and Atmospheric Administration, 2 June 2026. [nesdis.noaa.gov](https://www.nesdis.noaa.gov/news/worlds-fourth-mass-coral-bleaching-event-likely-ended-2025)
-15. Perry, C. T., Alvarez-Filip, L., Graham, N. A. J., et al. (2018). Loss of coral reef growth capacity to track future increases in sea level. *Nature*, 558, 396–400. [doi:10.1038/s41586-018-0194-z](https://doi.org/10.1038/s41586-018-0194-z)
-16. Reguero, B. G., Storlazzi, C. D., Gibbs, A. E., et al. (2021). The value of US coral reefs for flood risk reduction. *Nature Sustainability*, 4, 688–698. [doi:10.1038/s41893-021-00706-6](https://doi.org/10.1038/s41893-021-00706-6)
-17. Spalding, M., Burke, L., Wood, S. A., et al. (2017). Mapping the global value and distribution of coral reef tourism. *Marine Policy*, 82, 104–113. [doi:10.1016/j.marpol.2017.05.014](https://doi.org/10.1016/j.marpol.2017.05.014)
-18. Teh, L. S. L., Teh, L. C. L., & Sumaila, U. R. (2013). A global estimate of the number of coral reef fishers. *PLoS ONE*, 8, e65397. [doi:10.1371/journal.pone.0065397](https://doi.org/10.1371/journal.pone.0065397)
+7. Global Tipping Points Report (2025). Lenton, T. M., Milkoreit, M., Willcock, S., et al. (eds). *The Global Tipping Points Report 2025*. University of Exeter. [doi:10.5281/zenodo.18163977](https://doi.org/10.5281/zenodo.18163977)
+8. Hughes, T. P., Anderson, K. D., Connolly, S. R., et al. (2018). Spatial and temporal patterns of mass bleaching of corals in the Anthropocene. *Science*, 359, 80–83. [doi:10.1126/science.aan8048](https://doi.org/10.1126/science.aan8048)
+9. Hughes, T. P., Kerry, J. T., Álvarez-Noriega, M., et al. (2017). Global warming and recurrent mass bleaching of corals. *Nature*, 543, 373–377. [doi:10.1038/nature21707](https://doi.org/10.1038/nature21707)
+10. Hughes, T. P., Kerry, J. T., Baird, A. H., et al. (2018). Global warming transforms coral reef assemblages. *Nature*, 556, 492–496. [doi:10.1038/s41586-018-0041-2](https://doi.org/10.1038/s41586-018-0041-2)
+11. Humanes, A., Lachs, L., Beauchamp, E., et al. (2024). Selective breeding enhances coral heat tolerance to marine heatwaves. *Nature Communications*, 15, 8703. [doi:10.1038/s41467-024-52895-1](https://doi.org/10.1038/s41467-024-52895-1)
+12. IPCC (2018). Summary for Policymakers. In *Global Warming of 1.5°C*. Cambridge University Press. [doi:10.1017/9781009157940.001](https://doi.org/10.1017/9781009157940.001)
+13. IPCC (2022). Summary for Policymakers. In *Climate Change 2022: Impacts, Adaptation and Vulnerability*. Cambridge University Press. [doi:10.1017/9781009325844.001](https://doi.org/10.1017/9781009325844.001)
+14. IUCN (2026). Virtually all coral reef ecosystems face high risk of collapse in 50 years: IUCN Red List of Ecosystems. 22 October 2026. [iucn.org](https://iucn.org/) · Methods: [globalcoralreefrle.github.io](https://globalcoralreefrle.github.io/CoralreefsRLE/Global_Coral_Reef_RLE_Methods_2026.pdf)
+15. Klein, S. G., Roch, C. & Duarte, C. M. (2024). Systematic review of the uncertainty of coral reef futures under climate change. *Nature Communications*, 15, 2224. [doi:10.1038/s41467-024-46255-2](https://doi.org/10.1038/s41467-024-46255-2)
+16. Mulà, C., Bradshaw, C. J. A., Cabeza, M., et al. (2025). Restoration cannot be scaled up globally to save reefs from loss and degradation. *Nature Ecology & Evolution*, 9, 822–832. [doi:10.1038/s41559-025-02667-x](https://doi.org/10.1038/s41559-025-02667-x)
+17. NOAA (2026). World’s fourth mass coral bleaching event likely ended in 2025. NOAA NESDIS, 2 June 2026. [nesdis.noaa.gov](https://www.nesdis.noaa.gov/news/worlds-fourth-mass-coral-bleaching-event-likely-ended-2025)
+18. Pearce-Kelly, P., Altieri, A. H., Bruno, J. F., et al. (2025). Considerations for determining warm-water coral reef tipping points. *Earth System Dynamics*, 16, 275–292. [doi:10.5194/esd-16-275-2025](https://doi.org/10.5194/esd-16-275-2025)
+19. Perry, C. T., Murphy, G. N., Kench, P. S., et al. (2013). Caribbean-wide decline in carbonate production threatens coral reef growth. *Nature Communications*, 4, 1402. [doi:10.1038/ncomms2409](https://doi.org/10.1038/ncomms2409)
+20. Perry, C. T., Alvarez-Filip, L., Graham, N. A. J., et al. (2018). Loss of coral reef growth capacity to track future increases in sea level. *Nature*, 558, 396–400. [doi:10.1038/s41586-018-0194-z](https://doi.org/10.1038/s41586-018-0194-z)
+21. Sakschewski, B., Caesar, L., et al. (2025). *Planetary Health Check 2025*. Potsdam Institute for Climate Impact Research. [doi:10.48485/pik.2025.017](https://doi.org/10.48485/pik.2025.017)
+22. Sing Wong, A., Vrontos, S. & Taylor, M. L. (2022). An assessment of people living by coral reefs over space and time. *Global Change Biology*, 28, 7139–7153. [doi:10.1111/gcb.16391](https://doi.org/10.1111/gcb.16391)
+23. Skirving, W., Marsh, B., De La Cour, J., et al. (2020). CoralTemp and the Coral Reef Watch coral bleaching heat stress product suite version 3.1. *Remote Sensing*, 12, 3856. [doi:10.3390/rs12233856](https://doi.org/10.3390/rs12233856)
+24. Spalding, M., Burke, L., Wood, S. A., et al. (2017). Mapping the global value and distribution of coral reef tourism. *Marine Policy*, 82, 104–113. [doi:10.1016/j.marpol.2017.05.014](https://doi.org/10.1016/j.marpol.2017.05.014)
+25. Teh, L. S. L., Teh, L. C. L. & Sumaila, U. R. (2013). A global estimate of the number of coral reef fishers. *PLoS ONE*, 8, e65397. [doi:10.1371/journal.pone.0065397](https://doi.org/10.1371/journal.pone.0065397)
 
 ### Data
 
-- NOAA Coral Reef Watch: daily satellite heat stress, Degree Heating Weeks and bleaching alerts. [coralreefwatch.noaa.gov](https://coralreefwatch.noaa.gov/)
-- Allen Coral Atlas: global satellite maps of shallow reef habitat and geomorphic zones. [allencoralatlas.org](https://allencoralatlas.org/)
-
-This topic is not yet mapped on Ocean Turning Points.
+- **NOAA Coral Reef Watch**: daily satellite sea-surface temperature anomaly and Degree Heating Weeks, version 3.1. Use without restriction, with credit. [coralreefwatch.noaa.gov](https://coralreefwatch.noaa.gov/)
+- **Allen Coral Atlas**: satellite maps of shallow reef habitat. [allencoralatlas.org](https://allencoralatlas.org/)
+- Today’s heat stress is on [The ocean now](/ocean-now/), and the coral story with its data is on [Coral reefs](/changes/coral-reefs/).

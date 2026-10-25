@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ThresholdChart from "@/components/ThresholdChart";
 import { abs, asset } from "@/lib/site";
 import styles from "./changes.module.css";
 
@@ -23,7 +24,7 @@ const CHANGES = [
     decisions: "Act on seasonal forecasts with agreed triggers and pre-arranged finance, and size reserves and insurance for stronger events.",
   },
   {
-    slug: "coral-reefs", title: "Coral reefs", story: null, storyLabel: "",
+    slug: "coral-reefs", title: "Coral reefs", story: "/changes/coral-reefs/", storyLabel: "See today’s heat stress",
     change: "Warm-water reefs are assessed to be crossing their thermal tipping point, estimated at about 1.2°C of global warming.",
     people: "Reefs protect coasts from waves and support fisheries and tourism; about a billion people live within 100 km of one.",
     decisions: "Protect the reefs most likely to survive, reduce local pressures, and plan for weaker natural coastal protection.",
@@ -58,6 +59,16 @@ export default function Changes() {
           means for people, and what it means for decisions.
         </p>
       </header>
+
+      <section className={styles.thresholds} aria-labelledby="thresholds">
+        <h2 id="thresholds">Where the tipping thresholds lie</h2>
+        <p>
+          Several ocean and ice systems can pass a tipping point, beyond which change becomes self-sustaining. Scientists’ best
+          estimates of the warming at which this becomes likely are shown below, against today’s warming. Coral reefs are already
+          past their central estimate.
+        </p>
+        <ThresholdChart />
+      </section>
 
       <ol className={styles.changes}>
         {CHANGES.map((c) => (

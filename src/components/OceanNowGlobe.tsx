@@ -29,9 +29,19 @@ const VIEWS = [
 
 const day = (iso: string) => new Date(iso + "T12:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
 
-export default function OceanNowGlobe({ ssta, dhw, currents, initialLayer = "ssta", initialView = "pacific", compact = false }: {
-  ssta: FieldMeta; dhw: FieldMeta; currents: CurrentsMeta; initialLayer?: LayerId; initialView?: string; compact?: boolean;
+// Marine and coastal protected areas, drawn by UNEP-WCMC's own map service (WDPA),
+// so the dataset itself is never copied or redistributed.
+const WDPA = {
+  id: "wdpa",
+  tiles: ["https://data-gis.unep-wcmc.org/server/rest/services/ProtectedSites/The_World_Database_of_Protected_Areas/MapServer/export?bbox={bbox-epsg-3857}&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&f=image&layers=show:1&layerDefs=%7B%221%22%3A%22realm%20%3C%3E%20%27Terrestrial%27%22%7D"],
+  attribution: 'Protected areas: <a href="https://www.protectedplanet.net/">UNEP-WCMC &amp; IUCN, WDPA</a>',
+  opacity: 0.8,
+};
+
+export default function OceanNowGlobe({ ssta, dhw, currents, initialLayer = "ssta", initialView = "pacific", compact = false, protectedAreas = false }: {
+  ssta: FieldMeta; dhw: FieldMeta; currents: CurrentsMeta; initialLayer?: LayerId; initialView?: string; compact?: boolean; protectedAreas?: boolean;
 }) {
+  const [showMpa, setShowMpa] = useState(false);
   const [map, setMap] = useState<MLMap | null>(null);
   const [view, setView] = useState(VIEWS.find((v) => v.id === initialView) ?? VIEWS[0]);
   const [layer, setLayer] = useState<LayerId>(initialLayer);
@@ -75,15 +85,23 @@ export default function OceanNowGlobe({ ssta, dhw, currents, initialLayer = "sst
           <button aria-pressed={layer === "ssta"} onClick={() => setLayer("ssta")}>Temperature anomaly</button>
           <button aria-pressed={layer === "dhw"} onClick={() => setLayer("dhw")}>Coral heat stress</button>
         </div>
-        <label className={styles.toggle}>
-          <input type="checkbox" checked={showCurrents} onChange={(e) => setShowCurrents(e.target.checked)} />
-          <span>Currents</span>
-        </label>
+        <div className={styles.toggles}>
+          {protectedAreas && (
+            <label className={styles.toggle}>
+              <input type="checkbox" checked={showMpa} onChange={(e) => setShowMpa(e.target.checked)} />
+              <span>Marine protected areas</span>
+            </label>
+          )}
+          <label className={styles.toggle}>
+            <input type="checkbox" checked={showCurrents} onChange={(e) => setShowCurrents(e.target.checked)} />
+            <span>Currents</span>
+          </label>
+        </div>
       </div>
 
       <div className={styles.box}>
         <EarthMap look="satellite" projection="globe" space="dark" view={{ center: view.center, zoom: view.zoom }}
-          image={canvas} imageKey={key} imageOpacity={0.9} onReady={setMap} onHover={onHover} onSelect={onHover}
+          image={canvas} imageKey={key} imageOpacity={0.9} onReady={setMap} raster={showMpa ? WDPA : null} onHover={onHover} onSelect={onHover}
           className={styles.map} ariaLabel={`Globe of ${layer === "ssta" ? "sea-surface temperature anomaly" : "coral bleaching heat stress"}, centred on the ${view.label}`} />
         <CurrentsLayer map={map} meta={currents} visible={showCurrents} />
         {hover && hover.value !== null && (
@@ -148,6 +166,13 @@ export default function OceanNowGlobe({ ssta, dhw, currents, initialLayer = "sst
           </>
         )}
       </section>}
+      {showMpa && (
+        <p className={`small faint ${styles.currentsNote}`}>
+          Marine and coastal protected areas from the World Database on Protected Areas (UNEP-WCMC and IUCN, Protected Planet),
+          drawn by UNEP-WCMC’s map service. Designation does not guarantee effective management, and protection does not shield
+          reefs from marine heatwaves.
+        </p>
+      )}
       {showCurrents && (
         <p className={`small faint ${styles.currentsNote}`}>
           Currents: NOAA CoastWatch blended surface currents for {day(currents.date)}, from satellite sea-surface height and winds.
