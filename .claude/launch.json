@@ -1,6 +1,14 @@
 {
   "version": "0.0.1",
   "configurations": [
-    { "name": "ocean-turning-points", "runtimeExecutable": "npm", "runtimeArgs": ["run", "dev"], "port": 3100 }
+    {
+      "name": "ocean-turning-points",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev"
+      ],
+      "port": 3100
+    }
   ]
 }

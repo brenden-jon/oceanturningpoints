@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { abs } from "@/lib/site";
 import Link from "next/link";
 import { HysteresisChart, ObservedChart, ScenarioRunsChart } from "@/components/AmocCharts";
 import AmocExplorer from "@/components/AmocExplorer";
@@ -14,9 +15,9 @@ const DESCRIPTION =
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  alternates: { canonical: "/questions/amoc-collapse/" },
-  openGraph: { title: TITLE, description: DESCRIPTION, url: "/questions/amoc-collapse/", images: ["/og/amoc-collapse.png"], type: "article", siteName: "Ocean Turning Points" },
-  twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION, images: ["/og/amoc-collapse.png"] },
+  alternates: { canonical: abs("/questions/amoc-collapse/") },
+  openGraph: { title: TITLE, description: DESCRIPTION, url: abs("/questions/amoc-collapse/"), images: [abs("/og/amoc-collapse.png")], type: "article", siteName: "Ocean Turning Points" },
+  twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION, images: [abs("/og/amoc-collapse.png")] },
 };
 
 export default function AmocPage() {

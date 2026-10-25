@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
+import { abs } from "@/lib/site";
 import AtlasView from "@/components/AtlasView";
 
 export const metadata: Metadata = {
   title: "Atlas",
   description: "Explore the Earth by day and by night: where the shallow seas and reefs are, and how human settlement crowds the coasts.",
-  alternates: { canonical: "/atlas/" },
+  alternates: { canonical: abs("/atlas/") },
 };
 
 export default function AtlasPage() {

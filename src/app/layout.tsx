@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Hanken_Grotesk, Spectral } from "next/font/google";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
-import { SITE } from "@/lib/site";
+import { SITE, abs } from "@/lib/site";
 import "./globals.css";
 
 const spectral = Spectral({ subsets: ["latin"], weight: ["400", "500", "600"], style: ["normal", "italic"], variable: "--font-spectral", display: "swap" });
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: { default: SITE.name, template: `%s — ${SITE.name}` },
   description: SITE.tagline,
-  openGraph: { siteName: SITE.name, type: "website", images: ["/og/home.jpg"] },
+  openGraph: { siteName: SITE.name, type: "website", images: [abs("/og/home.jpg")] },
   twitter: { card: "summary_large_image" },
 };
 

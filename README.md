@@ -44,9 +44,10 @@ npm run data
 
 ## Deployment
 
-The site is built for GitHub Pages or any static host (Cloudflare Pages, Netlify). The workflow in
-`.github/workflows/deploy.yml` runs only when triggered by hand. Nothing is published automatically.
-For a project sub-path such as `user.github.io/OceanTurningPoints`, set `BASE_PATH=/OceanTurningPoints` at build time.
+The site deploys to GitHub Pages from `.github/workflows/deploy.yml` on every push to `main`
+(Settings → Pages → Source must be "GitHub Actions"). The workflow sets `BASE_PATH` and `NEXT_PUBLIC_SITE_URL` from the
+Pages configuration, so it works both at `brenden-jon.github.io/oceanturningpoints/` and, once connected, at a custom domain.
+Any other static host works too: run `npm run build` with those two variables and serve `out/`.
 No DNS changes have been made.
 
 ## Licences

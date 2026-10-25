@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { abs } from "@/lib/site";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { allTopics, formatDate, getTopic } from "@/lib/science";
@@ -14,10 +15,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: t.question,
     description: t.summary,
-    alternates: { canonical: `/science/${t.slug}/` },
+    alternates: { canonical: abs(`/science/${t.slug}/`) },
     openGraph: {
-      title: t.question, description: t.summary, url: `/science/${t.slug}/`, type: "article", siteName: "Ocean Turning Points",
-      images: [t.explorer ? "/og/amoc-collapse.png" : "/og/science.png"],
+      title: t.question, description: t.summary, url: abs(`/science/${t.slug}/`), type: "article", siteName: "Ocean Turning Points",
+      images: [abs(t.explorer ? "/og/amoc-collapse.png" : "/og/science.png")],
     },
   };
 }

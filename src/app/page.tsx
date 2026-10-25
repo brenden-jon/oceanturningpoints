@@ -3,15 +3,15 @@ import Link from "next/link";
 import HeroGlobe from "@/components/HeroGlobe";
 import { num, rainAt, tempAt } from "@/lib/amocData";
 import { allTopics } from "@/lib/science";
-import { SITE, asset } from "@/lib/site";
+import { SITE, asset, abs } from "@/lib/site";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
   title: { absolute: `${SITE.name}: how the ocean is changing, and what it means for people` },
   description:
     "An independent, evidence-led atlas of ocean change: the Atlantic circulation, polar oceans, coral reefs and ice sheets, and what their changes mean for people around the world.",
-  alternates: { canonical: "/" },
-  openGraph: { images: ["/og/home.jpg"] },
+  alternates: { canonical: abs("/") },
+  openGraph: { images: [abs("/og/home.jpg")] },
 };
 
 const CHANNELS = [

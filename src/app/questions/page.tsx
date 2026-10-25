@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { allTopics } from "@/lib/science";
-import { asset } from "@/lib/site";
+import { asset, abs } from "@/lib/site";
 import styles from "./questions.module.css";
 
 export const metadata: Metadata = {
   title: "Questions",
   description: "Concrete questions about ocean change, each answered with published data and an honest account of uncertainty.",
-  alternates: { canonical: "/questions/" },
+  alternates: { canonical: abs("/questions/") },
 };
 
 export default function Questions() {

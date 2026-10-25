@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { abs } from "@/lib/site";
 import Link from "next/link";
 import { allTopics, formatDate } from "@/lib/science";
 import styles from "./science.module.css";
@@ -6,8 +7,8 @@ import styles from "./science.module.css";
 export const metadata: Metadata = {
   title: "Science",
   description: "Short, referenced explainers on the ocean systems that are changing: what we observe, what could change, the consequences for people, and how sure we are.",
-  alternates: { canonical: "/science/" },
-  openGraph: { images: ["/og/science.png"], siteName: "Ocean Turning Points" },
+  alternates: { canonical: abs("/science/") },
+  openGraph: { images: [abs("/og/science.png")], siteName: "Ocean Turning Points" },
 };
 
 export default function SciencePage() {

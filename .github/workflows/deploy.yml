@@ -1,9 +1,11 @@
-# Builds the static site and publishes it to GitHub Pages.
-# Manual only: nothing is published until someone runs this workflow
-# (Actions -> Deploy -> Run workflow) after enabling Pages for the repository.
+# Builds the static site and publishes it to GitHub Pages on every push to
+# main (or by hand: Actions -> Deploy -> Run workflow).
+# Requires Settings -> Pages -> Source: "GitHub Actions".
 name: Deploy
 
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -31,6 +33,8 @@ jobs:
         env:
           # Empty for a custom domain; "/<repo>" for a project page
           BASE_PATH: ${{ steps.pages.outputs.base_path }}
+          # Full public address, used for canonical links and share images
+          NEXT_PUBLIC_SITE_URL: ${{ steps.pages.outputs.base_url }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out

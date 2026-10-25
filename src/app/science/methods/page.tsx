@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { abs } from "@/lib/site";
 import Link from "next/link";
 import styles from "../science.module.css";
 import m from "./methods.module.css";
@@ -6,7 +7,7 @@ import m from "./methods.module.css";
 export const metadata: Metadata = {
   title: "Methods and data",
   description: "How Ocean Turning Points chooses sources, processes data, shows uncertainty and keeps its content up to date.",
-  alternates: { canonical: "/science/methods/" },
+  alternates: { canonical: abs("/science/methods/") },
 };
 
 const DATA = [

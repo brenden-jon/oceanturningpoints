@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { abs } from "@/lib/site";
 import Link from "next/link";
 import { PROFILES, PUBLICATIONS } from "@/lib/publications";
 import styles from "./about.module.css";
@@ -6,7 +7,7 @@ import styles from "./about.module.css";
 export const metadata: Metadata = {
   title: "About",
   description: "Ocean Turning Points is an independent science platform created and curated by Brenden Jongman. How it works, who is behind it, and how it is kept independent.",
-  alternates: { canonical: "/about/" },
+  alternates: { canonical: abs("/about/") },
 };
 
 export default function About() {
