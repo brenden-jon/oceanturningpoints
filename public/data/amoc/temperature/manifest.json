@@ -1,0 +1,1875 @@
+{
+ "source": {
+  "dataset": "van Westen & Baatsen (2025), Data for the AMOC Collapse Visualisation",
+  "datasetDoi": "10.5281/zenodo.15490235",
+  "paper": "van Westen & Baatsen (2025), Geophysical Research Letters 52, e2025GL114611",
+  "paperDoi": "10.1029/2025GL114611",
+  "licence": "CC BY 4.0",
+  "relatedTool": "https://amocscenarios.org",
+  "model": "Community Earth System Model 1.0.5; atmosphere ~2° (≈200 km), ocean 1°",
+  "resolutionNote": "The model atmosphere is about 200 km. The published files were interpolated to 0.25° for display, and are sampled here at 0.5°. Neither step adds physical detail: a value at a city is the value of a ~200 km model grid cell, not a local forecast.",
+  "period": "100-year means of equilibrated climates; the RCP runs hold radiative forcing at 2100 levels to year 2499.",
+  "iceSheets": "Ice sheets are fixed at present-day extent in these simulations.",
+  "freshwater": "A constant freshwater flux is applied over 20–50°N in the Atlantic and compensated elsewhere. It makes the AMOC prone to collapse; it is an experimental device, not a representation of real meltwater."
+ },
+ "grid": {
+  "lat0": -90,
+  "lat1": 90,
+  "lon0": -180,
+  "lon1": 180,
+  "res": 0.5,
+  "h": 361,
+  "w": 721,
+  "rowOrder": "north-to-south"
+ },
+ "scenarios": {
+  "pi_on": {
+   "label": "Pre-industrial climate, AMOC intact",
+   "warming": "pre-industrial",
+   "amoc": "intact",
+   "amocSv": 12.4,
+   "freshwaterSv": 0.45,
+   "run": "CESM_1500_PI"
+  },
+  "pi_off": {
+   "label": "Pre-industrial climate, AMOC collapsed",
+   "warming": "pre-industrial",
+   "amoc": "collapsed",
+   "amocSv": null,
+   "freshwaterSv": 0.45,
+   "run": "CESM_2900_PI"
+  },
+  "rcp45_on": {
+   "label": "About +2 °C world, AMOC intact",
+   "warming": "+2 °C (RCP4.5)",
+   "amoc": "intact",
+   "amocSv": 15.5,
+   "freshwaterSv": 0.18,
+   "run": "CESM_0600_RCP45"
+  },
+  "rcp45_off": {
+   "label": "About +2 °C world, AMOC collapsed",
+   "warming": "+2 °C (RCP4.5)",
+   "amoc": "collapsed",
+   "amocSv": 1.2,
+   "freshwaterSv": 0.45,
+   "run": "CESM_1500_RCP45"
+  },
+  "rcp85_off": {
+   "label": "About +4 °C world, AMOC collapsed",
+   "warming": "+4 °C (RCP8.5)",
+   "amoc": "collapsed",
+   "amocSv": 1.2,
+   "freshwaterSv": 0.45,
+   "run": "CESM_1500_RCP85"
+  }
+ },
+ "comparisons": [
+  {
+   "id": "effect-pi",
+   "a": "pi_off",
+   "b": "pi_on",
+   "clean": true,
+   "title": "Effect of collapse alone",
+   "subtitle": "Collapsed minus intact AMOC, both in a pre-industrial climate",
+   "isolates": "the AMOC state, with everything else held equal"
+  },
+  {
+   "id": "total-2c-collapse",
+   "a": "rcp45_off",
+   "b": "pi_on",
+   "clean": true,
+   "title": "A +2 °C world with a collapsed AMOC",
+   "subtitle": "Compared with the pre-industrial climate with an intact AMOC",
+   "isolates": "global warming and AMOC collapse together"
+  },
+  {
+   "id": "total-2c-intact",
+   "a": "rcp45_on",
+   "b": "pi_on",
+   "clean": false,
+   "title": "A +2 °C world with the AMOC intact",
+   "subtitle": "Compared with the pre-industrial climate with an intact AMOC",
+   "isolates": "global warming without collapse",
+   "caveat": "The two runs use different applied freshwater forcing (0.18 and 0.45 Sv), so this difference is not purely the effect of warming. The intact-AMOC reference is also somewhat weakened (12.4 Sv)."
+  },
+  {
+   "id": "effect-2c",
+   "a": "rcp45_off",
+   "b": "rcp45_on",
+   "clean": false,
+   "title": "Effect of collapse in a +2 °C world",
+   "subtitle": "Collapsed minus intact AMOC, both at about +2 °C",
+   "isolates": "mostly the AMOC state",
+   "caveat": "The two runs use different applied freshwater forcing (0.45 and 0.18 Sv), so this difference mixes the AMOC state with a change in forcing. The pre-industrial comparison is the cleaner isolation of collapse alone."
+  },
+  {
+   "id": "total-4c-collapse",
+   "a": "rcp85_off",
+   "b": "pi_on",
+   "clean": true,
+   "title": "A +4 °C world with a collapsed AMOC",
+   "subtitle": "Compared with the pre-industrial climate with an intact AMOC",
+   "isolates": "strong global warming and AMOC collapse together"
+  }
+ ],
+ "variables": [
+  {
+   "id": "winter",
+   "var": "TEMP_2m_DJF",
+   "label": "Winter temperature",
+   "detail": "December–February mean, 2 m air temperature",
+   "units": "°C",
+   "scale": "temperature",
+   "domain": 15.0
+  },
+  {
+   "id": "summer",
+   "var": "TEMP_2m_JJA",
+   "label": "Summer temperature",
+   "detail": "June–August mean, 2 m air temperature",
+   "units": "°C",
+   "scale": "temperature",
+   "domain": 10.0
+  },
+  {
+   "id": "annual",
+   "var": "TEMP_2m",
+   "label": "Annual temperature",
+   "detail": "Annual mean, 2 m air temperature",
+   "units": "°C",
+   "scale": "temperature",
+   "domain": 10.0
+  },
+  {
+   "id": "cold-extreme",
+   "var": "TEMP_1-10_year_min",
+   "label": "Coldest day in ten years",
+   "detail": "1-in-10-year minimum daily temperature, from an extreme-value (GEV) fit",
+   "units": "°C",
+   "scale": "temperature",
+   "domain": 20.0
+  },
+  {
+   "id": "hot-extreme",
+   "var": "TEMP_1-10_year_max",
+   "label": "Hottest day in ten years",
+   "detail": "1-in-10-year maximum daily temperature, from an extreme-value (GEV) fit",
+   "units": "°C",
+   "scale": "temperature",
+   "domain": 10.0
+  },
+  {
+   "id": "frost-days",
+   "var": "Frost_days",
+   "label": "Frost days",
+   "detail": "Days per year with a minimum temperature below 0 °C",
+   "units": "days",
+   "scale": "days",
+   "domain": 120.0
+  }
+ ],
+ "layers": [
+  {
+   "variable": "winter",
+   "comparison": "effect-pi",
+   "file": "winter__effect-pi.png",
+   "vmin": -33.6307,
+   "vmax": 2.8239,
+   "step": 0.14352,
+   "bytes": 29525
+  },
+  {
+   "variable": "winter",
+   "comparison": "total-2c-collapse",
+   "file": "winter__total-2c-collapse.png",
+   "vmin": -23.2908,
+   "vmax": 7.198,
+   "step": 0.12003,
+   "bytes": 36394
+  },
+  {
+   "variable": "winter",
+   "comparison": "total-2c-intact",
+   "file": "winter__total-2c-intact.png",
+   "vmin": -0.6365,
+   "vmax": 24.5393,
+   "step": 0.09912,
+   "bytes": 40633
+  },
+  {
+   "variable": "winter",
+   "comparison": "effect-2c",
+   "file": "winter__effect-2c.png",
+   "vmin": -32.8556,
+   "vmax": 1.4858,
+   "step": 0.1352,
+   "bytes": 30712
+  },
+  {
+   "variable": "winter",
+   "comparison": "total-4c-collapse",
+   "file": "winter__total-4c-collapse.png",
+   "vmin": -1.4271,
+   "vmax": 18.408,
+   "step": 0.07809,
+   "bytes": 51673
+  },
+  {
+   "variable": "summer",
+   "comparison": "effect-pi",
+   "file": "summer__effect-pi.png",
+   "vmin": -9.5264,
+   "vmax": 7.1051,
+   "step": 0.06548,
+   "bytes": 36755
+  },
+  {
+   "variable": "summer",
+   "comparison": "total-2c-collapse",
+   "file": "summer__total-2c-collapse.png",
+   "vmin": -7.2677,
+   "vmax": 11.9263,
+   "step": 0.07557,
+   "bytes": 43792
+  },
+  {
+   "variable": "summer",
+   "comparison": "total-2c-intact",
+   "file": "summer__total-2c-intact.png",
+   "vmin": 0.0251,
+   "vmax": 10.8166,
+   "step": 0.04249,
+   "bytes": 54167
+  },
+  {
+   "variable": "summer",
+   "comparison": "effect-2c",
+   "file": "summer__effect-2c.png",
+   "vmin": -12.5633,
+   "vmax": 2.3872,
+   "step": 0.05886,
+   "bytes": 43251
+  },
+  {
+   "variable": "summer",
+   "comparison": "total-4c-collapse",
+   "file": "summer__total-4c-collapse.png",
+   "vmin": -1.7267,
+   "vmax": 23.4751,
+   "step": 0.09922,
+   "bytes": 44991
+  },
+  {
+   "variable": "annual",
+   "comparison": "effect-pi",
+   "file": "annual__effect-pi.png",
+   "vmin": -19.9168,
+   "vmax": 5.0486,
+   "step": 0.09829,
+   "bytes": 30038
+  },
+  {
+   "variable": "annual",
+   "comparison": "total-2c-collapse",
+   "file": "annual__total-2c-collapse.png",
+   "vmin": -13.6149,
+   "vmax": 6.8763,
+   "step": 0.08067,
+   "bytes": 39150
+  },
+  {
+   "variable": "annual",
+   "comparison": "total-2c-intact",
+   "file": "annual__total-2c-intact.png",
+   "vmin": -0.1591,
+   "vmax": 14.5899,
+   "step": 0.05807,
+   "bytes": 43849
+  },
+  {
+   "variable": "annual",
+   "comparison": "effect-2c",
+   "file": "annual__effect-2c.png",
+   "vmin": -20.4469,
+   "vmax": 1.4801,
+   "step": 0.08633,
+   "bytes": 32630
+  },
+  {
+   "variable": "annual",
+   "comparison": "total-4c-collapse",
+   "file": "annual__total-4c-collapse.png",
+   "vmin": -1.3138,
+   "vmax": 15.9173,
+   "step": 0.06784,
+   "bytes": 48622
+  },
+  {
+   "variable": "cold-extreme",
+   "comparison": "effect-pi",
+   "file": "cold-extreme__effect-pi.png",
+   "vmin": -42.7965,
+   "vmax": 14.7617,
+   "step": 0.22661,
+   "bytes": 37431
+  },
+  {
+   "variable": "cold-extreme",
+   "comparison": "total-2c-collapse",
+   "file": "cold-extreme__total-2c-collapse.png",
+   "vmin": -31.8956,
+   "vmax": 22.2377,
+   "step": 0.21312,
+   "bytes": 40682
+  },
+  {
+   "variable": "cold-extreme",
+   "comparison": "total-2c-intact",
+   "file": "cold-extreme__total-2c-intact.png",
+   "vmin": -2.4665,
+   "vmax": 32.6556,
+   "step": 0.13828,
+   "bytes": 51682
+  },
+  {
+   "variable": "cold-extreme",
+   "comparison": "effect-2c",
+   "file": "cold-extreme__effect-2c.png",
+   "vmin": -42.2724,
+   "vmax": 5.9925,
+   "step": 0.19002,
+   "bytes": 41154
+  },
+  {
+   "variable": "cold-extreme",
+   "comparison": "total-4c-collapse",
+   "file": "cold-extreme__total-4c-collapse.png",
+   "vmin": -7.0629,
+   "vmax": 35.4456,
+   "step": 0.16736,
+   "bytes": 50983
+  },
+  {
+   "variable": "hot-extreme",
+   "comparison": "effect-pi",
+   "file": "hot-extreme__effect-pi.png",
+   "vmin": -11.6428,
+   "vmax": 3.9869,
+   "step": 0.06153,
+   "bytes": 52800
+  },
+  {
+   "variable": "hot-extreme",
+   "comparison": "total-2c-collapse",
+   "file": "hot-extreme__total-2c-collapse.png",
+   "vmin": -8.9498,
+   "vmax": 7.2208,
+   "step": 0.06366,
+   "bytes": 56745
+  },
+  {
+   "variable": "hot-extreme",
+   "comparison": "total-2c-intact",
+   "file": "hot-extreme__total-2c-intact.png",
+   "vmin": -2.1093,
+   "vmax": 14.2009,
+   "step": 0.06421,
+   "bytes": 55450
+  },
+  {
+   "variable": "hot-extreme",
+   "comparison": "effect-2c",
+   "file": "hot-extreme__effect-2c.png",
+   "vmin": -16.3707,
+   "vmax": 2.0659,
+   "step": 0.07258,
+   "bytes": 51070
+  },
+  {
+   "variable": "hot-extreme",
+   "comparison": "total-4c-collapse",
+   "file": "hot-extreme__total-4c-collapse.png",
+   "vmin": -1.1844,
+   "vmax": 14.656,
+   "step": 0.06236,
+   "bytes": 62961
+  },
+  {
+   "variable": "frost-days",
+   "comparison": "effect-pi",
+   "file": "frost-days__effect-pi.png",
+   "vmin": -143.16,
+   "vmax": 289.67,
+   "step": 1.70406,
+   "bytes": 20975
+  },
+  {
+   "variable": "frost-days",
+   "comparison": "total-2c-collapse",
+   "file": "frost-days__total-2c-collapse.png",
+   "vmin": -226.22,
+   "vmax": 203.61,
+   "step": 1.69224,
+   "bytes": 21892
+  },
+  {
+   "variable": "frost-days",
+   "comparison": "total-2c-intact",
+   "file": "frost-days__total-2c-intact.png",
+   "vmin": -269.34,
+   "vmax": 16.48,
+   "step": 1.12528,
+   "bytes": 29130
+  },
+  {
+   "variable": "frost-days",
+   "comparison": "effect-2c",
+   "file": "frost-days__effect-2c.png",
+   "vmin": -51.16,
+   "vmax": 340.42,
+   "step": 1.54165,
+   "bytes": 22661
+  },
+  {
+   "variable": "frost-days",
+   "comparison": "total-4c-collapse",
+   "file": "frost-days__total-4c-collapse.png",
+   "vmin": -357.51,
+   "vmax": 18.85,
+   "step": 1.48173,
+   "bytes": 28763
+  }
+ ],
+ "places": [
+  {
+   "name": "London",
+   "country": "United Kingdom",
+   "lat": 51.51,
+   "lon": -0.13,
+   "region": "europe",
+   "values": {
+    "winter": {
+     "pi_on": 5.11,
+     "pi_off": -4.18,
+     "rcp45_on": 9.09,
+     "rcp45_off": 1.91,
+     "rcp85_off": 6.75
+    },
+    "summer": {
+     "pi_on": 16.54,
+     "pi_off": 12.37,
+     "rcp45_on": 20.14,
+     "rcp45_off": 15.44,
+     "rcp85_off": 19.81
+    },
+    "annual": {
+     "pi_on": 10.44,
+     "pi_off": 4.01,
+     "rcp45_on": 14.14,
+     "rcp45_off": 8.12,
+     "rcp85_off": 12.64
+    },
+    "cold-extreme": {
+     "pi_on": -3.64,
+     "pi_off": -35.07,
+     "rcp45_on": -1.0,
+     "rcp45_off": -19.26,
+     "rcp85_off": -2.96
+    },
+    "hot-extreme": {
+     "pi_on": 31.35,
+     "pi_off": 29.65,
+     "rcp45_on": 34.13,
+     "rcp45_off": 32.53,
+     "rcp85_off": 37.65
+    },
+    "frost-days": {
+     "pi_on": 7.26,
+     "pi_off": 138.62,
+     "rcp45_on": 0.63,
+     "rcp45_off": 73.74,
+     "rcp85_off": 8.12
+    }
+   }
+  },
+  {
+   "name": "Edinburgh",
+   "country": "United Kingdom",
+   "lat": 55.95,
+   "lon": -3.19,
+   "region": "europe",
+   "values": {
+    "winter": {
+     "pi_on": 2.55,
+     "pi_off": -14.63,
+     "rcp45_on": 7.29,
+     "rcp45_off": -3.75,
+     "rcp85_off": 3.32
+    },
+    "summer": {
+     "pi_on": 12.6,
+     "pi_off": 6.54,
+     "rcp45_on": 16.94,
+     "rcp45_off": 9.47,
+     "rcp85_off": 14.34
+    },
+    "annual": {
+     "pi_on": 7.3,
+     "pi_off": -3.22,
+     "rcp45_on": 11.72,
+     "rcp45_off": 2.54,
+     "rcp85_off": 8.34
+    },
+    "cold-extreme": {
+     "pi_on": -6.69,
+     "pi_off": -43.63,
+     "rcp45_on": -0.04,
+     "rcp45_off": -29.78,
+     "rcp85_off": -5.93
+    },
+    "hot-extreme": {
+     "pi_on": 24.69,
+     "pi_off": 21.61,
+     "rcp45_on": 27.0,
+     "rcp45_off": 23.85,
+     "rcp85_off": 27.58
+    },
+    "frost-days": {
+     "pi_on": 30.0,
+     "pi_off": 223.22,
+     "rcp45_on": 0.21,
+     "rcp45_off": 162.36,
+     "rcp85_off": 27.47
+    }
+   }
+  },
+  {
+   "name": "Dublin",
+   "country": "Ireland",
+   "lat": 53.35,
+   "lon": -6.26,
+   "region": "europe",
+   "values": {
+    "winter": {
+     "pi_on": 3.7,
+     "pi_off": -9.46,
+     "rcp45_on": 8.3,
+     "rcp45_off": -1.0,
+     "rcp85_off": 4.75
+    },
+    "summer": {
+     "pi_on": 13.43,
+     "pi_off": 7.91,
+     "rcp45_on": 17.86,
+     "rcp45_off": 11.47,
+     "rcp85_off": 16.14
+    },
+    "annual": {
+     "pi_on": 8.23,
+     "pi_off": -0.66,
+     "rcp45_on": 12.65,
+     "rcp45_off": 4.81,
+     "rcp85_off": 9.86
+    },
+    "cold-extreme": {
+     "pi_on": -7.35,
+     "pi_off": -41.82,
+     "rcp45_on": -1.25,
+     "rcp45_off": -23.81,
+     "rcp85_off": -5.52
+    },
+    "hot-extreme": {
+     "pi_on": 27.7,
+     "pi_off": 25.41,
+     "rcp45_on": 30.66,
+     "rcp45_off": 28.43,
+     "rcp85_off": 32.3
+    },
+    "frost-days": {
+     "pi_on": 29.47,
+     "pi_off": 211.89,
+     "rcp45_on": 0.74,
+     "rcp45_off": 125.95,
+     "rcp85_off": 17.96
+    }
+   }
+  },
+  {
+   "name": "Oslo",
+   "country": "Norway",
+   "lat": 59.91,
+   "lon": 10.75,
+   "region": "europe",
+   "values": {
+    "winter": {
+     "pi_on": -5.86,
+     "pi_off": -27.07,
+     "rcp45_on": 0.51,
+     "rcp45_off": -16.28,
+     "rcp85_off": -3.49
+    },
+    "summer": {
+     "pi_on": 11.39,
+     "pi_off": 7.05,
+     "rcp45_on": 16.09,
+     "rcp45_off": 9.8,
+     "rcp85_off": 15.22
+    },
+    "annual": {
+     "pi_on": 2.45,
+     "pi_off": -8.85,
+     "rcp45_on": 7.78,
+     "rcp45_off": -3.45,
+     "rcp85_off": 4.76
+    },
+    "cold-extreme": {
+     "pi_on": -32.45,
+     "pi_off": -57.09,
+     "rcp45_on": -19.05,
+     "rcp45_off": -47.82,
+     "rcp85_off": -23.85
+    },
+    "hot-extreme": {
+     "pi_on": 29.02,
+     "pi_off": 27.45,
+     "rcp45_on": 32.18,
+     "rcp45_off": 30.49,
+     "rcp85_off": 35.48
+    },
+    "frost-days": {
+     "pi_on": 196.82,
+     "pi_off": 293.32,
+     "rcp45_on": 77.58,
+     "rcp45_off": 244.9,
+     "rcp85_off": 165.1
+    }
+   }
+  },
+  {
+   "name": "Reykjavík",
+   "country": "Iceland",
+   "lat": 64.15,
+   "lon": -21.94,
+   "region": "europe",
+   "values": {
+    "winter": {
+     "pi_on": -10.4,
+     "pi_off": -31.51,
+     "rcp45_on": 1.06,
+     "rcp45_off": -23.51,
+     "rcp85_off": -8.26
+    },
+    "summer": {
+     "pi_on": 5.35,
+     "pi_off": -1.0,
+     "rcp45_on": 11.23,
+     "rcp45_off": 0.31,
+     "rcp85_off": 5.0
+    },
+    "annual": {
+     "pi_on": -2.72,
+     "pi_off": -15.63,
+     "rcp45_on": 5.63,
+     "rcp45_off": -10.78,
+     "rcp85_off": -1.6
+    },
+    "cold-extreme": {
+     "pi_on": -28.04,
+     "pi_off": -50.35,
+     "rcp45_on": -13.42,
+     "rcp45_off": -41.6,
+     "rcp85_off": -24.83
+    },
+    "hot-extreme": {
+     "pi_on": 12.2,
+     "pi_off": 4.97,
+     "rcp45_on": 17.32,
+     "rcp45_off": 7.31,
+     "rcp85_off": 12.45
+    },
+    "frost-days": {
+     "pi_on": 218.04,
+     "pi_off": 360.55,
+     "rcp45_on": 76.36,
+     "rcp45_off": 319.89,
+     "rcp85_off": 210.14
+    }
+   }
+  },
+  {
+   "name": "Amsterdam",
+   "country": "Netherlands",
+   "lat": 52.37,
+   "lon": 4.9,
+   "region": "europe",
+   "values": {
+    "winter": {
+     "pi_on": 4.29,
+     "pi_off": -6.37,
+     "rcp45_on": 8.46,
+     "rcp45_off": 0.88,
+     "rcp85_off": 6.19
+    },
+    "summer": {
+     "pi_on": 15.84,
+     "pi_off": 10.59,
+     "rcp45_on": 19.89,
+     "rcp45_off": 14.06,
+     "rcp85_off": 18.62
+    },
+    "annual": {
+     "pi_on": 9.76,
+     "pi_off": 2.39,
+     "rcp45_on": 13.83,
+     "rcp45_off": 7.05,
+     "rcp85_off": 11.98
+    },
+    "cold-extreme": {
+     "pi_on": -5.67,
+     "pi_off": -37.62,
+     "rcp45_on": -0.96,
+     "rcp45_off": -20.56,
+     "rcp85_off": -1.57
+    },
+    "hot-extreme": {
+     "pi_on": 28.72,
+     "pi_off": 26.28,
+     "rcp45_on": 32.23,
+     "rcp45_off": 29.1,
+     "rcp85_off": 34.44
+    },
+    "frost-days": {
+     "pi_on": 9.57,
+     "pi_off": 157.38,
+     "rcp45_on": 0.65,
+     "rcp45_off": 83.83,
+     "rcp85_off": 1.91
+    }
+   }
+  },
+  {
+   "name": "Paris",
+   "country": "France",
+   "lat": 48.86,
+   "lon": 2.35,
+   "region": "europe",
+   "values": {
+    "winter": {
+     "pi_on": 4.97,
+     "pi_off": -1.19,
+     "rcp45_on": 8.54,
+     "rcp45_off": 3.02,
+     "rcp85_off": 7.19
+    },
+    "summer": {
+     "pi_on": 18.58,
+     "pi_off": 15.89,
+     "rcp45_on": 21.2,
+     "rcp45_off": 18.37,
+     "rcp85_off": 23.3
+    },
+    "annual": {
+     "pi_on": 11.28,
+     "pi_off": 6.89,
+     "rcp45_on": 14.35,
+     "rcp45_off": 10.03,
+     "rcp85_off": 14.44
+    },
+    "cold-extreme": {
+     "pi_on": -6.68,
+     "pi_off": -34.28,
+     "rcp45_on": -5.53,
+     "rcp45_off": -18.15,
+     "rcp85_off": -6.14
+    },
+    "hot-extreme": {
+     "pi_on": 36.8,
+     "pi_off": 36.83,
+     "rcp45_on": 40.58,
+     "rcp45_off": 40.64,
+     "rcp85_off": 47.18
+    },
+    "frost-days": {
+     "pi_on": 23.79,
+     "pi_off": 124.06,
+     "rcp45_on": 6.11,
+     "rcp45_off": 84.65,
+     "rcp85_off": 22.71
+    }
+   }
+  },
+  {
+   "name": "Madrid",
+   "country": "Spain",
+   "lat": 40.42,
+   "lon": -3.7,
+   "region": "europe",
+   "values": {
+    "winter": {
+     "pi_on": 5.62,
+     "pi_off": 3.12,
+     "rcp45_on": 8.95,
+     "rcp45_off": 5.84,
+     "rcp85_off": 9.32
+    },
+    "summer": {
+     "pi_on": 23.07,
+     "pi_off": 22.14,
+     "rcp45_on": 26.92,
+     "rcp45_off": 25.36,
+     "rcp85_off": 30.41
+    },
+    "annual": {
+     "pi_on": 13.59,
+     "pi_off": 11.91,
+     "rcp45_on": 17.21,
+     "rcp45_off": 15.08,
+     "rcp85_off": 19.26
+    },
+    "cold-extreme": {
+     "pi_on": -4.81,
+     "pi_off": -13.13,
+     "rcp45_on": -2.1,
+     "rcp45_off": -7.46,
+     "rcp85_off": -2.75
+    },
+    "hot-extreme": {
+     "pi_on": 40.9,
+     "pi_off": 40.21,
+     "rcp45_on": 44.82,
+     "rcp45_off": 42.76,
+     "rcp85_off": 47.6
+    },
+    "frost-days": {
+     "pi_on": 22.16,
+     "pi_off": 70.12,
+     "rcp45_on": 1.35,
+     "rcp45_off": 28.6,
+     "rcp85_off": 3.38
+    }
+   }
+  },
+  {
+   "name": "Warsaw",
+   "country": "Poland",
+   "lat": 52.23,
+   "lon": 21.01,
+   "region": "europe",
+   "values": {
+    "winter": {
+     "pi_on": -1.02,
+     "pi_off": -10.17,
+     "rcp45_on": 3.85,
+     "rcp45_off": -3.4,
+     "rcp85_off": 2.7
+    },
+    "summer": {
+     "pi_on": 19.28,
+     "pi_off": 17.57,
+     "rcp45_on": 23.6,
+     "rcp45_off": 20.95,
+     "rcp85_off": 25.42
+    },
+    "annual": {
+     "pi_on": 8.87,
+     "pi_off": 3.78,
+     "rcp45_on": 13.09,
+     "rcp45_off": 8.06,
+     "rcp85_off": 12.86
+    },
+    "cold-extreme": {
+     "pi_on": -29.64,
+     "pi_off": -45.84,
+     "rcp45_on": -16.98,
+     "rcp45_off": -33.93,
+     "rcp85_off": -15.25
+    },
+    "hot-extreme": {
+     "pi_on": 39.12,
+     "pi_off": 39.12,
+     "rcp45_on": 43.49,
+     "rcp45_off": 42.72,
+     "rcp85_off": 48.73
+    },
+    "frost-days": {
+     "pi_on": 107.69,
+     "pi_off": 182.53,
+     "rcp45_on": 32.84,
+     "rcp45_off": 134.23,
+     "rcp85_off": 69.7
+    }
+   }
+  },
+  {
+   "name": "New York",
+   "country": "United States",
+   "lat": 40.71,
+   "lon": -74.01,
+   "region": "americas",
+   "values": {
+    "winter": {
+     "pi_on": 2.64,
+     "pi_off": 0.76,
+     "rcp45_on": 6.97,
+     "rcp45_off": 3.33,
+     "rcp85_off": 7.35
+    },
+    "summer": {
+     "pi_on": 24.49,
+     "pi_off": 23.38,
+     "rcp45_on": 27.48,
+     "rcp45_off": 25.65,
+     "rcp85_off": 29.52
+    },
+    "annual": {
+     "pi_on": 14.19,
+     "pi_off": 12.81,
+     "rcp45_on": 17.62,
+     "rcp45_off": 15.21,
+     "rcp85_off": 18.87
+    },
+    "cold-extreme": {
+     "pi_on": -21.48,
+     "pi_off": -26.56,
+     "rcp45_on": -12.47,
+     "rcp45_off": -21.54,
+     "rcp85_off": -12.61
+    },
+    "hot-extreme": {
+     "pi_on": 36.55,
+     "pi_off": 35.63,
+     "rcp45_on": 39.06,
+     "rcp45_off": 37.81,
+     "rcp85_off": 42.8
+    },
+    "frost-days": {
+     "pi_on": 54.94,
+     "pi_off": 69.09,
+     "rcp45_on": 23.7,
+     "rcp45_off": 51.2,
+     "rcp85_off": 24.4
+    }
+   }
+  },
+  {
+   "name": "Halifax",
+   "country": "Canada",
+   "lat": 44.65,
+   "lon": -63.57,
+   "region": "americas",
+   "values": {
+    "winter": {
+     "pi_on": 1.68,
+     "pi_off": -1.18,
+     "rcp45_on": 5.92,
+     "rcp45_off": 1.63,
+     "rcp85_off": 6.23
+    },
+    "summer": {
+     "pi_on": 21.08,
+     "pi_off": 18.56,
+     "rcp45_on": 24.86,
+     "rcp45_off": 21.06,
+     "rcp85_off": 25.03
+    },
+    "annual": {
+     "pi_on": 11.64,
+     "pi_off": 9.01,
+     "rcp45_on": 15.34,
+     "rcp45_off": 11.55,
+     "rcp85_off": 15.57
+    },
+    "cold-extreme": {
+     "pi_on": -19.69,
+     "pi_off": -26.57,
+     "rcp45_on": -11.88,
+     "rcp45_off": -21.03,
+     "rcp85_off": -12.04
+    },
+    "hot-extreme": {
+     "pi_on": 31.81,
+     "pi_off": 29.94,
+     "rcp45_on": 34.74,
+     "rcp45_off": 31.86,
+     "rcp85_off": 35.8
+    },
+    "frost-days": {
+     "pi_on": 72.02,
+     "pi_off": 98.6,
+     "rcp45_on": 32.4,
+     "rcp45_off": 73.01,
+     "rcp85_off": 29.48
+    }
+   }
+  },
+  {
+   "name": "Dakar",
+   "country": "Senegal",
+   "lat": 14.72,
+   "lon": -17.47,
+   "region": "africa",
+   "values": {
+    "winter": {
+     "pi_on": 24.4,
+     "pi_off": 23.58,
+     "rcp45_on": 27.25,
+     "rcp45_off": 25.82,
+     "rcp85_off": 29.14
+    },
+    "summer": {
+     "pi_on": 25.86,
+     "pi_off": 25.43,
+     "rcp45_on": 27.31,
+     "rcp45_off": 26.58,
+     "rcp85_off": 28.4
+    },
+    "annual": {
+     "pi_on": 26.14,
+     "pi_off": 25.77,
+     "rcp45_on": 28.06,
+     "rcp45_off": 27.39,
+     "rcp85_off": 29.75
+    },
+    "cold-extreme": {
+     "pi_on": 17.64,
+     "pi_off": 16.24,
+     "rcp45_on": 20.85,
+     "rcp45_off": 18.59,
+     "rcp85_off": 22.1
+    },
+    "hot-extreme": {
+     "pi_on": 34.52,
+     "pi_off": 34.81,
+     "rcp45_on": 36.37,
+     "rcp45_off": 36.7,
+     "rcp85_off": 38.95
+    },
+    "frost-days": {
+     "pi_on": 0.0,
+     "pi_off": 0.0,
+     "rcp45_on": 0.0,
+     "rcp45_off": 0.0,
+     "rcp85_off": 0.0
+    }
+   }
+  },
+  {
+   "name": "Bamako",
+   "country": "Mali",
+   "lat": 12.64,
+   "lon": -8.0,
+   "region": "africa",
+   "values": {
+    "winter": {
+     "pi_on": 23.21,
+     "pi_off": 22.52,
+     "rcp45_on": 26.56,
+     "rcp45_off": 25.37,
+     "rcp85_off": 29.3
+    },
+    "summer": {
+     "pi_on": 26.77,
+     "pi_off": 27.43,
+     "rcp45_on": 29.78,
+     "rcp45_off": 30.75,
+     "rcp85_off": 34.48
+    },
+    "annual": {
+     "pi_on": 26.37,
+     "pi_off": 26.56,
+     "rcp45_on": 29.67,
+     "rcp45_off": 29.83,
+     "rcp85_off": 33.45
+    },
+    "cold-extreme": {
+     "pi_on": 11.27,
+     "pi_off": 9.58,
+     "rcp45_on": 14.94,
+     "rcp45_off": 13.27,
+     "rcp85_off": 17.33
+    },
+    "hot-extreme": {
+     "pi_on": 42.24,
+     "pi_off": 42.49,
+     "rcp45_on": 45.31,
+     "rcp45_off": 44.85,
+     "rcp85_off": 48.29
+    },
+    "frost-days": {
+     "pi_on": 0.0,
+     "pi_off": 0.0,
+     "rcp45_on": 0.0,
+     "rcp45_off": 0.0,
+     "rcp85_off": 0.0
+    }
+   }
+  },
+  {
+   "name": "Niamey",
+   "country": "Niger",
+   "lat": 13.51,
+   "lon": 2.11,
+   "region": "africa",
+   "values": {
+    "winter": {
+     "pi_on": 21.17,
+     "pi_off": 19.5,
+     "rcp45_on": 24.36,
+     "rcp45_off": 22.13,
+     "rcp85_off": 26.12
+    },
+    "summer": {
+     "pi_on": 28.32,
+     "pi_off": 29.08,
+     "rcp45_on": 30.14,
+     "rcp45_off": 31.16,
+     "rcp85_off": 34.0
+    },
+    "annual": {
+     "pi_on": 26.43,
+     "pi_off": 26.02,
+     "rcp45_on": 28.95,
+     "rcp45_off": 28.38,
+     "rcp85_off": 31.75
+    },
+    "cold-extreme": {
+     "pi_on": 9.0,
+     "pi_off": 6.29,
+     "rcp45_on": 11.79,
+     "rcp45_off": 9.25,
+     "rcp85_off": 13.83
+    },
+    "hot-extreme": {
+     "pi_on": 43.19,
+     "pi_off": 43.14,
+     "rcp45_on": 46.01,
+     "rcp45_off": 45.43,
+     "rcp85_off": 48.88
+    },
+    "frost-days": {
+     "pi_on": 0.0,
+     "pi_off": 0.0,
+     "rcp45_on": 0.0,
+     "rcp45_off": 0.0,
+     "rcp85_off": 0.0
+    }
+   }
+  },
+  {
+   "name": "Kano",
+   "country": "Nigeria",
+   "lat": 12.0,
+   "lon": 8.52,
+   "region": "africa",
+   "values": {
+    "winter": {
+     "pi_on": 21.42,
+     "pi_off": 19.9,
+     "rcp45_on": 24.63,
+     "rcp45_off": 22.61,
+     "rcp85_off": 26.36
+    },
+    "summer": {
+     "pi_on": 26.48,
+     "pi_off": 27.07,
+     "rcp45_on": 28.21,
+     "rcp45_off": 28.84,
+     "rcp85_off": 31.38
+    },
+    "annual": {
+     "pi_on": 25.55,
+     "pi_off": 25.25,
+     "rcp45_on": 27.9,
+     "rcp45_off": 27.51,
+     "rcp85_off": 30.55
+    },
+    "cold-extreme": {
+     "pi_on": 8.98,
+     "pi_off": 6.36,
+     "rcp45_on": 12.14,
+     "rcp45_off": 9.72,
+     "rcp85_off": 13.67
+    },
+    "hot-extreme": {
+     "pi_on": 41.39,
+     "pi_off": 41.41,
+     "rcp45_on": 44.26,
+     "rcp45_off": 43.79,
+     "rcp85_off": 47.03
+    },
+    "frost-days": {
+     "pi_on": 0.0,
+     "pi_off": 0.0,
+     "rcp45_on": 0.0,
+     "rcp45_off": 0.0,
+     "rcp85_off": 0.0
+    }
+   }
+  },
+  {
+   "name": "Accra",
+   "country": "Ghana",
+   "lat": 5.6,
+   "lon": -0.19,
+   "region": "africa",
+   "values": {
+    "winter": {
+     "pi_on": 26.5,
+     "pi_off": 26.32,
+     "rcp45_on": 28.76,
+     "rcp45_off": 28.62,
+     "rcp85_off": 31.15
+    },
+    "summer": {
+     "pi_on": 26.24,
+     "pi_off": 26.45,
+     "rcp45_on": 28.09,
+     "rcp45_off": 28.2,
+     "rcp85_off": 30.47
+    },
+    "annual": {
+     "pi_on": 26.55,
+     "pi_off": 26.72,
+     "rcp45_on": 28.5,
+     "rcp45_off": 28.6,
+     "rcp85_off": 30.91
+    },
+    "cold-extreme": {
+     "pi_on": 20.09,
+     "pi_off": 19.03,
+     "rcp45_on": 22.12,
+     "rcp45_off": 21.89,
+     "rcp85_off": 24.32
+    },
+    "hot-extreme": {
+     "pi_on": 33.11,
+     "pi_off": 33.46,
+     "rcp45_on": 35.11,
+     "rcp45_off": 35.13,
+     "rcp85_off": 37.69
+    },
+    "frost-days": {
+     "pi_on": 0.0,
+     "pi_off": 0.0,
+     "rcp45_on": 0.0,
+     "rcp45_off": 0.0,
+     "rcp85_off": 0.0
+    }
+   }
+  },
+  {
+   "name": "Addis Ababa",
+   "country": "Ethiopia",
+   "lat": 9.03,
+   "lon": 38.74,
+   "region": "africa",
+   "values": {
+    "winter": {
+     "pi_on": 18.84,
+     "pi_off": 19.05,
+     "rcp45_on": 20.25,
+     "rcp45_off": 20.63,
+     "rcp85_off": 23.01
+    },
+    "summer": {
+     "pi_on": 18.64,
+     "pi_off": 18.82,
+     "rcp45_on": 20.49,
+     "rcp45_off": 20.5,
+     "rcp85_off": 22.8
+    },
+    "annual": {
+     "pi_on": 19.58,
+     "pi_off": 19.73,
+     "rcp45_on": 21.36,
+     "rcp45_off": 21.46,
+     "rcp85_off": 23.69
+    },
+    "cold-extreme": {
+     "pi_on": 6.97,
+     "pi_off": 6.93,
+     "rcp45_on": 7.89,
+     "rcp45_off": 8.25,
+     "rcp85_off": 10.52
+    },
+    "hot-extreme": {
+     "pi_on": 32.68,
+     "pi_off": 32.51,
+     "rcp45_on": 35.72,
+     "rcp45_off": 35.03,
+     "rcp85_off": 38.27
+    },
+    "frost-days": {
+     "pi_on": 0.0,
+     "pi_off": 0.0,
+     "rcp45_on": 0.0,
+     "rcp45_off": 0.0,
+     "rcp85_off": 0.0
+    }
+   }
+  },
+  {
+   "name": "Mumbai",
+   "country": "India",
+   "lat": 19.08,
+   "lon": 72.88,
+   "region": "asia",
+   "values": {
+    "winter": {
+     "pi_on": 23.7,
+     "pi_off": 23.85,
+     "rcp45_on": 25.09,
+     "rcp45_off": 24.81,
+     "rcp85_off": 27.36
+    },
+    "summer": {
+     "pi_on": 26.65,
+     "pi_off": 26.65,
+     "rcp45_on": 28.39,
+     "rcp45_off": 28.22,
+     "rcp85_off": 30.45
+    },
+    "annual": {
+     "pi_on": 26.27,
+     "pi_off": 26.36,
+     "rcp45_on": 27.85,
+     "rcp45_off": 27.73,
+     "rcp85_off": 30.15
+    },
+    "cold-extreme": {
+     "pi_on": 14.32,
+     "pi_off": 14.19,
+     "rcp45_on": 16.34,
+     "rcp45_off": 16.19,
+     "rcp85_off": 19.25
+    },
+    "hot-extreme": {
+     "pi_on": 37.96,
+     "pi_off": 38.25,
+     "rcp45_on": 40.29,
+     "rcp45_off": 40.34,
+     "rcp85_off": 42.76
+    },
+    "frost-days": {
+     "pi_on": 0.0,
+     "pi_off": 0.0,
+     "rcp45_on": 0.0,
+     "rcp45_off": 0.0,
+     "rcp85_off": 0.0
+    }
+   }
+  },
+  {
+   "name": "Delhi",
+   "country": "India",
+   "lat": 28.61,
+   "lon": 77.21,
+   "region": "asia",
+   "values": {
+    "winter": {
+     "pi_on": 15.67,
+     "pi_off": 15.37,
+     "rcp45_on": 16.68,
+     "rcp45_off": 16.09,
+     "rcp85_off": 19.63
+    },
+    "summer": {
+     "pi_on": 31.81,
+     "pi_off": 31.99,
+     "rcp45_on": 32.71,
+     "rcp45_off": 32.48,
+     "rcp85_off": 35.3
+    },
+    "annual": {
+     "pi_on": 25.15,
+     "pi_off": 24.92,
+     "rcp45_on": 26.28,
+     "rcp45_off": 25.63,
+     "rcp85_off": 28.97
+    },
+    "cold-extreme": {
+     "pi_on": 1.41,
+     "pi_off": 0.91,
+     "rcp45_on": 1.4,
+     "rcp45_off": 0.77,
+     "rcp85_off": 4.65
+    },
+    "hot-extreme": {
+     "pi_on": 49.71,
+     "pi_off": 49.55,
+     "rcp45_on": 52.36,
+     "rcp45_off": 51.37,
+     "rcp85_off": 54.68
+    },
+    "frost-days": {
+     "pi_on": 0.09,
+     "pi_off": 0.11,
+     "rcp45_on": 0.13,
+     "rcp45_off": 0.09,
+     "rcp85_off": 0.0
+    }
+   }
+  },
+  {
+   "name": "Dhaka",
+   "country": "Bangladesh",
+   "lat": 23.81,
+   "lon": 90.41,
+   "region": "asia",
+   "values": {
+    "winter": {
+     "pi_on": 19.73,
+     "pi_off": 19.12,
+     "rcp45_on": 21.01,
+     "rcp45_off": 19.78,
+     "rcp85_off": 23.19
+    },
+    "summer": {
+     "pi_on": 29.07,
+     "pi_off": 28.91,
+     "rcp45_on": 30.29,
+     "rcp45_off": 29.83,
+     "rcp85_off": 32.67
+    },
+    "annual": {
+     "pi_on": 25.97,
+     "pi_off": 25.6,
+     "rcp45_on": 27.22,
+     "rcp45_off": 26.43,
+     "rcp85_off": 29.58
+    },
+    "cold-extreme": {
+     "pi_on": 7.25,
+     "pi_off": 6.41,
+     "rcp45_on": 7.82,
+     "rcp45_off": 6.16,
+     "rcp85_off": 9.84
+    },
+    "hot-extreme": {
+     "pi_on": 46.32,
+     "pi_off": 45.78,
+     "rcp45_on": 48.03,
+     "rcp45_off": 47.64,
+     "rcp85_off": 50.88
+    },
+    "frost-days": {
+     "pi_on": 0.0,
+     "pi_off": 0.0,
+     "rcp45_on": 0.0,
+     "rcp45_off": 0.0,
+     "rcp85_off": 0.0
+    }
+   }
+  },
+  {
+   "name": "Karachi",
+   "country": "Pakistan",
+   "lat": 24.86,
+   "lon": 67.01,
+   "region": "asia",
+   "values": {
+    "winter": {
+     "pi_on": 18.37,
+     "pi_off": 17.54,
+     "rcp45_on": 21.65,
+     "rcp45_off": 20.54,
+     "rcp85_off": 24.26
+    },
+    "summer": {
+     "pi_on": 29.91,
+     "pi_off": 29.92,
+     "rcp45_on": 31.93,
+     "rcp45_off": 31.92,
+     "rcp85_off": 34.0
+    },
+    "annual": {
+     "pi_on": 25.76,
+     "pi_off": 25.22,
+     "rcp45_on": 28.45,
+     "rcp45_off": 27.78,
+     "rcp85_off": 30.75
+    },
+    "cold-extreme": {
+     "pi_on": 3.17,
+     "pi_off": 0.17,
+     "rcp45_on": 7.35,
+     "rcp45_off": 4.13,
+     "rcp85_off": 8.57
+    },
+    "hot-extreme": {
+     "pi_on": 44.14,
+     "pi_off": 44.25,
+     "rcp45_on": 46.81,
+     "rcp45_off": 46.19,
+     "rcp85_off": 49.27
+    },
+    "frost-days": {
+     "pi_on": 0.05,
+     "pi_off": 0.22,
+     "rcp45_on": 0.0,
+     "rcp45_off": 0.03,
+     "rcp85_off": 0.0
+    }
+   }
+  },
+  {
+   "name": "Mexico City",
+   "country": "Mexico",
+   "lat": 19.43,
+   "lon": -99.13,
+   "region": "americas",
+   "values": {
+    "winter": {
+     "pi_on": 13.23,
+     "pi_off": 12.53,
+     "rcp45_on": 15.63,
+     "rcp45_off": 14.58,
+     "rcp85_off": 17.17
+    },
+    "summer": {
+     "pi_on": 20.27,
+     "pi_off": 19.94,
+     "rcp45_on": 23.82,
+     "rcp45_off": 23.51,
+     "rcp85_off": 26.97
+    },
+    "annual": {
+     "pi_on": 17.34,
+     "pi_off": 16.91,
+     "rcp45_on": 20.24,
+     "rcp45_off": 19.64,
+     "rcp85_off": 22.79
+    },
+    "cold-extreme": {
+     "pi_on": 1.06,
+     "pi_off": -0.27,
+     "rcp45_on": 3.44,
+     "rcp45_off": 2.13,
+     "rcp85_off": 4.22
+    },
+    "hot-extreme": {
+     "pi_on": 33.96,
+     "pi_off": 33.98,
+     "rcp45_on": 37.03,
+     "rcp45_off": 36.42,
+     "rcp85_off": 40.33
+    },
+    "frost-days": {
+     "pi_on": 0.02,
+     "pi_off": 0.13,
+     "rcp45_on": 0.0,
+     "rcp45_off": 0.0,
+     "rcp85_off": 0.0
+    }
+   }
+  },
+  {
+   "name": "Guatemala City",
+   "country": "Guatemala",
+   "lat": 14.63,
+   "lon": -90.51,
+   "region": "americas",
+   "values": {
+    "winter": {
+     "pi_on": 23.13,
+     "pi_off": 22.37,
+     "rcp45_on": 26.13,
+     "rcp45_off": 24.67,
+     "rcp85_off": 26.9
+    },
+    "summer": {
+     "pi_on": 27.43,
+     "pi_off": 26.75,
+     "rcp45_on": 30.63,
+     "rcp45_off": 28.9,
+     "rcp85_off": 31.07
+    },
+    "annual": {
+     "pi_on": 25.61,
+     "pi_off": 25.05,
+     "rcp45_on": 28.87,
+     "rcp45_off": 27.27,
+     "rcp85_off": 29.47
+    },
+    "cold-extreme": {
+     "pi_on": 15.12,
+     "pi_off": 14.07,
+     "rcp45_on": 18.27,
+     "rcp45_off": 16.71,
+     "rcp85_off": 18.53
+    },
+    "hot-extreme": {
+     "pi_on": 36.02,
+     "pi_off": 35.57,
+     "rcp45_on": 37.6,
+     "rcp45_off": 36.74,
+     "rcp85_off": 39.84
+    },
+    "frost-days": {
+     "pi_on": 0.0,
+     "pi_off": 0.0,
+     "rcp45_on": 0.0,
+     "rcp45_off": 0.0,
+     "rcp85_off": 0.0
+    }
+   }
+  },
+  {
+   "name": "Kingston",
+   "country": "Jamaica",
+   "lat": 17.97,
+   "lon": -76.79,
+   "region": "americas",
+   "values": {
+    "winter": {
+     "pi_on": 25.02,
+     "pi_off": 23.65,
+     "rcp45_on": 26.89,
+     "rcp45_off": 25.16,
+     "rcp85_off": 26.98
+    },
+    "summer": {
+     "pi_on": 27.44,
+     "pi_off": 25.77,
+     "rcp45_on": 29.36,
+     "rcp45_off": 27.05,
+     "rcp85_off": 28.7
+    },
+    "annual": {
+     "pi_on": 26.28,
+     "pi_off": 24.79,
+     "rcp45_on": 28.17,
+     "rcp45_off": 26.17,
+     "rcp85_off": 27.9
+    },
+    "cold-extreme": {
+     "pi_on": 22.5,
+     "pi_off": 21.13,
+     "rcp45_on": 24.76,
+     "rcp45_off": 23.02,
+     "rcp85_off": 24.74
+    },
+    "hot-extreme": {
+     "pi_on": 29.54,
+     "pi_off": 28.09,
+     "rcp45_on": 31.56,
+     "rcp45_off": 29.38,
+     "rcp85_off": 31.37
+    },
+    "frost-days": {
+     "pi_on": 0.0,
+     "pi_off": 0.0,
+     "rcp45_on": 0.0,
+     "rcp45_off": 0.0,
+     "rcp85_off": 0.0
+    }
+   }
+  },
+  {
+   "name": "Caracas",
+   "country": "Venezuela",
+   "lat": 10.48,
+   "lon": -66.9,
+   "region": "americas",
+   "values": {
+    "winter": {
+     "pi_on": 23.63,
+     "pi_off": 22.53,
+     "rcp45_on": 25.61,
+     "rcp45_off": 24.3,
+     "rcp85_off": 26.06
+    },
+    "summer": {
+     "pi_on": 25.53,
+     "pi_off": 24.12,
+     "rcp45_on": 27.92,
+     "rcp45_off": 25.8,
+     "rcp85_off": 27.46
+    },
+    "annual": {
+     "pi_on": 24.65,
+     "pi_off": 23.42,
+     "rcp45_on": 26.86,
+     "rcp45_off": 25.06,
+     "rcp85_off": 26.81
+    },
+    "cold-extreme": {
+     "pi_on": 19.54,
+     "pi_off": 18.39,
+     "rcp45_on": 21.94,
+     "rcp45_off": 20.57,
+     "rcp85_off": 22.3
+    },
+    "hot-extreme": {
+     "pi_on": 31.33,
+     "pi_off": 30.17,
+     "rcp45_on": 32.95,
+     "rcp45_off": 31.04,
+     "rcp85_off": 33.0
+    },
+    "frost-days": {
+     "pi_on": 0.0,
+     "pi_off": 0.0,
+     "rcp45_on": 0.0,
+     "rcp45_off": 0.0,
+     "rcp85_off": 0.0
+    }
+   }
+  },
+  {
+   "name": "Fortaleza",
+   "country": "Brazil",
+   "lat": -3.73,
+   "lon": -38.52,
+   "region": "americas",
+   "values": {
+    "winter": {
+     "pi_on": 26.18,
+     "pi_off": 26.12,
+     "rcp45_on": 28.3,
+     "rcp45_off": 27.73,
+     "rcp85_off": 30.15
+    },
+    "summer": {
+     "pi_on": 24.99,
+     "pi_off": 25.15,
+     "rcp45_on": 27.28,
+     "rcp45_off": 26.76,
+     "rcp85_off": 29.36
+    },
+    "annual": {
+     "pi_on": 25.95,
+     "pi_off": 25.97,
+     "rcp45_on": 28.04,
+     "rcp45_off": 27.65,
+     "rcp85_off": 30.09
+    },
+    "cold-extreme": {
+     "pi_on": 21.1,
+     "pi_off": 21.62,
+     "rcp45_on": 23.83,
+     "rcp45_off": 23.3,
+     "rcp85_off": 25.97
+    },
+    "hot-extreme": {
+     "pi_on": 31.09,
+     "pi_off": 31.01,
+     "rcp45_on": 33.23,
+     "rcp45_off": 33.13,
+     "rcp85_off": 35.42
+    },
+    "frost-days": {
+     "pi_on": 0.0,
+     "pi_off": 0.0,
+     "rcp45_on": 0.0,
+     "rcp45_off": 0.0,
+     "rcp85_off": 0.0
+    }
+   }
+  },
+  {
+   "name": "Manaus",
+   "country": "Brazil",
+   "lat": -3.12,
+   "lon": -60.02,
+   "region": "americas",
+   "values": {
+    "winter": {
+     "pi_on": 25.11,
+     "pi_off": 25.08,
+     "rcp45_on": 27.95,
+     "rcp45_off": 27.59,
+     "rcp85_off": 31.47
+    },
+    "summer": {
+     "pi_on": 24.87,
+     "pi_off": 24.59,
+     "rcp45_on": 28.6,
+     "rcp45_off": 27.02,
+     "rcp85_off": 30.3
+    },
+    "annual": {
+     "pi_on": 25.44,
+     "pi_off": 25.39,
+     "rcp45_on": 29.04,
+     "rcp45_off": 27.77,
+     "rcp85_off": 31.26
+    },
+    "cold-extreme": {
+     "pi_on": 15.62,
+     "pi_off": 16.91,
+     "rcp45_on": 20.01,
+     "rcp45_off": 19.63,
+     "rcp85_off": 22.97
+    },
+    "hot-extreme": {
+     "pi_on": 39.1,
+     "pi_off": 38.75,
+     "rcp45_on": 44.11,
+     "rcp45_off": 41.1,
+     "rcp85_off": 45.19
+    },
+    "frost-days": {
+     "pi_on": 0.0,
+     "pi_off": 0.0,
+     "rcp45_on": 0.0,
+     "rcp45_off": 0.0,
+     "rcp85_off": 0.0
+    }
+   }
+  },
+  {
+   "name": "São Paulo",
+   "country": "Brazil",
+   "lat": -23.55,
+   "lon": -46.63,
+   "region": "americas",
+   "values": {
+    "winter": {
+     "pi_on": 24.97,
+     "pi_off": 25.36,
+     "rcp45_on": 27.15,
+     "rcp45_off": 26.83,
+     "rcp85_off": 29.5
+    },
+    "summer": {
+     "pi_on": 18.68,
+     "pi_off": 18.74,
+     "rcp45_on": 20.91,
+     "rcp45_off": 20.45,
+     "rcp85_off": 23.15
+    },
+    "annual": {
+     "pi_on": 22.02,
+     "pi_off": 22.23,
+     "rcp45_on": 24.32,
+     "rcp45_off": 23.87,
+     "rcp85_off": 26.66
+    },
+    "cold-extreme": {
+     "pi_on": 9.83,
+     "pi_off": 10.71,
+     "rcp45_on": 12.06,
+     "rcp45_off": 12.46,
+     "rcp85_off": 15.88
+    },
+    "hot-extreme": {
+     "pi_on": 35.87,
+     "pi_off": 35.78,
+     "rcp45_on": 38.73,
+     "rcp45_off": 37.8,
+     "rcp85_off": 41.26
+    },
+    "frost-days": {
+     "pi_on": 0.0,
+     "pi_off": 0.0,
+     "rcp45_on": 0.0,
+     "rcp45_off": 0.0,
+     "rcp85_off": 0.0
+    }
+   }
+  }
+ ],
+ "seaIce": "sea_ice_march.geojson"
+}

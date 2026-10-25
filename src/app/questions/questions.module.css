@@ -1,0 +1,14 @@
+.head { padding: clamp(2.5rem, 6vw, 4.5rem) 0 2.5rem; display: grid; gap: 1rem; }
+.title { max-width: 18ch; }
+.feature { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 2rem; margin: 1rem 0 4rem; padding: 1.25rem; background: var(--surface); border: 1px solid var(--rule); border-radius: 4px; text-decoration: none; color: var(--text); align-items: center; }
+.feature:hover { border-color: var(--atlantic); }
+.feature img { width: 100%; height: auto; border-radius: 3px; }
+.featureText { display: grid; gap: 0.8rem; align-content: center; }
+.featureQ { font-family: var(--serif); font-size: var(--step-3); line-height: 1.12; color: var(--ink); }
+.explained { padding-bottom: 5rem; }
+.list { list-style: none; margin: 1rem 0 0; padding: 0; border-top: 1px solid var(--rule-strong); }
+.list li { border-bottom: 1px solid var(--rule); }
+.list a { display: grid; gap: 0.3rem; padding: 1.2rem 0; text-decoration: none; max-width: 75ch; }
+.q { font-family: var(--serif); font-size: 1.4rem; line-height: 1.25; color: var(--ink); }
+.list a:hover .q { color: var(--atlantic); }
+@media (max-width: 860px) { .feature { grid-template-columns: 1fr; } }

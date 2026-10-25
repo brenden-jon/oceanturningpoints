@@ -1,0 +1,1669 @@
+{
+ "source": {
+  "paper": "Ben-Yami et al. (2024), Earth's Future 12, e2023EF003959",
+  "paperDoi": "10.1029/2023EF003959",
+  "dataset": "Jackson, Bellomo et al. (2025), NAHosMIP monthly surface air temperature and precipitation v3",
+  "datasetDoi": "10.5281/zenodo.14884357",
+  "protocolDoi": "10.5194/gmd-16-1975-2023",
+  "licence": "CC BY 4.0",
+  "models": [
+   "HadGEM3-GC31-MM",
+   "CanESM5",
+   "CESM2",
+   "IPSL-CM6A-LR"
+  ],
+  "experiment": "Weak-AMOC state after 0.3 Sv of North Atlantic freshwater hosing is switched off (u03-r50; u03-r100 for IPSL), compared with each model's pre-industrial control.",
+  "dryMask": "Blank where the control climate receives less than 0.3 mm/day; percentage change is not meaningful there.",
+  "caution": "With four models, the ensemble mean is a tool to show the pattern where models agree, not the most accurate prediction (Ben-Yami et al. 2024).",
+  "notAForecast": "These are idealised pre-industrial experiments. They show what a collapsed AMOC does to rainfall, not when or whether it will happen, and they exclude greenhouse warming."
+ },
+ "grid": {
+  "lat0": -90,
+  "lat1": 90,
+  "lon0": -180,
+  "lon1": 180,
+  "res": 0.5,
+  "h": 361,
+  "w": 721,
+  "rowOrder": "north-to-south"
+ },
+ "units": "%",
+ "domain": 50,
+ "seasons": {
+  "annual": "Annual",
+  "jja": "June–August",
+  "djf": "December–February"
+ },
+ "layers": [
+  {
+   "season": "annual",
+   "mean": {
+    "file": "rain_annual_mean.png",
+    "vmin": -64.6984,
+    "vmax": 163.3259,
+    "step": 0.89773,
+    "bytes": 40006
+   },
+   "agreement": {
+    "file": "rain_annual_agreement.png",
+    "vmin": 1.0,
+    "vmax": 4.0,
+    "step": 0.01181,
+    "bytes": 16941
+   }
+  },
+  {
+   "season": "jja",
+   "mean": {
+    "file": "rain_jja_mean.png",
+    "vmin": -69.5282,
+    "vmax": 267.6099,
+    "step": 1.32732,
+    "bytes": 40800
+   },
+   "agreement": {
+    "file": "rain_jja_agreement.png",
+    "vmin": 1.0,
+    "vmax": 4.0,
+    "step": 0.01181,
+    "bytes": 19991
+   }
+  },
+  {
+   "season": "djf",
+   "mean": {
+    "file": "rain_djf_mean.png",
+    "vmin": -68.1967,
+    "vmax": 170.0647,
+    "step": 0.93804,
+    "bytes": 46146
+   },
+   "agreement": {
+    "file": "rain_djf_agreement.png",
+    "vmin": 1.0,
+    "vmax": 4.0,
+    "step": 0.01181,
+    "bytes": 20921
+   }
+  }
+ ],
+ "places": [
+  {
+   "name": "London",
+   "country": "United Kingdom",
+   "lat": 51.51,
+   "lon": -0.13,
+   "region": "europe",
+   "rain": {
+    "annual": {
+     "mean": -9.54,
+     "perModel": {
+      "HadGEM3-GC31-MM": -13.62,
+      "CanESM5": -2.96,
+      "CESM2": -15.88,
+      "IPSL-CM6A-LR": -5.7
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 2.09,
+      "CanESM5": 2.04,
+      "CESM2": 1.91,
+      "IPSL-CM6A-LR": 2.01
+     }
+    },
+    "jja": {
+     "mean": -22.56,
+     "perModel": {
+      "HadGEM3-GC31-MM": -28.48,
+      "CanESM5": -11.29,
+      "CESM2": -38.3,
+      "IPSL-CM6A-LR": -12.16
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 1.75,
+      "CanESM5": 1.51,
+      "CESM2": 1.59,
+      "IPSL-CM6A-LR": 1.07
+     }
+    },
+    "djf": {
+     "mean": -2.18,
+     "perModel": {
+      "HadGEM3-GC31-MM": -1.04,
+      "CanESM5": 2.96,
+      "CESM2": -10.1,
+      "IPSL-CM6A-LR": -0.53
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 2.42,
+      "CanESM5": 2.45,
+      "CESM2": 2.68,
+      "IPSL-CM6A-LR": 2.53
+     }
+    }
+   }
+  },
+  {
+   "name": "Edinburgh",
+   "country": "United Kingdom",
+   "lat": 55.95,
+   "lon": -3.19,
+   "region": "europe",
+   "rain": {
+    "annual": {
+     "mean": -11.04,
+     "perModel": {
+      "HadGEM3-GC31-MM": -8.86,
+      "CanESM5": -6.45,
+      "CESM2": -21.93,
+      "IPSL-CM6A-LR": -6.94
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 2.61,
+      "CanESM5": 2.35,
+      "CESM2": 2.85,
+      "IPSL-CM6A-LR": 2.35
+     }
+    },
+    "jja": {
+     "mean": -24.07,
+     "perModel": {
+      "HadGEM3-GC31-MM": -21.29,
+      "CanESM5": -12.78,
+      "CESM2": -40.73,
+      "IPSL-CM6A-LR": -21.48
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 2.44,
+      "CanESM5": 2.05,
+      "CESM2": 2.33,
+      "IPSL-CM6A-LR": 1.95
+     }
+    },
+    "djf": {
+     "mean": -2.1,
+     "perModel": {
+      "HadGEM3-GC31-MM": 0.56,
+      "CanESM5": 0.04,
+      "CESM2": -12.68,
+      "IPSL-CM6A-LR": 3.68
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 2.88,
+      "CanESM5": 2.59,
+      "CESM2": 3.62,
+      "IPSL-CM6A-LR": 2.46
+     }
+    }
+   }
+  },
+  {
+   "name": "Dublin",
+   "country": "Ireland",
+   "lat": 53.35,
+   "lon": -6.26,
+   "region": "europe",
+   "rain": {
+    "annual": {
+     "mean": -10.2,
+     "perModel": {
+      "HadGEM3-GC31-MM": -12.02,
+      "CanESM5": -5.16,
+      "CESM2": -19.12,
+      "IPSL-CM6A-LR": -4.48
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 2.61,
+      "CanESM5": 2.89,
+      "CESM2": 2.77,
+      "IPSL-CM6A-LR": 2.68
+     }
+    },
+    "jja": {
+     "mean": -25.01,
+     "perModel": {
+      "HadGEM3-GC31-MM": -28.92,
+      "CanESM5": -12.25,
+      "CESM2": -39.84,
+      "IPSL-CM6A-LR": -19.02
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 2.29,
+      "CanESM5": 2.09,
+      "CESM2": 2.2,
+      "IPSL-CM6A-LR": 1.84
+     }
+    },
+    "djf": {
+     "mean": -1.37,
+     "perModel": {
+      "HadGEM3-GC31-MM": -1.3,
+      "CanESM5": 1.14,
+      "CESM2": -11.66,
+      "IPSL-CM6A-LR": 6.32
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 2.92,
+      "CanESM5": 3.57,
+      "CESM2": 3.73,
+      "IPSL-CM6A-LR": 3.03
+     }
+    }
+   }
+  },
+  {
+   "name": "Oslo",
+   "country": "Norway",
+   "lat": 59.91,
+   "lon": 10.75,
+   "region": "europe",
+   "rain": {
+    "annual": {
+     "mean": -20.12,
+     "perModel": {
+      "HadGEM3-GC31-MM": -22.11,
+      "CanESM5": -8.43,
+      "CESM2": -33.99,
+      "IPSL-CM6A-LR": -15.93
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 2.8,
+      "CanESM5": 3.34,
+      "CESM2": 2.58,
+      "IPSL-CM6A-LR": 2.78
+     }
+    },
+    "jja": {
+     "mean": -27.0,
+     "perModel": {
+      "HadGEM3-GC31-MM": -27.14,
+      "CanESM5": -16.44,
+      "CESM2": -37.06,
+      "IPSL-CM6A-LR": -27.35
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 3.33,
+      "CanESM5": 3.99,
+      "CESM2": 2.52,
+      "IPSL-CM6A-LR": 2.69
+     }
+    },
+    "djf": {
+     "mean": -16.53,
+     "perModel": {
+      "HadGEM3-GC31-MM": -17.79,
+      "CanESM5": -2.98,
+      "CESM2": -33.72,
+      "IPSL-CM6A-LR": -11.64
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 2.14,
+      "CanESM5": 3.26,
+      "CESM2": 3.0,
+      "IPSL-CM6A-LR": 2.5
+     }
+    }
+   }
+  },
+  {
+   "name": "Reykjavík",
+   "country": "Iceland",
+   "lat": 64.15,
+   "lon": -21.94,
+   "region": "europe",
+   "rain": {
+    "annual": {
+     "mean": -30.98,
+     "perModel": {
+      "HadGEM3-GC31-MM": -31.33,
+      "CanESM5": -18.61,
+      "CESM2": -54.92,
+      "IPSL-CM6A-LR": -19.05
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 4.74,
+      "CanESM5": 2.61,
+      "CESM2": 4.4,
+      "IPSL-CM6A-LR": 2.82
+     }
+    },
+    "jja": {
+     "mean": -25.34,
+     "perModel": {
+      "HadGEM3-GC31-MM": -32.86,
+      "CanESM5": -12.77,
+      "CESM2": -40.61,
+      "IPSL-CM6A-LR": -15.13
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 3.67,
+      "CanESM5": 1.89,
+      "CESM2": 2.71,
+      "IPSL-CM6A-LR": 2.33
+     }
+    },
+    "djf": {
+     "mean": -33.99,
+     "perModel": {
+      "HadGEM3-GC31-MM": -29.18,
+      "CanESM5": -23.08,
+      "CESM2": -61.3,
+      "IPSL-CM6A-LR": -22.4
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 5.74,
+      "CanESM5": 3.32,
+      "CESM2": 5.36,
+      "IPSL-CM6A-LR": 3.36
+     }
+    }
+   }
+  },
+  {
+   "name": "Amsterdam",
+   "country": "Netherlands",
+   "lat": 52.37,
+   "lon": 4.9,
+   "region": "europe",
+   "rain": {
+    "annual": {
+     "mean": -10.24,
+     "perModel": {
+      "HadGEM3-GC31-MM": -11.83,
+      "CanESM5": -5.3,
+      "CESM2": -19.21,
+      "IPSL-CM6A-LR": -4.61
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 2.54,
+      "CanESM5": 2.26,
+      "CESM2": 2.2,
+      "IPSL-CM6A-LR": 2.39
+     }
+    },
+    "jja": {
+     "mean": -24.61,
+     "perModel": {
+      "HadGEM3-GC31-MM": -26.86,
+      "CanESM5": -19.31,
+      "CESM2": -34.57,
+      "IPSL-CM6A-LR": -17.7
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 2.28,
+      "CanESM5": 1.83,
+      "CESM2": 1.63,
+      "IPSL-CM6A-LR": 1.15
+     }
+    },
+    "djf": {
+     "mean": -1.36,
+     "perModel": {
+      "HadGEM3-GC31-MM": -0.0,
+      "CanESM5": 3.77,
+      "CESM2": -11.61,
+      "IPSL-CM6A-LR": 2.4
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 3.06,
+      "CanESM5": 2.66,
+      "CESM2": 3.0,
+      "IPSL-CM6A-LR": 3.01
+     }
+    }
+   }
+  },
+  {
+   "name": "Paris",
+   "country": "France",
+   "lat": 48.86,
+   "lon": 2.35,
+   "region": "europe",
+   "rain": {
+    "annual": {
+     "mean": -10.61,
+     "perModel": {
+      "HadGEM3-GC31-MM": -13.84,
+      "CanESM5": -4.12,
+      "CESM2": -17.56,
+      "IPSL-CM6A-LR": -6.93
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 2.1,
+      "CanESM5": 2.57,
+      "CESM2": 2.03,
+      "IPSL-CM6A-LR": 3.07
+     }
+    },
+    "jja": {
+     "mean": -24.37,
+     "perModel": {
+      "HadGEM3-GC31-MM": -21.88,
+      "CanESM5": -15.28,
+      "CESM2": -40.99,
+      "IPSL-CM6A-LR": -19.33
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 1.78,
+      "CanESM5": 2.32,
+      "CESM2": 2.03,
+      "IPSL-CM6A-LR": 2.16
+     }
+    },
+    "djf": {
+     "mean": -4.46,
+     "perModel": {
+      "HadGEM3-GC31-MM": -9.22,
+      "CanESM5": 2.15,
+      "CESM2": -9.53,
+      "IPSL-CM6A-LR": -1.24
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 2.53,
+      "CanESM5": 3.05,
+      "CESM2": 2.72,
+      "IPSL-CM6A-LR": 3.92
+     }
+    }
+   }
+  },
+  {
+   "name": "Madrid",
+   "country": "Spain",
+   "lat": 40.42,
+   "lon": -3.7,
+   "region": "europe",
+   "rain": {
+    "annual": {
+     "mean": -20.3,
+     "perModel": {
+      "HadGEM3-GC31-MM": -21.37,
+      "CanESM5": -8.54,
+      "CESM2": -34.17,
+      "IPSL-CM6A-LR": -17.14
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 1.39,
+      "CanESM5": 2.03,
+      "CESM2": 1.48,
+      "IPSL-CM6A-LR": 2.96
+     }
+    },
+    "jja": {
+     "mean": -10.31,
+     "perModel": {
+      "HadGEM3-GC31-MM": 14.97,
+      "CanESM5": -7.49,
+      "CESM2": -39.75,
+      "IPSL-CM6A-LR": -8.98
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 0.66,
+      "CanESM5": 2.07,
+      "CESM2": 1.69,
+      "IPSL-CM6A-LR": 3.84
+     }
+    },
+    "djf": {
+     "mean": -22.57,
+     "perModel": {
+      "HadGEM3-GC31-MM": -33.24,
+      "CanESM5": -15.31,
+      "CESM2": -23.88,
+      "IPSL-CM6A-LR": -17.84
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 1.6,
+      "CanESM5": 1.8,
+      "CESM2": 1.71,
+      "IPSL-CM6A-LR": 2.53
+     }
+    }
+   }
+  },
+  {
+   "name": "Warsaw",
+   "country": "Poland",
+   "lat": 52.23,
+   "lon": 21.01,
+   "region": "europe",
+   "rain": {
+    "annual": {
+     "mean": -13.95,
+     "perModel": {
+      "HadGEM3-GC31-MM": -17.69,
+      "CanESM5": -9.02,
+      "CESM2": -16.24,
+      "IPSL-CM6A-LR": -12.87
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 1.95,
+      "CanESM5": 2.08,
+      "CESM2": 1.65,
+      "IPSL-CM6A-LR": 1.8
+     }
+    },
+    "jja": {
+     "mean": -19.91,
+     "perModel": {
+      "HadGEM3-GC31-MM": -25.0,
+      "CanESM5": -14.28,
+      "CESM2": -20.77,
+      "IPSL-CM6A-LR": -19.58
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 2.53,
+      "CanESM5": 3.0,
+      "CESM2": 1.88,
+      "IPSL-CM6A-LR": 1.98
+     }
+    },
+    "djf": {
+     "mean": -12.64,
+     "perModel": {
+      "HadGEM3-GC31-MM": -17.07,
+      "CanESM5": -5.29,
+      "CESM2": -16.71,
+      "IPSL-CM6A-LR": -11.52
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 1.8,
+      "CanESM5": 1.61,
+      "CESM2": 1.75,
+      "IPSL-CM6A-LR": 1.69
+     }
+    }
+   }
+  },
+  {
+   "name": "New York",
+   "country": "United States",
+   "lat": 40.71,
+   "lon": -74.01,
+   "region": "americas",
+   "rain": {
+    "annual": {
+     "mean": 0.46,
+     "perModel": {
+      "HadGEM3-GC31-MM": -0.64,
+      "CanESM5": -1.36,
+      "CESM2": -0.14,
+      "IPSL-CM6A-LR": 3.98
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 4.22,
+      "CanESM5": 3.58,
+      "CESM2": 3.66,
+      "IPSL-CM6A-LR": 3.16
+     }
+    },
+    "jja": {
+     "mean": -7.87,
+     "perModel": {
+      "HadGEM3-GC31-MM": -12.65,
+      "CanESM5": -3.9,
+      "CESM2": -11.69,
+      "IPSL-CM6A-LR": -3.22
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 4.9,
+      "CanESM5": 3.63,
+      "CESM2": 3.72,
+      "IPSL-CM6A-LR": 2.85
+     }
+    },
+    "djf": {
+     "mean": 7.24,
+     "perModel": {
+      "HadGEM3-GC31-MM": 6.33,
+      "CanESM5": 4.78,
+      "CESM2": 8.57,
+      "IPSL-CM6A-LR": 9.29
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 3.84,
+      "CanESM5": 3.54,
+      "CESM2": 3.99,
+      "IPSL-CM6A-LR": 3.33
+     }
+    }
+   }
+  },
+  {
+   "name": "Halifax",
+   "country": "Canada",
+   "lat": 44.65,
+   "lon": -63.57,
+   "region": "americas",
+   "rain": {
+    "annual": {
+     "mean": -3.13,
+     "perModel": {
+      "HadGEM3-GC31-MM": -0.96,
+      "CanESM5": 1.12,
+      "CESM2": -15.23,
+      "IPSL-CM6A-LR": 2.55
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 4.53,
+      "CanESM5": 3.93,
+      "CESM2": 4.35,
+      "IPSL-CM6A-LR": 4.38
+     }
+    },
+    "jja": {
+     "mean": -4.69,
+     "perModel": {
+      "HadGEM3-GC31-MM": -5.19,
+      "CanESM5": -1.28,
+      "CESM2": -11.41,
+      "IPSL-CM6A-LR": -0.87
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 4.3,
+      "CanESM5": 3.88,
+      "CESM2": 3.9,
+      "IPSL-CM6A-LR": 3.99
+     }
+    },
+    "djf": {
+     "mean": -2.84,
+     "perModel": {
+      "HadGEM3-GC31-MM": -0.34,
+      "CanESM5": 1.14,
+      "CESM2": -14.93,
+      "IPSL-CM6A-LR": 2.77
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 4.67,
+      "CanESM5": 4.31,
+      "CESM2": 5.13,
+      "IPSL-CM6A-LR": 5.03
+     }
+    }
+   }
+  },
+  {
+   "name": "Dakar",
+   "country": "Senegal",
+   "lat": 14.72,
+   "lon": -17.47,
+   "region": "africa",
+   "rain": {
+    "annual": {
+     "mean": null,
+     "perModel": {
+      "HadGEM3-GC31-MM": null,
+      "CanESM5": -36.75,
+      "CESM2": -76.75,
+      "IPSL-CM6A-LR": null
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 0.07,
+      "CanESM5": 0.57,
+      "CESM2": 1.26,
+      "IPSL-CM6A-LR": 0.18
+     }
+    },
+    "jja": {
+     "mean": null,
+     "perModel": {
+      "HadGEM3-GC31-MM": null,
+      "CanESM5": -39.84,
+      "CESM2": -72.45,
+      "IPSL-CM6A-LR": -59.83
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 0.11,
+      "CanESM5": 1.69,
+      "CESM2": 1.01,
+      "IPSL-CM6A-LR": 0.42
+     }
+    },
+    "djf": {
+     "mean": null,
+     "perModel": {
+      "HadGEM3-GC31-MM": null,
+      "CanESM5": null,
+      "CESM2": -38.14,
+      "IPSL-CM6A-LR": null
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 0.08,
+      "CanESM5": 0.01,
+      "CESM2": 0.33,
+      "IPSL-CM6A-LR": 0.01
+     }
+    }
+   }
+  },
+  {
+   "name": "Bamako",
+   "country": "Mali",
+   "lat": 12.64,
+   "lon": -8.0,
+   "region": "africa",
+   "rain": {
+    "annual": {
+     "mean": -33.78,
+     "perModel": {
+      "HadGEM3-GC31-MM": -29.38,
+      "CanESM5": -13.81,
+      "CESM2": -62.4,
+      "IPSL-CM6A-LR": -29.53
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 2.25,
+      "CanESM5": 1.69,
+      "CESM2": 2.76,
+      "IPSL-CM6A-LR": 2.09
+     }
+    },
+    "jja": {
+     "mean": -31.75,
+     "perModel": {
+      "HadGEM3-GC31-MM": -29.19,
+      "CanESM5": -15.47,
+      "CESM2": -56.22,
+      "IPSL-CM6A-LR": -26.11
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 5.73,
+      "CanESM5": 4.84,
+      "CESM2": 4.75,
+      "IPSL-CM6A-LR": 5.66
+     }
+    },
+    "djf": {
+     "mean": null,
+     "perModel": {
+      "HadGEM3-GC31-MM": null,
+      "CanESM5": null,
+      "CESM2": null,
+      "IPSL-CM6A-LR": null
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 0.05,
+      "CanESM5": 0.0,
+      "CESM2": 0.12,
+      "IPSL-CM6A-LR": 0.0
+     }
+    }
+   }
+  },
+  {
+   "name": "Niamey",
+   "country": "Niger",
+   "lat": 13.51,
+   "lon": 2.11,
+   "region": "africa",
+   "rain": {
+    "annual": {
+     "mean": -40.56,
+     "perModel": {
+      "HadGEM3-GC31-MM": -39.81,
+      "CanESM5": -10.83,
+      "CESM2": -67.86,
+      "IPSL-CM6A-LR": -43.74
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 1.03,
+      "CanESM5": 1.06,
+      "CESM2": 1.18,
+      "IPSL-CM6A-LR": 0.75
+     }
+    },
+    "jja": {
+     "mean": -37.04,
+     "perModel": {
+      "HadGEM3-GC31-MM": -39.06,
+      "CanESM5": -8.89,
+      "CESM2": -60.61,
+      "IPSL-CM6A-LR": -39.59
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 2.85,
+      "CanESM5": 2.88,
+      "CESM2": 2.18,
+      "IPSL-CM6A-LR": 2.09
+     }
+    },
+    "djf": {
+     "mean": null,
+     "perModel": {
+      "HadGEM3-GC31-MM": null,
+      "CanESM5": null,
+      "CESM2": null,
+      "IPSL-CM6A-LR": null
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 0.01,
+      "CanESM5": 0.0,
+      "CESM2": 0.03,
+      "IPSL-CM6A-LR": 0.0
+     }
+    }
+   }
+  },
+  {
+   "name": "Kano",
+   "country": "Nigeria",
+   "lat": 12.0,
+   "lon": 8.52,
+   "region": "africa",
+   "rain": {
+    "annual": {
+     "mean": -39.15,
+     "perModel": {
+      "HadGEM3-GC31-MM": -45.94,
+      "CanESM5": -13.55,
+      "CESM2": -59.98,
+      "IPSL-CM6A-LR": -37.15
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 1.29,
+      "CanESM5": 1.32,
+      "CESM2": 2.0,
+      "IPSL-CM6A-LR": 1.35
+     }
+    },
+    "jja": {
+     "mean": -36.12,
+     "perModel": {
+      "HadGEM3-GC31-MM": -47.54,
+      "CanESM5": -11.97,
+      "CESM2": -52.14,
+      "IPSL-CM6A-LR": -32.84
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 3.77,
+      "CanESM5": 3.58,
+      "CESM2": 4.0,
+      "IPSL-CM6A-LR": 3.67
+     }
+    },
+    "djf": {
+     "mean": null,
+     "perModel": {
+      "HadGEM3-GC31-MM": null,
+      "CanESM5": null,
+      "CESM2": null,
+      "IPSL-CM6A-LR": null
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 0.0,
+      "CanESM5": 0.0,
+      "CESM2": 0.03,
+      "IPSL-CM6A-LR": 0.0
+     }
+    }
+   }
+  },
+  {
+   "name": "Accra",
+   "country": "Ghana",
+   "lat": 5.6,
+   "lon": -0.19,
+   "region": "africa",
+   "rain": {
+    "annual": {
+     "mean": -5.24,
+     "perModel": {
+      "HadGEM3-GC31-MM": -0.95,
+      "CanESM5": -2.76,
+      "CESM2": -17.93,
+      "IPSL-CM6A-LR": 0.68
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 0.87,
+      "CanESM5": 5.28,
+      "CESM2": 3.45,
+      "IPSL-CM6A-LR": 3.52
+     }
+    },
+    "jja": {
+     "mean": 6.9,
+     "perModel": {
+      "HadGEM3-GC31-MM": 44.38,
+      "CanESM5": 1.21,
+      "CESM2": -24.6,
+      "IPSL-CM6A-LR": 6.59
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 1.07,
+      "CanESM5": 10.21,
+      "CESM2": 7.75,
+      "IPSL-CM6A-LR": 6.91
+     }
+    },
+    "djf": {
+     "mean": null,
+     "perModel": {
+      "HadGEM3-GC31-MM": -54.38,
+      "CanESM5": null,
+      "CESM2": -58.46,
+      "IPSL-CM6A-LR": -40.57
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 0.51,
+      "CanESM5": 0.19,
+      "CESM2": 1.02,
+      "IPSL-CM6A-LR": 0.71
+     }
+    }
+   }
+  },
+  {
+   "name": "Addis Ababa",
+   "country": "Ethiopia",
+   "lat": 9.03,
+   "lon": 38.74,
+   "region": "africa",
+   "rain": {
+    "annual": {
+     "mean": -16.44,
+     "perModel": {
+      "HadGEM3-GC31-MM": -18.88,
+      "CanESM5": -6.99,
+      "CESM2": -24.33,
+      "IPSL-CM6A-LR": -15.57
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 3.46,
+      "CanESM5": 2.95,
+      "CESM2": 5.41,
+      "IPSL-CM6A-LR": 4.25
+     }
+    },
+    "jja": {
+     "mean": -18.05,
+     "perModel": {
+      "HadGEM3-GC31-MM": -22.02,
+      "CanESM5": -10.66,
+      "CESM2": -25.49,
+      "IPSL-CM6A-LR": -14.04
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 7.78,
+      "CanESM5": 5.7,
+      "CESM2": 8.85,
+      "IPSL-CM6A-LR": 9.41
+     }
+    },
+    "djf": {
+     "mean": null,
+     "perModel": {
+      "HadGEM3-GC31-MM": -32.35,
+      "CanESM5": null,
+      "CESM2": -22.64,
+      "IPSL-CM6A-LR": -14.14
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 0.64,
+      "CanESM5": 0.29,
+      "CESM2": 1.21,
+      "IPSL-CM6A-LR": 0.31
+     }
+    }
+   }
+  },
+  {
+   "name": "Mumbai",
+   "country": "India",
+   "lat": 19.08,
+   "lon": 72.88,
+   "region": "asia",
+   "rain": {
+    "annual": {
+     "mean": -38.47,
+     "perModel": {
+      "HadGEM3-GC31-MM": -51.93,
+      "CanESM5": -24.17,
+      "CESM2": -55.16,
+      "IPSL-CM6A-LR": -22.62
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 3.63,
+      "CanESM5": 0.75,
+      "CESM2": 2.28,
+      "IPSL-CM6A-LR": 3.02
+     }
+    },
+    "jja": {
+     "mean": -43.29,
+     "perModel": {
+      "HadGEM3-GC31-MM": -53.21,
+      "CanESM5": -31.31,
+      "CESM2": -63.55,
+      "IPSL-CM6A-LR": -25.11
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 12.66,
+      "CanESM5": 1.61,
+      "CESM2": 4.67,
+      "IPSL-CM6A-LR": 8.73
+     }
+    },
+    "djf": {
+     "mean": null,
+     "perModel": {
+      "HadGEM3-GC31-MM": null,
+      "CanESM5": -12.37,
+      "CESM2": -37.61,
+      "IPSL-CM6A-LR": null
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 0.15,
+      "CanESM5": 0.31,
+      "CESM2": 0.36,
+      "IPSL-CM6A-LR": 0.16
+     }
+    }
+   }
+  },
+  {
+   "name": "Delhi",
+   "country": "India",
+   "lat": 28.61,
+   "lon": 77.21,
+   "region": "asia",
+   "rain": {
+    "annual": {
+     "mean": -32.32,
+     "perModel": {
+      "HadGEM3-GC31-MM": -39.98,
+      "CanESM5": -6.58,
+      "CESM2": -52.54,
+      "IPSL-CM6A-LR": -30.19
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 1.11,
+      "CanESM5": 0.43,
+      "CESM2": 0.96,
+      "IPSL-CM6A-LR": 1.2
+     }
+    },
+    "jja": {
+     "mean": -42.66,
+     "perModel": {
+      "HadGEM3-GC31-MM": -57.3,
+      "CanESM5": -11.41,
+      "CESM2": -66.41,
+      "IPSL-CM6A-LR": -35.51
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 2.38,
+      "CanESM5": 0.33,
+      "CESM2": 1.24,
+      "IPSL-CM6A-LR": 2.78
+     }
+    },
+    "djf": {
+     "mean": -9.26,
+     "perModel": {
+      "HadGEM3-GC31-MM": -23.31,
+      "CanESM5": -7.5,
+      "CESM2": -11.22,
+      "IPSL-CM6A-LR": 5.01
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 0.91,
+      "CanESM5": 0.61,
+      "CESM2": 0.41,
+      "IPSL-CM6A-LR": 0.51
+     }
+    }
+   }
+  },
+  {
+   "name": "Dhaka",
+   "country": "Bangladesh",
+   "lat": 23.81,
+   "lon": 90.41,
+   "region": "asia",
+   "rain": {
+    "annual": {
+     "mean": -10.7,
+     "perModel": {
+      "HadGEM3-GC31-MM": -14.77,
+      "CanESM5": -6.58,
+      "CESM2": -15.6,
+      "IPSL-CM6A-LR": -5.87
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 6.63,
+      "CanESM5": 3.55,
+      "CESM2": 3.56,
+      "IPSL-CM6A-LR": 4.31
+     }
+    },
+    "jja": {
+     "mean": -19.95,
+     "perModel": {
+      "HadGEM3-GC31-MM": -25.04,
+      "CanESM5": -10.08,
+      "CESM2": -35.58,
+      "IPSL-CM6A-LR": -9.08
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 14.76,
+      "CanESM5": 8.07,
+      "CESM2": 5.21,
+      "IPSL-CM6A-LR": 10.39
+     }
+    },
+    "djf": {
+     "mean": 42.47,
+     "perModel": {
+      "HadGEM3-GC31-MM": 40.92,
+      "CanESM5": 3.6,
+      "CESM2": 92.59,
+      "IPSL-CM6A-LR": 32.75
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 1.31,
+      "CanESM5": 0.69,
+      "CESM2": 0.84,
+      "IPSL-CM6A-LR": 0.57
+     }
+    }
+   }
+  },
+  {
+   "name": "Karachi",
+   "country": "Pakistan",
+   "lat": 24.86,
+   "lon": 67.01,
+   "region": "asia",
+   "rain": {
+    "annual": {
+     "mean": null,
+     "perModel": {
+      "HadGEM3-GC31-MM": null,
+      "CanESM5": null,
+      "CESM2": null,
+      "IPSL-CM6A-LR": -59.45
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 0.19,
+      "CanESM5": 0.15,
+      "CESM2": 0.25,
+      "IPSL-CM6A-LR": 0.4
+     }
+    },
+    "jja": {
+     "mean": -38.73,
+     "perModel": {
+      "HadGEM3-GC31-MM": -35.99,
+      "CanESM5": -11.18,
+      "CESM2": -44.47,
+      "IPSL-CM6A-LR": -63.28
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 0.34,
+      "CanESM5": 0.38,
+      "CESM2": 0.3,
+      "IPSL-CM6A-LR": 0.86
+     }
+    },
+    "djf": {
+     "mean": null,
+     "perModel": {
+      "HadGEM3-GC31-MM": null,
+      "CanESM5": null,
+      "CESM2": null,
+      "IPSL-CM6A-LR": null
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 0.18,
+      "CanESM5": 0.05,
+      "CESM2": 0.13,
+      "IPSL-CM6A-LR": 0.08
+     }
+    }
+   }
+  },
+  {
+   "name": "Mexico City",
+   "country": "Mexico",
+   "lat": 19.43,
+   "lon": -99.13,
+   "region": "americas",
+   "rain": {
+    "annual": {
+     "mean": -4.77,
+     "perModel": {
+      "HadGEM3-GC31-MM": 0.73,
+      "CanESM5": -2.19,
+      "CESM2": -12.55,
+      "IPSL-CM6A-LR": -5.08
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 3.26,
+      "CanESM5": 7.36,
+      "CESM2": 3.72,
+      "IPSL-CM6A-LR": 6.33
+     }
+    },
+    "jja": {
+     "mean": 0.1,
+     "perModel": {
+      "HadGEM3-GC31-MM": 6.33,
+      "CanESM5": -2.94,
+      "CESM2": 3.91,
+      "IPSL-CM6A-LR": -6.9
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 6.21,
+      "CanESM5": 15.25,
+      "CESM2": 5.18,
+      "IPSL-CM6A-LR": 12.13
+     }
+    },
+    "djf": {
+     "mean": 0.8,
+     "perModel": {
+      "HadGEM3-GC31-MM": 11.15,
+      "CanESM5": -8.95,
+      "CESM2": -3.66,
+      "IPSL-CM6A-LR": 4.68
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 0.63,
+      "CanESM5": 2.34,
+      "CESM2": 1.46,
+      "IPSL-CM6A-LR": 2.33
+     }
+    }
+   }
+  },
+  {
+   "name": "Guatemala City",
+   "country": "Guatemala",
+   "lat": 14.63,
+   "lon": -90.51,
+   "region": "americas",
+   "rain": {
+    "annual": {
+     "mean": -21.71,
+     "perModel": {
+      "HadGEM3-GC31-MM": -17.08,
+      "CanESM5": -5.0,
+      "CESM2": -40.2,
+      "IPSL-CM6A-LR": -24.57
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 3.82,
+      "CanESM5": 6.17,
+      "CESM2": 4.69,
+      "IPSL-CM6A-LR": 6.96
+     }
+    },
+    "jja": {
+     "mean": -17.19,
+     "perModel": {
+      "HadGEM3-GC31-MM": -11.57,
+      "CanESM5": 0.12,
+      "CESM2": -31.61,
+      "IPSL-CM6A-LR": -25.72
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 7.58,
+      "CanESM5": 12.39,
+      "CESM2": 6.95,
+      "IPSL-CM6A-LR": 12.81
+     }
+    },
+    "djf": {
+     "mean": null,
+     "perModel": {
+      "HadGEM3-GC31-MM": null,
+      "CanESM5": -14.31,
+      "CESM2": -57.48,
+      "IPSL-CM6A-LR": -17.33
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 0.27,
+      "CanESM5": 0.8,
+      "CESM2": 1.11,
+      "IPSL-CM6A-LR": 1.13
+     }
+    }
+   }
+  },
+  {
+   "name": "Kingston",
+   "country": "Jamaica",
+   "lat": 17.97,
+   "lon": -76.79,
+   "region": "americas",
+   "rain": {
+    "annual": {
+     "mean": -20.73,
+     "perModel": {
+      "HadGEM3-GC31-MM": -22.03,
+      "CanESM5": -17.63,
+      "CESM2": -31.18,
+      "IPSL-CM6A-LR": -12.06
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 3.36,
+      "CanESM5": 3.83,
+      "CESM2": 3.27,
+      "IPSL-CM6A-LR": 2.65
+     }
+    },
+    "jja": {
+     "mean": -32.6,
+     "perModel": {
+      "HadGEM3-GC31-MM": -38.4,
+      "CanESM5": -31.23,
+      "CESM2": -42.38,
+      "IPSL-CM6A-LR": -18.38
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 4.71,
+      "CanESM5": 6.43,
+      "CESM2": 3.23,
+      "IPSL-CM6A-LR": 3.37
+     }
+    },
+    "djf": {
+     "mean": -2.71,
+     "perModel": {
+      "HadGEM3-GC31-MM": 7.66,
+      "CanESM5": -1.49,
+      "CESM2": -21.57,
+      "IPSL-CM6A-LR": 4.57
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 1.63,
+      "CanESM5": 1.7,
+      "CESM2": 2.67,
+      "IPSL-CM6A-LR": 1.69
+     }
+    }
+   }
+  },
+  {
+   "name": "Caracas",
+   "country": "Venezuela",
+   "lat": 10.48,
+   "lon": -66.9,
+   "region": "americas",
+   "rain": {
+    "annual": {
+     "mean": -31.56,
+     "perModel": {
+      "HadGEM3-GC31-MM": -31.11,
+      "CanESM5": -26.75,
+      "CESM2": -24.79,
+      "IPSL-CM6A-LR": -43.59
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 2.88,
+      "CanESM5": 2.34,
+      "CESM2": 3.31,
+      "IPSL-CM6A-LR": 2.53
+     }
+    },
+    "jja": {
+     "mean": -41.45,
+     "perModel": {
+      "HadGEM3-GC31-MM": -32.92,
+      "CanESM5": -30.83,
+      "CESM2": -51.1,
+      "IPSL-CM6A-LR": -50.95
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 4.98,
+      "CanESM5": 6.39,
+      "CESM2": 5.15,
+      "IPSL-CM6A-LR": 4.33
+     }
+    },
+    "djf": {
+     "mean": -32.36,
+     "perModel": {
+      "HadGEM3-GC31-MM": -45.09,
+      "CanESM5": -6.4,
+      "CESM2": -23.06,
+      "IPSL-CM6A-LR": -54.89
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 1.17,
+      "CanESM5": 0.5,
+      "CESM2": 2.17,
+      "IPSL-CM6A-LR": 0.88
+     }
+    }
+   }
+  },
+  {
+   "name": "Fortaleza",
+   "country": "Brazil",
+   "lat": -3.73,
+   "lon": -38.52,
+   "region": "americas",
+   "rain": {
+    "annual": {
+     "mean": 25.69,
+     "perModel": {
+      "HadGEM3-GC31-MM": 43.34,
+      "CanESM5": 10.18,
+      "CESM2": 42.88,
+      "IPSL-CM6A-LR": 6.34
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 5.13,
+      "CanESM5": 3.56,
+      "CESM2": 3.74,
+      "IPSL-CM6A-LR": 5.92
+     }
+    },
+    "jja": {
+     "mean": 102.76,
+     "perModel": {
+      "HadGEM3-GC31-MM": 107.56,
+      "CanESM5": 35.45,
+      "CESM2": 222.75,
+      "IPSL-CM6A-LR": 45.3
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 1.34,
+      "CanESM5": 0.56,
+      "CESM2": 1.8,
+      "IPSL-CM6A-LR": 3.22
+     }
+    },
+    "djf": {
+     "mean": 36.93,
+     "perModel": {
+      "HadGEM3-GC31-MM": 52.11,
+      "CanESM5": 18.27,
+      "CESM2": 70.7,
+      "IPSL-CM6A-LR": 6.64
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 7.51,
+      "CanESM5": 4.0,
+      "CESM2": 2.65,
+      "IPSL-CM6A-LR": 6.26
+     }
+    }
+   }
+  },
+  {
+   "name": "Manaus",
+   "country": "Brazil",
+   "lat": -3.12,
+   "lon": -60.02,
+   "region": "americas",
+   "rain": {
+    "annual": {
+     "mean": 3.99,
+     "perModel": {
+      "HadGEM3-GC31-MM": -1.16,
+      "CanESM5": 5.7,
+      "CESM2": 6.41,
+      "IPSL-CM6A-LR": 5.01
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 5.95,
+      "CanESM5": 4.03,
+      "CESM2": 7.3,
+      "IPSL-CM6A-LR": 5.7
+     }
+    },
+    "jja": {
+     "mean": 52.24,
+     "perModel": {
+      "HadGEM3-GC31-MM": 50.48,
+      "CanESM5": 36.99,
+      "CESM2": 100.93,
+      "IPSL-CM6A-LR": 20.56
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 4.95,
+      "CanESM5": 2.19,
+      "CESM2": 3.94,
+      "IPSL-CM6A-LR": 4.71
+     }
+    },
+    "djf": {
+     "mean": -14.35,
+     "perModel": {
+      "HadGEM3-GC31-MM": -22.11,
+      "CanESM5": -16.34,
+      "CESM2": -17.64,
+      "IPSL-CM6A-LR": -1.31
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 5.47,
+      "CanESM5": 3.19,
+      "CESM2": 10.69,
+      "IPSL-CM6A-LR": 6.32
+     }
+    }
+   }
+  },
+  {
+   "name": "São Paulo",
+   "country": "Brazil",
+   "lat": -23.55,
+   "lon": -46.63,
+   "region": "americas",
+   "rain": {
+    "annual": {
+     "mean": -1.5,
+     "perModel": {
+      "HadGEM3-GC31-MM": -8.13,
+      "CanESM5": -1.24,
+      "CESM2": 3.68,
+      "IPSL-CM6A-LR": -0.32
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 6.7,
+      "CanESM5": 4.67,
+      "CESM2": 3.93,
+      "IPSL-CM6A-LR": 3.6
+     }
+    },
+    "jja": {
+     "mean": -4.38,
+     "perModel": {
+      "HadGEM3-GC31-MM": -15.61,
+      "CanESM5": -1.07,
+      "CESM2": 13.98,
+      "IPSL-CM6A-LR": -14.82
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 3.2,
+      "CanESM5": 1.35,
+      "CESM2": 1.18,
+      "IPSL-CM6A-LR": 1.05
+     }
+    },
+    "djf": {
+     "mean": -0.66,
+     "perModel": {
+      "HadGEM3-GC31-MM": -5.26,
+      "CanESM5": -1.73,
+      "CESM2": 2.7,
+      "IPSL-CM6A-LR": 1.64
+     },
+     "controlMmPerDay": {
+      "HadGEM3-GC31-MM": 10.73,
+      "CanESM5": 8.85,
+      "CESM2": 7.2,
+      "IPSL-CM6A-LR": 6.72
+     }
+    }
+   }
+  }
+ ],
+ "validation": {
+  "West African monsoon": {
+   "ensembleMeanOfPercent": -28.7,
+   "perModel": {
+    "HadGEM3-GC31-MM": -28.2,
+    "CanESM5": -11.3,
+    "CESM2": -48.9,
+    "IPSL-CM6A-LR": -26.3
+   },
+   "published": -29.07,
+   "box": {
+    "lon": [
+     -15,
+     15
+    ],
+    "lat": [
+     5,
+     18
+    ],
+    "published": -29.07
+   }
+  },
+  "Indian summer monsoon": {
+   "ensembleMeanOfPercent": -23.5,
+   "perModel": {
+    "HadGEM3-GC31-MM": -30.3,
+    "CanESM5": -10.0,
+    "CESM2": -37.5,
+    "IPSL-CM6A-LR": -16.1
+   },
+   "published": -18.76,
+   "box": {
+    "lon": [
+     70,
+     90
+    ],
+    "lat": [
+     10,
+     28
+    ],
+    "published": -18.76
+   }
+  },
+  "Southern Amazon": {
+   "ensembleMeanOfPercent": 12.3,
+   "perModel": {
+    "HadGEM3-GC31-MM": 13.6,
+    "CanESM5": 5.2,
+    "CESM2": 23.7,
+    "IPSL-CM6A-LR": 6.6
+   },
+   "published": 43.79,
+   "box": {
+    "lon": [
+     -65,
+     -45
+    ],
+    "lat": [
+     -15,
+     0
+    ],
+    "published": 43.79
+   }
+  }
+ }
+}

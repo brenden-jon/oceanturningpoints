@@ -1,0 +1,18 @@
+.page { padding-bottom: 5rem; }
+.head { padding: clamp(2.5rem, 6vw, 4.5rem) 0 2rem; display: grid; gap: 1rem; }
+.head h1 { max-width: 18ch; }
+.grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; }
+.lead { font-family: var(--serif); font-size: 1.3rem; line-height: 1.5; color: var(--ink); }
+.grid h2 { font-size: var(--step-2); }
+.links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; font-weight: 600; font-size: 0.95rem; }
+.pubs { border-top: 2px solid var(--ink); padding-top: 1rem; position: sticky; top: 88px; }
+.pubs ol { list-style: none; margin: 1rem 0; padding: 0; display: grid; gap: 0; }
+.pubs li { display: grid; gap: 0.2rem; padding: 0.8rem 0; border-bottom: 1px solid var(--rule); }
+.pubTitle { font-family: var(--serif); font-size: 1.05rem; line-height: 1.3; }
+.pubTitle a { color: var(--ink); text-decoration: none; }
+.pubTitle a:hover { color: var(--atlantic); text-decoration: underline; }
+.pubMeta { font-size: 0.82rem; color: var(--muted); line-height: 1.45; }
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; }
+  .pubs { position: static; }
+}
