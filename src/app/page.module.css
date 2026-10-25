@@ -22,7 +22,7 @@
 .plan p { margin: 0; color: var(--text-2); font-size: 0.95rem; }
 .when { font-size: 0.8125rem; font-weight: 600; color: var(--accent); }
 @media (max-width: 1000px) { .plan { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 560px) { .plan { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .plan { grid-template-columns: minmax(0, 1fr); } }
 .featured { position: relative; }
 .featureGrid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: clamp(2.5rem, 6vw, 5rem); align-items: center; }
 .featureText { display: grid; gap: 1rem; justify-items: start; }
@@ -63,10 +63,10 @@
   .principles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 860px) {
-  .featureGrid, .peopleGrid { grid-template-columns: 1fr; }
+  .featureGrid, .peopleGrid { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 560px) {
-  .tiles, .principles { grid-template-columns: 1fr; }
+  .tiles, .principles { grid-template-columns: minmax(0, 1fr); }
   .facts div { grid-template-columns: 5.2rem 1fr; }
   .facts dt { font-size: 1.6rem; }
 }

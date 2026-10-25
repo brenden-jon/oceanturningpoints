@@ -116,6 +116,7 @@ h3, .h3 { font-size: 1.3rem; line-height: 1.25; letter-spacing: -0.015em; font-w
 
 .more { font-weight: 500; white-space: nowrap; }
 .more::after { content: " ›"; }
+@media (max-width: 480px) { .more { white-space: normal; } }
 
 .aside-note { font-size: 0.9375rem; line-height: 1.55; color: var(--text-2); background: var(--bg-alt); border-radius: var(--radius-s); padding: 1rem 1.15rem; }
 .aside-note--caveat { background: #fbf1ec; color: #6e3420; }

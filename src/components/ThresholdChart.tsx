@@ -12,8 +12,8 @@ export interface Threshold { id: string; label: string; central: number; low: nu
 
 export const OCEAN_THRESHOLDS: Threshold[] = [
   { id: "coral", label: "Warm-water coral reefs", central: 1.2, low: 1.0, high: 1.5, timescale: "about 10 years", href: "/changes/coral-reefs/" },
-  { id: "greenland", label: "Greenland ice sheet", central: 1.5, low: 0.8, high: 3.4, timescale: "thousands of years", href: "/science/ice-sheets/" },
-  { id: "wais", label: "West Antarctic ice sheet", central: 1.5, low: 1.0, high: 3.0, timescale: "about 2,000 years", href: "/science/ice-sheets/" },
+  { id: "greenland", label: "Greenland ice sheet", central: 1.5, low: 0.8, high: 3.4, timescale: "thousands of years", href: "/changes/ice-sheets/" },
+  { id: "wais", label: "West Antarctic ice sheet", central: 1.5, low: 1.0, high: 3.0, timescale: "about 2,000 years", href: "/changes/ice-sheets/" },
   { id: "spg", label: "Subpolar gyre convection", central: 1.8, low: 1.1, high: 3.8, timescale: "about 10 years", href: "/science/subpolar-gyre/" },
   { id: "amoc", label: "Atlantic overturning circulation", central: 4.0, low: 1.4, high: 8.0, timescale: "about 50 years", note: "collapse cannot be ruled out below 2°C", href: "/changes/atlantic-circulation/" },
 ];

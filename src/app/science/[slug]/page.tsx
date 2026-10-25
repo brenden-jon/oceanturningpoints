@@ -152,7 +152,7 @@ function TopicVisual({ slug, live, explorer }: { slug: string; live?: { layer: "
     body = (<figure className={styles.visualFig}><SeaIceChart h={ice.antarctic} name="Antarctic" y={[0, 24]} /><figcaption className="small faint">NSIDC Sea Ice Index, version 4. Updated daily.</figcaption></figure>);
   } else if (slug === "ice-sheets") {
     const sl = JSON.parse(fs.readFileSync(path.join(process.cwd(), "public", "data", "sealevel", "sealevel.json"), "utf8"));
-    caption = "Ice lost from Greenland and Antarctica so far, and how far the sea could rise by 2150.";
+    caption = "Ice lost from Greenland and Antarctica so far, and how far the sea could rise by 2300 if they destabilise.";
     body = (<div className={styles.visualPair}><div className={styles.visualFig}><IceSheetChart d={sl} /></div><div className={styles.visualFig}><GlobalProjectionChart d={sl} /></div></div>);
   } else if (slug === "subpolar-gyre") {
     caption = "Today’s sea-surface temperature compared with normal across the North Atlantic.";

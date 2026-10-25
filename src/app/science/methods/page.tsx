@@ -20,7 +20,11 @@ const DATA = [
   { name: "Blended near-real-time surface currents", who: "NOAA CoastWatch", use: "Animated currents (daily)", licence: "Public domain", url: "https://coastwatch.noaa.gov/erddap/griddap/noaacwBLENDEDNRTcurrentsDaily.html" },
   { name: "ENSO indices and diagnostic discussion", who: "NOAA Climate Prediction Center", use: "El Niño status and charts (daily)", licence: "Public domain", url: "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/ensodisc.shtml" },
   { name: "Sea Ice Index, version 4", who: "National Snow and Ice Data Center", use: "Sea-ice charts (daily)", licence: "Free with citation", doi: "10.7265/a98x-0f50" },
-  { name: "World Database on Protected Areas", who: "UNEP-WCMC and IUCN, Protected Planet", use: "Marine protected areas, shown via UNEP-WCMC’s map service", licence: "Non-commercial use with attribution", url: "https://www.protectedplanet.net/" },
+  { name: "Coral Reef Watch regional virtual stations v3.1", who: "NOAA Coral Reef Watch", use: "Heat stress at 214 reef regions (weekly)", licence: "Use without restriction, with credit", doi: "10.3390/rs12233856" },
+  { name: "IPCC AR6 sea-level projections", who: "Garner, Kopp et al.", use: "Global and city sea-level projections to 2300", licence: "CC BY 4.0", doi: "10.5281/zenodo.6382554" },
+  { name: "IMBIE ice-sheet mass balance 1972–2023", who: "Otosaka, Shepherd et al., IMBIE team", use: "Observed ice loss", licence: "Open Government Licence v3.0", doi: "10.5285/128c5e33-5224-4197-82f0-19dcc95b80a0" },
+  { name: "Protected Planet: World Database on Protected and Conserved Areas (WDPCA)", who: "UNEP-WCMC and IUCN", use: "Map of marine protected areas, via UNEP-WCMC’s map service; coverage statistics", licence: "Non-commercial; display only, not redistributed", url: "https://www.protectedplanet.net/" },
+  { name: "MPAtlas", who: "Marine Conservation Institute", use: "Level of protection (MPA Guide)", licence: "Non-commercial", url: "https://mpatlas.org/" },
   { name: "Blue Marble: Shaded Relief and Bathymetry", who: "NASA Earth Observatory, via NASA GIBS", use: "Earth imagery", licence: "Public domain (NASA)", url: "https://earthobservatory.nasa.gov/features/BlueMarble" },
   { name: "Natural Earth coastlines, land and borders", who: "Natural Earth", use: "Base map lines", licence: "Public domain", url: "https://www.naturalearthdata.com/" },
 ];

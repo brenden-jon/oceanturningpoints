@@ -15,10 +15,10 @@
 .charts figure { margin: 0; background: var(--bg); border-radius: var(--radius); padding: 1.2rem 1.2rem 0.6rem; }
 .charts figcaption { margin-bottom: 0.4rem; font-size: 0.95rem; }
 .updated { padding-top: 1.5rem; }
-@media (max-width: 900px) { .ensoGrid { grid-template-columns: 1fr; } }
+@media (max-width: 900px) { .ensoGrid { grid-template-columns: minmax(0, 1fr); } }
 .iceGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
 .iceGrid figure { margin: 0; background: var(--bg-alt); border-radius: var(--radius); padding: 1.2rem 1.2rem 0.6rem; }
 .iceGrid figcaption { margin-bottom: 0.4rem; font-size: 0.95rem; color: var(--text-2); }
 .iceGrid figcaption strong { color: var(--text); }
 .iceText { color: var(--text-2); max-width: 75ch; margin: 1.5rem 0 0; }
-@media (max-width: 900px) { .iceGrid { grid-template-columns: 1fr; } }
+@media (max-width: 900px) { .iceGrid { grid-template-columns: minmax(0, 1fr); } }

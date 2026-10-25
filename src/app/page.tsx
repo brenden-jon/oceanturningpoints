@@ -88,7 +88,7 @@ export default function Home() {
             </li>
             <li>
               <span className={styles.when}>Thresholds near today’s warming</span>
-              <h3><Link href="/changes/sea-level/">Ice sheets passing a tipping point</Link></h3>
+              <h3><Link href="/changes/ice-sheets/">Ice sheets passing a tipping point</Link></h3>
               <p>Loss of the Greenland or West Antarctic ice sheet would commit the world to metres of sea-level rise over centuries. Keep long-lived coastal assets adaptable.</p>
             </li>
             <li>
@@ -150,7 +150,7 @@ export default function Home() {
           <ul className={styles.tiles}>
             {topics.map((t) => (
               <li key={t.slug}>
-                <Link href={t.slug === "amoc" ? "/changes/atlantic-circulation/" : t.slug === "coral-reefs" ? "/changes/coral-reefs/" : t.slug === "ice-sheets" ? "/changes/sea-level/" : `/science/${t.slug}/`} className={styles.tile}>
+                <Link href={t.slug === "amoc" ? "/changes/atlantic-circulation/" : t.slug === "coral-reefs" ? "/changes/coral-reefs/" : t.slug === "ice-sheets" ? "/changes/ice-sheets/" : `/science/${t.slug}/`} className={styles.tile}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={asset(`/img/topics/${t.slug}.jpg`)} alt="" width={1200} height={800} loading="lazy" />
                   <span className={styles.tileTitle}>{t.title}</span>
@@ -183,7 +183,18 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section" aria-labelledby="how">
+      <section className="section" aria-labelledby="act">
+        <div className="wrap">
+          <h2 id="act" className={styles.h2}>What can be done</h2>
+          <ul className={styles.principles}>
+            <li><h3><Link href="/responses/#warming">Limit warming</Link></h3><p>Today’s policies lead to about 2.8°C, past the thresholds for reefs and the ice sheets. See how far emissions must fall, and how fast.</p></li>
+            <li><h3><Link href="/responses/#protect">Protect the ocean</Link></h3><p>About 10% of the ocean is protected, against a 30% goal for 2030. Every protected area on one map, and what protection can and cannot do.</p></li>
+            <li><h3><Link href="/responses/#finance">Pay for protection</Link></h3><p>Ocean protection gets about a tenth of the money it needs. Costs, returns and the instruments countries are using.</p></li>
+          </ul>
+        </div>
+      </section>
+
+      <section className="section section--alt" aria-labelledby="how">
         <div className="wrap">
           <h2 id="how" className={styles.h2}>How we work</h2>
           <ul className={styles.principles}>

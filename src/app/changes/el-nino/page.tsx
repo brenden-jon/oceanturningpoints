@@ -56,7 +56,7 @@ export default function ElNinoPage() {
             El Niño is a natural swing, and a strong one is under way in 2026. The bigger question is what warming does to it.
             Most models project more frequent extreme El Niños, and a study published in October 2026 finds that the Pacific can
             stay in a more El Niño-like state for centuries after emissions reach net zero. Observations so far point the other way,
-            so this is a risk to plan for, not a settled forecast.
+            so treat it as a risk to plan for rather than a settled forecast.
           </p>
           <p className={styles.chips}>
             <span className="evidence evidence--obs">Observations, updated daily</span>

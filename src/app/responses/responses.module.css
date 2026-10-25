@@ -1,0 +1,25 @@
+.stats { list-style: none; margin: 2.5rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2rem 1.6rem; }
+.stats li { display: grid; gap: 0.35rem; align-content: start; }
+.stats b { font-size: clamp(1.7rem, 3vw, 2.4rem); font-weight: 700; letter-spacing: -0.035em; line-height: 1; }
+.stats span { color: var(--text-2); font-size: 0.93rem; }
+.byChange { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-top: 2.5rem; }
+.byChange > div { background: var(--bg-alt); border-radius: var(--radius); padding: 1.3rem 1.4rem; }
+.byChange h3 { font-size: 1.05rem; margin-bottom: 0.4rem; }
+.byChange p { margin: 0; color: var(--text-2); font-size: 0.95rem; }
+.two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-top: 1rem; }
+.card { background: var(--bg); border-radius: var(--radius); padding: 1.4rem; min-width: 0; }
+.evidenceGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5rem; margin-top: 2.5rem; }
+.evidenceGrid h3 { font-size: 1.1rem; margin-bottom: 0.6rem; }
+.evidenceGrid ul { margin: 0; padding-left: 1.1rem; display: grid; gap: 0.55rem; color: var(--text-2); font-size: 0.97rem; }
+.tableWrap { overflow-x: auto; margin-top: 2rem; }
+.table { width: 100%; border-collapse: collapse; font-size: 0.93rem; }
+.table caption { text-align: left; font-weight: 650; font-size: 1.05rem; padding-bottom: 0.7rem; }
+.table th, .table td { text-align: left; padding: 0.65rem 0.8rem 0.65rem 0; border-top: 1px solid var(--line); vertical-align: top; }
+.table thead th { font-size: 0.8rem; color: var(--text-2); font-weight: 600; border-top: 0; }
+.table td { color: var(--text-2); }
+.note { margin: 1.5rem 0 0; max-width: 90ch; }
+@media (max-width: 960px) { .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 860px) { .byChange, .two, .evidenceGrid { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 520px) { .stats { grid-template-columns: minmax(0, 1fr); } }
+.lead { max-width: 75ch; }
+.lead h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }

@@ -1,4 +1,5 @@
-.wrap { display: grid; gap: 1rem; }
+.wrap { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+.toolbar > * { min-width: 0; max-width: 100%; }
 .toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.6rem 1.5rem; }
 .toggle { display: flex; align-items: center; gap: 0.5rem; font-size: 0.95rem; cursor: pointer; }
 .toggle input { accent-color: var(--accent); width: 16px; height: 16px; }
@@ -21,4 +22,4 @@
 .stats dd { margin: 0.2rem 0 0; font-size: 1.35rem; font-weight: 700; letter-spacing: -0.02em; }
 .source { margin: 0; max-width: 95ch; }
 .placeholder { height: 520px; background: var(--bg-alt); border-radius: var(--radius); }
-@media (max-width: 900px) { .layout { grid-template-columns: 1fr; } .mapBox { height: 380px; } }
+@media (max-width: 900px) { .layout { grid-template-columns: minmax(0, 1fr); } .mapBox { height: 380px; } }

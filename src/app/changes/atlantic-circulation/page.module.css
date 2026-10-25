@@ -65,13 +65,13 @@
   .regions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 860px) {
-  .hero { grid-template-columns: 1fr; }
+  .hero { grid-template-columns: minmax(0, 1fr); }
   .readingGrid, .alsoGrid { grid-template-columns: 1fr; gap: 1.5rem; }
-  .split { grid-template-columns: 1fr; }
-  .evidence { grid-template-columns: 1fr; }
+  .split { grid-template-columns: minmax(0, 1fr); }
+  .evidence { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 560px) {
-  .regions { grid-template-columns: 1fr; }
+  .regions { grid-template-columns: minmax(0, 1fr); }
 }
 .readingH { font-size: 1.4rem; }
 .brief { list-style: none; margin: 0; padding: 0.9rem 1.1rem; display: grid; gap: 0.3rem; background: var(--bg-alt); border-radius: var(--radius-s); font-size: 0.95rem; color: var(--text-2); }

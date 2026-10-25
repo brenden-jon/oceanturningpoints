@@ -9,6 +9,6 @@
 .data strong { color: var(--text); font-size: 0.95rem; font-weight: 600; }
 .data a { word-break: break-all; }
 @media (max-width: 900px) {
-  .body { grid-template-columns: 1fr; }
+  .body { grid-template-columns: minmax(0, 1fr); }
   .data { position: static; }
 }

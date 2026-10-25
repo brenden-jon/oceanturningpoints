@@ -19,17 +19,26 @@ All raw downloads are cached in `pipeline/.cache` (not committed). Rebuild every
 | CRW Four-Month Coral Bleaching Heat Stress Outlook v5 (CFSv2), 60% level | NOAA Coral Reef Watch; Liu et al. (2018) Front. Mar. Sci. 5:57 | Use without restriction, with credit | Bleaching outlook (weekly) | `ocean_now.py` |
 | NMME ensemble-mean SST anomaly forecast | NOAA Climate Prediction Center; Kirtman et al. (2014) BAMS 95, 585–601 | Public domain | Temperature outlook, 1–4 months (monthly) | `ocean_now.py` |
 | NOAA Coral Reef Watch regional virtual stations v3.1 | NOAA CRW (214 reef regions, daily since 1985) | Use without restriction, with credit | Reef regions map and histories (weekly) | `reef_stations.py` |
-| IPCC AR6 sea-level projections | Garner et al. (2021), doi:10.5281/zenodo.6382554; Kopp et al. (2023) GMD | CC BY 4.0 | City projections, global projections | `sea_level.py` |
-| AR6 WGI Fig. 9.32 flood amplification factors | CEDA, doi:10.5285/6b33327d0d0d4bcca872b431279086db | CC BY 4.0 | How often today's 1-in-100-year flood occurs | `sea_level.py` |
+| IPCC AR6 sea-level projections | Garner et al. (2021), doi:10.5281/zenodo.6382554; Kopp et al. (2023) GMD | CC BY 4.0 | City and global projections: medium confidence to 2150, low confidence (rapid ice-sheet loss) to 2300 | `sea_level.py` |
 | IMBIE ice-sheet mass balance | Otosaka et al. (2026) Sci. Data, data doi:10.5285/128c5e33-5224-4197-82f0-19dcc95b80a0 | Open Government Licence v3.0 | Ice-sheet chart | `sea_level.py` |
 | NOAA LSA global mean sea level | NOAA Laboratory for Satellite Altimetry | Public domain | Observed sea level (series currently ends Feb 2025) | `sea_level.py` |
-| World Database on Protected Areas | UNEP-WCMC and IUCN, Protected Planet | Non-commercial use with attribution; **displayed via UNEP-WCMC's map service, not downloaded or redistributed** | Marine protected areas on the coral globe | n/a |
+| Protected Planet: World Database on Protected and Conserved Areas (WDPCA) | UNEP-WCMC and IUCN (2026), October 2026 release. Citation and release month live in `src/lib/wdpa.ts` | Non-commercial; **displayed via UNEP-WCMC's map service, never downloaded or redistributed**; citation with release month and a link to protectedplanet.net must be visible | Protected areas on the globe, reef map and the global map on /responses/; coverage time series (published statistics, transcribed) | n/a |
+| MPAtlas level-of-protection summary | Marine Conservation Institute, analysis of 20 Oct 2026 | Non-commercial | Fully/highly protected share on /responses/ (transcribed) | n/a |
 | Natural Earth 1:110m and 1:50m coastlines, land, boundary lines | naturalearthdata.com | Public domain | Map lines; preview images | `basemap_and_scales.py` |
 | Blue Marble Shaded Relief and Bathymetry | NASA Earth Observatory via NASA GIBS (tiles requested by the browser) | Public domain (credit NASA) | Homepage globe, atlas, home preview image | n/a; `figures.py` for the preview |
 | Black Marble 2016 (VIIRS) | NASA via GIBS; Román et al. (2018) RSE 210, 113–143 | Public domain (credit NASA) | Atlas night lights | n/a |
 | cmocean colour maps | Thyng et al. (2016) Oceanography 29, 9–13 | MIT | Temperature scales | `basemap_and_scales.py` |
 | ColorBrewer BrBG | Cynthia Brewer, via matplotlib | Apache 2.0 | Rainfall scale | `basemap_and_scales.py` |
 | Spectral, Hanken Grotesk fonts | Google Fonts | SIL Open Font Licence | Site type; preview images | `figures.py` |
+
+## Numbers transcribed from publications
+
+Some charts are drawn from numbers in published papers and reports rather than from data files. They are written into the
+components with their source next to them: `ExtremeElNinoChart.tsx` (Sengupta et al. 2026), `CommitmentChart.tsx` (AR6 WGI
+Table 9.10), `ReefBenefits.tsx` (Beck et al. 2018; Perry et al. 2025; Teh et al. 2013; Spalding et al. 2017), `PathwaysChart.tsx`
+(UNEP Emissions Gap Report 2026; GTPR 2025), `ProtectionCharts.tsx` (Protected Planet, MPAtlas, Systemiq 2026, Sumaila et al. 2019)
+and the drought chart on the El Niño page (Delage & Power 2020). Figures from papers under NC-ND licences are never reproduced;
+only their numbers are used, redrawn.
 
 ## Processing notes
 

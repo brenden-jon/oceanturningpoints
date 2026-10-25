@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import BleachingEvents from "@/components/BleachingEvents";
+import { ReefFloodSavings, ReefLivelihoods, ReefLongTerm } from "@/components/ReefBenefits";
 import ReefMap from "@/components/ReefMap";
 import ThresholdChart, { OCEAN_THRESHOLDS } from "@/components/ThresholdChart";
 import { abs } from "@/lib/site";
+import { WDPA_CITATION } from "@/lib/wdpa";
 import styles from "./coral.module.css";
 
 const TITLE = "Are coral reefs passing a tipping point?";
@@ -90,23 +92,58 @@ export default function CoralPage() {
         </div>
       </section>
 
-      <section className="section" aria-labelledby="people">
+      <section className="section" aria-labelledby="coasts">
         <div className="wrap">
-          <p className="kicker">Consequences</p>
-          <h2 id="people" className={styles.h2}>What reefs do for people</h2>
-          <ul className={styles.stats}>
-            <li><b>~1 billion</b><span>people live within 100 km of a coral reef, in 117 countries; in small island developing states, 94% do (Sing Wong et al., 2022).</span></li>
-            <li><b>97%</b><span>of incoming wave energy is removed by reefs on average, most of it at the reef crest (Ferrario et al., 2014).</span></li>
-            <li><b>×2</b><span>expected annual flood damage on reef coasts if reefs lost their top metre, and three times the damage from frequent storms (Beck et al., 2018).</span></li>
-            <li><b>US$272bn</b><span>damage from a 100-year storm on reef coasts without that protection, up 91% (Beck et al., 2018).</span></li>
-            <li><b>6 million</b><span>people fish on coral reefs, half of them in Southeast Asia, many collecting by hand for food (Teh et al., 2013).</span></li>
-            <li><b>US$36bn</b><span>a year in reef tourism, about 9% of coastal tourism value in reef countries (Spalding et al., 2017).</span></li>
-          </ul>
-          <p className={`small faint ${styles.note}`}>
-            Flood figures compare today’s reefs with reefs that have lost their top metre of structure, a plausible result of
-            degradation; they are model estimates of avoided damage. The largest absolute savings accrue to Indonesia, the
-            Philippines, Malaysia, Mexico and Cuba. Living near a reef indicates possible dependence, which varies widely.
-          </p>
+          <p className="kicker">Consequences for coasts</p>
+          <h2 id="coasts" className={styles.h2}>Reefs are coastal infrastructure, and it is wearing away</h2>
+          <div className={styles.split} style={{ alignItems: "start" }}>
+            <div className="prose">
+              <p>
+                Close to a billion people live within 100 km of a coral reef, in 117 countries; in small island states, 94% do (Sing
+                Wong et al., 2022). A healthy reef removes on average 97% of the energy of incoming waves (Ferrario et al., 2014). If
+                reefs lost their top metre of structure, a plausible result of degradation, expected annual flood damage on reef
+                coasts would double, and damage from a 1-in-100-year storm would rise by 91% to US$272 billion (Beck et al., 2018).
+              </p>
+              <p>
+                In absolute terms the largest savings are in Indonesia, the Philippines, Malaysia, Mexico and Cuba. Relative to the size
+                of their economies, small islands such as Belize, Grenada and the Bahamas depend most.
+              </p>
+              <ReefLongTerm />
+              <p style={{ marginTop: "1.5rem" }}>
+                The two pressures compound. Dead reefs stop growing and start to erode just as the sea rises, so the water over them
+                deepens and larger waves reach the shore. In the Caribbean, more than 70% of reefs are projected to be eroding by 2040,
+                and at least 99% by 2100 if warming exceeds 2°C (Perry et al., 2025). Restoration can offset only a few tens of
+                centimetres, and only with strong emission cuts.
+              </p>
+            </div>
+            <div className={styles.panel} style={{ background: "var(--bg-alt)" }}>
+              <ReefFloodSavings />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--alt" aria-labelledby="livelihoods">
+        <div className="wrap">
+          <p className="kicker">Consequences for livelihoods</p>
+          <h2 id="livelihoods" className={styles.h2}>Food, income and jobs that depend on living coral</h2>
+          <div className={`prose ${styles.wide}`}>
+            <p>
+              About 6 million people fish on coral reefs, half of them in Southeast Asia, and at least a quarter are gleaners collecting
+              by hand for food (Teh et al., 2013). Tropical fish are rich in the calcium, iron and zinc that diets
+              in many coastal countries lack (Hicks et al., 2019). Catch per unit of fishing effort on reefs has fallen by 60% since 1950,
+              and reef-fish catches peaked in 2002 despite rising effort (Eddy et al., 2021).
+            </p>
+            <p>
+              Bleaching does not empty a fishery overnight. In the Seychelles, catches held up for two decades after the 1998 bleaching,
+              but became less stable (Robinson et al., 2019). The larger loss comes when dead reefs collapse into rubble: fisheries
+              productivity is then at least 35% lower (Rogers et al., 2018). Coral reef fisheries in the tropical Pacific could fall by 20%
+              by 2050 under high emissions (Bell et al., 2013).
+            </p>
+          </div>
+          <div className={styles.panel} style={{ marginTop: "2rem" }}>
+            <ReefLivelihoods />
+          </div>
         </div>
       </section>
 
@@ -129,7 +166,8 @@ export default function CoralPage() {
                 Effective marine protected areas, clean water, sustainable fisheries and control of coral-eating starfish help reefs
                 recover between heatwaves. They do little to stop bleaching itself: in 2016 on the Great Barrier Reef, water quality
                 and fishing pressure made little difference to how much coral bleached (Hughes et al., 2017). Protection matters most
-                for reefs that are coping better with heat. Switch on marine protected areas on the map above to see where they are.
+                for reefs that are coping better with heat. Switch on marine protected areas on the map above to see where they are, or
+                see <Link href="/responses/#protect">what protection can achieve worldwide</Link>.
               </p>
             </div>
             <div>
@@ -166,9 +204,14 @@ export default function CoralPage() {
             restriction, with credit to NOAA Coral Reef Watch.
           </p>
           <p>
-            <b>Marine protected areas:</b> World Database on Protected Areas, UNEP-WCMC and IUCN (2026), Protected Planet, displayed
-            through UNEP-WCMC’s map service; not redistributed. <b>Bleaching events:</b> NOAA (2026). <b>Thresholds:</b> Armstrong McKay
+            <b>Marine protected areas:</b> {WDPA_CITATION} Available at <a href="https://www.protectedplanet.net/">protectedplanet.net</a>.
+            Displayed through UNEP-WCMC’s map service; not redistributed. <b>Bleaching events:</b> NOAA (2026). <b>Thresholds:</b> Armstrong McKay
             et al. (2022) and the Global Tipping Points Report 2025. <b>IUCN assessment:</b> IUCN Red List of Ecosystems, October 2026.
+            <b> Coasts and livelihoods:</b> Beck et al. (2018), <i>Nature Communications</i> 9; Perry et al. (2025), <i>Nature</i> 646;
+            Ferrario et al. (2014), <i>Nature Communications</i> 5; Sing Wong et al. (2022), <i>Global Change Biology</i> 28; Teh et al.
+            (2013), <i>PLoS ONE</i> 8; Spalding et al. (2017), <i>Marine Policy</i> 82; Hicks et al. (2019), <i>Nature</i> 574; Eddy et al.
+            (2021), <i>One Earth</i> 4; Robinson et al. (2019), <i>Nature Ecology &amp; Evolution</i> 3; Rogers et al. (2018), <i>Journal of
+            Applied Ecology</i> 55; Bell et al. (2013), <i>Nature Climate Change</i> 3.
           </p>
         </div>
       </section>

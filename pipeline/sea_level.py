@@ -1,20 +1,18 @@
-"""Sea-level rise and coastal flooding: global and city-level evidence.
+"""Sea-level rise and the ice sheets: global and city-level evidence.
 
 Sources (all openly licensed; nothing here is new analysis, only extraction)
   1. IPCC AR6 sea-level projections (Garner et al. 2021, Zenodo
      doi:10.5281/zenodo.6382554, CC BY 4.0; method Kopp et al. 2023 GMD,
      doi:10.5194/gmd-16-7461-2023; assessment Fox-Kemper et al. 2021).
      Relative sea-level change at tide gauges and on a 1° grid, relative to
-     1995-2014, medium confidence (SSP1-2.6, SSP2-4.5, SSP5-8.5) and the low-
-     confidence SSP5-8.5 "low-likelihood, high-impact" values.
-     Only the four needed members are read from the 9 GB zip with HTTP range
-     requests (about 390 MB); they are cached in pipeline/.cache/sealevel.
-  2. AR6 WGI Figure 9.32 data (CEDA, doi:10.5285/6b33327d0d0d4bcca872b431279086db,
-     CC BY 4.0): median amplification factor of today's 1-in-100-year extreme
-     still water level at tide gauges, 2050 and 2100.
-  3. Observed global mean sea level from satellite altimetry: NOAA Laboratory
+     1995-2014, medium confidence (SSP1-2.6, SSP2-4.5, SSP5-8.5) to 2150 and
+     the low-confidence SSP1-2.6 and SSP5-8.5 projections to 2300, which
+     include ice-sheet processes such as marine ice-cliff instability.
+     Only the needed members are read from the 9 GB zip with HTTP range
+     requests; they are cached in pipeline/.cache/sealevel.
+  2. Observed global mean sea level from satellite altimetry: NOAA Laboratory
      for Satellite Altimetry (public domain).
-  4. Ice-sheet mass balance: IMBIE (Otosaka et al. 2026, Scientific Data,
+  3. Ice-sheet mass balance: IMBIE (Otosaka et al. 2026, Scientific Data,
      doi:10.1038/s41597-026-08088-0; data doi:10.5285/128c5e33-5224-4197-82f0-19dcc95b80a0,
      Open Government Licence v3.0).
 
@@ -63,11 +61,8 @@ CITIES = [
     ("Suva", "Fiji", -18.14, 178.43, 2356, "Suva tide gauge", None),
     ("Malé", "Maldives", 4.18, 73.51, 1753, "Malé (Hulhulé) tide gauge", None),
 ]
-SCENARIOS = [("ssp126", "medium"), ("ssp245", "medium"), ("ssp585", "medium"), ("ssp585", "low")]
-GLOBAL_SCENARIOS = SCENARIOS + [("ssp126", "low")]
-ESL = {(s, y): f"Fig9-32{c}_facts_esl_af_allow_{s}_{y}.nc" for c, s, y in
-       [("a", "ssp585", 2050), ("b", "ssp585", 2100), ("c", "ssp245", 2050), ("d", "ssp245", 2100), ("e", "ssp126", 2050), ("f", "ssp126", 2100)]}
-ESL_URL = "https://dap.ceda.ac.uk/badc/ar6_wg1/data/ch_09/ch9_fig32/v20220721/{}?download=1"
+SCENARIOS = [("ssp126", "medium"), ("ssp245", "medium"), ("ssp585", "medium"), ("ssp126", "low"), ("ssp585", "low")]
+GLOBAL_SCENARIOS = SCENARIOS
 STAR = "https://www.star.nesdis.noaa.gov/socd/lsa/SeaLevelRise/slr/slr_sla_gbl_free_ref_90.csv"
 IMBIE_ID = "128c5e33-5224-4197-82f0-19dcc95b80a0"
 
@@ -119,37 +114,20 @@ def cities() -> list[dict]:
         with xr.open_dataset(f) as ds:
             q = [0.05, 0.17, 0.5, 0.83, 0.95]
             sl = (ds.sea_level_change.sel(locations=ids, quantiles=q) / 1000.0).load()
-            years = [int(y) for y in sl.years.values if y <= 2150]
+            # medium confidence to 2150; the low-confidence storylines (rapid ice-sheet loss) to 2300
+            years = [int(y) for y in sl.years.values if y <= (2150 if conf == "medium" else 2300)]
             for c, loc in zip(CITIES, ids):
                 v = sl.sel(locations=loc)
                 if not np.isfinite(v.sel(quantiles=0.5, years=2100)):
                     raise ValueError(f"no AR6 value for {c[0]} at location {loc}")
                 key = f"{scen}-{conf}"
-                if conf == "medium":
-                    out[c[0]]["series"][key] = [[y, r2(v.sel(quantiles=0.17, years=y)), r2(v.sel(quantiles=0.5, years=y)), r2(v.sel(quantiles=0.83, years=y))] for y in years]
+                out[c[0]]["series"][key] = [[y, r2(v.sel(quantiles=0.17, years=y)), r2(v.sel(quantiles=0.5, years=y)), r2(v.sel(quantiles=0.83, years=y))] for y in years]
                 out[c[0]]["y2100"][key] = {k: r2(v.sel(quantiles=p, years=2100)) for k, p in (("p17", 0.17), ("p50", 0.5), ("p83", 0.83), ("p95", 0.95))}
-                if conf == "low":
+                if key == "ssp585-low":
                     out[c[0]]["low"] = {str(yy): {k: r2(v.sel(quantiles=p, years=yy)) for k, p in (("p17", 0.17), ("p50", 0.5), ("p83", 0.83), ("p95", 0.95))}
                                         for yy in (2100, 2150, 2300) if yy in sl.years.values}
                 out[c[0]]["y2050"] = out[c[0]].get("y2050", {})
                 out[c[0]]["y2050"][key] = {k: r2(v.sel(quantiles=p, years=2050)) for k, p in (("p17", 0.17), ("p50", 0.5), ("p83", 0.83))}
-    # flood frequency amplification at the nearest station within 100 km
-    for (scen, year), fname in ESL.items():
-        p = C / "esl" / fname
-        if not p.exists():
-            p.parent.mkdir(parents=True, exist_ok=True)
-            p.write_bytes(http(ESL_URL.format(fname)))
-        with xr.open_dataset(p) as ds:
-            la, lo, af = ds.lat.values, ds.lon.values, ds.af50.values
-            names = [s.decode() if isinstance(s, bytes) else str(s) for s in ds.station.values]
-            for c in CITIES:
-                p1, p2 = np.radians(c[2]), np.radians(la)
-                d = 6371 * np.arccos(np.clip(np.sin(p1) * np.sin(p2) + np.cos(p1) * np.cos(p2) * np.cos(np.radians(lo - c[3])), -1, 1))
-                i = int(np.argmin(d))
-                if d[i] <= 100:
-                    rec = out[c[0]].setdefault("floods", {"station": names[i].strip(), "km": round(float(d[i]))})
-                    # The source caps the factor at 18,262.5 (daily for 50 years): show it as "at least yearly".
-                    rec[f"{scen}-{year}"] = "capped" if af[i] >= 18262 else round(float(af[i]), 1)
     return list(out.values())
 
 
@@ -219,14 +197,12 @@ def main() -> None:
         "sources": {
             "projections": {"cite": "Garner et al. (2021) IPCC AR6 Sea Level Projections, v20210809; Kopp et al. (2023) GMD; Fox-Kemper et al. (2021)",
                             "doi": "10.5281/zenodo.6382554", "licence": "CC BY 4.0"},
-            "floods": {"cite": "IPCC AR6 WGI Chapter 9, Figure 9.32 data (Hermans, Garner, Kopp, Slangen), CEDA",
-                       "doi": "10.5285/6b33327d0d0d4bcca872b431279086db", "licence": "CC BY 4.0"},
         },
     }
     write_json(data, OUT / "sealevel" / "sealevel.json")
     for c in data["cities"]:
         y = c["y2100"]
-        print(f"  {c['name']:18} 2100 SSP2-4.5 {y['ssp245-medium']['p50']:.2f} m; SSP5-8.5 {y['ssp585-medium']['p50']:.2f}; low-conf p95 {y['ssp585-low']['p95']:.2f}; floods {c.get('floods', {}).get('ssp245-2050')}")
+        print(f"  {c['name']:18} 2100 SSP2-4.5 {y['ssp245-medium']['p50']:.2f} m; SSP5-8.5 {y['ssp585-medium']['p50']:.2f}; 2300 storyline {c['low']['2300']['p50']:.2f} ({c['low']['2300']['p83']:.2f}) m")
     o = data["observed"]; print(f"  observed GMSL to {o['end']}: {o['series'][-1][1]} mm")
     i = data["iceSheets"]["series"]; print(f"  ice sheets since 1992: Greenland {i['greenland'][-1][1]} mm, Antarctica {i['antarctica'][-1][1]} mm")
 

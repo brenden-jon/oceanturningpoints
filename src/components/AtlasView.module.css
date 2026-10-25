@@ -19,7 +19,7 @@
 .more { border-top: 1px solid var(--line); padding-top: 1rem; }
 .more p { margin: 0 0 0.3rem; }
 @media (max-width: 900px) {
-  .atlas { grid-template-columns: 1fr; }
+  .atlas { grid-template-columns: minmax(0, 1fr); }
   .panel { position: static; }
   .mapBox { height: 64vh; }
 }

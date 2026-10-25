@@ -1,6 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import { WDPA_LAYER } from "@/lib/wdpa";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { HoverInfo, Overlay } from "./EarthMap";
 import LineChart from "./LineChart";
@@ -18,12 +19,7 @@ interface Station {
 interface StationsFile { updated: string; count: number; stations: Station[] }
 type Metric = "peak" | "now" | "change";
 
-const WDPA = {
-  id: "wdpa",
-  tiles: ["https://data-gis.unep-wcmc.org/server/rest/services/ProtectedSites/The_World_Database_of_Protected_Areas/MapServer/export?bbox={bbox-epsg-3857}&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&f=image&layers=show:1&layerDefs=%7B%221%22%3A%22realm%20%3C%3E%20%27Terrestrial%27%22%7D"],
-  attribution: 'Protected areas: <a href="https://www.protectedplanet.net/">UNEP-WCMC &amp; IUCN, WDPA</a>',
-  opacity: 0.55,
-};
+const WDPA = WDPA_LAYER;
 
 // Bins follow NOAA Coral Reef Watch alert levels (Degree Heating Weeks, °C-weeks).
 const DHW_BINS = [
