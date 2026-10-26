@@ -105,6 +105,46 @@ def currents() -> dict:
 ERDDAP = "https://coastwatch.noaa.gov/erddap/griddap"
 
 
+_REEF_POLYS = None
+
+
+def reef_mask(lat: np.ndarray, lon: np.ndarray) -> np.ndarray:
+    """True for grid cells that overlap a NOAA Coral Reef Watch reef region (5 km virtual-station polygons).
+
+    lat/lon are cell centres (lat north-to-south as stored). Polygons are sampled every 0.025° and any cell
+    containing a reef-region sample is kept. Source: coralreefwatch.noaa.gov/product/vs/vs_polygons.json.
+    """
+    global _REEF_POLYS
+    from matplotlib.path import Path as MPath
+    if _REEF_POLYS is None:
+        d = json.loads(get("https://coralreefwatch.noaa.gov/product/vs/vs_polygons.json", 180))
+        rings = []
+        for f in d["features"]:
+            g = f["geometry"]
+            if g["type"] == "Polygon":
+                rings += [g["coordinates"][0]]
+            elif g["type"] == "MultiPolygon":
+                rings += [p[0] for p in g["coordinates"]]
+        _REEF_POLYS = [np.asarray(r, dtype=float) for r in rings]
+    res = abs(float(lat[0] - lat[1]))
+    mask = np.zeros((lat.size, lon.size), dtype=bool)
+    step = 0.025
+    for r in _REEF_POLYS:
+        x0, y0 = r.min(axis=0); x1, y1 = r.max(axis=0)
+        xs = np.arange(x0 + step / 2, x1, step); ys = np.arange(y0 + step / 2, y1, step)
+        if not xs.size or not ys.size:
+            continue
+        X, Y = np.meshgrid(xs, ys)
+        inside = MPath(r).contains_points(np.c_[X.ravel(), Y.ravel()])
+        if not inside.any():
+            continue
+        px, py = X.ravel()[inside], Y.ravel()[inside]
+        i = np.clip(np.rint((lat[0] - py) / res).astype(int), 0, lat.size - 1)
+        j = np.clip(np.rint((px - lon[0]) / res).astype(int), 0, lon.size - 1)
+        mask[i, j] = True
+    return mask
+
+
 def crw_field(dataset: str, var: str, name: str, scale: dict, tropics_only: bool = False) -> dict:
     import netCDF4 as nc
     from common import encode_grid
@@ -118,9 +158,9 @@ def crw_field(dataset: str, var: str, name: str, scale: dict, tropics_only: bool
     if lat[0] < lat[-1]:
         a, lat = a[::-1], lat[::-1]
     if tropics_only:
-        # Degree Heating Weeks are a coral bleaching index: show the reef belt only,
+        # Degree Heating Weeks are a coral bleaching index: show it only where reefs are,
         # and drop flagged or implausible values (sea ice, inland water).
-        a[np.abs(lat) > 35] = np.nan
+        a[~reef_mask(lat, lon)] = np.nan
         a[a > 60] = np.nan
     meta = encode_grid(a[::-1], NOW / f"{name}.png")             # encode_grid expects south-to-north
     return {**meta, "date": t,
@@ -143,6 +183,27 @@ def dhw() -> dict:
                       "source": {"org": "NOAA Coral Reef Watch", "product": "Daily global 5 km Degree Heating Weeks (v3.1)",
                                  "url": "https://coralreefwatch.noaa.gov/product/5km/index_5km_dhw.php", "licence": "Use without restriction; credit NOAA Coral Reef Watch"}},
                      tropics_only=True)
+
+
+def sea_ice_field() -> dict:
+    """Daily sea-ice concentration on the same 0.25° grid, for the overlay on the globe (ice where >= 15%)."""
+    import netCDF4 as nc
+    from common import encode_grid
+    sel = "%5B(last)%5D%5B(89.975):5:(-89.975)%5D%5B(-179.975):5:(179.975)%5D"
+    d = nc.Dataset("ice.nc", memory=get(f"{ERDDAP}/noaacrwsstDaily.nc?sea_ice_fraction{sel}", 300))
+    a = np.ma.filled(d["sea_ice_fraction"][0].astype(float), np.nan)
+    lat = np.asarray(d["latitude"][:], dtype=float); lon = np.asarray(d["longitude"][:], dtype=float)
+    t = nc.num2date(d["time"][0], d["time"].units).strftime("%Y-%m-%d")
+    if lat[0] < lat[-1]:
+        a, lat = a[::-1], lat[::-1]
+    a[(a < 0.15) | (a > 1)] = np.nan
+    meta = encode_grid(a[::-1], NOW / "sea_ice.png")
+    return {**meta, "date": t,
+            "grid": {"lat0": float(lat.min()), "lat1": float(lat.max()), "lon0": float(lon.min()), "lon1": float(lon.max()),
+                     "res": float(round(lat[0] - lat[1], 4)), "h": int(lat.size), "w": int(lon.size), "rowOrder": "north-to-south"},
+            "units": "fraction", "threshold": 0.15,
+            "source": {"org": "NOAA Coral Reef Watch", "product": "CoralTemp v3.1 sea-ice fraction (from the NOAA Geo-Polar Blended analysis)",
+                       "url": "https://coralreefwatch.noaa.gov/product/5km/index_5km_sst.php", "licence": "Use without restriction; credit NOAA Coral Reef Watch"}}
 
 
 # ----------------------------------------------------------------- outlooks
@@ -169,7 +230,7 @@ def bleaching_outlook() -> dict:
         a, lat = a[::-1], lat[::-1]
     if lon.max() > 180:
         k = int(np.argmax(lon > 180)); a = np.roll(a, -k, axis=1); lon = np.roll(np.where(lon > 180, lon - 360, lon), -k)
-    a[np.abs(lat) > 35] = np.nan
+    a[~reef_mask(lat, lon)] = np.nan
     a[(a < 0) | (a > 4)] = np.nan
     meta = encode_grid(a[::-1], NOW / "bleaching_outlook.png")
     iso = lambda x: f"{x[:4]}-{x[4:6]}-{x[6:]}"
@@ -512,7 +573,7 @@ def main() -> None:
         manifest["enso"] = {"file": "enso.json", "week": e["latest"]["week"], "nino34": e["latest"]["nino34"],
                             "relative34": e["latest"]["relative34"], "status": e["discussion"]["status"]}
         print(f"  ENSO week {e['latest']['week']}: Niño-3.4 {e['latest']['nino34']:+.1f} °C (relative {e['latest']['relative34']}), status: {e['discussion']['status']}")
-    for key, fn in (("ssta", ssta), ("dhw", dhw)):
+    for key, fn in (("ssta", ssta), ("dhw", dhw), ("seaIceField", sea_ice_field)):
         r = run(key, fn, status)
         if r:
             manifest[key] = r

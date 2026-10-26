@@ -88,10 +88,10 @@
  "dhw": {
   "file": "dhw.png",
   "vmin": 0.0,
-  "vmax": 58.43,
-  "step": 0.23004,
-  "bytes": 64379,
-  "date": "2026-10-15",
+  "vmax": 28.4,
+  "step": 0.11181,
+  "bytes": 16684,
+  "date": "2026-10-24",
   "grid": {
    "lat0": -89.7750015258789,
    "lat1": 89.9749984741211,
@@ -138,7 +138,7 @@
   "vmin": 0.0,
   "vmax": 4.0,
   "step": 0.01575,
-  "bytes": 8413,
+  "bytes": 5100,
   "date": "2026-10-18",
   "validFrom": "2026-11-01",
   "validTo": "2027-02-28",
@@ -326,6 +326,32 @@
    "url": "https://globalfishingwatch.org/dataset-and-code-fishing-effort/",
    "licence": "CC BY-SA 4.0",
    "citation": "Kroodsma et al. (2018), Science 361, 908-911, doi:10.1126/science.aao5646"
+  }
+ },
+ "seaIceField": {
+  "file": "sea_ice.png",
+  "vmin": 0.15,
+  "vmax": 1.0,
+  "step": 0.00335,
+  "bytes": 38529,
+  "date": "2026-10-24",
+  "grid": {
+   "lat0": -89.9749984741211,
+   "lat1": 89.7750015258789,
+   "lon0": -179.97500610351562,
+   "lon1": 179.77499389648438,
+   "res": 0.25,
+   "h": 720,
+   "w": 1440,
+   "rowOrder": "north-to-south"
+  },
+  "units": "fraction",
+  "threshold": 0.15,
+  "source": {
+   "org": "NOAA Coral Reef Watch",
+   "product": "CoralTemp v3.1 sea-ice fraction (from the NOAA Geo-Polar Blended analysis)",
+   "url": "https://coralreefwatch.noaa.gov/product/5km/index_5km_sst.php",
+   "licence": "Use without restriction; credit NOAA Coral Reef Watch"
   }
  }
 }

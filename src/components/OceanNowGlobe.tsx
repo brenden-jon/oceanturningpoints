@@ -39,12 +39,13 @@ const VIEWS = [
 ];
 
 const WDPA = WDPA_LAYER;
+const ICE_LUT: Lut = Array.from({ length: 256 }, () => [244, 248, 252]);
 
 const day = (iso: string) => new Date(iso + "T12:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
 const short = (iso: string) => new Date(iso + "T12:00:00Z").toLocaleDateString("en-GB", { month: "long", year: "numeric", timeZone: "UTC" });
 
-export default function OceanNowGlobe({ ssta, dhw, currents, bleachOutlook, sstOutlook, fishing, initialLayer = "ssta", initialView = "pacific", compact = false, protectedAreas = false }: {
-  ssta: FieldMeta; dhw: FieldMeta; currents: CurrentsMeta; bleachOutlook?: BleachOutlookMeta; sstOutlook?: SstOutlookMeta; fishing?: FishingMeta;
+export default function OceanNowGlobe({ ssta, dhw, currents, bleachOutlook, sstOutlook, fishing, seaIce, initialLayer = "ssta", initialView = "pacific", compact = false, protectedAreas = false }: {
+  ssta: FieldMeta; dhw: FieldMeta; currents: CurrentsMeta; bleachOutlook?: BleachOutlookMeta; sstOutlook?: SstOutlookMeta; fishing?: FishingMeta; seaIce?: EncodedLayer & { date: string; grid: GridSpec };
   initialLayer?: "ssta" | "dhw"; initialView?: string; compact?: boolean; protectedAreas?: boolean;
 }) {
   const [map, setMap] = useState<MLMap | null>(null);
@@ -53,6 +54,9 @@ export default function OceanNowGlobe({ ssta, dhw, currents, bleachOutlook, sstO
   const [kind, setKind] = useState<Kind>(initialLayer === "dhw" ? "coral" : "temp");
   const [lead, setLead] = useState(1);
   const [showMpa, setShowMpa] = useState(false);
+  const [showIce, setShowIce] = useState(Boolean(seaIce));
+  const [iceField, setIceField] = useState<Field | null>(null);
+  const [iceCanvas, setIceCanvas] = useState<HTMLCanvasElement | null>(null);
   const [luts, setLuts] = useState<Record<string, { lut: Lut }> | null>(null);
   const [loaded, setLoaded] = useState<{ key: string; field: Field } | null>(null);
   const [canvas, setCanvas] = useState<HTMLCanvasElement | null>(null);
@@ -91,6 +95,18 @@ export default function OceanNowGlobe({ ssta, dhw, currents, bleachOutlook, sstO
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [active]);
   useEffect(() => {
+    if (!seaIce) return;
+    loadField(asset(`/data/now/${seaIce.file}`), seaIce, seaIce.grid).then(setIceField).catch(() => {});
+  }, [seaIce]);
+  useEffect(() => {
+    if (!iceField) return;
+    const W = window.innerWidth < 720 ? 1024 : 2048;
+    const c = document.createElement("canvas");
+    c.width = W; c.height = W;
+    c.getContext("2d")!.putImageData(renderMercator(iceField, ICE_LUT, [0.15, 1], W, W, 240, true), 0, 0);
+    setIceCanvas(c);
+  }, [iceField]);
+  useEffect(() => {
     if (!field || !lut) return;
     const W = window.innerWidth < 720 ? 1024 : 2048;
     const img = renderMercator(field, lut, active.domain, W, W, 255, active.id === "fishing");
@@ -100,6 +116,18 @@ export default function OceanNowGlobe({ ssta, dhw, currents, bleachOutlook, sstO
     setCanvas(c); setKey(activeKey);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [field, lut]);
+
+  // The data layer with today's sea ice drawn on top, so the poles read on every layer (and over the currents).
+  const composite = useMemo(() => {
+    const base = isCurrents ? null : canvas;
+    if (!showIce || !iceCanvas) return { image: base, key: isCurrents ? "none" : key };
+    const c = document.createElement("canvas");
+    c.width = iceCanvas.width; c.height = iceCanvas.height;
+    const ctx = c.getContext("2d")!;
+    if (base) ctx.drawImage(base, 0, 0, c.width, c.height);
+    ctx.drawImage(iceCanvas, 0, 0);
+    return { image: c, key: `${isCurrents ? "none" : key}+ice` };
+  }, [isCurrents, canvas, key, showIce, iceCanvas]);
 
   const onHover = useCallback((h: HoverInfo | null) => {
     if (!h || !field) { setHover(null); return; }
@@ -144,6 +172,12 @@ export default function OceanNowGlobe({ ssta, dhw, currents, bleachOutlook, sstO
           )}
         </div>
         <div className={styles.toggles}>
+          {seaIce && (
+            <label className={styles.toggle}>
+              <input type="checkbox" checked={showIce} onChange={(e) => setShowIce(e.target.checked)} />
+              <span>Sea ice</span>
+            </label>
+          )}
           {protectedAreas && (
             <label className={styles.toggle}>
               <input type="checkbox" checked={showMpa} onChange={(e) => setShowMpa(e.target.checked)} />
@@ -155,7 +189,7 @@ export default function OceanNowGlobe({ ssta, dhw, currents, bleachOutlook, sstO
 
       <div className={styles.box}>
         <EarthMap look="satellite" projection="globe" space="dark" view={{ center: view.center, zoom: view.zoom }}
-          image={isCurrents ? null : canvas} imageKey={isCurrents ? "none" : key} imageOpacity={0.9} onReady={setMap} onHover={onHover} onSelect={onHover}
+          image={composite.image} imageKey={composite.key} imageOpacity={0.9} onReady={setMap} onHover={onHover} onSelect={onHover}
           raster={showMpa ? WDPA : null} className={styles.map} ariaLabel={`Globe: ${title}, centred on the ${view.label}`} />
         <CurrentsLayer map={map} meta={currents} visible={isCurrents} />
         {isOutlook && <span className={styles.badge}>Forecast</span>}
@@ -202,10 +236,10 @@ export default function OceanNowGlobe({ ssta, dhw, currents, bleachOutlook, sstO
           {!isCurrents && active.id === "ssta" && (<>
             <div><h3>What it shows</h3><p>How much warmer or colder the sea surface is than the 1985–2012 average for the same day, from satellite measurements blended into a daily 5 km product (shown here at 0.25°).</p></div>
             <div><h3>Why it matters</h3><p>The warm band along the equatorial Pacific is El Niño. Large warm patches elsewhere are marine heatwaves, which bleach corals, move fish stocks and fuel heavy rain on nearby coasts. <Link href="/science/el-nino/">El Niño</Link> · <Link href="/changes/coral-reefs/">coral reefs</Link></p></div>
-            <div><h3>Source</h3><p><span className="evidence evidence--obs">Observed</span> NOAA Coral Reef Watch, CoralTemp v3.1 SST anomaly. <a href={ssta.source.url}>Product page</a>. Near-coast and sea-ice pixels are less reliable.</p></div>
+            <div><h3>Source</h3><p><span className="evidence evidence--obs">Observed</span> NOAA Coral Reef Watch, CoralTemp v3.1 SST anomaly. <a href={ssta.source.url}>Product page</a>. Near-coast pixels are less reliable. Sea ice (white, where at least 15% of the sea is ice) is from the same product.</p></div>
           </>)}
           {!isCurrents && active.id === "dhw" && (<>
-            <div><h3>What it shows</h3><p>How much, and for how long, the sea has been at least 1°C warmer than its usual warmest month over the past 12 weeks, in °C-weeks; 4 °C-weeks is roughly one month at 1°C above that level. Shown for the tropical belt where warm-water reefs grow.</p></div>
+            <div><h3>What it shows</h3><p>How much, and for how long, the sea has been at least 1°C warmer than its usual warmest month over the past 12 weeks, in °C-weeks; 4 °C-weeks is roughly one month at 1°C above that level. Shown only at coral reef regions (NOAA Coral Reef Watch’s 5 km reef areas); white means no heat stress.</p></div>
             <div><h3>Why it matters</h3><p>Above 4 °C-weeks, reef-wide bleaching is likely; above 8, bleaching with significant coral death is likely. Repeated heat stress is why the Global Tipping Points Report 2025 assesses that reefs are crossing their thermal tipping point. <Link href="/changes/coral-reefs/">Coral reefs</Link></p></div>
             <div><h3>Source</h3><p><span className="evidence evidence--obs">Observed</span> NOAA Coral Reef Watch, Degree Heating Weeks v3.1. <a href={dhw.source.url}>Product page</a>. These are risk levels; how reefs respond varies locally.</p></div>
           </>)}
@@ -215,7 +249,7 @@ export default function OceanNowGlobe({ ssta, dhw, currents, bleachOutlook, sstO
             <div><h3>Source and limits</h3><p><span className="evidence evidence--obs">Observed</span> <a href={fishing!.source.url}>Global Fishing Watch</a>, CC BY-SA 4.0 (Kroodsma et al., 2018). Many small and artisanal boats carry no AIS, and coverage is uneven between regions, so this is a minimum.</p></div>
           </>)}
           {!isCurrents && active.id === "bleach" && (<>
-            <div><h3>What it shows</h3><p>The highest bleaching alert level expected over the next four months, at places where at least 60% of forecast runs reach it. Issued {day(bleachOutlook!.date)}, updated weekly.</p></div>
+            <div><h3>What it shows</h3><p>The highest bleaching alert level expected over the next four months at coral reef regions, where at least 60% of forecast runs reach it. Issued {day(bleachOutlook!.date)}, updated weekly.</p></div>
             <div><h3>Why it matters</h3><p>Reef managers use the outlook to prepare monitoring and reduce other pressures before heat arrives. A strong El Niño raises bleaching risk across the tropics in the months that follow. <Link href="/changes/coral-reefs/">Coral reefs</Link></p></div>
             <div><h3>Source and reliability</h3><p><span className="evidence evidence--forecast">Forecast</span> NOAA Coral Reef Watch Four-Month Outlook v5, from the NOAA CFSv2 climate model (Liu et al., 2018). Skill is higher in the first weeks and lower near the end of the period.</p></div>
           </>)}
