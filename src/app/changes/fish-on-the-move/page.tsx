@@ -10,6 +10,7 @@ import { ArticleLd } from "@/components/JsonLd";
 import { abs, asset } from "@/lib/site";
 import styles from "../coral-reefs/coral.module.css";
 import own from "./fish.module.css";
+import PhotoFigure from "@/components/PhotoFigure";
 
 const TITLE = "Where will the fish go?";
 const DESCRIPTION = "Warming is shrinking the fish the ocean can hold and moving stocks towards the poles and across borders. Projections for every coastal country, the die-offs already seen, who depends most on fish, and what can be done.";
@@ -151,6 +152,7 @@ export default function FishPage() {
             Fish matter most for nutrition in tropical countries, where reef and coastal fish supply iron, zinc and calcium that diets
             lack (Hicks et al., 2019). Reef fisheries are covered on the <Link href="/changes/coral-reefs/#livelihoods">coral reefs</Link> page.
           </p>
+          <PhotoFigure photos={["fishers-kayar-senegal"]} caption="Fishers bring pirogues loaded with fish ashore at Kayar, Senegal, July 2024." wide />
         </div>
       </section>
 

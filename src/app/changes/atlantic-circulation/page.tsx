@@ -10,6 +10,7 @@ import ExplorerLink from "@/components/ExplorerLink";
 import { num, rain, rainAt, series, temp, tempAt } from "@/lib/amocData";
 import { formatDate, getTopic } from "@/lib/science";
 import styles from "./page.module.css";
+import PhotoFigure from "@/components/PhotoFigure";
 
 const TITLE = "What would happen if the Atlantic circulation collapsed?";
 const DESCRIPTION =
@@ -210,6 +211,7 @@ export default function AmocPage() {
             the direction and rough size of change across a region and should not be read as local forecasts. The four-model average for the West African
             monsoon in our processing is {num(wam.ensembleMeanOfPercent, 1)}%, against {num(wam.published, 1)}% published by Ben-Yami et al. (2024).
           </p>
+          <PhotoFigure photos={["sahel-millet-weeding-burkina"]} caption="Farmers weed a millet field at Guiè, Burkina Faso, July 2017. Rain-fed farming across the Sahel depends on the West African monsoon." wide />
         </div>
       </section>
 

@@ -7,6 +7,7 @@ import { abs } from "@/lib/site";
 import { WDPA_CITATION } from "@/lib/wdpa";
 import styles from "../changes/coral-reefs/coral.module.css";
 import own from "./responses.module.css";
+import PhotoFigure from "@/components/PhotoFigure";
 
 const TITLE = "What can be done about the big ocean changes?";
 const DESCRIPTION = "How far emissions must fall to keep ocean and ice tipping points out of reach, what marine protection can and cannot do to make the ocean more resilient, every marine protected area on one map, and how protection is paid for.";
@@ -150,6 +151,7 @@ export default function ResponsesPage() {
               </ul>
             </div>
           </div>
+          <PhotoFigure photos={["seagrass-fish-calanques", "mangrove-planting-aceh"]} caption="A seagrass meadow with a school of salema in Calanques National Park, Marseille, June 2022 (left), and residents of Kampong Jawa, Banda Aceh, planting mangrove saplings (right)." />
         </div>
       </section>
 

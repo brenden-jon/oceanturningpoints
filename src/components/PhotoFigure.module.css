@@ -1,0 +1,11 @@
+.fig { margin: 2.5rem 0 0; }
+.imgs { display: grid; gap: 0.6rem; }
+.pair .imgs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.imgs img { display: block; width: 100%; height: auto; border-radius: var(--radius); background: var(--bg-alt); }
+.pair .imgs img { aspect-ratio: 3 / 2; object-fit: cover; }
+.fig figcaption { margin-top: 0.7rem; font-size: 0.9rem; color: var(--text-2); max-width: 90ch; line-height: 1.45; }
+.credit { color: var(--text-3); font-size: 0.8rem; }
+.credit a { color: inherit; text-decoration: underline; text-decoration-color: var(--line-2); }
+.wide .imgs img { max-height: 560px; object-fit: cover; }
+@media (max-width: 640px) { .pair .imgs { grid-template-columns: minmax(0, 1fr); } }
+.narrow { max-width: 420px; }

@@ -8,6 +8,7 @@ import { ArticleLd } from "@/components/JsonLd";
 import { abs, asset } from "@/lib/site";
 import styles from "../coral-reefs/coral.module.css";
 import own from "../atlantic-circulation/page.module.css";
+import PhotoFigure from "@/components/PhotoFigure";
 
 const TITLE = "Could the North Atlantic cool abruptly?";
 const DESCRIPTION = "South of Greenland, surface water sinks every winter. In some climate models this stops within a decade, cooling the region by several degrees. What the gyre is, how likely a collapse is, what it would mean and what can be done.";
@@ -72,6 +73,7 @@ export default function SubpolarPage() {
             simple model shows two stable states, with and without winter sinking (Born and Stocker, 2014). A collapse of the gyre would be
             faster and more regional than a collapse of the whole Atlantic circulation.
           </p>
+          <PhotoFigure photos={["research-vessel-shetland"]} caption="The research vessel Celtic Explorer at sea off Shetland, August 2014." wide />
         </div>
       </section>
 

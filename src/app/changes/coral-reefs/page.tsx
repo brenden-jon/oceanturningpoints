@@ -10,6 +10,7 @@ import { ArticleLd } from "@/components/JsonLd";
 import { abs, asset } from "@/lib/site";
 import { WDPA_CITATION } from "@/lib/wdpa";
 import styles from "./coral.module.css";
+import PhotoFigure from "@/components/PhotoFigure";
 
 const TITLE = "Are coral reefs passing a tipping point?";
 const DESCRIPTION = "Marine heatwaves are bleaching reefs faster than they can recover. See today’s heat stress, the four global bleaching events, where the tipping threshold lies, and what protection can and cannot do.";
@@ -71,6 +72,7 @@ export default function CoralPage() {
             </p>
           </div>
           <BleachingEvents />
+          <PhotoFigure photos={["coral-healthy-palmyra", "coral-bleached-american-samoa"]} caption="A healthy reef at Palmyra Atoll in the central Pacific (left), and a bleached coral colony beside normally coloured coral in the National Marine Sanctuary of American Samoa, February 2015 (right)." />
         </div>
       </section>
 

@@ -12,6 +12,7 @@ import { ArticleLd } from "@/components/JsonLd";
 import { abs, asset } from "@/lib/site";
 import styles from "../coral-reefs/coral.module.css";
 import own from "./icesheets.module.css";
+import PhotoFigure from "@/components/PhotoFigure";
 
 const TITLE = "What if the ice sheets pass their tipping points?";
 const DESCRIPTION = "Greenland and West Antarctica have tipping points that would lock in metres of sea-level rise. Where the thresholds lie, whether they have been crossed, how much rise each level of warming commits, how fast it could come, and what it means for coastal investments.";
@@ -174,6 +175,7 @@ export default function IceSheetsPage() {
         </div>
         <div className="wrap">
           <IceSheetCities cities={d.cities} globalLow={{ high: g2300("ssp585-low")[2], low: g2300("ssp126-low")[2] }} />
+          <PhotoFigure photos={["ice-shelf-thwaites", "atoll-road-tuvalu"]} caption="The edge of the Thwaites Ice Shelf, West Antarctica, October 2012 (left), and a road along a narrow strip of low-lying atoll land in Tuvalu, 2011 (right)." />
         </div>
       </section>
 

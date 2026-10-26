@@ -6,6 +6,7 @@ import { ArticleLd } from "@/components/JsonLd";
 import { abs } from "@/lib/site";
 import styles from "../changes/coral-reefs/coral.module.css";
 import own from "./monitoring.module.css";
+import PhotoFigure from "@/components/PhotoFigure";
 
 const TITLE = "Who is watching the ocean?";
 const DESCRIPTION = "The floats, moorings, ships, tide gauges and satellites that observe the ocean, who runs them, what satellites can and cannot see, and why long, unbroken records matter for decisions on the big ocean changes.";
@@ -187,6 +188,7 @@ export default function MonitoringPage() {
               <ObservingRecords />
             </div>
           </div>
+          <PhotoFigure photos={["argo-float-deployment"]} caption="Crew deploy an Argo float from NOAA Ship Ronald H. Brown. Each float profiles the top 2,000 m of the ocean every ten days." narrow />
         </div>
       </section>
 

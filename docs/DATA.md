@@ -128,3 +128,4 @@ Open Graph previews (1200 × 630) and homepage card images, drawn from the publi
 | Knowledge base | At least yearly, and after major papers or assessments | See docs/CONTENT.md |
 
 After any rebuild, run `npm run build` and look at the explorer and charts before publishing.
+| Photographs (13) | Wikimedia Commons; authors and licences per image in `src/lib/photos.ts` | Public domain, CC BY 2.0/4.0, CC BY-SA 2.0/4.0; credit shown under each photo | Story pages, decisions, responses, monitoring | resized, metadata stripped, otherwise unaltered |

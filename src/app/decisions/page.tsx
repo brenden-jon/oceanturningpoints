@@ -8,6 +8,7 @@ import { LENS_LABELS, type LensKey } from "@/lib/decisions";
 import { abs } from "@/lib/site";
 import styles from "../changes/coral-reefs/coral.module.css";
 import own from "./decisions.module.css";
+import PhotoFigure from "@/components/PhotoFigure";
 
 const TITLE = "How to decide when the future ocean is uncertain";
 const DESCRIPTION = "A practical guide to decisions under deep uncertainty for a changing ocean: which decisions to change now, which to assess, and which are robust; adaptive pathways, stress tests, avoiding lock-in, coastal setbacks and no-regret options such as nature-based solutions.";
@@ -124,6 +125,7 @@ export default function DecisionsPage() {
               </p>
             </div>
           </div>
+          <PhotoFigure photos={["sea-defence-tuvalu-reclamation"]} caption="Sandbag walls at Tuvalu’s land reclamation project on Funafuti, October 2025, which is building raised land as a buffer against sea-level rise and storm surges." wide />
         </div>
       </section>
 
@@ -145,6 +147,7 @@ export default function DecisionsPage() {
               (Seddon et al., 2021).
             </p>
           </div>
+          <PhotoFigure photos={["mangroves-saloum-senegal"]} caption="Mangroves in the Saloum Delta National Park, Senegal, July 2023." wide />
         </div>
       </section>
 
