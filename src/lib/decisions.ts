@@ -1,6 +1,6 @@
 /**
- * The site's decision lens: for each big change, which decisions should change now,
- * which need assessment now, and where current plans are robust. This is the site's own
+ * The Ocean Turning Points decision lens: for each big change, which decisions should change now,
+ * which need assessment now, and where current plans are robust. This is Ocean Turning Points' own
  * synthesis, built on decision-making-under-deep-uncertainty literature (Hallegatte 2009;
  * Haasnoot et al. 2013; Hinkel et al. 2019; IPCC AR6 WGII) and Jongman & Hall (forthcoming).
  */

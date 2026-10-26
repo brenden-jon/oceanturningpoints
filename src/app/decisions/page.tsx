@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import DecisionLens from "@/components/DecisionLens";
 import { ArticleLd } from "@/components/JsonLd";
-import { LENS_LABELS } from "@/lib/decisions";
+import PathwaysMap from "@/components/PathwaysMap";
+import { CHANGES } from "@/lib/changes";
+import { LENS_LABELS, type LensKey } from "@/lib/decisions";
 import { abs } from "@/lib/site";
 import styles from "../changes/coral-reefs/coral.module.css";
 import own from "./decisions.module.css";
@@ -17,15 +19,7 @@ export const metadata: Metadata = {
   openGraph: { title: TITLE, description: DESCRIPTION, url: abs("/decisions/"), images: [abs("/og/science.png")], type: "article", siteName: "Ocean Turning Points" },
 };
 
-const CHANGES: { key: Parameters<typeof DecisionLens>[0]["change"]; name: string; href: string }[] = [
-  { key: "amoc", name: "Atlantic circulation", href: "/changes/atlantic-circulation/" },
-  { key: "ice-sheets", name: "Ice sheets and sea level", href: "/changes/ice-sheets/" },
-  { key: "coral-reefs", name: "Coral reefs", href: "/changes/coral-reefs/" },
-  { key: "el-nino", name: "El Niño", href: "/changes/el-nino/" },
-  { key: "fish", name: "Fish on the move", href: "/changes/fish-on-the-move/" },
-  { key: "subpolar-gyre", name: "Subpolar North Atlantic", href: "/changes/subpolar-gyre/" },
-  { key: "southern-ocean", name: "Southern Ocean", href: "/changes/southern-ocean/" },
-];
+const lensKey = (slug: string) => (slug === "fish-on-the-move" ? "fish" : slug) as LensKey;
 
 export default function DecisionsPage() {
   return (
@@ -55,32 +49,25 @@ export default function DecisionsPage() {
         <div className="wrap">
           <p className="kicker">The decision lens</p>
           <h2 id="types" className={styles.h2}>Three kinds of decision</h2>
-          <div className={own.types}>
-            {(["act", "assess", "stay"] as const).map((k) => (
-              <div key={k} className={`${own.type} ${own[k]}`}>
-                <h3>{LENS_LABELS[k].title}</h3>
-                <p>{LENS_LABELS[k].text}</p>
-              </div>
-            ))}
+          <div className={own.tree}>
+            <div className={own.q}><span>1</span>Would the decision fail, or prove costly, if the change were larger, faster or in the other direction?</div>
+            <div className={own.branch}>
+              <p className={own.answer}>No</p>
+              <div className={`${own.type} ${own.stay}`}><h3>{LENS_LABELS.stay.title}</h3><p>{LENS_LABELS.stay.text}</p></div>
+            </div>
+            <p className={own.yes}>Yes</p>
+            <div className={own.q}><span>2</span>Is it long-lived or hard to reverse, and being decided now?</div>
+            <div className={own.branch}>
+              <p className={own.answer}>Yes</p>
+              <div className={`${own.type} ${own.act}`}><h3>{LENS_LABELS.act.title}</h3><p>{LENS_LABELS.act.text}</p></div>
+              <p className={own.answer}>Not yet</p>
+              <div className={`${own.type} ${own.assess}`}><h3>{LENS_LABELS.assess.title}</h3><p>{LENS_LABELS.assess.text}</p></div>
+            </div>
           </div>
-          <div className={`prose ${own.lead}`} style={{ marginTop: "2rem" }}>
-            <p>Three questions sort a decision into one of these:</p>
-            <ol>
-              <li><b>Is it long-lived and hard to reverse?</b> A port, a dam, a new district or a fisheries treaty, rather than a training programme or a seasonal plan.</li>
-              <li><b>Is it sensitive to the direction or size of the change?</b> Would it fail if rainfall fell instead of rose, or if the sea rose 2 m instead of 0.6 m?</li>
-              <li><b>Would being wrong be severe?</b> Lives, large sums or options for future generations at stake.</li>
-            </ol>
-            <p>
-              If all three are true and the decision is being made now, it belongs in <b>Act now</b>: build in flexibility or safety margins, or
-              avoid the commitment. If it is sensitive but not yet being made, <b>Assess now</b>: stress-test it and set the trigger points at
-              which to decide. If it pays off across futures, or is cheap to adjust later, <b>Stay the course</b>.
-            </p>
-            <p className="small faint">
-              This lens is the site’s own synthesis. It builds on Hallegatte (2009), who set out no-regret options, reversible and flexible
-              options, safety margins, “soft” strategies and shorter decision horizons; on adaptive policy pathways (Haasnoot et al., 2013); and
-              on matching the kind of information to the decision (Hinkel et al., 2019).
-            </p>
-          </div>
+          <p className={`small faint ${own.lead}`} style={{ marginTop: "1.5rem" }}>
+            This lens is Ocean Turning Points’ own synthesis. It builds on Hallegatte (2009) on no-regret options, flexibility and safety margins;
+            on adaptive policy pathways (Haasnoot et al., 2013); and on matching the information to the decision (Hinkel et al., 2019).
+          </p>
         </div>
       </section>
 
@@ -88,47 +75,27 @@ export default function DecisionsPage() {
         <div className="wrap">
           <p className="kicker">Principles</p>
           <h2 id="pathways" className={styles.h2}>Robust, adaptive and monitored</h2>
-          <div className={styles.responses}>
-            <div>
-              <h3>Aim for robust, not optimal</h3>
-              <p>
-                Under deep uncertainty, experts do not know or cannot agree how the system works or how likely different futures are. The best plan
-                is then the one that performs acceptably across many plausible futures, not the one tuned to a single forecast. Decision science
-                calls this a shift from “predict, then act” to “monitor and adapt” (Lempert et al., 2003; Marchau et al., 2019).
-              </p>
-            </div>
-            <div>
-              <h3>Plan pathways, with signposts and triggers</h3>
-              <p>
-                Adaptive pathways commit to short-term actions within a long-term vision, map the sequence of options like a metro map, and set
-                signposts to monitor and trigger points at which to switch (Haasnoot et al., 2013). Each option has an “adaptation tipping point”:
-                the moment it stops meeting its goal (Kwadijk et al., 2010). That is a point where a plan fails, distinct from a climate tipping point.
-              </p>
-            </div>
-            <div>
-              <h3>Stress-test against high-end outcomes</h3>
-              <p>
-                For decisions that are long-lived, critical and hard to reverse, use high-end scenarios or upper bounds, not central estimates
-                (Hinkel et al., 2019). A stress test asks what would fail, lock in risk or become unaffordable if the change were larger or faster
-                than expected, and only goes deeper where the first screen shows exposure (Ray and Brown, 2015).
-              </p>
-            </div>
-            <div>
-              <h3>Keep options open, even at some cost</h3>
-              <p>
-                Designs that can be raised, extended or repurposed, and investments that can be staged, are worth paying a little more for when the
-                future is unclear. Long-lived infrastructure is rarely appraised over its full life; counting the cost of switching pathways later
-                changes which options look best (Haasnoot et al., 2019).
-              </p>
-            </div>
+          <div className={`prose ${own.lead}`}>
+            <p>
+              When experts cannot agree how likely different futures are, the best plan is the one that works acceptably across many of them, not
+              the one tuned to a single forecast: “monitor and adapt” rather than “predict, then act” (Lempert et al., 2003; Marchau et al., 2019).
+              Adaptive pathways put this into practice. Each action works until the change is too large for it, its adaptation tipping point
+              (Kwadijk et al., 2010). The plan maps which action can follow which, and watches signposts so the next step is ready in time
+              (Haasnoot et al., 2013).
+            </p>
+          </div>
+          <PathwaysMap />
+          <div className={own.principles}>
+            <div><h3>Stress-test against high-end outcomes</h3><p>For long-lived, critical and hard-to-reverse decisions, use high-end scenarios, not central estimates (Hinkel et al., 2019).</p></div>
+            <div><h3>Keep options open</h3><p>Designs that can be raised, extended or staged are worth paying a little more for when the future is unclear (Haasnoot et al., 2019).</p></div>
+            <div><h3>Link monitoring to decisions</h3><p>Agree in advance which observations trigger a review, and move the trigger earlier if change speeds up.</p></div>
           </div>
           <div className={own.case}>
             <h3>In practice: London’s flood defences</h3>
             <p>
-              The Thames Estuary 2100 plan does not fix one sea-level forecast. It monitors ten indicators that trigger decision points, and those
-              points move earlier if the sea rises faster (Ranger et al., 2013). In 2023 the deadline for deciding how to replace the Thames Barrier
-              was brought forward from 2050 to 2040, and the 2026 monitoring review found sea level rising at 4.1 mm a year, now matching the
-              plan’s projection (UK Environment Agency). Its high-end scenario changed the long-term options, but not what needed doing first.
+              The Thames Estuary 2100 plan monitors ten indicators that trigger decision points, which move earlier if the sea rises faster
+              (Ranger et al., 2013). In 2023 the deadline for deciding how to replace the Thames Barrier was brought forward from 2050 to 2040;
+              the 2026 review found sea level rising at 4.1 mm a year, in line with the plan (UK Environment Agency).
             </p>
           </div>
         </div>
@@ -141,29 +108,19 @@ export default function DecisionsPage() {
           <div className={styles.split} style={{ alignItems: "start" }}>
             <div className="prose">
               <p>
-                Some decisions made today will still stand when the ocean has changed a great deal. The IPCC warns that actions focused on
-                short-term gains can lock in vulnerability that is difficult and expensive to change. Seawalls, for example, reduce impacts in the
-                short term but can increase exposure in the long term unless they are part of a long-term adaptive plan (<i>high confidence</i>;
-                IPCC, 2022).
-              </p>
-              <p>
-                Ignoring sea-level rise beyond 2100 creates a commitment gap: costly retrofits, stranded assets and less time to adapt (Haasnoot
-                et al., 2021). After only 0.15 m more rise, about a million people would need to adapt to permanent flooding, and the number exposed
-                to a 1-in-100-year flood doubles at 0.75 m.
+                Some decisions made today will still stand when the ocean has changed a great deal. Actions focused on short-term gains can lock
+                in vulnerability: seawalls reduce impacts now but can increase exposure later unless they are part of a long-term adaptive plan
+                (<i>high confidence</i>; IPCC, 2022). Ignoring sea-level rise beyond 2100 leads to costly retrofits and stranded assets
+                (Haasnoot et al., 2021).
               </p>
             </div>
             <div className="prose">
-              <h3>Coastal setbacks and relocation, handled with care</h3>
+              <h3>Coastal setbacks, handled with care</h3>
               <p>
                 Keeping new buildings back from the shore is among the cheapest adaptations, because nothing has been built yet. Setback zones could
-                cut the exposure of new urban development by at least half in most EU countries by 2100 (Wolff et al., 2023), and in Croatia
-                combining protection with building restrictions cut projected flood costs by up to 39% (Lincke et al., 2020). Mediterranean countries
-                have agreed a minimum 100 m no-build zone along the coast, with broad exceptions (Barcelona Convention ICZM Protocol, Article 8).
-              </p>
-              <p>
-                Moving existing communities is different: slow, costly and contested. Past relocations have often been inequitable, and protection
-                tends to be affordable mainly in dense, wealthy places (Siders et al., 2019; IPCC, 2022). Where it may be needed, the work on land,
-                finance, law and consent has to start decades ahead and involve the people affected (Haasnoot et al., 2021).
+                at least halve the exposure of new urban development in most EU countries by 2100 (Wolff et al., 2023). Moving existing communities
+                is different: slow, costly and often inequitable, so where it may be needed the work on land, finance and consent has to start
+                decades ahead, with the people affected (Siders et al., 2019; Haasnoot et al., 2021).
               </p>
             </div>
           </div>
@@ -182,14 +139,10 @@ export default function DecisionsPage() {
           </ul>
           <div className={`prose ${own.lead}`} style={{ marginTop: "2rem" }}>
             <p>
-              Early warning, social protection, climate services and risk finance help across almost any future, and work better combined
-              (IPCC, 2022). Protecting and restoring mangroves, reefs, marshes and fish stocks pays off now and buys time. Marine protection
-              rebuilds fish populations and helps ecosystems recover between shocks. <Link href="/responses/#protect">Protecting the ocean</Link>.
-            </p>
-            <p>
-              These options have limits. Ecosystem-based adaptation loses effectiveness as warming rises, and above 1.5°C some measures will
-              stop working (<i>high confidence</i>; IPCC, 2022). Nature-based solutions are not a substitute for cutting emissions (Seddon et al.,
-              2021). A reef that protects a coast today may not do so in 2070, so long-lived designs that depend on it belong in Assess now.
+              Early warning, social protection, risk finance, and protecting and restoring mangroves, reefs, marshes and fish stocks pay off across
+              almost any future (IPCC, 2022). <Link href="/responses/#protect">Protecting the ocean</Link>. They have limits: ecosystem-based
+              adaptation loses effectiveness as warming rises (<i>high confidence</i>; IPCC, 2022), and it is no substitute for cutting emissions
+              (Seddon et al., 2021).
             </p>
           </div>
         </div>
@@ -199,11 +152,12 @@ export default function DecisionsPage() {
         <div className="wrap">
           <p className="kicker">Applying the lens</p>
           <h2 id="bychange" className={styles.h2}>Decisions for each big change</h2>
-          {CHANGES.map((c) => (
-            <div key={c.key} className={own.changeBlock}>
-              <h3><Link href={c.href}>{c.name}</Link></h3>
-              <DecisionLens change={c.key} compact />
-            </div>
+          {CHANGES.map((c, i) => (
+            <details key={c.slug} className={own.changeBlock} open={i === 0}>
+              <summary><span className={own.changeName}>{c.title}</span><span className={own.changeStatus}>{c.status}</span></summary>
+              <DecisionLens change={lensKey(c.slug)} compact />
+              <p className="small"><Link className="more" href={`${c.story}${c.slug === "coral-reefs" ? "#responses" : "#decide"}`}>{c.title}: the full story</Link></p>
+            </details>
           ))}
         </div>
       </section>
@@ -242,11 +196,10 @@ export default function DecisionsPage() {
             Popper, S. &amp; Bankes, S. (2003), <i>Shaping the Next One Hundred Years</i>, RAND; Hallegatte, S. (2009), <i>Global Environmental
             Change</i> 19, 240–247; Kwadijk, J. et al. (2010), <i>WIREs Climate Change</i> 1, 729–740; Haasnoot, M. et al. (2013), <i>Global
             Environmental Change</i> 23, 485–498; Haasnoot, M. et al. (2019), <i>Climatic Change</i> 161, 451–463; Haasnoot, M. et al. (2021),{" "}
-            <i>Climate Risk Management</i> 34, 100355; Hinkel, J. et al. (2019), <i>Earth’s Future</i> 7, 320–337; Ray, P. &amp; Brown, C. (2015),{" "}
-            <i>Confronting Climate Uncertainty in Water Resources Planning and Project Design</i>, World Bank; Ranger, N. et al. (2013), <i>EURO
+            <i>Climate Risk Management</i> 34, 100355; Hinkel, J. et al. (2019), <i>Earth’s Future</i> 7, 320–337; Ranger, N. et al. (2013), <i>EURO
             Journal on Decision Processes</i> 1, 233–262; UK Environment Agency, Thames Estuary 2100 updates (2023) and 15-year monitoring review
             (2026); IPCC (2022), AR6 Working Group II Summary for Policymakers and Cross-Chapter Paper 2; Wolff, C. et al. (2023), <i>Scientific
-            Reports</i> 13, 5515; Lincke, D. et al. (2020), <i>Regional Environmental Change</i> 20, 46; Siders, A. R. et al. (2019), <i>Science</i>{" "}
+            Reports</i> 13, 5515; Siders, A. R. et al. (2019), <i>Science</i>{" "}
             365, 761–763; Hallegatte, S. (2012), World Bank Policy Research Working Paper 6058; Narayan, S. et al. (2016), <i>PLoS ONE</i> 11,
             e0154735; Menéndez, P. et al. (2020), <i>Scientific Reports</i> 10, 4404; Beck, M. W. et al. (2018), <i>Nature Communications</i> 9,
             2186; Reguero, B. G. et al. (2018), <i>PLoS ONE</i> 13, e0192132; Seddon, N. et al. (2021), <i>Global Change Biology</i> 27,

@@ -34,7 +34,7 @@ export default function Methods() {
     <article className={styles.article}>
       <header className={`wrap ${styles.head}`}>
         <p className="label"><Link href="/science/">Science</Link> · Methods</p>
-        <h1 className={styles.title}>How this site handles evidence</h1>
+        <h1 className={styles.title}>How we handle evidence</h1>
         <p className="lede">
           The aim is that anyone can see where a number comes from, what kind of evidence it is, and how much weight it can bear.
         </p>
@@ -78,7 +78,7 @@ export default function Methods() {
           <p>
             All processing is done by a documented, open pipeline that downloads the original files, records their sources and
             checks results against the published papers. Model fields are placed on a common 0.5° latitude-longitude grid, finer than
-            any model used, so no model detail is lost; the finer grid adds no real detail. The site decodes the same values for colouring and for the numbers shown when
+            any model used, so no model detail is lost; the finer grid adds no real detail. The same decoded values drive the colours and the numbers shown when
             you hover, so what you see and what you can read are always identical.
           </p>
           <p>

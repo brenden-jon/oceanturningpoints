@@ -238,13 +238,12 @@ export default function ResponsesPage() {
           <p className="kicker">Plan for what cannot be avoided</p>
           <h2 id="plan" className={styles.h2}>Decisions for each change</h2>
           <div className={`${styles.responses} ${own.planCards}`}>
-            <div><h3><Link href="/changes/el-nino/#decide">El Niño</Link></h3><p>Act on forecasts with agreed triggers and pre-arranged finance; size reserves and insurance for stronger events.</p></div>
-            <div><h3><Link href="/changes/coral-reefs/#responses">Coral reefs</Link></h3><p>Protect the reefs most likely to survive, support reef fishers through change, and plan for weaker natural coastal defences.</p></div>
-            <div><h3><Link href="/changes/fish-on-the-move/#decide">Fish on the move</Link></h3><p>End overfishing and adapt quotas and agreements as stocks shift across borders.</p></div>
-            <div><h3><Link href="/changes/ice-sheets/#decide">Ice sheets</Link></h3><p>Test long-lived coastal assets against a high-end rise and keep options open to raise defences or move.</p></div>
             <div><h3><Link href="/changes/atlantic-circulation/#decide">Atlantic circulation</Link></h3><p>Stress-test long-lived investments against a collapse and favour measures that pay off either way.</p></div>
+            <div><h3><Link href="/changes/coral-reefs/#responses">Coral reefs</Link></h3><p>Protect the reefs most likely to survive, support reef fishers through change, and plan for weaker natural coastal defences.</p></div>
+            <div><h3><Link href="/changes/ice-sheets/#decide">Ice sheets</Link></h3><p>Test long-lived coastal assets against a high-end rise and keep options open to raise defences or move.</p></div>
+            <div><h3><Link href="/changes/el-nino/#decide">El Niño</Link></h3><p>Act on forecasts with agreed triggers and pre-arranged finance; size reserves and insurance for stronger events.</p></div>
+            <div><h3><Link href="/changes/fish-on-the-move/#decide">Fish on the move</Link></h3><p>End overfishing and adapt quotas and agreements as stocks shift across borders.</p></div>
             <div><h3><Link href="/changes/subpolar-gyre/#decide">Subpolar North Atlantic</Link></h3><p>Include abrupt regional cooling in risk assessments and link observations to decision points.</p></div>
-            <div><h3><Link href="/changes/southern-ocean/#decide">Southern Ocean</Link></h3><p>Protect Antarctic waters, manage krill for a changing ocean and avoid assuming the carbon sink will keep pace.</p></div>
             <div><h3><Link href="/monitoring/">Keep watching</Link></h3><p>Long, unbroken ocean records underpin every one of these decisions. See who monitors the ocean, and where the gaps are.</p></div>
           </div>
         </div>

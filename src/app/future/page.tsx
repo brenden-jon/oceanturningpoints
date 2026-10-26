@@ -190,8 +190,8 @@ export default function FuturePage() {
           <h2 id="futures" className={styles.h2}>What the ocean could look like at 1.5, 2.7 and 4°C</h2>
           <div className={`prose ${own.lead}`}>
             <p>
-              Each future combines the changes the IPCC expects with the tipping-point risks on this site. “Near-certain” and “likely” are this site’s
-              bands, built on IPCC likelihood and confidence statements and on tipping-point assessments; “possible” means an outcome that cannot be
+              Each future combines the changes the IPCC expects with the tipping-point risks on this site. “Near-certain” and “likely” are Ocean Turning Points’
+              own bands, built on IPCC likelihood and confidence statements and on tipping-point assessments; “possible” means an outcome that cannot be
               ruled out or appears in a minority of models. No probability is attached to these outcomes beyond what the sources give.
             </p>
           </div>

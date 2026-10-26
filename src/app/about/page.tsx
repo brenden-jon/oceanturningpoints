@@ -25,8 +25,8 @@ export default function About() {
             consequences for developing countries.
           </p>
           <p>
-            The site covers ocean systems that are changing now or could change abruptly: El Niño, the Atlantic overturning
-            circulation, the subpolar North Atlantic, the Southern Ocean, coral reefs and the ice sheets. It is written for people who
+            Ocean Turning Points covers ocean systems that are changing now or could change abruptly: the Atlantic overturning
+            circulation, coral reefs, the ice sheets, El Niño, fish stocks on the move and the subpolar North Atlantic, with the Southern Ocean also followed. It is written for people who
             make or advise on decisions, in finance and planning ministries, development banks, insurers and adaptation agencies. It
             does not make its own forecasts, run campaigns or publish new research. Every map and claim traces to peer-reviewed work or an official dataset, and each topic shows the
             date it was last reviewed.
@@ -55,7 +55,7 @@ export default function About() {
 
           <h2 id="credits">Data and credits</h2>
           <p>
-            The site depends on the scientists who publish their model output and observations openly. Each map and chart names its
+            Ocean Turning Points depends on the scientists who publish their model output and observations openly. Each map and chart names its
             sources next to it; the full list, licences and processing steps are in <Link href="/science/methods/">methods and data</Link>.
             Earth imagery is NASA’s Blue Marble, served by NASA GIBS. Coastlines and borders are from Natural Earth.
           </p>

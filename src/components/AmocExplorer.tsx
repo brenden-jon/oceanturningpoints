@@ -248,7 +248,7 @@ export default function AmocExplorer() {
       <div className={styles.stage}>
         {/* controls */}
         <aside className={styles.controls} aria-label="Map controls">
-          <fieldset className={styles.group}>
+          <fieldset className={`${styles.group} ${styles.full}`}>
             <legend className="label">Show</legend>
             <div className={styles.seg}>
               {(["temperature", "rainfall"] as Family[]).map((f) => (
@@ -268,8 +268,11 @@ export default function AmocExplorer() {
                     <button key={v.id} aria-pressed={state.variable === v.id} onClick={() => set({ variable: v.id })}>{v.label}</button>
                   ))}
                 </div>
+                <select className={styles.select} aria-label="Measure" value={state.variable} onChange={(e) => set({ variable: e.target.value })}>
+                  {temp.variables.map((v) => <option key={v.id} value={v.id}>{v.label}</option>)}
+                </select>
               </fieldset>
-              <fieldset className={styles.group}>
+              <fieldset className={`${styles.group} ${styles.full}`}>
                 <legend className="label">Compare</legend>
                 <div className={styles.list}>
                   {temp.comparisons.map((c) => (
@@ -279,6 +282,9 @@ export default function AmocExplorer() {
                     </button>
                   ))}
                 </div>
+                <select className={styles.select} aria-label="Compare" value={state.comparison} onChange={(e) => set({ comparison: e.target.value })}>
+                  {temp.comparisons.map((c) => <option key={c.id} value={c.id}>{c.title}{c.clean ? "" : " (see note)"}</option>)}
+                </select>
               </fieldset>
               <label className={styles.toggle}>
                 <input type="checkbox" checked={state.ice} onChange={(e) => set({ ice: e.target.checked })} />
@@ -295,6 +301,9 @@ export default function AmocExplorer() {
                   <button key={k} aria-pressed={state.season === k} onClick={() => set({ season: k })}>{label}</button>
                 ))}
               </div>
+              <select className={styles.select} aria-label="Season" value={state.season} onChange={(e) => set({ season: e.target.value })}>
+                {Object.entries(rain.seasons).map(([k, label]) => <option key={k} value={k}>{label as string}</option>)}
+              </select>
             </fieldset>
           )}
 
@@ -305,6 +314,9 @@ export default function AmocExplorer() {
                 <button key={k} aria-pressed={state.region === k} onClick={() => set({ region: k })}>{r.label}</button>
               ))}
             </div>
+            <select className={styles.select} aria-label="Region" value={state.region} onChange={(e) => set({ region: e.target.value })}>
+              {Object.entries(REGIONS).map(([k, r]) => <option key={k} value={k}>{r.label}</option>)}
+            </select>
           </fieldset>
 
           <fieldset className={styles.group}>

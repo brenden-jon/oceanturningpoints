@@ -18,3 +18,28 @@
 @media (max-width: 960px) { .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 860px) { .types { grid-template-columns: minmax(0, 1fr); } }
 @media (max-width: 560px) { .steps { grid-template-columns: minmax(0, 1fr); } }
+.tree { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 0.6rem 2rem; align-items: center; margin-top: 1.5rem; }
+.q { background: var(--bg-deep); color: #fff; border-radius: var(--radius); padding: 1.2rem 1.4rem; font-size: 1.08rem; font-weight: 550; line-height: 1.4; display: flex; gap: 0.9rem; align-items: flex-start; }
+.q span { flex: none; width: 1.7rem; height: 1.7rem; border-radius: 50%; background: #fff; color: var(--bg-deep); display: grid; place-items: center; font-size: 0.9rem; font-weight: 700; }
+.branch { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 0.6rem 0.9rem; align-items: center; }
+.answer, .yes { margin: 0; font-size: 0.85rem; font-weight: 650; color: var(--text-2); white-space: nowrap; }
+.answer::after { content: " →"; }
+.yes { grid-column: 1 / -1; padding-left: 1.4rem; }
+.yes::after { content: " ↓"; }
+.principles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+.principles > div { background: var(--bg); border-radius: var(--radius); padding: 1.1rem 1.3rem; }
+.principles h3 { font-size: 1.05rem; margin: 0 0 0.3rem; }
+.principles p { margin: 0; color: var(--text-2); font-size: 0.95rem; }
+.changeBlock { border-top: 1px solid var(--line); padding: 0.4rem 0 0.6rem; margin: 0 !important; }
+.changeBlock:last-child { border-bottom: 1px solid var(--line); }
+.changeBlock summary { cursor: pointer; display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.3rem 1rem; padding: 0.8rem 0; list-style: none; }
+.changeBlock summary::-webkit-details-marker { display: none; }
+.changeBlock summary::before { content: "+"; width: 1.2rem; color: var(--accent); font-weight: 700; }
+.changeBlock[open] summary::before { content: "–"; }
+.changeName { font-size: 1.15rem; font-weight: 650; }
+.changeStatus { font-size: 0.85rem; color: var(--alert); font-weight: 600; }
+@media (max-width: 860px) {
+  .tree { grid-template-columns: minmax(0, 1fr); }
+  .yes { padding-left: 0; }
+  .principles { grid-template-columns: minmax(0, 1fr); }
+}

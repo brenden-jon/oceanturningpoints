@@ -16,7 +16,7 @@ export default function DecisionLens({ change, compact = false }: { change: Lens
       ))}
       {!compact && (
         <p className={`small faint ${styles.note}`}>
-          The three decision types are this site’s own lens, built on research on deciding under deep uncertainty.{" "}
+          The three decision types are Ocean Turning Points’ own lens, built on research on deciding under deep uncertainty.{" "}
           <Link href="/decisions/">How to decide under uncertainty</Link>.
         </p>
       )}

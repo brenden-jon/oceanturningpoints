@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import HeroGlobe from "@/components/HeroGlobe";
 import { num, rainAt, tempAt } from "@/lib/amocData";
-import { allTopics } from "@/lib/science";
+import { CHANGES } from "@/lib/changes";
 import { SITE, abs, asset } from "@/lib/site";
 import styles from "./page.module.css";
 
@@ -16,20 +16,12 @@ export const metadata: Metadata = {
   openGraph: { images: [abs("/og/home.jpg")] },
 };
 
-const CHANNELS = [
-  { title: "Rain and harvests", text: "Changes in ocean circulation move the tropical rain belts that monsoon farming depends on, from the Sahel to South Asia.", topic: "amoc" },
-  { title: "Coastal flooding", text: "Melting ice sheets raise global sea level. Sinking land, currents, reefs and the shape of the coast decide how much reaches each shoreline.", topic: "ice-sheets" },
-  { title: "Winters and heat", text: "The North Atlantic sets much of Europe’s weather. A sharp change in its circulation would bring colder winters, even as the planet warms.", topic: "subpolar-gyre" },
-  { title: "Fish and livelihoods", text: "Heat, acidification and reef loss change what coastal fisheries can catch, with the largest effects in the tropics.", topic: "coral-reefs" },
-  { title: "Global warming itself", text: "The Southern Ocean absorbs a large share of the heat and carbon dioxide that people add. Changes there feed back on how fast the world warms.", topic: "southern-ocean" },
-];
 
 const NOW = path.join(process.cwd(), "public", "data", "now");
 const readNow = (f: string) => JSON.parse(fs.readFileSync(path.join(NOW, f), "utf8"));
 const day = (iso: string) => new Date(iso.slice(0, 10) + "T12:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "long", timeZone: "UTC" });
 
 export default function Home() {
-  const topics = allTopics();
   const now = readNow("manifest.json");
   const london = { pi: tempAt("London", "winter", "pi_on"), off: tempAt("London", "winter", "rcp45_off") };
   const niamey = rainAt("Niamey", "jja");
@@ -43,13 +35,12 @@ export default function Home() {
         <div className={`wrap ${styles.heroText}`}>
           <h1 className="display">Which big ocean changes should the world plan for?</h1>
           <p className={`lede ${styles.heroLede}`}>
-            Coral reefs crossing a tipping point. Ice sheets that could commit the world to metres of sea-level rise. An Atlantic
-            circulation that could collapse. A Pacific shifting towards El Niño. Ocean Turning Points sets out the evidence for each,
-            how likely it is, and what it means for development and decisions.
+            An independent guide to the big changes in the ocean, from a possible Atlantic circulation collapse to coral reefs passing a
+            tipping point: how likely each is, what it would mean, and which decisions should change.
           </p>
           <p className={styles.actions}>
             <Link className="button" href="/changes/">The big changes</Link>
-            <Link className="more" href="/ocean-now/">See the ocean now</Link>
+            <Link className="more" href="/decisions/">How to decide</Link>
           </p>
         </div>
         <HeroGlobe className={styles.globeBox} currents={now.currents} />
@@ -71,32 +62,24 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section" aria-labelledby="plan">
+      <section className="section" aria-labelledby="changes">
         <div className="wrap">
-          <h2 id="plan" className={styles.h2}>Four big changes, and what to plan for</h2>
+          <h2 id="changes" className={styles.h2}>Six big changes</h2>
           <p className={`lede ${styles.sub}`}>They differ in how soon they arrive, how likely they are and what can be done about them.</p>
-          <ol className={styles.plan}>
-            <li>
-              <span className={styles.when}>Under way</span>
-              <h3><Link href="/changes/coral-reefs/">Coral reefs crossing a tipping point</Link></h3>
-              <p>Plan for less coastal protection, fish and tourism income on reef coasts. Protect the reefs coping best with heat and reduce local pressures.</p>
-            </li>
-            <li>
-              <span className={styles.when}>Now, and changing</span>
-              <h3><Link href="/changes/el-nino/">A Pacific shifting towards El Niño</Link></h3>
-              <p>Stronger El Niños are forecast months ahead. Agree triggers and pre-arranged finance, and size reserves and insurance for more extreme events.</p>
-            </li>
-            <li>
-              <span className={styles.when}>Thresholds near today’s warming</span>
-              <h3><Link href="/changes/ice-sheets/">Ice sheets passing a tipping point</Link></h3>
-              <p>Loss of the Greenland or West Antarctic ice sheet would commit the world to metres of sea-level rise over centuries. Keep long-lived coastal assets adaptable.</p>
-            </li>
-            <li>
-              <span className={styles.when}>Low likelihood, very high impact</span>
-              <h3><Link href="/changes/atlantic-circulation/">Atlantic circulation collapse</Link></h3>
-              <p>Test long-lived investments in the Sahel, South Asia and around the North Atlantic against a collapse, and favour measures that pay off either way.</p>
-            </li>
-          </ol>
+          <ul className={styles.tiles}>
+            {CHANGES.map((c) => (
+              <li key={c.slug}>
+                <Link href={c.story} className={styles.tile}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={asset(`/img/topics/${c.slug}.jpg`)} alt="" width={1200} height={800} loading="lazy" />
+                  <span className={styles.status}>{c.status}</span>
+                  <span className={styles.tileTitle}>{c.title}</span>
+                  <span className={styles.tileQ}>{c.question}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <p className={styles.allLink}><Link className="more" href="/changes/">Compare all six: what each is, how likely, what it would mean, what can be done</Link></p>
         </div>
       </section>
 
@@ -140,74 +123,21 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section" aria-labelledby="systems">
+      <section className="section" aria-labelledby="routes">
         <div className="wrap">
-          <h2 id="systems" className={styles.h2}>The systems we follow</h2>
-          <p className={`lede ${styles.sub}`}>
-            Each is changing now. Five could pass a tipping point as warming rises. El Niño is not assessed as a tipping system, but its
-            rainfall swings are expected to grow.
-          </p>
-          <ul className={styles.tiles}>
-            {topics.map((t) => (
-              <li key={t.slug}>
-                <Link href={t.slug === "amoc" ? "/changes/atlantic-circulation/" : `/changes/${t.slug}/`} className={styles.tile}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={asset(`/img/topics/${t.slug}.jpg`)} alt="" width={1200} height={800} loading="lazy" />
-                  <span className={styles.tileTitle}>{t.title}</span>
-                  <span className={styles.tileQ}>{t.question}</span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <p className={`small faint ${styles.credit}`}>Images: NOAA Coral Reef Watch, NOAA CoastWatch and NASA Blue Marble; circulation diagrams after Buckley and Marshall (2016).</p>
-        </div>
-      </section>
-
-      <section className="section section--alt" aria-labelledby="people">
-        <div className={`wrap ${styles.peopleGrid}`}>
-          <div>
-            <h2 id="people" className={styles.h2}>Why it matters for development and decisions</h2>
-            <p className="lede">
-              Ocean change reaches economies through rainfall, coasts, extreme weather and food. The countries most exposed are
-              often far from the ocean systems that are changing, and many have the least room to absorb a shock.
-            </p>
-          </div>
-          <ul className={styles.channels}>
-            {CHANNELS.map((c) => (
-              <li key={c.title}>
-                <h3><Link href={`/science/${c.topic}/`}>{c.title}</Link></h3>
-                <p>{c.text}</p>
-              </li>
-            ))}
+          <h2 id="routes" className={styles.h2}>From evidence to decisions</h2>
+          <ul className={styles.routes}>
+            <li><Link href="/future/"><b>The future ocean</b><span>What is already expected, and three futures at 1.5, 2.7 and 4°C.</span></Link></li>
+            <li><Link href="/impacts/"><b>Impacts in your region</b><span>Food, water, coasts, fisheries and public finance in thirteen regions.</span></Link></li>
+            <li><Link href="/decisions/"><b>How to decide</b><span>Which decisions to change now, which to assess and which are robust.</span></Link></li>
+            <li><Link href="/responses/"><b>What can be done</b><span>How far emissions must fall, protecting the ocean, and paying for it.</span></Link></li>
+            <li><Link href="/monitoring/"><b>Who is watching the ocean</b><span>Every observing platform on one map, and why long records matter.</span></Link></li>
+            <li><Link href="/science/latest/"><b>Latest research</b><span>New studies on the big changes, with plain summaries.</span></Link></li>
           </ul>
         </div>
       </section>
 
-      <section className="section" aria-labelledby="decide">
-        <div className="wrap">
-          <h2 id="decide" className={styles.h2}>Making decisions in a changing ocean</h2>
-          <ul className={styles.principles}>
-            <li><h3><Link href="/future/">The future ocean</Link></h3><p>What is already expected, such as 0.4–0.8 m of sea-level rise by 2100 under current policies, and three possible futures with their tipping risks.</p></li>
-            <li><h3><Link href="/impacts/">Impacts in your region</Link></h3><p>What the big changes mean for food, water, coasts, fisheries, health and public finance in thirteen regions.</p></li>
-            <li><h3><Link href="/decisions/">How to decide</Link></h3><p>Which decisions to change now, which to assess first and which are robust: adaptive pathways, stress tests and no-regret options.</p></li>
-            <li><h3><Link href="/science/latest/">Latest research</Link></h3><p>New studies on the big changes, with plain-English summaries, updated regularly.</p></li>
-          </ul>
-        </div>
-      </section>
-
-      <section className="section section--alt" aria-labelledby="act">
-        <div className="wrap">
-          <h2 id="act" className={styles.h2}>What can be done</h2>
-          <ul className={styles.principles}>
-            <li><h3><Link href="/responses/#warming">Limit warming</Link></h3><p>Today’s policies lead to about 2.8°C, past the thresholds for reefs and the ice sheets. See how far emissions must fall, and how fast.</p></li>
-            <li><h3><Link href="/responses/#protect">Protect the ocean</Link></h3><p>About 10% of the ocean is protected, against a 30% goal for 2030. Every protected area on one map, and what protection can and cannot do.</p></li>
-            <li><h3><Link href="/responses/#finance">Pay for protection</Link></h3><p>Ocean protection gets about a tenth of the money it needs. Costs, returns and the instruments countries are using.</p></li>
-            <li><h3><Link href="/monitoring/">Keep watching</Link></h3><p>Every platform observing the ocean on one map, who runs them, and why long, unbroken records matter for decisions.</p></li>
-          </ul>
-        </div>
-      </section>
-
-      <section className="section" aria-labelledby="how">
+      <section className="section section--alt" aria-labelledby="how">
         <div className="wrap">
           <h2 id="how" className={styles.h2}>How we work</h2>
           <ul className={styles.principles}>

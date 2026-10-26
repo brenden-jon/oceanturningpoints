@@ -332,7 +332,7 @@ export default function AmocPage() {
               Planning for it should not displace adaptation that is needed now. Dams, ports, irrigation schemes and crop programmes built today will still be in use when the question is
               better understood. The direction of many effects is clearer than their size, so the most useful measures are those that
               help across the range of outcomes. Published estimates of the economic cost of a collapse for developing countries are
-              scarce, and this site does not yet report any.
+              scarce, and Ocean Turning Points does not yet report any.
             </p>
           </div>
           <ol className={styles.steps}>

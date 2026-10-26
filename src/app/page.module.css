@@ -70,3 +70,20 @@
   .facts div { grid-template-columns: 5.2rem 1fr; }
   .facts dt { font-size: 1.6rem; }
 }
+.status { font-size: 0.78rem; font-weight: 650; color: var(--alert); letter-spacing: 0.01em; }
+.allLink { margin: 2rem 0 0; }
+.routes { list-style: none; margin: 2rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.9rem; }
+.routes a { display: grid; gap: 0.3rem; height: 100%; padding: 1.1rem 1.2rem; border-radius: var(--radius); background: var(--bg-alt); color: var(--text); text-decoration: none; border: 1px solid transparent; }
+.routes a:hover { border-color: var(--line-2); text-decoration: none; }
+.routes b { font-size: 1.05rem; }
+.routes b::after { content: " ›"; color: var(--accent); }
+.routes span { color: var(--text-2); font-size: 0.93rem; }
+@media (max-width: 900px) { .routes { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .routes { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 560px) {
+  .tiles:has(.status) { gap: 1.1rem; }
+  .tile:has(.status) { grid-template-columns: 104px minmax(0, 1fr); column-gap: 0.9rem; row-gap: 0.15rem; align-content: start; }
+  .tile:has(.status) img { grid-row: 1 / span 3; margin: 0; aspect-ratio: 1; border-radius: var(--radius-s); }
+  .tile:has(.status) .tileTitle { font-size: 1.08rem; }
+  .tile:has(.status) .tileQ { font-size: 0.9rem; }
+}
