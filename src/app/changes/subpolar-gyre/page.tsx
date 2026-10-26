@@ -29,6 +29,8 @@ export default function SubpolarPage() {
         <div>
           <p className="label"><Link href="/changes/">Big changes</Link> · Subpolar North Atlantic</p>
           <h1 className={styles.title}>{TITLE}</h1>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img className={styles.heroImg} src={asset("/img/topics/subpolar-gyre.jpg")} alt="" width={1200} height={800} />
         </div>
         <div className={styles.heroSide}>
           <p className={styles.standfirst}>

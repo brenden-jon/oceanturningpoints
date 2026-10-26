@@ -22,3 +22,5 @@
 .iceGrid figcaption strong { color: var(--text); }
 .iceText { color: var(--text-2); max-width: 75ch; margin: 1.5rem 0 0; }
 @media (max-width: 900px) { .iceGrid { grid-template-columns: minmax(0, 1fr); } }
+.iceGrid figure { display: grid; gap: 0.8rem; align-content: start; background: var(--bg); }
+.iceMap { width: 100%; max-height: 520px; height: auto; object-fit: contain; border-radius: var(--radius-s); background: #0a3a6e; }

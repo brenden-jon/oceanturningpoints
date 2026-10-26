@@ -7,7 +7,7 @@ import FishMap from "@/components/FishMap";
 import HBars from "@/components/HBars";
 import StoryBrief from "@/components/StoryBrief";
 import { ArticleLd } from "@/components/JsonLd";
-import { abs } from "@/lib/site";
+import { abs, asset } from "@/lib/site";
 import styles from "../coral-reefs/coral.module.css";
 import own from "./fish.module.css";
 
@@ -33,6 +33,8 @@ export default function FishPage() {
         <div>
           <p className="label"><Link href="/changes/">Big changes</Link> · Fish on the move</p>
           <h1 className={styles.title}>{TITLE}</h1>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img className={styles.heroImg} src={asset("/img/topics/fish-on-the-move.jpg")} alt="" width={1200} height={800} />
         </div>
         <div className={styles.heroSide}>
           <p className={styles.standfirst}>

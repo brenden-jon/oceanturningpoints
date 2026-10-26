@@ -8,7 +8,7 @@ import { EnsoWeekly, type EnsoData } from "@/components/EnsoCharts";
 import ExtremeElNinoChart from "@/components/ExtremeElNinoChart";
 import OceanNowGlobe from "@/components/OceanNowGlobe";
 import { ArticleLd } from "@/components/JsonLd";
-import { abs } from "@/lib/site";
+import { abs, asset } from "@/lib/site";
 import styles from "./elnino.module.css";
 
 const TITLE = "Is warming locking the Pacific into El Niño?";
@@ -54,6 +54,8 @@ export default function ElNinoPage() {
         <div>
           <p className="label"><Link href="/changes/">Big changes</Link> · El Niño</p>
           <h1 className={styles.title}>{TITLE}</h1>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img className={styles.heroImg} src={asset("/img/topics/el-nino.jpg")} alt="" width={1200} height={800} />
         </div>
         <div className={styles.heroSide}>
           <p className={styles.standfirst}>

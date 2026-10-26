@@ -230,5 +230,34 @@
    "doi": "10.1175/BAMS-D-12-00050.1",
    "licence": "Public domain"
   }
+ },
+ "seaIceMaps": {
+  "north": {
+   "file": "seaice_north.png",
+   "date": "2026-10-17",
+   "w": 720,
+   "h": 720
+  },
+  "south": {
+   "file": "seaice_south.png",
+   "date": "2026-10-17",
+   "w": 720,
+   "h": 756
+  }
+ },
+ "worldSst": {
+  "file": "sst_world.json",
+  "date": "2026-10-24",
+  "latest": 21.026,
+  "anomaly": 0.83,
+  "recordDaily": {
+   "year": 2026,
+   "date": "2026-08-26",
+   "value": 21.183
+  },
+  "previousYearlyMax": {
+   "year": 2024,
+   "value": 21.173
+  }
  }
 }

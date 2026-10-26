@@ -9,7 +9,7 @@ import IceSheetCities, { type City } from "@/components/IceSheetCities";
 import { GlobalProjectionChart, IceSheetChart, type SeaLevelData } from "@/components/SeaLevelCharts";
 import ThresholdChart, { OCEAN_THRESHOLDS } from "@/components/ThresholdChart";
 import { ArticleLd } from "@/components/JsonLd";
-import { abs } from "@/lib/site";
+import { abs, asset } from "@/lib/site";
 import styles from "../coral-reefs/coral.module.css";
 import own from "./icesheets.module.css";
 
@@ -36,6 +36,8 @@ export default function IceSheetsPage() {
         <div>
           <p className="label"><Link href="/changes/">Big changes</Link> · Ice sheets</p>
           <h1 className={styles.title}>{TITLE}</h1>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img className={styles.heroImg} src={asset("/img/topics/ice-sheets.jpg")} alt="" width={1200} height={800} />
         </div>
         <div className={styles.heroSide}>
           <p className={styles.standfirst}>

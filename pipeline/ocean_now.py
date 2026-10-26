@@ -275,6 +275,64 @@ def sea_ice() -> dict:
                        "note": "Extent is the area of ocean with at least 15% ice concentration."}}
 
 
+def sea_ice_maps() -> dict:
+    """Latest NSIDC Sea Ice Index daily extent maps (with the 1981-2010 median edge), cropped to the map panel."""
+    out = {}
+    for code in ("north", "south"):
+        letter = code[0].upper()
+        base = f"https://noaadata.apps.nsidc.org/NOAA/G02135/{code}/daily/images/"
+        year = max(re.findall(r'href="(\d{4})/"', get(base).decode()))
+        month = sorted(re.findall(r'href="(\d{2}_\w{3})/"', get(base + f"{year}/").decode()))[-1]
+        files = sorted(re.findall(rf'href="({letter}_(\d{{8}})_extn_hires_v[\d.]+\.png)"', get(base + f"{year}/{month}/").decode()))
+        fname, ymd = files[-1]
+        im = Image.open(io.BytesIO(get(base + f"{year}/{month}/{fname}"))).convert("RGB")
+        a = np.asarray(im)
+        # the map panel is everything that is not the dark grey frame
+        frame = a[2, 2]
+        mask = np.any(np.abs(a.astype(int) - frame.astype(int)) > 6, axis=2)
+        rows = np.where(mask.mean(axis=1) > 0.5)[0]; cols = np.where(mask.mean(axis=0) > 0.5)[0]
+        x0, y0, x1, y1 = int(cols[0]), int(rows[0]), int(cols[-1]) + 1, int(rows[-1]) + 1
+        if code == "north":  # tall panel: keep a square around the pole, which sits about 52% of the way down
+            side = x1 - x0; cy = y0 + int(0.52 * (y1 - y0))
+            y0, y1 = max(y0, cy - side // 2), min(y1, cy - side // 2 + side)
+        crop = im.crop((x0, y0, x1, y1))
+        crop.thumbnail((720, 760))
+        name = f"seaice_{code}.png"
+        crop.save(NOW / name, optimize=True)
+        out[code] = {"file": name, "date": f"{ymd[:4]}-{ymd[4:6]}-{ymd[6:]}", "w": crop.width, "h": crop.height}
+    return out
+
+
+def world_sst() -> dict:
+    """Daily mean sea-surface temperature, 60°S-60°N, from Climate Reanalyzer (NOAA OISST v2.1; CC BY 4.0)."""
+    raw = json.loads(get("https://climatereanalyzer.org/clim/sst_daily/json_2clim/oisst2.1_world2_sst_day.json"))
+    years = {int(r["name"]): r["data"] for r in raw if r["name"].isdigit()}
+    prelim = next((r["data"] for r in raw if r["name"] == "Preliminary"), None)
+    clim = next(r["data"] for r in raw if r["name"] == "1991-2020")
+    cur = max(years)
+    this = list(years[cur])
+    if prelim:
+        this = [t if t is not None else p for t, p in zip(this, prelim)]
+    last = max(i for i, v in enumerate(this) if v is not None)
+    years[cur] = this
+    rd = lambda v: None if v is None else round(v, 3)
+    record = max(((y, i, v) for y, d in years.items() for i, v in enumerate(d) if v is not None and y >= 1982), key=lambda t: t[2])
+    prior = [(y, max(v for v in d if v is not None)) for y, d in years.items() if y < cur and y >= 1982]
+    prev_rec = max(prior, key=lambda t: t[1])
+    date = dt.date(cur, 1, 1) + dt.timedelta(days=last)
+    return {
+        "units": "°C", "region": "60°S–60°N", "date": date.isoformat(), "latest": rd(this[last]),
+        "anomaly": rd(this[last] - clim[last]), "climatology": "1991-2020",
+        "recordDaily": {"year": record[0], "date": (dt.date(record[0], 1, 1) + dt.timedelta(days=record[1])).isoformat(), "value": rd(record[2])},
+        "previousYearlyMax": {"year": prev_rec[0], "value": rd(prev_rec[1])},
+        "years": {str(y): [rd(v) for v in d] for y, d in sorted(years.items()) if y >= 1982},
+        "clim": [rd(v) for v in clim],
+        "source": {"org": "Climate Reanalyzer, Climate Change Institute, University of Maine", "data": "NOAA OISST v2.1",
+                   "url": "https://climatereanalyzer.org/clim/sst_daily/", "licence": "CC BY 4.0",
+                   "note": "Recent days are preliminary."},
+    }
+
+
 # --------------------------------------------------------------------- ENSO
 
 MON = {m: i + 1 for i, m in enumerate("JAN FEB MAR APR MAY JUN JUL AUG SEP OCT NOV DEC".split())}
@@ -401,6 +459,15 @@ def main() -> None:
         manifest["seaIce"] = {"file": "sea_ice.json", **{h: {k: ice[h][k] for k in ("date", "extent", "median8110", "rankLowest", "years")} for h in ("arctic", "antarctic")}}
         for h in ("arctic", "antarctic"):
             i = ice[h]; print(f"  {h} sea ice {i['date']}: {i['extent']} vs median {i['median8110']} (rank {i['rankLowest']} lowest of {i['years']})")
+    maps = run("seaIceMaps", sea_ice_maps, status)
+    if maps:
+        manifest["seaIceMaps"] = maps
+        print(f"  sea-ice maps: {maps['north']['date']} / {maps['south']['date']}")
+    w = run("worldSst", world_sst, status)
+    if w:
+        write_json(w, NOW / "sst_world.json")
+        manifest["worldSst"] = {"file": "sst_world.json", **{k: w[k] for k in ("date", "latest", "anomaly", "recordDaily", "previousYearlyMax")}}
+        print(f"  world SST {w['date']}: {w['latest']} °C ({w['anomaly']:+.2f} vs 1991-2020); record {w['recordDaily']}")
     manifest["updated"] = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%MZ")
     manifest["status"] = status
     write_json(manifest, manifest_path)
