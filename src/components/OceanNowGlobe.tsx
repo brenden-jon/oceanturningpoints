@@ -54,7 +54,7 @@ export default function OceanNowGlobe({ ssta, dhw, currents, bleachOutlook, sstO
   const [lead, setLead] = useState(1);
   const [showMpa, setShowMpa] = useState(false);
   const [luts, setLuts] = useState<Record<string, { lut: Lut }> | null>(null);
-  const [field, setField] = useState<Field | null>(null);
+  const [loaded, setLoaded] = useState<{ key: string; field: Field } | null>(null);
   const [canvas, setCanvas] = useState<HTMLCanvasElement | null>(null);
   const [key, setKey] = useState("");
   const [hover, setHover] = useState<(HoverInfo & { value: number | null }) | null>(null);
@@ -80,10 +80,15 @@ export default function OceanNowGlobe({ ssta, dhw, currents, bleachOutlook, sstO
   const lut = luts ? luts[active.lut].lut : null;
 
   useEffect(() => { fetch(asset("/data/scales.json")).then((r) => r.json()).then(setLuts).catch(() => {}); }, []);
+  // Each field is tagged with the layer it belongs to, so a colour scale is never applied to another layer's data
+  // while the new file is still loading.
+  const activeKey = `${active.id}-${active.date}`;
+  const field = loaded && loaded.key === activeKey ? loaded.field : null;
   useEffect(() => {
     let off = false;
-    loadField(asset(`/data/now/${active.file}`), active.enc, active.grid).then((f) => { if (!off) setField(f); }).catch(() => {});
+    loadField(asset(`/data/now/${active.file}`), active.enc, active.grid).then((f) => { if (!off) setLoaded({ key: activeKey, field: f }); }).catch(() => {});
     return () => { off = true; };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [active]);
   useEffect(() => {
     if (!field || !lut) return;
@@ -92,7 +97,7 @@ export default function OceanNowGlobe({ ssta, dhw, currents, bleachOutlook, sstO
     const c = document.createElement("canvas");
     c.width = W; c.height = W;
     c.getContext("2d")!.putImageData(img, 0, 0);
-    setCanvas(c); setKey(`${active.id}-${active.date}`);
+    setCanvas(c); setKey(activeKey);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [field, lut]);
 
