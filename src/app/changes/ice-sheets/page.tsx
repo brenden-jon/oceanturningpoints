@@ -44,7 +44,7 @@ export default function IceSheetsPage() {
           <p className={styles.standfirst}>
             The Global Tipping Points Report 2025 has high confidence that the Greenland and West Antarctic ice sheets have tipping
             points, and finds them at risk since about 1°C of warming. Parts may already have crossed. Tipping would not flood coasts
-            overnight. It would lock in metres of sea-level rise over centuries to millennia, and nobody can yet say how fast.
+            overnight. It would lock in metres of sea-level rise over centuries to millennia, at a pace that is still uncertain.
           </p>
           <StoryBrief answers={[
             ["Greenland and Antarctica hold enough ice to raise the sea by about 65 m. Past a threshold, feedbacks keep an ice sheet shrinking even if warming stops.", "#commit"],
@@ -63,7 +63,7 @@ export default function IceSheetsPage() {
             <p>
               Ice sheets respond slowly, so today’s warming will play out over centuries. The IPCC estimates that over the next 2,000
               years sea level will rise by about 2–3 m if warming is limited to 1.5°C, 2–6 m if it is limited to 2°C, and 19–22 m at
-              5°C (<i>low confidence</i>). The commitment grows faster than warming: each extra degree adds more than the one before.
+              5°C (<i>low confidence</i>). The commitment rises steeply with peak warming: about 2–3 m at 1.5°C, but 19–22 m at 5°C.
             </p>
             <p>
               Tipping points are why. Past a threshold, feedbacks keep the ice retreating even if warming stops: a thinning Greenland
@@ -89,8 +89,7 @@ export default function IceSheetsPage() {
             <div className="prose">
               <p>
                 The Global Tipping Points Report 2025 puts the threshold for Greenland at 0.8–3.4°C of warming and for West Antarctica at
-                1–3°C, and suggests a precautionary limit of 0.5°C for West Antarctica. The IPCC judges that a West Antarctic threshold may
-                lie close to 1.5–2°C (<i>medium confidence</i>). Today’s warming is about 1.4°C.
+                1–3°C. Today’s warming is about 1.4°C, inside both ranges.
               </p>
               <p>
                 Once lost, the ice does not come back on any timescale that matters to people. In one model, West Antarctica only
@@ -154,7 +153,7 @@ export default function IceSheetsPage() {
               </p>
               <p>
                 Projections that include those processes reach a median of {g2300("ssp585-low")[2].toFixed(1)} m by 2300 under very high
-                emissions, and up to about 16 m. Under very low emissions the median is {g2300("ssp126-low")[2].toFixed(1)} m. The
+                emissions, and up to about 16 m. Under low emissions (SSP1-2.6) the median is {g2300("ssp126-low")[2].toFixed(1)} m. The
                 fastest scenarios rely on ice cliffs collapsing under their own weight, a process that has not been observed and is
                 disputed (Edwards et al., 2019; Morlighem et al., 2024). It affects how fast the sea rises and makes little difference to how far it eventually goes.
               </p>

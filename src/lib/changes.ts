@@ -16,10 +16,10 @@ export const CHANGES: Change[] = [
   },
   {
     slug: "coral-reefs", title: "Coral reefs", story: "/changes/coral-reefs/", storyLabel: "See heat stress at every reef region",
-    status: "Tipping point being crossed now", question: "Are coral reefs passing a tipping point?",
+    status: "Tipping likely under way", question: "Are coral reefs passing a tipping point?",
     image: "Peak heat stress at reef regions of the Indian Ocean and Pacific in 2023–2025; darker red means coral deaths were likely.",
     what: "When the sea stays too hot for weeks, corals bleach and many die. Reefs now bleach more often than they can recover.",
-    likely: "Happening now. Reefs are assessed as crossing their thermal tipping point, about 1.2°C of warming (range 1.0–1.5°C), and IUCN lists 96% of reef ecosystems as Critically Endangered.",
+    likely: "Likely under way. Reefs are assessed as crossing their thermal tipping point, about 1.2°C of warming (range 1.0–1.5°C), and IUCN lists 96% of reef ecosystems as Critically Endangered.",
     means: "About a billion people live within 100 km of a reef. Losing reefs weakens natural flood defences and cuts fish and tourism income.",
     done: "Bring warming back towards 1.2°C and below; protect the reefs most likely to survive and reduce local pressures; plan for weaker natural defences.",
   },
@@ -34,7 +34,7 @@ export const CHANGES: Change[] = [
   },
   {
     slug: "el-nino", title: "El Niño and the tropical Pacific", story: "/changes/el-nino/", storyLabel: "How El Niño is changing",
-    status: "Strong El Niño now; extremes growing", question: "Is warming locking the Pacific into El Niño?",
+    status: "Strong El Niño now; extremes growing", question: "How is warming changing El Niño?",
     image: "Sea temperature compared with normal across the Pacific in October 2026: the red tongue along the equator is El Niño.",
     what: "A natural warming of the eastern tropical Pacific every few years that shifts rain and drought around the world. A strong El Niño is under way in 2026.",
     likely: "El Niño will keep coming. Stronger extremes under warming are expected (medium confidence); a lasting El Niño-like Pacific is plausible but contested. It is not assessed as a tipping system.",
@@ -52,7 +52,7 @@ export const CHANGES: Change[] = [
   },
   {
     slug: "subpolar-gyre", title: "Subpolar North Atlantic", story: "/changes/subpolar-gyre/", storyLabel: "Could it cool abruptly?",
-    status: "Possible abrupt cooling within a decade", question: "Could the North Atlantic cool abruptly?",
+    status: "Possible this century; cooling within a decade", question: "Could the North Atlantic cool abruptly?",
     image: "The subpolar gyre: an anticlockwise loop of currents south of Greenland, with the winter sinking regions in the Labrador and Irminger Seas.",
     what: "A loop of currents south of Greenland where surface water sinks every winter, one of the engines of the Atlantic circulation.",
     likely: "Possible this century: in a minority of climate models winter sinking shuts down within a decade. Threshold estimate about 1.8°C, with a wide range (1.1–3.8°C).",

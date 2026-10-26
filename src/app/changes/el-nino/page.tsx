@@ -11,7 +11,7 @@ import { ArticleLd } from "@/components/JsonLd";
 import { abs, asset } from "@/lib/site";
 import styles from "./elnino.module.css";
 
-const TITLE = "Is warming locking the Pacific into El Niño?";
+const TITLE = "How is warming changing El Niño?";
 const DESCRIPTION = "A strong El Niño is under way in 2026. New research finds that warming makes extreme El Niños more frequent and can hold the Pacific in a more El Niño-like state for centuries after net zero. What this means for Australia, the tropics and planning.";
 
 export const metadata: Metadata = {
@@ -150,7 +150,7 @@ export default function ElNinoPage() {
                 In 1,000-year runs of one model, the later net zero is reached, the larger and longer-lasting the effect. Reaching net
                 zero in 2030, 2045 or 2060 corresponds to long-run warming of about 1.3, 2.0 and 3.0°C in that model.
               </p>
-              <p>The reason is the ocean’s memory:</p>
+              <p>Why the shift persists:</p>
               <ol className={styles.steps}>
                 <li>The Southern Ocean and deep ocean keep warming after emissions stop.</li>
                 <li>The rain belts near the equator shift, and the southern trade winds weaken and stay weak.</li>
@@ -361,7 +361,7 @@ export default function ElNinoPage() {
           <p>
             <b>Impacts:</b> Callahan &amp; Mankin (2023), <i>Science</i>; Anttila-Hughes et al. (2021) and Tian et al. (2025),{" "}
             <i>Nature Communications</i>; Liu et al. (2023), <i>Nature Communications</i>; Anderson et al. (2019), <i>Science Advances</i>.
-            Coughlan de Perez et al. (2015), <i>Natural Hazards and Earth System Sciences</i>, is co-authored by the curator of this site.
+            Coughlan de Perez et al. (2015), <i>Natural Hazards and Earth System Sciences</i>, is co-authored by the curator of Ocean Turning Points.
           </p>
         </div>
       </section>

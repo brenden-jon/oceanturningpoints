@@ -45,6 +45,11 @@
 .subnav b { font-size: 1rem; }
 .subnav b::after { content: " ›"; color: var(--accent); }
 .subnav span { font-size: 0.88rem; color: var(--text-2); }
-@media (max-width: 760px) { .subnav { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 760px) {
+  .subnav { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .subnav a { padding: 0.45rem 0.8rem; border-radius: 999px; }
+  .subnav b { font-size: 0.88rem; font-weight: 600; }
+  .subnav span { display: none; }
+}
 .also { margin: 3rem 0 0; padding: 1.1rem 1.3rem; background: var(--bg-alt); border-radius: var(--radius); max-width: 90ch; }
 .also p { margin: 0.3rem 0 0; color: var(--text-2); }

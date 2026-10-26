@@ -9,7 +9,7 @@ import own from "./monitoring.module.css";
 import PhotoFigure from "@/components/PhotoFigure";
 
 const TITLE = "Who is watching the ocean?";
-const DESCRIPTION = "The floats, moorings, ships, tide gauges and satellites that observe the ocean, who runs them, what satellites can and cannot see, and why long, unbroken records matter for decisions on the big ocean changes.";
+const DESCRIPTION = "The floats, moorings, ships, tide gauges and satellites that observe the ocean, who runs them, where the gaps are, and why long, unbroken records matter for decisions on the big ocean changes.";
 
 export const metadata: Metadata = {
   title: "Ocean monitoring: map of Argo floats, buoys, tide gauges and AMOC arrays",
@@ -22,7 +22,7 @@ const GAPS: { change: string; href: string; need: string; have: string; gap: str
   {
     change: "Atlantic circulation", href: "/changes/atlantic-circulation/",
     need: "Flow across the whole Atlantic, without breaks, for decades.",
-    have: "Five measurement lines; the longest, at 26.5°N, began in 2004.",
+    have: "Five measurement lines; the first to measure the full overturning, at 26.5°N, began in 2004.",
     gap: "Telling a decline apart from natural swings needs 29–67 years of record (Lobelle et al., 2020); the measured weakening is not expected to stand out clearly until the 2040s (McCarthy et al., 2025). The main arrays face funding gaps within 18 months (Gunnarsson et al., 2026).",
   },
   {
@@ -87,8 +87,8 @@ export default function MonitoringPage() {
 
       <section className="section" aria-labelledby="enough">
         <div className="wrap">
-          <p className="kicker">Thousands of points, but enough for what?</p>
-          <h2 id="enough" className={styles.h2}>Where the big changes fall through the gaps</h2>
+          <p className="kicker">Coverage</p>
+          <h2 id="enough" className={styles.h2}>Gaps in monitoring for each big change</h2>
           <div className={`prose ${own.lead}`}>
             <p>
               The map looks crowded, but each network was built for a particular job: weather forecasts, seasonal forecasts, the heat in the
@@ -99,7 +99,7 @@ export default function MonitoringPage() {
           </div>
           <div className={own.gapTable} role="table" aria-label="Observing needs and gaps for each big change">
             <div className={own.gapHead} role="row">
-              <span role="columnheader">Change</span><span role="columnheader">What needs measuring</span><span role="columnheader">What exists</span><span role="columnheader">The gap</span>
+              <span role="columnheader">Topic</span><span role="columnheader">What needs measuring</span><span role="columnheader">What exists</span><span role="columnheader">The gap</span>
             </div>
             {GAPS.map((g) => (
               <div key={g.change} className={own.gapRow} role="row">
@@ -118,7 +118,7 @@ export default function MonitoringPage() {
           <p className="kicker">The system today</p>
           <h2 id="today" className={styles.h2}>Status of the global observing system</h2>
           <ul className={own.stats}>
-            <li><b>9,389</b><span>platforms in the Global Ocean Observing System, from 64 contributing countries, making more than 120,000 observations a day (GOOS, 2025).</span></li>
+            <li><b>9,389</b><span>platforms in the Global Ocean Observing System, from 64 contributing countries, making more than 120,000 observations a day (GOOS, 2025). The map above shows only platforms OceanOPS lists as currently operating, plus the GLOSS core tide gauges.</span></li>
             <li><b>55%</b><span>of the way to a complete Argo array: global, full-depth, and measuring chemistry and biology as well as heat (GOOS, 2025).</span></li>
             <li><b>Over half</b><span>of the world’s ocean temperature profiles come from the United States. Removing them would raise the error in the ocean heating rate by 163% (Zhu et al., 2026).</span></li>
             <li><b>83%</b><span>of the multi-sensor biogeochemical floats now operating are US floats, funded by a project that ends in October 2026 (GO-BGC).</span></li>
@@ -245,7 +245,7 @@ export default function MonitoringPage() {
             <div style={{ background: "var(--bg-alt)" }}>
               <h3>Broaden who contributes</h3>
               <p>
-                When one country’s data matter more than 80% of everyone else’s, the system is fragile. Lower-cost sensors, observations from
+                When losing one country’s data would do more harm than losing 80% of all data at random, the system is fragile. Lower-cost sensors, observations from
                 commercial and fishing vessels, regional programmes and the capacity-building provisions of the High Seas Treaty can widen the base.
               </p>
             </div>
@@ -258,7 +258,7 @@ export default function MonitoringPage() {
             </div>
           </div>
           <p className={`small muted ${styles.note}`}>
-            This section follows Jongman (forthcoming). <Link href="/about/">Brenden Jongman</Link> is the curator of this site.
+            This section follows Jongman (forthcoming). <Link href="/about/">Brenden Jongman</Link> is the curator of Ocean Turning Points.
           </p>
         </div>
       </section>

@@ -33,9 +33,9 @@ export default function DecisionsPage() {
         </div>
         <div className={styles.heroSide}>
           <p className={styles.standfirst}>
-            Nobody can say when, or whether, the Atlantic circulation will collapse or how fast the ice sheets will melt. That does not
-            mean waiting. It means choosing actions that work across many possible futures, changing now the decisions that would be
-            expensive to get wrong, and planning when to look again.
+            Whether or when the Atlantic circulation collapses, and how fast the ice sheets melt, cannot be predicted. Decisions can still
+            be made: choose actions that work across many possible futures, change now the decisions that would be expensive to get wrong,
+            and plan when to look again.
           </p>
           <p className={styles.chips}>
             <a className="more" href="#types">Three kinds of decision</a>
@@ -186,7 +186,7 @@ export default function DecisionsPage() {
             <li><b>Reflect the risk in mitigation accounting</b>, carrying a collapse and its carbon-cycle feedback as an explicit scenario.</li>
           </ol>
           <p className={`small muted ${styles.note}`}>
-            Steps follow Jongman and Hall (forthcoming); Biesbroek et al. (2025) reach closely matching conclusions. <Link href="/changes/atlantic-circulation/">The Atlantic circulation</Link>.
+            Steps follow Jongman and Hall (forthcoming); Biesbroek et al. (2025) reach closely matching conclusions. <Link href="/about/">Brenden Jongman</Link> is the curator of Ocean Turning Points. <Link href="/changes/atlantic-circulation/">The Atlantic circulation</Link>.
           </p>
         </div>
       </section>

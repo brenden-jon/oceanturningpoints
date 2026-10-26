@@ -84,8 +84,12 @@ function parse(file: string): Topic {
   };
 }
 
+/** Same order as the big changes everywhere else on the site; topics not listed keep their own order, after these. */
+const SITE_ORDER = ["amoc", "coral-reefs", "ice-sheets", "el-nino", "fish-on-the-move", "subpolar-gyre", "southern-ocean"];
+
 export function allTopics(): Topic[] {
-  return files().map(parse).sort((a, b) => a.order - b.order);
+  const rank = (t: Topic) => { const i = SITE_ORDER.indexOf(t.slug); return i < 0 ? 100 + t.order : i; };
+  return files().map(parse).sort((a, b) => rank(a) - rank(b));
 }
 
 export function getTopic(slug: string): Topic | undefined {

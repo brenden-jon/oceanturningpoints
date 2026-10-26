@@ -53,7 +53,7 @@ export function ObservedSeaLevelChart({ d }: { d: SeaLevelData }) {
 }
 
 const G = [
-  { id: "ssp126", label: "Very low emissions", color: "#1f7a5a" },
+  { id: "ssp126", label: "Low emissions", color: "#1f7a5a" },
   { id: "ssp585", label: "Very high emissions", color: "#b24a2a" },
 ];
 
@@ -70,7 +70,7 @@ export function GlobalProjectionChart({ d }: { d: SeaLevelData }) {
         <strong>Global sea-level rise to 2300, with and without rapid ice-sheet loss</strong>
         <span className="small muted">Metres relative to 1995–2014. Solid lines and shading: projections that include rapid ice-sheet loss (median, 17–83% range). Dotted: the IPCC likely range without it, to 2150.</span>
       </figcaption>
-      <LineChart ariaLabel="IPCC global mean sea-level projections to 2300 under very low and very high emissions, with and without rapid ice-sheet loss." x={[2020, 2300]} y={[0, 16]}
+      <LineChart ariaLabel="IPCC global mean sea-level projections to 2300 under low and very high emissions, with and without rapid ice-sheet loss." x={[2020, 2300]} y={[0, 16]}
         xTicks={[2050, 2100, 2150, 2200, 2250, 2300]} yTicks={[0, 4, 8, 12, 16]} yLabel="metres" yFormat={(v) => v.toFixed(0)}
         series={[
           ...G.map((s) => ({ id: `${s.id}-low`, color: s.color, width: 2, label: s.label, points: d.global[`${s.id}-low`].map((p) => [p[0], p[2]] as [number, number]),

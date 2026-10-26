@@ -27,7 +27,7 @@ confidence:
     basis: "A minority of CMIP5 and CMIP6 models plus simple-model theory; no direct observation of such a collapse (Sgubin et al., 2017; Swingedouw et al., 2021; Born and Stocker, 2014)"
   - claim: "The global warming level at which collapse would occur"
     level: "low"
-    basis: "Model-based range of 1.1–3.8 °C in a literature synthesis (Armstrong McKay et al., 2022)"
+    basis: "Model-based range of 1.1–3.8°C in a literature synthesis (Armstrong McKay et al., 2022)"
   - claim: "The 2021 and 2023 convection shutdowns mark a lasting change"
     level: "low"
     basis: "Two winters with different causes; record too short to separate trend from variability (Yashayaev, 2024)"
@@ -49,7 +49,7 @@ Labrador Sea convection varies widely from year to year. It deepened through 201
 
 At the surface, the subpolar North Atlantic showed no long-term warming over the twentieth century (Sgubin et al., 2017). This "warming hole" has been interpreted as a fingerprint of AMOC weakening (Rahmstorf et al., 2015; Caesar et al., 2018). A model study found that increased ocean heat transport out of the region, towards higher latitudes, and a cloud feedback also shape it (Keil et al., 2020). The IPCC assessed low confidence in reconstructed and modelled twentieth-century AMOC changes (Fox-Kemper et al., 2021).
 
-Shorter events are better documented. Since 2005 a large volume of the upper North Atlantic cooled by about 0.45 °C, consistent with weaker ocean heat transport (Robson et al., 2016). A record cold anomaly occupied the gyre from the winter of 2013–14 to 2016 (Josey et al., 2018), and the eastern subpolar North Atlantic freshened in 2012–2016 by more than at any time in 120 years of measurements (Holliday et al., 2020). That freshening has been attributed to changes in winds and circulation (Holliday et al., 2020) and to reduced winter heat loss in the Labrador Sea (Fox et al., 2022).
+Shorter events are better documented. Since 2005 a large volume of the upper North Atlantic cooled by about 0.45°C, consistent with weaker ocean heat transport (Robson et al., 2016). A record cold anomaly occupied the gyre from the winter of 2013–14 to 2016 (Josey et al., 2018), and the eastern subpolar North Atlantic freshened in 2012–2016 by more than at any time in 120 years of measurements (Holliday et al., 2020). That freshening has been attributed to changes in winds and circulation (Holliday et al., 2020) and to reduced winter heat loss in the Labrador Sea (Fox et al., 2022).
 
 ## What could change
 
@@ -57,15 +57,15 @@ Warming and added fresh water could make the surface layer too light to sink, so
 
 Both studies found collapse more often in the models that best match observed stratification. It occurred in 45.5% of the 11 best CMIP5 models and in up to 36.4% of the 11 best CMIP6 models (Sgubin et al., 2017; Swingedouw et al., 2021). The full ensembles may therefore understate the risk, although the estimate rests on small samples and a single observational yardstick.
 
-A synthesis of tipping-point studies placed the threshold for collapse of subpolar gyre convection at about 1.8 °C of global warming (range 1.1–3.8 °C), with a transition time of about 10 years (5–50 years) (Armstrong McKay et al., 2022). These figures summarise model studies.
+A synthesis of tipping-point studies placed the threshold for collapse of subpolar gyre convection at about 1.8°C of global warming (range 1.1–3.8°C), with a transition time of about 10 years (5–50 years) (Armstrong McKay et al., 2022). These figures summarise model studies.
 
 The IPCC assesses that the AMOC will very likely weaken over the 21st century, with medium confidence that it will not collapse abruptly before 2100 (IPCC, 2021). A collapse of gyre convection is a separate event. It would be faster and more regional than an AMOC collapse, although in some models one affects the other (Armstrong McKay et al., 2022).
 
 ## Consequences
 
-In the models that show it, a collapse cools the North Atlantic region by about 2–3 °C and shifts the jet stream, with effects on European weather (Armstrong McKay et al., 2022). The CMIP6 events had large decadal effects on European surface temperature and on tropical rainfall, notably in the Sahel and the Amazon (Swingedouw et al., 2021). These results are conditional on a collapse, which may not happen.
+In the models that show it, a collapse cools the North Atlantic region by about 2–3°C and shifts the jet stream, with effects on European weather (Armstrong McKay et al., 2022). The CMIP6 events had large decadal effects on European surface temperature and on tropical rainfall, notably in the Sahel and the Amazon (Swingedouw et al., 2021). These results are conditional on a collapse, which may not happen.
 
-Recent variability shows one link to European weather. The 2015 cold anomaly was associated with a jet-stream position that favoured that summer's central European heat wave, and similar anomalies preceded the most extreme European heat waves since the 1980s (Duchez et al., 2016). This is a statistical association, and a colder gyre is no guarantee of a hotter European summer.
+Recent variability shows one link to European weather. The 2015 cold anomaly was associated with a jet-stream position that favoured that summer's central European heatwave, and similar anomalies preceded the most extreme European heatwaves since the 1980s (Duchez et al., 2016). This is a statistical association, and a colder gyre is no guarantee of a hotter European summer.
 
 Fisheries respond to the gyre's state. Shifts in plankton, blue whiting and pilot whales from the English Channel to the Barents Sea in the late 1920s, late 1960s and late 1990s have been linked to subpolar gyre fluctuations (Hátún et al., 2009). Evidence on how a convection collapse would affect catches, prices or livelihoods is thin.
 
@@ -75,7 +75,7 @@ Models link AMOC weakening to faster sea-level rise along the north-east coast o
 
 Observations show where most deep water forms and that subpolar overturning is highly variable from month to month (Lozier et al., 2019). Labrador Sea convection swings between deep and shallow phases over a few years (Yashayaev, 2024). A minority of current models produce abrupt collapse, and model biases in stratification affect that result (Sgubin et al., 2017; Swingedouw et al., 2021).
 
-We do not know whether the real ocean is close to a threshold. Direct overturning measurements began in 2014, too recently to separate trend from variability. The warming level for a collapse spans more than 2 °C across studies (Armstrong McKay et al., 2022).
+We do not know whether the real ocean is close to a threshold. Direct overturning measurements began in 2014, too recently to separate trend from variability. The warming level for a collapse spans more than 2°C across studies (Armstrong McKay et al., 2022).
 
 Models also disagree on where convection happens. In CMIP6 some convect only in the Labrador Sea and some only in the Irminger Sea, and the convective area has expanded unrealistically compared with CMIP5 (Fox-Kemper et al., 2021).
 
@@ -120,5 +120,3 @@ For planning, a collapse is a minority outcome in the model ensembles that could
 - Argo: profiling floats measuring temperature and salinity in the upper 2,000 m, including Labrador Sea convection. https://argo.ucsd.edu/ (data: [doi:10.17882/42182](https://doi.org/10.17882/42182))
 - NOAA Optimum Interpolation Sea Surface Temperature: daily global SST, used to track the cold anomaly. https://www.ncei.noaa.gov/products/optimum-interpolation-sst
 - Copernicus Marine Service: ocean reanalyses and satellite sea level. https://marine.copernicus.eu/
-
-This topic is not yet mapped on Ocean Turning Points.

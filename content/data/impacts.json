@@ -2,7 +2,7 @@
  "meta": {
   "title": "What the big ocean changes mean for your region",
   "updated": "2026-10-25",
-  "note": "Statements summarise published evidence. AMOC and subpolar-gyre items describe what models show if a collapse happened, not a forecast that it will. Fish biomass figures are FishMIP ensemble means for national waters by 2091–2100 relative to 2005–2014; sea-level figures are IPCC AR6 medians relative to 1995–2014. 'Very low emissions' is SSP1-2.6 for FishMIP and sea level; 'very high' is SSP5-8.5."
+  "note": "Statements summarise published evidence. AMOC and subpolar-gyre items describe what models show if a collapse happened, not a forecast that it will. Fish biomass figures are FishMIP ensemble means for national waters by 2091–2100 relative to 2005–2014; sea-level figures are IPCC AR6 medians relative to 1995–2014. 'Low emissions' is SSP1-2.6 for FishMIP, regional sea-level and reef figures; 'very low' is SSP1-1.9 and is used only for the IPCC global sea-level range; 'very high' is SSP5-8.5."
  },
  "sectors": [
   {
@@ -216,7 +216,7 @@
     {
      "change": "sea-level",
      "sector": "coasts",
-     "text": "At Lagos, sea level is projected to rise by 0.47 m by 2100 under very low emissions and 0.84 m under very high emissions (median, relative to 1995–2014). Local subsidence would add to this.",
+     "text": "At Lagos, sea level is projected to rise by 0.47 m by 2100 under low emissions and 0.84 m under very high emissions (median, relative to 1995–2014). Local subsidence would add to this.",
      "source": "IPCC AR6 sea-level projections (Garner et al.), values extracted by Ocean Turning Points",
      "doi": "10.5281/zenodo.6382554",
      "evidence": "projection",
@@ -247,7 +247,7 @@
     {
      "change": "fish",
      "sector": "fisheries",
-     "text": "By the 2090s under very high emissions, the fish biomass national waters can hold falls by about 39% for Senegal, 30% for Côte d'Ivoire, 29% for Mauritania and Ghana and 21% for Nigeria. Under very low emissions the losses are 2–9%.",
+     "text": "By the 2090s under very high emissions, the fish biomass national waters can hold falls by about 39% for Senegal, 30% for Côte d'Ivoire, 29% for Mauritania and Ghana and 21% for Nigeria. Under low emissions the losses are 2–9%.",
      "source": "Blanchard & Novaglio (eds) 2024, FishMIP projections for FAO",
      "doi": "10.4060/cd1379en",
      "evidence": "projection",
@@ -327,7 +327,7 @@
     {
      "change": "el-nino",
      "sector": "finance",
-     "text": "The first joint FAO–WFP anticipatory appeal (US$202 million, June 2026) covers 12 African countries, among them Ethiopia, Kenya, Madagascar, Somalia, South Sudan, Sudan and Uganda.",
+     "text": "The first joint FAO–WFP anticipatory appeal (US$202 million, June 2026) covers 22 countries, 12 of them in Africa, among them Ethiopia, Kenya, Madagascar, Somalia, South Sudan, Sudan and Uganda.",
      "source": "FAO and WFP 2026, joint anticipatory appeal (18 Jun 2026)",
      "doi": null,
      "evidence": "observed",
@@ -389,7 +389,7 @@
     {
      "change": "sea-level",
      "sector": "coasts",
-     "text": "Dar es Salaam is projected to see 0.46 m of sea-level rise by 2100 under very low emissions and 0.81 m under very high emissions. At nearby Zanzibar, today's once-a-century high water would occur about two to three times a year by 2050 under all scenarios.",
+     "text": "Dar es Salaam is projected to see 0.46 m of sea-level rise by 2100 under low emissions and 0.81 m under very high emissions. At nearby Zanzibar, today's once-a-century high water would occur about two to three times a year by 2050 under all scenarios.",
      "source": "IPCC AR6 WGI Figure 9.32 data (Hermans, Garner, Kopp & Slangen)",
      "doi": "10.5285/6b33327d0d0d4bcca872b431279086db",
      "evidence": "projection",
@@ -399,11 +399,11 @@
     {
      "change": "fish",
      "sector": "fisheries",
-     "text": "By the 2090s under very high emissions, fish biomass in national waters falls by about 27% for Somalia, 21% for Kenya and 18% for Tanzania. Under very low emissions the change is within 5% either way.",
+     "text": "By the 2090s under very high emissions, fish biomass in national waters falls by about 27% for Somalia, 21% for Kenya and 18% for Tanzania. Under low emissions the change is within 5% either way.",
      "source": "Blanchard & Novaglio (eds) 2024, FishMIP projections for FAO",
      "doi": "10.4060/cd1379en",
      "evidence": "projection",
-     "confidence": "Ensemble mean; all models agree on the high-emissions declines, but only 50–70% on the direction under very low emissions",
+     "confidence": "Ensemble mean; all models agree on the high-emissions declines, but only 50–70% on the direction under low emissions",
      "link": "/changes/fish-on-the-move/"
     }
    ]
@@ -468,7 +468,7 @@
     {
      "change": "fish",
      "sector": "fisheries",
-     "text": "By the 2090s under very high emissions, fish biomass in national waters falls by about 39% for Angola, 33% for Namibia and 16% for South Africa. Under very low emissions the losses are 5–9%.",
+     "text": "By the 2090s under very high emissions, fish biomass in national waters falls by about 39% for Angola, 33% for Namibia and 16% for South Africa. Under low emissions the losses are 5–9%.",
      "source": "Blanchard & Novaglio (eds) 2024, FishMIP projections for FAO",
      "doi": "10.4060/cd1379en",
      "evidence": "projection",
@@ -488,7 +488,7 @@
     {
      "change": "sea-level",
      "sector": "coasts",
-     "text": "Maputo is projected to see 0.46 m of sea-level rise by 2100 under very low emissions and 0.81 m under very high emissions.",
+     "text": "Maputo is projected to see 0.46 m of sea-level rise by 2100 under low emissions and 0.81 m under very high emissions.",
      "source": "IPCC AR6 sea-level projections (Garner et al.), values extracted by Ocean Turning Points",
      "doi": "10.5281/zenodo.6382554",
      "evidence": "projection",
@@ -577,7 +577,7 @@
     {
      "change": "sea-level",
      "sector": "coasts",
-     "text": "Sea level is projected to rise by 0.34–0.70 m at Mumbai and 0.54–0.86 m near Kolkata by 2100, from very low to very high emissions (medians).",
+     "text": "Sea level is projected to rise by 0.34–0.70 m at Mumbai and 0.54–0.86 m near Kolkata by 2100, from low to very high emissions (medians).",
      "source": "IPCC AR6 sea-level projections (Garner et al.), values extracted by Ocean Turning Points",
      "doi": "10.5281/zenodo.6382554",
      "evidence": "projection",
@@ -647,7 +647,7 @@
     {
      "change": "fish",
      "sector": "fisheries",
-     "text": "By the 2090s under very high emissions, fish biomass in national waters falls by about 26% for Sri Lanka, 21% for Pakistan, 19% for the Maldives, 18% for India and 12% for Bangladesh. Under very low emissions the losses are 2–15%.",
+     "text": "By the 2090s under very high emissions, fish biomass in national waters falls by about 26% for Sri Lanka, 21% for Pakistan, 19% for the Maldives, 18% for India and 12% for Bangladesh. Under low emissions the losses are 2–15%.",
      "source": "Blanchard & Novaglio (eds) 2024, FishMIP projections for FAO",
      "doi": "10.4060/cd1379en",
      "evidence": "projection",
@@ -734,7 +734,7 @@
     {
      "change": "sea-level",
      "sector": "coasts",
-     "text": "At Manila, sea level is projected to rise by 1.0–1.3 m by 2100 from very low to very high emissions, including about 0.5 m of land subsidence. Today's once-a-century high water would occur about 10–15 times a year by 2050.",
+     "text": "At Manila, sea level is projected to rise by 1.0–1.3 m by 2100 from low to very high emissions, including about 0.5 m of land subsidence. Today's once-a-century high water would occur about 10–15 times a year by 2050.",
      "source": "IPCC AR6 WGI Figure 9.32 data (Hermans, Garner, Kopp & Slangen)",
      "doi": "10.5285/6b33327d0d0d4bcca872b431279086db",
      "evidence": "projection",
@@ -785,7 +785,7 @@
     {
      "change": "fish",
      "sector": "fisheries",
-     "text": "By the 2090s under very high emissions, fish biomass in national waters falls by about 25% for Indonesia, 24% for Malaysia, 23% for the Philippines and Viet Nam and 14% for Thailand. Under very low emissions the losses are 5–9%.",
+     "text": "By the 2090s under very high emissions, fish biomass in national waters falls by about 25% for Indonesia, 24% for Malaysia, 23% for the Philippines and Viet Nam and 14% for Thailand. Under low emissions the losses are 5–9%.",
      "source": "Blanchard & Novaglio (eds) 2024, FishMIP projections for FAO",
      "doi": "10.4060/cd1379en",
      "evidence": "projection",
@@ -812,11 +812,11 @@
     {
      "change": "fish",
      "sector": "finance",
-     "text": "Tuna access fees average 37%, and up to 84%, of government revenue across ten tuna-dependent Pacific island states.",
-     "source": "FAO 2026, The State of World Fisheries and Aquaculture",
-     "doi": "10.4060/cd8357en",
+     "text": "Tuna access fees average 37%, and up to 84%, of government revenue (excluding grants) across ten tuna-dependent Pacific island states.",
+     "source": "Bell et al. 2021",
+     "doi": "10.1038/s41893-021-00745-z",
      "evidence": "observed",
-     "confidence": "FAO statistics",
+     "confidence": "Compiled national revenue data (range 4–84%)",
      "link": "/changes/fish-on-the-move/"
     },
     {
@@ -842,7 +842,7 @@
     {
      "change": "fish",
      "sector": "fisheries",
-     "text": "By the 2090s under very high emissions, total fish biomass in national waters falls by about 51% for Papua New Guinea, 47% for Tuvalu, 44% for the Solomon Islands and 41% for the Federated States of Micronesia. Under very low emissions the losses are 9–13%.",
+     "text": "By the 2090s under very high emissions, total fish biomass in national waters falls by about 51% for Papua New Guinea, 47% for Tuvalu, 44% for the Solomon Islands and 41% for the Federated States of Micronesia. Under low emissions the losses are 9–13%.",
      "source": "Blanchard & Novaglio (eds) 2024, FishMIP projections for FAO",
      "doi": "10.4060/cd1379en",
      "evidence": "projection",
@@ -903,7 +903,7 @@
     {
      "change": "sea-level",
      "sector": "coasts",
-     "text": "At Suva, sea level is projected to rise by 0.48 m by 2100 under very low emissions and 0.84 m under very high emissions. Today's once-a-century high water would occur about two to four times a year by 2050.",
+     "text": "At Suva, sea level is projected to rise by 0.48 m by 2100 under low emissions and 0.84 m under very high emissions. Today's once-a-century high water would occur about two to four times a year by 2050.",
      "source": "IPCC AR6 WGI Figure 9.32 data (Hermans, Garner, Kopp & Slangen)",
      "doi": "10.5285/6b33327d0d0d4bcca872b431279086db",
      "evidence": "projection",
@@ -933,14 +933,13 @@
     {
      "change": "el-nino",
      "sector": "food",
-     "text": "Papua New Guinea declared an El Niño event in June 2026, approved a 112 million supplementary budget and estimates that 1.2 million people need direct food relief.",
+     "text": "Papua New Guinea declared an El Niño event in June 2026, approved a supplementary budget and estimates that 1.2 million people need direct food relief.",
      "source": "UN News 2026 (6 Oct 2026)",
      "doi": null,
      "evidence": "observed",
      "confidence": "News report",
      "link": "/changes/el-nino/",
-     "url": "https://news.un.org/en/story/2026/10/1168537",
-     "caveat": "Currency of the budget not stated in the source"
+     "url": "https://news.un.org/en/story/2026/10/1168537"
     },
     {
      "change": "el-nino",
@@ -1023,7 +1022,7 @@
     {
      "change": "amoc",
      "sector": "coasts",
-     "text": "During a collapse, dynamic sea level rises over the Atlantic, by up to about 6 mm a year over the North Atlantic and up to 4 mm a year near densely populated coasts, compared with today's global rise of 3.3 mm a year.",
+     "text": "During a collapse, dynamic sea level rises over the Atlantic, by up to about 6 mm a year over the North Atlantic and up to 4 mm a year near densely populated coasts, compared with the observed global mean rise of 3.3 mm a year over 1993–2024.",
      "source": "van Westen, Katsman & Le Bars 2026",
      "doi": "10.5194/os-22-1353-2026",
      "evidence": "model",
@@ -1105,7 +1104,7 @@
     {
      "change": "sea-level",
      "sector": "coasts",
-     "text": "At Cartagena, sea level is projected to rise by 0.69 m by 2100 under very low emissions and 1.04 m under very high emissions. Today's once-a-century high water would occur at least once a year by 2050.",
+     "text": "At Cartagena, sea level is projected to rise by 0.69 m by 2100 under low emissions and 1.04 m under very high emissions. Today's once-a-century high water would occur at least once a year by 2050.",
      "source": "IPCC AR6 WGI Figure 9.32 data (Hermans, Garner, Kopp & Slangen)",
      "doi": "10.5285/6b33327d0d0d4bcca872b431279086db",
      "evidence": "projection",
@@ -1237,7 +1236,7 @@
     {
      "change": "fish",
      "sector": "fisheries",
-     "text": "By the 2090s under very high emissions, fish biomass in national waters falls by about 39% for Ecuador, 37% for Peru, 20% for Colombia and 19% for Chile. Under very low emissions the losses are 8–10%.",
+     "text": "By the 2090s under very high emissions, fish biomass in national waters falls by about 39% for Ecuador, 37% for Peru, 20% for Colombia and 19% for Chile. Under low emissions the losses are 8–10%.",
      "source": "Blanchard & Novaglio (eds) 2024, FishMIP projections for FAO",
      "doi": "10.4060/cd1379en",
      "evidence": "projection",
@@ -1257,7 +1256,7 @@
     {
      "change": "sea-level",
      "sector": "coasts",
-     "text": "At Guayaquil, sea level is projected to rise by 0.38 m by 2100 under very low emissions and 0.69 m under very high emissions. At nearby La Libertad, today's once-a-century high water would occur every one to two years by 2050, and more often under very high emissions.",
+     "text": "At Guayaquil, sea level is projected to rise by 0.38 m by 2100 under low emissions and 0.69 m under very high emissions. At nearby La Libertad, today's once-a-century high water would occur every one to two years by 2050, and more often under very high emissions.",
      "source": "IPCC AR6 WGI Figure 9.32 data (Hermans, Garner, Kopp & Slangen)",
      "doi": "10.5285/6b33327d0d0d4bcca872b431279086db",
      "evidence": "projection",
@@ -1334,7 +1333,7 @@
     {
      "change": "fish",
      "sector": "fisheries",
-     "text": "By the 2090s under very high emissions, fish biomass in national waters falls by about 35% for Iran, 33% for Oman, 27% for Yemen, 25% for Libya and 23% for Tunisia. Under very low emissions, models project gains of about 18% for Egypt and 7% for Libya.",
+     "text": "By the 2090s under very high emissions, fish biomass in national waters falls by about 35% for Iran, 33% for Oman, 27% for Yemen, 25% for Libya and 23% for Tunisia. Under low emissions, models project gains of about 18% for Egypt and 7% for Libya.",
      "source": "Blanchard & Novaglio (eds) 2024, FishMIP projections for FAO",
      "doi": "10.4060/cd1379en",
      "evidence": "projection",
@@ -1375,7 +1374,7 @@
     {
      "change": "sea-level",
      "sector": "coasts",
-     "text": "At Alexandria, sea level is projected to rise by 0.50 m by 2100 under very low emissions and 0.85 m under very high emissions.",
+     "text": "At Alexandria, sea level is projected to rise by 0.50 m by 2100 under low emissions and 0.85 m under very high emissions.",
      "source": "IPCC AR6 sea-level projections (Garner et al.), values extracted by Ocean Turning Points",
      "doi": "10.5281/zenodo.6382554",
      "evidence": "projection",
@@ -1544,7 +1543,7 @@
     {
      "change": "fish",
      "sector": "fisheries",
-     "text": "By the 2090s under very high emissions, fish biomass in national waters falls by about 34% for Ireland, 25% for Iceland, 22% for the Netherlands and 21% for Norway and the United Kingdom. Under very low emissions the losses are 2–9%.",
+     "text": "By the 2090s under very high emissions, fish biomass in national waters falls by about 34% for Ireland, 25% for Iceland, 22% for the Netherlands and 21% for Norway and the United Kingdom. Under low emissions the losses are 2–9%.",
      "source": "Blanchard & Novaglio (eds) 2024, FishMIP projections for FAO",
      "doi": "10.4060/cd1379en",
      "evidence": "projection",
@@ -1632,7 +1631,7 @@
     {
      "change": "fish",
      "sector": "fisheries",
-     "text": "By the 2090s under very high emissions, fish biomass in national waters falls by about 29% for the United States and 17% for Canada (whole national waters). Under very low emissions the losses are 4–10%.",
+     "text": "By the 2090s under very high emissions, fish biomass in national waters falls by about 29% for the United States and 17% for Canada (whole national waters). Under low emissions the losses are 4–10%.",
      "source": "Blanchard & Novaglio (eds) 2024, FishMIP projections for FAO",
      "doi": "10.4060/cd1379en",
      "evidence": "projection",
@@ -1652,7 +1651,7 @@
     {
      "change": "coral-reefs",
      "sector": "coasts",
-     "text": "No Florida reef site measured is growing faster than recent sea-level rise. Water above Florida reefs deepens by about 0.5 m by 2100 under very low emissions and 1.1 m under very high emissions.",
+     "text": "No Florida reef site measured is growing faster than recent sea-level rise. Water above Florida reefs deepens by about 0.5 m by 2100 under low emissions and 1.1 m under very high emissions.",
      "source": "Perry et al. 2025",
      "doi": "10.1038/s41586-025-09439-4",
      "evidence": "projection",
@@ -1790,7 +1789,7 @@
     {
      "change": "fish",
      "sector": "fisheries",
-     "text": "By the 2090s under very high emissions, fish biomass in national waters falls by about 22% for Australia and 27% for New Zealand. Under very low emissions the losses are about 7%.",
+     "text": "By the 2090s under very high emissions, fish biomass in national waters falls by about 22% for Australia and 27% for New Zealand. Under low emissions the losses are about 7%.",
      "source": "Blanchard & Novaglio (eds) 2024, FishMIP projections for FAO",
      "doi": "10.4060/cd1379en",
      "evidence": "projection",
@@ -1807,7 +1806,7 @@
     {
      "change": "fish",
      "sector": "fisheries",
-     "text": "By the 2090s under very high emissions, fish biomass in national waters falls by about 32% for Japan, 31% for China and the Republic of Korea. Under very low emissions the losses are 7–9%.",
+     "text": "By the 2090s under very high emissions, fish biomass in national waters falls by about 32% for Japan, 31% for China and the Republic of Korea. Under low emissions the losses are 7–9%.",
      "source": "Blanchard & Novaglio (eds) 2024, FishMIP projections for FAO",
      "doi": "10.4060/cd1379en",
      "evidence": "projection",
@@ -1901,7 +1900,7 @@
   {
    "change": "marine-heatwaves",
    "sector": "biodiversity",
-   "text": "Marine heatwaves have doubled in frequency over the past century. By 2081–2100 they are projected to be about 20 times more frequent than in 1850–1900 under low emissions and 50 times under high emissions.",
+   "text": "Marine heatwaves have roughly doubled in frequency since the 1980s. By 2081–2100 they are projected to be about 20 times more frequent than in 1850–1900 under low emissions and 50 times under high emissions.",
    "source": "Cooley et al. 2022 (IPCC AR6 WGII, Chapter 3)",
    "doi": "10.1017/9781009325844.005",
    "evidence": "projection",

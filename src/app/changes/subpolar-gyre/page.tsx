@@ -35,8 +35,8 @@ export default function SubpolarPage() {
         </div>
         <div className={styles.heroSide}>
           <p className={styles.standfirst}>
-            The subpolar gyre could change faster than any other ocean system in the Atlantic. If winter sinking south of Greenland stopped, the
-            region could cool by 2–3°C within about a decade, even as the rest of the world warms.
+            If winter sinking south of Greenland stopped, the region could cool by 2–3°C within about a decade, even as the rest of the world
+            warms. In climate models it is also the first step towards a wider Atlantic shutdown.
           </p>
           <StoryBrief answers={[
             ["A loop of currents south of Greenland where surface water cools and sinks every winter, one of the engines of the wider Atlantic circulation.", "#what"],
@@ -71,7 +71,9 @@ export default function SubpolarPage() {
           <p>
             Sinking needs surface water that is cold and salty enough. Warming and extra fresh water from melting ice make it lighter. A
             simple model shows two stable states, with and without winter sinking (Born and Stocker, 2014). A collapse of the gyre would be
-            faster and more regional than a collapse of the whole Atlantic circulation.
+            faster and more regional than a collapse of the whole Atlantic circulation, but the two are linked: in every climate model run beyond
+            2100, the shutdown of the wider Atlantic overturning is preceded by a collapse of winter sinking in the Labrador, Irminger and Nordic
+            Seas around mid-century (Drijfhout et al., 2025).
           </p>
           <PhotoFigure photos={["research-vessel-shetland"]} caption="The research vessel Celtic Explorer at sea off Shetland, August 2014." wide />
         </div>
@@ -95,8 +97,9 @@ export default function SubpolarPage() {
               </p>
               <p>
                 Direct measurements of overturning in the region began only in 2014 (Lozier et al., 2019), and winter sinking in the Labrador
-                Sea swings widely: it reached its deepest in the 1996–2023 record in 2018, then shut down in the winters of 2021 and 2023 (Yashayaev, 2024). The
-                record is too short to say whether the real ocean is close to a threshold.
+                Sea swings widely: it reached its deepest in the 1996–2023 record in 2018, then shut down in the winters of 2021 and 2023 (Yashayaev, 2024). Measurements also show that most of the
+                overturning happens east of Greenland rather than in the Labrador Sea (Lozier et al., 2019), so those two winters do not by themselves
+                mean the Atlantic circulation is weakening. The record is too short to say whether the real ocean is close to a threshold.
               </p>
             </div>
             <div className={styles.panel} style={{ background: "var(--bg)" }}>
@@ -162,7 +165,7 @@ export default function SubpolarPage() {
           <p>
             Sgubin et al. (2017), <i>Nature Communications</i> 8, 14375; Swingedouw et al. (2021), <i>Annals of the New York Academy of
             Sciences</i> 1504; Armstrong McKay et al. (2022), <i>Science</i> 377; Global Tipping Points Report 2025; Born &amp; Stocker (2014),{" "}
-            <i>Journal of Physical Oceanography</i> 44; Lozier et al. (2019), <i>Science</i> 363; Yashayaev (2024), <i>Communications Earth &amp;
+            <i>Journal of Physical Oceanography</i> 44; Lozier et al. (2019), <i>Science</i> 363; Drijfhout et al. (2025), <i>Environmental Research Letters</i>, doi:10.1088/1748-9326/adfa3b; Yashayaev (2024), <i>Communications Earth &amp;
             Environment</i> 5; Duchez et al. (2016), <i>Environmental Research Letters</i> 11; Hátún et al. (2009), <i>Progress in
             Oceanography</i> 80; Buckley &amp; Marshall (2016), <i>Reviews of Geophysics</i> 54.{" "}
             <Link href="/science/subpolar-gyre/">Full evidence and references</Link>.

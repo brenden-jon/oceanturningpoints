@@ -41,7 +41,7 @@ export default function IceSheetCities({ cities, globalLow }: { cities: City[]; 
   const pct = (v: number) => `${Math.min(100, (v / year.max) * 100)}%`;
   const ticks = Array.from({ length: year.max + 1 }, (_, i) => i);
 
-  // City detail: to 2150 for all three, or to 2300 for the rapid-loss storyline under very low and very high emissions.
+  // City detail: to 2150 for all three, or to 2300 for the rapid-loss storyline under low and very high emissions.
   const end = long ? 2300 : 2150;
   const ser = (id: string, color: string): Series => ({
     id, color, width: id === "ssp585-low" ? 2.4 : 1.8,
@@ -54,7 +54,7 @@ export default function IceSheetCities({ cities, globalLow }: { cities: City[]; 
   const near = hx == null ? null : Math.round(hx / 10) * 10;
   const hv = (id: string) => sel.series[id].find((p) => p[0] === near);
   const hoverIds = long ? ["ssp126-low", "ssp585-low"] : LINES.map((l) => l.id);
-  const name = (id: string) => (id === "ssp126-low" ? "Very low emissions, rapid ice loss" : LINES.find((l) => l.id === id)!.label);
+  const name = (id: string) => (id === "ssp126-low" ? "Low emissions, rapid ice loss" : LINES.find((l) => l.id === id)!.label);
 
   return (
     <div className={styles.wrap}>
@@ -117,7 +117,7 @@ export default function IceSheetCities({ cities, globalLow }: { cities: City[]; 
           </div>
           <ul className={own.legend}>
             {(long
-              ? [{ id: "ssp126-low", label: "Very low emissions", note: "with rapid ice loss", color: "#1f7a5a" }, { ...LINES[2], label: "Very high emissions", note: "with rapid ice loss" }]
+              ? [{ id: "ssp126-low", label: "Low emissions", note: "with rapid ice loss", color: "#1f7a5a" }, { ...LINES[2], label: "Very high emissions", note: "with rapid ice loss" }]
               : LINES
             ).map((l) => <li key={l.id}><i style={{ background: l.color }} /><span><b>{l.label}</b> {l.note}</span></li>)}
           </ul>
@@ -129,7 +129,7 @@ export default function IceSheetCities({ cities, globalLow }: { cities: City[]; 
           {long ? (
             <p className={own.compare}>
               By 2300, with rapid ice loss, the median here is <b>{m(sel.low["2300"].p50)}</b> under very high emissions and{" "}
-              <b>{m(sel.series["ssp126-low"].find((p) => p[0] === 2300)![2])}</b> under very low emissions. Globally the medians are{" "}
+              <b>{m(sel.series["ssp126-low"].find((p) => p[0] === 2300)![2])}</b> under low emissions. Globally the medians are{" "}
               {m(globalLow.high)} and {m(globalLow.low)}: cutting emissions is what keeps the long-term rise manageable.
             </p>
           ) : (

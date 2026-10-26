@@ -9,7 +9,7 @@ export default function SiteFooter() {
         <p className={styles.name}>{SITE.name}</p>
         <p>
           An independent science platform created and curated by <Link href="/about/">{SITE.creator}</Link>. It is not
-          affiliated with or endorsed by any institution, and uses only published research and openly licensed data.
+          affiliated with or endorsed by any institution, and uses published research, official reports and open data, each credited with its licence.
         </p>
         <p>
           <Link href="/science/methods/">Methods and data</Link>

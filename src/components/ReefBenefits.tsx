@@ -66,7 +66,7 @@ export function ReefLongTerm() {
         <p style={{ margin: "0 0 0.25rem", fontWeight: 600 }}>Extra water depth over Caribbean reefs by 2100</p>
         <p className="small faint" style={{ margin: "0 0 0.9rem" }}>Sea-level rise minus reef growth, range across Florida, Mexico and Bonaire</p>
         <HBars max={1.4} labelWidth="13rem" rule={{ at: 0.5, label: "0.5 m: wave exposure and flood risk commonly rise" }} rows={[
-          { label: "Very low emissions (SSP1-2.6)", value: 0.52, range: [0.41, 0.52], text: "0.41–0.52 m" },
+          { label: "Low emissions (SSP1-2.6)", value: 0.52, range: [0.41, 0.52], text: "0.41–0.52 m" },
           { label: "Intermediate (SSP2-4.5)", value: 0.76, range: [0.65, 0.76], text: "0.65–0.76 m" },
           { label: "Very high (SSP5-8.5)", value: 1.2, range: [1.04, 1.2], text: "1.04–1.20 m" },
         ]} color="#0a62b8" />

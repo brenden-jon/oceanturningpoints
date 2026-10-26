@@ -56,11 +56,11 @@ Scientists disagree on whether a collapse could follow. Statistical analyses of 
 
 Other studies find the circulation more resilient. Across 34 climate models, winds over the Southern Ocean keep pulling deep water to the surface and sustain a weakened AMOC even under extreme forcing, which suggests a full collapse is unlikely this century (Baker et al., 2025). In CMIP6 runs extended beyond 2100, though, the circulation falls to an extremely weak, shallow state in every model under high emissions, and in some under intermediate and low emissions. A mid-century collapse of deep mixing in the Labrador, Irminger and Nordic seas comes first (Drijfhout et al., 2025).
 
-The rate of warming also affects the outcome. In one climate model, the AMOC stayed stable up to 5.5 °C of warming when carbon dioxide rose slowly, but collapsed at about 2 °C under faster increases (van Westen, Börner & Dijkstra, 2026). A single warming threshold, often quoted as around 4 °C with a range of 1.4–8 °C (Armstrong McKay et al., 2022), may therefore mean less than it seems.
+The rate of warming also affects the outcome. In one climate model, the AMOC stayed stable up to 5.5°C of warming when carbon dioxide rose slowly, but collapsed at about 2°C under faster increases (van Westen, Börner & Dijkstra, 2026). A single warming threshold, often quoted as around 4°C with a range of 1.4–8°C (Armstrong McKay et al., 2022), may therefore mean less than it seems.
 
 ## Consequences
 
-The best-established effect of a collapse is cooling around the North Atlantic. In one set of experiments with the CESM model, a collapse in a world 2 °C warmer than pre-industrial makes winters in northwest Europe colder than they were before industrialisation. Once-a-decade cold extremes approach −20 °C in London and −30 °C in Edinburgh, and sea ice reaches much further south (van Westen & Baatsen, 2025). Other models show the same pattern, with cooling of different sizes (Jackson et al., 2015).
+The best-established effect of a collapse is cooling around the North Atlantic. In one set of experiments with the CESM model, a collapse in a world 2°C warmer than pre-industrial makes winters in northwest Europe colder than they were before industrialisation. Once-a-decade cold extremes approach −20°C in London and −30°C in Edinburgh, and sea ice reaches much further south (van Westen & Baatsen, 2025). Other models show the same pattern, with cooling of different sizes (Jackson et al., 2015).
 
 For more people, the larger effect is on rain, because the tropical rain belt shifts south when less heat reaches the north. Across four models with a stable collapsed state, rainfall falls by about 29% in the West African monsoon and 19% in the Indian summer monsoon, while the southern Amazon gets wetter (Ben-Yami et al., 2024). The direction is consistent across models, and the amount varies widely between them. Evidence from past climates and models also links a slower circulation to higher drought risk in parts of the tropics (DiNezio et al., 2025).
 
@@ -68,7 +68,7 @@ These monsoon regions are home to hundreds of millions of people who depend on r
 
 Other effects are less certain. The Southern Hemisphere would warm as the north cools. Sea level would rise faster along North Atlantic coasts as ocean currents redistribute water. In CESM experiments the extra rise reaches up to about 4 mm per year near densely populated coasts during a collapse, comparable to today's global average rate (van Westen, Katsman & Le Bars, 2026).
 
-One model study finds a collapse would release carbon from the ocean, adding around 0.2 °C to global warming at higher background levels (Nian et al., 2026). Effects on marine ecosystems and fisheries have been studied much less.
+One model study finds a collapse would release carbon from the ocean, adding around 0.2°C to global warming at higher background levels (Nian et al., 2026). Effects on marine ecosystems and fisheries have been studied much less.
 
 ## What we know and don't know
 

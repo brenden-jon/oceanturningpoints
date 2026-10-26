@@ -18,6 +18,10 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image" },
 };
 
+// GoatCounter account code. Accepts the bare code ("oceanturningpoints") or the whole snippet GoatCounter shows.
+const gcRaw = (process.env.NEXT_PUBLIC_GOATCOUNTER ?? "").trim();
+const GOATCOUNTER = gcRaw.match(/([a-z0-9-]+)\.goatcounter\.com/i)?.[1] ?? (/^[a-z0-9-]+$/i.test(gcRaw) ? gcRaw : "");
+
 export const viewport: Viewport = { themeColor: "#ffffff", width: "device-width", initialScale: 1 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -30,8 +34,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SiteFooter />
         <SiteLd />
         {/* Privacy-friendly analytics, switched on by setting one of these at build time (see docs/README.md). */}
-        {process.env.NEXT_PUBLIC_GOATCOUNTER && (
-          <script data-goatcounter={`https://${process.env.NEXT_PUBLIC_GOATCOUNTER}.goatcounter.com/count`} async src="https://gc.zgo.at/count.js" />
+        {GOATCOUNTER && (
+          <script data-goatcounter={`https://${GOATCOUNTER}.goatcounter.com/count`} async src="https://gc.zgo.at/count.js" />
         )}
         {process.env.NEXT_PUBLIC_CF_BEACON && (
           <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={JSON.stringify({ token: process.env.NEXT_PUBLIC_CF_BEACON })} />

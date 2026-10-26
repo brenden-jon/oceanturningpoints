@@ -326,9 +326,18 @@ def sea_ice() -> dict:
         series = lambda yr: [[min(d.timetuple().tm_yday, 365), round(v, 3)] for d, v in rows if d.year == yr]
         today = rows[-1][1]
         doy = min(last.timetuple().tm_yday, 365)
-        ranks = sorted(v for y, v in by_doy.get(doy, {}).items() if y < last.year or y == last.year)
+        # Rank against every year since 1979 on this date. Before 1987 data are every other day, so take the
+        # nearest day within ±1 when the exact day is missing.
+        def near(y):
+            for dd in (0, -1, 1):
+                v = by_doy.get(doy + dd, {}).get(y)
+                if v is not None:
+                    return v
+            return None
+        vals = {y: near(y) for y in range(rows[0][0].year, last.year + 1)}
+        ranks = sorted(v for v in vals.values() if v is not None)
         out[hemi] = {"date": last.isoformat(), "extent": round(today, 3), "median8110": clim[doy - 1],
-                     "rankLowest": ranks.index(today) + 1 if today in ranks else None, "years": len(ranks),
+                     "rankLowest": ranks.index(today) + 1 if today in ranks else None, "years": len(ranks), "since": rows[0][0].year,
                      "thisYear": series(last.year), "lastYear": series(last.year - 1), "median": clim, "recordLow": low}
     return {"units": "million km²", **out,
             "source": {"org": "National Snow and Ice Data Center", "product": "Sea Ice Index, version 4 (G02135)",

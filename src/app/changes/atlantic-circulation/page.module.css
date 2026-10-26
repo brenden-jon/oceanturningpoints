@@ -47,8 +47,8 @@
 .level_low { color: var(--alert); }
 
 .steps { margin: 0; padding: 0; list-style: none; counter-reset: st; display: grid; gap: 1.1rem; }
-.steps li { counter-increment: st; display: grid; grid-template-columns: 2.2rem 1fr; font-size: 1rem; color: var(--text-2); }
-.steps li::before { content: counter(st); font-weight: 700; font-size: 1.05rem; color: var(--accent); }
+.steps li { counter-increment: st; position: relative; padding-left: 2.2rem; font-size: 1rem; color: var(--text-2); }
+.steps li::before { content: counter(st); position: absolute; left: 0; top: 0; font-weight: 700; font-size: 1.05rem; color: var(--accent); }
 .steps strong { color: var(--text); font-weight: 600; }
 .attrib { margin-top: 2.5rem; }
 

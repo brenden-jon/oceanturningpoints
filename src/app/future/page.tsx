@@ -26,7 +26,7 @@ const FUTURES: { title: string; sub: string; plan: string; rows: Record<Band, st
       certain: [
         "The ocean keeps warming past 2100; the change is irreversible for centuries.",
         "Sea level 0.3–0.6 m higher by 2100, still rising about 4–5 mm a year; 2–3 m committed over 2,000 years.",
-        "Former 1-in-100-year sea levels every year at about 60% of tide gauges by 2100.",
+        "Former 1-in-100-year sea levels at least once a year at more than half of tide-gauge locations by 2100, as in every scenario.",
         "Marine heatwaves about 16 times as frequent as before industrialisation.",
         "Coral reefs decline by a further 70–90%.",
         "Acidification stops worsening once CO₂ falls.",
@@ -50,7 +50,7 @@ const FUTURES: { title: string; sub: string; plan: string; rows: Record<Band, st
     rows: {
       certain: [
         "Sea level 0.4–0.8 m higher by 2100, rising about twice as fast as today; 2–10 m committed over 2,000 years.",
-        "Former 1-in-100-year sea levels every year at more than half of tide gauges by 2100.",
+        "Former 1-in-100-year sea levels at least once a year at more than half of tide-gauge locations by 2100, as in every scenario.",
         "Marine heatwaves between 23 and 41 times as frequent as before industrialisation.",
         "More than 99% of warm-water coral reefs lost.",
         "Ocean still acidifying and losing oxygen in 2100.",
@@ -80,7 +80,7 @@ const FUTURES: { title: string; sub: string; plan: string; rows: Record<Band, st
       ],
       likely: [
         "About 16–19% less marine animal life; 90% of 25,000 assessed species at high or critical risk.",
-        "Atlantic circulation collapse by 2300 about as likely as not; northern shutdown in about 70% of models.",
+        "A shutdown of the northern Atlantic overturning after 2100 in every climate model run that far (Drijfhout et al., 2025).",
         "Most ocean and cryosphere tipping systems past their central thresholds.",
       ],
       possible: [
@@ -173,7 +173,7 @@ export default function FuturePage() {
                 <tr><th scope="row">Surface pH change</th><td>−0.08</td><td>−0.17</td><td>−0.37</td></tr>
                 <tr><th scope="row">Oxygen at 100–600 m</th><td>−4%</td><td>−7%</td><td>−11%</td></tr>
                 <tr><th scope="row">Marine animal biomass</th><td>−6%</td><td>–</td><td>−16%</td></tr>
-                <tr><th scope="row">Models heading for northern Atlantic shutdown by 2300</th><td>25%</td><td>37%</td><td>70%</td></tr>
+                <tr><th scope="row">Northern Atlantic overturning shutdown after 2100, in models run that far</th><td>Some models</td><td>Some models</td><td>All models</td></tr>
               </tbody>
             </table>
             <p className="small faint" style={{ marginTop: "0.6rem" }}>
@@ -221,14 +221,15 @@ export default function FuturePage() {
 
       <section className="section" aria-labelledby="planning">
         <div className="wrap">
-          <p className="kicker">Decision-ready</p>
-          <h2 id="planning" className={styles.h2}>Plan for one future, test against another, aim for a third</h2>
+          <p className="kicker">Using the futures</p>
+          <h2 id="planning" className={styles.h2}>How to use the three futures</h2>
           <div className={styles.responses}>
             <div style={{ background: "var(--bg-alt)" }}>
               <h3>The next 25 years look similar in every future</h3>
               <p>
                 Sea level by 2050, deep-ocean warming and Arctic sea-ice loss differ little between scenarios. For investments with lives under
-                about 25 years, the expected ocean is close to fixed, and plans should use it now. Emissions choices decide the second half of the
+                about 25 years, the expected ocean is close to fixed, and plans should use it now. The exception is abrupt regional change, such as a
+                sudden cooling of the subpolar North Atlantic, which should be stress-tested. Emissions choices decide the second half of the
                 century and beyond.
               </p>
             </div>

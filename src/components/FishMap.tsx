@@ -66,7 +66,7 @@ export default function FishMap() {
     <div className={styles.wrap}>
       <div className={styles.toolbar}>
         <div className={styles.seg} role="group" aria-label="Emissions">
-          <button aria-pressed={scen === "ssp126"} onClick={() => setScen("ssp126")}>Very low emissions</button>
+          <button aria-pressed={scen === "ssp126"} onClick={() => setScen("ssp126")}>Low emissions</button>
           <button aria-pressed={scen === "ssp585"} onClick={() => setScen("ssp585")}>Very high emissions</button>
         </div>
         <div className={styles.seg} role="group" aria-label="Period">
@@ -76,7 +76,7 @@ export default function FishMap() {
       </div>
       <p className={styles.headline}>
         Projected change in the fish that each country’s waters can hold, {year === "2050" ? "in the 2040s" : "in the 2090s"}, under{" "}
-        {scen === "ssp126" ? "very low" : "very high"} emissions. Select a country for its numbers.
+        {scen === "ssp126" ? "low" : "very high"} emissions. Select a country for its numbers.
       </p>
       <div className={styles.layout}>
         <div className={styles.mapCol}>
@@ -93,7 +93,7 @@ export default function FishMap() {
             <p className={styles.place}>{show.name}</p>
             <dl className={styles.stats}>
               <div><dt>2090s, very high emissions</dt><dd className="tnum">{pct(show.ssp585_2100)}</dd></div>
-              <div><dt>2090s, very low emissions</dt><dd className="tnum">{pct(show.ssp126_2100)}</dd></div>
+              <div><dt>2090s, low emissions</dt><dd className="tnum">{pct(show.ssp126_2100)}</dd></div>
               <div><dt>2040s, very high</dt><dd className="tnum">{pct(show.ssp585_2050)}</dd></div>
             </dl>
             <p className="small faint">

@@ -40,7 +40,7 @@ export default function CoralPage() {
           </p>
           <StoryBrief answers={[
             ["When the sea stays too hot for weeks, corals bleach and many die. Reefs now bleach more often than they can recover.", "#events"],
-            ["It is happening now. Reefs are assessed as crossing their thermal tipping point, and IUCN lists 96% of reef ecosystems as Critically Endangered.", "#threshold"],
+            ["Likely under way. Reefs are assessed as crossing their thermal tipping point, and IUCN classes 96% of reef ecosystems as Critically Endangered once projected warming is included.", "#threshold"],
             ["Weaker natural flood defences, and lost fish and income for many of the billion people who live near reefs.", "#coasts"],
             ["Bring warming back towards 1.2°C and below; protect the reefs most likely to survive; plan for weaker natural defences.", "#responses"],
           ]} />
@@ -91,7 +91,8 @@ export default function CoralPage() {
                 The IPCC projects a further 70–90% decline in reefs at 1.5°C of warming (<i>high confidence</i>) and more than 99% at 2°C
                 (<i>very high confidence</i>). IUCN’s first global Red List of Ecosystems assessment, published in October 2026,
                 classifies 122 of 127 shallow reef ecosystems (96%) as Critically Endangered: at very high risk of collapse within 50
-                years under intermediate emissions. IUCN stresses that most reefs still have living coral.
+                years under intermediate emissions. On observed declines alone, without projected warming, the share would be 24%. IUCN stresses
+                that most reefs still have living coral.
               </p>
               <p>
                 These warnings measure different things. The tipping point says warming has passed the level at which reefs as we know

@@ -14,11 +14,11 @@ related: ["coral-reefs", "amoc", "southern-ocean"]
 explorer: "/changes/el-nino/"
 decisions: "El Niño can be forecast months ahead, so it is the ocean change countries can best prepare for. Agree triggers and pre-arranged finance, and size food reserves, insurance and water storage for stronger events than in the past."
 keyPoints:
-  - "A strong El Niño developed in 2026. In mid-October the weekly Niño-3.4 temperature anomaly reached +3.3 °C, the highest in NOAA’s weekly record since 1981 (NOAA CPC)."
+  - "A strong El Niño developed in 2026. In October 2026 Niño-3.4 temperatures passed +3°C, among the highest weekly values in NOAA’s record since 1981 (NOAA CPC)."
   - "The 1982–83 and 1997–98 El Niños have been linked to global income losses of US$4.1 trillion and US$5.7 trillion, with growth held back for years afterwards (Callahan & Mankin, 2023)."
   - "The IPCC finds it very likely that El Niño-related rainfall variability will increase in the second half of this century under intermediate and high emissions (IPCC, 2021)."
   - "Coral records from the Galápagos show that recent eastern Pacific El Niños are stronger than at any time in the past millennium (Cole et al., 2026)."
-  - "A model study published in October 2026 finds that warming shifts the Pacific towards an El Niño-like mean state that persists for centuries after net zero (Sengupta et al., 2026)."
+  - "A model study published in October 2026 finds that warming shifts the Pacific towards an El Niño-like mean state that persists for centuries after net zero, although observed trends so far point the other way (Sengupta et al., 2026)."
 confidence:
   - claim: "El Niño will remain the dominant year-to-year climate swing"
     level: "high"
@@ -26,12 +26,12 @@ confidence:
   - claim: "El Niño-related rainfall swings will intensify this century"
     level: "high"
     basis: "IPCC AR6: very likely under intermediate and high emissions"
-  - claim: "El Niño temperature swings will become larger"
-    level: "low"
-    basis: "Models disagree (IPCC AR6, medium confidence in no consensus); recent studies and coral records point to an increase"
-  - claim: "The Pacific will shift to a more El Niño-like mean state"
+  - claim: "Extreme El Niños will become stronger and more frequent"
     level: "medium"
-    basis: "Expected by most models and theory; observed trends since the 1950s point the other way"
+    basis: "Models as a whole disagree on El Niño's temperature swings (IPCC AR6); the models that best simulate El Niño, and coral records, point to larger swings and more frequent extremes"
+  - claim: "The Pacific will shift to a lasting, more El Niño-like mean state"
+    level: "low"
+    basis: "Contested: expected by most models and theory, but observed trends since the 1950s point the other way"
   - claim: "El Niño could shift abruptly into a new state of its own"
     level: "low"
     basis: "Assessed as not a tipping system, with medium confidence (Global Tipping Points Report 2025)"
@@ -47,7 +47,7 @@ Scientists track El Niño with sea-surface temperatures in a box of the central-
 
 ## What we observe
 
-A strong El Niño developed in 2026. NOAA declared El Niño conditions and, in its October 2026 discussion, kept an El Niño Advisory in place. In the week centred on 14 October the Niño-3.4 anomaly was +3.3 °C, the highest weekly value in a record that starts in 1981. On the relative index the same week was +2.4 °C, strong but below the +2.9 °C reached in 1982. The latest three-month relative index (July to September) was +1.7 °C.
+A strong El Niño developed in 2026. NOAA declared El Niño conditions and, in its October 2026 discussion, kept an El Niño Advisory in place. In October 2026 Niño-3.4 temperatures passed +3°C, among the highest weekly values in NOAA’s record since 1981. On the relative index, which removes the warming of the whole tropics, the event had not passed the 1982–83 peak. The latest values are on [The ocean now](/ocean-now/).
 
 Longer records suggest El Niño has already strengthened. Fossil corals from the Galápagos Islands record eastern Pacific temperatures over the past thousand years. They show a large recent increase in year-to-year variability, driven by stronger El Niño events, that exceeds simulated natural variability and parallels rising global temperature (Cole et al., 2026).
 
@@ -65,15 +65,15 @@ Under very high emissions, some models eventually produce what has been called a
 
 El Niño’s costs are large and long-lasting. One study links the 1982–83 and 1997–98 events to global income losses of US$4.1 trillion and US$5.7 trillion, because growth in affected countries stayed lower for years afterwards (Callahan & Mankin, 2023). Another estimates losses of US$2.1 trillion and US$3.9 trillion for the 1997–98 and 2015–16 extreme events (Liu et al., 2023). Losses are concentrated in tropical, agriculture-dependent economies.
 
-Food security is the most direct channel. El Niño lowers yields of maize, rice and wheat in many producing regions, although soybean benefits on average (Iizumi et al., 2014). In 2026, FAO and the World Food Programme launched their first joint anticipatory appeal, for US$202 million to protect 8.8 million people in 22 countries ahead of El Niño impacts. Across the tropics, the chance of new civil conflicts has historically been twice as high in El Niño years as in La Niña years (Hsiang et al., 2011).
+Food security is the most direct channel. El Niño lowers yields of maize, rice and wheat in many producing regions, although soybean benefits on average (Iizumi et al., 2014). In June 2026, FAO and the World Food Programme launched their first joint anticipatory appeal, for US$202 million to protect 8.8 million people in 22 countries ahead of El Niño impacts (FAO & WFP, 2026). Across the tropics, the chance of new civil conflicts has historically been twice as high in El Niño years as in La Niña years (Hsiang et al., 2011).
 
-El Niño also drives marine heatwaves. Peru cancelled its second anchovy fishing season of 2026 after surveys found a stock dominated by juveniles; the fishery supplies much of the world’s fishmeal and fish oil. Strong El Niños have triggered mass coral bleaching across the tropics, and severe bleaching events now recur on average every six years (Hughes et al., 2018).
+El Niño also drives marine heatwaves. In October 2026 Peru’s Ministry of Production decided not to open the second anchovy fishing season of the year in the main north-central zone, after the marine institute IMARPE found that juveniles made up 79% of the stock by number (Forbes Perú, 2026). The fishery supplies much of the world’s fishmeal and fish oil. Strong El Niños have triggered mass coral bleaching across the tropics, and severe bleaching events now recur on average every six years (Hughes et al., 2018).
 
 ## What we know and don't know
 
 El Niño will keep happening, and its effects on rainfall are expected to become larger. Models and theory agree on this.
 
-Less certain is how El Niño’s own strength will change, and whether the Pacific’s average state will turn more El Niño-like. Coral records and recent observations point to stronger El Niños; the observed trend in the Pacific’s background state points towards La Niña. Climate models favour an El Niño-like future, but they also fail to reproduce the observed trend, which limits confidence in them. Resolving this matters for the rainfall projections of billions of people around the Pacific and Indian oceans.
+Less certain is how El Niño’s own strength will change. Coral records, recent observations and the models that best simulate El Niño point to stronger and more frequent extreme events (medium confidence). Whether the Pacific’s average state will turn lastingly more El Niño-like is contested (low confidence). Climate models favour an El Niño-like future, but the observed trend in the Pacific’s background state points towards La Niña, and models fail to reproduce that trend, which limits confidence in them. Resolving this matters for the rainfall projections of billions of people around the Pacific and Indian oceans.
 
 ## Why it matters for decisions
 
@@ -85,21 +85,23 @@ For longer-term planning, the useful assumption is that El Niño-related drought
 
 1. Cai, W., Borlace, S., Lengaigne, M., et al. (2014). Increasing frequency of extreme El Niño events due to greenhouse warming. *Nature Climate Change*, 4, 111–116. [doi:10.1038/nclimate2100](https://doi.org/10.1038/nclimate2100)
 2. Cai, W., Ng, B., Wang, G., et al. (2022). Increased ENSO sea surface temperature variability under four IPCC emission scenarios. *Nature Climate Change*, 12, 228–231. [doi:10.1038/s41558-022-01282-z](https://doi.org/10.1038/s41558-022-01282-z)
-3. Callahan, C. W., Chen, C., Rugenstein, M., et al. (2021). Robust decrease in El Niño/Southern Oscillation amplitude under long-term warming. *Nature Climate Change*, 11, 752–757. [doi:10.1038/s41558-021-01099-2](https://doi.org/10.1038/s41558-021-01099-2)
-4. Callahan, C. W. & Mankin, J. S. (2023). Persistent effect of El Niño on global economic growth. *Science*, 380, 1064–1069. [doi:10.1126/science.adf2983](https://doi.org/10.1126/science.adf2983)
+3. Callahan, C. W. & Mankin, J. S. (2023). Persistent effect of El Niño on global economic growth. *Science*, 380, 1064–1069. [doi:10.1126/science.adf2983](https://doi.org/10.1126/science.adf2983)
+4. Callahan, C. W., Chen, C., Rugenstein, M., et al. (2021). Robust decrease in El Niño/Southern Oscillation amplitude under long-term warming. *Nature Climate Change*, 11, 752–757. [doi:10.1038/s41558-021-01099-2](https://doi.org/10.1038/s41558-021-01099-2)
 5. Cole, J. E., Thompson, D. M., Dyez, K. A., et al. (2026). Recent strengthening of eastern Pacific ENSO in the last millennium paleorecord. *Science*, 394, 192–196. [doi:10.1126/science.ady2660](https://doi.org/10.1126/science.ady2660)
-6. Geng, T., Cai, W., Jia, F. & Wu, L. (2024). Decreased ENSO post-2100 in response to formation of a permanent El Niño-like state under greenhouse warming. *Nature Communications*, 15, 5810. [doi:10.1038/s41467-024-50156-9](https://doi.org/10.1038/s41467-024-50156-9)
-7. Global Tipping Points Report (2025). University of Exeter. [global-tipping-points.org](https://global-tipping-points.org/)
-8. Hsiang, S. M., Meng, K. C. & Cane, M. A. (2011). Civil conflicts are associated with the global climate. *Nature*, 476, 438–441. [doi:10.1038/nature10311](https://doi.org/10.1038/nature10311)
-9. Hughes, T. P., Anderson, K. D., Connolly, S. R., et al. (2018). Spatial and temporal patterns of mass bleaching of corals in the Anthropocene. *Science*, 359, 80–83. [doi:10.1126/science.aan8048](https://doi.org/10.1126/science.aan8048)
-10. Iizumi, T., Luo, J.-J., Challinor, A. J., et al. (2014). Impacts of El Niño Southern Oscillation on the global yields of major crops. *Nature Communications*, 5, 3712. [doi:10.1038/ncomms4712](https://doi.org/10.1038/ncomms4712)
-11. IPCC (2021). Summary for Policymakers and Technical Summary. In *Climate Change 2021: The Physical Science Basis*. Cambridge University Press. [doi:10.1017/9781009157896.001](https://doi.org/10.1017/9781009157896.001)
-12. Liu, Y., Cai, W., Lin, X., Li, Z. & Zhang, Y. (2023). Nonlinear El Niño impacts on the global economy under climate change. *Nature Communications*, 14, 5887. [doi:10.1038/s41467-023-41551-9](https://doi.org/10.1038/s41467-023-41551-9)
-13. Seager, R., Cane, M., Henderson, N., et al. (2019). Strengthening tropical Pacific zonal sea surface temperature gradient consistent with rising greenhouse gases. *Nature Climate Change*, 9, 517–522. [doi:10.1038/s41558-019-0505-x](https://doi.org/10.1038/s41558-019-0505-x)
-14. Seager, R., Henderson, N. & Cane, M. (2022). Persistent discrepancies between observed and modeled trends in the tropical Pacific Ocean. *Journal of Climate*, 35, 4571–4584. [doi:10.1175/JCLI-D-21-0648.1](https://doi.org/10.1175/JCLI-D-21-0648.1)
-15. Sengupta, A., King, A. D., Brown, J. R., et al. (2026). Ocean thermal inertia sustains a tropical Pacific mean state shift under net zero. *Communications Earth & Environment*, 7, 810. [doi:10.1038/s43247-026-04082-x](https://doi.org/10.1038/s43247-026-04082-x)
-16. Sugiura, I., Smerdon, J. E. & Seager, R. (2026). Observed trends in the tropical Pacific zonal sea surface temperature gradient are statistically significant based on multiple null hypotheses. *Journal of Climate*, 39, 4769–4787. [doi:10.1175/JCLI-D-25-0460.1](https://doi.org/10.1175/JCLI-D-25-0460.1)
-17. Watanabe, M., Kang, S. M., Collins, M., et al. (2024). Possible shift in controls of the tropical Pacific surface warming pattern. *Nature*, 630, 315–324. [doi:10.1038/s41586-024-07452-7](https://doi.org/10.1038/s41586-024-07452-7)
+6. FAO & WFP (2026). Bracing for El Niño: FAO and WFP launch joint appeal to protect 8.8 million people from extreme weather events. News release, 18 June 2026. [fao.org](https://www.fao.org/newsroom/detail/bracing-for-el-ni%C3%B1o--fao-and-wfp-launch-joint-appeal-to-protect-8.8-million-people-from-extreme-weather-events/en)
+7. Forbes Perú (2026). Produce descarta segunda temporada de pesca de anchoveta en la zona norte-centro. 16 October 2026. [forbes.pe](https://forbes.pe/economia-y-finanzas/2026-10-16/produce-descarta-segunda-temporada-de-pesca-de-anchoveta-en-la-zona-norte-centro)
+8. Geng, T., Cai, W., Jia, F. & Wu, L. (2024). Decreased ENSO post-2100 in response to formation of a permanent El Niño-like state under greenhouse warming. *Nature Communications*, 15, 5810. [doi:10.1038/s41467-024-50156-9](https://doi.org/10.1038/s41467-024-50156-9)
+9. Global Tipping Points Report (2025). University of Exeter. [global-tipping-points.org](https://global-tipping-points.org/)
+10. Hsiang, S. M., Meng, K. C. & Cane, M. A. (2011). Civil conflicts are associated with the global climate. *Nature*, 476, 438–441. [doi:10.1038/nature10311](https://doi.org/10.1038/nature10311)
+11. Hughes, T. P., Anderson, K. D., Connolly, S. R., et al. (2018). Spatial and temporal patterns of mass bleaching of corals in the Anthropocene. *Science*, 359, 80–83. [doi:10.1126/science.aan8048](https://doi.org/10.1126/science.aan8048)
+12. Iizumi, T., Luo, J.-J., Challinor, A. J., et al. (2014). Impacts of El Niño Southern Oscillation on the global yields of major crops. *Nature Communications*, 5, 3712. [doi:10.1038/ncomms4712](https://doi.org/10.1038/ncomms4712)
+13. IPCC (2021). Summary for Policymakers and Technical Summary. In *Climate Change 2021: The Physical Science Basis*. Cambridge University Press. [doi:10.1017/9781009157896.001](https://doi.org/10.1017/9781009157896.001)
+14. Liu, Y., Cai, W., Lin, X., Li, Z. & Zhang, Y. (2023). Nonlinear El Niño impacts on the global economy under climate change. *Nature Communications*, 14, 5887. [doi:10.1038/s41467-023-41551-9](https://doi.org/10.1038/s41467-023-41551-9)
+15. Seager, R., Cane, M., Henderson, N., et al. (2019). Strengthening tropical Pacific zonal sea surface temperature gradient consistent with rising greenhouse gases. *Nature Climate Change*, 9, 517–522. [doi:10.1038/s41558-019-0505-x](https://doi.org/10.1038/s41558-019-0505-x)
+16. Seager, R., Henderson, N. & Cane, M. (2022). Persistent discrepancies between observed and modeled trends in the tropical Pacific Ocean. *Journal of Climate*, 35, 4571–4584. [doi:10.1175/JCLI-D-21-0648.1](https://doi.org/10.1175/JCLI-D-21-0648.1)
+17. Sengupta, A., King, A. D., Brown, J. R., et al. (2026). Ocean thermal inertia sustains a tropical Pacific mean state shift under net zero. *Communications Earth & Environment*, 7, 810. [doi:10.1038/s43247-026-04082-x](https://doi.org/10.1038/s43247-026-04082-x)
+18. Sugiura, I., Smerdon, J. E. & Seager, R. (2026). Observed trends in the tropical Pacific zonal sea surface temperature gradient are statistically significant based on multiple null hypotheses. *Journal of Climate*, 39, 4769–4787. [doi:10.1175/JCLI-D-25-0460.1](https://doi.org/10.1175/JCLI-D-25-0460.1)
+19. Watanabe, M., Kang, S. M., Collins, M., et al. (2024). Possible shift in controls of the tropical Pacific surface warming pattern. *Nature*, 630, 315–324. [doi:10.1038/s41586-024-07452-7](https://doi.org/10.1038/s41586-024-07452-7)
 
 ### Data
 

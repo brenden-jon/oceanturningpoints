@@ -10,7 +10,7 @@ import own from "./responses.module.css";
 import PhotoFigure from "@/components/PhotoFigure";
 
 const TITLE = "What can be done about the big ocean changes?";
-const DESCRIPTION = "How far emissions must fall to keep ocean and ice tipping points out of reach, what marine protection can and cannot do to make the ocean more resilient, every marine protected area on one map, and how protection is paid for.";
+const DESCRIPTION = "How far emissions must fall to keep ocean and ice tipping points out of reach, how marine protection makes the ocean more resilient, and its limits, every marine protected area on one map, and how protection is paid for.";
 
 export const metadata: Metadata = {
   title: "What can be done: emissions, marine protection and ocean finance",
@@ -30,9 +30,9 @@ export default function ResponsesPage() {
         </div>
         <div className={styles.heroSide}>
           <p className={styles.standfirst}>
-            Three things, working on different timescales. Cutting emissions is the only way to keep tipping thresholds out of reach,
-            and the world is not on track. Protecting the ocean now helps reefs, fish stocks and coasts recover between shocks, though
-            it cannot stop the heat. And changes that can no longer be avoided have to be planned for.
+            Cutting emissions is the only way to keep tipping thresholds out of reach, and the world is not on track. Protecting the
+            ocean now helps reefs, fish stocks and coasts recover between shocks, though it cannot stop the heat, and protection needs
+            to be paid for. Changes that can no longer be avoided have to be planned for.
           </p>
           <p className={styles.chips}>
             <a className="more" href="#warming">Limit warming</a>
@@ -161,7 +161,7 @@ export default function ResponsesPage() {
           <h2 id="recover" className={styles.h2}>Examples of recovery</h2>
           <div className={`prose ${own.lead}`}>
             <p>
-              The changes on this site are serious, but they are not the whole story. Marine life recovers, often faster than expected,
+              Marine life recovers, often faster than expected,
               when fishing, hunting and habitat loss are brought under control. A review of decades of evidence concluded that substantial
               recovery of marine life is achievable by 2050, if the major pressures, including climate change, are reduced (Duarte et al.,
               2020).
@@ -199,7 +199,7 @@ export default function ResponsesPage() {
                 The investment case is positive. A peer-reviewed global study finds that the benefits of expanding marine protection exceed
                 the costs by a factor of 1.4 to 2.7 (Brander et al., 2020). In Indonesia, a district-by-district cost-benefit analysis
                 found that mangrove conservation and restoration pay off in most districts, and that conserving existing mangroves
-                generally gives higher returns than restoring lost ones (van Zanten et al., 2025, co-authored by the curator of this site).
+                generally gives higher returns than restoring lost ones (van Zanten et al., 2025, co-authored by the curator of Ocean Turning Points).
               </p>
               <p>
                 Countries have agreed to mobilise at least US$200 billion a year for biodiversity by 2030 and to cut harmful subsidies by

@@ -28,7 +28,7 @@ export default function About() {
             It follows six changes: the Atlantic overturning circulation, coral reefs, the ice sheets, El Niño, fish stocks on the
             move and the subpolar North Atlantic, and keeps an eye on the Southern Ocean. It is written for people who make or advise
             on decisions, in finance and planning ministries, development banks, insurers and adaptation agencies. It does not make
-            its own forecasts or run campaigns. Every map and claim traces to peer-reviewed work or an official dataset, and each
+            its own forecasts or run campaigns. Every map and claim traces to peer-reviewed research, an official dataset or an agency report, and each
             topic shows the date it was last reviewed.
           </p>
 
@@ -39,7 +39,7 @@ export default function About() {
             <div>
               <p>
                 Ocean Turning Points is created and curated by <strong>Dr Brenden Jongman</strong>, who works on climate resilience,
-                ocean systems and adaptation and has spent more than 15 years at the intersection of research, policy and
+                ocean systems and adaptation and has spent more than 15 years working across research, policy and
                 implementation.
               </p>
               <p>

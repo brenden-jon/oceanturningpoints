@@ -96,12 +96,12 @@ export default function FishPage() {
             <div className="prose">
               <p>
                 Ecosystem models project about 5% less marine animal life for every degree of warming (Lotze et al., 2019). By 2100 the
-                latest model ensemble projects a 19% decline under very high emissions and 7% under very low emissions (Tittensor et al.,
+                latest model ensemble projects a 19% decline under very high emissions and 7% under low emissions (Tittensor et al.,
                 2021). The IPCC gives a range of about 6% to 16% with medium confidence.
               </p>
               <p>
                 Country by country, the fish that national waters can hold falls by a median of {Math.abs(s.median.ssp585_2100)}% by the
-                2090s under very high emissions, and in {s.declining.ssp585_2100} of {s.countries} countries. Under very low emissions the
+                2090s under very high emissions, and in {s.declining.ssp585_2100} of {s.countries} countries. Under low emissions the
                 median loss is {Math.abs(s.median.ssp126_2100)}%. The biggest losses are in the tropics, including Papua New Guinea, the
                 Solomon Islands, Senegal and Peru, but countries such as Norway and the United Kingdom also lose (Blanchard and Novaglio, 2024).
               </p>
@@ -117,7 +117,7 @@ export default function FishPage() {
             <figure className={styles.panel} style={{ margin: 0 }}>
               <p style={{ margin: "0 0 0.25rem", fontWeight: 600 }}>Median change in fish biomass by the 2090s, by continent</p>
               <p className="small faint" style={{ margin: "0 0 0.9rem" }}>Countries’ national waters, relative to 2005–2014</p>
-              <p className={own.key}><i style={{ background: "#c8452c" }} />Very high emissions <i style={{ background: "#9aa5b1", marginLeft: "1rem" }} />Very low emissions</p>
+              <p className={own.key}><i style={{ background: "#c8452c" }} />Very high emissions <i style={{ background: "#9aa5b1", marginLeft: "1rem" }} />Low emissions</p>
               {conts.map(([c, v]) => (
                 <div key={c} className={own.group}>
                   <p>{c}</p>

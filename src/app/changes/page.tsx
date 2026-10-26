@@ -102,7 +102,7 @@ export default function Changes() {
             </p>
           </div>
           <div>
-            <h3>Crossing is not the same as collapse</h3>
+            <h3>What crossing a threshold means</h3>
             <p>
               Passing a threshold sets the direction, not the speed: reefs change within about a decade, the Atlantic circulation over
               decades to centuries, ice sheets over thousands of years. Bringing warming back down quickly can still limit the damage.

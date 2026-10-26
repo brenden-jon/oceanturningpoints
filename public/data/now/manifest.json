@@ -123,14 +123,14 @@
    "extent": 6.717,
    "median8110": 8.499,
    "rankLowest": 11,
-   "years": 44
+   "years": 48
   },
   "antarctic": {
    "date": "2026-10-17",
    "extent": 16.204,
    "median8110": 18.114,
    "rankLowest": 2,
-   "years": 44
+   "years": 48
   }
  },
  "bleachingOutlook": {

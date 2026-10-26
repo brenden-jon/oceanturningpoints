@@ -79,8 +79,8 @@ export default function OceanNow() {
               <p>
                 Sea-surface temperatures in the central-eastern equatorial Pacific are {signed(enso.latest.nino34)}°C above
                 normal{isRecord ? ", the highest weekly value in NOAA’s record, which starts in 1981" : ""}. The relative index
-                subtracts the warming of the whole tropics, which is how NOAA now judges El Niño strength; on that measure this event
-                is strong but has not yet passed the 1982 record.
+                subtracts the warming of the whole tropics, which is how NOAA now judges El Niño strength. On the three-month relative
+                index this event {roniLast.value >= 2.4 ? "has passed" : "has not yet passed"} the 1982–83 peak of +2.4°C.
               </p>
               <p>
                 El Niño shifts rainfall around the world. It typically brings drought to southern Africa, Indonesia, Australia,
@@ -130,7 +130,7 @@ export default function OceanNow() {
               </dl>
               <p>
                 {sstRecordThisYear
-                  ? <>On {day(sst.recordDaily.date)} the average ocean surface reached {sst.recordDaily.value.toFixed(2)}°C, the highest daily value since the satellite record began in 1982, just above the previous peak of {sst.previousYearlyMax.value.toFixed(2)}°C in {sst.previousYearlyMax.year}.</>
+                  ? <>On {day(sst.recordDaily.date)} the average ocean surface reached {sst.recordDaily.value.toFixed(2)}°C, the highest daily value since the satellite record began in 1982, essentially level with the previous peak of {sst.previousYearlyMax.value.toFixed(2)}°C in {sst.previousYearlyMax.year}.</>
                   : <>The highest daily value since the satellite record began in 1982 is {sst.recordDaily.value.toFixed(2)}°C, on {day(sst.recordDaily.date)}.</>}{" "}
                 The ocean surface has warmed with the climate, and El Niño years add a temporary boost on top.
               </p>
@@ -163,7 +163,7 @@ export default function OceanNow() {
                   <figcaption>
                     <strong>{name}: {h.extent.toFixed(2)} million km²</strong> on {day(h.date)},{" "}
                     {Math.abs(h.extent - h.median8110).toFixed(2)} million km² {h.extent < h.median8110 ? "below" : "above"} the 1981–2010 median
-                    {h.rankLowest ? `; the ${ordinal(h.rankLowest)} for the date in ${h.years} years` : ""}.
+                    {h.rankLowest ? `; the ${ordinal(h.rankLowest)} for the date in the satellite record since ${h.since ?? 1978}` : ""}.
                   </figcaption>
                   {maps?.[code] && (
                     // eslint-disable-next-line @next/next/no-img-element

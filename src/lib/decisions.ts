@@ -63,13 +63,14 @@ export const LENS: Record<LensKey, Lens> = {
   },
   "subpolar-gyre": {
     act: [
-      "Few changes are justified on current evidence alone; keep the observing arrays in the subpolar North Atlantic running.",
+      "Commit long-term funding for observations in the subpolar North Atlantic (OSNAP, Argo, Labrador Sea surveys): a gap in the record cannot be filled later.",
     ],
     assess: [
-      "Include abrupt regional cooling of several degrees in European and North Atlantic risk assessments, energy planning and fisheries management.",
+      "Include abrupt regional cooling of several degrees in European and North Atlantic risk assessments.",
+      "Test winter peak energy demand, heating standards and North Atlantic fisheries quota-setting against 2–3°C of regional cooling.",
     ],
     stay: [
-      "Flexible fisheries management and general climate resilience.",
+      "Use decadal climate forecasts, which draw much of their skill from this region, in fisheries and seasonal energy planning.",
     ],
   },
   "southern-ocean": {

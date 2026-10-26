@@ -29,3 +29,9 @@
 @media (max-width: 900px) { .about { grid-template-columns: minmax(0, 1fr); } }
 @media (max-width: 640px) { .box { height: 70vh; } .views { left: 0.6rem; right: 0.6rem; transform: none; } }
 .compact .box { height: clamp(420px, 62vh, 640px); }
+@media (max-width: 560px) {
+  .controls, .seg { max-width: 100%; }
+  .seg { overflow-x: auto; scrollbar-width: none; }
+  .seg::-webkit-scrollbar { display: none; }
+  .seg button { padding: 0.5rem 0.7rem; font-size: 0.85rem; }
+}

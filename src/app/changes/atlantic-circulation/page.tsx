@@ -222,7 +222,7 @@ export default function AmocPage() {
             <h2 id="observed" className={styles.h2}>Is it already weakening?</h2>
             <p>
               Since 2004, instruments moored across the Atlantic at 26.5°N have measured the circulation directly. It averages
-              {" "}{s.rapid.mean} Sv, roughly fifteen times the combined flow of all the world’s rivers, and swings a lot from month to month.
+              {" "}{s.rapid.mean} Sv (sverdrups; one sverdrup is a million cubic metres a second), roughly fifteen times the combined flow of all the world’s rivers, and swings a lot from month to month.
             </p>
             <p>
               The record shows a weaker state since about 2008 (Smeed et al., 2018), but twenty years is too short to separate a
@@ -264,7 +264,7 @@ export default function AmocPage() {
                 still brings it down to {num(runs.CESM_0600_RCP85.mean2400to2499, 1)} Sv.
               </p>
               <p>
-                Nobody knows where the real ocean sits on a curve like this. That uncertainty is what the scientific debate is about,
+                Where the real ocean sits on a curve like this is not known. That uncertainty is what the scientific debate is about,
                 and it is why the same model can produce very different futures.
               </p>
             </div>
@@ -348,7 +348,7 @@ export default function AmocPage() {
           </ol>
         </div>
         <p className={`wrap small muted ${styles.attrib}`}>
-          These steps follow Jongman and Hall (forthcoming). <Link href="/about/">Brenden Jongman</Link> is the curator of this site.
+          These steps follow Jongman and Hall (forthcoming). <Link href="/about/">Brenden Jongman</Link> is the curator of Ocean Turning Points.
         </p>
         <div className="wrap" style={{ marginTop: "2.5rem" }}>
           <h3 style={{ fontSize: "1.2rem", marginBottom: "0.9rem" }}>Which decisions should change</h3>

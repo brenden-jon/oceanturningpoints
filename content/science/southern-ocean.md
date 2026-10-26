@@ -73,7 +73,7 @@ More than a billion people are projected to live in low-elevation coastal zones 
 
 The Antarctic krill fishery is concentrated in the South Atlantic sector, where krill distribution has shifted south (medium confidence) (Meredith et al., 2019; Atkinson et al., 2019). Whether overall krill density has declined is disputed (Atkinson et al., 2004; Cox et al., 2018). The fishery is modest in value, about USD 70 million a year wholesale in 2011–2015. Penguin, seal and whale populations depend on krill (Meredith et al., 2019).
 
-Effects further afield are mostly model-based. In one model run to 2300 under sustained high emissions, nutrients became trapped in the Southern Ocean and potential fishery yields fell by more than 20% globally (Moore et al., 2018), a pathway that would reach tropical fisheries in developing countries. Another model study found that meltwater enhances Southern Hemisphere drying and delays the crossing of 1.5 °C and 2 °C by more than a decade (Bronselaer et al., 2018). Evidence for specific developing regions is thin.
+Effects further afield are mostly model-based. In one model run to 2300 under sustained high emissions, nutrients became trapped in the Southern Ocean and potential fishery yields fell by more than 20% globally (Moore et al., 2018), a pathway that would reach tropical fisheries in developing countries. Another model study found that meltwater enhances Southern Hemisphere drying and delays the crossing of 1.5°C and 2°C by more than a decade (Bronselaer et al., 2018). Evidence for specific developing regions is thin.
 
 ## What we know and don't know
 
@@ -133,5 +133,3 @@ For fisheries, the IPCC assesses that future impacts on linked human systems dep
 - Southern Ocean Observing System (SOOS): coordination and data discovery for Southern Ocean observations. https://www.soos.aq/
 - IMBIE (Ice Sheet Mass Balance Inter-comparison Exercise): reconciled Antarctic ice-sheet mass balance. https://imbie.org/
 - CCAMLR Statistical Bulletin: reported Southern Ocean fishery catches, including krill. https://www.ccamlr.org/en/data/statistical-bulletin
-
-This topic is not yet mapped on Ocean Turning Points.

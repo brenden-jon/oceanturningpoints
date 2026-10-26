@@ -57,7 +57,7 @@ export default function Home() {
           <span className={styles.nowDot} aria-hidden />
           <p>
             <strong>{now.enso.status ?? "El Niño update"}.</strong> Niño-3.4 sea temperatures are{" "}
-            {now.enso.nino34 > 0 ? "+" : ""}{now.enso.nino34.toFixed(1)}°C above normal (week of {day(now.enso.week)})
+            {Math.abs(now.enso.nino34).toFixed(1)}°C {now.enso.nino34 >= 0 ? "above" : "below"} normal (week of {day(now.enso.week)})
             {isRecord ? ", the highest weekly value in NOAA’s record since 1981" : ""}. Seasonal forecasts give months of warning of the
             droughts, floods and coral bleaching that El Niño brings.
           </p>
@@ -99,7 +99,7 @@ export default function Home() {
             <dl className={styles.facts}>
               <div>
                 <dt className="tnum">{num(london.off, 1)}°C</dt>
-                <dd>Average winter temperature in London in a world 2°C warmer with a collapsed circulation. Before industrialisation it was {num(london.pi, 1)}°C.</dd>
+                <dd>Average winter temperature in London in a world 2°C warmer with a collapsed circulation. In the same model’s pre-industrial climate it was {num(london.pi, 1)}°C.</dd>
               </div>
               <div>
                 <dt className="tnum">{num(rainCheck["West African monsoon"].published)}%</dt>
@@ -128,7 +128,7 @@ export default function Home() {
 
       <VideoBand
         src="/video/sharks-fakarava.mp4" poster="/video/sharks-fakarava.jpg"
-        kicker="Not only loss" title="Ocean life can come back"
+        kicker="Recovery" title="Ocean life can come back"
         text="Where fishing stops and reefs are protected, fish and sharks return, often faster than expected. At Cabo Pulmo in Mexico, fish biomass rose more than fivefold in ten years after the community closed its reef to fishing."
         href="/responses/#recover" linkText="Examples of recovery"
         caption="Grey reef sharks over the reef in the south pass of Fakarava, French Polynesia."
