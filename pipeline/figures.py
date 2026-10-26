@@ -193,7 +193,7 @@ def main() -> None:
        "What would happen\nif the Atlantic\ncirculation\ncollapsed?",
        "Colder European winters in a warming world,\nand weaker monsoons across the tropics.",
        "Atlantic circulation", ("≤ −15 °C winter", "≥ +15 °C"), f)
-    og_home(ROOT / "og" / "home.png", f)
+    # The homepage share card is made by og_home.py (globe with the latest sea-temperature anomaly).
     og(ROOT / "og" / "science.png", annual, cmocean.cm.balance, 10, fit(-20, -60, 80, W, H),
        "What is changing\nin the ocean,\nand how do\nwe know?",
        "Short, referenced explainers on the\nocean systems that are changing.",

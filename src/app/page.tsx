@@ -12,9 +12,14 @@ import styles from "./page.module.css";
 export const metadata: Metadata = {
   title: { absolute: `${SITE.name}: the big ocean changes and what they mean for decisions` },
   description:
-    "An independent guide to the big changes in the ocean: coral reefs crossing a tipping point, ice-sheet loss, a possible Atlantic circulation collapse and a Pacific shifting towards El Niño, and what they mean for development decisions.",
+    "An independent guide to the big changes in the ocean: a possible collapse of the Atlantic circulation (AMOC), coral reefs passing a tipping point, ice sheets and sea-level rise, El Niño, fish stocks on the move and North Atlantic cooling. How likely each is, what it would mean, and which decisions should change.",
   alternates: { canonical: abs("/") },
-  openGraph: { images: [abs("/og/home.jpg")] },
+  openGraph: {
+    title: `${SITE.name}: the big ocean changes and what they mean for decisions`,
+    description: "How likely each big ocean change is, what it would mean for people and economies, and which decisions should change. Independent and evidence-led.",
+    url: abs("/"), images: [{ url: abs("/og/ocean-turning-points.jpg"), width: 1200, height: 630, alt: "Globe of the Pacific showing El Niño heat, with the words: The big ocean changes, and what they mean for decisions" }],
+  },
+  twitter: { card: "summary_large_image", images: [abs("/og/ocean-turning-points.jpg")] },
 };
 
 

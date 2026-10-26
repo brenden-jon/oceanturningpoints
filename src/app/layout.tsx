@@ -11,11 +11,11 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "sw
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: { default: SITE.name, template: `%s — ${SITE.name}` },
-  description: "Independent, evidence-led guide to the big changes in the ocean — AMOC collapse risk, coral reef tipping points, ice sheets and sea-level rise, El Niño, the Southern Ocean and fisheries — and what they mean for decisions.",
+  description: "An independent, evidence-led guide to the big changes in the ocean: the Atlantic circulation (AMOC), coral reefs, ice sheets and sea-level rise, El Niño, fish stocks and North Atlantic cooling. How likely each is, what it would mean, and which decisions should change.",
   keywords: ["AMOC", "AMOC collapse", "Atlantic Meridional Overturning Circulation", "ocean tipping points", "coral reef tipping point", "ice sheet tipping point", "sea-level rise", "El Niño", "climate change ocean", "marine protected areas", "ocean observing"],
   authors: [{ name: SITE.creator, url: abs("/about/") }],
-  openGraph: { siteName: SITE.name, type: "website", images: [abs("/og/home.jpg")] },
-  twitter: { card: "summary_large_image" },
+  openGraph: { siteName: SITE.name, type: "website", locale: "en_GB", images: [{ url: abs("/og/ocean-turning-points.jpg"), width: 1200, height: 630, alt: "Globe of the Pacific showing El Niño heat, with the words: The big ocean changes, and what they mean for decisions" }] },
+  twitter: { card: "summary_large_image", images: [abs("/og/ocean-turning-points.jpg")] },
 };
 
 // GoatCounter account code. Accepts the bare code ("oceanturningpoints") or the whole snippet GoatCounter shows.

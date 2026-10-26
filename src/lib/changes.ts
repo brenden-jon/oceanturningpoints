@@ -6,7 +6,7 @@ export interface Change {
 
 export const CHANGES: Change[] = [
   {
-    slug: "amoc", title: "Atlantic circulation", story: "/changes/atlantic-circulation/", storyLabel: "Explore the scenarios",
+    slug: "amoc", title: "Atlantic circulation (AMOC)", story: "/changes/atlantic-circulation/", storyLabel: "Explore the scenarios",
     status: "Weakening very likely; collapse possible", question: "What would happen if the Atlantic circulation collapsed?",
     image: "The Atlantic overturning circulation: warm water flows north near the surface (red), sinks in the far north and returns south at depth (blue).",
     what: "A system of currents that carries warm water north through the Atlantic and cold water back south at depth. It keeps northwest Europe mild and holds the tropical rain belts in place.",
@@ -15,7 +15,7 @@ export const CHANGES: Change[] = [
     done: "Limit both the amount and the speed of warming; stress-test long-lived investments against a collapse and favour measures that help either way.",
   },
   {
-    slug: "coral-reefs", title: "Coral reefs", story: "/changes/coral-reefs/", storyLabel: "See heat stress at every reef region",
+    slug: "coral-reefs", title: "Coral reefs and heat bleaching", story: "/changes/coral-reefs/", storyLabel: "See heat stress at every reef region",
     status: "Tipping likely under way", question: "Are coral reefs passing a tipping point?",
     image: "Peak heat stress at reef regions of the Indian Ocean and Pacific in 2023–2025; darker red means coral deaths were likely.",
     what: "When the sea stays too hot for weeks, corals bleach and many die. Reefs now bleach more often than they can recover.",
@@ -24,7 +24,7 @@ export const CHANGES: Change[] = [
     done: "Bring warming back towards 1.2°C and below; protect the reefs most likely to survive and reduce local pressures; plan for weaker natural defences.",
   },
   {
-    slug: "ice-sheets", title: "Ice sheets", story: "/changes/ice-sheets/", storyLabel: "Thresholds, commitment and the coast",
+    slug: "ice-sheets", title: "Ice sheets and sea-level rise", story: "/changes/ice-sheets/", storyLabel: "Thresholds, commitment and the coast",
     status: "At risk since about 1°C of warming", question: "What if the ice sheets pass their tipping points?",
     image: "The Greenland and Antarctic ice sheets, which together hold enough ice to raise the sea by about 65 metres.",
     what: "Greenland and Antarctica are losing ice four times faster than in the 1990s. Past a threshold, feedbacks keep an ice sheet shrinking even if warming stops.",
@@ -42,7 +42,7 @@ export const CHANGES: Change[] = [
     done: "Act on seasonal forecasts with agreed triggers and pre-arranged finance; size reserves and insurance for stronger events. Earlier net zero limits the long-term shift.",
   },
   {
-    slug: "fish-on-the-move", title: "Fish on the move", story: "/changes/fish-on-the-move/", storyLabel: "Projections for every coastal country", science: false,
+    slug: "fish-on-the-move", title: "Fish stocks on the move", story: "/changes/fish-on-the-move/", storyLabel: "Projections for every coastal country", science: false,
     status: "Under way; less fish with every degree", question: "Where will the fish go?",
     image: "Projected change in the fish each country’s waters can hold by the 2090s under very high emissions: darker red means larger losses.",
     what: "Warming shrinks the amount of fish the ocean can support and moves stocks towards the poles and across borders. Marine heatwaves can wipe out whole stocks within a year or two.",
@@ -51,7 +51,7 @@ export const CHANGES: Change[] = [
     done: "Limit warming, end overfishing, and adapt quotas and agreements as stocks move; protected and rebuilt stocks cope better.",
   },
   {
-    slug: "subpolar-gyre", title: "Subpolar North Atlantic", story: "/changes/subpolar-gyre/", storyLabel: "Could it cool abruptly?",
+    slug: "subpolar-gyre", title: "North Atlantic cooling (subpolar gyre)", story: "/changes/subpolar-gyre/", storyLabel: "Could it cool abruptly?",
     status: "Possible this century; cooling within a decade", question: "Could the North Atlantic cool abruptly?",
     image: "The subpolar gyre: an anticlockwise loop of currents south of Greenland, with the winter sinking regions in the Labrador and Irminger Seas.",
     what: "A loop of currents south of Greenland where surface water sinks every winter, one of the engines of the Atlantic circulation.",
