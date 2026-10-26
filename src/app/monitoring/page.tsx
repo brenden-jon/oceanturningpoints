@@ -73,9 +73,9 @@ export default function MonitoringPage() {
         </div>
         <div className={styles.heroSide}>
           <p className={styles.standfirst}>
-            Everything on this site rests on observations: floats, moorings, ships, tide gauges and satellites, built up over decades by
-            many national and international programmes with no single owner. The system is stretched, its funding changed sharply in
-            2026, and the records that long-term decisions depend on are still short.
+            About 8,000 floats, buoys, ships and tide gauges report from the ocean, more than half of them run by the United States. Most
+            measure the surface or the top 2,000 m. The big changes play out where coverage is thin: the deep ocean, around Antarctica, in
+            winter and along coasts. The direct record of the Atlantic circulation starts only in 2004.
           </p>
         </div>
       </header>

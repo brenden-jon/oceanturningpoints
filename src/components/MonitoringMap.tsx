@@ -25,7 +25,7 @@ const ORDER = ["argo", "argo-bgc", "argo-deep", "drifter", "mooring", "tide", "s
 
 /** Views that answer "enough for what?": which platforms measure what the big changes need. */
 const VIEWS: { id: string; label: string; types: string[]; text: string }[] = [
-  { id: "all", label: "Everything", types: ORDER, text: "Each network was built for one job. Most measure the sea surface or the top 2,000 m of the open, ice-free ocean." },
+  { id: "all", label: "Everything", types: ORDER, text: "More than a third of the points are drifting buoys and ships, which measure only the surface. Choose a view to see what each network reaches." },
   { id: "surface", label: "Surface only", types: ["drifter", "ship"], text: "Drifting buoys and ships measure the sea surface and the air above it: vital for weather forecasts, blind below the surface. Both networks are shrinking (GOOS, 2025)." },
   { id: "upper", label: "Upper 2,000 m", types: ["argo", "argo-bgc", "argo-deep"], text: "Argo floats profile the top 2,000 m every 10 days, about 300 km apart: the backbone of ocean heat monitoring. They cannot work in shallow coastal water and few operate under sea ice." },
   { id: "deep", label: "Below 2,000 m", types: ["argo-deep"], text: "Half the ocean’s volume lies below 2,000 m. About a sixth of the 1,200 deep floats planned are in the water (Argo Steering Team, 2024)." },
@@ -74,8 +74,8 @@ export default function MonitoringMap() {
   return (
     <div className={styles.wrap}>
       <p className={styles.headline}>
-        <b>{sum.total.toLocaleString("en-GB")}</b> ocean observing platforms and tide gauges. The platforms are run by {sum.countriesTotal} countries and the EU; the United States alone
-        runs more than half. Red lines mark the arrays that measure the Atlantic overturning circulation.
+        <b>{sum.total.toLocaleString("en-GB")}</b> platforms reporting, from {sum.countriesTotal} countries and the EU. Only{" "}
+        <b>{sum.types["argo-deep"]?.n.toLocaleString("en-GB")}</b> reach below 2,000 m. Red lines mark the arrays that measure the Atlantic circulation.
       </p>
       <div className={own.views} role="group" aria-label="What the platforms measure">
         {VIEWS.map((v) => <button key={v.id} aria-pressed={view === v.id} onClick={() => pick(v.id)}>{v.label}</button>)}
