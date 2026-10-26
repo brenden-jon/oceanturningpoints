@@ -2,9 +2,9 @@
 export const SITE = {
   name: "Ocean Turning Points",
   tagline: "The science of a changing ocean, and what it means for our world.",
-  // Public address, including any sub-path. Set NEXT_PUBLIC_SITE_URL at build
-  // time (the deploy workflow does) until the custom domain is connected.
-  url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://oceanturningpoints.org").replace(/\/$/, ""),
+  // Public address, including any sub-path, from the deploy workflow's Pages configuration.
+  // Always https: GitHub Pages reports http:// for a custom domain until HTTPS is enforced.
+  url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://oceanturningpoints.org").replace(/\/$/, "").replace(/^http:\/\/(?!localhost)/, "https://"),
   creator: "Brenden Jongman",
 };
 
