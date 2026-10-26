@@ -1,7 +1,7 @@
 # Ocean Turning Points
 
 An independent, evidence-led atlas of ocean change and its consequences for people.
-Created and curated by Brenden Jongman. Proposed domain: oceanturningpoints.org.
+Created and curated by Brenden Jongman. Live at https://oceanturningpoints.org.
 
 The site is a static Next.js export: plain HTML, JavaScript and pre-processed data files that any static host can serve.
 It has no server, database, accounts or tracking.
@@ -50,7 +50,7 @@ Old addresses (`/questions/…`, `/atlas/`) redirect to their new pages, keeping
 
 The site deploys to GitHub Pages from `.github/workflows/deploy.yml` on every push to `main`
 (Settings → Pages → Source must be "GitHub Actions"). The workflow sets `BASE_PATH` and `NEXT_PUBLIC_SITE_URL` from the
-Pages configuration, so it works both at `brenden-jon.github.io/oceanturningpoints/` and, once connected, at a custom domain.
+Pages configuration. The custom domain oceanturningpoints.org is set in Settings → Pages (DNS at GoDaddy: four A records to GitHub Pages, `www` CNAME to brenden-jon.github.io); the old `brenden-jon.github.io/oceanturningpoints/` address redirects to it.
 Any other static host works too: run `npm run build` with those two variables and serve `out/`.
 No DNS changes have been made.
 
