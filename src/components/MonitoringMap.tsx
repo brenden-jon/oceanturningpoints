@@ -24,7 +24,9 @@ const COLOURS: Record<string, string> = {
 const ORDER = ["argo", "argo-bgc", "argo-deep", "drifter", "mooring", "tide", "ship", "radar", "other"];
 
 /** Views that answer "enough for what?": which platforms measure what the big changes need. */
+const BIG = ["argo-deep", "argo-bgc", "mooring", "tide"];
 const VIEWS: { id: string; label: string; types: string[]; text: string }[] = [
+  { id: "big", label: "For the big changes", types: BIG, text: "The platforms the big changes depend on most: the Atlantic circulation arrays, moored buoys (including the tropical Pacific array behind El Niño forecasts), deep and biogeochemical floats, and tide gauges. Core Argo floats, drifting buoys and ships are under Everything." },
   { id: "all", label: "Everything", types: ORDER, text: "More than a third of the points are drifting buoys and ships, which measure only the surface. Choose a view to see what each network reaches." },
   { id: "surface", label: "Surface only", types: ["drifter", "ship"], text: "Drifting buoys and ships measure the sea surface and the air above it: vital for weather forecasts, blind below the surface. Both networks are shrinking (GOOS, 2025)." },
   { id: "upper", label: "Upper 2,000 m", types: ["argo", "argo-bgc", "argo-deep"], text: "Argo floats profile the top 2,000 m every 10 days, about 300 km apart: the backbone of ocean heat monitoring. They cannot work in shallow coastal water and few operate under sea ice." },
@@ -36,8 +38,8 @@ const VIEWS: { id: string; label: string; types: string[]; text: string }[] = [
 export default function MonitoringMap() {
   const [data, setData] = useState<FC | null>(null);
   const [sum, setSum] = useState<Summary | null>(null);
-  const [off, setOff] = useState<Set<string>>(new Set());
-  const [view, setView] = useState("all");
+  const [off, setOff] = useState<Set<string>>(() => new Set(ORDER.filter((t) => !BIG.includes(t))));
+  const [view, setView] = useState("big");
   const [country, setCountry] = useState<string>("all");
   const boxRef = useRef<HTMLDivElement>(null);
   const [zoom, setZoom] = useState(0.9);
