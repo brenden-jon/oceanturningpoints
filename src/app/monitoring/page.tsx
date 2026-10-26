@@ -17,6 +17,51 @@ export const metadata: Metadata = {
   openGraph: { title: TITLE, description: DESCRIPTION, url: abs("/monitoring/"), images: [abs("/og/science.png")], type: "article", siteName: "Ocean Turning Points" },
 };
 
+const GAPS: { change: string; href: string; need: string; have: string; gap: string }[] = [
+  {
+    change: "Atlantic circulation", href: "/changes/atlantic-circulation/",
+    need: "Flow across the whole Atlantic, without breaks, for decades.",
+    have: "Five measurement lines; the longest, at 26.5°N, began in 2004.",
+    gap: "Telling a decline apart from natural swings needs 29–67 years of record (Lobelle et al., 2020); the measured weakening is not expected to stand out clearly until the 2040s (McCarthy et al., 2025). The main arrays face funding gaps within 18 months (Gunnarsson et al., 2026).",
+  },
+  {
+    change: "Subpolar North Atlantic", href: "/changes/subpolar-gyre/",
+    need: "Winter mixing in a few small basins south of Greenland.",
+    have: "The OSNAP array since 2014, plus floats.",
+    gap: "Until OSNAP, the key sinking was thought to happen mainly in the Labrador Sea; it happens mostly further east (Lozier et al., 2019). Floats alone may be too sparse for these small regions (Gunnarsson et al., 2026).",
+  },
+  {
+    change: "Ice sheets", href: "/changes/ice-sheets/",
+    need: "Warm water reaching the Antarctic ice shelves, and the deep ocean.",
+    have: "A few floats under sea ice; about 200 deep floats worldwide.",
+    gap: "Few floats work under sea ice, almost no sensors are fixed to the ice, and there is little data outside summer (Newman et al., 2019).",
+  },
+  {
+    change: "Coral reefs", href: "/changes/coral-reefs/",
+    need: "Heat stress, and what it does to corals.",
+    have: "Daily satellite sea temperature; surveys at more than 12,000 sites in 73 countries since 1978.",
+    gap: "Satellites track heat on every reef: 84% of reef area had bleaching-level heat in 2023–2025 (NOAA). Surveys of what the corals did are patchy, and only coral and algal cover are measured consistently enough for a global picture (GCRMN, 2021).",
+  },
+  {
+    change: "El Niño", href: "/changes/el-nino/",
+    need: "Heat and winds across the tropical Pacific, every day.",
+    have: "Moored buoys along the equator, floats and satellites.",
+    gap: "In 2012–2014 the mooring array delivered about 40% of its data instead of the usual 80–90%. The redesign that followed doubled floats near the equator (Smith et al., 2019).",
+  },
+  {
+    change: "Fish on the move", href: "/changes/fish-on-the-move/",
+    need: "Where fish stocks are, and how many.",
+    have: "Scientific stock assessments, which cover some regions far better than others.",
+    gap: "Assessed stocks make up only about half of the world’s catch, and stocks without assessments tend to be in worse shape (Hilborn et al., 2020).",
+  },
+  {
+    change: "Ocean carbon sink", href: "/changes/southern-ocean/",
+    need: "Carbon taken up by the ocean, in every season.",
+    have: "Ship measurements at the surface, and floats with carbon-related sensors.",
+    gap: "Adding winter float data cut the estimated Southern Ocean uptake by about a third (Bushinsky et al., 2019). Ship-based CO2 coverage has fallen back to early-2000s levels (Global Carbon Budget 2024).",
+  },
+];
+
 export default function MonitoringPage() {
   return (
     <article>
@@ -39,25 +84,54 @@ export default function MonitoringPage() {
         <MonitoringMap />
       </section>
 
-      <section className="section" aria-labelledby="today">
+      <section className="section" aria-labelledby="enough">
+        <div className="wrap">
+          <p className="kicker">Thousands of points, but enough for what?</p>
+          <h2 id="enough" className={styles.h2}>Where the big changes fall through the gaps</h2>
+          <div className={`prose ${own.lead}`}>
+            <p>
+              The map looks crowded, but each network was built for a particular job: weather forecasts, seasonal forecasts, the heat in the
+              upper ocean. Most were designed for the top 2,000 m of the open, ice-free ocean, over months to years. The big changes happen
+              largely outside that design: in the deep ocean, next to Antarctic ice, in high-latitude winters, along coasts, and in trends that
+              take decades to emerge.
+            </p>
+          </div>
+          <div className={own.gapTable} role="table" aria-label="Observing needs and gaps for each big change">
+            <div className={own.gapHead} role="row">
+              <span role="columnheader">Change</span><span role="columnheader">What needs measuring</span><span role="columnheader">What exists</span><span role="columnheader">The gap</span>
+            </div>
+            {GAPS.map((g) => (
+              <div key={g.change} className={own.gapRow} role="row">
+                <span role="cell" className={own.gapName}><Link href={g.href}>{g.change}</Link></span>
+                <span role="cell"><i className={own.gapLabel}>Needs</i>{g.need}</span>
+                <span role="cell"><i className={own.gapLabel}>Exists</i>{g.have}</span>
+                <span role="cell" className={own.gapGap}><i className={own.gapLabel}>Gap</i>{g.gap}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--alt" aria-labelledby="today">
         <div className="wrap">
           <p className="kicker">The system today</p>
           <h2 id="today" className={styles.h2}>Status of the global observing system</h2>
           <ul className={own.stats}>
             <li><b>9,389</b><span>platforms in the Global Ocean Observing System, from 64 contributing countries, making more than 120,000 observations a day (GOOS, 2025).</span></li>
-            <li><b>~4,000</b><span>Argo floats measure temperature and salinity in the top 2,000 m of the ocean; the programme passed 3 million profiles in 2024.</span></li>
+            <li><b>55%</b><span>of the way to a complete Argo array: global, full-depth, and measuring chemistry and biology as well as heat (GOOS, 2025).</span></li>
             <li><b>Over half</b><span>of the world’s ocean temperature profiles come from the United States. Removing them would raise the error in the ocean heating rate by 163% (Zhu et al., 2026).</span></li>
             <li><b>83%</b><span>of the multi-sensor biogeochemical floats now operating are US floats, funded by a project that ends in October 2026 (GO-BGC).</span></li>
           </ul>
           <p className={`small faint ${styles.note}`}>
-            GOOS rates the system as “subcritical”, with declining drifting buoy and ship-based observations, reliance on a few contributors and
+            Against each network’s own target, Argo and weather-reporting ships are above 85%, drifting buoys and repeat ship surveys 70–85%,
+            tide gauges, coastal radars and gliders 30–50%. GOOS rates the system as “subcritical”, with declining drifting buoy and ship-based observations, reliance on a few contributors and
             no secure long-term funding (GOOS 2025 Status Report). Removing all US data would degrade ocean heat monitoring more than removing
             80% of all data at random (Zhu et al., 2026).
           </p>
         </div>
       </section>
 
-      <section className="section section--alt" aria-labelledby="see">
+      <section className="section" aria-labelledby="see">
         <div className="wrap">
           <p className="kicker">Satellites and sensors in the water</p>
           <h2 id="see" className={styles.h2}>Satellite and in-water observations compared</h2>
@@ -88,7 +162,7 @@ export default function MonitoringPage() {
         </div>
       </section>
 
-      <section className="section" aria-labelledby="records">
+      <section className="section section--alt" aria-labelledby="records">
         <div className="wrap">
           <p className="kicker">Why continuity matters</p>
           <h2 id="records" className={styles.h2}>Long-term decisions rest on short records</h2>
@@ -109,14 +183,14 @@ export default function MonitoringPage() {
                 already too short to separate a trend from natural swings.
               </p>
             </div>
-            <div className={styles.panel} style={{ background: "var(--bg-alt)" }}>
+            <div className={styles.panel}>
               <ObservingRecords />
             </div>
           </div>
         </div>
       </section>
 
-      <section className="section section--alt" aria-labelledby="flux">
+      <section className="section" aria-labelledby="flux">
         <div className="wrap">
           <p className="kicker">2026</p>
           <h2 id="flux" className={styles.h2}>Funding changes in 2026</h2>
@@ -145,7 +219,7 @@ export default function MonitoringPage() {
         </div>
       </section>
 
-      <section className="section" aria-labelledby="stronger">
+      <section className="section section--alt" aria-labelledby="stronger">
         <div className="wrap">
           <p className="kicker">What would make it stronger</p>
           <h2 id="stronger" className={styles.h2}>Treat ocean observation as critical infrastructure</h2>
@@ -187,7 +261,7 @@ export default function MonitoringPage() {
         </div>
       </section>
 
-      <section className="section section--alt" aria-labelledby="data">
+      <section className="section" aria-labelledby="data">
         <div className="wrap prose">
           <h2 id="data" className={styles.h2}>About these data and sources</h2>
           <p>
@@ -198,8 +272,15 @@ export default function MonitoringPage() {
             <b>Sources:</b> Global Ocean Observing System, <i>2025 Status Report</i>; Zhu et al. (2026), <i>Nature Climate Change</i> 16, 657–660;
             Argo (2000), Argo float data and metadata from the Global Data Assembly Centre, SEANOE, doi:10.17882/42182; GO-BGC project notice,
             28 August 2026; US National Science Foundation, update on the Ocean Observatories Initiative, 18 June 2026; McCarthy et al. (2015),{" "}
-            <i>Progress in Oceanography</i> 130; Lozier et al. (2019), <i>Science</i> 363; IPCC AR6 Working Group I, Chapter 9; Jongman
-            (forthcoming).
+            <i>Progress in Oceanography</i> 130; Lozier et al. (2019), <i>Science</i> 363, 516–521; IPCC AR6 Working Group I, Chapter 9;
+            Lobelle et al. (2020), <i>Geophysical Research Letters</i> 47, e2020GL089974; McCarthy et al. (2025), <i>Geophysical Research
+            Letters</i> 52, e2025GL115055; Gunnarsson et al. (2026), <i>AMOC Observation as Critical Infrastructure</i>, Reykjavik Institute (policy
+            report); Owens et al. (2022), <i>Marine Technology Society Journal</i> 56(3), 84–90; Roemmich et al. (2019), <i>Frontiers in Marine
+            Science</i> 6, 439; Argo Steering Team (2024), AST-25 report; Newman et al. (2019), <i>Frontiers in Marine Science</i> 6, 433; Moltmann
+            et al. (2019), <i>Frontiers in Marine Science</i> 6, 291; Smith et al. (2019), <i>Frontiers in Marine Science</i> 6, 31; Souter et al.
+            (eds) (2021), <i>Status of Coral Reefs of the World: 2020</i>, GCRMN; NOAA Coral Reef Watch (2026); Hilborn et al. (2020), <i>PNAS</i>{" "}
+            117, 2218–2224; Bushinsky et al. (2019), <i>Global Biogeochemical Cycles</i> 33, 1370–1388; Friedlingstein et al. (2025), Global Carbon
+            Budget 2024, <i>Earth System Science Data</i> 17, 965–1039; Jongman (forthcoming).
           </p>
         </div>
       </section>

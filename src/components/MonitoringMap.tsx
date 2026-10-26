@@ -23,10 +23,21 @@ const COLOURS: Record<string, string> = {
 };
 const ORDER = ["argo", "argo-bgc", "argo-deep", "drifter", "mooring", "tide", "ship", "radar", "other"];
 
+/** Views that answer "enough for what?": which platforms measure what the big changes need. */
+const VIEWS: { id: string; label: string; types: string[]; text: string }[] = [
+  { id: "all", label: "Everything", types: ORDER, text: "Each network was built for one job. Most measure the sea surface or the top 2,000 m of the open, ice-free ocean." },
+  { id: "surface", label: "Surface only", types: ["drifter", "ship"], text: "Drifting buoys and ships measure the sea surface and the air above it: vital for weather forecasts, blind below the surface. Both networks are shrinking (GOOS, 2025)." },
+  { id: "upper", label: "Upper 2,000 m", types: ["argo", "argo-bgc", "argo-deep"], text: "Argo floats profile the top 2,000 m every 10 days, about 300 km apart: the backbone of ocean heat monitoring. They cannot work in shallow coastal water and few operate under sea ice." },
+  { id: "deep", label: "Below 2,000 m", types: ["argo-deep"], text: "Half the ocean’s volume lies below 2,000 m. About a sixth of the 1,200 deep floats planned are in the water (Argo Steering Team, 2024)." },
+  { id: "bgc", label: "Carbon and oxygen", types: ["argo-bgc"], text: "Floats with at least one chemical or biological sensor, often oxygen only. In 2022 about 170 carried the full set of six, against a target of 1,000 (Owens et al., 2022)." },
+  { id: "coast", label: "Sea level at the coast", types: ["tide"], text: "Core tide gauges with data in 2026, the long records of sea level at the coast. GOOS rates the tide-gauge network at 30–50% of its target, and coastal radars cover about 2% of the world’s coastline." },
+];
+
 export default function MonitoringMap() {
   const [data, setData] = useState<FC | null>(null);
   const [sum, setSum] = useState<Summary | null>(null);
   const [off, setOff] = useState<Set<string>>(new Set());
+  const [view, setView] = useState("all");
   const [country, setCountry] = useState<string>("all");
   const boxRef = useRef<HTMLDivElement>(null);
   const [zoom, setZoom] = useState(0.9);
@@ -53,7 +64,10 @@ export default function MonitoringMap() {
   }, [data, off, country]);
 
   if (!data || !sum) return <div className={styles.placeholder} />;
-  const toggle = (t: string) => setOff((s) => { const n = new Set(s); if (n.has(t)) n.delete(t); else n.add(t); return n; });
+  const pick = (id: string) => { const v = VIEWS.find((x) => x.id === id)!; setView(id); setOff(new Set(ORDER.filter((t) => !v.types.includes(t)))); };
+  const current = VIEWS.find((x) => x.id === view);
+  const shown = data.features.filter((f) => f.properties.t !== "amoc" && !off.has(f.properties.t) && (country === "all" || f.properties.c === country)).length;
+  const toggle = (t: string) => { setView("custom"); setOff((s) => { const n = new Set(s); if (n.has(t)) n.delete(t); else n.add(t); return n; }); };
   const countryCounts = country === "all" ? null : ORDER.map((t) => [t, data.features.filter((f) => f.properties.t === t && f.properties.c === country).length] as const);
   const max = sum.countries[0]?.[1] ?? 1;
 
@@ -62,6 +76,12 @@ export default function MonitoringMap() {
       <p className={styles.headline}>
         <b>{sum.total.toLocaleString("en-GB")}</b> ocean observing platforms and tide gauges. The platforms are run by {sum.countriesTotal} countries and the EU; the United States alone
         runs more than half. Red lines mark the arrays that measure the Atlantic overturning circulation.
+      </p>
+      <div className={own.views} role="group" aria-label="What the platforms measure">
+        {VIEWS.map((v) => <button key={v.id} aria-pressed={view === v.id} onClick={() => pick(v.id)}>{v.label}</button>)}
+      </div>
+      <p className={own.viewText}>
+        <b className="tnum">{shown.toLocaleString("en-GB")}</b> platforms shown.{current?.text ? ` ${current.text}` : ""}
       </p>
       <div className={styles.layout}>
         <div className={styles.mapCol}>

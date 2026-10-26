@@ -8,7 +8,7 @@
    "n": 3306
   },
   "argo-bgc": {
-   "label": "Biogeochemical Argo floats",
+   "label": "Argo floats with biogeochemical sensors",
    "n": 938
   },
   "argo-deep": {
@@ -115,10 +115,6 @@
   {
    "name": "OSNAP East",
    "since": 2014
-  },
-  {
-   "name": "NOAC, 47\u00b0N",
-   "since": 2006
   },
   {
    "name": "MOVE, 16\u00b0N",

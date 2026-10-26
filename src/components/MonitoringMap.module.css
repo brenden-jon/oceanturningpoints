@@ -14,3 +14,9 @@
 .bar { height: 10px; background: var(--line); border-radius: 3px; overflow: hidden; }
 .bar i { display: block; height: 100%; background: var(--accent); }
 .countries b { text-align: right; font-weight: 600; }
+.views { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0 0 0.7rem; }
+.views button { border: 1px solid var(--line-2); background: var(--bg); color: var(--text); border-radius: 999px; padding: 0.4rem 0.9rem; font: 550 0.88rem/1.2 var(--font); cursor: pointer; }
+.views button[aria-pressed="true"] { background: var(--bg-deep); border-color: var(--bg-deep); color: #fff; }
+.viewText { margin: 0 0 1rem; max-width: 80ch; color: var(--text-2); font-size: 0.95rem; min-height: 2.9em; }
+.viewText b { color: var(--text); }
+@media (max-width: 560px) { .views { flex-wrap: nowrap; overflow-x: auto; margin-inline: calc(-1 * var(--gutter)); padding-inline: var(--gutter); scrollbar-width: none; } .views button { flex: none; } }

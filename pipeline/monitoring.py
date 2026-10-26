@@ -10,7 +10,7 @@ tide gauges and OceanSITES moorings, whose records are reported with a delay.
 
 The Atlantic overturning and boundary arrays are drawn as indicative lines through published mooring
 positions (OceanSITES, PANGAEA, cruise reports): RAPID-MOCHA-WBTS 26.5°N (2004), OSNAP West and East (2014),
-NOAC 47°N (2006), MOVE 16°N (2000), TRACOS 11°S (2000 west, 2013 east) and SAMBA 34.5°S (2009). Interior
+MOVE 16°N (2000), TRACOS 11°S (2000 west, 2013 east) and SAMBA 34.5°S (2009). NOAC 47°N was discontinued in 2017 and is not drawn. Interior
 segments between verified moorings are approximate.
 
 Output: public/data/monitoring/platforms.geojson, public/data/monitoring/summary.json
@@ -40,7 +40,7 @@ NETWORKS = {
     "anibos": ("6", "other"),
 }
 TYPES = {
-    "argo": "Argo floats", "argo-bgc": "Biogeochemical Argo floats", "argo-deep": "Deep Argo floats",
+    "argo": "Argo floats", "argo-bgc": "Argo floats with biogeochemical sensors", "argo-deep": "Deep Argo floats",
     "drifter": "Drifting buoys", "mooring": "Moored buoys and observatories", "tide": "Tide gauges",
     "ship": "Ships reporting observations", "radar": "Coastal radars", "other": "Gliders and tagged animals",
 }
@@ -48,7 +48,6 @@ ARRAYS = [
     {"name": "RAPID-MOCHA-WBTS, 26.5°N", "since": 2004, "coords": [[-76.87, 26.53], [-76.82, 26.5], [-76.74, 26.52], [-76.63, 26.48], [-49.5, 24.5], [-41.2, 24.5], [-24.17, 23.75], [-15.42, 27.22], [-13.4, 27.6]]},
     {"name": "OSNAP West", "since": 2014, "coords": [[-55.8, 52.4], [-51.08, 53.04], [-50.26, 53.38], [-49.74, 53.59], [-47.07, 59.21], [-48.3, 60.6]]},
     {"name": "OSNAP East", "since": 2014, "coords": [[-43.0, 60.1], [-41.11, 59.9], [-40.69, 59.86], [-40.28, 59.81], [-38.57, 59.65], [-35.0, 59.2], [-31.5, 58.9], [-28.0, 58.3], [-22.0, 58.0], [-17.0, 58.0], [-13.5, 57.6], [-9.6, 57.1], [-6.0, 56.8]]},
-    {"name": "NOAC, 47°N", "since": 2006, "coords": [[-47.38, 46.52], [-43.23, 47.1], [-42.28, 47.1], [-42.0, 47.1], [-40.88, 47.1], [-39.5, 47.16], [-38.52, 47.21], [-37.36, 47.29], [-31.15, 47.67], [-23.42, 48.11], [-19.53, 48.31], [-15.0, 48.52], [-13.43, 48.83], [-12.62, 49.0]]},
     {"name": "MOVE, 16°N", "since": 2000, "coords": [[-60.61, 16.36], [-60.49, 16.35], [-51.52, 15.46]]},
     {"name": "TRACOS, 11°S (Brazil)", "since": 2000, "coords": [[-35.86, -10.26], [-35.67, -10.36], [-35.38, -10.59], [-35.03, -10.93]]},
     {"name": "TRACOS, 11°S (Angola)", "since": 2013, "coords": [[12.99, -10.67], [13.72, -10.84]]},
