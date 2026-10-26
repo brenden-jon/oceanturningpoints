@@ -24,7 +24,11 @@ export interface SstOutlookMeta {
 }
 
 type When = "now" | "outlook";
-type Kind = "temp" | "coral" | "currents";
+type Kind = "temp" | "coral" | "currents" | "fishing";
+export interface FishingMeta extends EncodedLayer {
+  date: string; start: string; days: number; grid: GridSpec; domain: [number, number]; totalHours: number;
+  topFlags: [string, number][]; source: { org: string; product: string; url: string; licence: string; citation: string };
+}
 
 const VIEWS = [
   { id: "pacific", label: "Pacific", center: [-140, 2] as [number, number], zoom: 1.55 },
@@ -39,8 +43,8 @@ const WDPA = WDPA_LAYER;
 const day = (iso: string) => new Date(iso + "T12:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
 const short = (iso: string) => new Date(iso + "T12:00:00Z").toLocaleDateString("en-GB", { month: "long", year: "numeric", timeZone: "UTC" });
 
-export default function OceanNowGlobe({ ssta, dhw, currents, bleachOutlook, sstOutlook, initialLayer = "ssta", initialView = "pacific", compact = false, protectedAreas = false }: {
-  ssta: FieldMeta; dhw: FieldMeta; currents: CurrentsMeta; bleachOutlook?: BleachOutlookMeta; sstOutlook?: SstOutlookMeta;
+export default function OceanNowGlobe({ ssta, dhw, currents, bleachOutlook, sstOutlook, fishing, initialLayer = "ssta", initialView = "pacific", compact = false, protectedAreas = false }: {
+  ssta: FieldMeta; dhw: FieldMeta; currents: CurrentsMeta; bleachOutlook?: BleachOutlookMeta; sstOutlook?: SstOutlookMeta; fishing?: FishingMeta;
   initialLayer?: "ssta" | "dhw"; initialView?: string; compact?: boolean; protectedAreas?: boolean;
 }) {
   const [map, setMap] = useState<MLMap | null>(null);
@@ -56,7 +60,8 @@ export default function OceanNowGlobe({ ssta, dhw, currents, bleachOutlook, sstO
   const [hover, setHover] = useState<(HoverInfo & { value: number | null }) | null>(null);
   const hasOutlook = Boolean(bleachOutlook && sstOutlook && sstOutlook.layers.length);
   const isCurrents = kind === "currents";
-  const isOutlook = when === "outlook" && hasOutlook && !isCurrents;
+  const isFishing = kind === "fishing" && Boolean(fishing);
+  const isOutlook = when === "outlook" && hasOutlook && !isCurrents && !isFishing;
 
   // The active layer: what to load, how to colour it, and how to describe it.
   const active = useMemo(() => {
@@ -67,9 +72,10 @@ export default function OceanNowGlobe({ ssta, dhw, currents, bleachOutlook, sstO
     if (isOutlook && kind === "coral") {
       return { id: "bleach", file: bleachOutlook!.file, enc: bleachOutlook! as EncodedLayer, grid: bleachOutlook!.grid, lut: "heat", domain: [0, 4] as [number, number], date: bleachOutlook!.date, month: "" };
     }
+    if (isFishing) return { id: "fishing", file: fishing!.file, enc: fishing! as EncodedLayer, grid: fishing!.grid, lut: "fishing", domain: fishing!.domain, date: fishing!.date, month: "" };
     if (kind === "coral") return { id: "dhw", file: dhw.file, enc: dhw as EncodedLayer, grid: dhw.grid, lut: "heat", domain: [0, dhw.domain] as [number, number], date: dhw.date, month: "" };
     return { id: "ssta", file: ssta.file, enc: ssta as EncodedLayer, grid: ssta.grid, lut: "temperature", domain: [-ssta.domain, ssta.domain] as [number, number], date: ssta.date, month: "" };
-  }, [isOutlook, kind, lead, ssta, dhw, sstOutlook, bleachOutlook]);
+  }, [isOutlook, isFishing, kind, lead, ssta, dhw, sstOutlook, bleachOutlook, fishing]);
 
   const lut = luts ? luts[active.lut].lut : null;
 
@@ -82,7 +88,7 @@ export default function OceanNowGlobe({ ssta, dhw, currents, bleachOutlook, sstO
   useEffect(() => {
     if (!field || !lut) return;
     const W = window.innerWidth < 720 ? 1024 : 2048;
-    const img = renderMercator(field, lut, active.domain, W, W, 255);
+    const img = renderMercator(field, lut, active.domain, W, W, 255, active.id === "fishing");
     const c = document.createElement("canvas");
     c.width = W; c.height = W;
     c.getContext("2d")!.putImageData(img, 0, 0);
@@ -97,11 +103,13 @@ export default function OceanNowGlobe({ ssta, dhw, currents, bleachOutlook, sstO
 
   const readout = (v: number) => {
     if (active.id === "dhw") return `${v.toFixed(1)} °C-weeks`;
+    if (active.id === "fishing") { const h = 10 ** v; return `${h >= 1000 ? "1,000+" : h >= 10 ? Math.round(h).toLocaleString("en-GB") : h.toFixed(1)} fishing hours`; }
     if (active.id === "bleach") return bleachOutlook!.categories[Math.max(0, Math.min(4, Math.round(v)))];
     return formatValue(v, "°C");
   };
 
-  const title = active.id === "ssta" ? `Sea-surface temperature compared with normal, ${day(ssta.date)}`
+  const title = active.id === "fishing" ? `Apparent fishing effort, ${day(fishing!.start)} to ${day(fishing!.date)}, hours per 0.25° cell`
+    : active.id === "ssta" ? `Sea-surface temperature compared with normal, ${day(ssta.date)}`
     : active.id === "dhw" ? `Coral bleaching heat stress (Degree Heating Weeks), ${day(dhw.date)}`
     : active.id === "bleach" ? `Forecast bleaching heat stress, ${short(bleachOutlook!.validFrom)} to ${short(bleachOutlook!.validTo)} (60% likely or more)`
     : `Forecast sea-surface temperature compared with normal, ${active.month}`;
@@ -110,7 +118,7 @@ export default function OceanNowGlobe({ ssta, dhw, currents, bleachOutlook, sstO
     <div className={`${styles.wrap} ${compact ? styles.compact : ""}`}>
       <div className={styles.toolbar}>
         <div className={styles.controls}>
-          {hasOutlook && !isCurrents && (
+          {hasOutlook && !isCurrents && !isFishing && (
             <div className={styles.seg} role="group" aria-label="Time">
               <button aria-pressed={when === "now"} onClick={() => setWhen("now")}>Now</button>
               <button aria-pressed={when === "outlook"} onClick={() => setWhen("outlook")}>Next months</button>
@@ -120,6 +128,7 @@ export default function OceanNowGlobe({ ssta, dhw, currents, bleachOutlook, sstO
             <button aria-pressed={kind === "temp"} onClick={() => setKind("temp")}>Temperature</button>
             <button aria-pressed={kind === "coral"} onClick={() => setKind("coral")}>Coral heat stress</button>
             {!compact && <button aria-pressed={kind === "currents"} onClick={() => setKind("currents")}>Currents</button>}
+            {!compact && fishing && <button aria-pressed={kind === "fishing"} onClick={() => setKind("fishing")}>Fishing</button>}
           </div>
           {isOutlook && kind === "temp" && (
             <div className={styles.seg} role="group" aria-label="Forecast month">
@@ -167,6 +176,8 @@ export default function OceanNowGlobe({ ssta, dhw, currents, bleachOutlook, sstO
           <div className={`${styles.ticks} tnum`}>
             {active.id === "dhw" ? (
               <><span>0</span><span style={{ marginLeft: `${(4 / dhw.domain) * 100 - 8}%` }}>4: bleaching likely</span><span>8: severe bleaching and mortality likely</span><span>≥ {dhw.domain}</span></>
+            ) : active.id === "fishing" ? (
+              <><span>0.5 hours</span><span>10</span><span>100</span><span>≥ 1,000 hours</span></>
             ) : active.id === "bleach" ? (
               bleachOutlook!.categories.map((c) => <span key={c}>{c}</span>)
             ) : (
@@ -192,6 +203,11 @@ export default function OceanNowGlobe({ ssta, dhw, currents, bleachOutlook, sstO
             <div><h3>What it shows</h3><p>How much, and for how long, the sea has been at least 1°C warmer than its usual warmest month over the past 12 weeks, in °C-weeks; 4 °C-weeks is roughly one month at 1°C above that level. Shown for the tropical belt where warm-water reefs grow.</p></div>
             <div><h3>Why it matters</h3><p>Above 4 °C-weeks, reef-wide bleaching is likely; above 8, bleaching with significant coral death is likely. Repeated heat stress is why the Global Tipping Points Report 2025 assesses that reefs are crossing their thermal tipping point. <Link href="/changes/coral-reefs/">Coral reefs</Link></p></div>
             <div><h3>Source</h3><p><span className="evidence evidence--obs">Observed</span> NOAA Coral Reef Watch, Degree Heating Weeks v3.1. <a href={dhw.source.url}>Product page</a>. These are risk levels; how reefs respond varies locally.</p></div>
+          </>)}
+          {!isCurrents && active.id === "fishing" && (<>
+            <div><h3>What it shows</h3><p>Where fishing vessels appear to have been fishing over the past {fishing!.days} days: {Math.round(fishing!.totalHours / 1e6 * 10) / 10} million hours in total. Effort is detected from ships’ automatic identification system (AIS) tracks by a machine-learning model.</p></div>
+            <div><h3>Why it matters</h3><p>Fishing pressure decides how well stocks cope as they move with warming waters, and whether protected areas are respected. Vessels flagged to China account for {fishing!.topFlags.find((f) => f[0] === "CHN")?.[1] ?? "–"}% of the hours shown. <Link href="/changes/fish-on-the-move/">Fish on the move</Link></p></div>
+            <div><h3>Source and limits</h3><p><span className="evidence evidence--obs">Observed</span> <a href={fishing!.source.url}>Global Fishing Watch</a>, CC BY-SA 4.0 (Kroodsma et al., 2018). Many small and artisanal boats carry no AIS, and coverage is uneven between regions, so this is a minimum.</p></div>
           </>)}
           {!isCurrents && active.id === "bleach" && (<>
             <div><h3>What it shows</h3><p>The highest bleaching alert level expected over the next four months, at places where at least 60% of forecast runs reach it. Issued {day(bleachOutlook!.date)}, updated weekly.</p></div>

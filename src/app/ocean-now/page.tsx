@@ -43,13 +43,13 @@ export default function OceanNow() {
       <header className={`wrap ${styles.head}`}>
         <h1>The ocean now</h1>
         <p className="lede">
-          Today’s signals of the big changes: sea temperatures, marine heatwaves and coral heat stress, El Niño, and sea ice at both
-          poles. Updated daily from satellites and ocean buoys.
+          Today’s signals of the big changes: sea temperatures, marine heatwaves and coral heat stress, El Niño, fishing, and sea ice at
+          both poles. Updated daily from satellites, ocean buoys and vessel tracking.
         </p>
       </header>
 
       <section className="wrap" aria-label="Ocean conditions today">
-        <OceanNowGlobe ssta={m.ssta} dhw={m.dhw} currents={m.currents} bleachOutlook={m.bleachingOutlook} sstOutlook={m.sstOutlook} />
+        <OceanNowGlobe ssta={m.ssta} dhw={m.dhw} currents={m.currents} bleachOutlook={m.bleachingOutlook} sstOutlook={m.sstOutlook} fishing={m.fishing} />
       </section>
 
       <section className={`section section--alt ${styles.enso}`} aria-labelledby="enso">

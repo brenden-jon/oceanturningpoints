@@ -333,6 +333,75 @@ def world_sst() -> dict:
     }
 
 
+# ------------------------------------------------------------------ fishing
+
+GFW = "https://gateway.api.globalfishingwatch.org/v3"
+
+
+def gfw_token() -> str:
+    import os
+    from pathlib import Path
+    tok = os.environ.get("GFW_TOKEN")
+    env = Path(__file__).with_name(".env")
+    if not tok and env.exists():
+        for line in env.read_text().splitlines():
+            if line.startswith("GFW_TOKEN="):
+                tok = line.split("=", 1)[1].strip()
+    if not tok:
+        raise RuntimeError("GFW_TOKEN not set")
+    return tok
+
+
+def fishing() -> dict:
+    """Apparent fishing effort over the latest 30 days from Global Fishing Watch (AIS; CC BY-SA 4.0).
+
+    Summed by flag state on GFW's 0.1° grid, then onto a 0.25° grid and stored as log10(hours).
+    Nothing about individual vessels is kept.
+    """
+    import csv
+    import zipfile
+    from common import encode_grid
+    tok = gfw_token()
+    auth = {"Authorization": f"Bearer {tok}", **UA}
+    meta = json.loads(urllib.request.urlopen(urllib.request.Request(f"{GFW}/datasets/public-global-fishing-effort:latest", headers=auth), timeout=60).read())
+    end = dt.date.fromisoformat(meta["endDate"][:10])
+    start = end - dt.timedelta(days=30)
+    body = json.dumps({"geojson": {"type": "Polygon", "coordinates": [[[-180, -85], [180, -85], [180, 85], [-180, 85], [-180, -85]]]}}).encode()
+    url = (f"{GFW}/4wings/report?spatial-resolution=LOW&temporal-resolution=ENTIRE&group-by=FLAG"
+           f"&datasets[0]=public-global-fishing-effort:latest&date-range={start},{end}&format=CSV&spatial-aggregation=false")
+    raw = urllib.request.urlopen(urllib.request.Request(url, data=body, headers={**auth, "Content-Type": "application/json"}, method="POST"), timeout=600).read()
+    z = zipfile.ZipFile(io.BytesIO(raw))
+    name = next(n for n in z.namelist() if n.endswith(".csv") and "activity" in n)
+    res = 0.25
+    H, W = int(180 / res), int(360 / res)
+    grid = np.zeros((H, W))                      # south-to-north rows
+    flags: dict[str, float] = {}
+    with z.open(name) as f:
+        r = csv.DictReader(io.TextIOWrapper(f, encoding="utf-8"))
+        hcol = next(c for c in r.fieldnames if "fishing hours" in c.lower())
+        fcol = next((c for c in r.fieldnames if c.strip().lower() == "flag"), None)
+        for row in r:
+            h = float(row[hcol] or 0)
+            if h <= 0:
+                continue
+            i = min(H - 1, int((float(row["Lat"]) + 90) / res)); j = min(W - 1, int((float(row["Lon"]) + 180) / res))
+            grid[i, j] += h
+            fl = (row.get(fcol) if fcol else None) or "Unknown"
+            flags[fl] = flags.get(fl, 0) + h
+    total = float(grid.sum())
+    v = np.where(grid >= 0.5, np.log10(np.maximum(grid, 0.5)), np.nan)
+    v = np.clip(v, np.log10(0.5), 3)
+    enc = encode_grid(v, NOW / "fishing.png")
+    top = sorted(flags.items(), key=lambda kv: -kv[1])[:8]
+    return {**enc, "date": end.isoformat(), "start": start.isoformat(), "days": 30,
+            "grid": {"lat0": -90 + res / 2, "lat1": 90 - res / 2, "lon0": -180 + res / 2, "lon1": 180 - res / 2, "res": res, "h": H, "w": W, "rowOrder": "north-to-south"},
+            "units": "hours (log10)", "domain": [round(float(np.log10(0.5)), 3), 3], "scale": "fishing", "totalHours": round(total),
+            "topFlags": [[k, round(h / total * 100, 1)] for k, h in top],
+            "source": {"org": "Global Fishing Watch", "product": "Apparent fishing effort (AIS), public-global-fishing-effort " + meta.get("id", "").split(":")[-1],
+                       "url": "https://globalfishingwatch.org/dataset-and-code-fishing-effort/", "licence": "CC BY-SA 4.0",
+                       "citation": "Kroodsma et al. (2018), Science 361, 908-911, doi:10.1126/science.aao5646"}}
+
+
 # --------------------------------------------------------------------- ENSO
 
 MON = {m: i + 1 for i, m in enumerate("JAN FEB MAR APR MAY JUN JUL AUG SEP OCT NOV DEC".split())}
@@ -468,6 +537,10 @@ def main() -> None:
         write_json(w, NOW / "sst_world.json")
         manifest["worldSst"] = {"file": "sst_world.json", **{k: w[k] for k in ("date", "latest", "anomaly", "recordDaily", "previousYearlyMax")}}
         print(f"  world SST {w['date']}: {w['latest']} °C ({w['anomaly']:+.2f} vs 1991-2020); record {w['recordDaily']}")
+    fish = run("fishing", fishing, status)
+    if fish:
+        manifest["fishing"] = fish
+        print(f"  fishing {fish['start']}..{fish['date']}: {fish['totalHours']:,} hours, {fish['bytes']/1e3:.0f} kB")
     manifest["updated"] = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%MZ")
     manifest["status"] = status
     write_json(manifest, manifest_path)

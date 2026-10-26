@@ -3,6 +3,7 @@ import path from "node:path";
 import type { Metadata } from "next";
 import Link from "next/link";
 import HeroGlobe from "@/components/HeroGlobe";
+import VideoBand from "@/components/VideoBand";
 import { num, rainAt, tempAt } from "@/lib/amocData";
 import { CHANGES } from "@/lib/changes";
 import { SITE, abs, asset } from "@/lib/site";
@@ -32,7 +33,7 @@ export default function Home() {
   return (
     <>
       <section className={styles.hero}>
-        <div className={`wrap ${styles.heroText}`}>
+        <div className={styles.heroText}>
           <h1 className="display">Which big ocean changes should the world plan for?</h1>
           <p className={`lede ${styles.heroLede}`}>
             An independent guide to the big changes in the ocean, from a possible Atlantic circulation collapse to coral reefs passing a
@@ -43,10 +44,12 @@ export default function Home() {
             <Link className="more" href="/decisions/">How to decide</Link>
           </p>
         </div>
-        <HeroGlobe className={styles.globeBox} currents={now.currents} />
-        <p className={`small faint ${styles.globeNote}`}>
-          Ocean surface currents on {day(now.currents.date)}, from NOAA satellite data. Imagery: NASA Blue Marble.
-        </p>
+        <div className={styles.globeCol}>
+          <HeroGlobe className={styles.globeBox} currents={now.currents} />
+          <p className={`small faint ${styles.globeNote}`}>
+            Ocean surface currents on {day(now.currents.date)}, from NOAA satellite data. Imagery: NASA Blue Marble.
+          </p>
+        </div>
       </section>
 
       <section className={styles.nowStrip} aria-label="The ocean now">
@@ -122,6 +125,14 @@ export default function Home() {
           </Link>
         </div>
       </section>
+
+      <VideoBand
+        src="/video/sharks-fakarava.mp4" poster="/video/sharks-fakarava.jpg"
+        kicker="Not only loss" title="Ocean life can come back"
+        text="Where fishing stops and reefs are protected, fish and sharks return, often faster than expected. At Cabo Pulmo in Mexico, fish biomass rose more than fivefold in ten years after the community closed its reef to fishing."
+        href="/responses/#recover" linkText="Examples of recovery"
+        caption="Grey reef sharks over the reef in the south pass of Fakarava, French Polynesia."
+      />
 
       <section className="section" aria-labelledby="routes">
         <div className="wrap">

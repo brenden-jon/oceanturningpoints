@@ -35,9 +35,12 @@ jobs:
       - run: npm ci
       - uses: astral-sh/setup-uv@v6
       - name: Refresh "The ocean now" data
-        # Currents, SST anomaly, coral heat stress, sea ice and El Niño indices.
-        # If a source is down the committed snapshot is used instead.
+        # Currents, SST anomaly, coral heat stress, sea ice, world SST, El Niño indices and
+        # Global Fishing Watch effort (needs the GFW_TOKEN repository secret).
+        # If a source is down or the secret is missing, the committed snapshot is used instead.
         working-directory: pipeline
+        env:
+          GFW_TOKEN: ${{ secrets.GFW_TOKEN }}
         run: uv run python ocean_now.py
         continue-on-error: true
       - name: Refresh reef heat-stress history and observing platforms (Mondays)

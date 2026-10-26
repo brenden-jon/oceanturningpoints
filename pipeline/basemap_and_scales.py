@@ -58,6 +58,8 @@ def scales() -> None:
         "rainfall": {"cmap": "ColorBrewer BrBG", "lut": lut(matplotlib.colormaps["BrBG"]), "note": "Diverging: drier is brown, wetter is blue-green, no change is white."},
         "heat": {"cmap": "cmocean.amp", "lut": lut(cmocean.cm.amp), "note": "Sequential: no heat stress is white, severe heat stress is dark red."},
         "sealevel": {"cmap": "cmocean.balance", "lut": lut(cmocean.cm.balance), "note": "Diverging: lower is blue, higher is red."},
+        # Fishing effort on a dark satellite globe: little effort is dark purple, the most is yellow.
+        "fishing": {"cmap": "cmocean.thermal (upper 82%)", "lut": [[int(round(v * 255)) for v in row] for row in cmocean.cm.thermal(np.linspace(0.18, 1, 256))[:, :3]], "note": "Sequential on a log scale: more fishing hours is brighter."},
     }, OUT / "scales.json")
     print("  scales.json written")
 

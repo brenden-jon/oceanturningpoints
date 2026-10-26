@@ -94,6 +94,7 @@ export function renderMercator(
   width = 1440,
   height = 1440,
   alpha = 255,
+  fadeLow = false,
 ): ImageData {
   const img = new ImageData(width, height);
   const out = img.data;
@@ -111,7 +112,8 @@ export function renderMercator(
       let t = (v - d0) / span;
       t = t < 0 ? 0 : t > 1 ? 1 : t;
       const rgb = lut[Math.round(t * (lut.length - 1))];
-      out[o] = rgb[0]; out[o + 1] = rgb[1]; out[o + 2] = rgb[2]; out[o + 3] = alpha;
+      out[o] = rgb[0]; out[o + 1] = rgb[1]; out[o + 2] = rgb[2];
+      out[o + 3] = fadeLow ? Math.round(alpha * (0.45 + 0.55 * t)) : alpha;
     }
   }
   return img;
