@@ -1,0 +1,24 @@
+.wrap { display: grid; gap: 1.4rem; grid-template-columns: minmax(0, 1fr); }
+.regions { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.regions button, .changes button { border: 1px solid var(--line); background: var(--bg); border-radius: 999px; padding: 0.38rem 0.8rem; font: 500 0.85rem/1.2 var(--font); color: var(--text); cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; }
+.regions button[aria-pressed="true"] { background: var(--text); color: #fff; border-color: var(--text); }
+.changes button[aria-pressed="true"] { background: var(--bg-alt); border-color: var(--line-2); font-weight: 650; }
+.changes button i, .change i, .dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; flex: none; }
+.head h2 { margin: 0.4rem 0 0.4rem; font-size: clamp(1.5rem, 2.6vw, 2rem); }
+.head p { margin: 0; color: var(--text-2); max-width: 80ch; font-size: 1.05rem; }
+.filters { display: flex; flex-wrap: wrap; gap: 0.8rem 1.2rem; align-items: flex-end; }
+.filters label { display: grid; gap: 0.25rem; font-size: 0.8rem; color: var(--text-2); }
+.filters select { font: inherit; font-size: 0.9rem; padding: 0.4rem 0.5rem; border-radius: 8px; border: 1px solid var(--line-2); background: var(--bg); color: var(--text); }
+.changes { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.sectors { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; align-items: start; }
+.sector { background: var(--bg-alt); border-radius: var(--radius); padding: 1.2rem 1.3rem; }
+.sector h3 { font-size: 1.05rem; margin: 0 0 0.6rem; }
+.sector ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
+.change { margin: 0; display: flex; align-items: center; gap: 0.4rem; font-size: 0.8rem; font-weight: 600; color: var(--text-2); }
+.change a { color: var(--text-2); }
+.globalTag { margin-left: 0.3rem; font-weight: 500; color: var(--text-3); }
+.text { margin: 0.25rem 0 0.3rem; font-size: 0.97rem; }
+.meta { margin: 0; }
+.meta a { color: var(--text-3); text-decoration: underline; }
+.note { margin: 0; max-width: 100ch; }
+@media (max-width: 860px) { .sectors { grid-template-columns: minmax(0, 1fr); } }

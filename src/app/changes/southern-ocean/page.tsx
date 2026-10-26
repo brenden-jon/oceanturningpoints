@@ -2,9 +2,11 @@ import fs from "node:fs";
 import path from "node:path";
 import type { Metadata } from "next";
 import Link from "next/link";
+import DecisionLens from "@/components/DecisionLens";
 import SeaIceChart from "@/components/SeaIceChart";
 import { SouthernCarbonChart } from "@/components/SouthernCharts";
 import StoryBrief from "@/components/StoryBrief";
+import { ArticleLd } from "@/components/JsonLd";
 import { abs, asset } from "@/lib/site";
 import styles from "../coral-reefs/coral.module.css";
 import own from "../atlantic-circulation/page.module.css";
@@ -13,7 +15,7 @@ const TITLE = "Is the ocean around Antarctica changing course?";
 const DESCRIPTION = "The Southern Ocean absorbs much of the heat and carbon people add and feeds the deep ocean with cold, oxygen-rich water. That deep circulation is slowing and Antarctic sea ice has hit record lows. What it means and what can be done.";
 
 export const metadata: Metadata = {
-  title: "Southern Ocean",
+  title: "Southern Ocean change: heat, carbon, sea ice and bottom water",
   description: DESCRIPTION,
   alternates: { canonical: abs("/changes/southern-ocean/") },
   openGraph: { title: TITLE, description: DESCRIPTION, url: abs("/changes/southern-ocean/"), images: [abs("/og/science.png")], type: "article", siteName: "Ocean Turning Points" },
@@ -23,6 +25,7 @@ export default function SouthernPage() {
   const ice = JSON.parse(fs.readFileSync(path.join(process.cwd(), "public", "data", "now", "sea_ice.json"), "utf8"));
   return (
     <article>
+      <ArticleLd path="/changes/southern-ocean/" title={TITLE} description={DESCRIPTION} about={["Southern Ocean", "Antarctic Bottom Water", "Antarctic sea ice", "Ocean carbon sink"]} />
       <header className={`wrap ${styles.hero}`}>
         <div>
           <p className="label"><Link href="/changes/">Big changes</Link> · Southern Ocean</p>
@@ -55,7 +58,7 @@ export default function SouthernPage() {
         </figure>
         <div className="prose">
           <p className="kicker">What it is</p>
-          <h2 id="what">The ocean that connects all the others</h2>
+          <h2 id="what">What the Southern Ocean does</h2>
           <p>
             The Southern Ocean circles Antarctica and links the Atlantic, Indian and Pacific oceans. Deep water rises to the surface here,
             exchanges heat and carbon with the air, and moves north again. Around the Antarctic coast, freezing sea ice leaves salt behind,
@@ -72,7 +75,7 @@ export default function SouthernPage() {
       <section className={`section ${own.band}`} aria-labelledby="likely">
         <div className="wrap">
           <p className="kicker">What we observe, and how likely</p>
-          <h2 id="likely" className={styles.h2}>Slow changes, already measured</h2>
+          <h2 id="likely" className={styles.h2}>Observed changes and projections</h2>
           <div className={styles.split} style={{ alignItems: "start" }}>
             <div className="prose">
               <p>
@@ -134,13 +137,18 @@ export default function SouthernPage() {
       <section className={`section ${own.band}`} aria-labelledby="decide">
         <div className="wrap">
           <p className="kicker">What can be done</p>
-          <h2 id="decide" className={styles.h2}>Limit warming, protect Antarctic waters, watch the deep ocean</h2>
+          <h2 id="decide" className={styles.h2}>Emissions, protection and monitoring</h2>
           <div className={styles.responses}>
             <div style={{ background: "var(--bg)" }}><h3>Limit warming</h3><p>Meltwater from ice shelves is the main projected driver, and ice-shelf melt follows ocean warming. A recent review finds that stabilising climate with minimal overshoot of 1.5°C is imperative (Abram et al., 2025). <Link href="/responses/#warming">How much emissions must fall</Link>.</p></div>
             <div style={{ background: "var(--bg)" }}><h3>Protect Antarctic waters</h3><p>The Ross Sea marine protected area, in force since 2017, covers 1.55 million km², 72% of it closed to commercial fishing. Proposals for East Antarctica, the Weddell Sea and the Antarctic Peninsula have not been agreed since 2016. Protection shields ecosystems from fishing; it cannot stop warming.</p></div>
             <div style={{ background: "var(--bg)" }}><h3>Manage krill for a changing ocean</h3><p>Researchers propose catch limits that follow the krill stock and its variable recruitment, and restoring limits on where catches are taken (Meyer et al., 2025).</p></div>
             <div style={{ background: "var(--bg)" }}><h3>Observe the deep ocean</h3><p>Standard Argo floats measure only the top 2,000 m. Deep floats, repeat ship sections and biogeochemical floats are needed to track bottom water and carbon. <Link href="/monitoring/">Ocean monitoring</Link>.</p></div>
           </div>
+        </div>
+        <div className="wrap" style={{ marginTop: "2.5rem" }}>
+          <h3 style={{ fontSize: "1.2rem", marginBottom: "0.9rem" }}>Which decisions should change</h3>
+          <DecisionLens change="southern-ocean" />
+          <p className="small" style={{ marginTop: "1rem" }}><Link className="more" href="/impacts/?change=southern-ocean">What this change means region by region and sector by sector</Link></p>
         </div>
       </section>
 

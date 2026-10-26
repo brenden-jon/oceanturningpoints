@@ -18,6 +18,7 @@ export const asset = (p: string) => `${BASE}${p.startsWith("/") ? p : `/${p}`}`;
 export const NAV = [
   { href: "/ocean-now/", label: "Ocean now" },
   { href: "/changes/", label: "Big changes" },
+  { href: "/decisions/", label: "Decisions" },
   { href: "/responses/", label: "What can be done" },
   { href: "/monitoring/", label: "Monitoring" },
   { href: "/science/", label: "Science" },

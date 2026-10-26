@@ -44,6 +44,16 @@ export const FORTHCOMING = [
   { authors: "Jongman, B. & Hall, J. W.", title: "Adapting to the risk of Atlantic circulation change" },
 ];
 
+/** Work in progress the curator has asked to list: topic and one sentence, no findings, journals or institutions. */
+export const IN_PROGRESS = [
+  { title: "Ocean observation for climate and development decisions",
+    text: "Which decisions depend on which ocean observations, and why unbroken in situ records matter most for decisions that last decades." },
+  { title: "Decision-making for a changing ocean",
+    text: "How to tell which decisions should change now, which need assessment first, and where current plans are robust to the big ocean changes." },
+  { title: "Financing marine protection",
+    text: "How the protection and long-term management of marine areas can be paid for." },
+];
+
 export const PROFILES = {
   website: "https://brendenjongman.com/",
   scholar: "https://scholar.google.com/citations?user=ww2AjtrbmvQC&hl=en",

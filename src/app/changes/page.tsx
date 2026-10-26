@@ -79,6 +79,11 @@ export default function Changes() {
           what it is, how likely the change is, what it would mean for people and economies, and what can be done about it. They are
           ordered by how soon they demand attention.
         </p>
+        <ul className={styles.subnav}>
+          <li><Link href="/future/"><b>The future ocean</b><span>What is already expected, and three futures at 1.5, 2.7 and 4°C</span></Link></li>
+          <li><Link href="/impacts/"><b>Impacts by region and sector</b><span>What the changes mean for your region, from food and water to coasts and public finance</span></Link></li>
+          <li><Link href="/decisions/"><b>How to decide</b><span>Which decisions to change now, which to assess and which are robust</span></Link></li>
+        </ul>
       </header>
 
 
@@ -133,7 +138,7 @@ export default function Changes() {
       </section>
 
       <section className={styles.thresholds} aria-labelledby="thresholds">
-        <h2 id="thresholds">Tipping points are one part of the picture</h2>
+        <h2 id="thresholds">Tipping points in context</h2>
         <p>
           A tipping point is a level of warming beyond which a system keeps changing on its own, even if warming stops. The chart shows
           scientists’ best estimates of that level for five ocean and ice systems, against today’s warming of about 1.4°C. The estimates

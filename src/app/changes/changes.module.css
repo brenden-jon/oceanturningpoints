@@ -39,3 +39,10 @@
 .terms td:last-child { width: 30%; }
 @media (max-width: 860px) { .context { grid-template-columns: minmax(0, 1fr); } }
 @media (max-width: 640px) { .terms thead { display: none; } .terms tr { display: grid; gap: 0.25rem; padding: 0.7rem 0; border-top: 1px solid var(--line-2); } .terms th, .terms td { border: 0; padding: 0; width: auto !important; } .terms td:last-child { font-size: 0.85rem; color: var(--text-3); } }
+.subnav { list-style: none; margin: 1rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.8rem; }
+.subnav a { display: grid; gap: 0.25rem; height: 100%; padding: 1rem 1.1rem; border-radius: var(--radius); background: var(--bg-alt); color: var(--text); text-decoration: none; border: 1px solid transparent; }
+.subnav a:hover { border-color: var(--line-2); text-decoration: none; }
+.subnav b { font-size: 1rem; }
+.subnav b::after { content: " ›"; color: var(--accent); }
+.subnav span { font-size: 0.88rem; color: var(--text-2); }
+@media (max-width: 760px) { .subnav { grid-template-columns: minmax(0, 1fr); } }

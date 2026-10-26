@@ -1,0 +1,29 @@
+.strip { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2rem 1.6rem; }
+.strip li { display: grid; gap: 0.35rem; align-content: start; }
+.strip b { font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 700; letter-spacing: -0.035em; line-height: 1; }
+.strip span { color: var(--text-2); font-size: 0.93rem; }
+.two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-top: 2.5rem; }
+.card { margin: 0; background: var(--bg-alt); border-radius: var(--radius); padding: 1.4rem; min-width: 0; }
+.fh { margin: 0 0 0.25rem; font-weight: 600; }
+.tableWrap { overflow-x: auto; margin-top: 2.5rem; }
+.table { width: 100%; border-collapse: collapse; font-size: 0.95rem; min-width: 560px; }
+.table caption { text-align: left; font-weight: 650; font-size: 1.05rem; padding-bottom: 0.7rem; }
+.table th, .table td { text-align: left; padding: 0.6rem 0.8rem 0.6rem 0; border-top: 1px solid var(--line); }
+.table thead th { font-size: 0.8rem; color: var(--text-2); font-weight: 600; border-top: 0; }
+.table tbody th { font-weight: 600; }
+.table td { color: var(--text-2); font-variant-numeric: tabular-nums; }
+.lead { max-width: 78ch; }
+.futures { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; }
+.future { background: var(--bg); border-radius: var(--radius); padding: 1.3rem 1.3rem 1rem; }
+.future h3 { font-size: 1.2rem; margin: 0.2rem 0 0.3rem; }
+.planTag { margin: 0; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
+.sub { margin: 0 0 1rem; font-size: 0.88rem; color: var(--text-3); }
+.band { border-left: 3px solid; padding: 0.1rem 0 0.1rem 0.8rem; margin-bottom: 0.9rem; }
+.certain { border-color: #16191d; }
+.likely { border-color: #6b7a88; }
+.possible { border-color: #c0392b; }
+.bandLabel { margin: 0 0 0.3rem; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-2); }
+.band ul { margin: 0; padding-left: 1rem; display: grid; gap: 0.35rem; font-size: 0.9rem; color: var(--text-2); }
+@media (max-width: 960px) { .strip { grid-template-columns: repeat(2, minmax(0, 1fr)); } .futures { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 860px) { .two { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 520px) { .strip { grid-template-columns: minmax(0, 1fr); } }

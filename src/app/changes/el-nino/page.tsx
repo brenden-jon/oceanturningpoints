@@ -3,9 +3,11 @@ import path from "node:path";
 import type { Metadata } from "next";
 import StoryBrief from "@/components/StoryBrief";
 import Link from "next/link";
+import DecisionLens from "@/components/DecisionLens";
 import { EnsoWeekly, type EnsoData } from "@/components/EnsoCharts";
 import ExtremeElNinoChart from "@/components/ExtremeElNinoChart";
 import OceanNowGlobe from "@/components/OceanNowGlobe";
+import { ArticleLd } from "@/components/JsonLd";
 import { abs } from "@/lib/site";
 import styles from "./elnino.module.css";
 
@@ -13,7 +15,7 @@ const TITLE = "Is warming locking the Pacific into El Niño?";
 const DESCRIPTION = "A strong El Niño is under way in 2026. New research finds that warming makes extreme El Niños more frequent and can hold the Pacific in a more El Niño-like state for centuries after net zero. What this means for Australia, the tropics and planning.";
 
 export const metadata: Metadata = {
-  title: TITLE,
+  title: "El Niño and climate change: is the Pacific shifting towards El Niño?",
   description: DESCRIPTION,
   alternates: { canonical: abs("/changes/el-nino/") },
   openGraph: { title: TITLE, description: DESCRIPTION, url: abs("/changes/el-nino/"), images: [abs("/og/science.png")], type: "article", siteName: "Ocean Turning Points" },
@@ -47,6 +49,7 @@ export default function ElNinoPage() {
 
   return (
     <article>
+      <ArticleLd path="/changes/el-nino/" title={TITLE} description={DESCRIPTION} about={["El Niño", "El Niño–Southern Oscillation", "Climate change", "Australia drought"]} />
       <header className={`wrap ${styles.hero}`}>
         <div>
           <p className="label"><Link href="/changes/">Big changes</Link> · El Niño</p>
@@ -128,7 +131,7 @@ export default function ElNinoPage() {
       <section className="section section--alt" aria-labelledby="shift">
         <div className="wrap">
           <p className="kicker">The latest research</p>
-          <h2 id="shift" className={styles.h2}>A more El Niño-like Pacific that outlasts net zero</h2>
+          <h2 id="shift" className={styles.h2}>A more El Niño-like Pacific after net zero</h2>
           <div className={styles.split}>
             <div className="prose">
               <p>
@@ -162,7 +165,7 @@ export default function ElNinoPage() {
       <section className="section" aria-labelledby="extremes">
         <div className="wrap">
           <p className="kicker">Extremes</p>
-          <h2 id="extremes" className={styles.h2}>Most studies find bigger swings in both directions</h2>
+          <h2 id="extremes" className={styles.h2}>Projected changes in El Niño extremes</h2>
           <ul className={styles.cards}>
             <li>
               <span className={styles.from}>1 in 20 → 1 in 10 <small>years</small></span>
@@ -205,7 +208,7 @@ export default function ElNinoPage() {
       <section className="section section--alt" aria-labelledby="sure">
         <div className="wrap prose">
           <p className="kicker">How sure</p>
-          <h2 id="sure">The real Pacific has not followed the models yet</h2>
+          <h2 id="sure">Observations and models disagree</h2>
           <p>
             Since about 1950 the east–west contrast has strengthened, which is more La Niña-like, while most models simulate the
             opposite. Several studies find this is unlikely to be natural variability alone (Seager et al., 2019, 2022; Sugiura et al.,
@@ -227,7 +230,7 @@ export default function ElNinoPage() {
       <section className="section" aria-labelledby="australia">
         <div className="wrap">
           <p className="kicker">Australia</p>
-          <h2 id="australia" className={styles.h2}>Drought and fire weather already rising</h2>
+          <h2 id="australia" className={styles.h2}>Australia: drought and fire weather</h2>
           <div className={styles.split}>
             <div className="prose">
               <p>
@@ -290,7 +293,7 @@ export default function ElNinoPage() {
       <section className="section" aria-labelledby="decide">
         <div className="wrap">
           <p className="kicker">What decision-makers can do</p>
-          <h2 id="decide" className={styles.h2}>Prepare for stronger events, plan for a shifted baseline</h2>
+          <h2 id="decide" className={styles.h2}>Forecast-based action and long-term planning</h2>
           <div className={`${styles.responses} ${styles.onWhite}`}>
             <div>
               <h3>Act on the forecast</h3>
@@ -325,6 +328,11 @@ export default function ElNinoPage() {
           <p className={styles.more}>
             <Link className="more" href="/science/el-nino/">Full evidence, uncertainties and references</Link>
           </p>
+        </div>
+        <div className="wrap" style={{ marginTop: "2.5rem" }}>
+          <h3 style={{ fontSize: "1.2rem", marginBottom: "0.9rem" }}>Which decisions should change</h3>
+          <DecisionLens change="el-nino" />
+          <p className="small" style={{ marginTop: "1rem" }}><Link className="more" href="/impacts/?change=el-nino">What this change means region by region and sector by sector</Link></p>
         </div>
       </section>
 

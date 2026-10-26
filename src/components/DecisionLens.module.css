@@ -1,0 +1,10 @@
+.lens { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.col { border-radius: var(--radius); padding: 1.2rem 1.3rem; background: var(--bg); border: 1px solid var(--line); border-top: 4px solid; }
+.act { border-top-color: #c0392b; }
+.assess { border-top-color: #d9901e; }
+.stay { border-top-color: #1f7a5a; }
+.col h3 { font-size: 1.05rem; margin: 0 0 0.3rem; }
+.def { margin: 0 0 0.7rem; font-size: 0.85rem; color: var(--text-3); }
+.col ul { margin: 0; padding-left: 1.05rem; display: grid; gap: 0.45rem; color: var(--text-2); font-size: 0.93rem; }
+.note { grid-column: 1 / -1; margin: 0.4rem 0 0; }
+@media (max-width: 860px) { .lens { grid-template-columns: minmax(0, 1fr); } }

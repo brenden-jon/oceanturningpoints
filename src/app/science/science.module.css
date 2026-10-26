@@ -79,3 +79,8 @@
 .visualPair { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 .visualPair .visualFig { margin: 0; }
 @media (max-width: 900px) { .visualPair { grid-template-columns: minmax(0, 1fr); } }
+.latest { background: var(--bg-alt); border-radius: var(--radius); padding: 1.4rem 1.6rem; margin: 0 0 3rem; }
+.latest h2 { font-size: 1.3rem; margin: 0 0 0.8rem; }
+.latest ol { list-style: none; margin: 0 0 0.8rem; padding: 0; display: grid; gap: 0.9rem; }
+.latest li { display: grid; gap: 0.15rem; }
+.latest li a { color: var(--text); font-weight: 600; }

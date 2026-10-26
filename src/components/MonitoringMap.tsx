@@ -26,7 +26,7 @@ const ORDER = ["argo", "argo-bgc", "argo-deep", "drifter", "mooring", "tide", "s
 export default function MonitoringMap() {
   const [data, setData] = useState<FC | null>(null);
   const [sum, setSum] = useState<Summary | null>(null);
-  const [off, setOff] = useState<Set<string>>(new Set(["ship"]));
+  const [off, setOff] = useState<Set<string>>(new Set());
   const [country, setCountry] = useState<string>("all");
   const boxRef = useRef<HTMLDivElement>(null);
   const [zoom, setZoom] = useState(0.9);
@@ -98,8 +98,8 @@ export default function MonitoringMap() {
             ))}
           </ol>
           <p className="small faint">
-            Platforms by the country responsible, top ten, excluding tide gauges, which are listed by location. Ships are hidden on the map
-            by default; switch them on below the map.
+            Platforms by the country responsible, top ten, excluding tide gauges, which are listed by location. Select a type below the map to
+            hide or show it.
           </p>
           <p className="small faint">
             <span className="evidence evidence--obs">Official records</span> Last reported positions from{" "}

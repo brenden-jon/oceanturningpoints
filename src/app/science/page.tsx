@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { abs } from "@/lib/site";
 import Link from "next/link";
 import { allTopics, formatDate } from "@/lib/science";
+import { fmtMonth, latestResearch, TOPIC_NAMES } from "@/lib/research";
 import { asset } from "@/lib/site";
 import styles from "./science.module.css";
 
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
 
 export default function SciencePage() {
   const topics = allTopics();
+  const latest = latestResearch().slice(0, 5);
   return (
     <div className="wrap">
       <header className={styles.indexHead}>
@@ -23,6 +25,19 @@ export default function SciencePage() {
           what remains uncertain and what it means for decisions. Every statement is referenced to published work.
         </p>
       </header>
+      <section className={styles.latest} aria-labelledby="latest">
+        <h2 id="latest">Latest research</h2>
+        <ol>
+          {latest.map((p) => (
+            <li key={p.doi ?? p.url ?? p.title}>
+              <span className="small faint">{fmtMonth(p.date)} · {TOPIC_NAMES[p.topic]?.name ?? p.topic}</span>
+              <a href={p.doi ? `https://doi.org/${p.doi}` : p.url}>{p.title}</a>
+              <span className="small faint">{p.authors}, <i>{p.venue}</i></span>
+            </li>
+          ))}
+        </ol>
+        <p><Link className="more" href="/science/latest/">All recent research</Link></p>
+      </section>
       <ol className={styles.index}>
         {topics.map((t, i) => (
           <li key={t.slug}>

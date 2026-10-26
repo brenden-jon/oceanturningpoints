@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { abs } from "@/lib/site";
 import Link from "next/link";
-import { FORTHCOMING, PROFILES, PUBLICATIONS } from "@/lib/publications";
+import { FORTHCOMING, IN_PROGRESS, PROFILES, PUBLICATIONS } from "@/lib/publications";
 import styles from "./about.module.css";
 
 export const metadata: Metadata = {
@@ -62,7 +62,8 @@ export default function About() {
         </div>
 
         <aside className={styles.pubs} aria-labelledby="pubs">
-          <h2 id="pubs">Selected research by Brenden Jongman</h2>
+          <h2 id="pubs">Research by Brenden Jongman</h2>
+          <h3 className={styles.pubGroup}>Forthcoming</h3>
           <ol>
             {FORTHCOMING.map((p) => (
               <li key={p.title}>
@@ -70,6 +71,18 @@ export default function About() {
                 <span className={styles.pubMeta}>{p.authors} (forthcoming).</span>
               </li>
             ))}
+          </ol>
+          <h3 className={styles.pubGroup}>Work in progress</h3>
+          <ol>
+            {IN_PROGRESS.map((p) => (
+              <li key={p.title}>
+                <span className={styles.pubTitle}>{p.title}</span>
+                <span className={styles.pubMeta}>{p.text}</span>
+              </li>
+            ))}
+          </ol>
+          <h3 className={styles.pubGroup}>Selected published research</h3>
+          <ol>
             {PUBLICATIONS.map((p) => (
               <li key={p.doi}>
                 <span className={styles.pubTitle}>
@@ -81,7 +94,7 @@ export default function About() {
               </li>
             ))}
           </ol>
-          <p className="small muted">Peer-reviewed work. A fuller list is on <a href={PROFILES.scholar}>Google Scholar</a>.</p>
+          <p className="small muted">A fuller list is on <a href={PROFILES.scholar}>Google Scholar</a>.</p>
         </aside>
       </div>
     </div>

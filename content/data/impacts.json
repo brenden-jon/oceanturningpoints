@@ -1,0 +1,1952 @@
+{
+ "meta": {
+  "title": "What the big ocean changes mean for your region",
+  "updated": "2026-10-25",
+  "note": "Statements summarise published evidence. AMOC and subpolar-gyre items describe what models show if a collapse happened, not a forecast that it will. Fish biomass figures are FishMIP ensemble means for national waters by 2091–2100 relative to 2005–2014; sea-level figures are IPCC AR6 medians relative to 1995–2014. 'Very low emissions' is SSP1-2.6 for FishMIP and sea level; 'very high' is SSP5-8.5."
+ },
+ "sectors": [
+  {
+   "id": "food",
+   "name": "Food and agriculture"
+  },
+  {
+   "id": "water",
+   "name": "Water"
+  },
+  {
+   "id": "coasts",
+   "name": "Coasts, cities and infrastructure"
+  },
+  {
+   "id": "fisheries",
+   "name": "Fisheries and aquaculture"
+  },
+  {
+   "id": "health",
+   "name": "Health"
+  },
+  {
+   "id": "energy",
+   "name": "Energy"
+  },
+  {
+   "id": "tourism",
+   "name": "Tourism"
+  },
+  {
+   "id": "finance",
+   "name": "Public finance and insurance"
+  },
+  {
+   "id": "biodiversity",
+   "name": "Biodiversity and ecosystems"
+  }
+ ],
+ "changes": [
+  {
+   "id": "amoc",
+   "name": "Atlantic circulation weakening or collapse",
+   "kind": "tipping",
+   "link": "/changes/atlantic-circulation/"
+  },
+  {
+   "id": "subpolar-gyre",
+   "name": "Subpolar North Atlantic convection collapse",
+   "kind": "tipping",
+   "link": "/changes/subpolar-gyre/"
+  },
+  {
+   "id": "coral-reefs",
+   "name": "Coral reef decline",
+   "kind": "tipping",
+   "link": "/changes/coral-reefs/"
+  },
+  {
+   "id": "ice-sheets",
+   "name": "Ice-sheet loss and high-end sea-level rise",
+   "kind": "tipping",
+   "link": "/changes/ice-sheets/"
+  },
+  {
+   "id": "el-nino",
+   "name": "El Niño now, and stronger extremes in future",
+   "kind": "variability",
+   "link": "/changes/el-nino/"
+  },
+  {
+   "id": "southern-ocean",
+   "name": "Southern Ocean overturning and sea ice",
+   "kind": "tipping",
+   "link": "/changes/southern-ocean/"
+  },
+  {
+   "id": "fish",
+   "name": "Fish on the move",
+   "kind": "expected",
+   "link": "/changes/fish-on-the-move/"
+  },
+  {
+   "id": "sea-level",
+   "name": "Sea-level rise (likely range)",
+   "kind": "expected",
+   "link": "/changes/ice-sheets/"
+  },
+  {
+   "id": "marine-heatwaves",
+   "name": "Marine heatwaves",
+   "kind": "expected",
+   "link": "/ocean-now/"
+  },
+  {
+   "id": "acidification",
+   "name": "Ocean acidification",
+   "kind": "expected",
+   "link": null
+  }
+ ],
+ "evidenceTypes": [
+  {
+   "id": "observed",
+   "name": "Observed",
+   "note": "Measured or recorded change, including present-day valuations and agency assessments of current events"
+  },
+  {
+   "id": "projection",
+   "name": "Projection",
+   "note": "Scenario-based projections from model ensembles or seasonal outlooks"
+  },
+  {
+   "id": "model",
+   "name": "Model experiment",
+   "note": "Idealised or single-study experiments, such as forcing an AMOC collapse; show what would happen, not whether it will"
+  },
+  {
+   "id": "assessment",
+   "name": "Expert assessment",
+   "note": "Synthesis judgements (IPCC, IUCN, Global Tipping Points Report, Jongman & Hall), often qualitative"
+  }
+ ],
+ "regions": [
+  {
+   "id": "west-africa",
+   "name": "West Africa and the Sahel",
+   "summary": "The Sahel depends on monsoon rain for farming, and every model tested dries the West African monsoon if the Atlantic circulation collapses. Coasts face rising seas on top of erosion and flooding that already cost billions a year, and national waters are projected to hold much less fish under high emissions.",
+   "items": [
+    {
+     "change": "amoc",
+     "sector": "food",
+     "text": "If the AMOC collapsed, annual rainfall in the West African monsoon would fall by about 29% on average across four climate models, with shorter wet seasons and longer dry seasons.",
+     "source": "Ben-Yami et al. 2024",
+     "doi": "10.1029/2023EF003959",
+     "evidence": "model",
+     "confidence": "Medium: all four models agree on the direction; the amount varies widely between models (Jongman & Hall, forthcoming, Table 1)",
+     "link": "/changes/atlantic-circulation/"
+    },
+    {
+     "change": "amoc",
+     "sector": "water",
+     "text": "In the same experiments, June–August rainfall falls by about 37% at Niamey (range 9–61% across models), 36% at Kano and 32% at Bamako. All four models agree that these places get drier.",
+     "source": "NAHosMIP data (Jackson, Bellomo et al.), processed by Ocean Turning Points after Ben-Yami et al. 2024",
+     "doi": "10.5281/zenodo.14884357",
+     "evidence": "model",
+     "confidence": "Conditional on a collapse, whose likelihood this century is disputed (IPCC: medium confidence it will not happen abruptly before 2100)",
+     "link": "/changes/atlantic-circulation/",
+     "caveat": "Single model grid cells of 100–250 km from idealised experiments; read as direction and rough size, not a local forecast"
+    },
+    {
+     "change": "amoc",
+     "sector": "water",
+     "text": "Water storage sized for more variable rainfall may prove too small if wet seasons shorten for decades. Few crop, water or livelihood studies use AMOC scenarios yet.",
+     "source": "Jongman & Hall (forthcoming), Table 1",
+     "doi": null,
+     "evidence": "assessment",
+     "confidence": "Sparse downstream evidence (Jongman & Hall, forthcoming)",
+     "link": "/changes/atlantic-circulation/"
+    },
+    {
+     "change": "amoc",
+     "sector": "food",
+     "text": "Evidence from past climates and models links a slower Atlantic circulation to higher risk of severe drought across West Africa, Mesoamerica and the Amazon, even short of collapse.",
+     "source": "DiNezio et al. 2025",
+     "doi": "10.1038/s41586-025-09319-x",
+     "evidence": "model",
+     "confidence": "Medium (Jongman & Hall, forthcoming, Table 1)",
+     "link": "/changes/atlantic-circulation/"
+    },
+    {
+     "change": "amoc",
+     "sector": "food",
+     "text": "In one model study, rapid Greenland melting weakened the West African monsoon enough to change farming practices; without adaptation, tens to hundreds of millions of people could be forced to leave the Sahel by 2100.",
+     "source": "Defrance et al. 2017",
+     "doi": "10.1073/pnas.1619358114",
+     "evidence": "model",
+     "confidence": "Low: one model, an extreme melt scenario (0.5–3 m of extra sea-level rise) and assumed population growth",
+     "link": "/changes/atlantic-circulation/"
+    },
+    {
+     "change": "amoc",
+     "sector": "finance",
+     "text": "Natural disasters already push an estimated 26 million people a year into extreme poverty. A lasting fall in monsoon rain would add to these shocks in economies that depend on rain-fed farming.",
+     "source": "Hallegatte et al. 2016",
+     "doi": "10.1596/978-1-4648-1003-9",
+     "evidence": "observed",
+     "confidence": "Global estimate; no published estimate yet of the fiscal cost of an AMOC collapse for the region",
+     "link": "/changes/atlantic-circulation/"
+    },
+    {
+     "change": "amoc",
+     "sector": "energy",
+     "text": "Hydropower that depends on monsoon-fed rivers could be affected, but no study has quantified this for an AMOC collapse.",
+     "source": "Global Tipping Points Report 2025",
+     "doi": "10.5281/zenodo.18163977",
+     "evidence": "assessment",
+     "confidence": "Low: qualitative expert judgement",
+     "link": "/changes/atlantic-circulation/"
+    },
+    {
+     "change": "subpolar-gyre",
+     "sector": "food",
+     "text": "In the minority of climate models where convection in the subpolar North Atlantic collapses (4 of 35 CMIP6 models), tropical rainfall changes, notably in the Sahel. This is a second route by which North Atlantic change could reach the region.",
+     "source": "Swingedouw et al. 2021",
+     "doi": "10.1111/nyas.14659",
+     "evidence": "model",
+     "confidence": "Low to medium: a minority of models; crop and food losses not quantified",
+     "link": "/changes/subpolar-gyre/"
+    },
+    {
+     "change": "sea-level",
+     "sector": "coasts",
+     "text": "At Lagos, sea level is projected to rise by 0.47 m by 2100 under very low emissions and 0.84 m under very high emissions (median, relative to 1995–2014). Local subsidence would add to this.",
+     "source": "IPCC AR6 sea-level projections (Garner et al.), values extracted by Ocean Turning Points",
+     "doi": "10.5281/zenodo.6382554",
+     "evidence": "projection",
+     "confidence": "Medium-confidence median; IPCC likely ranges are given on the site. Excludes local land subsidence from groundwater pumping",
+     "link": "/changes/ice-sheets/",
+     "caveat": "No tide gauge within 380 km; value from the nearest 1° grid cell"
+    },
+    {
+     "change": "sea-level",
+     "sector": "coasts",
+     "text": "Flooding, erosion and pollution already cost Benin, Côte d'Ivoire, Senegal and Togo about US$3.8 billion a year, 5.3% of their combined GDP in 2017. Flooding and erosion account for more than 60% of this.",
+     "source": "Croitoru, Miranda & Sarraf 2019 (World Bank)",
+     "doi": "10.1596/31428",
+     "evidence": "observed",
+     "confidence": "Economic estimate for one year (2017); covers all causes of coastal degradation",
+     "link": "/changes/ice-sheets/"
+    },
+    {
+     "change": "ice-sheets",
+     "sector": "coasts",
+     "text": "If poorly understood ice-sheet processes kick in under very high emissions, the projection for Lagos reaches 1.7 m by 2100 at the 83rd percentile. Ports and coastal roads built now will still be in use then.",
+     "source": "IPCC AR6 sea-level projections (Garner et al.), values extracted by Ocean Turning Points",
+     "doi": "10.5281/zenodo.6382554",
+     "evidence": "projection",
+     "confidence": "Low confidence (IPCC): includes poorly understood ice-sheet processes; a low-likelihood, high-impact outcome",
+     "link": "/changes/ice-sheets/"
+    },
+    {
+     "change": "fish",
+     "sector": "fisheries",
+     "text": "By the 2090s under very high emissions, the fish biomass national waters can hold falls by about 39% for Senegal, 30% for Côte d'Ivoire, 29% for Mauritania and Ghana and 21% for Nigeria. Under very low emissions the losses are 2–9%.",
+     "source": "Blanchard & Novaglio (eds) 2024, FishMIP projections for FAO",
+     "doi": "10.4060/cd1379en",
+     "evidence": "projection",
+     "confidence": "Ensemble mean of FishMIP models; all models agree on a decline for the countries named",
+     "link": "/changes/fish-on-the-move/"
+    },
+    {
+     "change": "fish",
+     "sector": "food",
+     "text": "Fish and other aquatic foods supply about 19% of the animal protein eaten in Africa.",
+     "source": "FAO 2026, The State of World Fisheries and Aquaculture",
+     "doi": "10.4060/cd8357en",
+     "evidence": "observed",
+     "confidence": "FAO statistics, 2023",
+     "link": "/changes/fish-on-the-move/"
+    },
+    {
+     "change": "el-nino",
+     "sector": "food",
+     "text": "FEWS NET rates food-security concern from the 2026–27 El Niño as moderate for West Africa. Parts of the Sahel had rainfall more than 40% below average in June–September 2026.",
+     "source": "FEWS NET 2026, El Niño special report (6 Oct 2026)",
+     "doi": null,
+     "evidence": "observed",
+     "confidence": "Agency assessment, October 2026",
+     "link": "/changes/el-nino/",
+     "url": "https://fews.net/global/special-report/october-2026"
+    }
+   ]
+  },
+  {
+   "id": "east-africa",
+   "name": "East Africa and the western Indian Ocean",
+   "summary": "El Niño is the most immediate ocean-driven risk: drought in the unimodal north and flood rains in the October–December season further south and east. Western Indian Ocean reefs are vulnerable to collapse, with island economies most exposed, and fish losses grow sharply under high emissions.",
+   "items": [
+    {
+     "change": "el-nino",
+     "sector": "food",
+     "text": "FEWS NET rates food-security concern from the 2026–27 El Niño as high for unimodal East Africa. South Sudan and Karamoja had their driest year on record, and northern Sudan received 45% of normal rain or less in June–September 2026. Hunger is expected to peak in March–August 2027.",
+     "source": "FEWS NET 2026, El Niño special report (6 Oct 2026)",
+     "doi": null,
+     "evidence": "observed",
+     "confidence": "Agency assessment, October 2026",
+     "link": "/changes/el-nino/",
+     "url": "https://fews.net/global/special-report/october-2026"
+    },
+    {
+     "change": "el-nino",
+     "sector": "water",
+     "text": "El Niño, especially with a positive Indian Ocean Dipole, typically brings heavy short rains and flooding to East Africa and the Horn. WMO flags this risk for October–December 2026.",
+     "source": "WMO 2026, El Niño update (22 Oct 2026)",
+     "doi": null,
+     "evidence": "projection",
+     "confidence": "Seasonal outlook, 22 October 2026",
+     "link": "/changes/el-nino/",
+     "url": "https://wmo.int/media/update/el-nino-puts-humanitarian-weather-services-spotlight"
+    },
+    {
+     "change": "el-nino",
+     "sector": "water",
+     "text": "Extreme positive Indian Ocean Dipole events, which often bring flood rains to East Africa, are projected to become more frequent, from one every 17 years in the 20th century to one every 6 years in the 21st under high emissions.",
+     "source": "Cai et al. 2014 (Indian Ocean Dipole)",
+     "doi": "10.1038/nature13327",
+     "evidence": "projection",
+     "confidence": "Climate model projections (RCP8.5)",
+     "link": "/changes/el-nino/"
+    },
+    {
+     "change": "el-nino",
+     "sector": "health",
+     "text": "Across Africa in 2000–2014, cholera shifted towards East Africa in El Niño years, with almost 50,000 additional cases there.",
+     "source": "Moore et al. 2017",
+     "doi": "10.1073/pnas.1617218114",
+     "evidence": "observed",
+     "confidence": "Statistical analysis of 15 years of cholera data",
+     "link": "/changes/el-nino/"
+    },
+    {
+     "change": "el-nino",
+     "sector": "finance",
+     "text": "The first joint FAO–WFP anticipatory appeal (US$202 million, June 2026) covers 12 African countries, among them Ethiopia, Kenya, Madagascar, Somalia, South Sudan, Sudan and Uganda.",
+     "source": "FAO and WFP 2026, joint anticipatory appeal (18 Jun 2026)",
+     "doi": null,
+     "evidence": "observed",
+     "confidence": "Appeal document; funding received not stated",
+     "link": "/changes/el-nino/",
+     "url": "https://www.fao.org/newsroom/detail/bracing-for-el-ni%C3%B1o--fao-and-wfp-launch-joint-appeal-to-protect-8.8-million-people-from-extreme-weather-events/en"
+    },
+    {
+     "change": "amoc",
+     "sector": "water",
+     "text": "If the AMOC collapsed, annual rainfall at Addis Ababa would fall by about 16% on average across four models (range 7–24%). All four models agree on drying.",
+     "source": "NAHosMIP data (Jackson, Bellomo et al.), processed by Ocean Turning Points after Ben-Yami et al. 2024",
+     "doi": "10.5281/zenodo.14884357",
+     "evidence": "model",
+     "confidence": "Conditional on a collapse, whose likelihood this century is disputed (IPCC: medium confidence it will not happen abruptly before 2100)",
+     "link": "/changes/atlantic-circulation/",
+     "caveat": "Single model grid cells of 100–250 km from idealised experiments; read as direction and rough size, not a local forecast"
+    },
+    {
+     "change": "coral-reefs",
+     "sector": "biodiversity",
+     "text": "Western Indian Ocean coral reefs, about 5% of the world's reef area, are assessed as vulnerable to collapse. Island ecoregions are critically endangered, mainly because of projected warming; continental coasts are vulnerable, mainly because of fishing.",
+     "source": "Obura et al. 2022",
+     "doi": "10.1038/s41893-021-00817-0",
+     "evidence": "assessment",
+     "confidence": "IUCN Red List of Ecosystems method",
+     "link": "/changes/coral-reefs/"
+    },
+    {
+     "change": "coral-reefs",
+     "sector": "coasts",
+     "text": "Across more than 200 Atlantic and Indian Ocean reefs, including the Seychelles, Chagos and Maldives, most reefs cannot keep up with sea-level rise under high emissions, and the water above them deepens by more than 0.5 m by 2100. Deeper water lets larger waves reach the shore.",
+     "source": "Perry et al. 2018",
+     "doi": "10.1038/s41586-018-0194-z",
+     "evidence": "projection",
+     "confidence": "Measured reef growth combined with sea-level projections",
+     "link": "/changes/coral-reefs/"
+    },
+    {
+     "change": "coral-reefs",
+     "sector": "tourism",
+     "text": "Reef tourism is worth about 6.5% of GDP in the Seychelles.",
+     "source": "Spalding et al. 2017",
+     "doi": "10.1016/j.marpol.2017.05.014",
+     "evidence": "observed",
+     "confidence": "Present-day valuation estimate",
+     "link": "/changes/coral-reefs/"
+    },
+    {
+     "change": "coral-reefs",
+     "sector": "fisheries",
+     "text": "About 109,000 people fish on reefs in Tanzania (2010 estimate).",
+     "source": "Teh, Teh & Sumaila 2013",
+     "doi": "10.1371/journal.pone.0065397",
+     "evidence": "observed",
+     "confidence": "Estimate includes part-time fishers and gleaners",
+     "link": "/changes/coral-reefs/"
+    },
+    {
+     "change": "sea-level",
+     "sector": "coasts",
+     "text": "Dar es Salaam is projected to see 0.46 m of sea-level rise by 2100 under very low emissions and 0.81 m under very high emissions. At nearby Zanzibar, today's once-a-century high water would occur about two to three times a year by 2050 under all scenarios.",
+     "source": "IPCC AR6 WGI Figure 9.32 data (Hermans, Garner, Kopp & Slangen)",
+     "doi": "10.5285/6b33327d0d0d4bcca872b431279086db",
+     "evidence": "projection",
+     "confidence": "Median estimates; flood frequency excludes waves and coastal defences",
+     "link": "/changes/ice-sheets/"
+    },
+    {
+     "change": "fish",
+     "sector": "fisheries",
+     "text": "By the 2090s under very high emissions, fish biomass in national waters falls by about 27% for Somalia, 21% for Kenya and 18% for Tanzania. Under very low emissions the change is within 5% either way.",
+     "source": "Blanchard & Novaglio (eds) 2024, FishMIP projections for FAO",
+     "doi": "10.4060/cd1379en",
+     "evidence": "projection",
+     "confidence": "Ensemble mean; all models agree on the high-emissions declines, but only 50–70% on the direction under very low emissions",
+     "link": "/changes/fish-on-the-move/"
+    }
+   ]
+  },
+  {
+   "id": "southern-africa",
+   "name": "Southern Africa",
+   "summary": "El Niño-driven drought in the October–April growing season is the main near-term ocean-linked risk, and the 2026–27 event is already rated a high concern. Under high emissions, the waters off Angola and Namibia are projected to lose a third or more of their fish.",
+   "items": [
+    {
+     "change": "el-nino",
+     "sector": "food",
+     "text": "FEWS NET rates food-security concern from the 2026–27 El Niño as high for southern Africa. Hunger is expected to peak between November 2027 and March 2028, after the drought-hit harvest.",
+     "source": "FEWS NET 2026, El Niño special report (6 Oct 2026)",
+     "doi": null,
+     "evidence": "observed",
+     "confidence": "Agency assessment, October 2026",
+     "link": "/changes/el-nino/",
+     "url": "https://fews.net/global/special-report/october-2026"
+    },
+    {
+     "change": "el-nino",
+     "sector": "water",
+     "text": "El Niño conditions are associated with lower rainfall in southern Africa.",
+     "source": "Moore et al. 2017",
+     "doi": "10.1073/pnas.1617218114",
+     "evidence": "observed",
+     "confidence": "Observed climate pattern; strength varies between events",
+     "link": "/changes/el-nino/"
+    },
+    {
+     "change": "el-nino",
+     "sector": "health",
+     "text": "Warmer El Niño conditions predict worse child undernutrition across most of the developing world; almost 6 million additional children were underweight during the 2015 El Niño.",
+     "source": "Anttila-Hughes, Jina & McCord 2021",
+     "doi": "10.1038/s41467-021-26048-7",
+     "evidence": "observed",
+     "confidence": "186 surveys in 51 countries",
+     "link": "/changes/el-nino/"
+    },
+    {
+     "change": "el-nino",
+     "sector": "water",
+     "text": "The IPCC finds it very likely that El Niño-related rainfall swings will grow in the second half of this century under intermediate and high emissions. Food reserves and water storage sized for past El Niños may prove too small.",
+     "source": "IPCC 2021",
+     "doi": "10.1017/9781009157896.001",
+     "evidence": "projection",
+     "confidence": "Very likely (IPCC)",
+     "link": "/changes/el-nino/"
+    },
+    {
+     "change": "el-nino",
+     "sector": "finance",
+     "text": "Madagascar, Malawi, Mozambique and Zimbabwe are among the 22 countries in the June 2026 FAO–WFP anticipatory appeal of US$202 million.",
+     "source": "FAO and WFP 2026, joint anticipatory appeal (18 Jun 2026)",
+     "doi": null,
+     "evidence": "observed",
+     "confidence": "Appeal document",
+     "link": "/changes/el-nino/",
+     "url": "https://www.fao.org/newsroom/detail/bracing-for-el-ni%C3%B1o--fao-and-wfp-launch-joint-appeal-to-protect-8.8-million-people-from-extreme-weather-events/en"
+    },
+    {
+     "change": "fish",
+     "sector": "fisheries",
+     "text": "By the 2090s under very high emissions, fish biomass in national waters falls by about 39% for Angola, 33% for Namibia and 16% for South Africa. Under very low emissions the losses are 5–9%.",
+     "source": "Blanchard & Novaglio (eds) 2024, FishMIP projections for FAO",
+     "doi": "10.4060/cd1379en",
+     "evidence": "projection",
+     "confidence": "Ensemble mean; all models agree for Angola and Namibia, 90% for South Africa",
+     "link": "/changes/fish-on-the-move/"
+    },
+    {
+     "change": "fish",
+     "sector": "fisheries",
+     "text": "There is limited evidence so far of climate-driven ecological change in the Benguela upwelling system off Namibia and South Africa. Experts expect upwelling to change, with limited evidence on how.",
+     "source": "Cooley et al. 2022 (IPCC AR6 WGII, Chapter 3)",
+     "doi": "10.1017/9781009325844.005",
+     "evidence": "assessment",
+     "confidence": "Medium agreement, limited evidence (IPCC)",
+     "link": "/changes/fish-on-the-move/"
+    },
+    {
+     "change": "sea-level",
+     "sector": "coasts",
+     "text": "Maputo is projected to see 0.46 m of sea-level rise by 2100 under very low emissions and 0.81 m under very high emissions.",
+     "source": "IPCC AR6 sea-level projections (Garner et al.), values extracted by Ocean Turning Points",
+     "doi": "10.5281/zenodo.6382554",
+     "evidence": "projection",
+     "confidence": "Medium-confidence median; IPCC likely ranges are given on the site. Excludes local land subsidence from groundwater pumping",
+     "link": "/changes/ice-sheets/"
+    },
+    {
+     "change": "amoc",
+     "sector": "water",
+     "text": "If the AMOC collapsed, heat would build up in the Southern Hemisphere. Direct effects on southern African rainfall are expected to be limited.",
+     "source": "Global Tipping Points Report 2025",
+     "doi": "10.5281/zenodo.18163977",
+     "evidence": "assessment",
+     "confidence": "Low: little regional evidence",
+     "link": "/changes/atlantic-circulation/"
+    },
+    {
+     "change": "southern-ocean",
+     "sector": "water",
+     "text": "In one model study, meltwater from Antarctica enhances drying in the Southern Hemisphere.",
+     "source": "Bronselaer et al. 2018",
+     "doi": "10.1038/s41586-018-0712-z",
+     "evidence": "model",
+     "confidence": "Low: one model study",
+     "link": "/changes/southern-ocean/"
+    }
+   ]
+  },
+  {
+   "id": "south-asia",
+   "name": "South Asia",
+   "summary": "More than a billion people rely on the Indian summer monsoon, which weakens in every model if the Atlantic circulation collapses and often falters in El Niño years. Sinking deltas face sea-level rise far above the global average, and the Maldives depends on reefs for both income and protection.",
+   "items": [
+    {
+     "change": "amoc",
+     "sector": "food",
+     "text": "If the AMOC collapsed, annual rainfall in the Indian summer monsoon would fall by about 19% on average across four climate models, with shorter wet seasons.",
+     "source": "Ben-Yami et al. 2024",
+     "doi": "10.1029/2023EF003959",
+     "evidence": "model",
+     "confidence": "Medium: all four models agree on the direction; the amount varies widely between models (Jongman & Hall, forthcoming, Table 1)",
+     "link": "/changes/atlantic-circulation/"
+    },
+    {
+     "change": "amoc",
+     "sector": "water",
+     "text": "In the same experiments, June–August rainfall falls by about 43% at Mumbai (range 25–64% across models) and Delhi, 39% at Karachi and 20% at Dhaka.",
+     "source": "NAHosMIP data (Jackson, Bellomo et al.), processed by Ocean Turning Points after Ben-Yami et al. 2024",
+     "doi": "10.5281/zenodo.14884357",
+     "evidence": "model",
+     "confidence": "Conditional on a collapse, whose likelihood this century is disputed (IPCC: medium confidence it will not happen abruptly before 2100)",
+     "link": "/changes/atlantic-circulation/",
+     "caveat": "Single model grid cells of 100–250 km from idealised experiments; read as direction and rough size, not a local forecast"
+    },
+    {
+     "change": "el-nino",
+     "sector": "food",
+     "text": "Over 132 years of records, every severe drought in India coincided with an El Niño, although not every El Niño brought drought. El Niños with the warmest water in the central Pacific are the most likely to cause drought.",
+     "source": "Kumar et al. 2006",
+     "doi": "10.1126/science.1131152",
+     "evidence": "observed",
+     "confidence": "Observed record and model experiments",
+     "link": "/changes/el-nino/"
+    },
+    {
+     "change": "el-nino",
+     "sector": "food",
+     "text": "FEWS NET rates food-security concern from the 2026–27 El Niño as moderate for Pakistan, with hunger expected to peak in January–March 2027.",
+     "source": "FEWS NET 2026, El Niño special report (6 Oct 2026)",
+     "doi": null,
+     "evidence": "observed",
+     "confidence": "Agency assessment, October 2026",
+     "link": "/changes/el-nino/",
+     "url": "https://fews.net/global/special-report/october-2026"
+    },
+    {
+     "change": "sea-level",
+     "sector": "coasts",
+     "text": "In the Ganges–Brahmaputra–Meghna delta, home to nearly 200 million people, land subsidence could double projected sea-level rise, to 85–140 cm by 2100 even under intermediate emissions (RCP4.5).",
+     "source": "Becker et al. 2020",
+     "doi": "10.1073/pnas.1912921117",
+     "evidence": "projection",
+     "confidence": "One regional study; subsidence rates are uncertain (1–7 mm a year)",
+     "link": "/changes/ice-sheets/"
+    },
+    {
+     "change": "sea-level",
+     "sector": "coasts",
+     "text": "Sea level is projected to rise by 0.34–0.70 m at Mumbai and 0.54–0.86 m near Kolkata by 2100, from very low to very high emissions (medians).",
+     "source": "IPCC AR6 sea-level projections (Garner et al.), values extracted by Ocean Turning Points",
+     "doi": "10.5281/zenodo.6382554",
+     "evidence": "projection",
+     "confidence": "Medium-confidence median; IPCC likely ranges are given on the site. Excludes local land subsidence from groundwater pumping",
+     "link": "/changes/ice-sheets/"
+    },
+    {
+     "change": "sea-level",
+     "sector": "coasts",
+     "text": "Near Khulna (Hiron Point gauge), today's once-a-century extreme sea level would occur every seven to ten years by 2050 under all scenarios.",
+     "source": "IPCC AR6 WGI Figure 9.32 data (Hermans, Garner, Kopp & Slangen)",
+     "doi": "10.5285/6b33327d0d0d4bcca872b431279086db",
+     "evidence": "projection",
+     "confidence": "Median estimate; excludes waves and defences. Bangladesh's large natural surges make the ratio smaller than elsewhere, which does not mean lower risk",
+     "link": "/changes/ice-sheets/"
+    },
+    {
+     "change": "ice-sheets",
+     "sector": "coasts",
+     "text": "People living in unprotected, frequently flooded areas, as in Bangladesh, are likely most common in developing countries, where global data on coastal defences are lacking.",
+     "source": "Kulp & Strauss 2019",
+     "doi": "10.1038/s41467-019-12808-z",
+     "evidence": "assessment",
+     "confidence": "Exposure estimate that excludes defences",
+     "link": "/changes/ice-sheets/"
+    },
+    {
+     "change": "ice-sheets",
+     "sector": "water",
+     "text": "Many atoll islands, as in the Maldives, could become uninhabitable by mid-century at current emission rates, as waves flood infrastructure and freshwater more often.",
+     "source": "Storlazzi et al. 2018",
+     "doi": "10.1126/sciadv.aap9741",
+     "evidence": "model",
+     "confidence": "One modelling study; timing depends on local conditions",
+     "link": "/changes/ice-sheets/"
+    },
+    {
+     "change": "coral-reefs",
+     "sector": "tourism",
+     "text": "Reef tourism is worth about 43% of the Maldives' GDP.",
+     "source": "Spalding et al. 2017",
+     "doi": "10.1016/j.marpol.2017.05.014",
+     "evidence": "observed",
+     "confidence": "Present-day valuation estimate",
+     "link": "/changes/coral-reefs/"
+    },
+    {
+     "change": "coral-reefs",
+     "sector": "coasts",
+     "text": "Reefs protect about 55% of the Maldives' population exposed to coastal hazards.",
+     "source": "Burke & Spalding 2022",
+     "doi": "10.1016/j.marpol.2022.105311",
+     "evidence": "model",
+     "confidence": "Index-based model of present-day protection",
+     "link": "/changes/coral-reefs/"
+    },
+    {
+     "change": "coral-reefs",
+     "sector": "fisheries",
+     "text": "India has about 960,000 reef fishers, the second-largest number after Indonesia, and Bangladesh about 230,000 (2010 estimates).",
+     "source": "Teh, Teh & Sumaila 2013",
+     "doi": "10.1371/journal.pone.0065397",
+     "evidence": "observed",
+     "confidence": "Estimate includes part-time fishers and gleaners",
+     "link": "/changes/coral-reefs/"
+    },
+    {
+     "change": "fish",
+     "sector": "fisheries",
+     "text": "By the 2090s under very high emissions, fish biomass in national waters falls by about 26% for Sri Lanka, 21% for Pakistan, 19% for the Maldives, 18% for India and 12% for Bangladesh. Under very low emissions the losses are 2–15%.",
+     "source": "Blanchard & Novaglio (eds) 2024, FishMIP projections for FAO",
+     "doi": "10.4060/cd1379en",
+     "evidence": "projection",
+     "confidence": "Ensemble mean; 90–100% model agreement on a decline",
+     "link": "/changes/fish-on-the-move/"
+    }
+   ]
+  },
+  {
+   "id": "southeast-asia",
+   "name": "Southeast Asia",
+   "summary": "Southeast Asia has the most people living by and fishing on coral reefs, and the largest flood protection from them. Its delta cities are sinking faster than the sea is rising. El Niño brings drought, fire and smoke, and fish stocks are projected to fall by about a quarter under high emissions.",
+   "items": [
+    {
+     "change": "coral-reefs",
+     "sector": "coasts",
+     "text": "Reefs avert flood damage worth about US$640 million a year in Indonesia, US$590 million in the Philippines and US$450 million in Malaysia, among the largest savings in the world.",
+     "source": "Beck et al. 2018",
+     "doi": "10.1038/s41467-018-04568-z",
+     "evidence": "model",
+     "confidence": "Model estimate comparing today's reefs with reefs that have lost their top metre (2011 US$)",
+     "link": "/changes/coral-reefs/"
+    },
+    {
+     "change": "coral-reefs",
+     "sector": "fisheries",
+     "text": "Half of the world's 6 million reef fishers are in Southeast Asia, including about 1.7 million in Indonesia and 0.9 million in the Philippines.",
+     "source": "Teh, Teh & Sumaila 2013",
+     "doi": "10.1371/journal.pone.0065397",
+     "evidence": "observed",
+     "confidence": "2010 estimates; include part-time fishers and gleaners",
+     "link": "/changes/coral-reefs/"
+    },
+    {
+     "change": "coral-reefs",
+     "sector": "food",
+     "text": "About 227 million people in Indonesia (86% of the population) and nearly everyone in the Philippines live within 100 km of a coral reef.",
+     "source": "Sing Wong, Vrontos & Taylor 2022",
+     "doi": "10.1111/gcb.16391",
+     "evidence": "observed",
+     "confidence": "Proximity is a proxy for dependence, which varies",
+     "link": "/changes/coral-reefs/"
+    },
+    {
+     "change": "coral-reefs",
+     "sector": "tourism",
+     "text": "Reef tourism is worth about US$3.1 billion a year in Indonesia and US$2.4 billion in Thailand.",
+     "source": "Spalding et al. 2017",
+     "doi": "10.1016/j.marpol.2017.05.014",
+     "evidence": "observed",
+     "confidence": "Present-day valuation estimate",
+     "link": "/changes/coral-reefs/"
+    },
+    {
+     "change": "marine-heatwaves",
+     "sector": "biodiversity",
+     "text": "Marine heatwave days doubled between 1982 and 2016. The largest increases with further warming are projected in the western tropical Pacific and the Arctic.",
+     "source": "Frölicher, Fischer & Gruber 2018",
+     "doi": "10.1038/s41586-018-0383-9",
+     "evidence": "projection",
+     "confidence": "Satellite observations and Earth system models",
+     "link": "/ocean-now/"
+    },
+    {
+     "change": "sea-level",
+     "sector": "coasts",
+     "text": "Parts of Jakarta are sinking by 3–10 cm a year because of groundwater pumping, many times faster than climate-driven sea-level rise. IPCC projections for the city do not include this.",
+     "source": "Abidin et al. 2015",
+     "doi": "10.5194/piahs-370-15-2015",
+     "evidence": "observed",
+     "confidence": "Levelling, GPS and satellite radar, 1982–2014",
+     "link": "/changes/ice-sheets/"
+    },
+    {
+     "change": "sea-level",
+     "sector": "coasts",
+     "text": "The Mekong Delta averages only about 0.8 m above sea level. With 1 m of sea-level rise, more than 12 million people, over 70% of its population, would live below sea level.",
+     "source": "Minderhoud et al. 2019",
+     "doi": "10.1038/s41467-019-11602-1",
+     "evidence": "projection",
+     "confidence": "Elevation survey combined with sea-level scenarios",
+     "link": "/changes/ice-sheets/"
+    },
+    {
+     "change": "sea-level",
+     "sector": "coasts",
+     "text": "At Manila, sea level is projected to rise by 1.0–1.3 m by 2100 from very low to very high emissions, including about 0.5 m of land subsidence. Today's once-a-century high water would occur about 10–15 times a year by 2050.",
+     "source": "IPCC AR6 WGI Figure 9.32 data (Hermans, Garner, Kopp & Slangen)",
+     "doi": "10.5285/6b33327d0d0d4bcca872b431279086db",
+     "evidence": "projection",
+     "confidence": "Median estimates; subsidence extrapolated from the tide-gauge record",
+     "link": "/changes/ice-sheets/"
+    },
+    {
+     "change": "ice-sheets",
+     "sector": "coasts",
+     "text": "About 267 million people lived less than 2 m above sea level in 2020. With 1 m of relative rise this would reach at least 410 million, 59% of them in tropical Asia.",
+     "source": "Hooijer & Vernimmen 2021",
+     "doi": "10.1038/s41467-021-23810-9",
+     "evidence": "projection",
+     "confidence": "Exposure with population held fixed; exposure is not damage",
+     "link": "/changes/ice-sheets/"
+    },
+    {
+     "change": "el-nino",
+     "sector": "health",
+     "text": "WMO's outlook for late 2026 warns of heat, rainfall deficits and wildfire smoke in Southeast Asia.",
+     "source": "WMO 2026, El Niño update (22 Oct 2026)",
+     "doi": null,
+     "evidence": "projection",
+     "confidence": "Seasonal outlook, 22 October 2026",
+     "link": "/changes/el-nino/",
+     "url": "https://wmo.int/media/update/el-nino-puts-humanitarian-weather-services-spotlight"
+    },
+    {
+     "change": "el-nino",
+     "sector": "health",
+     "text": "Across 57 countries, El Niño swings explain about 63% of the variation in dengue cases; the 2023–24 El Niño was linked to 9.6 million additional cases.",
+     "source": "Tian et al. 2025",
+     "doi": "10.1038/s41467-025-63655-0",
+     "evidence": "observed",
+     "confidence": "Statistical analysis, 1980–2024",
+     "link": "/changes/el-nino/"
+    },
+    {
+     "change": "el-nino",
+     "sector": "finance",
+     "text": "El Niño persistently lowers economic growth. The 1997–98 event is linked to US$5.7 trillion in global income losses, with growth held back for years afterwards.",
+     "source": "Callahan & Mankin 2023",
+     "doi": "10.1126/science.adf2983",
+     "evidence": "observed",
+     "confidence": "Econometric estimate of past events",
+     "link": "/changes/el-nino/"
+    },
+    {
+     "change": "fish",
+     "sector": "fisheries",
+     "text": "By the 2090s under very high emissions, fish biomass in national waters falls by about 25% for Indonesia, 24% for Malaysia, 23% for the Philippines and Viet Nam and 14% for Thailand. Under very low emissions the losses are 5–9%.",
+     "source": "Blanchard & Novaglio (eds) 2024, FishMIP projections for FAO",
+     "doi": "10.4060/cd1379en",
+     "evidence": "projection",
+     "confidence": "Ensemble mean; 90–100% model agreement on a decline",
+     "link": "/changes/fish-on-the-move/"
+    },
+    {
+     "change": "fish",
+     "sector": "fisheries",
+     "text": "65 million people work in fishing and fish farming worldwide, 85% of them in Asia.",
+     "source": "FAO 2026, The State of World Fisheries and Aquaculture",
+     "doi": "10.4060/cd8357en",
+     "evidence": "observed",
+     "confidence": "FAO statistics, 2024",
+     "link": "/changes/fish-on-the-move/"
+    }
+   ]
+  },
+  {
+   "id": "pacific-islands",
+   "name": "Pacific small island states",
+   "summary": "Tuna licences fund large shares of government budgets, and tuna are projected to move out of national waters into the high seas. Reefs protect most of the coastal population on many atolls, and rising seas threaten freshwater and infrastructure. El Niño brings drought to the western Pacific.",
+   "items": [
+    {
+     "change": "fish",
+     "sector": "finance",
+     "text": "Tuna access fees average 37%, and up to 84%, of government revenue across ten tuna-dependent Pacific island states.",
+     "source": "FAO 2026, The State of World Fisheries and Aquaculture",
+     "doi": "10.4060/cd8357en",
+     "evidence": "observed",
+     "confidence": "FAO statistics",
+     "link": "/changes/fish-on-the-move/"
+    },
+    {
+     "change": "fish",
+     "sector": "finance",
+     "text": "By 2050 under high emissions, tuna biomass in the waters of ten Pacific island states falls by 13% on average as fish move to the high seas, cutting access fees by about US$90 million a year and government revenue by up to 13%. Under intermediate emissions the catch falls by only 3%.",
+     "source": "Bell et al. 2021",
+     "doi": "10.1038/s41893-021-00745-z",
+     "evidence": "projection",
+     "confidence": "Ecosystem model projections (RCP8.5 and RCP4.5)",
+     "link": "/changes/fish-on-the-move/"
+    },
+    {
+     "change": "fish",
+     "sector": "fisheries",
+     "text": "Over the next 25 years, tuna biomass is projected to fall by up to 37% in Papua New Guinea, 26% in the Federated States of Micronesia and 15% in the Marshall Islands, and to rise by 18% in the Cook Islands and 15% in Kiribati.",
+     "source": "FAO 2026, The State of World Fisheries and Aquaculture",
+     "doi": "10.4060/cd8357en",
+     "evidence": "projection",
+     "confidence": "SEAPODYM model, as reported by FAO",
+     "link": "/changes/fish-on-the-move/"
+    },
+    {
+     "change": "fish",
+     "sector": "fisheries",
+     "text": "By the 2090s under very high emissions, total fish biomass in national waters falls by about 51% for Papua New Guinea, 47% for Tuvalu, 44% for the Solomon Islands and 41% for the Federated States of Micronesia. Under very low emissions the losses are 9–13%.",
+     "source": "Blanchard & Novaglio (eds) 2024, FishMIP projections for FAO",
+     "doi": "10.4060/cd1379en",
+     "evidence": "projection",
+     "confidence": "Ensemble mean of FishMIP models; all models agree on a decline for the countries named",
+     "link": "/changes/fish-on-the-move/"
+    },
+    {
+     "change": "coral-reefs",
+     "sector": "food",
+     "text": "Coral reef fisheries in the tropical Pacific could decrease by 20% by 2050 under high emissions.",
+     "source": "Bell et al. 2013",
+     "doi": "10.1038/nclimate1838",
+     "evidence": "projection",
+     "confidence": "Regional assessment (SRES A2)",
+     "link": "/changes/coral-reefs/"
+    },
+    {
+     "change": "coral-reefs",
+     "sector": "coasts",
+     "text": "Reefs protect about 69% of the hazard-exposed population in Kiribati's Gilbert Islands, 64% in the Federated States of Micronesia, 60% in Tuvalu and 55% in the Marshall Islands.",
+     "source": "Burke & Spalding 2022",
+     "doi": "10.1016/j.marpol.2022.105311",
+     "evidence": "model",
+     "confidence": "Index-based model of present-day protection",
+     "link": "/changes/coral-reefs/"
+    },
+    {
+     "change": "coral-reefs",
+     "sector": "tourism",
+     "text": "Reef tourism is worth about 43% of GDP in Palau and about 6% in Vanuatu and Fiji.",
+     "source": "Spalding et al. 2017",
+     "doi": "10.1016/j.marpol.2017.05.014",
+     "evidence": "observed",
+     "confidence": "Present-day valuation estimate",
+     "link": "/changes/coral-reefs/"
+    },
+    {
+     "change": "coral-reefs",
+     "sector": "biodiversity",
+     "text": "IUCN highlights reefs in western Kiribati and Papua New Guinea among those coping best with heat, which makes them priorities for protection.",
+     "source": "IUCN 2026",
+     "doi": null,
+     "evidence": "assessment",
+     "confidence": "IUCN Red List of Ecosystems, October 2026",
+     "link": "/changes/coral-reefs/",
+     "url": "https://iucn.org/"
+    },
+    {
+     "change": "marine-heatwaves",
+     "sector": "biodiversity",
+     "text": "The largest projected increases in marine heatwaves are in the western tropical Pacific.",
+     "source": "Frölicher, Fischer & Gruber 2018",
+     "doi": "10.1038/s41586-018-0383-9",
+     "evidence": "projection",
+     "confidence": "Earth system models",
+     "link": "/ocean-now/"
+    },
+    {
+     "change": "sea-level",
+     "sector": "coasts",
+     "text": "At Suva, sea level is projected to rise by 0.48 m by 2100 under very low emissions and 0.84 m under very high emissions. Today's once-a-century high water would occur about two to four times a year by 2050.",
+     "source": "IPCC AR6 WGI Figure 9.32 data (Hermans, Garner, Kopp & Slangen)",
+     "doi": "10.5285/6b33327d0d0d4bcca872b431279086db",
+     "evidence": "projection",
+     "confidence": "Median estimates; excludes waves and defences",
+     "link": "/changes/ice-sheets/"
+    },
+    {
+     "change": "ice-sheets",
+     "sector": "water",
+     "text": "Many atoll islands could become uninhabitable by mid-century at current emission rates, as wave-driven flooding damages infrastructure and salts freshwater supplies.",
+     "source": "Storlazzi et al. 2018",
+     "doi": "10.1126/sciadv.aap9741",
+     "evidence": "model",
+     "confidence": "One modelling study; timing depends on local conditions",
+     "link": "/changes/ice-sheets/"
+    },
+    {
+     "change": "ice-sheets",
+     "sector": "coasts",
+     "text": "Sea-level rise is an existential threat for some small islands and low-lying coasts.",
+     "source": "IPCC 2022",
+     "doi": "10.1017/9781009325844.001",
+     "evidence": "assessment",
+     "confidence": "Medium confidence (IPCC)",
+     "link": "/changes/ice-sheets/"
+    },
+    {
+     "change": "el-nino",
+     "sector": "food",
+     "text": "Papua New Guinea declared an El Niño event in June 2026, approved a 112 million supplementary budget and estimates that 1.2 million people need direct food relief.",
+     "source": "UN News 2026 (6 Oct 2026)",
+     "doi": null,
+     "evidence": "observed",
+     "confidence": "News report",
+     "link": "/changes/el-nino/",
+     "url": "https://news.un.org/en/story/2026/10/1168537",
+     "caveat": "Currency of the budget not stated in the source"
+    },
+    {
+     "change": "el-nino",
+     "sector": "water",
+     "text": "The higher risk of major disruptions to Pacific rainfall appears locked in for the rest of this century, even with marked emission cuts.",
+     "source": "Power et al. 2017",
+     "doi": "10.1038/ncomms14368",
+     "evidence": "projection",
+     "confidence": "Climate model projections",
+     "link": "/changes/el-nino/"
+    },
+    {
+     "change": "el-nino",
+     "sector": "water",
+     "text": "Warming shifts the Pacific towards an El Niño-like average state that persists for centuries after net zero, with a northward-displaced South Pacific rain band.",
+     "source": "Sengupta et al. 2026",
+     "doi": "10.1038/s43247-026-04082-x",
+     "evidence": "model",
+     "confidence": "Low to medium: observed trends since the 1950s point the other way; the longest runs use one model",
+     "link": "/changes/el-nino/"
+    },
+    {
+     "change": "southern-ocean",
+     "sector": "fisheries",
+     "text": "In one model run to 2300 under sustained high emissions, nutrients become trapped in the Southern Ocean and potential fishery yields fall by more than 20% globally, a pathway that would reach tropical Pacific fisheries.",
+     "source": "Moore et al. 2018",
+     "doi": "10.1126/science.aao6379",
+     "evidence": "model",
+     "confidence": "Low: one model, multi-century",
+     "link": "/changes/southern-ocean/"
+    },
+    {
+     "change": "acidification",
+     "sector": "biodiversity",
+     "text": "Ocean acidification will increase this century under all emissions scenarios, making it harder for corals to build the reefs that islands depend on.",
+     "source": "IPCC 2021 (Technical Summary)",
+     "doi": "10.1017/9781009157896.002",
+     "evidence": "projection",
+     "confidence": "Virtually certain (IPCC)",
+     "link": null
+    }
+   ]
+  },
+  {
+   "id": "caribbean-central-america",
+   "name": "Caribbean and Central America",
+   "summary": "A weaker Atlantic circulation shifts the tropical rain belt south, which dries Central America and the Caribbean in models, and raises sea level faster on North Atlantic coasts. Caribbean reefs, which protect coasts and attract tourists, are projected to stop growing within decades, and El Niño drought threatens the Dry Corridor.",
+   "items": [
+    {
+     "change": "amoc",
+     "sector": "water",
+     "text": "Among 30 climate models under very high emissions, those with a larger AMOC decline shift the Atlantic rain belt south; those with little decline do not.",
+     "source": "Cerato et al. 2025",
+     "doi": "10.1175/jcli-d-24-0333.1",
+     "evidence": "model",
+     "confidence": "CMIP6 multi-model analysis plus targeted experiments",
+     "link": "/changes/atlantic-circulation/"
+    },
+    {
+     "change": "amoc",
+     "sector": "water",
+     "text": "If the AMOC collapsed, annual rainfall would fall by about 22% at Guatemala City (range 5–40% across models) and 21% at Kingston (12–31%). All four models agree on drying.",
+     "source": "NAHosMIP data (Jackson, Bellomo et al.), processed by Ocean Turning Points after Ben-Yami et al. 2024",
+     "doi": "10.5281/zenodo.14884357",
+     "evidence": "model",
+     "confidence": "Conditional on a collapse, whose likelihood this century is disputed (IPCC: medium confidence it will not happen abruptly before 2100)",
+     "link": "/changes/atlantic-circulation/",
+     "caveat": "Single model grid cells of 100–250 km from idealised experiments; read as direction and rough size, not a local forecast"
+    },
+    {
+     "change": "amoc",
+     "sector": "food",
+     "text": "A slower AMOC raises drought risk in Mesoamerica, adding to drying from global warming.",
+     "source": "DiNezio et al. 2025",
+     "doi": "10.1038/s41586-025-09319-x",
+     "evidence": "model",
+     "confidence": "Medium (Jongman & Hall, forthcoming, Table 1)",
+     "link": "/changes/atlantic-circulation/"
+    },
+    {
+     "change": "amoc",
+     "sector": "coasts",
+     "text": "During a collapse, dynamic sea level rises over the Atlantic, by up to about 6 mm a year over the North Atlantic and up to 4 mm a year near densely populated coasts, compared with today's global rise of 3.3 mm a year.",
+     "source": "van Westen, Katsman & Le Bars 2026",
+     "doi": "10.5194/os-22-1353-2026",
+     "evidence": "model",
+     "confidence": "Medium (Jongman & Hall, forthcoming, Table 1); one model family",
+     "link": "/changes/atlantic-circulation/"
+    },
+    {
+     "change": "coral-reefs",
+     "sector": "biodiversity",
+     "text": "More than 70% of tropical western Atlantic reefs are projected to be eroding by 2040. If warming exceeds 2 °C, at least 99% will be eroding by 2100.",
+     "source": "Perry et al. 2025",
+     "doi": "10.1038/s41586-025-09439-4",
+     "evidence": "projection",
+     "confidence": "Measurements at more than 400 sites combined with projections",
+     "link": "/changes/coral-reefs/"
+    },
+    {
+     "change": "coral-reefs",
+     "sector": "coasts",
+     "text": "Water above tropical western Atlantic reefs deepens by 0.3–0.5 m by 2060 under all scenarios and by 0.7–1.2 m by 2100 above 2 °C of warming. Restoration offsets only about 0.3–0.4 m, and only with strong emission cuts.",
+     "source": "Perry et al. 2025",
+     "doi": "10.1038/s41586-025-09439-4",
+     "evidence": "projection",
+     "confidence": "Measurements at more than 400 sites combined with projections",
+     "link": "/changes/coral-reefs/"
+    },
+    {
+     "change": "coral-reefs",
+     "sector": "coasts",
+     "text": "Reefs avert flood damage worth about US$450 million a year in Mexico, US$400 million in Cuba and US$96 million in the Dominican Republic. Relative to national assets, the protection is largest in the Cayman Islands, Belize, Grenada and the Bahamas.",
+     "source": "Beck et al. 2018",
+     "doi": "10.1038/s41467-018-04568-z",
+     "evidence": "model",
+     "confidence": "Model estimate comparing today's reefs with reefs that have lost their top metre (2011 US$)",
+     "link": "/changes/coral-reefs/"
+    },
+    {
+     "change": "coral-reefs",
+     "sector": "tourism",
+     "text": "Reef tourism is worth about 6.4% of GDP in the Bahamas, 5.5% in Antigua and Barbuda and 5.1% in Belize, and about US$3 billion a year in Mexico.",
+     "source": "Spalding et al. 2017",
+     "doi": "10.1016/j.marpol.2017.05.014",
+     "evidence": "observed",
+     "confidence": "Present-day valuation estimate",
+     "link": "/changes/coral-reefs/"
+    },
+    {
+     "change": "coral-reefs",
+     "sector": "biodiversity",
+     "text": "Caribbean reefs appear to stop growing when live coral cover falls below about 10%.",
+     "source": "Perry et al. 2013",
+     "doi": "10.1038/ncomms2409",
+     "evidence": "observed",
+     "confidence": "Carbonate budgets across the Caribbean",
+     "link": "/changes/coral-reefs/"
+    },
+    {
+     "change": "marine-heatwaves",
+     "sector": "biodiversity",
+     "text": "NOAA flagged a high risk of coral bleaching heat stress for Florida and the Caribbean in 2026, after the 2023–2025 global bleaching event.",
+     "source": "GCRMN 2026, citing NOAA Coral Reef Watch",
+     "doi": null,
+     "evidence": "projection",
+     "confidence": "Seasonal outlook",
+     "link": "/ocean-now/",
+     "url": "https://gcrmn.net/2026/06/08/4gbe-ended/"
+    },
+    {
+     "change": "el-nino",
+     "sector": "food",
+     "text": "WMO reports rising drought risk in parts of Central America and the southern Caribbean during the 2026 El Niño. El Salvador, Guatemala, Haiti and Honduras are in the June 2026 FAO–WFP anticipatory appeal.",
+     "source": "WMO 2026, El Niño update (22 Oct 2026)",
+     "doi": null,
+     "evidence": "observed",
+     "confidence": "Agency update, 22 October 2026",
+     "link": "/changes/el-nino/",
+     "url": "https://wmo.int/media/update/el-nino-puts-humanitarian-weather-services-spotlight"
+    },
+    {
+     "change": "sea-level",
+     "sector": "coasts",
+     "text": "At Cartagena, sea level is projected to rise by 0.69 m by 2100 under very low emissions and 1.04 m under very high emissions. Today's once-a-century high water would occur at least once a year by 2050.",
+     "source": "IPCC AR6 WGI Figure 9.32 data (Hermans, Garner, Kopp & Slangen)",
+     "doi": "10.5285/6b33327d0d0d4bcca872b431279086db",
+     "evidence": "projection",
+     "confidence": "Median estimates; excludes waves and defences",
+     "link": "/changes/ice-sheets/"
+    },
+    {
+     "change": "sea-level",
+     "sector": "finance",
+     "text": "Across Latin America and the Caribbean, more than 7.5 million people and US$334 billion of built capital already sit below the once-a-century extreme sea level.",
+     "source": "Reguero et al. 2015",
+     "doi": "10.1371/journal.pone.0133409",
+     "evidence": "observed",
+     "confidence": "Exposure estimate without defences",
+     "link": "/changes/ice-sheets/"
+    },
+    {
+     "change": "fish",
+     "sector": "fisheries",
+     "text": "By the 2090s under very high emissions, fish biomass in Mexico's waters falls by about 17%. For Caribbean island waters projected changes are under 10% and models disagree on the direction.",
+     "source": "Blanchard & Novaglio (eds) 2024, FishMIP projections for FAO",
+     "doi": "10.4060/cd1379en",
+     "evidence": "projection",
+     "confidence": "Ensemble mean; low model agreement for Caribbean islands",
+     "link": "/changes/fish-on-the-move/"
+    }
+   ]
+  },
+  {
+   "id": "south-america",
+   "name": "South America (Pacific coast and Amazon)",
+   "summary": "El Niño hits the Pacific coast directly, through floods, lost anchoveta catches and income losses that last for years. Fish biomass off Peru and Ecuador is projected to fall by more than a third under high emissions. A weaker Atlantic circulation would dry northern South America and wet parts of the Amazon and northeast Brazil.",
+   "items": [
+    {
+     "change": "el-nino",
+     "sector": "fisheries",
+     "text": "Peru cancelled its second anchovy season of 2026 after surveys found a stock of about 5.1 million tonnes, 79% of them juveniles. The fishery supplies much of the world's fishmeal and fish oil.",
+     "source": "NutraIngredients 2026, reporting PRODUCE and IMARPE (19 Oct 2026)",
+     "doi": null,
+     "evidence": "observed",
+     "confidence": "Trade press reporting official decisions",
+     "link": "/changes/el-nino/",
+     "url": "https://www.nutraingredients.com/Article/2026/10/19/peru-cancels-second-anchovy-fishing-season-amidst-unprecedented-el-nino-event/",
+     "caveat": "Press source; check against PRODUCE and IMARPE bulletins"
+    },
+    {
+     "change": "el-nino",
+     "sector": "coasts",
+     "text": "Parts of western South America had severe flooding by October 2026, and drought risk is rising in parts of the Amazon.",
+     "source": "WMO 2026, El Niño update (22 Oct 2026)",
+     "doi": null,
+     "evidence": "observed",
+     "confidence": "Agency update, 22 October 2026",
+     "link": "/changes/el-nino/",
+     "url": "https://wmo.int/media/update/el-nino-puts-humanitarian-weather-services-spotlight"
+    },
+    {
+     "change": "el-nino",
+     "sector": "coasts",
+     "text": "On the tropical Pacific coast, an El Niño like 1997–98 would expose as many people to flooding by mid-century as intermediate-emissions sea-level rise would by 2100.",
+     "source": "Reguero et al. 2015",
+     "doi": "10.1371/journal.pone.0133409",
+     "evidence": "projection",
+     "confidence": "Regional exposure model",
+     "link": "/changes/el-nino/"
+    },
+    {
+     "change": "el-nino",
+     "sector": "coasts",
+     "text": "Coral records from the Galápagos show that recent eastern Pacific El Niños, the type that floods coastal Ecuador and Peru, are stronger than at any time in the past millennium.",
+     "source": "Cole et al. 2026",
+     "doi": "10.1126/science.ady2660",
+     "evidence": "observed",
+     "confidence": "One palaeoclimate study; the recent change is just above the range of natural variability",
+     "link": "/changes/el-nino/"
+    },
+    {
+     "change": "el-nino",
+     "sector": "finance",
+     "text": "El Niño damage keeps growing for three years after an event. The 1997–98 and 2015–16 extreme El Niños are linked to global losses of US$2.1 trillion and US$3.9 trillion.",
+     "source": "Liu et al. 2023",
+     "doi": "10.1038/s41467-023-41551-9",
+     "evidence": "observed",
+     "confidence": "Econometric estimate of past events",
+     "link": "/changes/el-nino/"
+    },
+    {
+     "change": "el-nino",
+     "sector": "health",
+     "text": "Across 57 countries, El Niño swings explain about 63% of the variation in dengue cases; the 2023–24 El Niño was linked to 9.6 million additional cases.",
+     "source": "Tian et al. 2025",
+     "doi": "10.1038/s41467-025-63655-0",
+     "evidence": "observed",
+     "confidence": "Statistical analysis, 1980–2024",
+     "link": "/changes/el-nino/"
+    },
+    {
+     "change": "el-nino",
+     "sector": "biodiversity",
+     "text": "The reefs of the western Galápagos are classed as collapsed since the 1982–83 El Niño.",
+     "source": "IUCN 2026",
+     "doi": null,
+     "evidence": "observed",
+     "confidence": "IUCN Red List of Ecosystems, October 2026",
+     "link": "/changes/el-nino/",
+     "url": "https://iucn.org/"
+    },
+    {
+     "change": "amoc",
+     "sector": "water",
+     "text": "If the AMOC collapsed, annual rainfall at Caracas would fall by about 32% (range 25–44% across models), while Fortaleza in northeast Brazil gets about 26% wetter. Across four models, the southern Amazon gets wetter and its dry season shorter.",
+     "source": "NAHosMIP data (Jackson, Bellomo et al.), processed by Ocean Turning Points after Ben-Yami et al. 2024",
+     "doi": "10.5281/zenodo.14884357",
+     "evidence": "model",
+     "confidence": "Conditional on a collapse, whose likelihood this century is disputed (IPCC: medium confidence it will not happen abruptly before 2100)",
+     "link": "/changes/atlantic-circulation/",
+     "caveat": "Single model grid cells of 100–250 km from idealised experiments; read as direction and rough size, not a local forecast; the size of southern Amazon wetting is uncertain"
+    },
+    {
+     "change": "amoc",
+     "sector": "food",
+     "text": "A slower AMOC raises drought risk in northern South America, although drying from global warming is likely to remain the larger signal there.",
+     "source": "DiNezio et al. 2025",
+     "doi": "10.1038/s41586-025-09319-x",
+     "evidence": "model",
+     "confidence": "Medium (Jongman & Hall, forthcoming, Table 1)",
+     "link": "/changes/atlantic-circulation/"
+    },
+    {
+     "change": "fish",
+     "sector": "fisheries",
+     "text": "By the 2090s under very high emissions, fish biomass in national waters falls by about 39% for Ecuador, 37% for Peru, 20% for Colombia and 19% for Chile. Under very low emissions the losses are 8–10%.",
+     "source": "Blanchard & Novaglio (eds) 2024, FishMIP projections for FAO",
+     "doi": "10.4060/cd1379en",
+     "evidence": "projection",
+     "confidence": "Ensemble mean; 90–100% model agreement on a decline",
+     "link": "/changes/fish-on-the-move/"
+    },
+    {
+     "change": "acidification",
+     "sector": "fisheries",
+     "text": "Rising acidification and falling oxygen are harming the Humboldt Current upwelling system, which supports the Peruvian and Chilean fisheries.",
+     "source": "Cooley et al. 2022 (IPCC AR6 WGII, Chapter 3)",
+     "doi": "10.1017/9781009325844.005",
+     "evidence": "assessment",
+     "confidence": "High confidence (IPCC, citing SROCC); low confidence in separating the human cause from natural variability",
+     "link": null
+    },
+    {
+     "change": "sea-level",
+     "sector": "coasts",
+     "text": "At Guayaquil, sea level is projected to rise by 0.38 m by 2100 under very low emissions and 0.69 m under very high emissions. At nearby La Libertad, today's once-a-century high water would occur every one to two years by 2050, and more often under very high emissions.",
+     "source": "IPCC AR6 WGI Figure 9.32 data (Hermans, Garner, Kopp & Slangen)",
+     "doi": "10.5285/6b33327d0d0d4bcca872b431279086db",
+     "evidence": "projection",
+     "confidence": "Median estimates; excludes waves and defences",
+     "link": "/changes/ice-sheets/"
+    },
+    {
+     "change": "southern-ocean",
+     "sector": "biodiversity",
+     "text": "Antarctic krill, the base of the food web in the Southern Ocean south of South America, have contracted southward in the South Atlantic sector.",
+     "source": "Atkinson et al. 2019",
+     "doi": "10.1038/s41558-018-0370-z",
+     "evidence": "observed",
+     "confidence": "Medium confidence (IPCC SROCC)",
+     "link": "/changes/southern-ocean/"
+    }
+   ]
+  },
+  {
+   "id": "mena-mediterranean",
+   "name": "North Africa, Middle East and the Mediterranean",
+   "summary": "Marine heatwaves have already caused mass die-offs across the Mediterranean, and the Gulf is near the thermal limit for many species. Red Sea reefs are among the most heat-tolerant in the world and support a large tourism economy. The Nile Delta faces rising seas.",
+   "items": [
+    {
+     "change": "marine-heatwaves",
+     "sector": "biodiversity",
+     "text": "Marine heatwaves caused mass die-offs across the Mediterranean in five consecutive years (2015–2019), affecting 50 groups of species over thousands of kilometres of coast and down to 45 m depth.",
+     "source": "Garrabou et al. 2022",
+     "doi": "10.1111/gcb.16301",
+     "evidence": "observed",
+     "confidence": "Field observations",
+     "link": "/ocean-now/"
+    },
+    {
+     "change": "marine-heatwaves",
+     "sector": "fisheries",
+     "text": "In the Persian Gulf, sea temperatures above 35 °C have been linked with high rates of local extinction and a fall in fisheries catch potential.",
+     "source": "Cooley et al. 2022 (IPCC AR6 WGII, Chapter 3)",
+     "doi": "10.1017/9781009325844.005",
+     "evidence": "projection",
+     "confidence": "Medium confidence (IPCC)",
+     "link": "/ocean-now/"
+    },
+    {
+     "change": "marine-heatwaves",
+     "sector": "biodiversity",
+     "text": "More frequent and intense marine heatwaves will add to warming impacts in the Red Sea and Gulf and erode the resilience of Red Sea coral reefs.",
+     "source": "Cooley et al. 2022 (IPCC AR6 WGII, Chapter 3)",
+     "doi": "10.1017/9781009325844.005",
+     "evidence": "projection",
+     "confidence": "High confidence (IPCC)",
+     "link": "/ocean-now/"
+    },
+    {
+     "change": "acidification",
+     "sector": "fisheries",
+     "text": "Acidification events have been reported locally in the Mediterranean, affecting shellfish and coral-like species, and coral calcification has declined sharply in the Red Sea.",
+     "source": "Cooley et al. 2022 (IPCC AR6 WGII, Chapter 3)",
+     "doi": "10.1017/9781009325844.005",
+     "evidence": "observed",
+     "confidence": "Medium confidence (IPCC)",
+     "link": null
+    },
+    {
+     "change": "fish",
+     "sector": "biodiversity",
+     "text": "Uneven warming and the arrival of non-native species are projected to increase fish diversity in the eastern Mediterranean and decrease it in the west.",
+     "source": "Cooley et al. 2022 (IPCC AR6 WGII, Chapter 3)",
+     "doi": "10.1017/9781009325844.005",
+     "evidence": "projection",
+     "confidence": "Medium to high confidence (IPCC)",
+     "link": "/changes/fish-on-the-move/"
+    },
+    {
+     "change": "fish",
+     "sector": "fisheries",
+     "text": "By the 2090s under very high emissions, fish biomass in national waters falls by about 35% for Iran, 33% for Oman, 27% for Yemen, 25% for Libya and 23% for Tunisia. Under very low emissions, models project gains of about 18% for Egypt and 7% for Libya.",
+     "source": "Blanchard & Novaglio (eds) 2024, FishMIP projections for FAO",
+     "doi": "10.4060/cd1379en",
+     "evidence": "projection",
+     "confidence": "Ensemble mean; 90–100% agreement on the high-emissions declines; 60–90% on the low-emissions gains",
+     "link": "/changes/fish-on-the-move/"
+    },
+    {
+     "change": "coral-reefs",
+     "sector": "biodiversity",
+     "text": "IUCN highlights northern Red Sea reefs among those coping best with heat.",
+     "source": "IUCN 2026",
+     "doi": null,
+     "evidence": "assessment",
+     "confidence": "IUCN Red List of Ecosystems, October 2026",
+     "link": "/changes/coral-reefs/",
+     "url": "https://iucn.org/"
+    },
+    {
+     "change": "coral-reefs",
+     "sector": "tourism",
+     "text": "Reef tourism is worth about US$5.5 billion a year in Egypt, the largest amount of any country.",
+     "source": "Spalding et al. 2017",
+     "doi": "10.1016/j.marpol.2017.05.014",
+     "evidence": "observed",
+     "confidence": "Present-day valuation estimate",
+     "link": "/changes/coral-reefs/"
+    },
+    {
+     "change": "coral-reefs",
+     "sector": "coasts",
+     "text": "Reefs avert flood damage worth about US$140 million a year in Saudi Arabia.",
+     "source": "Beck et al. 2018",
+     "doi": "10.1038/s41467-018-04568-z",
+     "evidence": "model",
+     "confidence": "Model estimate comparing today's reefs with reefs that have lost their top metre (2011 US$)",
+     "link": "/changes/coral-reefs/"
+    },
+    {
+     "change": "sea-level",
+     "sector": "coasts",
+     "text": "At Alexandria, sea level is projected to rise by 0.50 m by 2100 under very low emissions and 0.85 m under very high emissions.",
+     "source": "IPCC AR6 sea-level projections (Garner et al.), values extracted by Ocean Turning Points",
+     "doi": "10.5281/zenodo.6382554",
+     "evidence": "projection",
+     "confidence": "Medium-confidence median; IPCC likely ranges are given on the site. Excludes local land subsidence from groundwater pumping",
+     "link": "/changes/ice-sheets/"
+    },
+    {
+     "change": "ice-sheets",
+     "sector": "food",
+     "text": "Multi-metre sea-level rise over the coming centuries would threaten farmland in the Nile Delta through flooding and saltwater intrusion.",
+     "source": "Global Tipping Points Report 2025",
+     "doi": "10.5281/zenodo.18163977",
+     "evidence": "assessment",
+     "confidence": "Qualitative expert judgement; timing depends on ice-sheet loss",
+     "link": "/changes/ice-sheets/"
+    },
+    {
+     "change": "amoc",
+     "sector": "water",
+     "text": "If the AMOC collapsed, annual rainfall at Madrid would fall by about 20% (range 9–34% across models). Drying is expected in the western Mediterranean, with little direct effect in the east.",
+     "source": "NAHosMIP data (Jackson, Bellomo et al.), processed by Ocean Turning Points after Ben-Yami et al. 2024",
+     "doi": "10.5281/zenodo.14884357",
+     "evidence": "model",
+     "confidence": "Conditional on a collapse, whose likelihood this century is disputed (IPCC: medium confidence it will not happen abruptly before 2100)",
+     "link": "/changes/atlantic-circulation/",
+     "caveat": "Single model grid cells of 100–250 km from idealised experiments; read as direction and rough size, not a local forecast"
+    }
+   ]
+  },
+  {
+   "id": "northwest-europe",
+   "name": "Northwest Europe",
+   "summary": "An AMOC collapse would make northwest Europe much colder in winter and drier in summer even in a warmer world, with large effects on farming and energy that have barely been studied. A faster collapse of convection in the subpolar gyre is a minority model outcome. Sea-level rise and fish losses are expected under every scenario.",
+   "items": [
+    {
+     "change": "amoc",
+     "sector": "coasts",
+     "text": "In a world about 2 °C warmer with a collapsed AMOC, once-a-decade cold extremes reach about −19 °C in London and −30 °C in Edinburgh, frost days in London rise from 7 to 74 a year compared with pre-industrial, and winter sea ice spreads much further south.",
+     "source": "van Westen & Baatsen 2025 (CESM scenario data, processed by Ocean Turning Points)",
+     "doi": "10.1029/2025GL114611",
+     "evidence": "model",
+     "confidence": "High confidence in the direction of cooling; medium in size (Jongman & Hall, forthcoming, Table 1); one model",
+     "link": "/changes/atlantic-circulation/"
+    },
+    {
+     "change": "amoc",
+     "sector": "energy",
+     "text": "Implications of an AMOC collapse for energy demand, agriculture and cold-weather infrastructure are largely unexamined.",
+     "source": "Jongman & Hall (forthcoming), Table 1",
+     "doi": null,
+     "evidence": "assessment",
+     "confidence": "Very limited downstream evidence",
+     "link": "/changes/atlantic-circulation/"
+    },
+    {
+     "change": "amoc",
+     "sector": "food",
+     "text": "In Great Britain, an AMOC collapse would likely cause widespread cessation of arable farming, with losses of agricultural output an order of magnitude larger than from climate change alone. Irrigation could help, but the water and costs needed appear prohibitive.",
+     "source": "Ritchie et al. 2020",
+     "doi": "10.1038/s43016-019-0011-3",
+     "evidence": "model",
+     "confidence": "Conditional on a collapse, whose likelihood this century is disputed (IPCC: medium confidence it will not happen abruptly before 2100)",
+     "link": "/changes/atlantic-circulation/"
+    },
+    {
+     "change": "amoc",
+     "sector": "water",
+     "text": "If the AMOC collapsed, June–August rainfall would fall by about 23–27% in London, Dublin, Amsterdam, Paris and Oslo. All four models agree on drying.",
+     "source": "NAHosMIP data (Jackson, Bellomo et al.), processed by Ocean Turning Points after Ben-Yami et al. 2024",
+     "doi": "10.5281/zenodo.14884357",
+     "evidence": "model",
+     "confidence": "Conditional on a collapse, whose likelihood this century is disputed (IPCC: medium confidence it will not happen abruptly before 2100)",
+     "link": "/changes/atlantic-circulation/",
+     "caveat": "Single model grid cells of 100–250 km from idealised experiments; read as direction and rough size, not a local forecast"
+    },
+    {
+     "change": "amoc",
+     "sector": "fisheries",
+     "text": "In one model study, AMOC weakening on top of climate change cuts marine animal biomass, by up to about 30% for some regions and groups.",
+     "source": "Boot et al. 2025",
+     "doi": "10.1029/2024EF004741",
+     "evidence": "model",
+     "confidence": "Low to medium (Jongman & Hall, forthcoming, Table 1); one model chain",
+     "link": "/changes/atlantic-circulation/"
+    },
+    {
+     "change": "amoc",
+     "sector": "coasts",
+     "text": "During a collapse, dynamic sea level over the North Atlantic rises by up to about 6 mm a year, and by up to 4 mm a year near densely populated coasts.",
+     "source": "van Westen, Katsman & Le Bars 2026",
+     "doi": "10.5194/os-22-1353-2026",
+     "evidence": "model",
+     "confidence": "Medium (Jongman & Hall, forthcoming, Table 1)",
+     "link": "/changes/atlantic-circulation/"
+    },
+    {
+     "change": "amoc",
+     "sector": "finance",
+     "text": "Risk assessments, design standards and adaptation finance typically rely on average projections that dilute the AMOC signal. Of 91 National Adaptation Plans submitted to the UNFCCC, only Ireland's (2025) and Brazil's (2026) mention the AMOC, and only in framing sections.",
+     "source": "Jongman & Hall (forthcoming)",
+     "doi": null,
+     "evidence": "observed",
+     "confidence": "Document review, August 2026",
+     "link": "/changes/atlantic-circulation/"
+    },
+    {
+     "change": "subpolar-gyre",
+     "sector": "coasts",
+     "text": "In the minority of climate models where it happens, a collapse of convection in the subpolar gyre cools the North Atlantic region by about 2–3 °C within about a decade and shifts the jet stream, with more weather extremes in Europe.",
+     "source": "Armstrong McKay et al. 2022",
+     "doi": "10.1126/science.abn7950",
+     "evidence": "model",
+     "confidence": "Medium that abrupt collapse can occur (4 of 35 CMIP6 models, more among those that best match observations); low on the warming level (1.1–3.8 °C)",
+     "link": "/changes/subpolar-gyre/"
+    },
+    {
+     "change": "subpolar-gyre",
+     "sector": "energy",
+     "text": "Northern Europe could face major effects on farming and energy systems from a subpolar gyre collapse, through changed coastal temperatures, rainfall and storms.",
+     "source": "Global Tipping Points Report 2025",
+     "doi": "10.5281/zenodo.18163977",
+     "evidence": "assessment",
+     "confidence": "Low: qualitative expert judgement; not quantified",
+     "link": "/changes/subpolar-gyre/"
+    },
+    {
+     "change": "subpolar-gyre",
+     "sector": "health",
+     "text": "Exceptionally cold water in the subpolar North Atlantic in 2015 was linked to the jet-stream pattern behind that summer's central European heatwave; similar cold anomalies preceded the most extreme European heatwaves since the 1980s.",
+     "source": "Duchez et al. 2016",
+     "doi": "10.1088/1748-9326/11/7/074004",
+     "evidence": "observed",
+     "confidence": "Statistical association",
+     "link": "/changes/subpolar-gyre/"
+    },
+    {
+     "change": "subpolar-gyre",
+     "sector": "fisheries",
+     "text": "The northeast Atlantic blue whiting stock rose with strong year classes in the late 1990s and collapsed after 2005, in step with changes in the subpolar gyre.",
+     "source": "Payne et al. 2012",
+     "doi": "10.1080/17451000.2011.639778",
+     "evidence": "observed",
+     "confidence": "Mechanism unresolved",
+     "link": "/changes/subpolar-gyre/"
+    },
+    {
+     "change": "subpolar-gyre",
+     "sector": "biodiversity",
+     "text": "In one model family, the North Atlantic spring bloom collapses this century, with surface chlorophyll halved and timing shifted by more than 30 days, as winter convection weakens.",
+     "source": "Kelly et al. 2025",
+     "doi": "10.1029/2024JC022284",
+     "evidence": "model",
+     "confidence": "Low: one model family",
+     "link": "/changes/subpolar-gyre/"
+    },
+    {
+     "change": "ice-sheets",
+     "sector": "coasts",
+     "text": "For the Netherlands, extreme Antarctic melt storylines would require sand nourishment up to 20 times larger than today by 2100, close storm-surge barriers more often until permanently, and sharply shorten the expected lifetime of investments.",
+     "source": "Haasnoot et al. 2020",
+     "doi": "10.1088/1748-9326/ab666c",
+     "evidence": "model",
+     "confidence": "Storyline analysis of a low-likelihood, high-impact outcome",
+     "link": "/changes/ice-sheets/"
+    },
+    {
+     "change": "fish",
+     "sector": "fisheries",
+     "text": "By the 2090s under very high emissions, fish biomass in national waters falls by about 34% for Ireland, 25% for Iceland, 22% for the Netherlands and 21% for Norway and the United Kingdom. Under very low emissions the losses are 2–9%.",
+     "source": "Blanchard & Novaglio (eds) 2024, FishMIP projections for FAO",
+     "doi": "10.4060/cd1379en",
+     "evidence": "projection",
+     "confidence": "Ensemble mean; all models agree on a decline",
+     "link": "/changes/fish-on-the-move/"
+    }
+   ]
+  },
+  {
+   "id": "north-america-atlantic",
+   "name": "North America (Atlantic coast)",
+   "summary": "A weaker Atlantic circulation adds to sea-level rise on the northeast coast and, if it collapsed, would cancel much of the expected warming around Nova Scotia and New England. Fish stocks are already shifting north, and Florida's reefs are losing the height that protects the coast.",
+   "items": [
+    {
+     "change": "amoc",
+     "sector": "coasts",
+     "text": "Model projections show a weakening AMOC adding to sea-level rise on the US northeast coast, beyond the global mean.",
+     "source": "Yin et al. 2009",
+     "doi": "10.1038/ngeo462",
+     "evidence": "model",
+     "confidence": "Consistent across model studies; size varies",
+     "link": "/changes/atlantic-circulation/"
+    },
+    {
+     "change": "amoc",
+     "sector": "coasts",
+     "text": "During a collapse, dynamic sea level near densely populated North Atlantic coasts rises by up to about 4 mm a year, comparable to today's global average rate.",
+     "source": "van Westen, Katsman & Le Bars 2026",
+     "doi": "10.5194/os-22-1353-2026",
+     "evidence": "model",
+     "confidence": "Medium (Jongman & Hall, forthcoming, Table 1)",
+     "link": "/changes/atlantic-circulation/"
+    },
+    {
+     "change": "amoc",
+     "sector": "energy",
+     "text": "In a world about 2 °C warmer with a collapsed AMOC, average temperature and frost days at Halifax return to about pre-industrial levels, and once-a-decade cold extremes at New York return to about their pre-industrial level of −22 °C. The collapse cancels most of the regional warming.",
+     "source": "van Westen & Baatsen 2025 (CESM scenario data, processed by Ocean Turning Points)",
+     "doi": "10.1029/2025GL114611",
+     "evidence": "model",
+     "confidence": "One model (CESM); idealised experiment",
+     "link": "/changes/atlantic-circulation/"
+    },
+    {
+     "change": "amoc",
+     "sector": "fisheries",
+     "text": "In model experiments, AMOC weakening causes the strongest marine biomass declines in the North Atlantic, of up to 30% over this century, and up to 17% locally for species important to fisheries.",
+     "source": "Global Tipping Points Report 2025",
+     "doi": "10.5281/zenodo.18163977",
+     "evidence": "model",
+     "confidence": "Low to medium; GTPR 2025 reading of Boot et al. 2025 (one model chain)",
+     "link": "/changes/atlantic-circulation/"
+    },
+    {
+     "change": "fish",
+     "sector": "fisheries",
+     "text": "The Gulf of Maine warmed faster than 99% of the global ocean. Failing to account for warming contributed to overfishing and the collapse of its cod stock.",
+     "source": "Pershing et al. 2015",
+     "doi": "10.1126/science.aac9819",
+     "evidence": "observed",
+     "confidence": "Observations and stock assessment",
+     "link": "/changes/fish-on-the-move/"
+    },
+    {
+     "change": "fish",
+     "sector": "fisheries",
+     "text": "Surveys around North America from 1968 to 2011 show that marine species shifted in latitude and depth in step with local warming.",
+     "source": "Pinsky et al. 2013",
+     "doi": "10.1126/science.1239352",
+     "evidence": "observed",
+     "confidence": "360 taxa",
+     "link": "/changes/fish-on-the-move/"
+    },
+    {
+     "change": "fish",
+     "sector": "biodiversity",
+     "text": "Cod fisheries can pass tipping points; Newfoundland's cod took more than two decades to recover only partly after its collapse.",
+     "source": "Global Tipping Points Report 2023",
+     "doi": null,
+     "evidence": "assessment",
+     "confidence": "High confidence (GTPR 2023)",
+     "link": "/changes/fish-on-the-move/",
+     "url": "https://report-2023.global-tipping-points.org/"
+    },
+    {
+     "change": "fish",
+     "sector": "fisheries",
+     "text": "By the 2090s under very high emissions, fish biomass in national waters falls by about 29% for the United States and 17% for Canada (whole national waters). Under very low emissions the losses are 4–10%.",
+     "source": "Blanchard & Novaglio (eds) 2024, FishMIP projections for FAO",
+     "doi": "10.4060/cd1379en",
+     "evidence": "projection",
+     "confidence": "Ensemble mean; 90–100% model agreement",
+     "link": "/changes/fish-on-the-move/"
+    },
+    {
+     "change": "coral-reefs",
+     "sector": "coasts",
+     "text": "In Florida, projected reef degradation would add more than 7,300 people and 1,400 buildings to those at risk of coastal flooding each year, with about US$412 million in building damage and US$438 million a year in economic disruption.",
+     "source": "Storlazzi et al. 2026",
+     "doi": "10.1029/2025EF006255",
+     "evidence": "model",
+     "confidence": "Flood model with projected reef erosion (2024 US$)",
+     "link": "/changes/coral-reefs/"
+    },
+    {
+     "change": "coral-reefs",
+     "sector": "coasts",
+     "text": "No Florida reef site measured is growing faster than recent sea-level rise. Water above Florida reefs deepens by about 0.5 m by 2100 under very low emissions and 1.1 m under very high emissions.",
+     "source": "Perry et al. 2025",
+     "doi": "10.1038/s41586-025-09439-4",
+     "evidence": "projection",
+     "confidence": "Site measurements combined with projections",
+     "link": "/changes/coral-reefs/"
+    },
+    {
+     "change": "ice-sheets",
+     "sector": "coasts",
+     "text": "Because of gravitational effects, ice lost from West Antarctica raises sea level by more than the global average along US coasts.",
+     "source": "Mitrovica et al. 2009",
+     "doi": "10.1126/science.1166510",
+     "evidence": "model",
+     "confidence": "Well-established physics; amount depends on ice loss",
+     "link": "/changes/ice-sheets/"
+    },
+    {
+     "change": "sea-level",
+     "sector": "finance",
+     "text": "By 2100, extreme sea levels that used to occur once a century are projected to occur at least once a year at more than half of tide-gauge locations worldwide, which changes flood return periods and insurance pricing long before mean rise reaches a metre.",
+     "source": "IPCC 2021",
+     "doi": "10.1017/9781009157896.001",
+     "evidence": "projection",
+     "confidence": "High confidence (IPCC)",
+     "link": "/changes/ice-sheets/"
+    }
+   ]
+  },
+  {
+   "id": "australia-nz",
+   "name": "Australia and New Zealand",
+   "summary": "El Niño drives drought, lower wheat harvests and fire weather in eastern Australia, and a more El Niño-like Pacific would add to this. Repeated bleaching is reshaping the Great Barrier Reef. Change in the Southern Ocean is already measurable south of Australia.",
+   "items": [
+    {
+     "change": "el-nino",
+     "sector": "food",
+     "text": "Australian wheat production has averaged 15% below normal in the strong and very strong El Niño events since 1980.",
+     "source": "FEWS NET 2026, El Niño special report (6 Oct 2026)",
+     "doi": null,
+     "evidence": "observed",
+     "confidence": "Agency statement; underlying data source not given",
+     "link": "/changes/el-nino/",
+     "url": "https://fews.net/global/special-report/october-2026"
+    },
+    {
+     "change": "el-nino",
+     "sector": "biodiversity",
+     "text": "El Niño is the main driver of year-to-year swings in fire weather for most of Australia, with the strongest effect in the east.",
+     "source": "Harris & Lucas 2019",
+     "doi": "10.1371/journal.pone.0222328",
+     "evidence": "observed",
+     "confidence": "39 stations, 1973–2017",
+     "link": "/changes/el-nino/"
+    },
+    {
+     "change": "el-nino",
+     "sector": "water",
+     "text": "Winter–spring droughts become more frequent across Australia under high emissions, and El Niño-driven rainfall variability is projected to increase in several regions, including the Monsoonal North and the Southern and Southwestern Flatlands.",
+     "source": "Delage & Power 2020",
+     "doi": "10.1007/s00382-020-05235-0",
+     "evidence": "projection",
+     "confidence": "24 CMIP5 models; models simulate the El Niño–Australia rainfall link poorly",
+     "link": "/changes/el-nino/"
+    },
+    {
+     "change": "el-nino",
+     "sector": "water",
+     "text": "A model study finds persistent rainfall changes over Australia linked to an El Niño-like Pacific that lasts for centuries after net zero.",
+     "source": "Sengupta et al. 2026",
+     "doi": "10.1038/s43247-026-04082-x",
+     "evidence": "model",
+     "confidence": "Low to medium: no quantified Australian rainfall change; observations so far point the other way",
+     "link": "/changes/el-nino/"
+    },
+    {
+     "change": "coral-reefs",
+     "sector": "biodiversity",
+     "text": "During the 2016 mass bleaching on the Great Barrier Reef, water quality and fishing pressure made little difference to how much bleaching occurred. Local protection helps recovery but does little to prevent bleaching.",
+     "source": "Hughes et al. 2017",
+     "doi": "10.1038/nature21707",
+     "evidence": "observed",
+     "confidence": "Aerial and underwater surveys",
+     "link": "/changes/coral-reefs/"
+    },
+    {
+     "change": "coral-reefs",
+     "sector": "biodiversity",
+     "text": "Reefs can recover when given time: at Scott Reef off north-western Australia, coral cover rose from 9% to 44% within 12 years of severe bleaching.",
+     "source": "Gilmour et al. 2013",
+     "doi": "10.1126/science.1232310",
+     "evidence": "observed",
+     "confidence": "Long-term monitoring",
+     "link": "/changes/coral-reefs/"
+    },
+    {
+     "change": "coral-reefs",
+     "sector": "tourism",
+     "text": "Reef tourism is worth about US$2.2 billion a year in Australia.",
+     "source": "Spalding et al. 2017",
+     "doi": "10.1016/j.marpol.2017.05.014",
+     "evidence": "observed",
+     "confidence": "Present-day valuation estimate",
+     "link": "/changes/coral-reefs/"
+    },
+    {
+     "change": "southern-ocean",
+     "sector": "biodiversity",
+     "text": "Bottom-water export from the Australian Antarctic Basin fell by 4.0 Sv between 1994 and 2009 before partly recovering, leaving the deep ocean with less oxygen.",
+     "source": "Gunn et al. 2023",
+     "doi": "10.1038/s41558-023-01667-8",
+     "evidence": "observed",
+     "confidence": "Repeat ship measurements",
+     "link": "/changes/southern-ocean/"
+    },
+    {
+     "change": "southern-ocean",
+     "sector": "water",
+     "text": "In one model study, meltwater from Antarctica enhances drying in the Southern Hemisphere.",
+     "source": "Bronselaer et al. 2018",
+     "doi": "10.1038/s41586-018-0712-z",
+     "evidence": "model",
+     "confidence": "Low: one model study",
+     "link": "/changes/southern-ocean/"
+    },
+    {
+     "change": "amoc",
+     "sector": "water",
+     "text": "If the AMOC collapsed, northern Australia would get wetter summers, while southern Australia and New Zealand would become drier year-round.",
+     "source": "Global Tipping Points Report 2025",
+     "doi": "10.5281/zenodo.18163977",
+     "evidence": "assessment",
+     "confidence": "Low: a few model studies",
+     "link": "/changes/atlantic-circulation/"
+    },
+    {
+     "change": "fish",
+     "sector": "fisheries",
+     "text": "By the 2090s under very high emissions, fish biomass in national waters falls by about 22% for Australia and 27% for New Zealand. Under very low emissions the losses are about 7%.",
+     "source": "Blanchard & Novaglio (eds) 2024, FishMIP projections for FAO",
+     "doi": "10.4060/cd1379en",
+     "evidence": "projection",
+     "confidence": "Ensemble mean of FishMIP models; all models agree on a decline for the countries named",
+     "link": "/changes/fish-on-the-move/"
+    }
+   ]
+  },
+  {
+   "id": "east-asia",
+   "name": "East Asia",
+   "summary": "Fish losses are projected to be among the largest outside the tropics, and many new shared stocks will move into the region's waters. An El Niño-like Pacific and a weaker Atlantic circulation would both alter monsoon rainfall, although the effects are smaller than in South Asia.",
+   "items": [
+    {
+     "change": "fish",
+     "sector": "fisheries",
+     "text": "By the 2090s under very high emissions, fish biomass in national waters falls by about 32% for Japan, 31% for China and the Republic of Korea. Under very low emissions the losses are 7–9%.",
+     "source": "Blanchard & Novaglio (eds) 2024, FishMIP projections for FAO",
+     "doi": "10.4060/cd1379en",
+     "evidence": "projection",
+     "confidence": "Ensemble mean; 90–100% model agreement",
+     "link": "/changes/fish-on-the-move/"
+    },
+    {
+     "change": "fish",
+     "sector": "finance",
+     "text": "As species shift, East Asia could gain about ten new shared fish stocks by 2100, and fisheries governance is substantially underprepared.",
+     "source": "Pinsky et al. 2018",
+     "doi": "10.1126/science.aat2360",
+     "evidence": "projection",
+     "confidence": "Numbers from the authors' institutional summary; paper not open access",
+     "link": "/changes/fish-on-the-move/"
+    },
+    {
+     "change": "fish",
+     "sector": "fisheries",
+     "text": "China is among the countries projected to lose the most catch potential by 2055 under high emissions.",
+     "source": "Cheung et al. 2010",
+     "doi": "10.1111/j.1365-2486.2009.01995.x",
+     "evidence": "projection",
+     "confidence": "Single model study",
+     "link": "/changes/fish-on-the-move/"
+    },
+    {
+     "change": "el-nino",
+     "sector": "water",
+     "text": "A model study finds persistent rainfall changes over East Asia linked to an El Niño-like Pacific that lasts for centuries after net zero.",
+     "source": "Sengupta et al. 2026",
+     "doi": "10.1038/s43247-026-04082-x",
+     "evidence": "model",
+     "confidence": "Low to medium: no quantified regional change; observations so far point the other way",
+     "link": "/changes/el-nino/"
+    },
+    {
+     "change": "amoc",
+     "sector": "water",
+     "text": "If the AMOC collapsed, East Asian summer monsoon rainfall would fall by about 4% on average across four models, much less than in West Africa or India.",
+     "source": "Ben-Yami et al. 2024",
+     "doi": "10.1029/2023EF003959",
+     "evidence": "model",
+     "confidence": "Medium: all four models agree on the direction; the amount varies widely between models (Jongman & Hall, forthcoming, Table 1)",
+     "link": "/changes/atlantic-circulation/"
+    },
+    {
+     "change": "coral-reefs",
+     "sector": "fisheries",
+     "text": "About 190,000 people fish on reefs in China (2010 estimate).",
+     "source": "Teh, Teh & Sumaila 2013",
+     "doi": "10.1371/journal.pone.0065397",
+     "evidence": "observed",
+     "confidence": "Estimate includes part-time fishers and gleaners",
+     "link": "/changes/coral-reefs/"
+    }
+   ]
+  }
+ ],
+ "global": [
+  {
+   "change": "sea-level",
+   "sector": "coasts",
+   "text": "Global sea level will keep rising for centuries under every scenario. The IPCC likely range for 2100 is 0.28–0.55 m under very low emissions and 0.63–1.01 m under very high emissions (relative to 1995–2014).",
+   "source": "IPCC 2021",
+   "doi": "10.1017/9781009157896.001",
+   "evidence": "projection",
+   "confidence": "Medium confidence in the likely ranges (IPCC); virtually certain that rise continues",
+   "link": "/changes/ice-sheets/"
+  },
+  {
+   "change": "ice-sheets",
+   "sector": "coasts",
+   "text": "Under very high emissions, a rise approaching 2 m by 2100 cannot be ruled out because of deep uncertainty about ice sheets.",
+   "source": "IPCC 2021",
+   "doi": "10.1017/9781009157896.001",
+   "evidence": "projection",
+   "confidence": "Low confidence (IPCC): includes poorly understood ice-sheet processes; a low-likelihood, high-impact outcome",
+   "link": "/changes/ice-sheets/"
+  },
+  {
+   "change": "sea-level",
+   "sector": "coasts",
+   "text": "Over the past two decades the average coastal resident experienced 7.8–9.9 mm a year of relative sea-level rise, about three times the global mean, because many live on sinking land.",
+   "source": "Nicholls et al. 2021",
+   "doi": "10.1038/s41558-021-00993-z",
+   "evidence": "observed",
+   "confidence": "Global analysis of subsidence and tide-gauge data",
+   "link": "/changes/ice-sheets/"
+  },
+  {
+   "change": "marine-heatwaves",
+   "sector": "biodiversity",
+   "text": "Marine heatwaves have doubled in frequency over the past century. By 2081–2100 they are projected to be about 20 times more frequent than in 1850–1900 under low emissions and 50 times under high emissions.",
+   "source": "Cooley et al. 2022 (IPCC AR6 WGII, Chapter 3)",
+   "doi": "10.1017/9781009325844.005",
+   "evidence": "projection",
+   "confidence": "Medium confidence for the multipliers (IPCC SROCC, quoted in AR6)",
+   "link": "/ocean-now/"
+  },
+  {
+   "change": "acidification",
+   "sector": "biodiversity",
+   "text": "Seawater pH has declined globally over the past 40 years, mainly because of human CO2 emissions, and acidification will keep increasing this century under all scenarios.",
+   "source": "IPCC 2021 (Technical Summary)",
+   "doi": "10.1017/9781009157896.002",
+   "evidence": "observed",
+   "confidence": "Virtually certain (IPCC)",
+   "link": null
+  },
+  {
+   "change": "acidification",
+   "sector": "fisheries",
+   "text": "The present effect of acidification on global fish and shellfish harvests cannot yet be assessed. Losses in North American Pacific shellfish farming in the 2000s remain the clearest example of harm.",
+   "source": "Cooley et al. 2022 (IPCC AR6 WGII, Chapter 3)",
+   "doi": "10.1017/9781009325844.005",
+   "evidence": "assessment",
+   "confidence": "Limited evidence (IPCC)",
+   "link": null
+  },
+  {
+   "change": "fish",
+   "sector": "fisheries",
+   "text": "Marine animal biomass falls by about 5% for every degree of warming, with larger losses for bigger animals higher in the food chain.",
+   "source": "Lotze et al. 2019",
+   "doi": "10.1073/pnas.1900194116",
+   "evidence": "projection",
+   "confidence": "Multi-model ensemble; medium confidence (IPCC)",
+   "link": "/changes/fish-on-the-move/"
+  },
+  {
+   "change": "fish",
+   "sector": "food",
+   "text": "Under very high emissions, almost 90% of about 25,000 marine species are at high or critical risk; cutting emissions lowers risk for almost all of them and benefits food-insecure people in low-income countries most.",
+   "source": "Boyce et al. 2022",
+   "doi": "10.1038/s41558-022-01437-y",
+   "evidence": "projection",
+   "confidence": "Climate risk index",
+   "link": "/changes/fish-on-the-move/"
+  }
+ ]
+}

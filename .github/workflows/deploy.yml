@@ -54,6 +54,8 @@ jobs:
           BASE_PATH: ${{ steps.pages.outputs.base_path }}
           # Full public address, used for canonical links and share images
           NEXT_PUBLIC_SITE_URL: ${{ steps.pages.outputs.base_url }}
+          NEXT_PUBLIC_GOATCOUNTER: ${{ vars.GOATCOUNTER_CODE }}
+          NEXT_PUBLIC_CF_BEACON: ${{ vars.CF_BEACON_TOKEN }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out

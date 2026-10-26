@@ -3,10 +3,12 @@ import path from "node:path";
 import type { Metadata } from "next";
 import StoryBrief from "@/components/StoryBrief";
 import Link from "next/link";
+import DecisionLens from "@/components/DecisionLens";
 import CommitmentChart from "@/components/CommitmentChart";
 import IceSheetCities, { type City } from "@/components/IceSheetCities";
 import { GlobalProjectionChart, IceSheetChart, type SeaLevelData } from "@/components/SeaLevelCharts";
 import ThresholdChart, { OCEAN_THRESHOLDS } from "@/components/ThresholdChart";
+import { ArticleLd } from "@/components/JsonLd";
 import { abs } from "@/lib/site";
 import styles from "../coral-reefs/coral.module.css";
 import own from "./icesheets.module.css";
@@ -15,7 +17,7 @@ const TITLE = "What if the ice sheets pass their tipping points?";
 const DESCRIPTION = "Greenland and West Antarctica have tipping points that would lock in metres of sea-level rise. Where the thresholds lie, whether they have been crossed, how much rise each level of warming commits, how fast it could come, and what it means for coastal investments.";
 
 export const metadata: Metadata = {
-  title: TITLE,
+  title: "Ice-sheet tipping points and sea-level rise",
   description: DESCRIPTION,
   alternates: { canonical: abs("/changes/ice-sheets/") },
   openGraph: { title: TITLE, description: DESCRIPTION, url: abs("/changes/ice-sheets/"), images: [abs("/og/science.png")], type: "article", siteName: "Ocean Turning Points" },
@@ -29,6 +31,7 @@ export default function IceSheetsPage() {
   const lost = d.iceSheets.series.greenland.at(-1)![1] + d.iceSheets.series.antarctica.at(-1)![1];
   return (
     <article>
+      <ArticleLd path="/changes/ice-sheets/" title={TITLE} description={DESCRIPTION} about={["Greenland ice sheet", "West Antarctic ice sheet", "Sea-level rise", "Climate tipping points"]} />
       <header className={`wrap ${styles.hero}`}>
         <div>
           <p className="label"><Link href="/changes/">Big changes</Link> · Ice sheets</p>
@@ -43,7 +46,7 @@ export default function IceSheetsPage() {
           <StoryBrief answers={[
             ["Greenland and Antarctica hold enough ice to raise the sea by about 65 m. Past a threshold, feedbacks keep an ice sheet shrinking even if warming stops.", "#commit"],
             ["High confidence that both have tipping points, at risk since about 1°C of warming; whether parts of West Antarctica have already passed one is disputed.", "#threshold"],
-            ["Metres of sea-level rise locked in over centuries to millennia. How fast it comes is the big unknown for coastal cities, deltas and islands.", "#coasts"],
+            ["Metres of sea-level rise locked in over centuries to millennia. How fast it comes is the main uncertainty for coastal cities, deltas and islands.", "#coasts"],
             ["Keep peak warming as low as possible and bring it back towards 1°C; plan ports, defences and new districts for a high-end rise.", "#decide"],
           ]} />
         </div>
@@ -53,7 +56,7 @@ export default function IceSheetsPage() {
         <div className={`wrap ${styles.split}`}>
           <div className="prose">
             <p className="kicker">The stakes</p>
-            <h2 id="commit">Peak warming sets how far the sea will eventually rise</h2>
+            <h2 id="commit">Long-term sea-level rise by peak warming</h2>
             <p>
               Ice sheets respond slowly, so today’s warming will play out over centuries. The IPCC estimates that over the next 2,000
               years sea level will rise by about 2–3 m if warming is limited to 1.5°C, 2–6 m if it is limited to 2°C, and 19–22 m at
@@ -78,7 +81,7 @@ export default function IceSheetsPage() {
       <section className="section section--alt" aria-labelledby="threshold">
         <div className="wrap">
           <p className="kicker">Thresholds</p>
-          <h2 id="threshold" className={styles.h2}>At risk since about 1°C, and possibly already crossed</h2>
+          <h2 id="threshold" className={styles.h2}>Thresholds and evidence of crossing</h2>
           <div className={styles.split}>
             <div className="prose">
               <p>
@@ -138,7 +141,7 @@ export default function IceSheetsPage() {
       <section className="section section--alt" aria-labelledby="speed">
         <div className="wrap">
           <p className="kicker">How fast</p>
-          <h2 id="speed" className={styles.h2}>The timing is the big unknown</h2>
+          <h2 id="speed" className={styles.h2}>Projections to 2300</h2>
           <div className={styles.split}>
             <div className="prose">
               <p>
@@ -175,7 +178,7 @@ export default function IceSheetsPage() {
       <section className="section section--alt" aria-labelledby="decide">
         <div className="wrap">
           <p className="kicker">What decision-makers can do</p>
-          <h2 id="decide" className={styles.h2}>Plan for metres of rise, and watch the timing</h2>
+          <h2 id="decide" className={styles.h2}>Planning for high-end sea-level rise</h2>
           <div className={styles.responses}>
             <div>
               <h3>Keep peak warming as low as possible</h3>
@@ -229,6 +232,11 @@ export default function IceSheetsPage() {
               </p>
             </article>
           </div>
+        </div>
+        <div className="wrap" style={{ marginTop: "2.5rem" }}>
+          <h3 style={{ fontSize: "1.2rem", marginBottom: "0.9rem" }}>Which decisions should change</h3>
+          <DecisionLens change="ice-sheets" />
+          <p className="small" style={{ marginTop: "1rem" }}><Link className="more" href="/impacts/?change=ice-sheets">What this change means region by region and sector by sector</Link></p>
         </div>
       </section>
 

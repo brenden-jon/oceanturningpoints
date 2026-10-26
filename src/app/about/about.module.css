@@ -17,3 +17,4 @@
   .grid { grid-template-columns: minmax(0, 1fr); }
   .pubs { position: static; }
 }
+.pubGroup { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-3); margin: 1.4rem 0 0.4rem; font-weight: 650; }

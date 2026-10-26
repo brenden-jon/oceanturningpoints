@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PathwaysChart from "@/components/PathwaysChart";
 import { MpaCoverageChart, MpaMap, ProtectionFinanceChart, ProtectionQuality } from "@/components/ProtectionCharts";
+import { ArticleLd } from "@/components/JsonLd";
 import { abs } from "@/lib/site";
 import { WDPA_CITATION } from "@/lib/wdpa";
 import styles from "../changes/coral-reefs/coral.module.css";
@@ -11,7 +12,7 @@ const TITLE = "What can be done about the big ocean changes?";
 const DESCRIPTION = "How far emissions must fall to keep ocean and ice tipping points out of reach, what marine protection can and cannot do to make the ocean more resilient, every marine protected area on one map, and how protection is paid for.";
 
 export const metadata: Metadata = {
-  title: "What can be done",
+  title: "What can be done: emissions, marine protection and ocean finance",
   description: DESCRIPTION,
   alternates: { canonical: abs("/responses/") },
   openGraph: { title: TITLE, description: DESCRIPTION, url: abs("/responses/"), images: [abs("/og/science.png")], type: "article", siteName: "Ocean Turning Points" },
@@ -20,6 +21,7 @@ export const metadata: Metadata = {
 export default function ResponsesPage() {
   return (
     <article>
+      <ArticleLd path="/responses/" title={TITLE} description={DESCRIPTION} about={["Climate mitigation", "Marine protected areas", "30x30", "Ocean finance"]} />
       <header className={`wrap ${styles.hero}`}>
         <div>
           <p className="label">What can be done</p>
@@ -100,7 +102,7 @@ export default function ResponsesPage() {
       <section className="section section--alt" aria-labelledby="protect">
         <div className="wrap">
           <p className="kicker">2 · Protect the ocean</p>
-          <h2 id="protect" className={styles.h2}>Make the ocean as resilient as possible now</h2>
+          <h2 id="protect" className={styles.h2}>Protecting the ocean now</h2>
           <div className={`prose ${own.lead}`}>
             <p>
               Warming sets the pressure; local pressures decide how much a system can take. Overfishing, pollution and habitat loss can
@@ -154,7 +156,7 @@ export default function ResponsesPage() {
       <section className="section" aria-labelledby="recover">
         <div className="wrap">
           <p className="kicker">The ocean can recover</p>
-          <h2 id="recover" className={styles.h2}>Where pressure is lifted, marine life comes back</h2>
+          <h2 id="recover" className={styles.h2}>Examples of recovery</h2>
           <div className={`prose ${own.lead}`}>
             <p>
               The changes on this site are serious, but they are not the whole story. Marine life recovers, often faster than expected,
@@ -234,7 +236,7 @@ export default function ResponsesPage() {
       <section className="section" aria-labelledby="plan">
         <div className="wrap">
           <p className="kicker">Plan for what cannot be avoided</p>
-          <h2 id="plan" className={styles.h2}>Every big change has its own decisions</h2>
+          <h2 id="plan" className={styles.h2}>Decisions for each change</h2>
           <div className={`${styles.responses} ${own.planCards}`}>
             <div><h3><Link href="/changes/el-nino/#decide">El Niño</Link></h3><p>Act on forecasts with agreed triggers and pre-arranged finance; size reserves and insurance for stronger events.</p></div>
             <div><h3><Link href="/changes/coral-reefs/#responses">Coral reefs</Link></h3><p>Protect the reefs most likely to survive, support reef fishers through change, and plan for weaker natural coastal defences.</p></div>

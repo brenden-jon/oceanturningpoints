@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import MonitoringMap from "@/components/MonitoringMap";
 import ObservingRecords from "@/components/ObservingRecords";
+import { ArticleLd } from "@/components/JsonLd";
 import { abs } from "@/lib/site";
 import styles from "../changes/coral-reefs/coral.module.css";
 import own from "./monitoring.module.css";
@@ -10,7 +11,7 @@ const TITLE = "Who is watching the ocean?";
 const DESCRIPTION = "The floats, moorings, ships, tide gauges and satellites that observe the ocean, who runs them, what satellites can and cannot see, and why long, unbroken records matter for decisions on the big ocean changes.";
 
 export const metadata: Metadata = {
-  title: "Ocean monitoring",
+  title: "Ocean monitoring: map of Argo floats, buoys, tide gauges and AMOC arrays",
   description: DESCRIPTION,
   alternates: { canonical: abs("/monitoring/") },
   openGraph: { title: TITLE, description: DESCRIPTION, url: abs("/monitoring/"), images: [abs("/og/science.png")], type: "article", siteName: "Ocean Turning Points" },
@@ -19,6 +20,7 @@ export const metadata: Metadata = {
 export default function MonitoringPage() {
   return (
     <article>
+      <ArticleLd path="/monitoring/" title={TITLE} description={DESCRIPTION} about={["Global Ocean Observing System", "Argo", "Ocean observation", "RAPID array", "OceanEye"]} />
       <header className={`wrap ${styles.hero}`}>
         <div>
           <p className="label"><Link href="/responses/">What can be done</Link> · Monitoring</p>
@@ -40,7 +42,7 @@ export default function MonitoringPage() {
       <section className="section" aria-labelledby="today">
         <div className="wrap">
           <p className="kicker">The system today</p>
-          <h2 id="today" className={styles.h2}>A global system that no one owns</h2>
+          <h2 id="today" className={styles.h2}>Status of the global observing system</h2>
           <ul className={own.stats}>
             <li><b>9,389</b><span>platforms in the Global Ocean Observing System, from 64 contributing countries, making more than 120,000 observations a day (GOOS, 2025).</span></li>
             <li><b>~4,000</b><span>Argo floats measure temperature and salinity in the top 2,000 m of the ocean; the programme passed 3 million profiles in 2024.</span></li>
@@ -58,7 +60,7 @@ export default function MonitoringPage() {
       <section className="section section--alt" aria-labelledby="see">
         <div className="wrap">
           <p className="kicker">Satellites and sensors in the water</p>
-          <h2 id="see" className={styles.h2}>What satellites can see, and what they cannot</h2>
+          <h2 id="see" className={styles.h2}>Satellite and in-water observations compared</h2>
           <div className={own.two}>
             <div className={own.card}>
               <h3>From space</h3>
@@ -116,8 +118,8 @@ export default function MonitoringPage() {
 
       <section className="section section--alt" aria-labelledby="flux">
         <div className="wrap">
-          <p className="kicker">2026: a system in flux</p>
-          <h2 id="flux" className={styles.h2}>Cuts and new commitments, months apart</h2>
+          <p className="kicker">2026</p>
+          <h2 id="flux" className={styles.h2}>Funding changes in 2026</h2>
           <ol className={own.timeline}>
             <li><time>21 May</time><p>The US National Science Foundation begins removing four of the five arrays of its Ocean Observatories Initiative, including the Irminger Sea array south of Greenland.</p></li>
             <li><time>18 June</time><p>After the US Senate passes a bill to save the observatories, NSF stops the removal; one array already out of the water is to be redeployed.</p></li>

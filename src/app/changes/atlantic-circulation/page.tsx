@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import { ArticleLd } from "@/components/JsonLd";
 import { abs, asset } from "@/lib/site";
 import StoryBrief from "@/components/StoryBrief";
 import Link from "next/link";
+import DecisionLens from "@/components/DecisionLens";
 import { HysteresisChart, ObservedChart, ScenarioRunsChart } from "@/components/AmocCharts";
 import AmocExplorer from "@/components/AmocExplorer";
 import ExplorerLink from "@/components/ExplorerLink";
@@ -14,7 +16,7 @@ const DESCRIPTION =
   "Explore published climate-model experiments of an AMOC collapse: colder winters in northwest Europe in a warming world, and weaker monsoons across West Africa and South Asia.";
 
 export const metadata: Metadata = {
-  title: TITLE,
+  title: "AMOC collapse: what would happen if the Atlantic circulation collapsed?",
   description: DESCRIPTION,
   alternates: { canonical: abs("/changes/atlantic-circulation/") },
   openGraph: { title: TITLE, description: DESCRIPTION, url: abs("/changes/atlantic-circulation/"), images: [abs("/og/amoc-collapse.png")], type: "article", siteName: "Ocean Turning Points" },
@@ -70,6 +72,7 @@ export default function AmocPage() {
 
   return (
     <article>
+      <ArticleLd path="/changes/atlantic-circulation/" title={TITLE} description={DESCRIPTION} about={["Atlantic Meridional Overturning Circulation", "AMOC collapse", "Climate tipping points", "West African monsoon", "Indian summer monsoon"]} />
       <header className={`wrap ${styles.hero}`}>
         <div>
           <p className="label"><Link href="/changes/">Big changes</Link> · Atlantic circulation</p>
@@ -103,7 +106,7 @@ export default function AmocPage() {
         </figure>
         <div className="prose">
           <p className="kicker">What it is</p>
-          <h2 id="what">An ocean conveyor that moves heat north</h2>
+          <h2 id="what">How the Atlantic circulation works</h2>
           <p>
             Warm, salty water flows north near the surface of the Atlantic, through the Gulf Stream and on towards Greenland and
             Norway. There it gives up its heat to the air, becomes cold and dense, and sinks. It returns south at depth and spreads
@@ -323,7 +326,7 @@ export default function AmocPage() {
         <div className={`wrap ${styles.split}`}>
           <div className="prose">
             <p className="kicker">Why it matters for decisions</p>
-            <h2 id="decide" className={styles.h2}>Planning for a risk that may not happen</h2>
+            <h2 id="decide" className={styles.h2}>Planning for a low-likelihood, high-impact risk</h2>
             <p>
               On current evidence a collapse this century is a low-likelihood, high-impact risk, and its likelihood is disputed.
               Planning for it should not displace adaptation that is needed now. Dams, ports, irrigation schemes and crop programmes built today will still be in use when the question is
@@ -343,6 +346,11 @@ export default function AmocPage() {
         <p className={`wrap small muted ${styles.attrib}`}>
           These steps follow Jongman and Hall (forthcoming). <Link href="/about/">Brenden Jongman</Link> is the curator of this site.
         </p>
+        <div className="wrap" style={{ marginTop: "2.5rem" }}>
+          <h3 style={{ fontSize: "1.2rem", marginBottom: "0.9rem" }}>Which decisions should change</h3>
+          <DecisionLens change="amoc" />
+          <p className="small" style={{ marginTop: "1rem" }}><Link className="more" href="/impacts/?change=amoc">What this change means region by region and sector by sector</Link></p>
+        </div>
       </section>
 
       <section className="section" aria-labelledby="data">

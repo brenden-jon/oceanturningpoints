@@ -168,7 +168,7 @@ export default function Home() {
           <div>
             <h2 id="people" className={styles.h2}>Why it matters for development and decisions</h2>
             <p className="lede">
-              Ocean change reaches economies through rainfall, coasts, extreme weather and food. The countries with most at stake are
+              Ocean change reaches economies through rainfall, coasts, extreme weather and food. The countries most exposed are
               often far from the ocean systems that are changing, and many have the least room to absorb a shock.
             </p>
           </div>
@@ -183,7 +183,19 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section" aria-labelledby="act">
+      <section className="section" aria-labelledby="decide">
+        <div className="wrap">
+          <h2 id="decide" className={styles.h2}>Making decisions in a changing ocean</h2>
+          <ul className={styles.principles}>
+            <li><h3><Link href="/future/">The future ocean</Link></h3><p>What is already expected, such as 0.4–0.8 m of sea-level rise by 2100 under current policies, and three possible futures with their tipping risks.</p></li>
+            <li><h3><Link href="/impacts/">Impacts in your region</Link></h3><p>What the big changes mean for food, water, coasts, fisheries, health and public finance in thirteen regions.</p></li>
+            <li><h3><Link href="/decisions/">How to decide</Link></h3><p>Which decisions to change now, which to assess first and which are robust: adaptive pathways, stress tests and no-regret options.</p></li>
+            <li><h3><Link href="/science/latest/">Latest research</Link></h3><p>New studies on the big changes, with plain-English summaries, updated regularly.</p></li>
+          </ul>
+        </div>
+      </section>
+
+      <section className="section section--alt" aria-labelledby="act">
         <div className="wrap">
           <h2 id="act" className={styles.h2}>What can be done</h2>
           <ul className={styles.principles}>
@@ -195,7 +207,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section section--alt" aria-labelledby="how">
+      <section className="section" aria-labelledby="how">
         <div className="wrap">
           <h2 id="how" className={styles.h2}>How we work</h2>
           <ul className={styles.principles}>

@@ -2,9 +2,11 @@ import fs from "node:fs";
 import path from "node:path";
 import type { Metadata } from "next";
 import Link from "next/link";
+import DecisionLens from "@/components/DecisionLens";
 import FishMap from "@/components/FishMap";
 import HBars from "@/components/HBars";
 import StoryBrief from "@/components/StoryBrief";
+import { ArticleLd } from "@/components/JsonLd";
 import { abs } from "@/lib/site";
 import styles from "../coral-reefs/coral.module.css";
 import own from "./fish.module.css";
@@ -13,7 +15,7 @@ const TITLE = "Where will the fish go?";
 const DESCRIPTION = "Warming is shrinking the fish the ocean can hold and moving stocks towards the poles and across borders. Projections for every coastal country, the die-offs already seen, who depends most on fish, and what can be done.";
 
 export const metadata: Metadata = {
-  title: "Fish on the move",
+  title: "Climate change and fisheries: where will the fish go?",
   description: DESCRIPTION,
   alternates: { canonical: abs("/changes/fish-on-the-move/") },
   openGraph: { title: TITLE, description: DESCRIPTION, url: abs("/changes/fish-on-the-move/"), images: [abs("/og/science.png")], type: "article", siteName: "Ocean Turning Points" },
@@ -26,6 +28,7 @@ export default function FishPage() {
   const conts = Object.entries(s.continents).sort((a, b) => a[1].ssp585_2100 - b[1].ssp585_2100);
   return (
     <article>
+      <ArticleLd path="/changes/fish-on-the-move/" title={TITLE} description={DESCRIPTION} about={["Fisheries", "Climate change", "Marine heatwaves", "Food security"]} />
       <header className={`wrap ${styles.hero}`}>
         <div>
           <p className="label"><Link href="/changes/">Big changes</Link> · Fish on the move</p>
@@ -57,7 +60,7 @@ export default function FishPage() {
       <section className="section" aria-labelledby="observed">
         <div className="wrap">
           <p className="kicker">What we observe</p>
-          <h2 id="observed" className={styles.h2}>Fish are already moving, and some stocks have collapsed</h2>
+          <h2 id="observed" className={styles.h2}>Observed shifts and collapses</h2>
           <div className={styles.split} style={{ alignItems: "start" }}>
             <div className="prose">
               <p>
@@ -85,7 +88,7 @@ export default function FishPage() {
       <section className="section section--alt" aria-labelledby="likely">
         <div className="wrap">
           <p className="kicker">How likely</p>
-          <h2 id="likely" className={styles.h2}>Less fish almost everywhere if emissions stay high</h2>
+          <h2 id="likely" className={styles.h2}>Projected fish biomass by country</h2>
           <div className={styles.split} style={{ alignItems: "start" }}>
             <div className="prose">
               <p>
@@ -152,7 +155,7 @@ export default function FishPage() {
       <section className="section section--alt" aria-labelledby="decide">
         <div className="wrap">
           <p className="kicker">What can be done</p>
-          <h2 id="decide" className={styles.h2}>Healthy stocks cope better with a warming ocean</h2>
+          <h2 id="decide" className={styles.h2}>Emissions, fisheries management and protection</h2>
           <div className={styles.responses}>
             <div>
               <h3>Limit warming</h3>
@@ -186,6 +189,11 @@ export default function FishPage() {
               </p>
             </div>
           </div>
+        </div>
+        <div className="wrap" style={{ marginTop: "2.5rem" }}>
+          <h3 style={{ fontSize: "1.2rem", marginBottom: "0.9rem" }}>Which decisions should change</h3>
+          <DecisionLens change="fish" />
+          <p className="small" style={{ marginTop: "1rem" }}><Link className="more" href="/impacts/?change=fish">What this change means region by region and sector by sector</Link></p>
         </div>
       </section>
 

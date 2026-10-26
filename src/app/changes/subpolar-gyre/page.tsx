@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import DecisionLens from "@/components/DecisionLens";
 import HBars from "@/components/HBars";
 import StoryBrief from "@/components/StoryBrief";
 import ThresholdChart, { OCEAN_THRESHOLDS } from "@/components/ThresholdChart";
+import { ArticleLd } from "@/components/JsonLd";
 import { abs, asset } from "@/lib/site";
 import styles from "../coral-reefs/coral.module.css";
 import own from "../atlantic-circulation/page.module.css";
@@ -11,7 +13,7 @@ const TITLE = "Could the North Atlantic cool abruptly?";
 const DESCRIPTION = "South of Greenland, surface water sinks every winter. In some climate models this stops within a decade, cooling the region by several degrees. What the gyre is, how likely a collapse is, what it would mean and what can be done.";
 
 export const metadata: Metadata = {
-  title: "Subpolar North Atlantic",
+  title: "Subpolar gyre collapse: could the North Atlantic cool abruptly?",
   description: DESCRIPTION,
   alternates: { canonical: abs("/changes/subpolar-gyre/") },
   openGraph: { title: TITLE, description: DESCRIPTION, url: abs("/changes/subpolar-gyre/"), images: [abs("/og/science.png")], type: "article", siteName: "Ocean Turning Points" },
@@ -22,6 +24,7 @@ const SPG = OCEAN_THRESHOLDS.filter((t) => t.id === "spg" || t.id === "amoc");
 export default function SubpolarPage() {
   return (
     <article>
+      <ArticleLd path="/changes/subpolar-gyre/" title={TITLE} description={DESCRIPTION} about={["Subpolar gyre", "North Atlantic", "Climate tipping points", "Labrador Sea convection"]} />
       <header className={`wrap ${styles.hero}`}>
         <div>
           <p className="label"><Link href="/changes/">Big changes</Link> · Subpolar North Atlantic</p>
@@ -55,7 +58,7 @@ export default function SubpolarPage() {
         </figure>
         <div className="prose">
           <p className="kicker">What it is</p>
-          <h2 id="what">Where the Atlantic cools and sinks</h2>
+          <h2 id="what">How the subpolar gyre works</h2>
           <p>
             Warm, salty water from the south enters a large anticlockwise loop of currents between Labrador, Greenland and Iceland. In
             winter, cold air takes its heat, and in the Labrador and Irminger Seas the surface water becomes dense enough to sink, in some
@@ -73,7 +76,7 @@ export default function SubpolarPage() {
       <section className={`section ${own.band}`} aria-labelledby="likely">
         <div className="wrap">
           <p className="kicker">How likely</p>
-          <h2 id="likely" className={styles.h2}>A minority of models, but more often the realistic ones</h2>
+          <h2 id="likely" className={styles.h2}>Collapse in climate models</h2>
           <div className={styles.split} style={{ alignItems: "start" }}>
             <div className="prose">
               <p>
@@ -114,7 +117,7 @@ export default function SubpolarPage() {
       <section className="section" aria-labelledby="means">
         <div className="wrap">
           <p className="kicker">What it would mean</p>
-          <h2 id="means" className={styles.h2}>Fast regional cooling in a warming world</h2>
+          <h2 id="means" className={styles.h2}>Regional cooling within a decade</h2>
           <ul className={styles.stats}>
             <li><b>2–3°C</b><span>cooling around the North Atlantic in the models that show a collapse, within about ten years (Armstrong McKay et al., 2022).</span></li>
             <li><b>~10 years</b><span>for the change to unfold, far faster than an Atlantic circulation collapse or ice-sheet loss.</span></li>
@@ -134,13 +137,18 @@ export default function SubpolarPage() {
       <section className={`section ${own.band}`} aria-labelledby="decide">
         <div className="wrap">
           <p className="kicker">What can be done</p>
-          <h2 id="decide" className={styles.h2}>Prepare for a fast change, and keep watching</h2>
+          <h2 id="decide" className={styles.h2}>Risk assessment, monitoring and emissions</h2>
           <div className={styles.responses}>
             <div style={{ background: "var(--bg)" }}><h3>Limit warming</h3><p>Every tenth of a degree avoided lowers the chance of passing a threshold that may already be within reach. <Link href="/responses/#warming">How much emissions must fall</Link>.</p></div>
             <div style={{ background: "var(--bg)" }}><h3>Count it in risk assessments</h3><p>European and North Atlantic climate risk assessments, energy planning and fisheries management can test their plans against an abrupt regional cooling of several degrees.</p></div>
             <div style={{ background: "var(--bg)" }}><h3>Keep the observing arrays running</h3><p>The OSNAP array has measured overturning here only since 2014. A gap now would be permanent. <Link href="/monitoring/">Ocean monitoring</Link>.</p></div>
             <div style={{ background: "var(--bg)" }}><h3>Link signals to decisions</h3><p>Tie observations of winter sinking, salinity and overturning to agreed points at which plans are reviewed.</p></div>
           </div>
+        </div>
+        <div className="wrap" style={{ marginTop: "2.5rem" }}>
+          <h3 style={{ fontSize: "1.2rem", marginBottom: "0.9rem" }}>Which decisions should change</h3>
+          <DecisionLens change="subpolar-gyre" />
+          <p className="small" style={{ marginTop: "1rem" }}><Link className="more" href="/impacts/?change=subpolar-gyre">What this change means region by region and sector by sector</Link></p>
         </div>
       </section>
 

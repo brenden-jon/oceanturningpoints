@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import StoryBrief from "@/components/StoryBrief";
 import Link from "next/link";
+import DecisionLens from "@/components/DecisionLens";
 import BleachingEvents from "@/components/BleachingEvents";
 import { ReefFloodSavings, ReefLivelihoods, ReefLongTerm } from "@/components/ReefBenefits";
 import ReefMap from "@/components/ReefMap";
 import ThresholdChart, { OCEAN_THRESHOLDS } from "@/components/ThresholdChart";
+import { ArticleLd } from "@/components/JsonLd";
 import { abs } from "@/lib/site";
 import { WDPA_CITATION } from "@/lib/wdpa";
 import styles from "./coral.module.css";
@@ -13,7 +15,7 @@ const TITLE = "Are coral reefs passing a tipping point?";
 const DESCRIPTION = "Marine heatwaves are bleaching reefs faster than they can recover. See today’s heat stress, the four global bleaching events, where the tipping threshold lies, and what protection can and cannot do.";
 
 export const metadata: Metadata = {
-  title: TITLE,
+  title: "Coral reef tipping point: are reefs passing it?",
   description: DESCRIPTION,
   alternates: { canonical: abs("/changes/coral-reefs/") },
   openGraph: { title: TITLE, description: DESCRIPTION, url: abs("/changes/coral-reefs/"), images: [abs("/og/science.png")], type: "article", siteName: "Ocean Turning Points" },
@@ -22,6 +24,7 @@ export const metadata: Metadata = {
 export default function CoralPage() {
   return (
     <article>
+      <ArticleLd path="/changes/coral-reefs/" title={TITLE} description={DESCRIPTION} about={["Coral reefs", "Coral bleaching", "Climate tipping points", "Coastal protection", "Reef fisheries"]} />
       <header className={`wrap ${styles.hero}`}>
         <div>
           <p className="label"><Link href="/changes/">Big changes</Link> · Coral reefs</p>
@@ -53,7 +56,7 @@ export default function CoralPage() {
         <div className={`wrap ${styles.split}`}>
           <div className="prose">
             <p className="kicker">What we observe</p>
-            <h2 id="events">Bleaching has become a near-annual threat</h2>
+            <h2 id="events">Bleaching is becoming more frequent</h2>
             <p>
               When the sea stays too warm for weeks, corals expel the algae that feed them and turn white. If the heat lasts, they die.
               NOAA has recorded four global bleaching events. In each, a larger share of the world’s reef area was exposed to heat
@@ -72,7 +75,7 @@ export default function CoralPage() {
       <section className="section section--alt" aria-labelledby="threshold">
         <div className="wrap">
           <p className="kicker">What could change</p>
-          <h2 id="threshold" className={styles.h2}>A tipping point being crossed now</h2>
+          <h2 id="threshold" className={styles.h2}>The thermal tipping point for reefs</h2>
           <div className={styles.split}>
             <div className="prose">
               <p>
@@ -107,7 +110,7 @@ export default function CoralPage() {
       <section className="section" aria-labelledby="coasts">
         <div className="wrap">
           <p className="kicker">Consequences for coasts</p>
-          <h2 id="coasts" className={styles.h2}>Reefs are coastal infrastructure, and it is wearing away</h2>
+          <h2 id="coasts" className={styles.h2}>Coastal protection by reefs</h2>
           <div className={styles.split} style={{ alignItems: "start" }}>
             <div className="prose">
               <p>
@@ -138,7 +141,7 @@ export default function CoralPage() {
       <section className="section section--alt" aria-labelledby="livelihoods">
         <div className="wrap">
           <p className="kicker">Consequences for livelihoods</p>
-          <h2 id="livelihoods" className={styles.h2}>Food, income and jobs that depend on living coral</h2>
+          <h2 id="livelihoods" className={styles.h2}>Fisheries, tourism and livelihoods</h2>
           <div className={`prose ${styles.wide}`}>
             <p>
               About 6 million people fish on coral reefs, half of them in Southeast Asia, and at least a quarter are gleaners collecting
@@ -202,6 +205,11 @@ export default function CoralPage() {
           <p className={styles.more}>
             <Link className="more" href="/science/coral-reefs/">Full evidence, uncertainties and 25 references</Link>
           </p>
+        </div>
+        <div className="wrap" style={{ marginTop: "2.5rem" }}>
+          <h3 style={{ fontSize: "1.2rem", marginBottom: "0.9rem" }}>Which decisions should change</h3>
+          <DecisionLens change="coral-reefs" />
+          <p className="small" style={{ marginTop: "1rem" }}><Link className="more" href="/impacts/?change=coral-reefs">What this change means region by region and sector by sector</Link></p>
         </div>
       </section>
 

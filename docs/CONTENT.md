@@ -36,3 +36,19 @@ At least once a year, and after major papers or assessments:
 - List only work that has been published and publicly released, verified against Crossref.
 - Never list drafts, submissions, revisions or work under review, and never name the journal a manuscript is intended for.
 - Exceptions only with the curator's explicit authorisation.
+- Authorised exceptions (October 2026): Jongman & Hall (forthcoming) on AMOC adaptation, listed with its title and without a journal;
+  the ocean observation manuscript, cited as "Jongman (forthcoming)" and listed under work in progress; topic lines for work in
+  progress on decisions for a changing ocean and on financing marine protection, with no findings, journals or institutions.
+
+## Latest research (`content/data/latest_research.json`)
+Add new entries at any time; the page sorts by date. For each entry: verify the DOI on Crossref, read the abstract, and write one
+plain sentence (at most 30 words) of the main finding. Fields: date, topic (one of the keys in `src/lib/research.ts`), title,
+authors ("Surname, I. et al."), venue, doi (or null with a url), summary, type ("article" or "report"), verified.
+
+## Impacts by region and sector (`content/data/impacts.json`)
+Each statement carries a change, a sector, a source with DOI or URL, an evidence type (observed, projection, model experiment,
+expert assessment) and confidence wording. AMOC and subpolar-gyre statements describe what models show if a collapse happened.
+
+## Decision lens (`src/lib/decisions.ts`)
+Act now / Assess now / Stay the course for each big change. The lens is the site's own synthesis; keep each item short, and
+change it when the evidence on the topic page changes.
