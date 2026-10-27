@@ -38,7 +38,7 @@ export default function DecisionsPage() {
             and plan when to look again.
           </p>
           <p className={styles.chips}>
-            <a className="more" href="#types">Three kinds of decision</a>
+            <a className="more" href="#types">The decision lens</a>
             <a className="more" href="#pathways">Adaptive pathways</a>
             <a className="more" href="#lockin">Avoiding lock-in</a>
             <a className="more" href="#noregret">No-regret options</a>
@@ -49,25 +49,108 @@ export default function DecisionsPage() {
       <section className="section" aria-labelledby="types" style={{ paddingTop: "1rem" }}>
         <div className="wrap">
           <p className="kicker">The decision lens</p>
-          <h2 id="types" className={styles.h2}>Three kinds of decision</h2>
-          <div className={own.tree}>
-            <div className={own.q}><span>1</span>Would the decision fail, or prove costly, if the change were larger, faster or in the other direction?</div>
-            <div className={own.branch}>
-              <p className={own.answer}>No</p>
-              <div className={`${own.type} ${own.stay}`}><h3>{LENS_LABELS.stay.title}</h3><p>{LENS_LABELS.stay.text}</p></div>
-            </div>
-            <p className={own.yes}>Yes</p>
-            <div className={own.q}><span>2</span>Is it long-lived or hard to reverse, and being decided now?</div>
-            <div className={own.branch}>
-              <p className={own.answer}>Yes</p>
-              <div className={`${own.type} ${own.act}`}><h3>{LENS_LABELS.act.title}</h3><p>{LENS_LABELS.act.text}</p></div>
-              <p className={own.answer}>Not yet</p>
-              <div className={`${own.type} ${own.assess}`}><h3>{LENS_LABELS.assess.title}</h3><p>{LENS_LABELS.assess.text}</p></div>
-            </div>
+          <h2 id="types" className={styles.h2}>Does a big ocean change matter for this decision?</h2>
+          <div className={`prose ${own.lead}`}>
+            <p>
+              For most decisions it does not. Early warning, water access, healthy fish stocks and sound coastal management pay off whatever the
+              ocean does, and should go ahead now. A few decisions are different: they are being made now, they will last for decades, and the
+              right answer depends on how large the change turns out to be. Four questions tell them apart.
+            </p>
+          </div>
+          <div className={own.lens}>
+            <ol className={own.qs}>
+              <li>
+                <h3>What does the change add?</h3>
+                <p>
+                  Most plans already allow for warming and some sea-level rise. Ask what the big change would add: a larger change, a faster one,
+                  or one in the other direction, such as a drier monsoon where plans expect a wetter one. It is a different future to test the
+                  plan against, not extra damage to add on top.
+                </p>
+              </li>
+              <li>
+                <h3>Would it change the choice?</h3>
+                <p>
+                  Look at where to build, how big, which design and when. A change can matter a great deal for science and not at all for a
+                  particular decision.
+                </p>
+              </li>
+              <li>
+                <h3>What does caution cost, against the cost of being wrong?</h3>
+                <p>
+                  A wider safety margin or a staged design is cheap insurance. Cancelling a project or moving people needs much stronger local
+                  evidence, and the agreement of those affected.
+                </p>
+              </li>
+              <li>
+                <h3>Is there time to change course later?</h3>
+                <p>
+                  Compare how long it takes to change the decision with how much warning there is likely to be. Warning signs in ocean records
+                  are not forecasts of what will happen in a given river basin or on a given coast.
+                </p>
+              </li>
+            </ol>
+
+            <figure className={own.matrix}>
+              <div className={own.axisY} aria-hidden><span>Could the change alter the best choice?</span></div>
+              <p className={`${own.colHead} ${own.colEasy}`} aria-hidden>Easy to change later</p>
+              <p className={`${own.colHead} ${own.colHard}`} aria-hidden>Hard, slow or costly to change later</p>
+              <p className={`${own.rowHead} ${own.rowYes}`} aria-hidden>Yes, or not yet clear</p>
+              <div className={`${own.cell} ${own.cellAssess}`}>
+                <span className={own.where}>Could alter the choice · easy to change later</span>
+                <h3>{LENS_LABELS.assess.title}</h3>
+                <p>Test it, watch, and agree in advance what would trigger a change.</p>
+                <ul>
+                  <li>Crop varieties and planting calendars</li>
+                  <li>Fishing quotas</li>
+                  <li>Reservoir operating rules</li>
+                  <li>Insurance and reserve funds</li>
+                </ul>
+              </div>
+              <div className={`${own.cell} ${own.cellAct}`}>
+                <span className={own.where}>Could alter the choice · hard to change later</span>
+                <h3>{LENS_LABELS.act.title}</h3>
+                <p>Build in margins, stage it, or choose another site.</p>
+                <ul>
+                  <li>New coastal districts and ports</li>
+                  <li>Large dams and irrigation storage</li>
+                  <li>Long-term fisheries agreements</li>
+                  <li>Seawalls without a long-term plan</li>
+                </ul>
+              </div>
+              <p className={`${own.rowHead} ${own.rowNo}`} aria-hidden>No</p>
+              <div className={`${own.cell} ${own.cellStay}`}>
+                <span className={own.where}>The best choice is the same either way</span>
+                <h3>{LENS_LABELS.stay.title}</h3>
+                <p>Keep going; there is no reason to wait for better science.</p>
+                <ul>
+                  <li>Early warning and seasonal forecasts</li>
+                  <li>Social protection</li>
+                  <li>Protecting mangroves and reefs</li>
+                  <li>Ending overfishing</li>
+                </ul>
+              </div>
+              <figcaption className="small faint">
+                Examples from the decisions for each big change, below. Where a decision sits depends on the place and the design: a reservoir
+                built with room to raise the dam is easier to adjust than one without.
+              </figcaption>
+            </figure>
+          </div>
+
+          <div className={own.notes}>
+            <p>
+              <b>“Nothing needs to change” is a useful answer.</b> Most adaptation is justified by risks that already exist. A possible tipping
+              point is a reason to look harder at a few long-lived decisions, not to delay the rest.
+            </p>
+            <p>
+              <b>Watch the service, not only the ocean.</b> Ocean observations show when the scenarios need updating. Whether a plan still works
+              shows up first in reservoir yield, the cost of flood protection, catches or household income: the point where a plan stops meeting
+              its goals (Kwadijk et al., 2010). Tie each signal to a named decision and to someone able to act on it.
+            </p>
           </div>
           <p className={`small faint ${own.lead}`} style={{ marginTop: "1.5rem" }}>
-            This lens is Ocean Turning Points’ own synthesis. It builds on Hallegatte (2009) on no-regret options, flexibility and safety margins;
-            on adaptive policy pathways (Haasnoot et al., 2013); and on matching the information to the decision (Hinkel et al., 2019).
+            This lens is Ocean Turning Points’ own synthesis. It builds on Hallegatte (2009) and Hallegatte et al. (2012) on robust decisions;
+            on checking whether a project is sensitive to climate before analysing it in depth (Ray and Brown, 2015); on adaptation tipping
+            points and pathways (Kwadijk et al., 2010; Haasnoot et al., 2013); and on matching the information to the decision (Hinkel et al., 2019).
           </p>
         </div>
       </section>
@@ -197,7 +280,8 @@ export default function DecisionsPage() {
           <p>
             Marchau, V. et al. (eds) (2019), <i>Decision Making under Deep Uncertainty</i>, Springer, doi:10.1007/978-3-030-05252-2; Lempert, R.,
             Popper, S. &amp; Bankes, S. (2003), <i>Shaping the Next One Hundred Years</i>, RAND; Hallegatte, S. (2009), <i>Global Environmental
-            Change</i> 19, 240–247; Kwadijk, J. et al. (2010), <i>WIREs Climate Change</i> 1, 729–740; Haasnoot, M. et al. (2013), <i>Global
+            Change</i> 19, 240–247; Hallegatte, S. et al. (2012), World Bank Policy Research Working Paper 6193; Ray, P. A. &amp; Brown, C. M.
+            (2015), <i>Confronting Climate Uncertainty in Water Resources Planning and Project Design</i>, World Bank; Kwadijk, J. et al. (2010), <i>WIREs Climate Change</i> 1, 729–740; Haasnoot, M. et al. (2013), <i>Global
             Environmental Change</i> 23, 485–498; Haasnoot, M. et al. (2019), <i>Climatic Change</i> 161, 451–463; Haasnoot, M. et al. (2021),{" "}
             <i>Climate Risk Management</i> 34, 100355; Hinkel, J. et al. (2019), <i>Earth’s Future</i> 7, 320–337; Ranger, N. et al. (2013), <i>EURO
             Journal on Decision Processes</i> 1, 233–262; UK Environment Agency, Thames Estuary 2100 updates (2023) and 15-year monitoring review

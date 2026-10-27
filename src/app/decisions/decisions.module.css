@@ -1,10 +1,3 @@
-.types { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
-.type { border-radius: var(--radius); padding: 1.3rem 1.4rem; background: var(--bg-alt); border-top: 5px solid; }
-.type h3 { font-size: 1.25rem; margin: 0 0 0.35rem; }
-.type p { margin: 0; color: var(--text-2); }
-.act { border-color: #c0392b; }
-.assess { border-color: #d9901e; }
-.stay { border-color: #1f7a5a; }
 .lead { max-width: 78ch; }
 .lead ol { display: grid; gap: 0.4rem; }
 .case { margin-top: 2rem; background: var(--bg); border-radius: var(--radius); padding: 1.4rem 1.6rem; border-left: 4px solid var(--accent); max-width: 90ch; }
@@ -16,16 +9,7 @@
 .steps li { background: var(--bg); border-radius: var(--radius); padding: 1rem 1.1rem; font-size: 0.93rem; color: var(--text-2); }
 .steps b { color: var(--text); display: block; margin-bottom: 0.25rem; }
 @media (max-width: 960px) { .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 860px) { .types { grid-template-columns: minmax(0, 1fr); } }
 @media (max-width: 560px) { .steps { grid-template-columns: minmax(0, 1fr); } }
-.tree { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 0.6rem 2rem; align-items: center; margin-top: 1.5rem; }
-.q { background: var(--bg-deep); color: #fff; border-radius: var(--radius); padding: 1.2rem 1.4rem; font-size: 1.08rem; font-weight: 550; line-height: 1.4; display: flex; gap: 0.9rem; align-items: flex-start; }
-.q span { flex: none; width: 1.7rem; height: 1.7rem; border-radius: 50%; background: #fff; color: var(--bg-deep); display: grid; place-items: center; font-size: 0.9rem; font-weight: 700; }
-.branch { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 0.6rem 0.9rem; align-items: center; }
-.answer, .yes { margin: 0; font-size: 0.85rem; font-weight: 650; color: var(--text-2); white-space: nowrap; }
-.answer::after { content: " →"; }
-.yes { grid-column: 1 / -1; padding-left: 1.4rem; }
-.yes::after { content: " ↓"; }
 .principles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 1.5rem; }
 .principles > div { background: var(--bg); border-radius: var(--radius); padding: 1.1rem 1.3rem; }
 .principles h3 { font-size: 1.05rem; margin: 0 0 0.3rem; }
@@ -39,7 +23,52 @@
 .changeName { font-size: 1.15rem; font-weight: 650; }
 .changeStatus { font-size: 0.85rem; color: var(--alert); font-weight: 600; }
 @media (max-width: 860px) {
-  .tree { grid-template-columns: minmax(0, 1fr); }
-  .yes { padding-left: 0; }
   .principles { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Decision lens: four questions beside a matrix of example decisions */
+.lens { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: 2.5rem 3.5rem; margin-top: 2rem; align-items: start; }
+.qs { list-style: none; counter-reset: q; padding: 0; margin: 0; }
+.qs li { counter-increment: q; position: relative; padding: 1rem 0 1.1rem 2.6rem; border-top: 1px solid var(--line); }
+.qs li:last-child { border-bottom: 1px solid var(--line); }
+.qs li::before { content: counter(q); position: absolute; left: 0; top: 0.95rem; font-size: 1.5rem; font-weight: 650; line-height: 1.2; color: var(--accent); font-variant-numeric: tabular-nums; }
+.qs h3 { font-size: 1.08rem; margin: 0 0 0.3rem; }
+.qs p { margin: 0; color: var(--text-2); font-size: 0.97rem; }
+.matrix { margin: 0; display: grid; grid-template-columns: 1.4rem 1.4rem minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: auto auto auto auto; gap: 0.5rem; }
+.axisY { grid-column: 1; grid-row: 2 / span 2; display: flex; align-items: center; justify-content: center; }
+.axisY span { writing-mode: vertical-rl; transform: rotate(180deg); font-size: 0.8rem; font-weight: 650; color: var(--text); white-space: nowrap; }
+.colHead { grid-row: 1; margin: 0; font-size: 0.8rem; font-weight: 650; color: var(--text-2); align-self: end; padding: 0 0.2rem 0.1rem; }
+.colEasy { grid-column: 3; }
+.colHard { grid-column: 4; }
+.rowHead { grid-column: 2; margin: 0; font-size: 0.8rem; font-weight: 650; color: var(--text-2); writing-mode: vertical-rl; transform: rotate(180deg); text-align: center; align-self: center; }
+.rowYes { grid-row: 2; }
+.rowNo { grid-row: 3; }
+.cell { border-radius: var(--radius-s); padding: 1rem 1.1rem 1.1rem; }
+.cell h3 { font-size: 1.1rem; margin: 0 0 0.25rem; display: flex; align-items: center; gap: 0.5rem; }
+.cell h3::before { content: ""; width: 0.6rem; height: 0.6rem; border-radius: 50%; background: currentColor; flex: none; }
+.cell > p { margin: 0 0 0.6rem; font-size: 0.92rem; color: var(--text-2); }
+.cell ul { margin: 0; padding: 0; list-style: none; font-size: 0.88rem; display: grid; gap: 0.15rem; }
+.cell li { padding-left: 0.9rem; position: relative; }
+.cell li::before { content: "–"; position: absolute; left: 0; color: var(--text-2); }
+.cellAssess { grid-column: 3; grid-row: 2; background: #fdf4e3; }
+.cellAssess h3 { color: #9a6210; }
+.cellAct { grid-column: 4; grid-row: 2; background: #fbeeec; }
+.cellAct h3 { color: #a8321f; }
+.cellStay { grid-column: 3 / span 2; grid-row: 3; background: #ebf5f0; }
+.cellStay h3 { color: #1f6e50; }
+.cellStay ul { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 1.2rem; }
+.where { display: none; }
+.matrix figcaption { grid-column: 3 / span 2; grid-row: 4; margin-top: 0.3rem; }
+.notes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem 3.5rem; margin-top: 2.5rem; max-width: 1100px; }
+.notes p { margin: 0; color: var(--text-2); }
+.notes b { color: var(--text); display: block; margin-bottom: 0.2rem; }
+@media (max-width: 960px) { .lens { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 640px) {
+  .matrix { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; }
+  .axisY, .colHead, .rowHead { display: none; }
+  .cellAssess, .cellAct, .cellStay, .matrix figcaption { grid-column: 1; grid-row: auto; }
+  .cellAct { order: -1; }
+  .cellStay ul { grid-template-columns: minmax(0, 1fr); }
+  .where { display: block; font-size: 0.75rem; font-weight: 600; color: var(--text-2); margin-bottom: 0.3rem; }
+  .notes { grid-template-columns: minmax(0, 1fr); }
 }

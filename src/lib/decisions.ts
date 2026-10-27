@@ -99,7 +99,7 @@ export const LENS: Record<LensKey, Lens> = {
 };
 
 export const LENS_LABELS = {
-  act: { title: "Act now", text: "Long-lived, hard to reverse, and sensitive to the change: decide differently today." },
-  assess: { title: "Assess now", text: "High stakes but unclear answers: stress-test, monitor and set trigger points." },
-  stay: { title: "Stay the course", text: "Pays off whatever happens, or is cheap to adjust later: keep going." },
+  act: { title: "Act now", text: "The change could alter the best choice, and the decision is hard to undo: decide differently today." },
+  assess: { title: "Assess now", text: "The change could alter the best choice, but there is time to adjust: test it, watch, and agree what would trigger a change." },
+  stay: { title: "Stay the course", text: "The best choice is the same whatever the ocean does: keep going." },
 } as const;
