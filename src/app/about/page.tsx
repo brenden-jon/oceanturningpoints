@@ -25,8 +25,8 @@ export default function About() {
             and short explainers, with particular attention to developing countries.
           </p>
           <p>
-            It follows six changes: the Atlantic overturning circulation, coral reefs, the ice sheets, El Niño, fish stocks on the
-            move and the subpolar North Atlantic, and keeps an eye on the Southern Ocean. It is written for people who make or advise
+            It follows six changes: the Atlantic overturning circulation, coral reefs, the ice sheets, El Niño, shifting fish stocks and the subpolar
+            North Atlantic, and keeps an eye on the Southern Ocean. It is written for people who make or advise
             on decisions, in finance and planning ministries, development banks, insurers and adaptation agencies. It does not make
             its own forecasts or run campaigns. Every map and claim traces to peer-reviewed research, an official dataset or an agency report, and each
             topic shows the date it was last reviewed.
