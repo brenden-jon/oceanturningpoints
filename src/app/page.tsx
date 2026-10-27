@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import type { Metadata } from "next";
 import Link from "next/link";
-import HeroGlobe from "@/components/HeroGlobe";
+import HeroLoop from "@/components/HeroLoop";
 import VideoBand from "@/components/VideoBand";
 import { num, rainAt, tempAt } from "@/lib/amocData";
 import { CHANGES } from "@/lib/changes";
@@ -38,23 +38,26 @@ export default function Home() {
   return (
     <>
       <section className={styles.hero}>
-        <div className={styles.heroText}>
-          <h1 className="display">Which big ocean changes should the world plan for?</h1>
-          <p className={`lede ${styles.heroLede}`}>
-            An independent guide to the big changes in the ocean, from a possible Atlantic circulation collapse to coral reefs passing a
-            tipping point: how likely each is, what it would mean, and which decisions should change.
-          </p>
-          <p className={styles.actions}>
-            <Link className="button" href="/changes/">The big changes</Link>
-            <Link className="more" href="/decisions/">How to decide</Link>
-          </p>
+        <HeroLoop className={styles.heroVideo} />
+        <div className={styles.heroShade} aria-hidden />
+        <div className={`wrap ${styles.heroInner}`}>
+          <div className={styles.heroText}>
+            <h1 className="display">Which big ocean changes should the world plan for?</h1>
+            <p className={`lede ${styles.heroLede}`}>
+              An independent guide to the big changes in the ocean, from a possible Atlantic circulation collapse to coral reefs passing a
+              tipping point: how likely each is, what it would mean, and which decisions should change.
+            </p>
+            <p className={styles.actions}>
+              <Link className="button" href="/changes/">The big changes</Link>
+              <Link className={styles.heroMore} href="/decisions/">How to decide ›</Link>
+            </p>
+            <p className={styles.heroCredit}>
+              Ocean currents modelled by NASA/JPL and MIT (ECCO2, NASA Perpetual Ocean 2); land cover and city lights from NASA Blue Marble
+              and Black Marble. <Link href="/ocean-now/">Today’s currents and sea temperatures</Link>
+        </p>
+          </div>
         </div>
-        <div className={styles.globeCol}>
-          <HeroGlobe className={styles.globeBox} currents={now.currents} />
-          <p className={`small faint ${styles.globeNote}`}>
-            Ocean surface currents on {day(now.currents.date)}, from NOAA satellite data. Imagery: NASA Blue Marble.
-          </p>
-        </div>
+
       </section>
 
       <section className={styles.nowStrip} aria-label="The ocean now">

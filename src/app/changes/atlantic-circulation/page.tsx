@@ -20,8 +20,8 @@ export const metadata: Metadata = {
   title: "AMOC collapse: what would happen if the Atlantic circulation collapsed?",
   description: DESCRIPTION,
   alternates: { canonical: abs("/changes/atlantic-circulation/") },
-  openGraph: { title: TITLE, description: DESCRIPTION, url: abs("/changes/atlantic-circulation/"), images: [abs("/og/amoc-collapse.png")], type: "article", siteName: "Ocean Turning Points" },
-  twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION, images: [abs("/og/amoc-collapse.png")] },
+  openGraph: { title: TITLE, description: DESCRIPTION, url: abs("/changes/atlantic-circulation/"), images: [{ url: abs("/og/amoc-limbs.jpg"), width: 1200, height: 630, alt: "The North Atlantic from space, with the warm northward branch of the Atlantic circulation in red and the deep southward return in blue" }], type: "article", siteName: "Ocean Turning Points" },
+  twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION, images: [abs("/og/amoc-limbs.jpg")] },
 };
 
 export default function AmocPage() {
@@ -79,7 +79,15 @@ export default function AmocPage() {
           <p className="label"><Link href="/changes/">Big changes</Link> · Atlantic circulation</p>
           <h1 className={styles.title}>{TITLE}</h1>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img className={styles.heroImg} src={asset("/img/topics/amoc.jpg")} alt="" width={1200} height={800} />
+          <figure className={styles.heroFig}>
+            <img className={styles.heroImg} src={asset("/img/amoc-limbs.jpg")} width={1080} height={1350}
+              alt="The Atlantic from space: forests, farmland and city lights, with modelled ocean currents. A red band traces warm water flowing north from the South Atlantic past Brazil, through the Caribbean and the Gulf Stream towards Europe; a blue band traces the cold deep return flowing south along the Americas." />
+            <figcaption className="small faint">
+              <b style={{ color: "#c0392b" }}>Red</b>: warm water flowing north near the surface. <b style={{ color: "#1f5fb4" }}>Blue</b>: cold water returning
+              south at depth. Schematic bands over modelled surface currents (NASA Perpetual Ocean 2, ECCO2); land and night lights from NASA
+              Blue Marble and Black Marble.
+            </figcaption>
+          </figure>
         </div>
         <div className={styles.heroSide}>
         <p className={styles.standfirst}>

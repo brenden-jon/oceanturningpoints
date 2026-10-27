@@ -82,5 +82,7 @@
 .whatFig img { width: 100%; height: auto; border-radius: var(--radius); display: block; }
 .whatFig figcaption { margin-top: 0.5rem; }
 @media (max-width: 860px) { .what { grid-template-columns: minmax(0, 1fr); } }
-.heroImg { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: var(--radius); margin-top: 1.6rem; }
-@media (max-width: 860px) { .heroImg { display: none; } }
+.heroFig { margin: 1.6rem 0 0; }
+.heroFig figcaption { margin-top: 0.5rem; line-height: 1.45; }
+.heroImg { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 32%; border-radius: var(--radius); background: #000; }
+@media (max-width: 860px) { .heroFig { margin-top: 1rem; } .heroImg { aspect-ratio: 16 / 10; } }
