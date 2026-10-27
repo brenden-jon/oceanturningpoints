@@ -57,8 +57,8 @@ export const CHANGES: Change[] = [
   {
     slug: "subpolar-gyre", title: "North Atlantic cooling (subpolar gyre)", story: "/changes/subpolar-gyre/", storyLabel: "Could it cool abruptly?",
     status: "Possible this century; cooling within a decade", question: "Could the North Atlantic cool abruptly?",
-    image: "The subpolar North Atlantic south of Greenland, over modelled ocean currents: the warm branch of the Atlantic circulation (red) heading towards Europe, and cold water returning south from the Labrador Sea (blue). Rendered from NASA Perpetual Ocean 2 (ECCO2), Blue Marble and Black Marble.",
-    card: "/img/cards/subpolar.jpg",
+    image: "An iceberg in the Labrador Sea at the mouth of Alanngorsuaq Fjord, southwest Greenland, July 2009.",
+    card: "/img/cards/subpolar.jpg", cardCredit: "Photo: Algkalv, CC BY-SA 3.0",
     what: "A loop of currents south of Greenland where surface water sinks every winter, one of the engines of the Atlantic circulation.",
     likely: "Possible this century: in a minority of climate models winter sinking shuts down within a decade. Threshold estimate about 1.8°C, with a wide range (1.1–3.8°C).",
     means: "Rapid regional cooling around the North Atlantic, shifts in European weather, and changes to fisheries.",
