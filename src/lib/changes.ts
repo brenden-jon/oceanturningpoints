@@ -45,8 +45,8 @@ export const CHANGES: Change[] = [
     done: "Act on seasonal forecasts with agreed triggers and pre-arranged finance; size reserves and insurance for stronger events. Earlier net zero limits the long-term shift.",
   },
   {
-    slug: "fish-on-the-move", title: "Fish stocks on the move", story: "/changes/fish-on-the-move/", storyLabel: "Projections for every coastal country", science: false,
-    status: "Under way; less fish with every degree", question: "Where will the fish go?",
+    slug: "fish-on-the-move", title: "Fisheries in a warming ocean", story: "/changes/fish-on-the-move/", storyLabel: "Projections for every coastal country", science: false,
+    status: "Under way; about 5% less marine life per °C", question: "Where will the fish go?",
     image: "Fishers bring pirogues loaded with fish ashore at Kayar, Senegal, July 2024.",
     card: "/img/photos/fishers-kayar-senegal.jpg", cardCredit: "Photo: Ibrahima khalilpro diop, CC BY-SA 4.0",
     what: "Warming shrinks the amount of fish the ocean can support and moves stocks towards the poles and across borders. Marine heatwaves can wipe out whole stocks within a year or two.",
@@ -57,7 +57,8 @@ export const CHANGES: Change[] = [
   {
     slug: "subpolar-gyre", title: "North Atlantic cooling (subpolar gyre)", story: "/changes/subpolar-gyre/", storyLabel: "Could it cool abruptly?",
     status: "Possible this century; cooling within a decade", question: "Could the North Atlantic cool abruptly?",
-    image: "The subpolar gyre: an anticlockwise loop of currents south of Greenland, with the winter sinking regions in the Labrador and Irminger Seas.",
+    image: "The subpolar North Atlantic south of Greenland, over modelled ocean currents: the warm branch of the Atlantic circulation (red) heading towards Europe, and cold water returning south from the Labrador Sea (blue). Rendered from NASA Perpetual Ocean 2 (ECCO2), Blue Marble and Black Marble.",
+    card: "/img/cards/subpolar.jpg",
     what: "A loop of currents south of Greenland where surface water sinks every winter, one of the engines of the Atlantic circulation.",
     likely: "Possible this century: in a minority of climate models winter sinking shuts down within a decade. Threshold estimate about 1.8°C, with a wide range (1.1–3.8°C).",
     means: "Rapid regional cooling around the North Atlantic, shifts in European weather, and changes to fisheries.",

@@ -50,7 +50,7 @@ const GAPS: { change: string; href: string; need: string; have: string; gap: str
     gap: "In 2012–2014 the mooring array delivered about 40% of its data instead of the usual 80–90%. The redesign that followed doubled floats near the equator (Smith et al., 2019).",
   },
   {
-    change: "Fish on the move", href: "/changes/fish-on-the-move/",
+    change: "Fisheries in a warming ocean", href: "/changes/fish-on-the-move/",
     need: "Where fish stocks are, and how many.",
     have: "Scientific stock assessments, which cover some regions far better than others.",
     gap: "Assessed stocks make up only about half of the world’s catch, and stocks without assessments tend to be in worse shape (Hilborn et al., 2020).",

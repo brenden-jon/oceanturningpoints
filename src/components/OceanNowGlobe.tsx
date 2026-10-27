@@ -291,7 +291,7 @@ export default function OceanNowGlobe({ ssta, dhw, currents, bleachOutlook, sstO
           </>)}
           {!isCurrents && active.id === "fishing" && (<>
             <div><h3>What it shows</h3><p>Where fishing vessels appear to have been fishing over the past {fishing!.days} days: {Math.round(fishing!.totalHours / 1e6 * 10) / 10} million hours in total. Effort is detected from ships’ automatic identification system (AIS) tracks by a machine-learning model.</p></div>
-            <div><h3>Why it matters</h3><p>Fishing pressure decides how well stocks cope as they move with warming waters, and whether protected areas are respected. Vessels flagged to China account for {fishing!.topFlags.find((f) => f[0] === "CHN")?.[1] ?? "–"}% of the hours shown. How many vessels carry AIS varies by country, so shares by flag are indicative. <Link href="/changes/fish-on-the-move/">Fish on the move</Link></p></div>
+            <div><h3>Why it matters</h3><p>Fishing pressure decides how well stocks cope as they move with warming waters, and whether protected areas are respected. Vessels flagged to China account for {fishing!.topFlags.find((f) => f[0] === "CHN")?.[1] ?? "–"}% of the hours shown. How many vessels carry AIS varies by country, so shares by flag are indicative. <Link href="/changes/fish-on-the-move/">Fisheries in a warming ocean</Link></p></div>
             <div><h3>Source and limits</h3><p><span className="evidence evidence--obs">Observed</span> <a href={fishing!.source.url}>Global Fishing Watch</a>, CC BY-SA 4.0 (Kroodsma et al., 2018). Many small and artisanal boats carry no AIS, and coverage is uneven between regions, so this is a minimum.</p></div>
           </>)}
           {!isCurrents && active.id === "bleach" && (<>

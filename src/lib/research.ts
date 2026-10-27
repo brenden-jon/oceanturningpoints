@@ -16,7 +16,7 @@ export const TOPIC_NAMES: Record<string, { name: string; href: string }> = {
   "coral-reefs": { name: "Coral reefs", href: "/changes/coral-reefs/" },
   "ice-sheets": { name: "Ice sheets and sea level", href: "/changes/ice-sheets/" },
   "el-nino": { name: "El Niño", href: "/changes/el-nino/" },
-  fish: { name: "Fish on the move", href: "/changes/fish-on-the-move/" },
+  fish: { name: "Fisheries in a warming ocean", href: "/changes/fish-on-the-move/" },
   "subpolar-gyre": { name: "Subpolar North Atlantic", href: "/changes/subpolar-gyre/" },
   "southern-ocean": { name: "Southern Ocean", href: "/changes/southern-ocean/" },
   observation: { name: "Ocean observation", href: "/monitoring/" },

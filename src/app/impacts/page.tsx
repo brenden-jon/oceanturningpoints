@@ -8,7 +8,7 @@ import { abs } from "@/lib/site";
 import styles from "../changes/coral-reefs/coral.module.css";
 
 const TITLE = "What the big ocean changes mean for your region";
-const DESCRIPTION = "Impacts of AMOC collapse, coral reef loss, sea-level rise, El Niño, fish on the move and other ocean changes, region by region and sector by sector: food, water, coasts, fisheries, health, energy, tourism and public finance.";
+const DESCRIPTION = "Impacts of AMOC collapse, coral reef loss, sea-level rise, El Niño, shifting fish stocks and other ocean changes, region by region and sector by sector: food, water, coasts, fisheries, health, energy, tourism and public finance.";
 
 export const metadata: Metadata = {
   title: "Ocean change impacts by region and sector",

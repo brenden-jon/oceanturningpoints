@@ -11,7 +11,7 @@ const AUTHOR = {
 export function SiteLd() {
   const data = {
     "@context": "https://schema.org", "@type": "WebSite", name: SITE.name, url: abs("/"),
-    description: "Independent, evidence-led guide to the big changes in the ocean — the Atlantic circulation (AMOC), coral reefs, ice sheets, El Niño, fish on the move and the subpolar North Atlantic — and what they mean for decisions.",
+    description: "Independent, evidence-led guide to the big changes in the ocean — the Atlantic circulation (AMOC), coral reefs, ice sheets, El Niño, shifting fish stocks and the subpolar North Atlantic — and what they mean for decisions.",
     inLanguage: "en", creator: AUTHOR, publisher: AUTHOR,
   };
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />;

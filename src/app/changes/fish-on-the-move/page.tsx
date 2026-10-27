@@ -32,7 +32,7 @@ export default function FishPage() {
       <ArticleLd path="/changes/fish-on-the-move/" title={TITLE} description={DESCRIPTION} about={["Fisheries", "Climate change", "Marine heatwaves", "Food security"]} />
       <header className={`wrap ${styles.hero}`}>
         <div>
-          <p className="label"><Link href="/changes/">Big changes</Link> · Fish on the move</p>
+          <p className="label"><Link href="/changes/">Big changes</Link> · Fisheries</p>
           <h1 className={styles.title}>{TITLE}</h1>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img className={styles.heroImg} src={asset("/img/photos/fishers-kayar-senegal.jpg")} alt="Fishers bring pirogues loaded with fish ashore at Kayar, Senegal." width={1600} height={1067} />
