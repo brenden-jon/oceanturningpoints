@@ -49,7 +49,7 @@ export default function OceanNow() {
       </header>
 
       <section className="wrap" aria-label="Ocean conditions today">
-        <OceanNowGlobe ssta={m.ssta} dhw={m.dhw} currents={m.currents} bleachOutlook={m.bleachingOutlook} sstOutlook={m.sstOutlook} fishing={m.fishing} seaIce={m.seaIceField} />
+        <OceanNowGlobe ssta={m.ssta} dhw={m.dhw} currents={m.currents} bleachOutlook={m.bleachingOutlook} sstOutlook={m.sstOutlook} fishing={m.fishing} seaIce={m.seaIceField} seaIceEdges={m.seaIceEdges} />
       </section>
 
       <section className={`section section--alt ${styles.enso}`} aria-labelledby="enso">

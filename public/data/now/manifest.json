@@ -353,5 +353,36 @@
    "url": "https://coralreefwatch.noaa.gov/product/5km/index_5km_sst.php",
    "licence": "Use without restriction; credit NOAA Coral Reef Watch"
   }
+ },
+ "seaIceEdges": {
+  "file": "sea_ice_edges.json",
+  "arctic": {
+   "max": {
+    "date": "1979-03-01",
+    "extent": 16.64
+   },
+   "min": {
+    "date": "2012-09-16",
+    "extent": 3.34
+   },
+   "now": {
+    "date": "2026-10-17",
+    "extent": 6.72
+   }
+  },
+  "antarctic": {
+   "max": {
+    "date": "2014-09-20",
+    "extent": 20.2
+   },
+   "min": {
+    "date": "2023-02-21",
+    "extent": 1.85
+   },
+   "now": {
+    "date": "2026-10-17",
+    "extent": 16.2
+   }
+  }
  }
 }

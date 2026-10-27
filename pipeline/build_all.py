@@ -16,6 +16,10 @@ import amoc_series
 import basemap_and_scales
 import figures
 import fish
+import fish_grid
+import fish_grid_display
+import fish_shifts
+import fish_shift_arrows
 import nahosmip_rain
 import ocean_now
 import reef_stations
@@ -31,6 +35,10 @@ STEPS = [
     ("Reef heat-stress history (weekly)", reef_stations.main),
     ("Sea level and the ice sheets", sea_level.main),
     ("Fish biomass projections by country (FishMIP)", fish.main),
+    ("Animal biomass change maps, 2090s (FishMIP CMIP6, 640 MB download)", fish_grid.main),
+    ("Animal biomass maps resampled for display, land masked", fish_grid_display.main),
+    ("Observed marine range shifts (BioShifts)", fish_shifts.main),
+    ("Range-shift arrows kept at sea", fish_shift_arrows.main),
     ("Southern Ocean carbon uptake (SOM-FFN, 1.3 GB download)", southern_ocean.main),
     ("Preview and card images", figures.main),
 ]

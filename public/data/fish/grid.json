@@ -1,0 +1,226 @@
+{
+ "ssp126_2100": {
+  "file": "grid_ssp126_2100.png",
+  "vmin": -50.0,
+  "vmax": 50.0,
+  "step": 0.3937,
+  "bytes": 27401,
+  "grid": {
+   "lat0": -89.5,
+   "lat1": 89.5,
+   "lon0": -179.5,
+   "lon1": 179.5,
+   "res": 1.0,
+   "h": 180,
+   "w": 360,
+   "rowOrder": "north-to-south"
+  },
+  "domain": 50,
+  "units": "%",
+  "variable": "tcb",
+  "period": "2090-2099",
+  "baseline": "1990-1999",
+  "scenario": "SSP1-2.6",
+  "scenarioLabel": "Low emissions (SSP1-2.6)",
+  "agreement": {
+   "file": "grid_ssp126_2100_agree.png",
+   "vmin": -100.0,
+   "vmax": 100.0,
+   "step": 0.7874,
+   "bytes": 20191,
+   "grid": {
+    "lat0": -89.5,
+    "lat1": 89.5,
+    "lon0": -179.5,
+    "lon1": 179.5,
+    "res": 1.0,
+    "h": 180,
+    "w": 360,
+    "rowOrder": "north-to-south"
+   },
+   "units": "%",
+   "domain": 100,
+   "meaning": "Share of models agreeing on the direction of change taken by the majority (the paper's 'model agreement', 50-100%). Negative = the majority projects a decline, positive = an increase; |value| is the paper's agreement."
+  },
+  "median": {
+   "file": "grid_ssp126_2100_median.png",
+   "vmin": -50.0,
+   "vmax": 50.0,
+   "step": 0.3937,
+   "bytes": 28030,
+   "grid": {
+    "lat0": -89.5,
+    "lat1": 89.5,
+    "lon0": -179.5,
+    "lon1": 179.5,
+    "res": 1.0,
+    "h": 180,
+    "w": 360,
+    "rowOrder": "north-to-south"
+   },
+   "units": "%",
+   "domain": 50,
+   "meaning": "Ensemble MEDIAN of the same percentage changes (not shown in the paper). Unlike the mean it is not pulled by one model's extreme values, e.g. DBEM's several-hundred-% gains from near-zero baselines in the Southern Ocean at 50-60°S."
+  },
+  "globalMean": {
+   "areaWeightedMeanOfMapPct": -3.2,
+   "changeInGlobalTotalPct": -6.0
+  },
+  "display": {
+   "file": "grid_ssp126_2100_median_display.png",
+   "vmin": -50.0,
+   "vmax": 50.0,
+   "step": 0.3937,
+   "bytes": 68233,
+   "grid": {
+    "lat0": -89.875,
+    "lat1": 89.875,
+    "lon0": -179.875,
+    "lon1": 179.875,
+    "res": 0.25,
+    "h": 720,
+    "w": 1440,
+    "rowOrder": "north-to-south"
+   },
+   "units": "%",
+   "domain": 50,
+   "meaning": "The ensemble median resampled to 0.25° for display: coastal ocean cells filled from the nearest model cell (up to 2°), land blanked (Natural Earth 1:50m)."
+  }
+ },
+ "ssp585_2100": {
+  "file": "grid_ssp585_2100.png",
+  "vmin": -50.0,
+  "vmax": 50.0,
+  "step": 0.3937,
+  "bytes": 26939,
+  "grid": {
+   "lat0": -89.5,
+   "lat1": 89.5,
+   "lon0": -179.5,
+   "lon1": 179.5,
+   "res": 1.0,
+   "h": 180,
+   "w": 360,
+   "rowOrder": "north-to-south"
+  },
+  "domain": 50,
+  "units": "%",
+  "variable": "tcb",
+  "period": "2090-2099",
+  "baseline": "1990-1999",
+  "scenario": "SSP5-8.5",
+  "scenarioLabel": "Very high emissions (SSP5-8.5)",
+  "agreement": {
+   "file": "grid_ssp585_2100_agree.png",
+   "vmin": -100.0,
+   "vmax": 100.0,
+   "step": 0.7874,
+   "bytes": 16298,
+   "grid": {
+    "lat0": -89.5,
+    "lat1": 89.5,
+    "lon0": -179.5,
+    "lon1": 179.5,
+    "res": 1.0,
+    "h": 180,
+    "w": 360,
+    "rowOrder": "north-to-south"
+   },
+   "units": "%",
+   "domain": 100,
+   "meaning": "Share of models agreeing on the direction of change taken by the majority (the paper's 'model agreement', 50-100%). Negative = the majority projects a decline, positive = an increase; |value| is the paper's agreement."
+  },
+  "median": {
+   "file": "grid_ssp585_2100_median.png",
+   "vmin": -50.0,
+   "vmax": 50.0,
+   "step": 0.3937,
+   "bytes": 29383,
+   "grid": {
+    "lat0": -89.5,
+    "lat1": 89.5,
+    "lon0": -179.5,
+    "lon1": 179.5,
+    "res": 1.0,
+    "h": 180,
+    "w": 360,
+    "rowOrder": "north-to-south"
+   },
+   "units": "%",
+   "domain": 50,
+   "meaning": "Ensemble MEDIAN of the same percentage changes (not shown in the paper). Unlike the mean it is not pulled by one model's extreme values, e.g. DBEM's several-hundred-% gains from near-zero baselines in the Southern Ocean at 50-60°S."
+  },
+  "globalMean": {
+   "areaWeightedMeanOfMapPct": -13.5,
+   "changeInGlobalTotalPct": -17.7
+  },
+  "display": {
+   "file": "grid_ssp585_2100_median_display.png",
+   "vmin": -50.0,
+   "vmax": 50.0,
+   "step": 0.3937,
+   "bytes": 70714,
+   "grid": {
+    "lat0": -89.875,
+    "lat1": 89.875,
+    "lon0": -179.875,
+    "lon1": 179.875,
+    "res": 0.25,
+    "h": 720,
+    "w": 1440,
+    "rowOrder": "north-to-south"
+   },
+   "units": "%",
+   "domain": 50,
+   "meaning": "The ensemble median resampled to 0.25° for display: coastal ocean cells filled from the nearest model cell (up to 2°), land blanked (Natural Earth 1:50m)."
+  }
+ },
+ "global": {
+  "note": "Mean over the 16 model pairs of each pair's change in global total animal biomass, relative to 1990-1999, from the paper's time-series data (Fig. 3). Global numbers only: the source has no maps for the 2040s.",
+  "ssp126_2040s": {
+   "scenario": "SSP1-2.6",
+   "period": "2040-2049",
+   "mean": -5.2,
+   "sd": 1.8,
+   "n": 16
+  },
+  "ssp126_2090s": {
+   "scenario": "SSP1-2.6",
+   "period": "2090-2099",
+   "mean": -5.9,
+   "sd": 2.8,
+   "n": 16
+  },
+  "ssp585_2040s": {
+   "scenario": "SSP5-8.5",
+   "period": "2040-2049",
+   "mean": -6.2,
+   "sd": 2.2,
+   "n": 16
+  },
+  "ssp585_2090s": {
+   "scenario": "SSP5-8.5",
+   "period": "2090-2099",
+   "mean": -17.2,
+   "sd": 5.9,
+   "n": 16
+  }
+ },
+ "source": {
+  "citation": "Tittensor, D. P. et al. (2021) Next-generation ensemble projections reveal higher climate risks for marine ecosystems. Nature Climate Change 11, 973-981. doi:10.1038/s41558-021-01173-9",
+  "data": "Zenodo doi:10.5281/zenodo.7703393 (data_CMIP6.RData, full model set)",
+  "licence": "CC BY 4.0",
+  "url": "https://doi.org/10.5281/zenodo.7703393",
+  "variable": "tcb, total consumer biomass: total marine animal biomass without fishing; the animals represented vary among models but generally include major taxonomic groups or major fish taxa",
+  "ensemble": {
+   "members": 15,
+   "ecosystemModels": 9,
+   "earthSystemModels": 2,
+   "IPSL-CM6A-LR": "9: APECOSM, BOATS, DBPM, MACROECOLOGICAL, FEISTY, ZooMSS, EcoTroph, EcoOcean, DBEM",
+   "GFDL-ESM4": "6: BOATS, MACROECOLOGICAL, ZooMSS, FEISTY, EcoTroph, DBEM",
+   "excluded": "GFDL-ESM4 x EcoOcean: in the archived map data its 2090s fields are the IPSL-CM6A-LR ones (a file-path slip in the paper's map script), so its change is not a valid GFDL projection"
+  },
+  "method": "For each model pair, decadal-mean biomass in 2090-2099 divided by 1990-1999 on a 1° grid; the map is the unweighted mean of these percentage changes across model pairs (as the paper's model_stat), clipped to ±50%; agreement is the share of pairs on the majority side.",
+  "periods": "Only 2090-2099 vs 1990-1999 exists as maps in this source; no mid-century maps."
+ }
+}

@@ -472,6 +472,70 @@ def fishing() -> dict:
                        "citation": "Kroodsma et al. (2018), Science 361, 908-911, doi:10.1126/science.aao5646"}}
 
 
+MON3 = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
+
+def _extent_rows(code: str) -> list[tuple[dt.date, float]]:
+    letter = code[0].upper()
+    txt = get(f"https://noaadata.apps.nsidc.org/NOAA/G02135/{code}/daily/data/{letter}_seaice_extent_daily_v4.0.csv").decode()
+    rows = []
+    for line in txt.splitlines()[2:]:
+        p = [x.strip() for x in line.split(",")[:4]]
+        try:
+            rows.append((dt.date(int(p[0]), int(p[1]), int(p[2])), float(p[3])))
+        except (ValueError, IndexError):
+            continue
+    return rows
+
+
+def _edge(code: str, day: dt.date) -> list[list[list[float]]]:
+    """Ice edge (15% concentration extent boundary) on one day, as lon/lat lines, from the NSIDC daily extent GeoTIFF."""
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    import rasterio
+    from rasterio.warp import transform
+    from shapely.geometry import LineString
+    letter = code[0].upper()
+    url = (f"https://noaadata.apps.nsidc.org/NOAA/G02135/{code}/daily/geotiff/{day.year}/{day.month:02d}_{MON3[day.month - 1]}/"
+           f"{letter}_{day:%Y%m%d}_extent_v4.0.tif")
+    with rasterio.MemoryFile(get(url)) as mf, mf.open() as src:
+        a = src.read(1); t = src.transform; crs = src.crs
+    ice = (a == 1).astype(float)
+    ice[a >= 250] = np.nan            # land, coast and missing: do not trace coastlines
+    xs = t.c + (np.arange(a.shape[1]) + 0.5) * t.a
+    ys = t.f + (np.arange(a.shape[0]) + 0.5) * t.e
+    fig = plt.figure(); cs = plt.contour(xs, ys, np.ma.masked_invalid(ice), levels=[0.5]); plt.close(fig)
+    lines = []
+    for seg in cs.allsegs[0]:
+        if len(seg) < 6:
+            continue
+        ls = LineString(seg).simplify(12000)
+        x, y = ls.xy
+        lon, lat = transform(crs, "EPSG:4326", list(x), list(y))
+        # keep longitudes continuous across the 180° meridian; a jump from +179 to -179 would be drawn
+        # the long way round the globe
+        lon = np.degrees(np.unwrap(np.radians(lon)))
+        lines.append([[round(float(o), 2), round(float(l), 2)] for o, l in zip(lon, lat)])
+    return lines
+
+
+def sea_ice_records() -> dict:
+    """Today's ice edge and the edges on the record-high and record-low days, for both poles (NSIDC Sea Ice Index v4)."""
+    out = {}
+    for hemi, code in (("arctic", "north"), ("antarctic", "south")):
+        rows = _extent_rows(code)
+        hi = max(rows, key=lambda r: r[1]); lo = min(rows, key=lambda r: r[1])
+        latest = rows[-1]
+        out[hemi] = {k: {"date": d.isoformat(), "extent": round(v, 2), "lines": _edge(code, d)}
+                     for k, (d, v) in (("max", hi), ("min", lo), ("now", latest))}
+        out[hemi]["since"] = rows[0][0].year
+    write_json({**out, "source": {"org": "National Snow and Ice Data Center", "product": "Sea Ice Index, version 4 (G02135): daily extent",
+                                  "doi": "10.7265/a98x-0f50", "note": "Edges trace the 15% ice-concentration extent on each day, on NSIDC's 25 km grid."}},
+               NOW / "sea_ice_edges.json")
+    return {h: {k: {kk: out[h][k][kk] for kk in ("date", "extent")} for k in ("max", "min", "now")} for h in out}
+
+
 # --------------------------------------------------------------------- ENSO
 
 MON = {m: i + 1 for i, m in enumerate("JAN FEB MAR APR MAY JUN JUL AUG SEP OCT NOV DEC".split())}
@@ -598,6 +662,10 @@ def main() -> None:
         manifest["seaIce"] = {"file": "sea_ice.json", **{h: {k: ice[h][k] for k in ("date", "extent", "median8110", "rankLowest", "years")} for h in ("arctic", "antarctic")}}
         for h in ("arctic", "antarctic"):
             i = ice[h]; print(f"  {h} sea ice {i['date']}: {i['extent']} vs median {i['median8110']} (rank {i['rankLowest']} lowest of {i['years']})")
+    edges = run("seaIceEdges", sea_ice_records, status)
+    if edges:
+        manifest["seaIceEdges"] = {"file": "sea_ice_edges.json", **edges}
+        print(f"  sea-ice edges: {edges}")
     maps = run("seaIceMaps", sea_ice_maps, status)
     if maps:
         manifest["seaIceMaps"] = maps

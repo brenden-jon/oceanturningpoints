@@ -3,6 +3,7 @@ import path from "node:path";
 import type { Metadata } from "next";
 import Link from "next/link";
 import DecisionLens from "@/components/DecisionLens";
+import FishGlobe from "@/components/FishGlobe";
 import FishMap from "@/components/FishMap";
 import HBars from "@/components/HBars";
 import StoryBrief from "@/components/StoryBrief";
@@ -56,8 +57,8 @@ export default function FishPage() {
         </div>
       </header>
 
-      <section className="wrap" aria-label="Projected change in fish biomass by country">
-        <FishMap />
+      <section className="wrap" aria-label="Where marine life is moving: projected change and observed shifts">
+        <FishGlobe />
       </section>
 
       <section className="section" aria-labelledby="observed">
@@ -92,6 +93,7 @@ export default function FishPage() {
         <div className="wrap">
           <p className="kicker">How likely</p>
           <h2 id="likely" className={styles.h2}>Projected fish biomass by country</h2>
+          <div style={{ margin: "0 0 2rem" }}><FishMap /></div>
           <div className={styles.split} style={{ alignItems: "start" }}>
             <div className="prose">
               <p>

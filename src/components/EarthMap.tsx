@@ -45,6 +45,7 @@ interface Props {
   onReady?: (map: MLMap) => void;   // gives overlays (e.g. currents) access to the map
   space?: "light" | "dark";          // colour around the globe: page white, or night sky
   raster?: { id: string; tiles: string[]; attribution: string; opacity?: number } | null; // e.g. a map service drawn above the field
+  polarFill?: string | null;         // colour of the globe beyond the imagery's ±85° limit (e.g. ice-white for sea ice)
   className?: string;
   ariaLabel: string;
 }
@@ -125,7 +126,7 @@ function applySky(map: MLMap, projection: "globe" | "mercator", space: "light" |
 
 export default function EarthMap({
   look, projection = "globe", view, image, imageKey, imageOpacity = 0.92, imageBounds, overlays = [],
-  interactive = true, spin = false, onHover, onSelect, onReady, space = "light", raster = null, className, ariaLabel,
+  interactive = true, spin = false, onHover, onSelect, onReady, space = "light", raster = null, polarFill = null, className, ariaLabel,
 }: Props) {
   const el = useRef<HTMLDivElement>(null);
   const mapRef = useRef<MLMap | null>(null);
@@ -192,6 +193,31 @@ export default function EarthMap({
     map.easeTo({ center: view.center, zoom: view.zoom, duration: reduce ? 0 : 1100 });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [view.center[0], view.center[1], view.zoom, ready]);
+
+  // ---- polar caps. The imagery stops at ±85°; on the globe the gap would show stretched edge pixels.
+  // Draw the caps as filled polygons projected from the 85° rings, redrawn as the globe moves.
+  const capN = useRef<SVGPolygonElement>(null);
+  const capS = useRef<SVGPolygonElement>(null);
+  const capColour = projection === "globe" && look === "satellite" ? (polarFill ?? "#e9eef3") : null;
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !ready || !capColour) return;
+    const lons = Array.from({ length: 73 }, (_, i) => -180 + i * 5);
+    const draw = () => {
+      const c = map.getCenter();
+      const cv = [Math.cos(c.lat * Math.PI / 180) * Math.cos(c.lng * Math.PI / 180), Math.cos(c.lat * Math.PI / 180) * Math.sin(c.lng * Math.PI / 180), Math.sin(c.lat * Math.PI / 180)];
+      for (const [ref, sign] of [[capN, 1], [capS, -1]] as const) {
+        const el = ref.current; if (!el) continue;
+        // visible only when the pole faces the viewer
+        if (cv[2] * sign < 0.08) { el.setAttribute("points", ""); continue; }
+        const pts = lons.map((lon) => { const p = map.project([lon, sign * MERCATOR_MAX_LAT]); return `${p.x.toFixed(1)},${p.y.toFixed(1)}`; });
+        el.setAttribute("points", pts.join(" "));
+      }
+    };
+    draw();
+    map.on("move", draw); map.on("resize", draw);
+    return () => { map.off("move", draw); map.off("resize", draw); };
+  }, [ready, capColour]);
 
   // ---- the scientific field
   useEffect(() => {
@@ -311,5 +337,14 @@ export default function EarthMap({
     return () => cancelAnimationFrame(raf);
   }, [spin, ready]);
 
-  return <div ref={el} className={className} role="region" aria-label={ariaLabel} />;
+  return (
+    <div ref={el} className={className} role="region" aria-label={ariaLabel}>
+      {capColour && (
+        <svg aria-hidden style={{ position: "absolute", inset: 0, width: "100%", height: "100%", pointerEvents: "none", zIndex: 1 }}>
+          <polygon ref={capN} fill={capColour} />
+          <polygon ref={capS} fill={capColour} />
+        </svg>
+      )}
+    </div>
+  );
 }

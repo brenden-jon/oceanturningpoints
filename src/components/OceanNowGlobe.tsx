@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import CurrentsLayer, { type CurrentsMeta } from "./CurrentsLayer";
-import type { HoverInfo } from "./EarthMap";
+import type { HoverInfo, Overlay } from "./EarthMap";
 import { formatValue, loadField, lutGradient, renderMercator, sampleField, type EncodedLayer, type Field, type GridSpec, type Lut } from "@/lib/field";
 import { asset } from "@/lib/site";
 import styles from "./OceanNowGlobe.module.css";
@@ -24,7 +24,15 @@ export interface SstOutlookMeta {
 }
 
 type When = "now" | "outlook";
-type Kind = "temp" | "coral" | "currents" | "fishing";
+type Kind = "temp" | "coral" | "currents" | "fishing" | "ice";
+type Rec = { date: string; extent: number };
+export interface SeaIceEdgesMeta { file: string; arctic: { max: Rec; min: Rec; now: Rec }; antarctic: { max: Rec; min: Rec; now: Rec } }
+type EdgeFile = Record<"arctic" | "antarctic", Record<"max" | "min" | "now", Rec & { lines: [number, number][][] }>>;
+const ICE_VIEWS = [
+  { id: "arctic", label: "Arctic", center: [10, 80] as [number, number], zoom: 1.45 },
+  { id: "antarctic", label: "Antarctic", center: [20, -75] as [number, number], zoom: 1.45 },
+];
+const REC_MAX = "#38bdf8", REC_MIN = "#f97316";
 export interface FishingMeta extends EncodedLayer {
   date: string; start: string; days: number; grid: GridSpec; domain: [number, number]; totalHours: number;
   topFlags: [string, number][]; source: { org: string; product: string; url: string; licence: string; citation: string };
@@ -44,8 +52,8 @@ const ICE_LUT: Lut = Array.from({ length: 256 }, () => [244, 248, 252]);
 const day = (iso: string) => new Date(iso + "T12:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
 const short = (iso: string) => new Date(iso + "T12:00:00Z").toLocaleDateString("en-GB", { month: "long", year: "numeric", timeZone: "UTC" });
 
-export default function OceanNowGlobe({ ssta, dhw, currents, bleachOutlook, sstOutlook, fishing, seaIce, initialLayer = "ssta", initialView = "pacific", compact = false, protectedAreas = false }: {
-  ssta: FieldMeta; dhw: FieldMeta; currents: CurrentsMeta; bleachOutlook?: BleachOutlookMeta; sstOutlook?: SstOutlookMeta; fishing?: FishingMeta; seaIce?: EncodedLayer & { date: string; grid: GridSpec };
+export default function OceanNowGlobe({ ssta, dhw, currents, bleachOutlook, sstOutlook, fishing, seaIce, seaIceEdges, initialLayer = "ssta", initialView = "pacific", compact = false, protectedAreas = false }: {
+  ssta: FieldMeta; dhw: FieldMeta; currents: CurrentsMeta; bleachOutlook?: BleachOutlookMeta; sstOutlook?: SstOutlookMeta; fishing?: FishingMeta; seaIce?: EncodedLayer & { date: string; grid: GridSpec }; seaIceEdges?: SeaIceEdgesMeta;
   initialLayer?: "ssta" | "dhw"; initialView?: string; compact?: boolean; protectedAreas?: boolean;
 }) {
   const [map, setMap] = useState<MLMap | null>(null);
@@ -57,6 +65,8 @@ export default function OceanNowGlobe({ ssta, dhw, currents, bleachOutlook, sstO
   const [showIce, setShowIce] = useState(Boolean(seaIce));
   const [iceField, setIceField] = useState<Field | null>(null);
   const [iceCanvas, setIceCanvas] = useState<HTMLCanvasElement | null>(null);
+  const [edges, setEdges] = useState<EdgeFile | null>(null);
+  const [iceVisited, setIceVisited] = useState(false);
   const [luts, setLuts] = useState<Record<string, { lut: Lut }> | null>(null);
   const [loaded, setLoaded] = useState<{ key: string; field: Field } | null>(null);
   const [canvas, setCanvas] = useState<HTMLCanvasElement | null>(null);
@@ -65,6 +75,7 @@ export default function OceanNowGlobe({ ssta, dhw, currents, bleachOutlook, sstO
   const hasOutlook = Boolean(bleachOutlook && sstOutlook && sstOutlook.layers.length);
   const isCurrents = kind === "currents";
   const isFishing = kind === "fishing" && Boolean(fishing);
+  const isIce = kind === "ice" && Boolean(seaIce);
   const isOutlook = when === "outlook" && hasOutlook && !isCurrents && !isFishing;
 
   // The active layer: what to load, how to colour it, and how to describe it.
@@ -95,6 +106,10 @@ export default function OceanNowGlobe({ ssta, dhw, currents, bleachOutlook, sstO
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [active]);
   useEffect(() => {
+    if (!isIce || edges || !seaIceEdges) return;
+    fetch(asset(`/data/now/${seaIceEdges.file}`)).then((r) => r.json()).then(setEdges).catch(() => {});
+  }, [isIce, edges, seaIceEdges]);
+  useEffect(() => {
     if (!seaIce) return;
     loadField(asset(`/data/now/${seaIce.file}`), seaIce, seaIce.grid).then(setIceField).catch(() => {});
   }, [seaIce]);
@@ -119,6 +134,7 @@ export default function OceanNowGlobe({ ssta, dhw, currents, bleachOutlook, sstO
 
   // The data layer with today's sea ice drawn on top, so the poles read on every layer (and over the currents).
   const composite = useMemo(() => {
+    if (isIce) return { image: iceCanvas, key: "ice-only" };
     const base = isCurrents ? null : canvas;
     if (!showIce || !iceCanvas) return { image: base, key: isCurrents ? "none" : key };
     const c = document.createElement("canvas");
@@ -127,14 +143,26 @@ export default function OceanNowGlobe({ ssta, dhw, currents, bleachOutlook, sstO
     if (base) ctx.drawImage(base, 0, 0, c.width, c.height);
     ctx.drawImage(iceCanvas, 0, 0);
     return { image: c, key: `${isCurrents ? "none" : key}+ice` };
-  }, [isCurrents, canvas, key, showIce, iceCanvas]);
+  }, [isIce, isCurrents, canvas, key, showIce, iceCanvas]);
+
+  const iceOverlays: Overlay[] = useMemo(() => {
+    if (!isIce || !edges) return [];
+    const fc = (k: "max" | "min") => ({ type: "FeatureCollection" as const, features: (["arctic", "antarctic"] as const).flatMap((h) =>
+      edges[h][k].lines.map((l) => ({ type: "Feature" as const, properties: {}, geometry: { type: "LineString" as const, coordinates: l } }))) });
+    return [
+      { id: "ice-max", kind: "line", color: REC_MAX, width: 2, data: fc("max") },
+      { id: "ice-min", kind: "line", color: REC_MIN, width: 2, data: fc("min") },
+    ];
+  }, [isIce, edges]);
 
   const onHover = useCallback((h: HoverInfo | null) => {
-    if (!h || !field) { setHover(null); return; }
-    setHover({ ...h, value: sampleField(field, h.lon, h.lat) });
-  }, [field]);
+    const f = isIce ? iceField : field;
+    if (!h || !f) { setHover(null); return; }
+    setHover({ ...h, value: sampleField(f, h.lon, h.lat) });
+  }, [field, iceField, isIce]);
 
   const readout = (v: number) => {
+    if (isIce) return `${Math.round(v * 100)}% ice cover`;
     if (active.id === "dhw") return `${v.toFixed(1)} °C-weeks`;
     if (active.id === "fishing") { const h = 10 ** v; return `${h >= 1000 ? "1,000+" : h >= 10 ? Math.round(h).toLocaleString("en-GB") : h.toFixed(1)} fishing hours`; }
     if (active.id === "bleach") return bleachOutlook!.categories[Math.max(0, Math.min(4, Math.round(v)))];
@@ -162,6 +190,7 @@ export default function OceanNowGlobe({ ssta, dhw, currents, bleachOutlook, sstO
             <button aria-pressed={kind === "coral"} onClick={() => setKind("coral")}>Coral heat stress</button>
             {!compact && <button aria-pressed={kind === "currents"} onClick={() => setKind("currents")}>Currents</button>}
             {!compact && fishing && <button aria-pressed={kind === "fishing"} onClick={() => setKind("fishing")}>Fishing</button>}
+            {!compact && seaIce && <button aria-pressed={kind === "ice"} onClick={() => { setKind("ice"); if (!iceVisited) { setView(ICE_VIEWS[0]); setIceVisited(true); } }}>Sea ice</button>}
           </div>
           {isOutlook && kind === "temp" && (
             <div className={styles.seg} role="group" aria-label="Forecast month">
@@ -172,7 +201,7 @@ export default function OceanNowGlobe({ ssta, dhw, currents, bleachOutlook, sstO
           )}
         </div>
         <div className={styles.toggles}>
-          {seaIce && (
+          {seaIce && !isIce && (
             <label className={styles.toggle}>
               <input type="checkbox" checked={showIce} onChange={(e) => setShowIce(e.target.checked)} />
               <span>Sea ice</span>
@@ -189,7 +218,8 @@ export default function OceanNowGlobe({ ssta, dhw, currents, bleachOutlook, sstO
 
       <div className={styles.box}>
         <EarthMap look="satellite" projection="globe" space="dark" view={{ center: view.center, zoom: view.zoom }}
-          image={composite.image} imageKey={composite.key} imageOpacity={0.9} onReady={setMap} onHover={onHover} onSelect={onHover}
+          image={composite.image} imageKey={composite.key} imageOpacity={isIce ? 0.95 : 0.9} onReady={setMap} onHover={onHover} onSelect={onHover}
+          overlays={iceOverlays} polarFill={isIce ? "#eff3f7" : null}
           raster={showMpa ? WDPA : null} className={styles.map} ariaLabel={`Globe: ${title}, centred on the ${view.label}`} />
         <CurrentsLayer map={map} meta={currents} visible={isCurrents} />
         {isOutlook && <span className={styles.badge}>Forecast</span>}
@@ -200,13 +230,24 @@ export default function OceanNowGlobe({ ssta, dhw, currents, bleachOutlook, sstO
           </div>
         )}
         <div className={styles.views} role="group" aria-label="Centre the globe on">
-          {VIEWS.map((v) => (
+          {(isIce ? [...ICE_VIEWS, ...VIEWS] : VIEWS).map((v) => (
             <button key={v.id} aria-pressed={view.id === v.id} onClick={() => setView(v)}>{v.label}</button>
           ))}
         </div>
       </div>
 
-      {lut && !isCurrents && (
+      {isIce && seaIceEdges && (
+        <div className={styles.legend}>
+          <p className={styles.legendTitle}>Sea ice today, {day(seaIce!.date)}, with the record high and record low ice edges since {edges?.arctic ? new Date(edges.arctic.max.date).getUTCFullYear() < 1980 ? 1979 : 1978 : 1979}</p>
+          <ul className={styles.iceKey}>
+            <li><i style={{ background: "#f1f5f9", boxShadow: "0 0 0 1px #94a3b8" }} /><span><b>Today</b> · Arctic {seaIceEdges.arctic.now.extent.toFixed(2)}, Antarctic {seaIceEdges.antarctic.now.extent.toFixed(2)} million km² ({day(seaIceEdges.arctic.now.date)})</span></li>
+            <li><i style={{ background: REC_MAX }} /><span><b>Record high</b> · Arctic {seaIceEdges.arctic.max.extent.toFixed(2)} on {day(seaIceEdges.arctic.max.date)}; Antarctic {seaIceEdges.antarctic.max.extent.toFixed(2)} on {day(seaIceEdges.antarctic.max.date)}</span></li>
+            <li><i style={{ background: REC_MIN }} /><span><b>Record low</b> · Arctic {seaIceEdges.arctic.min.extent.toFixed(2)} on {day(seaIceEdges.arctic.min.date)}; Antarctic {seaIceEdges.antarctic.min.extent.toFixed(2)} on {day(seaIceEdges.antarctic.min.date)}</span></li>
+          </ul>
+        </div>
+      )}
+
+      {lut && !isCurrents && !isIce && (
         <div className={styles.legend}>
           <p className={styles.legendTitle}>{title}</p>
           <div className={styles.bar} style={{ background: lutGradient(lut) }} aria-hidden>
@@ -228,6 +269,11 @@ export default function OceanNowGlobe({ ssta, dhw, currents, bleachOutlook, sstO
 
       {!compact && (
         <section className={styles.about} aria-label="About this layer">
+          {isIce && (<>
+            <div><h3>What it shows</h3><p>Where at least 15% of the sea surface is frozen today (white), and the ice edge on the days of the largest and smallest extent in the satellite record, for both poles. Drag the globe to move between the Arctic and the Antarctic.</p></div>
+            <div><h3>Why it matters</h3><p>Sea ice reflects sunlight and shapes ocean circulation. Arctic summer ice has shrunk by about 40% since the late 1970s; Antarctic sea ice changed little until 2016, then fell to record lows. <Link href="/changes/southern-ocean/">Southern Ocean</Link></p></div>
+            <div><h3>Source</h3><p><span className="evidence evidence--obs">Observed</span> Today’s ice: NOAA Coral Reef Watch CoralTemp sea-ice fraction. Extents and record edges: National Snow and Ice Data Center, Sea Ice Index version 4 (doi:10.7265/a98x-0f50), 25 km grid. Records count every day since late 1978; the early years have data every other day.</p></div>
+          </>)}
           {isCurrents && (<>
             <div><h3>What it shows</h3><p>Today’s ocean surface currents. Each moving line follows the estimated surface flow; brighter lines are faster currents. The motion is greatly speeded up, and the lines are not water or drifting buoys.</p></div>
             <div><h3>Why it matters</h3><p>Currents carry heat around the planet. The Gulf Stream and North Atlantic Current carry the upper branch of the Atlantic overturning circulation; along the equatorial Pacific the flow changes during El Niño. <Link href="/changes/atlantic-circulation/">Atlantic circulation</Link></p></div>

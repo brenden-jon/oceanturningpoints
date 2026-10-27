@@ -1,0 +1,10 @@
+.key { list-style: none; margin: 0.6rem 0 0; padding: 0; font-size: 0.85rem; color: var(--text-2); }
+.key li { display: flex; align-items: center; gap: 0.5rem; }
+.key { display: flex; flex-wrap: wrap; gap: 0.3rem 1.2rem; }
+.pole, .eq { width: 20px; height: 4px; border-radius: 2px; flex: none; background: #fff; box-shadow: 0 0 0 1px #0b1520; }
+.eq { background: #ffb15e; }
+.note { color: var(--text-3); }
+.detail { position: relative; margin-top: 1rem; background: var(--bg-alt); border-radius: var(--radius); padding: 1rem 2.6rem 0.8rem 1.2rem; }
+.detail p { margin: 0 0 0.5rem; color: var(--text-2); }
+.detailHead { font-weight: 650; color: var(--text) !important; }
+.close { position: absolute; top: 0.6rem; right: 0.7rem; border: 0; background: transparent; font-size: 1.3rem; line-height: 1; cursor: pointer; color: var(--text-2); }
