@@ -75,6 +75,7 @@ export default function About() {
 
         <aside className={styles.pubs} aria-labelledby="pubs">
           <h2 id="pubs">Research by Brenden Jongman</h2>
+          {FORTHCOMING.length > 0 && (<>
           <h3 className={styles.pubGroup}>Forthcoming</h3>
           <ol>
             {FORTHCOMING.map((p) => (
@@ -84,6 +85,7 @@ export default function About() {
               </li>
             ))}
           </ol>
+          </>)}
           <h3 className={styles.pubGroup}>Work in progress</h3>
           <ol>
             {IN_PROGRESS.map((p) => (

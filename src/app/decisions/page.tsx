@@ -175,7 +175,7 @@ export default function DecisionsPage() {
               imperfectly sized. A collapse of the Atlantic circulation is different, because it could reverse the direction of change in some
               regions, for example structurally drier West African monsoons. Further weakening is a planning concern this century; collapse should
               enter planning as an explicit stress test. Only two of 91 national adaptation plans mention the circulation at all (Jongman and Hall,
-              forthcoming).
+              2026).
             </p>
           </div>
           <ol className={own.steps}>
@@ -186,7 +186,7 @@ export default function DecisionsPage() {
             <li><b>Reflect the risk in mitigation accounting</b>, carrying a collapse and its carbon-cycle feedback as an explicit scenario.</li>
           </ol>
           <p className={`small muted ${styles.note}`}>
-            Steps follow Jongman and Hall (forthcoming); Biesbroek et al. (2025) reach closely matching conclusions. <Link href="/about/">Brenden Jongman</Link> is the curator of Ocean Turning Points. <Link href="/changes/atlantic-circulation/">The Atlantic circulation</Link>.
+            Steps follow <a href="https://doi.org/10.1038/s41893-026-01961-1">Jongman and Hall (2026)</a>; Biesbroek et al. (2025) reach closely matching conclusions. <Link href="/about/">Brenden Jongman</Link> is the curator of Ocean Turning Points. <Link href="/changes/atlantic-circulation/">The Atlantic circulation</Link>.
           </p>
         </div>
       </section>
@@ -206,7 +206,7 @@ export default function DecisionsPage() {
             365, 761–763; Hallegatte, S. (2012), World Bank Policy Research Working Paper 6058; Narayan, S. et al. (2016), <i>PLoS ONE</i> 11,
             e0154735; Menéndez, P. et al. (2020), <i>Scientific Reports</i> 10, 4404; Beck, M. W. et al. (2018), <i>Nature Communications</i> 9,
             2186; Reguero, B. G. et al. (2018), <i>PLoS ONE</i> 13, e0192132; Seddon, N. et al. (2021), <i>Global Change Biology</i> 27,
-            1518–1546; Biesbroek, R. et al. (2025), <i>Regional Environmental Change</i> 25, 93; Jongman, B. &amp; Hall, J. W. (forthcoming).
+            1518–1546; Biesbroek, R. et al. (2025), <i>Regional Environmental Change</i> 25, 93; Jongman, B. &amp; Hall, J. W. (2026), <i>Nature Sustainability</i>, doi:10.1038/s41893-026-01961-1.
           </p>
         </div>
       </section>

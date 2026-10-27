@@ -5,7 +5,7 @@
  * and publicly released; verify each entry against Crossref before adding it;
  * never list drafts, submissions or work under review, and never name the
  * journal a manuscript is intended for. FORTHCOMING holds accepted work the curator has
- * explicitly approved for listing, without a journal name. Last verified 25 October 2026.
+ * explicitly approved for listing, without a journal name. Last verified 27 October 2026.
  */
 export interface Publication {
   authors: string;
@@ -18,6 +18,8 @@ export interface Publication {
 }
 
 export const PUBLICATIONS: Publication[] = [
+  { authors: "Jongman, B. & Hall, J. W.", year: 2026, title: "Adapting to the risk of Atlantic circulation change",
+    venue: "Nature Sustainability", details: "Comment", doi: "10.1038/s41893-026-01961-1", type: "comment" },
   { authors: "van Zanten, B., Brander, L., Castaneda, J.-P., et al. (incl. Jongman, B.)", year: 2025,
     title: "Integrated spatial cost-benefit analysis of large-scale mangrove conservation and restoration in Indonesia",
     venue: "Frontiers in Environmental Science", details: "13, 1459034", doi: "10.3389/fenvs.2025.1459034" },
@@ -40,9 +42,7 @@ export const PUBLICATIONS: Publication[] = [
     details: "22, 823–835", doi: "10.1016/j.gloenvcha.2012.07.004" },
 ];
 
-export const FORTHCOMING = [
-  { authors: "Jongman, B. & Hall, J. W.", title: "Adapting to the risk of Atlantic circulation change" },
-];
+export const FORTHCOMING: { authors: string; title: string }[] = [];
 
 /** Work in progress the curator has asked to list: topic and one sentence, no findings, journals or institutions. */
 export const IN_PROGRESS = [

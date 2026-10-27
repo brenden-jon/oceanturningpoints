@@ -36,7 +36,7 @@ At least once a year, and after major papers or assessments:
 - List only work that has been published and publicly released, verified against Crossref.
 - Never list drafts, submissions, revisions or work under review, and never name the journal a manuscript is intended for.
 - Exceptions only with the curator's explicit authorisation.
-- Authorised exceptions (October 2026): Jongman & Hall (forthcoming) on AMOC adaptation, listed with its title and without a journal;
+- Jongman & Hall (2026), Nature Sustainability, doi:10.1038/s41893-026-01961-1 (published 27 October 2026; previously an authorised forthcoming exception);
   the ocean observation manuscript, cited as "Jongman (forthcoming)" and listed under work in progress; topic lines for work in
   progress on decisions for a changing ocean and on financing marine protection, with no findings, journals or institutions.
 

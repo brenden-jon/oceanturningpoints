@@ -348,7 +348,7 @@ export default function AmocPage() {
           </ol>
         </div>
         <p className={`wrap small muted ${styles.attrib}`}>
-          These steps follow Jongman and Hall (forthcoming). <Link href="/about/">Brenden Jongman</Link> is the curator of Ocean Turning Points.
+          These steps follow <a href="https://doi.org/10.1038/s41893-026-01961-1">Jongman and Hall (2026)</a>, <i>Nature Sustainability</i>. <Link href="/about/">Brenden Jongman</Link> is the curator of Ocean Turning Points.
         </p>
         <div className="wrap" style={{ marginTop: "2.5rem" }}>
           <h3 style={{ fontSize: "1.2rem", marginBottom: "0.9rem" }}>Which decisions should change</h3>

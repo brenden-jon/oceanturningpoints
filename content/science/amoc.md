@@ -82,7 +82,7 @@ The size of impacts is also uncertain. Regional rainfall changes differ two- to 
 
 On current evidence, an AMOC collapse is a low-probability, high-impact risk with long lead times. Harbours, water systems, crop research and social protection programmes built now will still be in use when the question may be settled. For most countries, collapse is a scenario to test long-lived decisions against, alongside the central projections. It should not displace immediate adaptation priorities.
 
-The direction of many effects is better known than their size, so the most useful measures help across a range of outcomes. A practical sequence, following Jongman and Hall (forthcoming), is to:
+The direction of many effects is better known than their size, so the most useful measures help across a range of outcomes. A practical sequence, following Jongman and Hall (2026), is to:
 
 1. screen which countries and sectors are most exposed, for example to monsoon change;
 2. stress-test long-lived investments against an AMOC-collapse scenario alongside standard projections;
@@ -105,7 +105,7 @@ Monitoring is itself part of the response. Several of the open questions above d
 9. Hallegatte, S., Vogt-Schilb, A., Bangalore, M. & Rozenberg, J. (2016). *Unbreakable: Building the Resilience of the Poor in the Face of Natural Disasters*. World Bank. [doi:10.1596/978-1-4648-1003-9](https://doi.org/10.1596/978-1-4648-1003-9)
 10. IPCC (2021). Summary for Policymakers. In *Climate Change 2021: The Physical Science Basis*. Contribution of Working Group I to the Sixth Assessment Report. Cambridge University Press. [doi:10.1017/9781009157896.001](https://doi.org/10.1017/9781009157896.001)
 11. Jackson, L. C., Kahana, R., Graham, T., et al. (2015). Global and European climate impacts of a slowdown of the AMOC in a high resolution GCM. *Climate Dynamics*, 45, 3299–3316. [doi:10.1007/s00382-015-2540-2](https://doi.org/10.1007/s00382-015-2540-2)
-12. Jongman, B. & Hall, J. (forthcoming).
+12. Jongman, B. & Hall, J. W. (2026). Adapting to the risk of Atlantic circulation change. *Nature Sustainability*. https://doi.org/10.1038/s41893-026-01961-1
 13. Lozier, M. S., Li, F., Bacon, S., et al. (2019). A sea change in our view of overturning in the subpolar North Atlantic. *Science*, 363, 516–521. [doi:10.1126/science.aau6592](https://doi.org/10.1126/science.aau6592)
 14. Nian, D., Willeit, M., Wunderling, N., et al. (2026). Collapse of the Atlantic meridional overturning circulation would lead to substantial oceanic carbon release and additional global warming. *Communications Earth & Environment*, 7, 295. [doi:10.1038/s43247-026-03427-w](https://doi.org/10.1038/s43247-026-03427-w)
 15. Portmann, V., Swingedouw, D., Khattab, M., et al. (2026). Observational constraints project a ~50% AMOC weakening by the end of this century. *Science Advances*, 12, eadx4298. [doi:10.1126/sciadv.adx4298](https://doi.org/10.1126/sciadv.adx4298)

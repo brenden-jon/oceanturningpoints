@@ -139,7 +139,7 @@
      "source": "Ben-Yami et al. 2024",
      "doi": "10.1029/2023EF003959",
      "evidence": "model",
-     "confidence": "Medium: all four models agree on the direction; the amount varies widely between models (Jongman & Hall, forthcoming, Table 1)",
+     "confidence": "Medium: all four models agree on the direction; the amount varies widely between models (Jongman & Hall, 2026, Table 1)",
      "link": "/changes/atlantic-circulation/"
     },
     {
@@ -157,10 +157,10 @@
      "change": "amoc",
      "sector": "water",
      "text": "Water storage sized for more variable rainfall may prove too small if wet seasons shorten for decades. Few crop, water or livelihood studies use AMOC scenarios yet.",
-     "source": "Jongman & Hall (forthcoming), Table 1",
-     "doi": null,
+     "source": "Jongman & Hall (2026), Table 1",
+     "doi": "10.1038/s41893-026-01961-1",
      "evidence": "assessment",
-     "confidence": "Sparse downstream evidence (Jongman & Hall, forthcoming)",
+     "confidence": "Sparse downstream evidence (Jongman & Hall, 2026)",
      "link": "/changes/atlantic-circulation/"
     },
     {
@@ -170,7 +170,7 @@
      "source": "DiNezio et al. 2025",
      "doi": "10.1038/s41586-025-09319-x",
      "evidence": "model",
-     "confidence": "Medium (Jongman & Hall, forthcoming, Table 1)",
+     "confidence": "Medium (Jongman & Hall, 2026, Table 1)",
      "link": "/changes/atlantic-circulation/"
     },
     {
@@ -529,7 +529,7 @@
      "source": "Ben-Yami et al. 2024",
      "doi": "10.1029/2023EF003959",
      "evidence": "model",
-     "confidence": "Medium: all four models agree on the direction; the amount varies widely between models (Jongman & Hall, forthcoming, Table 1)",
+     "confidence": "Medium: all four models agree on the direction; the amount varies widely between models (Jongman & Hall, 2026, Table 1)",
      "link": "/changes/atlantic-circulation/"
     },
     {
@@ -1016,7 +1016,7 @@
      "source": "DiNezio et al. 2025",
      "doi": "10.1038/s41586-025-09319-x",
      "evidence": "model",
-     "confidence": "Medium (Jongman & Hall, forthcoming, Table 1)",
+     "confidence": "Medium (Jongman & Hall, 2026, Table 1)",
      "link": "/changes/atlantic-circulation/"
     },
     {
@@ -1026,7 +1026,7 @@
      "source": "van Westen, Katsman & Le Bars 2026",
      "doi": "10.5194/os-22-1353-2026",
      "evidence": "model",
-     "confidence": "Medium (Jongman & Hall, forthcoming, Table 1); one model family",
+     "confidence": "Medium (Jongman & Hall, 2026, Table 1); one model family",
      "link": "/changes/atlantic-circulation/"
     },
     {
@@ -1230,7 +1230,7 @@
      "source": "DiNezio et al. 2025",
      "doi": "10.1038/s41586-025-09319-x",
      "evidence": "model",
-     "confidence": "Medium (Jongman & Hall, forthcoming, Table 1)",
+     "confidence": "Medium (Jongman & Hall, 2026, Table 1)",
      "link": "/changes/atlantic-circulation/"
     },
     {
@@ -1416,15 +1416,15 @@
      "source": "van Westen & Baatsen 2025 (CESM scenario data, processed by Ocean Turning Points)",
      "doi": "10.1029/2025GL114611",
      "evidence": "model",
-     "confidence": "High confidence in the direction of cooling; medium in size (Jongman & Hall, forthcoming, Table 1); one model",
+     "confidence": "High confidence in the direction of cooling; medium in size (Jongman & Hall, 2026, Table 1); one model",
      "link": "/changes/atlantic-circulation/"
     },
     {
      "change": "amoc",
      "sector": "energy",
      "text": "Implications of an AMOC collapse for energy demand, agriculture and cold-weather infrastructure are largely unexamined.",
-     "source": "Jongman & Hall (forthcoming), Table 1",
-     "doi": null,
+     "source": "Jongman & Hall (2026), Table 1",
+     "doi": "10.1038/s41893-026-01961-1",
      "evidence": "assessment",
      "confidence": "Very limited downstream evidence",
      "link": "/changes/atlantic-circulation/"
@@ -1457,7 +1457,7 @@
      "source": "Boot et al. 2025",
      "doi": "10.1029/2024EF004741",
      "evidence": "model",
-     "confidence": "Low to medium (Jongman & Hall, forthcoming, Table 1); one model chain",
+     "confidence": "Low to medium (Jongman & Hall, 2026, Table 1); one model chain",
      "link": "/changes/atlantic-circulation/"
     },
     {
@@ -1467,15 +1467,15 @@
      "source": "van Westen, Katsman & Le Bars 2026",
      "doi": "10.5194/os-22-1353-2026",
      "evidence": "model",
-     "confidence": "Medium (Jongman & Hall, forthcoming, Table 1)",
+     "confidence": "Medium (Jongman & Hall, 2026, Table 1)",
      "link": "/changes/atlantic-circulation/"
     },
     {
      "change": "amoc",
      "sector": "finance",
      "text": "Risk assessments, design standards and adaptation finance typically rely on average projections that dilute the AMOC signal. Of 91 National Adaptation Plans submitted to the UNFCCC, only Ireland's (2025) and Brazil's (2026) mention the AMOC, and only in framing sections.",
-     "source": "Jongman & Hall (forthcoming)",
-     "doi": null,
+     "source": "Jongman & Hall (2026)",
+     "doi": "10.1038/s41893-026-01961-1",
      "evidence": "observed",
      "confidence": "Document review, August 2026",
      "link": "/changes/atlantic-circulation/"
@@ -1574,7 +1574,7 @@
      "source": "van Westen, Katsman & Le Bars 2026",
      "doi": "10.5194/os-22-1353-2026",
      "evidence": "model",
-     "confidence": "Medium (Jongman & Hall, forthcoming, Table 1)",
+     "confidence": "Medium (Jongman & Hall, 2026, Table 1)",
      "link": "/changes/atlantic-circulation/"
     },
     {
@@ -1850,7 +1850,7 @@
      "source": "Ben-Yami et al. 2024",
      "doi": "10.1029/2023EF003959",
      "evidence": "model",
-     "confidence": "Medium: all four models agree on the direction; the amount varies widely between models (Jongman & Hall, forthcoming, Table 1)",
+     "confidence": "Medium: all four models agree on the direction; the amount varies widely between models (Jongman & Hall, 2026, Table 1)",
      "link": "/changes/atlantic-circulation/"
     },
     {
