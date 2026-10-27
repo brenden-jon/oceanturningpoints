@@ -1,6 +1,6 @@
 .hero { position: relative; overflow: hidden; background: #000; color: #fff; min-height: clamp(560px, 86vh, 820px); display: grid; align-items: center; }
-.heroVideo { position: absolute; top: 0; right: 0; height: 100%; width: auto; aspect-ratio: 4 / 5; object-fit: cover; }
-.heroShade { position: absolute; inset: 0; background: linear-gradient(90deg, #000 0%, #000 38%, rgba(0, 0, 0, 0.75) 52%, rgba(0, 0, 0, 0) 72%), linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 18%); }
+.heroVideo { position: absolute; top: 50%; right: max(1.5rem, calc((100vw - 1320px) / 2)); transform: translateY(-50%); height: min(88%, 48vw, 740px); width: auto; aspect-ratio: 1; }
+.heroShade { position: absolute; inset: 0; background: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.85) 40%, rgba(0, 0, 0, 0) 58%); }
 .heroInner { position: relative; width: 100%; padding-top: 3rem; padding-bottom: 4rem; }
 .heroText { display: grid; justify-items: start; gap: 1.3rem; max-width: 560px; }
 .heroText h1 { max-width: 14ch; font-size: clamp(2.4rem, 4.8vw, 4.4rem); color: #fff; }
@@ -12,9 +12,9 @@
 .heroCredit a { color: rgba(255, 255, 255, 0.8); }
 @media (max-width: 860px) {
   .hero { min-height: 0; align-items: end; }
-  .heroVideo { position: relative; display: block; width: 100%; height: auto; aspect-ratio: 4 / 4.2; object-position: 50% 85%; }
-  .heroShade { inset: auto; top: 0; left: 0; right: 0; aspect-ratio: 4 / 4.2; background: linear-gradient(0deg, #000 0%, rgba(0, 0, 0, 0) 38%); }
-  .heroInner { padding-top: 0; margin-top: -4rem; padding-bottom: 3.2rem; }
+  .heroVideo { position: relative; top: auto; right: auto; transform: none; display: block; width: min(86%, 460px); height: auto; margin: 0.5rem auto 0; }
+  .heroShade { display: none; }
+  .heroInner { padding-top: 0.5rem; padding-bottom: 3.2rem; }
 }
 
 .nowStrip { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }

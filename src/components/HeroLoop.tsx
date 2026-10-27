@@ -13,7 +13,7 @@ export default function HeroLoop({ className }: { className?: string }) {
     v.play().catch(() => {});
   }, []);
   return (
-    <video ref={ref} className={className} src={asset("/video/ocean-loop.mp4")} poster={asset("/video/ocean-loop.jpg")}
+    <video ref={ref} className={className} src={asset("/video/ocean-globe.mp4")} poster={asset("/video/ocean-globe.jpg")}
       autoPlay muted loop playsInline preload="auto" aria-hidden />
   );
 }
