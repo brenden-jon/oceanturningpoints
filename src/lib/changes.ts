@@ -2,13 +2,16 @@
 export interface Change {
   slug: string; title: string; story: string; storyLabel: string; science?: boolean; status: string; question: string;
   image: string; what: string; likely: string; means: string; done: string;
+  /** Card image, if not /img/topics/<slug>.jpg; credit shown under it when the licence needs one. */
+  card?: string; cardCredit?: string;
 }
 
 export const CHANGES: Change[] = [
   {
     slug: "amoc", title: "Atlantic circulation (AMOC)", story: "/changes/atlantic-circulation/", storyLabel: "Explore the scenarios",
     status: "Weakening very likely; collapse possible", question: "What would happen if the Atlantic circulation collapsed?",
-    image: "The Atlantic overturning circulation: warm water flows north near the surface (red), sinks in the far north and returns south at depth (blue).",
+    image: "The Atlantic overturning circulation over modelled ocean currents: warm water flows north near the surface (red) and cold water returns south at depth (blue). Rendered from NASA Perpetual Ocean 2 (ECCO2), Blue Marble and Black Marble.",
+    card: "/img/cards/amoc.jpg",
     what: "A system of currents that carries warm water north through the Atlantic and cold water back south at depth. It keeps northwest Europe mild and holds the tropical rain belts in place.",
     likely: "Weakening this century is very likely. A collapse is a low-likelihood, high-impact risk: the IPCC has medium confidence it will not happen before 2100, and newer studies disagree.",
     means: "Much colder winters in northwest Europe, weaker monsoons in West Africa and South Asia, and faster sea-level rise on North Atlantic coasts, lasting centuries.",
@@ -44,7 +47,8 @@ export const CHANGES: Change[] = [
   {
     slug: "fish-on-the-move", title: "Fish stocks on the move", story: "/changes/fish-on-the-move/", storyLabel: "Projections for every coastal country", science: false,
     status: "Under way; less fish with every degree", question: "Where will the fish go?",
-    image: "Projected change in the fish each country’s waters can hold by the 2090s under very high emissions: darker red means larger losses.",
+    image: "Fishers bring pirogues loaded with fish ashore at Kayar, Senegal, July 2024.",
+    card: "/img/photos/fishers-kayar-senegal.jpg", cardCredit: "Photo: Ibrahima khalilpro diop, CC BY-SA 4.0",
     what: "Warming shrinks the amount of fish the ocean can support and moves stocks towards the poles and across borders. Marine heatwaves can wipe out whole stocks within a year or two.",
     likely: "Already under way: warming cut sustainable yields by 4% over 1930–2010. Models project about 5% less fish per degree of warming (medium confidence); cod fisheries and kelp forests can tip locally.",
     means: "Less food and income for coastal communities, lost licence revenue for small island states, and disputes over stocks that cross borders.",

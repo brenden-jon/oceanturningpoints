@@ -11,7 +11,6 @@ import { ArticleLd } from "@/components/JsonLd";
 import { abs, asset } from "@/lib/site";
 import styles from "../coral-reefs/coral.module.css";
 import own from "./fish.module.css";
-import PhotoFigure from "@/components/PhotoFigure";
 
 const TITLE = "Where will the fish go?";
 const DESCRIPTION = "Warming is shrinking the fish the ocean can hold and moving stocks towards the poles and across borders. Projections for every coastal country, the die-offs already seen, who depends most on fish, and what can be done.";
@@ -36,7 +35,8 @@ export default function FishPage() {
           <p className="label"><Link href="/changes/">Big changes</Link> · Fish on the move</p>
           <h1 className={styles.title}>{TITLE}</h1>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img className={styles.heroImg} src={asset("/img/topics/fish-on-the-move.jpg")} alt="" width={1200} height={800} />
+          <img className={styles.heroImg} src={asset("/img/photos/fishers-kayar-senegal.jpg")} alt="Fishers bring pirogues loaded with fish ashore at Kayar, Senegal." width={1600} height={1067} />
+          <p className="small faint" style={{ margin: "0.5rem 0 0" }}>Kayar, Senegal, July 2024. Photo: <a href="https://commons.wikimedia.org/wiki/File:Plage_de_Kayar_l%27arriv%C3%A9_des_pecheurs.jpg">Ibrahima khalilpro diop</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p>
         </div>
         <div className={styles.heroSide}>
           <p className={styles.standfirst}>
@@ -154,7 +154,6 @@ export default function FishPage() {
             Fish matter most for nutrition in tropical countries, where reef and coastal fish supply iron, zinc and calcium that diets
             lack (Hicks et al., 2019). Reef fisheries are covered on the <Link href="/changes/coral-reefs/#livelihoods">coral reefs</Link> page.
           </p>
-          <PhotoFigure photos={["fishers-kayar-senegal"]} caption="Fishers bring pirogues loaded with fish ashore at Kayar, Senegal, July 2024." wide />
         </div>
       </section>
 

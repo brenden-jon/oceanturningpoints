@@ -82,10 +82,11 @@ export default function Home() {
               <li key={c.slug}>
                 <Link href={c.story} className={styles.tile}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={asset(`/img/topics/${c.slug}.jpg`)} alt="" width={1200} height={800} loading="lazy" />
+                  <img src={asset(c.card ?? `/img/topics/${c.slug}.jpg`)} alt="" width={1200} height={800} loading="lazy" />
                   <span className={styles.status}>{c.status}</span>
                   <span className={styles.tileTitle}>{c.title}</span>
                   <span className={styles.tileQ}>{c.question}</span>
+                  {c.cardCredit && <span className={styles.tileCredit}>{c.cardCredit}</span>}
                 </Link>
               </li>
             ))}

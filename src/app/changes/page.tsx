@@ -36,9 +36,9 @@ export default function Changes() {
             <figure className={styles.image}>
               <Link href={c.story || `/science/${c.slug}/`} tabIndex={-1} aria-hidden>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={asset(`/img/topics/${c.slug}.jpg`)} alt="" width={1200} height={800} loading="lazy" />
+                <img src={asset(c.card ?? `/img/topics/${c.slug}.jpg`)} alt="" width={1200} height={800} loading="lazy" />
               </Link>
-              <figcaption className="small faint">{c.image}</figcaption>
+              <figcaption className="small faint">{c.image}{c.cardCredit ? <> {c.cardCredit}.</> : null}</figcaption>
             </figure>
             <div className={styles.body}>
               <h2><Link href={c.story || `/science/${c.slug}/`}>{c.title}</Link></h2>
